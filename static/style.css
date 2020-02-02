@@ -77,8 +77,8 @@ table.book_metadata {
 
 td {
   padding-right: 10px;
-  padding-top:    2px;
-  padding-bottom: 2px;
+  padding-top:    3px;
+  padding-bottom: 3px;
 }
 
 th {
@@ -107,12 +107,14 @@ footer a:hover {
   background: rgba(0, 255, 221, 0.05);
   border-radius: 6px;
   margin-bottom: 1em;
+  height: 138px;
 }
 
 .review_preview a, .reading_inner {
-  grid-template-columns: 110px auto;
+  grid-template-columns: 135px auto;
   display: grid;
-  grid-gap: 15px;
+  grid-gap: 8px;
+  height: 100%;
   width: 100%;
   color: black;
   text-decoration: none;
@@ -123,6 +125,7 @@ footer a:hover {
 }
 
 .review_preview img, .reading_inner img {
+  max-width: 120px;
   max-height: 110px;
   margin-top: 12px;
   margin-bottom: 7px;
