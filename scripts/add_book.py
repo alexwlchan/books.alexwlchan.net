@@ -86,21 +86,32 @@ def get_review_info():
             choices=["★★★★★", "★★★★☆", "★★★☆☆", "★★☆☆☆", "★☆☆☆☆"],
         ),
         inquirer.Text("format", message="What format did you read it in?"),
-        inquirer.List(
-            "did_you_finish", message="Did you finish the book?", choices=["yes", "no"]
-        ),
     ]
 
     answers = inquirer.prompt(other_questions)
+    format = answers["format"]
 
     rating = int(answers["rating"].count("★"))
     assert 1 <= rating <= 5
 
+    if rating > 3:
+        did_not_finish = False
+    else:
+        questions = [
+            inquirer.List(
+                "did_you_finish",
+                message="Did you finish the book?",
+                choices=["yes", "no"],
+            ),
+        ]
+
+        answers["did_you_finish"] = inquirer.prompt(questions)["did_you_finish"] == "no"
+
     return {
         "date_read": date_read,
         "rating": rating,
-        "format": answers["format"],
-        "did_not_finish": answers["did_you_finish"] == "no",
+        "format": format,
+        "did_not_finish": did_not_finish,
     }
 
 
