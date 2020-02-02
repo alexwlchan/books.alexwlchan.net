@@ -47,7 +47,8 @@ class ReviewEntry:
     review = attr.ib()
 
     def out_path(self):
-        return self.path.relative_to("src").with_suffix("")
+        name = self.path.with_suffix("").name
+        return pathlib.Path(f"reviews/{name}")
 
 
 def get_review_entry_from_path(path):
@@ -70,9 +71,6 @@ class CurrentlyReadingEntry:
     book = attr.ib()
     reading = attr.ib()
 
-    def out_path(self):
-        return self.path.relative_to("src").with_suffix("")
-
 
 def get_reading_entry_from_path(path):
     post = frontmatter.load(path)
@@ -93,9 +91,6 @@ class PlanEntry:
     path = attr.ib()
     book = attr.ib()
     plan = attr.ib()
-
-    def out_path(self):
-        return self.path.relative_to("src").with_suffix("")
 
 
 def get_plan_entry_from_path(path):
