@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  padding: 0;
+  font: 12pt monospace;
+  line-height: 1.4em;
+}
+
+h1 .book-title {
+  font-style: italic;
+  line-height: 1.2em;
+}
+
+.book-cover {
+  float: right;
+  max-width:  150px;
+  max-height: 250px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+aside {
+  background: url('/static/specktre_tQt7j.png') #333366;
+  background-size: auto 100%;
+  color: white;
+  padding: 8px 1em;
+  font-size: 12pt;
+  line-height: 1.35em;
+}
+
+aside h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+  display: inline;
+  font-size: 1em;
+}
+
+aside h1::after {
+  content: " 📚";
+}
+
+main, aside #aside_inner, footer #footer_inner {
+  max-width: 750px;
+  margin-left:  auto;
+  margin-right: auto;
+}
+
+main {
+  padding: 1em;
+}
+
+a {
+  color: #4c3dae;
+}
+
+a:hover {
+  background: rgba(76, 61, 174, 0.3);
+}
+
+aside a {
+  color: white;
+}
+
+aside a:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 1em;
+}
+
+td {
+  padding-right: 6px;
+  padding-top:    2px;
+  padding-bottom: 2px;
+}
+
+th {
+  text-align: left;
+}
+
+footer {
+  border-top: 0.25px solid #bfbfbf;
+  color: #999;
+  font-size: 0.75em;
+  margin-top: 2em;
+  padding: 1em;
+  padding-bottom: 2em;
+}
+
+footer a {
+  color: gray;
+}
+
+footer a:hover {
+  background: rgba(128, 128, 128, 0.3);
+}

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="/static/style.css">
+
+    <title>{% if title %}{{ title | safe }} {% endif %}📚 lexie&rsquo;s book tracker</title>
+  </head>
+  <body>
+    {% include "_header.html" %}
+
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+
+    {% include "_footer.html" %}
+  </body>
+</html>
