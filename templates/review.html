@@ -12,7 +12,7 @@
 
   <table class="book_metadata">
     <tr>
-      <td>author:</td>
+      <td>author{% if "and" in review_entry.book.author or ", " in review_entry.book.author %}s{% endif %}:</td>
       <th>{{ review_entry.book.author }}
         {%- if review_entry.book.publication_year %}
           ({{ review_entry.book.publication_year}})
