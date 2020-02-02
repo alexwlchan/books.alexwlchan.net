@@ -9,8 +9,19 @@
 
   <h2>books i&rsquo;ve read</h2>
 
+  <p id="jump_to">jump to:
+    {% for year, _ in all_reviews %}
+    <a href="#books_by_year_{{ year }}">
+      {% if year %}{{ year }}{% else %}other times{% endif -%}
+    </a>
+    {% if not loop.last %} / {% endif %}
+    {% endfor %}
+  </p>
+
   {% for year, reviews in all_reviews %}
-  <div class="books_by_year">
+  <div class="divider">{{ loop.cycle('&#x2766;', '&#x2767;') | safe }}</div>
+
+  <div class="books_by_year" id="books_by_year_{{ year }}">
     <h3>the {{ reviews|length }} book{% if reviews|length != 1 %}s{% endif %}
       {% if year == this_year %}
         i&rsquo;ve read so far
@@ -62,10 +73,6 @@
     </div>
     {% endfor %}
   </div>
-
-  {% if not loop.last %}
-  <div class="divider">{{ loop.cycle('&#x2766;', '&#x2767;') | safe }}</div>
-  {% endif %}
 
   {% endfor %}
 {% endblock %}
