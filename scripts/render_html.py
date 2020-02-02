@@ -10,6 +10,7 @@ import sys
 import attr
 import frontmatter
 import markdown
+from markdown.extensions.smarty import SmartyExtension
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 
@@ -70,7 +71,7 @@ def get_reviews():
 
 
 def render_markdown(text):
-    return markdown.markdown(text)
+    return markdown.markdown(text, extensions=[SmartyExtension()])
 
 
 def render_date(date_value):
