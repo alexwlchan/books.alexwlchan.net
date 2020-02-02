@@ -188,7 +188,9 @@ if __name__ == "__main__":
     # Render the "currently reading" page
 
     all_reading = list(
-        get_entries(dirpath="src/currently_reading", constructor=get_reading_entry_from_path)
+        get_entries(
+            dirpath="src/currently_reading", constructor=get_reading_entry_from_path
+        )
     )
 
     template = env.get_template("list_reading.html")
