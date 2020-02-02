@@ -117,6 +117,10 @@ footer a:hover {
   margin-bottom: 1em;
 }
 
+.review_fave {
+  background: rgba(0, 255, 221, 0.18);
+}
+
 .review_preview a, .reading_inner {
   grid-template-columns: 135px auto;
   display: grid;
@@ -128,7 +132,7 @@ footer a:hover {
 }
 
 .review_preview a:hover {
-  background: rgba(0, 255, 221, 0.2);
+  background: rgba(0, 255, 221, 0.25);
 }
 
 .review_preview img, .reading_inner img {
