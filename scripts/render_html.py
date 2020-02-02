@@ -218,3 +218,5 @@ if __name__ == "__main__":
 
     index_path = pathlib.Path("_html") / "index.html"
     index_path.write_text(html)
+
+    print("✨ Rendered HTML files to _html ✨")
