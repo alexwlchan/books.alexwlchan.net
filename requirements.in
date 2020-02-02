@@ -1,4 +1,6 @@
 attrs
+inquirer
 jinja2
 Markdown
 python-frontmatter
+unidecode

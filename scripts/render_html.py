@@ -23,7 +23,7 @@ class Book:
     author = attr.ib()
     publication_year = attr.ib()
     cover_image = attr.ib()
-    cover_desc = attr.ib()
+    cover_desc = attr.ib(default="")
 
     isbn_13 = attr.ib(default="")
 
@@ -85,7 +85,7 @@ def render_date(date_value):
     date_obj = datetime.datetime(
         year=int(date_match.group("year")),
         month=int(date_match.group("month")),
-        day=int(date_match.group("day") or "1")
+        day=int(date_match.group("day") or "1"),
     )
 
     if date_match.group("day"):
@@ -127,5 +127,5 @@ if __name__ == "__main__":
     template = env.get_template("list_reviews.html")
     html = template.render(all_reviews=all_reviews)
 
-    out_path = pathlib.Path("_html") / 'reviews/index.html'
+    out_path = pathlib.Path("_html") / "reviews/index.html"
     out_path.write_text(html)

@@ -1,0 +1,141 @@
+#!/usr/bin/env python
+
+import datetime
+import os
+import re
+import subprocess
+from urllib.request import urlretrieve
+
+import frontmatter
+import inquirer
+from unidecode import unidecode
+
+
+def slugify(u):
+    """Convert Unicode string into blog slug."""
+    # https://leancrew.com/all-this/2014/10/asciifying/
+    u = re.sub(u'[–—/:;,.]', '-', u)  # replace separating punctuation
+    a = unidecode(u).lower()          # best ASCII substitutions, lowercased
+    a = re.sub(r'[^a-z0-9 -]', '', a) # delete any other characters
+    a = a.replace(' ', '-')           # spaces to hyphens
+    a = re.sub(r'-+', '-', a)         # condense repeated hyphens
+    return a
+
+
+def get_book_info():
+    questions = [
+        inquirer.List(
+            "entry_type",
+            message="What type of book is this?",
+            choices=[
+                "one I’ve read",
+                "one I’m currently reading",
+                "one I want to read",
+            ],
+        ),
+        inquirer.Text("title", message="What’s the title of the book?"),
+        inquirer.Text("author", message="Who’s the author?"),
+        inquirer.Text("publication_year", message="When was it published?"),
+        inquirer.Text("cover_image_url", message="What’s the cover URL?"),
+        inquirer.Text("cover_desc", message="What’s the cover?"),
+        inquirer.Text("isbn10", message="Do you know the ISBN-10?"),
+        inquirer.Text("isbn13", message="Do you know the ISBN-13?"),
+    ]
+
+    answers = inquirer.prompt(questions)
+
+    answers["entry_type"] = {
+        "one I’ve read": "reviews",
+        "one I’m currently reading": "currently_reading",
+        "one I want to read": "plans",
+    }[answers["entry_type"]]
+
+    return answers
+
+
+def get_review_info():
+    date_read_question1 = [
+        inquirer.List(
+            "date_read",
+            message="When did you finish reading it?",
+            choices=["today", "yesterday", "another day"]
+        )
+    ]
+
+    date_read = inquirer.prompt(date_read_question1)["date_read"]
+
+    today = datetime.datetime.now()
+
+    if date_read == "today":
+        date_read = today.strftime("%Y-%m-%d")
+    elif date_read == "yesterday":
+        yesterday = today - datetime.timedelta(days=1)
+        date_read = yesterday.strftime("%Y-%m-%d")
+    else:
+        date_read_question2 = [
+            inquirer.Text(
+                "date_read",
+                message="When did you finish reading it?"
+            )
+        ]
+
+        date_read = inquirer.prompt(date_read_question2)["date_read"]
+
+    rating_question = [
+        inquirer.List(
+            "rating",
+            message="When’s your rating?",
+            choices=["★★★★★", "★★★★☆", "★★★☆☆", "★★☆☆☆", "★☆☆☆☆"]
+        )
+    ]
+
+    rating = int(inquirer.prompt(rating_question)["rating"].count("★"))
+
+    return {"date_read": date_read, "rating": rating}
+
+
+
+if __name__ == '__main__':
+    book_info = get_book_info()
+
+    slug = slugify(book_info["title"])
+
+    filename, _ = urlretrieve(book_info["cover_image_url"])
+    extension = os.path.splitext(book_info["cover_image_url"])[-1]
+    cover_name = f"{slug}{extension}"
+    os.rename(filename, f"src/covers/{cover_name}")
+
+    new_entry = {
+        "book": {
+            "title": book_info["title"],
+            "author": book_info["author"],
+            "publication_year": book_info["publication_year"],
+            "cover_image": cover_name,
+        }
+    }
+
+    for key in ("cover_desc", "isbn10", "isbn13"):
+        if book_info[key]:
+            new_entry["book"][key] = book_info[key]
+
+    if book_info["entry_type"] == "reviews":
+        review_info = get_review_info()
+
+        new_entry["review"] = {
+            "date_read": review_info["date_read"],
+            "rating": review_info["rating"]
+        }
+
+        year = review_info["date_read"][:4]
+        out_dir = f"reviews/{year}"
+    else:
+        out_dir = book_info["entry_type"]
+
+    out_path = os.path.join("src", out_dir, f"{slug}.md")
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+
+    with open(out_path, "wb") as out_file:
+        frontmatter.dump(frontmatter.Post(content=u"", **new_entry), out_file)
+        out_file.write(b"\n")
+
+    subprocess.check_call(["open", out_path])
