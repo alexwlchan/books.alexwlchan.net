@@ -147,7 +147,9 @@ def render_date(date_value):
 
 def render_individual_review(env, *, review_entry):
     template = env.get_template("review.html")
-    html = template.render(review_entry=review_entry)
+    html = template.render(
+        review_entry=review_entry, title=f"My review of {review_entry.book.title}"
+    )
 
     out_name = review_entry.out_path() / "index.html"
     out_path = pathlib.Path("_html") / out_name
@@ -180,7 +182,7 @@ if __name__ == "__main__":
         render_individual_review(env, review_entry=review_entry)
 
     template = env.get_template("list_reviews.html")
-    html = template.render(all_reviews=all_reviews)
+    html = template.render(all_reviews=all_reviews, title="books i’ve read")
 
     out_path = pathlib.Path("_html") / "reviews/index.html"
     out_path.write_text(html)
@@ -194,7 +196,7 @@ if __name__ == "__main__":
     )
 
     template = env.get_template("list_reading.html")
-    html = template.render(all_reading=all_reading)
+    html = template.render(all_reading=all_reading, title="books i’m currently reading")
 
     out_path = pathlib.Path("_html") / "reading/index.html"
     out_path.parent.mkdir(exist_ok=True, parents=True)
@@ -207,7 +209,7 @@ if __name__ == "__main__":
     )
 
     template = env.get_template("list_plans.html")
-    html = template.render(all_plans=all_plans)
+    html = template.render(all_plans=all_plans, title="books i want to read")
 
     out_path = pathlib.Path("_html") / "to-read/index.html"
     out_path.parent.mkdir(exist_ok=True, parents=True)
