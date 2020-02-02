@@ -90,7 +90,9 @@ def get_review_info():
     ]
 
     answers = inquirer.prompt(other_questions)
-    rating = int(["rating"].count("★"))
+
+    rating = int(answers["rating"].count("★"))
+    assert 1 <= rating <= 5
 
     return {"date_read": date_read, "rating": rating, "format": answers["format"], "did_not_finish": answers["did_you_finish"] == "no"}
 
