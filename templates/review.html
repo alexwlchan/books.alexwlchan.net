@@ -20,6 +20,10 @@
       </th>
     </tr>
     <tr>
+      <td>date read:</td>
+      <th>{{ review_entry.review.date_read | render_date }}</th>
+    </tr>
+    <tr>
       <td>rating:</td>
       <th>
         {% for _ in range(review_entry.review.rating) %}
@@ -28,11 +32,10 @@
         {% for _ in range(5 - review_entry.review.rating) %}
         ☆
         {% endfor %}
+        {% if review_entry.review.did_not_finish %}
+        (did not finish)
+        {% endif %}
       </th>
-    </tr>
-    <tr>
-      <td>date read:</td>
-      <th>{{ review_entry.review.date_read | render_date }}</th>
     </tr>
   </table>
 

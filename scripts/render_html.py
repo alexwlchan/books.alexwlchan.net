@@ -36,6 +36,7 @@ class Review:
     rating = attr.ib()
     text = attr.ib()
     format = attr.ib()
+    did_not_finish = attr.ib(default=False)
 
 
 @attr.s

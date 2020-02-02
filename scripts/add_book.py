@@ -86,12 +86,13 @@ def get_review_info():
             choices=["★★★★★", "★★★★☆", "★★★☆☆", "★★☆☆☆", "★☆☆☆☆"],
         ),
         inquirer.Text("format", message="What format did you read it in?"),
+        inquirer.List("did_you_finish", message="Did you finish the book?", choices=["yes", "no"])
     ]
 
     answers = inquirer.prompt(other_questions)
     rating = int(["rating"].count("★"))
 
-    return {"date_read": date_read, "rating": rating, "format": answers["format"]}
+    return {"date_read": date_read, "rating": rating, "format": answers["format"], "did_not_finish": answers["did_you_finish"] == "no"}
 
 
 def save_cover(slug, cover_image_url):
@@ -133,6 +134,9 @@ if __name__ == "__main__":
             "rating": review_info["rating"],
             "format": review_info["format"],
         }
+
+        if review_info["did_not_finish"]:
+            new_entry["review"]["did_not_finish"] = True
 
         year = review_info["date_read"][:4]
         out_dir = f"reviews/{year}"
