@@ -90,7 +90,7 @@ def render_date(date_value):
     )
 
     if date_match.group("day"):
-        return date_obj.strftime("%d %B %Y")
+        return date_obj.strftime("%-d %B %Y")
     else:
         return date_obj.strftime("%B %Y")
 
