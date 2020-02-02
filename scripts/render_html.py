@@ -81,7 +81,31 @@ def get_reading_entry_from_path(path):
     return CurrentlyReadingEntry(path=path, book=book, reading=reading)
 
 
-def get_reviews(dirpath, constructor):
+@attr.s
+class Plan:
+    text = attr.ib()
+
+
+@attr.s
+class PlanEntry:
+    path = attr.ib()
+    book = attr.ib()
+    plan = attr.ib()
+
+    def out_path(self):
+        return self.path.relative_to("src").with_suffix("")
+
+
+def get_plan_entry_from_path(path):
+    post = frontmatter.load(path)
+
+    book = Book(**post["book"])
+    plan = Plan(text=post.content)
+
+    return PlanEntry(path=path, book=book, plan=plan)
+
+
+def get_entries(dirpath, constructor):
     for dirpath, _, filenames in os.walk(dirpath):
         for f in filenames:
             if not f.endswith(".md"):
@@ -146,7 +170,7 @@ if __name__ == "__main__":
     # Render the "all reviews page"
 
     all_reviews = list(
-        get_reviews(dirpath="src/reviews", constructor=get_review_entry_from_path)
+        get_entries(dirpath="src/reviews", constructor=get_review_entry_from_path)
     )
     all_reviews = sorted(
         all_reviews, key=lambda rev: str(rev.review.date_read), reverse=True
@@ -164,13 +188,26 @@ if __name__ == "__main__":
     # Render the "currently reading" page
 
     all_reading = list(
-        get_reviews(dirpath="src/currently_reading", constructor=get_reading_entry_from_path)
+        get_entries(dirpath="src/currently_reading", constructor=get_reading_entry_from_path)
     )
 
     template = env.get_template("list_reading.html")
     html = template.render(all_reading=all_reading)
 
     out_path = pathlib.Path("_html") / "reading/index.html"
+    out_path.parent.mkdir(exist_ok=True, parents=True)
+    out_path.write_text(html)
+
+    # Render the "want to read" page
+
+    all_plans = list(
+        get_entries(dirpath="src/plans", constructor=get_plan_entry_from_path)
+    )
+
+    template = env.get_template("list_plans.html")
+    html = template.render(all_plans=all_plans)
+
+    out_path = pathlib.Path("_html") / "to-read/index.html"
     out_path.parent.mkdir(exist_ok=True, parents=True)
     out_path.write_text(html)
 

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <p class="nav">
+    <a href="/reviews">read</a> /
+    <a href="/reading">reading</a> /
+    <a class="selected" href="/to-read">to read</a>
+  </p>
+
+  <h2>books i want to read</h2>
+
+  {% for plan_entry in all_plans %}
+  <div class="reading">
+    <div class="reading_inner">
+      <div class="book_thumbnail">
+        {% set book = plan_entry.book %}
+        {% include "_book_cover.html" %}
+      </div>
+
+      <div class="book_metadata">
+        <p class="title">{{ plan_entry.book.title }}</p>
+        <p>
+          <small>
+            by {{ plan_entry.book.author }}
+            {%- if plan_entry.book.publication_year %}
+              ({{ plan_entry.book.publication_year}})
+            {%- endif -%}
+          </small>
+        </p>
+      </div>
+    </div>
+    {% if plan_entry.plan.text %}
+    <div class="note">
+      {{ plan_entry.plan.text | render_markdown | safe }}
+    </div>
+    {% endif %}
+  </div>
+  {% endfor %}
+{% endblock %}
