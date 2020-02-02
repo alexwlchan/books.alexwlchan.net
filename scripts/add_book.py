@@ -7,6 +7,7 @@ import subprocess
 from urllib.request import urlretrieve
 
 import frontmatter
+import hyperlink
 import inquirer
 from unidecode import unidecode
 
@@ -93,15 +94,23 @@ def get_review_info():
     return {"date_read": date_read, "rating": rating, "format": answers["format"]}
 
 
+def save_cover(slug, cover_image_url):
+    filename, _ = urlretrieve(cover_image_url)
+
+    url_path = hyperlink.URL.from_text(cover_image_url).path
+    extension = os.path.splitext(url_path[-1])[-1]
+    cover_name = f"{slug}{extension}"
+    os.rename(filename, f"src/covers/{cover_name}")
+
+    return cover_name
+
+
 if __name__ == "__main__":
     book_info = get_book_info()
 
     slug = slugify(book_info["title"])
 
-    filename, _ = urlretrieve(book_info["cover_image_url"])
-    extension = os.path.splitext(book_info["cover_image_url"])[-1]
-    cover_name = f"{slug}{extension}"
-    os.rename(filename, f"src/covers/{cover_name}")
+    cover_name = save_cover(slug=slug, cover_image_url=book_info["cover_image_url"])
 
     new_entry = {
         "book": {
