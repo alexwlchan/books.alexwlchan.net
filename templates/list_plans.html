@@ -18,7 +18,7 @@
       </div>
 
       <div class="book_metadata">
-        <p class="title">{{ plan_entry.book.title }}</p>
+        <p class="title">{{ plan_entry.book.title | smartypants | safe }}</p>
         <p>
           <small>
             by {{ plan_entry.book.author }}

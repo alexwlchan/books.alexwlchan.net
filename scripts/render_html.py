@@ -10,9 +10,10 @@ import sys
 
 import attr
 import frontmatter
+from jinja2 import Environment, FileSystemLoader, select_autoescape
 import markdown
 from markdown.extensions.smarty import SmartyExtension
-from jinja2 import Environment, FileSystemLoader, select_autoescape
+import smartypants
 
 
 def rsync(dir1, dir2):
@@ -162,6 +163,7 @@ if __name__ == "__main__":
 
     env.filters["render_markdown"] = render_markdown
     env.filters["render_date"] = render_date
+    env.filters["smartypants"] = smartypants.smartypants
 
     rsync("src/covers/", "_html/covers/")
     rsync("static/", "_html/static/")

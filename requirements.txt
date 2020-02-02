@@ -17,6 +17,7 @@ python-frontmatter==0.5.0
 pyyaml==5.3               # via python-frontmatter
 readchar==2.0.1           # via inquirer
 six==1.14.0               # via blessings, python-frontmatter
+smartypants==2.0.1
 unidecode==1.1.1
 
 # The following packages are considered to be unsafe in a requirements file:
