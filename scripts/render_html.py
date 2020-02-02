@@ -120,7 +120,7 @@ if __name__ == "__main__":
     env.filters["render_date"] = render_date
 
     rsync("src/covers/", "_html/covers/")
-    rsync("src/static/", "_html/static/")
+    rsync("static/", "_html/static/")
 
     for review_entry in all_reviews:
         render_individual_review(env, review_entry=review_entry)
