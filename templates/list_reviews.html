@@ -1,53 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>my reviews</h1>
-  <style>
-    .review_preview {
-      border: 3px solid #4c3dae;
-      border-radius: 6px;
-      margin-bottom: 1em;
-    }
+  <p class="nav">
+    <a class="selected" href="/reviews">read</a> / <a href="/currently-reading">reading</a> / <a href="/plans">to read</a>
+  </p>
 
-    .review_preview a {
-      grid-template-columns: 110px auto;
-      display: grid;
-      grid-gap: 15px;
-      width: 100%;
-      color: black;
-      text-decoration: none;
-    }
-
-    .review_preview img {
-      max-height: 110px;
-      border: 0.5px solid rgba(76, 61, 174, 0.6);
-      margin-top: 12px;
-      margin-bottom: 7px;
-    }
-
-    .review_preview .book_thumbnail {
-      text-align: center;
-    }
-
-    .review_preview .book_metadata {
-      grid-row: 1/1;
-      grid-column: 2/2;
-      display: inline-block;
-      margin-top:    auto;
-      margin-bottom: auto;
-      line-height: 1.25em;
-    }
-
-    .review_preview .book_metadata p.title {
-      font-style: italic;
-      font-size: 1.15em;
-      margin-bottom: 0.65em;
-    }
-
-    .review_preview .book_metadata p {
-      margin: 0;
-    }
-  </style>
+  <h2>books i&rsquo;ve read</h2>
 
   {% for review_entry in all_reviews %}
   <div class="review_preview">

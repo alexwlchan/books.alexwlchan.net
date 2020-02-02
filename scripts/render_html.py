@@ -130,3 +130,11 @@ if __name__ == "__main__":
 
     out_path = pathlib.Path("_html") / "reviews/index.html"
     out_path.write_text(html)
+
+    # Render the front page
+
+    index_template = env.get_template("index.html")
+    html = index_template.render(text=open("src/index.md").read())
+
+    index_path = pathlib.Path("_html") / "index.html"
+    index_path.write_text(html)
