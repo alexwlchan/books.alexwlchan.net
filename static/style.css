@@ -102,12 +102,19 @@ footer a:hover {
   background: rgba(128, 128, 128, 0.3);
 }
 
+.review_preview {
+  height: 138px;
+}
+
+.reading {
+  min-height: 138px;
+}
+
 .review_preview, .reading {
   border: 2px solid #00a892;
   background: rgba(0, 255, 221, 0.05);
   border-radius: 6px;
   margin-bottom: 1em;
-  height: 138px;
 }
 
 .review_preview a, .reading_inner {
