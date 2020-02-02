@@ -9,38 +9,63 @@
 
   <h2>books i&rsquo;ve read</h2>
 
-  {% for review_entry in all_reviews %}
-  <div class="review_preview">
-    <a href="/{{ review_entry.out_path() }}">
-      <div class="book_thumbnail">
-        {% set book = review_entry.book %}
-        {% include "_book_cover.html" %}
-      </div>
+  {% for year, reviews in all_reviews %}
+  <div class="books_by_year">
+    <h3>the {{ reviews|length }} book{% if reviews|length != 1 %}s{% endif %}
+      {% if year == this_year %}
+        i&rsquo;ve read so far
+      {% else %}
+        i read
+      {% endif %}
 
-      <div class="book_metadata">
-        <p class="title">{{ review_entry.book.title }}</p>
-        <p>
-          <small>
-            by {{ review_entry.book.author }}
-            {%- if review_entry.book.publication_year %}
-              ({{ review_entry.book.publication_year}})
-            {%- endif -%}
-              <br/>
-            read {{ review_entry.review.date_read | render_date }}
-              <br/>
-            {% for _ in range(review_entry.review.rating) %}
-            ★
-            {% endfor %}
-            {% for _ in range(5 - review_entry.review.rating) %}
-            ☆
-            {% endfor %}
-            {% if review_entry.review.did_not_finish %}
-            (did not finish)
-            {% endif %}
-          </small>
-        </p>
-      </div>
-    </a>
+      {% if year %}
+        in {{ year }}
+      {% else %}
+        at another time
+      {% endif %}
+    </h3>
+
+    {% for review_entry in reviews %}
+    <div class="review_preview">
+      <a href="/{{ review_entry.out_path() }}">
+        <div class="book_thumbnail">
+          {% set book = review_entry.book %}
+          {% include "_book_cover.html" %}
+        </div>
+
+        <div class="book_metadata">
+          <p class="title">{{ review_entry.book.title }}</p>
+          <p>
+            <small>
+              by {{ review_entry.book.author }}
+              {%- if review_entry.book.publication_year %}
+                ({{ review_entry.book.publication_year}})
+              {%- endif -%}
+                <br/>
+              {% if review_entry.review.date_read %}
+              read {{ review_entry.review.date_read | render_date }}
+                <br/>
+              {% endif %}
+              {% for _ in range(review_entry.review.rating) %}
+              ★
+              {% endfor %}
+              {% for _ in range(5 - review_entry.review.rating) %}
+              ☆
+              {% endfor %}
+              {% if review_entry.review.did_not_finish %}
+              (did not finish)
+              {% endif %}
+            </small>
+          </p>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
   </div>
+
+  {% if not loop.last %}
+  <div class="divider">{{ loop.cycle('&#x2766;', '&#x2767;') | safe }}</div>
+  {% endif %}
+
   {% endfor %}
 {% endblock %}

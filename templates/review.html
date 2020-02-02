@@ -19,10 +19,12 @@
         {%- endif -%}
       </th>
     </tr>
+    {% if review_entry.review.date_read %}
     <tr>
       <td>date read:</td>
       <th>{{ review_entry.review.date_read | render_date }}</th>
     </tr>
+    {% endif %}
     <tr>
       <td>rating:</td>
       <th>

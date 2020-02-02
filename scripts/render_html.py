@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import datetime
+import itertools
 import os
 import pathlib
 import re
@@ -183,7 +184,16 @@ if __name__ == "__main__":
         render_individual_review(env, review_entry=review_entry)
 
     template = env.get_template("list_reviews.html")
-    html = template.render(all_reviews=all_reviews, title="books i’ve read")
+    html = template.render(
+        all_reviews=[
+            (year, list(reviews))
+            for (year, reviews) in itertools.groupby(
+                all_reviews, key=lambda rev: str(rev.review.date_read)[:4]
+            )
+        ],
+        title="books i’ve read",
+        this_year=str(datetime.datetime.now().year),
+    )
 
     out_path = pathlib.Path("_html") / "reviews/index.html"
     out_path.write_text(html)
