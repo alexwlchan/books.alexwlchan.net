@@ -7,11 +7,12 @@ book:
   cover_desc: >
     The words “trans like me” in lowercased, large letters, set on a slightly off-white background.
     The words “trans” and “me” are in red; the word “like” is in black.
-  isbn_13: 9780349008608
+  isbn13: 9780349008608
 
 review:
   date_read: 2020-01-27
   rating: 5
+  format: paperback
 ---
 
 I put off reading this for ages, but I’m glad I finally got to reading it.

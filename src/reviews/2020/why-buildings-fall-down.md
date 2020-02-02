@@ -11,6 +11,7 @@ book:
 review:
   date_read: 2020-01-25
   rating: 4
+  format: paperbook
 
 ---
 

@@ -7,4 +7,5 @@ book:
 review:
   date_read: '2020-02-02'
   rating: 3
+  format: ebook
 ---

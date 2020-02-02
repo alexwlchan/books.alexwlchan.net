@@ -26,7 +26,8 @@ class Book:
     cover_image = attr.ib()
     cover_desc = attr.ib(default="")
 
-    isbn_13 = attr.ib(default="")
+    isbn10 = attr.ib(default="")
+    isbn13 = attr.ib(default="")
 
 
 @attr.s
@@ -34,6 +35,7 @@ class Review:
     date_read = attr.ib()
     rating = attr.ib()
     text = attr.ib()
+    format = attr.ib()
 
 
 @attr.s
@@ -55,8 +57,32 @@ def get_review_entry_from_path(path):
     return ReviewEntry(path=path, book=book, review=review)
 
 
-def get_reviews():
-    for dirpath, _, filenames in os.walk("src/reviews"):
+@attr.s
+class CurrentlyReading:
+    text = attr.ib()
+
+
+@attr.s
+class CurrentlyReadingEntry:
+    path = attr.ib()
+    book = attr.ib()
+    reading = attr.ib()
+
+    def out_path(self):
+        return self.path.relative_to("src").with_suffix("")
+
+
+def get_reading_entry_from_path(path):
+    post = frontmatter.load(path)
+
+    book = Book(**post["book"])
+    reading = CurrentlyReading(text=post.content)
+
+    return CurrentlyReadingEntry(path=path, book=book, reading=reading)
+
+
+def get_reviews(dirpath, constructor):
+    for dirpath, _, filenames in os.walk(dirpath):
         for f in filenames:
             if not f.endswith(".md"):
                 continue
@@ -64,7 +90,7 @@ def get_reviews():
             path = pathlib.Path(dirpath) / f
 
             try:
-                yield get_review_entry_from_path(path)
+                yield constructor(path)
             except Exception:
                 print(f"Error parsing {path}", file=sys.stderr)
                 raise
@@ -106,11 +132,6 @@ def render_individual_review(env, *, review_entry):
 
 
 if __name__ == "__main__":
-    all_reviews = list(get_reviews())
-    all_reviews = sorted(
-        all_reviews, key=lambda rev: str(rev.review.date_read), reverse=True
-    )
-
     env = Environment(
         loader=FileSystemLoader("templates"),
         autoescape=select_autoescape(["html", "xml"]),
@@ -122,6 +143,15 @@ if __name__ == "__main__":
     rsync("src/covers/", "_html/covers/")
     rsync("static/", "_html/static/")
 
+    # Render the "all reviews page"
+
+    all_reviews = list(
+        get_reviews(dirpath="src/reviews", constructor=get_review_entry_from_path)
+    )
+    all_reviews = sorted(
+        all_reviews, key=lambda rev: str(rev.review.date_read), reverse=True
+    )
+
     for review_entry in all_reviews:
         render_individual_review(env, review_entry=review_entry)
 
@@ -129,6 +159,19 @@ if __name__ == "__main__":
     html = template.render(all_reviews=all_reviews)
 
     out_path = pathlib.Path("_html") / "reviews/index.html"
+    out_path.write_text(html)
+
+    # Render the "currently reading" page
+
+    all_reading = list(
+        get_reviews(dirpath="src/currently_reading", constructor=get_reading_entry_from_path)
+    )
+
+    template = env.get_template("list_reading.html")
+    html = template.render(all_reading=all_reading)
+
+    out_path = pathlib.Path("_html") / "reading/index.html"
+    out_path.parent.mkdir(exist_ok=True, parents=True)
     out_path.write_text(html)
 
     # Render the front page

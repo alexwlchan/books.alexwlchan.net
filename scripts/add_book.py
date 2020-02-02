@@ -14,11 +14,11 @@ from unidecode import unidecode
 def slugify(u):
     """Convert Unicode string into blog slug."""
     # https://leancrew.com/all-this/2014/10/asciifying/
-    u = re.sub(u'[–—/:;,.]', '-', u)  # replace separating punctuation
-    a = unidecode(u).lower()          # best ASCII substitutions, lowercased
-    a = re.sub(r'[^a-z0-9 -]', '', a) # delete any other characters
-    a = a.replace(' ', '-')           # spaces to hyphens
-    a = re.sub(r'-+', '-', a)         # condense repeated hyphens
+    u = re.sub("[–—/:;,.]", "-", u)  # replace separating punctuation
+    a = unidecode(u).lower()  # best ASCII substitutions, lowercased
+    a = re.sub(r"[^a-z0-9 -]", "", a)  # delete any other characters
+    a = a.replace(" ", "-")  # spaces to hyphens
+    a = re.sub(r"-+", "-", a)  # condense repeated hyphens
     return a
 
 
@@ -58,7 +58,7 @@ def get_review_info():
         inquirer.List(
             "date_read",
             message="When did you finish reading it?",
-            choices=["today", "yesterday", "another day"]
+            choices=["today", "yesterday", "another day"],
         )
     ]
 
@@ -73,29 +73,27 @@ def get_review_info():
         date_read = yesterday.strftime("%Y-%m-%d")
     else:
         date_read_question2 = [
-            inquirer.Text(
-                "date_read",
-                message="When did you finish reading it?"
-            )
+            inquirer.Text("date_read", message="When did you finish reading it?")
         ]
 
         date_read = inquirer.prompt(date_read_question2)["date_read"]
 
-    rating_question = [
+    other_questions = [
         inquirer.List(
             "rating",
             message="When’s your rating?",
-            choices=["★★★★★", "★★★★☆", "★★★☆☆", "★★☆☆☆", "★☆☆☆☆"]
-        )
+            choices=["★★★★★", "★★★★☆", "★★★☆☆", "★★☆☆☆", "★☆☆☆☆"],
+        ),
+        inquirer.Text("format", message="What format did you read it in?"),
     ]
 
-    rating = int(inquirer.prompt(rating_question)["rating"].count("★"))
+    answers = inquirer.prompt(other_questions)
+    rating = int(["rating"].count("★"))
 
-    return {"date_read": date_read, "rating": rating}
+    return {"date_read": date_read, "rating": rating, "format": answers["format"]}
 
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     book_info = get_book_info()
 
     slug = slugify(book_info["title"])
@@ -123,7 +121,8 @@ if __name__ == '__main__':
 
         new_entry["review"] = {
             "date_read": review_info["date_read"],
-            "rating": review_info["rating"]
+            "rating": review_info["rating"],
+            "format": review_info["format"],
         }
 
         year = review_info["date_read"][:4]
@@ -135,7 +134,7 @@ if __name__ == '__main__':
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
 
     with open(out_path, "wb") as out_file:
-        frontmatter.dump(frontmatter.Post(content=u"", **new_entry), out_file)
+        frontmatter.dump(frontmatter.Post(content="", **new_entry), out_file)
         out_file.write(b"\n")
 
     subprocess.check_call(["open", out_path])

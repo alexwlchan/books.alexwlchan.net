@@ -102,14 +102,14 @@ footer a:hover {
   background: rgba(128, 128, 128, 0.3);
 }
 
-.review_preview {
+.review_preview, .reading {
   border: 2px solid #00a892;
   background: rgba(0, 255, 221, 0.05);
   border-radius: 6px;
   margin-bottom: 1em;
 }
 
-.review_preview a {
+.review_preview a, .reading_inner {
   grid-template-columns: 110px auto;
   display: grid;
   grid-gap: 15px;
@@ -122,18 +122,18 @@ footer a:hover {
   background: rgba(0, 255, 221, 0.2);
 }
 
-.review_preview img {
+.review_preview img, .reading_inner img {
   max-height: 110px;
-  border: 0.5px solid rgba(0, 255, 221, 0.6);
   margin-top: 12px;
   margin-bottom: 7px;
+  box-shadow: 0px 2.5px 2.5px rgba(0,0,0,0.25);
 }
 
-.review_preview .book_thumbnail {
+.book_thumbnail {
   text-align: center;
 }
 
-.review_preview .book_metadata {
+.book_metadata {
   grid-row: 1/1;
   grid-column: 2/2;
   display: inline-block;
@@ -142,13 +142,13 @@ footer a:hover {
   line-height: 1.25em;
 }
 
-.review_preview .book_metadata p.title {
+.book_metadata p.title {
   font-style: italic;
   font-size: 1.15em;
   margin-bottom: 0.65em;
 }
 
-.review_preview .book_metadata p {
+.book_metadata p {
   margin: 0;
 }
 
@@ -158,4 +158,17 @@ footer a:hover {
 
 .nav .selected {
   font-weight: bold;
+}
+
+.note {
+  margin-left:  1em;
+  margin-right: 1em;
+}
+
+.note p:first-child {
+  margin-top: 0;
+}
+
+.note p:last-child {
+  margin-bottom: 0.75em;
 }
