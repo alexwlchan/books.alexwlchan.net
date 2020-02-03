@@ -1,0 +1,18 @@
+---
+book:
+  author: Robin J. Wilson
+  cover_image: introduction-to-graph-theory.jpg
+  isbn13: 978-0-273-72889-4
+  publication_year: '2010'
+  title: Introduction to Graph Theory
+review:
+  date_read: '2019-10-26'
+  format: paperback
+  rating: 4
+---
+
+I skimmed this in an afternoon, just to get a sense of the book.
+
+Seems well-written, a sensible grouping of topics, good explanations.
+
+I did a term of graph theory in uni, and don’t want to revisit it right now. But if I did, this seems like a good textbook to use.

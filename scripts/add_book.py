@@ -171,3 +171,6 @@ if __name__ == "__main__":
         out_file.write(b"\n")
 
     subprocess.check_call(["open", out_path])
+
+    from render_html import main
+    main()

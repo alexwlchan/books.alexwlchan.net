@@ -155,7 +155,7 @@ def render_individual_review(env, *, review_entry):
     out_path.write_text(html)
 
 
-if __name__ == "__main__":
+def main():
     env = Environment(
         loader=FileSystemLoader("templates"),
         autoescape=select_autoescape(["html", "xml"]),
@@ -232,3 +232,7 @@ if __name__ == "__main__":
     index_path.write_text(html)
 
     print("✨ Rendered HTML files to _html ✨")
+
+
+if __name__ == "__main__":
+    main()
