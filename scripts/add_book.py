@@ -105,7 +105,7 @@ def get_review_info():
             ),
         ]
 
-        answers["did_you_finish"] = inquirer.prompt(questions)["did_you_finish"] == "no"
+        did_not_finish = (inquirer.prompt(questions)["did_you_finish"] == "no")
 
     return {
         "date_read": date_read,
