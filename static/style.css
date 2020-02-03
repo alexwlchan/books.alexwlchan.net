@@ -118,7 +118,7 @@ footer a:hover {
 }
 
 .review_fave {
-  background: rgba(0, 255, 221, 0.18);
+  background: rgba(0, 255, 221, 0.2);
 }
 
 .review_preview a, .reading_inner {
@@ -132,7 +132,7 @@ footer a:hover {
 }
 
 .review_preview a:hover {
-  background: rgba(0, 255, 221, 0.25);
+  background: rgba(0, 255, 221, 0.3);
 }
 
 .review_preview img, .reading_inner img {
