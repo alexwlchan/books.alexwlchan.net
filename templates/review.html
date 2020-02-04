@@ -25,6 +25,7 @@
       <th>{{ review_entry.review.date_read | render_date }}</th>
     </tr>
     {% endif %}
+    {% if review_entry.review.rating %}
     <tr>
       <td>rating:</td>
       <th>
@@ -39,6 +40,7 @@
         {% endif %}
       </th>
     </tr>
+    {% endif %}
   </table>
 
   {{ review_entry.review.text | render_markdown | safe }}
