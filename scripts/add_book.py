@@ -79,6 +79,13 @@ def get_review_info():
 
         date_read = inquirer.prompt(date_read_question2)["date_read"]
 
+        if re.match(r"^\d{4}-\d{2}-\d{2}$", date_read.strip()):
+            date_read = datetime.datetime.strptime(date_read, "%Y-%m-%d").date()
+        elif re.match(r"^\d{1,2} [A-Z][a-z]+ \d{4}$", date_read.strip()):
+            date_read = datetime.datetime.strptime(date_read, "%d %B %Y").date()
+        else:
+            sys.exit("Unrecognised date: {date_read}")
+
     other_questions = [
         inquirer.List(
             "rating",
@@ -158,7 +165,7 @@ if __name__ == "__main__":
         if review_info["did_not_finish"]:
             new_entry["review"]["did_not_finish"] = True
 
-        year = review_info["date_read"][:4]
+        year = review_info["date_read"].year
         out_dir = f"reviews/{year}"
     else:
         out_dir = book_info["entry_type"]
