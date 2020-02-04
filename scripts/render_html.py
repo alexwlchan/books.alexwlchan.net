@@ -35,9 +35,9 @@ class Book:
 @attr.s
 class Review:
     date_read = attr.ib()
-    rating = attr.ib()
     text = attr.ib()
     format = attr.ib()
+    rating = attr.ib(default=None)
     did_not_finish = attr.ib(default=False)
 
 

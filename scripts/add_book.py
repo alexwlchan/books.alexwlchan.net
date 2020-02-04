@@ -112,7 +112,7 @@ def get_review_info():
             ),
         ]
 
-        did_not_finish = (inquirer.prompt(questions)["did_you_finish"] == "no")
+        did_not_finish = inquirer.prompt(questions)["did_you_finish"] == "no"
 
     return {
         "date_read": date_read,
@@ -180,4 +180,5 @@ if __name__ == "__main__":
     subprocess.check_call(["open", out_path])
 
     from render_html import main
+
     main()
