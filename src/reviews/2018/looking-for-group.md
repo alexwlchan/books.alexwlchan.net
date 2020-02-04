@@ -2,8 +2,8 @@
 book:
   author: Alexis Hall
   cover_image: looking-for-group.jpg
-  isbn10: 1-62649-446-0
-  isbn13: 978-1-62649-446-6
+  isbn10: '1626494460'
+  isbn13: '9781626494466'
   publication_year: '2016'
   title: Looking for Group
 review:

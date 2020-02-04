@@ -26,7 +26,7 @@ class Book:
     title = attr.ib()
     author = attr.ib()
     publication_year = attr.ib()
-    cover_image = attr.ib()
+    cover_image = attr.ib(default="")
     cover_desc = attr.ib(default="")
 
     isbn10 = attr.ib(default="")
@@ -175,7 +175,7 @@ def _create_new_thumbnail(src_path, dst_path):
 
     if im.width > 120 and im.height > 120:
         im.thumbnail((120, 120))
-    im.save(dst_path.with_name(thumbnail_1x(name)))
+    im.save(dst_path.with_name(thumbnail_1x(dst_path)))
 
 
 def thumbnail_1x(name):

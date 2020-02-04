@@ -2,12 +2,13 @@
 book:
   author: Stephen Grosz
   cover_image: the-examined-life-how-we-lose-and-find-ourselves.jpg
-  isbn10: 0-393-34932-2
-  isbn13: 978-0-393-34932-0
+  isbn10: 0393349322
+  isbn13: '9780393349320'
   publication_year: '2014'
   title: 'The Examined Life: How We Lose and Find Ourselves'
 review:
   date_read: '2017-04-01'
+  rating: 4
 ---
 
 The book is told as a series of short stories about different patients – what happened when they came for their consultations, the “aha” moment when Grosz worked out the underlying issue, and some discussion of how the themes of the patient’s problems might be more widely applicable.

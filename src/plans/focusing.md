@@ -5,7 +5,7 @@ book:
   publication_year: '1982'
   title: Focusing
 plan:
-  date_added: '2020-02-01'
+  date_added: '2019-08-12'
 ---
 
 <https://notebook.drmaciver.com/posts/2019-03-09-10%3A13.html>

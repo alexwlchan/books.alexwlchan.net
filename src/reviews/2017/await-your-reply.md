@@ -8,6 +8,7 @@ book:
   title: Await Your Reply
 review:
   date_read: '2017-01-31'
+  rating: 3
 ---
 
 I read this for a book club. My response is basically “Meh”.

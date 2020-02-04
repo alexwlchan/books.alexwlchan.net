@@ -5,5 +5,5 @@ book:
   publication_year: '2016'
   title: A Poem for Every Night of the Year
 plan:
-  date_added: '2020-01-09'
+  date_added: '2019-08-14'
 ---

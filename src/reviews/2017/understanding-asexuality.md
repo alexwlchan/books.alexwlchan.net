@@ -2,12 +2,13 @@
 book:
   author: Anthony F. Bogaert
   cover_image: understanding-asexuality.jpg
-  isbn10: 1-4422-0099-5
-  isbn13: 978-1-4422-0099-9
+  isbn10: '1442200995'
+  isbn13: '9781442200999'
   publication_year: '2012'
   title: Understanding Asexuality
 review:
   date_read: '2017-03-31'
+  rating: 2
 ---
 
 I really wanted to like this book, but I found it hard-going.
