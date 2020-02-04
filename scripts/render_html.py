@@ -165,10 +165,22 @@ def render_individual_review(env, *, review_entry):
 
 
 def _create_new_thumbnail(src_path, dst_path):
+    dst_path.parent.mkdir(exist_ok=True)
+
     im = Image.open(src_path)
-    im.thumbnail((240, 240))
-    os.makedirs(os.path.dirname(dst_path), exist_ok=True)
+
+    if im.width > 240 and im.height > 240:
+        im.thumbnail((240, 240))
     im.save(dst_path)
+
+    if im.width > 120 and im.height > 120:
+        im.thumbnail((120, 120))
+    im.save(dst_path.with_name(thumbnail_1x(name)))
+
+
+def thumbnail_1x(name):
+    pth = pathlib.Path(name)
+    return pth.stem + "_1x" + pth.suffix
 
 
 def create_thumbnails():
@@ -176,12 +188,12 @@ def create_thumbnails():
         if image_name == ".DS_Store":
             continue
 
-        src_path = os.path.join("src/covers", image_name)
-        dst_path = os.path.join("_html/thumbnails", image_name)
+        src_path = pathlib.Path("src/covers") / image_name
+        dst_path = pathlib.Path("_html/thumbnails") / image_name
 
-        if not os.path.exists(dst_path):
+        if not dst_path.exists():
             _create_new_thumbnail(src_path, dst_path)
-        elif os.stat(src_path).st_mtime > os.stat(dst_path).st_mtime:
+        elif src_path.stat().st_mtime > dst_path.stat().st_mtime:
             _create_new_thumbnail(src_path, dst_path)
 
 
@@ -194,6 +206,7 @@ def main():
     env.filters["render_markdown"] = render_markdown
     env.filters["render_date"] = render_date
     env.filters["smartypants"] = smartypants.smartypants
+    env.filters["thumbnail_1x"] = thumbnail_1x
 
     create_thumbnails()
 

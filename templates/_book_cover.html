@@ -1,1 +1,1 @@
-<img src="/thumbnails/{{ book.cover_image }}" alt="Cover of {{ book.title }}. {{ book.cover_desc }}">
+<img src="/thumbnails/{{ book.cover_image }}" srcset="/thumbnails/{{ book.cover_image }} 2x, /thumbnails/{{ book.cover_image|thumbnail_1x }} 1x" alt="Cover of {{ book.title }}. {{ book.cover_desc }}">
