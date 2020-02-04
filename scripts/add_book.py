@@ -123,15 +123,28 @@ def get_review_info():
 
 
 def save_cover(slug, cover_image_url):
-    filename, _ = urlretrieve(cover_image_url)
+    filename, headers = urlretrieve(cover_image_url)
 
-    url_path = hyperlink.URL.from_text(cover_image_url).path
-    extension = os.path.splitext(url_path[-1])[-1]
+    if headers["Content-Type"] == "image/jpeg":
+        extension = ".jpg"
+    elif headers["Content-Type"] == "image/png":
+        extension = ".png"
+    elif headers["Content-Type"] == "image/gif":
+        extension = ".gif"
+    else:
+        print(headers)
+        assert 0
+
+        url_path = hyperlink.URL.from_text(cover_image_url).path
+        extension = os.path.splitext(url_path[-1])[-1]
+
     cover_name = f"{slug}{extension}"
-    os.rename(filename, f"src/covers/{cover_name}")
+    dst_path = f"src/covers/{cover_name}"
+
+    if not os.path.exists(dst_path):
+        os.rename(filename, f"src/covers/{cover_name}")
 
     return cover_name
-
 
 if __name__ == "__main__":
     book_info = get_book_info()

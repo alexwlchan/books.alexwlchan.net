@@ -36,7 +36,7 @@ class Book:
 class Review:
     date_read = attr.ib()
     text = attr.ib()
-    format = attr.ib()
+    format = attr.ib(default=None)
     rating = attr.ib(default=None)
     did_not_finish = attr.ib(default=False)
 
