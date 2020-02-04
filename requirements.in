@@ -3,6 +3,7 @@ hyperlink
 inquirer
 jinja2
 Markdown
+Pillow
 python-frontmatter
 smartypants
 unidecode

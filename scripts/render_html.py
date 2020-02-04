@@ -13,6 +13,7 @@ import frontmatter
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 import markdown
 from markdown.extensions.smarty import SmartyExtension
+from PIL import Image
 import smartypants
 
 
@@ -163,6 +164,27 @@ def render_individual_review(env, *, review_entry):
     out_path.write_text(html)
 
 
+def _create_new_thumbnail(src_path, dst_path):
+    im = Image.open(src_path)
+    im.thumbnail((240, 240))
+    os.makedirs(os.path.dirname(dst_path), exist_ok=True)
+    im.save(dst_path)
+
+
+def create_thumbnails():
+    for image_name in os.listdir("src/covers"):
+        if image_name == ".DS_Store":
+            continue
+
+        src_path = os.path.join("src/covers", image_name)
+        dst_path = os.path.join("_html/thumbnails", image_name)
+
+        if not os.path.exists(dst_path):
+            _create_new_thumbnail(src_path, dst_path)
+        elif os.stat(src_path).st_mtime > os.stat(dst_path).st_mtime:
+            _create_new_thumbnail(src_path, dst_path)
+
+
 def main():
     env = Environment(
         loader=FileSystemLoader("templates"),
@@ -172,6 +194,8 @@ def main():
     env.filters["render_markdown"] = render_markdown
     env.filters["render_date"] = render_date
     env.filters["smartypants"] = smartypants.smartypants
+
+    create_thumbnails()
 
     rsync("src/covers/", "_html/covers/")
     rsync("static/", "_html/static/")
