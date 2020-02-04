@@ -167,6 +167,11 @@ if __name__ == "__main__":
 
         year = review_info["date_read"].year
         out_dir = f"reviews/{year}"
+    elif book_info["entry_type"] == "plans":
+        new_entry["plan"] = {
+            "date_added": datetime.datetime.now().date(),
+        }
+        out_dir = "plans"
     else:
         out_dir = book_info["entry_type"]
 

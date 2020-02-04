@@ -82,9 +82,17 @@ def get_reading_entry_from_path(path):
     return CurrentlyReadingEntry(path=path, book=book, reading=reading)
 
 
+def _parse_date(value):
+    if isinstance(value, datetime.date):
+        return value
+    else:
+        return datetime.datetime.strptime(value, "%Y-%m-%d").date()
+
+
 @attr.s
 class Plan:
     text = attr.ib()
+    date_added = attr.ib(converter=_parse_date)
 
 
 @attr.s
@@ -98,7 +106,7 @@ def get_plan_entry_from_path(path):
     post = frontmatter.load(path)
 
     book = Book(**post["book"])
-    plan = Plan(text=post.content)
+    plan = Plan(**post["plan"], text=post.content)
 
     return PlanEntry(path=path, book=book, plan=plan)
 
@@ -215,6 +223,8 @@ def main():
     all_plans = list(
         get_entries(dirpath="src/plans", constructor=get_plan_entry_from_path)
     )
+
+    all_plans = sorted(all_plans, key=lambda plan: plan.plan.date_added)
 
     template = env.get_template("list_plans.html")
     html = template.render(all_plans=all_plans, title="books i want to read")
