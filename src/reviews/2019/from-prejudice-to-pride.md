@@ -2,11 +2,12 @@
 book:
   author: Amy Lame
   cover_image: from-prejudice-to-pride.jpg
-  isbn13: 978-1-5263-0190-1
+  isbn10: '1526301903'
+  isbn13: '9781526301901'
   publication_year: '2017'
   title: From Prejudice to Pride
 review:
-  date_read: '2019-10-29'
+  date_read: '2019-10-28'
   format: hardback
   rating: 3
 ---

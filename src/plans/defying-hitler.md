@@ -5,7 +5,7 @@ book:
   publication_year: '2019'
   title: Defying Hitler
 plan:
-  date_added: '2020-02-01'
+  date_added: '2017-03-01'
 ---
 
 [Mar Hicks](https://twitter.com/histoftech/status/836814132791889920):

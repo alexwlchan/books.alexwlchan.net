@@ -2,8 +2,8 @@
 book:
   author: Michael Collins
   cover_image: carrying-the-fire.jpg
-  isbn10: 0-374-53194-3
-  isbn13: 978-0-374-53194-2
+  isbn10: 0374531943
+  isbn13: '9780374531942'
   publication_year: '2009'
   title: Carrying the Fire
 review:

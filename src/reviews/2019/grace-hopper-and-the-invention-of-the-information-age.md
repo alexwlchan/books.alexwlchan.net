@@ -1,8 +1,9 @@
 ---
 book:
-  author: Kurt Beyer
   cover_image: grace-hopper-and-the-invention-of-the-information-age.jpg
-  isbn13: 978-0-262-51726-3
+  author: Kurt W. Beyer
+  isbn10: '0262517264'
+  isbn13: '9780262517263'
   publication_year: '2012'
   title: Grace Hopper and the Invention of the Information Age
 review:

@@ -1,10 +1,11 @@
 ---
 book:
-  author: Pawel “Sariel” Kmieć
   cover_image: the-unofficial-lego-technic-builders-guide.jpg
-  isbn13: 978-1-59327-434-4
+  author: Paweł "Sariel" Kmieć
+  isbn10: '1593274343'
+  isbn13: '9781593274344'
   publication_year: '2012'
-  title: The Unofficial LEGO Technic Builder’s Guide
+  title: The Unofficial LEGO Technic Builder's Guide
 review:
   date_read: '2019-11-02'
   format: paperback

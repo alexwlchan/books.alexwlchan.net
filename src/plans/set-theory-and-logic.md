@@ -5,7 +5,7 @@ book:
   publication_year: '2012'
   title: Set Theory and Logic
 plan:
-  date_added: '2019-12-25'
+  date_added: '2018-01-19'
 ---
 
 I won’t lie, I’m unlikely to pick up a maths textbook again – but noting this as one in case I do.

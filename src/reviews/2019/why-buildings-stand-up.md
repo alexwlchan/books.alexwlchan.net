@@ -2,7 +2,8 @@
 book:
   author: Mario Salvadori
   cover_image: why-buildings-stand-up.jpg
-  isbn13: 978-0-393-30676-7
+  isbn10: 0393306763
+  isbn13: '9780393306767'
   publication_year: '1990'
   title: Why Buildings Stand Up
 review:

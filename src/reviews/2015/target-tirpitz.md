@@ -2,8 +2,8 @@
 book:
   author: Patrick Bishop
   cover_image: target-tirpitz.jpg
-  isbn10: 0-00-731924-X
-  isbn13: 978-0-00-731924-4
+  isbn10: 000731924X
+  isbn13: '9780007319244'
   publication_year: '2012'
   title: Target Tirpitz
 review:

@@ -5,5 +5,5 @@ book:
   publication_year: '2015'
   title: Speeches that Changed the World
 plan:
-  date_added: '2020-01-09'
+  date_added: '2019-08-14'
 ---

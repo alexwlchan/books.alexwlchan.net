@@ -2,10 +2,11 @@
 book:
   author: Frank Close
   cover_image: the-void.jpg
-  isbn10: 0-19-922590-7
-  isbn13: 978-0-19-922590-3
   publication_year: '2007'
+  isbn10: 0199225907
+  isbn13: '9780199225903'
   title: The Void
 review:
   date_read: '2019-03-24'
+  rating: 3
 ---

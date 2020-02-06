@@ -2,12 +2,12 @@
 book:
   author: Mia Violet
   cover_image: yes-you-are-trans-enough.jpg
-  isbn10: 1-78592-315-3
-  isbn13: 978-1-78592-315-9
+  isbn10: '1785923153'
+  isbn13: '9781785923159'
   publication_year: '2018'
   title: Yes, You Are Trans Enough
 review:
-  date_read: '2019-01-20'
+  date_read: '2019-01-13'
   rating: 5
 ---
 

@@ -159,7 +159,8 @@ footer a:hover {
 .book_metadata p.title {
   font-style: italic;
   font-size: 1.15em;
-  margin-bottom: 0.65em;
+  margin-bottom: 0.5em;
+  line-height: 1.2em;
 }
 
 .book_metadata p {

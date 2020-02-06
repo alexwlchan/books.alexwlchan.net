@@ -2,8 +2,8 @@
 book:
   author: Gordon Corera
   cover_image: the-art-of-betrayal.jpg
-  isbn10: 0-297-86099-2
-  isbn13: 978-0-297-86099-0
+  isbn10: 0297860992
+  isbn13: '9780297860990'
   publication_year: '2011'
   title: The Art of Betrayal
 review:

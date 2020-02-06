@@ -2,8 +2,8 @@
 book:
   author: Matthew Butterick
   cover_image: typography-for-lawyers.jpg
-  isbn10: 1-59839-262-X
-  isbn13: 978-1-59839-262-3
+  isbn10: 159839262X
+  isbn13: '9781598392623'
   publication_year: '2015'
   title: Typography for Lawyers
 review:

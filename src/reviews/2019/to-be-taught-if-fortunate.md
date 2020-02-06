@@ -2,7 +2,8 @@
 book:
   author: Becky Chambers
   cover_image: to-be-taught-if-fortunate.jpg
-  isbn13: 978-1-4736-9716-4
+  isbn10: '1473697166'
+  isbn13: '9781473697164'
   publication_year: '2019'
   title: To Be Taught, If Fortunate
 review:

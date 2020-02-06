@@ -2,7 +2,7 @@
 book:
   author: Dale Carnegie, General Press
   cover_image: how-to-win-friends-and-influence-people.jpg
-  publication_year: '2016'
+  publication_year: '1936'
   title: How to Win Friends and Influence People
 plan:
   date_added: '2019-12-29'

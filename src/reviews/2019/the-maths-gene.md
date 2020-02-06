@@ -1,14 +1,14 @@
 ---
 book:
-  author: Keith Devlin
-  cover_image: the-maths-gene.jpg
-  isbn13: 978-0-297-64571-9
-  publication_year: '2000'
+  author: Keith J. Devlin
+  cover_image: 'the-maths-gene.jpg'
+  isbn10: 0297645714
+  isbn13: '9780297645719'
+  publication_year: null
   title: The Maths Gene
 review:
   date_read: '2019-12-09'
-  format: paperback
-  rating: 3
+  rating: 2
 ---
 
 This book gives one theory for why humans can do maths. The central idea is that mathematical ability is an offshoot of language, and so a lot of the book is spent discussing linguistics and theories about the evolution of language. It was somewhat interesting, but not really what I was expecting.

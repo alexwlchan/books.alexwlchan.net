@@ -2,8 +2,8 @@
 book:
   author: Philip Connors
   cover_image: fire-season.jpg
-  isbn10: 1-4472-0814-5
-  isbn13: 978-1-4472-0814-3
+  isbn10: '1447208145'
+  isbn13: '9781447208143'
   publication_year: '2012'
   title: Fire Season
 review:

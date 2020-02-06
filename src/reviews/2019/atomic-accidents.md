@@ -2,7 +2,8 @@
 book:
   author: James Mahaffey
   cover_image: atomic-accidents.jpg
-  isbn13: 978-1-60598-680-7
+  isbn10: '1605986801'
+  isbn13: '9781605986807'
   publication_year: '2015'
   title: Atomic Accidents
 review:

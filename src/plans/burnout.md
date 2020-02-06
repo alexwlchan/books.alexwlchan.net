@@ -5,7 +5,7 @@ book:
   publication_year: '2020'
   title: Burnout
 plan:
-  date_added: '2020-01-08'
+  date_added: '2019-07-13'
 ---
 
 [Danielle Leong](https://twitter.com/tsunamino/status/1150153865964085248):

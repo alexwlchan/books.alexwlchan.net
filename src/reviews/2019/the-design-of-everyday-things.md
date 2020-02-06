@@ -2,8 +2,9 @@
 book:
   author: Donald A. Norman
   cover_image: the-design-of-everyday-things.jpg
-  isbn13: 978-0-262-52567-1
   publication_year: '1988'
+  isbn10: '0262525674'
+  isbn13: '9780262525671'
   title: The Design of Everyday Things
 review:
   date_read: '2019-11-07'

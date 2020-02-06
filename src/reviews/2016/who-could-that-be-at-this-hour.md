@@ -2,12 +2,14 @@
 book:
   author: Lemony Snicket
   cover_image: who-could-that-be-at-this-hour.jpg
-  isbn10: 0-316-12308-0
-  isbn13: 978-0-316-12308-2
+  isbn10: 0316123080
+  isbn13: '9780316123082'
   publication_year: '2012'
   title: “Who Could That Be at This Hour?”
+  series: 'All the Wrong Questions, #1'
 review:
-  date_read: '2016-10-24'
+  date_read: '2016-10-23'
+  rating: 3
 ---
 
 The spiritual successor to A Series of Unfortunate Events, although narratively speaking it’s a prequel. It follows the adventures of a young Snicket in the town of Stain’d-By-The-Sea.

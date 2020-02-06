@@ -7,7 +7,7 @@ book:
   publication_year: '2013'
   title: The Healthy Programmer
 review:
-  date_read: '2017-02-01'
+  date_read: '2017-02'
   rating: 4
 ---
 

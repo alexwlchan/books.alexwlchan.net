@@ -2,10 +2,11 @@
 book:
   author: Becky Chambers
   cover_image: the-long-way-to-a-small-angry-planet.jpg
-  isbn10: 1-4736-1980-7
-  isbn13: 978-1-4736-1980-7
+  isbn10: '1473619807'
+  isbn13: '9781473619807'
   publication_year: '2015'
   title: The Long Way to a Small Angry Planet
+  series: Wayfarers, #1
 review:
   date_read: '2017-01-22'
   rating: 5
@@ -19,7 +20,7 @@ It has thoughtful, well-crafted aliens; a nuanced treatment of gender, pronouns 
 
 ~
 
-Read on Jenn’s advice: 
+Read on Jenn’s advice:
 
 https://twitter.com/shehulking/status/763774723922812928 (“If you like spaceships, found families, intelligently and thoughtfully created aliens, and characters who cry and hug each other a lot, then you need to read The Long Way To A Small Angry Planet. THAT'S ALL OF YOU, BTW.”)
 

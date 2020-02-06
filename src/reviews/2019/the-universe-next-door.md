@@ -2,12 +2,13 @@
 book:
   author: Marcus Chown
   cover_image: the-universe-next-door.jpg
-  isbn10: 0-7472-3528-7
-  isbn13: 978-0-7472-3528-6
+  isbn10: 0747235287
+  isbn13: '9780747235286'
   publication_year: '2003'
   title: The Universe Next Door
 review:
   date_read: '2019-03-23'
+  rating: 3
 ---
 
 Twelve ideas from the fringe of science: hidden dimensions? Mirror matter? Alien space debris littering earth? Interesting ideas, easy to read, but not much critical analysis of the ideas. “Some person thinks this might be true”, but left open-ended. Most of them seem fairly far-fetched, so I won’t be changing my thinking for it, but fun to read.

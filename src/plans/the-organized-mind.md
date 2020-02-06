@@ -5,7 +5,7 @@ book:
   publication_year: '2014'
   title: The Organized Mind
 plan:
-  date_added: '2020-02-01'
+  date_added: '2019-03-05'
 ---
 
 [Rob Smallshire](https://twitter.com/robsmallshire/status/1103016894100094977):

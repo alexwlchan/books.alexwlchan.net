@@ -7,7 +7,7 @@ book:
   publication_year: '2014'
   title: 'The Examined Life: How We Lose and Find Ourselves'
 review:
-  date_read: '2017-04-01'
+  date_read: '2017-04'
   rating: 4
 ---
 

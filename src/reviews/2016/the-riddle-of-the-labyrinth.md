@@ -2,12 +2,13 @@
 book:
   author: Margalit Fox
   cover_image: the-riddle-of-the-labyrinth.jpg
-  isbn10: 1-78125-132-0
-  isbn13: 978-1-78125-132-4
+  isbn10: '1781251320'
+  isbn13: '9781781251324'
   publication_year: '2013'
   title: The Riddle of the Labyrinth
 review:
   date_read: '2016-10-16'
+  rating: 4
 ---
 
 The story of the decoding of Cretan Linear B. I knew fragments about it already, but I’d never read the complete story. There’s enough information and the linguistic and cryptographic aspects to be technically interesting, but it maintains a strong narrative and isn’t just a reference book.

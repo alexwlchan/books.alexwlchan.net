@@ -2,7 +2,8 @@
 book:
   author: Jerry Roberts
   cover_image: lorenz.jpg
-  isbn13: 978-0-7509-8770-7
+  isbn10: 0750978856
+  isbn13: '9780750978859'
   publication_year: '2018'
   title: Lorenz
 review:

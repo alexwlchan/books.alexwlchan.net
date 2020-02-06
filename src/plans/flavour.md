@@ -5,7 +5,7 @@ book:
   publication_year: '2016'
   title: Flavour
 plan:
-  date_added: '2020-01-30'
+  date_added: '2017-04-17'
 ---
 
 [Fiona Longmuir](https://twitter.com/EscapologistFi/status/853958829515714565):

@@ -2,12 +2,14 @@
 book:
   author: Lemony Snicket
   cover_image: why-is-this-night-different-from-all-other-nights.jpg
-  isbn10: 0-316-12304-8
-  isbn13: 978-0-316-12304-4
+  isbn10: 0316123048
+  isbn13: '9780316123044'
   publication_year: '2015'
   title: “Why Is This Night Different from All Other Nights?”
+  series: 'All the Wrong Questions, #4'
 review:
   date_read: '2016-12-27'
+  rating: 4
 ---
 
 The final book of *All the Wrong Questions*, and it concludes the series as I’ve come to expect from Snicket.

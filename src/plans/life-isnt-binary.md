@@ -5,7 +5,7 @@ book:
   publication_year: '2019'
   title: Life Isn’t Binary
 plan:
-  date_added: '2020-01-28'
+  date_added: '2019-09-19'
 ---
 
 [CN Lester](https://twitter.com/cnlester/status/1174652014590136320):

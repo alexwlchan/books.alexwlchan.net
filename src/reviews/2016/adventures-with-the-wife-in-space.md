@@ -2,8 +2,8 @@
 book:
   author: Neil Perryman
   cover_image: adventures-with-the-wife-in-space.jpg
-  isbn10: 0-571-29810-9
-  isbn13: 978-0-571-29810-5
+  isbn10: 0571298109
+  isbn13: '9780571298105'
   publication_year: '2013'
   title: Adventures with the Wife in Space
 review:

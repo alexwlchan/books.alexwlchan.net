@@ -17,4 +17,4 @@ Minimal spoilers: It’s a charming read, and they’re adorable and awkward tog
 
 At points the gaming terminology went a little deep for me, and I struggled until I found the glossary, but overall very glad I read it.
 
-h/t @mllelal (https://twitter.com/mllelal/status/771343727138922496) and @MM_Florin (https://twitter.com/MM_Florin/status/769558294402895872) for the recommendation
+h/t [@mllelal](https://twitter.com/mllelal/status/771343727138922496) and [@MM_Florin](https://twitter.com/MM_Florin/status/769558294402895872) for the recommendation

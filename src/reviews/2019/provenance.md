@@ -2,8 +2,9 @@
 book:
   author: Ann Leckie
   cover_image: provenance.jpg
-  isbn13: 978-0-356-50698-2
   publication_year: '2018'
+  isbn10: 0356506983
+  isbn13: '9780356506982'
   title: Provenance
 review:
   date_read: '2019-10-12'

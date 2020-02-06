@@ -2,8 +2,8 @@
 book:
   author: Ken Liu
   cover_image: the-paper-menagerie-and-other-stories.jpg
-  isbn10: 1-4814-2436-X
-  isbn13: 978-1-4814-2436-3
+  isbn10: 148142436X
+  isbn13: '9781481424363'
   publication_year: '2016'
   title: The Paper Menagerie and Other Stories
 review:

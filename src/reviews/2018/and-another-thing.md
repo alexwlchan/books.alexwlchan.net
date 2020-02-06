@@ -2,13 +2,15 @@
 book:
   author: Eoin Colfer
   cover_image: and-another-thing.jpg
-  isbn10: ''
-  isbn13: ''
+  isbn10: '1401323588'
+  isbn13: '9781401323585'
   publication_year: '2009'
   title: And Another Thing…
+  series: "Hitchhiker's Guide to the Galaxy, #6"
 review:
   date_read: '2018-07-10'
   did_not_finish: true
+  rating: 2
 ---
 
 The sixth book in the H2G2 series, written after Douglas Adams’ death.

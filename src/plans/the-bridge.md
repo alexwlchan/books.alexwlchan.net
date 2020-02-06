@@ -5,7 +5,7 @@ book:
   publication_year: '1997'
   title: The Bridge
 plan:
-  date_added: '2020-02-01'
+  date_added: '2019-03-15'
 ---
 
 [Jonathan Whiteland](https://twitter.com/chailey_/status/1106692949314805760):

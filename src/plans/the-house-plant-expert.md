@@ -5,7 +5,7 @@ book:
   publication_year: '1993'
   title: The House Plant Expert
 plan:
-  date_added: '2019-12-24'
+  date_added: '2017-11-27'
 ---
 
 [James Wong](https://twitter.com/botanygeek/status/935201059978563584):

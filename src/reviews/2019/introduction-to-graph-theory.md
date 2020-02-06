@@ -2,7 +2,8 @@
 book:
   author: Robin J. Wilson
   cover_image: introduction-to-graph-theory.jpg
-  isbn13: 978-0-273-72889-4
+  isbn10: 027372889X
+  isbn13: '9780273728894'
   publication_year: '2010'
   title: Introduction to Graph Theory
 review:

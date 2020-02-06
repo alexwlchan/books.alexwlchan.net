@@ -2,7 +2,8 @@
 book:
   author: George Orwell
   cover_image: nineteen-eighty-four.jpg
-  isbn13: 978-1-84943-349-5
+  isbn10: 0140009728
+  isbn13: '9780140009729'
   publication_year: '1981'
   title: Nineteen Eighty-Four
 review:

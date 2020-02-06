@@ -2,8 +2,8 @@
 book:
   author: Alwyn W. Turner
   cover_image: the-man-who-invented-the-daleks.jpg
-  isbn10: 1-84513-609-8
-  isbn13: 978-1-84513-609-3
+  isbn10: '1845136098'
+  isbn13: '9781845136093'
   publication_year: '2011'
   title: The Man who Invented the Daleks
 review:

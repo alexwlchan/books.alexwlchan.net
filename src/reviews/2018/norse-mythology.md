@@ -2,12 +2,12 @@
 book:
   author: Neil Gaiman
   cover_image: norse-mythology.jpg
-  isbn10: 1-4088-8680-4
-  isbn13: 978-1-4088-8680-9
+  isbn10: '1408886804'
+  isbn13: '9781408886809'
   publication_year: '2017'
   title: Norse Mythology
 review:
-  date_read: '2018-07-16'
+  date_read: '2018-07-13'
   rating: 5
 ---
 

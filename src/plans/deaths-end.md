@@ -5,7 +5,7 @@ book:
   publication_year: '2016'
   title: Death’s End
 plan:
-  date_added: '2020-01-20'
+  date_added: '2019-03-04'
 ---
 
 [Schrodinger's Kitten](https://twitter.com/schrodingerskit/status/1102565027784073216):

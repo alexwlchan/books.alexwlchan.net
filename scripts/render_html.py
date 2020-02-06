@@ -56,7 +56,15 @@ class ReviewEntry:
 def get_review_entry_from_path(path):
     post = frontmatter.load(path)
 
-    book = Book(**post["book"])
+    kwargs = {}
+    for attr_name in Book.__attrs_attrs__:
+        try:
+            kwargs[attr_name.name] = post["book"][attr_name.name]
+        except KeyError:
+            pass
+
+    book = Book(**kwargs)
+
     review = Review(**post["review"], text=post.content)
 
     return ReviewEntry(path=path, book=book, review=review)
@@ -173,10 +181,6 @@ def _create_new_thumbnail(src_path, dst_path):
         im.thumbnail((240, 240))
     im.save(dst_path)
 
-    if im.width > 120 and im.height > 120:
-        im.thumbnail((120, 120))
-    im.save(dst_path.with_name(thumbnail_1x(dst_path)))
-
 
 def thumbnail_1x(name):
     pth = pathlib.Path(name)
@@ -261,7 +265,7 @@ def main():
         get_entries(dirpath="src/plans", constructor=get_plan_entry_from_path)
     )
 
-    all_plans = sorted(all_plans, key=lambda plan: plan.plan.date_added)
+    all_plans = sorted(all_plans, key=lambda plan: plan.plan.date_added, reverse=True)
 
     template = env.get_template("list_plans.html")
     html = template.render(all_plans=all_plans, title="books i want to read")
