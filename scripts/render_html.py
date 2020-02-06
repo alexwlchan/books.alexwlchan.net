@@ -173,7 +173,7 @@ def render_individual_review(env, *, review_entry):
 
 
 def _create_new_thumbnail(src_path, dst_path):
-    dst_path.parent.mkdir(exist_ok=True)
+    dst_path.parent.mkdir(exist_ok=True, parents=True)
 
     im = Image.open(src_path)
 
