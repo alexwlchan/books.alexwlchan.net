@@ -68,10 +68,10 @@ def get_review_info():
     today = datetime.datetime.now()
 
     if date_read == "today":
-        date_read = today.strftime("%Y-%m-%d")
+        date_read = today.date()
     elif date_read == "yesterday":
         yesterday = today - datetime.timedelta(days=1)
-        date_read = yesterday.strftime("%Y-%m-%d")
+        date_read = yesterday.date()
     else:
         date_read_question2 = [
             inquirer.Text("date_read", message="When did you finish reading it?")
