@@ -141,7 +141,7 @@ def render_markdown(text):
 
 def render_date(date_value):
     if isinstance(date_value, datetime.date):
-        return date_value.strftime("%d %B %Y")
+        return date_value.strftime("%-d %B %Y")
 
     date_match = re.match(
         r"^(?P<year>\d{4})-(?P<month>\d{2})(?:-(?P<day>\d{2}))?$", date_value
@@ -155,7 +155,7 @@ def render_date(date_value):
     )
 
     if date_match.group("day"):
-        return date_obj.strftime("%-d %B %Y")
+        return render_date(date_obj)
     else:
         return date_obj.strftime("%B %Y")
 
