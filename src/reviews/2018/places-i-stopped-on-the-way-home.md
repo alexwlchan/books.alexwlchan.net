@@ -1,6 +1,6 @@
 ---
 book:
-  author: Meg Feee
+  author: Meg Fee
   cover_image: 'places-i-stopped-on-the-way-home.jpg'
   isbn10: '1785783033'
   isbn13: '9781785783036'
