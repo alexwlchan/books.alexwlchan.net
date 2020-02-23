@@ -25,7 +25,7 @@ There’s no happy ending, no deus ex machina, no sudden reprive from death. Dea
 
 ~
 
-I heard about this after reading about the letters of last resort (<https://en.wikipedia.org/wiki/Letters_of_last_resort>), which dictate how the UK’s nuclear submarines should respond if Britain is totally destroyed. This is a similar scenario – American submarines berthed in Australia. It fits the bill nicely!
+I heard about this after reading about [the letters of last resort](https://en.wikipedia.org/wiki/Letters_of_last_resort), which dictate how the UK’s nuclear submarines should respond if Britain is totally destroyed. This is a similar scenario – American submarines berthed in Australia. It fits the bill nicely!
 
 > If you’re interested in this sort of thing (the Letters of Last Resort) I recommend reading “On the Beach” by Neville Shute if you haven’t already done so. It’s also a hauntingly moving and desperate tale of life after the bomb drops. (Poster krunchkin on pistonheads.com)
 
