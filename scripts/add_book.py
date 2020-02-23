@@ -146,6 +146,7 @@ def save_cover(slug, cover_image_url):
 
     return cover_name
 
+
 if __name__ == "__main__":
     book_info = get_book_info()
 
