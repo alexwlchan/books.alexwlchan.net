@@ -115,7 +115,7 @@ def get_plan_entry_from_path(path):
     post = frontmatter.load(path)
 
     book = Book(**post["book"])
-    plan = Plan(**post["plan"], text=post.content)
+    plan = Plan(date_added=post["plan"]["date_added"], text=post.content)
 
     return PlanEntry(path=path, book=book, plan=plan)
 
@@ -271,6 +271,25 @@ def main():
     html = template.render(all_plans=all_plans, title="books i want to read")
 
     out_path = pathlib.Path("_html") / "to-read/index.html"
+    out_path.parent.mkdir(exist_ok=True, parents=True)
+    out_path.write_text(html)
+
+    # Render the "never going to read this page"
+
+    all_retired = list(
+        get_entries(dirpath="src/will_never_read", constructor=get_plan_entry_from_path)
+    )
+
+    all_retired = sorted(
+        all_retired, key=lambda plan: plan.plan.date_added, reverse=True
+    )
+
+    template = env.get_template("list_will_never_read.html")
+    html = template.render(
+        all_retired=all_retired, title="books i&rsquo;m never going to read"
+    )
+
+    out_path = pathlib.Path("_html") / "will-never-read/index.html"
     out_path.parent.mkdir(exist_ok=True, parents=True)
     out_path.write_text(html)
 
