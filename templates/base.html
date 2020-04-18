@@ -6,6 +6,8 @@
 
     <link rel="stylesheet" href="/static/style.css">
 
+    {% block head_content %}{% endblock %}
+
     <title>{% if title %}{{ title | smartypants | safe }} {% endif %}📚 lexie&rsquo;s book tracker</title>
   </head>
   <body>

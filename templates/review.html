@@ -1,5 +1,17 @@
 {% extends "base.html" %}
 
+{% block head_content %}
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@alexwlchan"/>
+<meta name="twitter:title" content="alexwlchan's review of {{ review_entry.book.title }}"/>
+<meta name="twitter:image" content="https://books.alexwlchan.net/squares/{{ review_entry.book.cover_image }}"/>
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://books.alexwlchan.net/{{ review_entry.out_path() }}">
+<meta property="og:title" content="alexwlchan's review of {{ review_entry.book.title }}">
+<meta property="og:image" content="https://books.alexwlchan.net/squares/{{ review_entry.book.cover_image }}"/>
+{% endblock %}
+
 {% block content %}
   {% if review_entry.book.cover_image %}
     <div class="book-cover">

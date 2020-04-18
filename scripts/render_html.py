@@ -187,6 +187,24 @@ def thumbnail_1x(name):
     return pth.stem + "_1x" + pth.suffix
 
 
+def _create_new_square(src_path, square_path):
+    square_path.parent.mkdir(exist_ok=True, parents=True)
+
+    im = Image.open(src_path)
+    im.thumbnail((240, 240))
+
+    dimension = max(im.size)
+
+    new = Image.new("RGB", size=(dimension, dimension), color=(255, 255, 255))
+
+    if im.height > im.width:
+        new.paste(im, box=((dimension - im.width) // 2, 0))
+    else:
+        new.paste(im, box=(0, (dimension - im.height) // 2))
+
+    new.save(square_path)
+
+
 def create_thumbnails():
     for image_name in os.listdir("src/covers"):
         if image_name == ".DS_Store":
@@ -199,6 +217,13 @@ def create_thumbnails():
             _create_new_thumbnail(src_path, dst_path)
         elif src_path.stat().st_mtime > dst_path.stat().st_mtime:
             _create_new_thumbnail(src_path, dst_path)
+
+        square_path = pathlib.Path("_html/squares") / image_name
+
+        if not square_path.exists():
+            _create_new_square(src_path, square_path)
+        elif src_path.stat().st_mtime > square_path.stat().st_mtime:
+            _create_new_square(src_path, square_path)
 
 
 def main():
