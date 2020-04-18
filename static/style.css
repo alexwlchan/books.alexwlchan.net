@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font: 12pt monospace;
+  font: 14pt monospace;
   line-height: 1.4em;
 }
 
@@ -12,8 +12,8 @@ h1 .book-title {
 
 .book-cover img {
   float: right;
-  max-width:  150px;
-  max-height: 250px;
+  max-width:  180px;
+  max-height: 300px;
   margin-top: 10px;
   margin-left: 10px;
   margin-bottom: 10px;
@@ -25,7 +25,7 @@ aside {
   background-size: auto 100%;
   color: white;
   padding: 6px 1em;
-  font-size: 10pt;
+  font-size: 12pt;
   line-height: 1.35em;
 }
 
@@ -45,7 +45,7 @@ aside h1::after {
 }
 
 main, aside #aside_inner, footer #footer_inner {
-  max-width: 750px;
+  max-width: 812px;
   margin-left:  auto;
   margin-right: auto;
 }
@@ -103,11 +103,11 @@ footer a:hover {
 }
 
 .review_preview {
-  height: 138px;
+  height: 161px;
 }
 
 .reading {
-  min-height: 138px;
+  min-height: 161px;
 }
 
 .review_preview, .reading {
@@ -136,8 +136,8 @@ footer a:hover {
 }
 
 .review_preview img, .reading_inner img {
-  max-width: 120px;
-  max-height: 110px;
+  max-width: 140px;
+  max-height: 130px;
   margin-top: 12px;
   margin-bottom: 7px;
   box-shadow: 0px 2.5px 2.5px rgba(0,0,0,0.25);
