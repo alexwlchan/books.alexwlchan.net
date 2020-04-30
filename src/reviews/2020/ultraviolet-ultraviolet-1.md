@@ -11,7 +11,7 @@ plan:
 review:
   date_read: '2020-04-17'
   format: 'paperback'
-  rating: 3
+  rating: 4
 ---
 
 First-person YA novel told from the point of Alison, an 18-year-old girl who experiences extreme synesthesia.
