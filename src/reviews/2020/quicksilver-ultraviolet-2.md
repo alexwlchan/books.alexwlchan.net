@@ -32,3 +32,7 @@ It was a good depiction, and is careful to point out that being ace is a her-thi
 I enjoyed this one a bit more than the first; I'm not sure why.
 Good pair of books; I think not going for a third for wise.
 They work well as a set.
+
+Originally [recommended by Sass](https://twitter.com/supergirl_sass/status/720002097912000512):
+
+> It's amazing how sometimes a simple sentence can kind of make you want to cry. Please let the… <https://www.instagram.com/p/BEHY6Bekisd/>
