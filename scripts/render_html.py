@@ -321,7 +321,10 @@ def main():
     # Render the front page
 
     index_template = env.get_template("index.html")
-    html = index_template.render(text=open("src/index.md").read())
+    html = index_template.render(
+        text=open("src/index.md").read(),
+        reviews=all_reviews[:5]
+    )
 
     index_path = pathlib.Path("_html") / "index.html"
     index_path.write_text(html)
