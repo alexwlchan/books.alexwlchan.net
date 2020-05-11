@@ -3,6 +3,9 @@ body {
   padding: 0;
   font: 14pt monospace;
   line-height: 1.4em;
+
+  /* Background from https://www.toptal.com/designers/subtlepatterns/light-paper-fibers/ */
+  background: url('/static/lightpaperfibers.png');
 }
 
 h1 .book-title {
