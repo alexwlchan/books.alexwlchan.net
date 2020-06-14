@@ -15,3 +15,9 @@ plan:
 <https://twitter.com/DRMacIver/status/1227512225914552321>:
 
 > Just had a massive "Oh shit that's what's going on" moment reading this book. About 60% through so thoughts still gathering, but I think this book is going to get rated "strongest recommend" when I'm done.
+
+<https://twitter.com/DRMacIver/status/1228233781317734401>:
+
+> OK, so I've just finished reading "The Origins of Unfairness" by Cailin O'Connor. Here's a little thread about it.
+>
+> First off: Strong recommend. Requires a little bit of maths, and it would help if you've some exposure to theorising about gender but it's reasonably gentle on both
