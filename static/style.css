@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font: 14pt monospace;
+  font: 13pt monospace;
   line-height: 1.4em;
 
   /* Background from https://www.toptal.com/designers/subtlepatterns/light-paper-fibers/ */
@@ -164,6 +164,10 @@ footer a:hover {
   font-size: 1.15em;
   margin-bottom: 0.5em;
   line-height: 1.2em;
+}
+
+.book_metadata .did_not_finish {
+  font-weight: normal;
 }
 
 .book_metadata p {

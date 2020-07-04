@@ -20,7 +20,7 @@
     </div>
   {% endif %}
 
-  <h1>My review of <span class="book-title">{{ review_entry.book.title | smartypants | safe }}</span></h1>
+  <h1><span class="book-title">{{ review_entry.book.title | smartypants | safe }}</span></h1>
 
   <table class="book_metadata">
     <tr>
@@ -34,7 +34,13 @@
     {% if review_entry.review.date_read %}
     <tr>
       <td>date read:</td>
-      <th>{{ review_entry.review.date_read | render_date }}</th>
+      <th>{{ review_entry.review.date_read | render_date }}
+        {% if review_entry.review.did_not_finish %}
+        <span class="did_not_finish">
+          (did not finish)
+        </span>
+        {% endif %}
+      </th>
     </tr>
     {% endif %}
     {% if review_entry.review.rating %}

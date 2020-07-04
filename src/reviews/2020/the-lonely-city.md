@@ -9,7 +9,6 @@ review:
   date_read: 2020-01-18
   did_not_finish: true
   format: paperback
-  rating: 3
 ---
 
 I forget the exact event, but I got my copy of this at a book quiz in Cambridge a couple of years back.
