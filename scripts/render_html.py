@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import datetime
+import hashlib
 import itertools
 import os
 import pathlib
@@ -226,6 +227,13 @@ def create_thumbnails():
             _create_new_square(src_path, square_path)
 
 
+CSS_HASH = hashlib.md5(open('static/style.css', 'rb').read()).hexdigest()
+
+
+def css_hash(_):
+    return f"md5:{CSS_HASH}"
+
+
 def main():
     env = Environment(
         loader=FileSystemLoader("templates"),
@@ -236,6 +244,7 @@ def main():
     env.filters["render_date"] = render_date
     env.filters["smartypants"] = smartypants.smartypants
     env.filters["thumbnail_1x"] = thumbnail_1x
+    env.filters["css_hash"] = css_hash
 
     create_thumbnails()
 
