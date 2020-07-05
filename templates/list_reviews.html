@@ -19,7 +19,7 @@
   </p>
 
   {% for year, reviews in all_reviews %}
-  <div class="divider">{{ loop.cycle('&#x2766;', '&#x2767;') | safe }}</div>
+  <div class="divider"><img src="/static/book.svg"></div>
 
   <div class="books_by_year" id="books_by_year_{{ year }}">
     <h3>the {{ reviews|length }} book{% if reviews|length != 1 %}s{% endif %}

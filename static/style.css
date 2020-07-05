@@ -28,7 +28,7 @@ aside {
   background-size: auto 100%;
   color: white;
   padding: 6px 1em;
-  font-size: 12pt;
+  font-size: 13pt;
   line-height: 1.35em;
 }
 
@@ -36,15 +36,17 @@ aside a {
   text-decoration: none;
 }
 
+aside img {
+  height: 30px;
+  margin-bottom: -8px;
+  margin-top:    -2px;
+}
+
 aside h1 {
   margin-top: 0;
   margin-bottom: 0;
   display: inline;
   font-size: 1em;
-}
-
-aside h1::after {
-  content: " 📚";
 }
 
 main, aside #aside_inner, footer #footer_inner {
@@ -196,11 +198,13 @@ footer a:hover {
 }
 
 .divider {
-  color: #bbb;
   text-align: center;
-  font-size: 2em;
-  margin-top:    1em;
+  margin-top:    1.5em;
   margin-bottom: 1em;
+}
+
+.divider img {
+  width: 50px;
 }
 
 #jump_to {
