@@ -8,9 +8,12 @@ body {
   background: url('/static/lightpaperfibers.png');
 }
 
+h1 {
+  line-height: 1.15em;
+}
+
 h1 .book-title {
   font-style: italic;
-  line-height: 1.2em;
 }
 
 .book-cover img {
@@ -21,6 +24,12 @@ h1 .book-title {
   margin-left: 10px;
   margin-bottom: 10px;
   box-shadow: 0px 5px 5px rgba(0,0,0,0.25);
+}
+
+@media screen and (max-width: 500px) {
+  .book-cover img {
+    max-width: 90px;
+  }
 }
 
 aside {
@@ -129,10 +138,6 @@ footer a:hover {
   background: rgba(128, 128, 128, 0.3);
 }
 
-.review_preview {
-  height: 161px;
-}
-
 .reading {
   min-height: 161px;
 }
@@ -163,11 +168,21 @@ footer a:hover {
 }
 
 .review_preview img, .reading_inner img {
-  max-width: 140px;
+  max-width: 110px;
   max-height: 130px;
   margin-top: 12px;
   margin-bottom: 7px;
   box-shadow: 0px 2.5px 2.5px rgba(0,0,0,0.25);
+}
+
+@media screen and (max-width: 500px) {
+  .review_preview img, .reading_inner img {
+    max-width: 70px;
+  }
+
+  .review_preview a, .reading_inner {
+    grid-template-columns: 95px auto;
+  }
 }
 
 .book_thumbnail {
@@ -181,13 +196,16 @@ footer a:hover {
   margin-top:    auto;
   margin-bottom: auto;
   line-height: 1.25em;
+  padding-right: 10px;
+  padding-top:    10px;
+  padding-bottom: 10px;
 }
 
 .book_metadata p.title {
   font-style: italic;
   font-size: 1.15em;
   margin-bottom: 0.5em;
-  line-height: 1.2em;
+  line-height: 1.3em;
 }
 
 .book_metadata .did_not_finish {
@@ -199,7 +217,7 @@ footer a:hover {
 }
 
 .nav {
-  margin-top: 0;
+/*  margin-top: 0;*/
 }
 
 .nav .selected {

@@ -11,10 +11,17 @@
   #review_preview_{{ r }}_{{ g }}_{{ b }}.review_fave {
     background: rgba({{ r }}, {{ g }}, {{ b }}, 0.2);
     border-color: rgb({{ r }}, {{ g }}, {{ b }});
+    border-width: 3px;
+    margin-left:  -1px;
+    margin-right: -1px;
   }
 
   #review_preview_{{ r }}_{{ g }}_{{ b }} a:hover {
     background: rgba({{ r }}, {{ g }}, {{ b }}, 0.3);
+  }
+
+  #review_preview_{{ r }}_{{ g }}_{{ b }} .review_preview img {
+    box-shadow: 0px 2.5px 2.5px rgba({{ r }}, {{ g }}, {{ b }}, 0.25);
   }
 </style>
 
