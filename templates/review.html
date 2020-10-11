@@ -13,6 +13,25 @@
 {% endblock %}
 
 {% block content %}
+  {% if tint_colors[review_entry.book.cover_image] %}
+    {% set r = tint_colors[review_entry.book.cover_image][0] * 255 | int %}
+    {% set g = tint_colors[review_entry.book.cover_image][1] * 255 | int %}
+    {% set b = tint_colors[review_entry.book.cover_image][2] * 255 | int %}
+    <style>
+      .review a {
+        color: rgb({{ r }}, {{ g }}, {{ b }});
+      }
+
+      .review a:hover {
+        background: rgb({{ r }}, {{ g }}, {{ b }}, 0.3);
+      }
+
+      .book-cover img {
+        box-shadow: 0px 5px 5px rgba({{ r }}, {{ g }}, {{ b }}, 0.25);
+      }
+    </style>
+  {% endif %}
+
   {% if review_entry.book.cover_image %}
     <div class="book-cover">
       {% set book = review_entry.book %}
@@ -61,7 +80,9 @@
     {% endif %}
   </table>
 
-  {{ review_entry.review.text | render_markdown | safe }}
+  <div class="review">
+    {{ review_entry.review.text | render_markdown | safe }}
 
-  <p>(see <a href="/reviews">all reviews</a>)</p>
+    <p>(see <a href="/reviews">all reviews</a>)</p>
+  </div>
 {% endblock %}

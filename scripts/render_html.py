@@ -17,6 +17,8 @@ from markdown.extensions.smarty import SmartyExtension
 from PIL import Image
 import smartypants
 
+from tint_colors import get_tint_colors, store_tint_color
+
 
 def rsync(dir1, dir2):
     subprocess.check_call(["rsync", "--recursive", "--delete", dir1, dir2])
@@ -161,10 +163,12 @@ def render_date(date_value):
         return date_obj.strftime("%B %Y")
 
 
-def render_individual_review(env, *, review_entry):
+def render_individual_review(env, *, review_entry, **kwargs):
     template = env.get_template("review.html")
     html = template.render(
-        review_entry=review_entry, title=f"My review of {review_entry.book.title}"
+        review_entry=review_entry,
+        title=f"My review of {review_entry.book.title}",
+        **kwargs
     )
 
     out_name = review_entry.out_path() / "index.html"
@@ -226,6 +230,8 @@ def create_thumbnails():
         elif src_path.stat().st_mtime > square_path.stat().st_mtime:
             _create_new_square(src_path, square_path)
 
+        store_tint_color(dst_path)
+
 
 CSS_HASH = hashlib.md5(open('static/style.css', 'rb').read()).hexdigest()
 
@@ -248,6 +254,8 @@ def main():
 
     create_thumbnails()
 
+    tint_colors = get_tint_colors()
+
     rsync("src/covers/", "_html/covers/")
     rsync("static/", "_html/static/")
 
@@ -261,7 +269,11 @@ def main():
     )
 
     for review_entry in all_reviews:
-        render_individual_review(env, review_entry=review_entry)
+        render_individual_review(
+            env,
+            review_entry=review_entry,
+            tint_colors=tint_colors
+        )
 
     template = env.get_template("list_reviews.html")
     html = template.render(
@@ -273,6 +285,7 @@ def main():
         ],
         title="books i’ve read",
         this_year=str(datetime.datetime.now().year),
+        tint_colors=tint_colors,
     )
 
     out_path = pathlib.Path("_html") / "reviews/index.html"
@@ -287,7 +300,11 @@ def main():
     )
 
     template = env.get_template("list_reading.html")
-    html = template.render(all_reading=all_reading, title="books i’m currently reading")
+    html = template.render(
+        all_reading=all_reading,
+        title="books i’m currently reading",
+        tint_colors=tint_colors
+    )
 
     out_path = pathlib.Path("_html") / "reading/index.html"
     out_path.parent.mkdir(exist_ok=True, parents=True)
@@ -302,7 +319,11 @@ def main():
     all_plans = sorted(all_plans, key=lambda plan: plan.plan.date_added, reverse=True)
 
     template = env.get_template("list_plans.html")
-    html = template.render(all_plans=all_plans, title="books i want to read")
+    html = template.render(
+        all_plans=all_plans,
+        title="books i want to read",
+        tint_colors=tint_colors,
+    )
 
     out_path = pathlib.Path("_html") / "to-read/index.html"
     out_path.parent.mkdir(exist_ok=True, parents=True)
@@ -320,7 +341,9 @@ def main():
 
     template = env.get_template("list_will_never_read.html")
     html = template.render(
-        all_retired=all_retired, title="books i&rsquo;m never going to read"
+        all_retired=all_retired,
+        title="books i&rsquo;m never going to read",
+        tint_colors=tint_colors
     )
 
     out_path = pathlib.Path("_html") / "will-never-read/index.html"
@@ -332,7 +355,8 @@ def main():
     index_template = env.get_template("index.html")
     html = index_template.render(
         text=open("src/index.md").read(),
-        reviews=all_reviews[:5]
+        reviews=all_reviews[:5],
+        tint_colors=tint_colors
     )
 
     index_path = pathlib.Path("_html") / "index.html"
