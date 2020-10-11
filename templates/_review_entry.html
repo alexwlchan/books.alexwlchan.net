@@ -18,7 +18,7 @@
   }
 </style>
 
-<div class="review_preview {% if review_entry.review.rating == 5 %}review_fave{% endif %}"
+<div class="review_preview {% if review_entry.review.rating == 5 and not is_index %}review_fave{% endif %}"
 id="review_preview_{{ r }}_{{ g }}_{{ b }}">
   <a href="/{{ review_entry.out_path() }}">
     <div class="book_thumbnail">
