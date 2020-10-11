@@ -1,4 +1,25 @@
-<div class="review_preview {% if review_entry.review.rating == 5 %}review_fave{% endif %}">
+{% set r = (tint_colors[review_entry.book.cover_image][0] * 255) | int %}
+{% set g = (tint_colors[review_entry.book.cover_image][1] * 255) | int %}
+{% set b = (tint_colors[review_entry.book.cover_image][2] * 255) | int %}
+
+<style>
+  #review_preview_{{ r }}_{{ g }}_{{ b }} {
+    background: rgba({{ r }}, {{ g }}, {{ b }}, 0.05);
+    border-color: rgb({{ r }}, {{ g }}, {{ b }});
+  }
+
+  #review_preview_{{ r }}_{{ g }}_{{ b }}.review_fave {
+    background: rgba({{ r }}, {{ g }}, {{ b }}, 0.2);
+    border-color: rgb({{ r }}, {{ g }}, {{ b }});
+  }
+
+  #review_preview_{{ r }}_{{ g }}_{{ b }} a:hover {
+    background: rgba({{ r }}, {{ g }}, {{ b }}, 0.3);
+  }
+</style>
+
+<div class="review_preview {% if review_entry.review.rating == 5 %}review_fave{% endif %}"
+id="review_preview_{{ r }}_{{ g }}_{{ b }}">
   <a href="/{{ review_entry.out_path() }}">
     <div class="book_thumbnail">
       {% set book = review_entry.book %}

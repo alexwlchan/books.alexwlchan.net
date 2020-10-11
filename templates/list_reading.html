@@ -10,7 +10,18 @@
   <h2>books i&rsquo;m currently reading</h2>
 
   {% for reading_entry in all_reading %}
-  <div class="reading">
+  {% set r = (tint_colors[reading_entry.book.cover_image][0] * 255) | int %}
+  {% set g = (tint_colors[reading_entry.book.cover_image][1] * 255) | int %}
+  {% set b = (tint_colors[reading_entry.book.cover_image][2] * 255) | int %}
+
+  <style>
+    #reading_{{ r }}_{{ g }}_{{ b }} {
+      background: rgba({{ r }}, {{ g }}, {{ b }}, 0.05);
+      border-color: rgb({{ r }}, {{ g }}, {{ b }});
+    }
+  </style>
+
+  <div class="reading" id="reading_{{ r }}_{{ g }}_{{ b }}">
     <div class="reading_inner">
       <div class="book_thumbnail">
         {% set book = reading_entry.book %}

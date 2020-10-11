@@ -1,5 +1,24 @@
 {% for book_entry in all_books %}
-<div class="reading">
+{% set r = (tint_colors[book_entry.book.cover_image][0] * 255) | int %}
+{% set g = (tint_colors[book_entry.book.cover_image][1] * 255) | int %}
+{% set b = (tint_colors[book_entry.book.cover_image][2] * 255) | int %}
+
+<style>
+  #reading_{{ r }}_{{ g }}_{{ b }} {
+    background: rgba({{ r }}, {{ g }}, {{ b }}, 0.05);
+    border-color: rgb({{ r }}, {{ g }}, {{ b }});
+  }
+
+  #reading_{{ r }}_{{ g }}_{{ b }} a {
+    color: rgb({{ r }}, {{ g }}, {{ b }});;
+  }
+
+  #reading_{{ r }}_{{ g }}_{{ b }} a:hover {
+    background: rgba({{ r }}, {{ g }}, {{ b }}, 0.3);
+  }
+</style>
+
+<div class="reading" id="reading_{{ r }}_{{ g }}_{{ b }}">
   <div class="reading_inner">
     <div class="book_thumbnail">
       {% set book = book_entry.book %}
