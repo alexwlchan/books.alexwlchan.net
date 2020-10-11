@@ -24,12 +24,34 @@ h1 .book-title {
 }
 
 aside {
-  background: url('/static/specktre_tQt7j.png') #333366;
-  background-size: auto 100%;
   color: white;
-  padding: 6px 1em;
   font-size: 13pt;
   line-height: 1.35em;
+  margin-bottom: 2em;
+}
+
+aside #fallback_background, aside #shelf_background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+aside #fallback_background {
+  background: #666666;
+  height: 30px;
+  z-index: 1;
+}
+
+aside #shelf_background {
+  background: url('/static/bookshelf.png');
+  background-size: auto 100%;
+  height: 45px;
+  z-index: 2;
+}
+
+aside #aside_inner {
+  padding: 3px 1em;
 }
 
 aside a {
@@ -60,11 +82,11 @@ main {
 }
 
 a {
-  color: #4c3dae;
+  color: blue;
 }
 
 a:hover {
-  background: rgba(76, 61, 174, 0.3);
+  background: rgba(0, 0, 255, 0.3);
 }
 
 aside a {
