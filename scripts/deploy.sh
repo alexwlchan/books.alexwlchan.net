@@ -4,6 +4,8 @@ set -o errexit
 set -o nounset
 set -o verbose
 
+git pull origin development
+
 python3 scripts/render_html.py
 
 rsync --archive --verbose --compress --delete \

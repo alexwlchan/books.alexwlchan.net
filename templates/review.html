@@ -29,6 +29,10 @@
       .book-cover img {
         box-shadow: 0px 5px 5px rgba({{ r }}, {{ g }}, {{ b }}, 0.25);
       }
+
+      aside #shelf_background {
+        background: url({{ tint_colors[review_entry.book.cover_image] | create_shelf_data_uri }})
+      }
     </style>
   {% endif %}
 

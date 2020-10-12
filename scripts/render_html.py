@@ -17,6 +17,7 @@ from markdown.extensions.smarty import SmartyExtension
 from PIL import Image
 import smartypants
 
+from generate_bookshelf import create_shelf_data_uri
 from tint_colors import get_tint_colors, store_tint_color
 
 
@@ -251,6 +252,7 @@ def main():
     env.filters["smartypants"] = smartypants.smartypants
     env.filters["thumbnail_1x"] = thumbnail_1x
     env.filters["css_hash"] = css_hash
+    env.filters["create_shelf_data_uri"] = create_shelf_data_uri
 
     create_thumbnails()
 

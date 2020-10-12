@@ -8,6 +8,12 @@
 
     {% block head_content %}{% endblock %}
 
+    <style>
+      aside #shelf_background {
+        background: url({{ [0, 0, 0] | create_shelf_data_uri }});
+      }
+    </style>
+
     <title>{% if title %}{{ title | smartypants | safe }} {% endif %}📚 lexie&rsquo;s book tracker</title>
   </head>
   <body>
