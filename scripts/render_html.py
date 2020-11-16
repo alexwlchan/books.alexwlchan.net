@@ -11,6 +11,7 @@ import sys
 
 import attr
 import frontmatter
+import htmlmin
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 import markdown
 from markdown.extensions.smarty import SmartyExtension
@@ -163,18 +164,11 @@ def render_date(date_value):
         return date_obj.strftime("%B %Y")
 
 
-def render_individual_review(env, *, review_entry, **kwargs):
-    template = env.get_template("review.html")
-    html = template.render(
-        review_entry=review_entry,
-        title=f"My review of {review_entry.book.title}",
-        **kwargs
-    )
-
-    out_name = review_entry.out_path() / "index.html"
-    out_path = pathlib.Path("_html") / out_name
+def save_html(template, out_name="", **kwargs):
+    html = template.render(**kwargs)
+    out_path = pathlib.Path("_html") / out_name / "index.html"
     out_path.parent.mkdir(exist_ok=True, parents=True)
-    out_path.write_text(html)
+    out_path.write_text(htmlmin.minify(html))
 
 
 def _create_new_thumbnail(src_path, dst_path):
@@ -260,14 +254,17 @@ def main():
     )
 
     for review_entry in all_reviews:
-        render_individual_review(
-            env,
+        save_html(
+            template=env.get_template("review.html"),
+            out_name=review_entry.out_path(),
             review_entry=review_entry,
+            title=f"My review of {review_entry.book.title}",
             tint_colors=tint_colors
         )
 
-    template = env.get_template("list_reviews.html")
-    html = template.render(
+    save_html(
+        template=env.get_template("list_reviews.html"),
+        out_name="reviews",
         all_reviews=[
             (year, list(reviews))
             for (year, reviews) in itertools.groupby(
@@ -276,11 +273,8 @@ def main():
         ],
         title="books i’ve read",
         this_year=str(datetime.datetime.now().year),
-        tint_colors=tint_colors,
+        tint_colors=tint_colors
     )
-
-    out_path = pathlib.Path("_html") / "reviews/index.html"
-    out_path.write_text(html)
 
     # Render the "currently reading" page
 
@@ -290,16 +284,13 @@ def main():
         )
     )
 
-    template = env.get_template("list_reading.html")
-    html = template.render(
+    save_html(
+        template=env.get_template("list_reading.html"),
+        out_name="reading",
         all_reading=all_reading,
         title="books i’m currently reading",
         tint_colors=tint_colors
     )
-
-    out_path = pathlib.Path("_html") / "reading/index.html"
-    out_path.parent.mkdir(exist_ok=True, parents=True)
-    out_path.write_text(html)
 
     # Render the "want to read" page
 
@@ -309,16 +300,13 @@ def main():
 
     all_plans = sorted(all_plans, key=lambda plan: plan.plan.date_added, reverse=True)
 
-    template = env.get_template("list_plans.html")
-    html = template.render(
+    save_html(
+        template=env.get_template("list_plans.html"),
+        out_name="to-read",
         all_plans=all_plans,
         title="books i want to read",
         tint_colors=tint_colors,
     )
-
-    out_path = pathlib.Path("_html") / "to-read/index.html"
-    out_path.parent.mkdir(exist_ok=True, parents=True)
-    out_path.write_text(html)
 
     # Render the "never going to read this page"
 
@@ -330,28 +318,22 @@ def main():
         all_retired, key=lambda plan: plan.plan.date_added, reverse=True
     )
 
-    template = env.get_template("list_will_never_read.html")
-    html = template.render(
+    save_html(
+        template=env.get_template("list_will_never_read.html"),
+        out_name="will-never-read",
         all_retired=all_retired,
         title="books i&rsquo;m never going to read",
         tint_colors=tint_colors
     )
 
-    out_path = pathlib.Path("_html") / "will-never-read/index.html"
-    out_path.parent.mkdir(exist_ok=True, parents=True)
-    out_path.write_text(html)
-
     # Render the front page
 
-    index_template = env.get_template("index.html")
-    html = index_template.render(
+    save_html(
+        template=env.get_template("index.html"),
         text=open("src/index.md").read(),
         reviews=all_reviews[:5],
         tint_colors=tint_colors
     )
-
-    index_path = pathlib.Path("_html") / "index.html"
-    index_path.write_text(html)
 
     print("✨ Rendered HTML files to _html ✨")
 
