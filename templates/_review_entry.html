@@ -8,6 +8,7 @@
     border-color: rgb({{ r }}, {{ g }}, {{ b }});
   }
 
+{% if review_entry.review.rating == 5 %}
   #review_preview_{{ r }}_{{ g }}_{{ b }}.review_fave {
     background: rgba({{ r }}, {{ g }}, {{ b }}, 0.2);
     border-color: rgb({{ r }}, {{ g }}, {{ b }});
@@ -15,6 +16,7 @@
     margin-left:  -1px;
     margin-right: -1px;
   }
+{% endif %}
 
   #review_preview_{{ r }}_{{ g }}_{{ b }} a:hover {
     background: rgba({{ r }}, {{ g }}, {{ b }}, 0.3);
