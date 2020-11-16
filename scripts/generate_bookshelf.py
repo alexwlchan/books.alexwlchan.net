@@ -17,7 +17,7 @@ def get_bins(total_width, min_height, max_height):
     x_coord = 0
 
     while x_coord <= total_width:
-        width = R.randint(5, 25)
+        width = R.randint(8, 40)
         height = R.randint(min_height, max_height)
 
         yield [(x_coord, 0), (x_coord + width, height)]
@@ -44,10 +44,11 @@ def get_tint_colors(tint_color):
 
 
 def create_shelf(tint_color):
-    bins = get_repeatable_bins(total_width=2000, min_height=30, max_height=45)
+    # Shelves go from 30px to 45px height, then 2x for retina displays
+    bins = get_repeatable_bins(total_width=2000, min_height=60, max_height=90)
     colors = get_tint_colors(tint_color=tint_color)
 
-    im = Image.new("RGBA", size=(2000, 45))
+    im = Image.new("RGBA", size=(2000, 90))
 
     draw = ImageDraw.Draw(im)
 

@@ -14,7 +14,6 @@ import frontmatter
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 import markdown
 from markdown.extensions.smarty import SmartyExtension
-from PIL import Image
 import smartypants
 
 from generate_bookshelf import create_shelf_data_uri
@@ -181,11 +180,10 @@ def render_individual_review(env, *, review_entry, **kwargs):
 def _create_new_thumbnail(src_path, dst_path):
     dst_path.parent.mkdir(exist_ok=True, parents=True)
 
-    im = Image.open(src_path)
-
-    if im.width > 240 and im.height > 240:
-        im.thumbnail((240, 240))
-    im.save(dst_path)
+    # Thumbnails are 240x240 max, then 2x for retina displays
+    subprocess.check_call([
+        "convert", src_path, "-resize", "480x480>", dst_path
+    ])
 
 
 def thumbnail_1x(name):
@@ -196,19 +194,10 @@ def thumbnail_1x(name):
 def _create_new_square(src_path, square_path):
     square_path.parent.mkdir(exist_ok=True, parents=True)
 
-    im = Image.open(src_path)
-    im.thumbnail((240, 240))
-
-    dimension = max(im.size)
-
-    new = Image.new("RGB", size=(dimension, dimension), color=(255, 255, 255))
-
-    if im.height > im.width:
-        new.paste(im, box=((dimension - im.width) // 2, 0))
-    else:
-        new.paste(im, box=(0, (dimension - im.height) // 2))
-
-    new.save(square_path)
+    subprocess.check_call([
+        "convert",
+        src_path, "-resize", "240x240", "-gravity", "center", "-background", "white", "-extent", "240x240", square_path
+    ])
 
 
 def create_thumbnails():

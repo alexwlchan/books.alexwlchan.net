@@ -31,7 +31,8 @@
       }
 
       aside #shelf_background {
-        background: url({{ tint_colors[review_entry.book.cover_image] | create_shelf_data_uri }})
+        background: url({{ tint_colors[review_entry.book.cover_image] | create_shelf_data_uri }});
+        background-size: auto 100%;
       }
     </style>
   {% endif %}
