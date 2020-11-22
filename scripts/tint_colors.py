@@ -119,21 +119,33 @@ def choose_tint_color(p, *, background_color):
     )
 
 
-def get_tint_colors():
+def get_tint_color_data():
     try:
         return json.load(open(os.path.join("src", "tint_colors.json")))
     except FileNotFoundError:
         return {}
 
 
-def store_tint_color(cover_path):
-    tint_colors = get_tint_colors()
+def get_tint_colors():
+    return {path: data["color"] for (path, data) in get_tint_color_data().items()}
 
-    if os.path.basename(cover_path) in tint_colors:
-        return
+
+def store_tint_color(cover_path):
+    tint_colors = get_tint_color_data()
+
+    # If the size of a file has changed since the previous run, we need to
+    # recompute the tint colour.
+    try:
+        if tint_colors[cover_path]["size"] == os.stat(cover_path).st_size:
+            return
+    except KeyError:
+        pass
 
     cover_color = choose_tint_color(cover_path, background_color="white")
-    tint_colors[os.path.basename(cover_path)] = cover_color
+    tint_colors[os.path.basename(cover_path)] = {
+        "color": cover_color,
+        "size": os.stat(cover_path).st_size,
+    }
 
     with open(os.path.join("src", "tint_colors.json"), "w") as outfile:
         outfile.write(json.dumps(tint_colors, indent=2, sort_keys=True))
