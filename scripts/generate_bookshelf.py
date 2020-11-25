@@ -56,8 +56,6 @@ def create_shelf(tint_color):
         r, g, b = bin_color
         draw.rectangle(bin_xy, (int(r * 255), int(g * 255), int(b * 255)))
 
-    im.save("static/bookshelf_blue.png")
-
     return im
 
 
