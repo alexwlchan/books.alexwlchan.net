@@ -225,11 +225,11 @@
   },
   "ancillary-sword.jpg": {
     "color": [
-      0.804915209326974,
-      0.18443296237413853,
-      0.15886327503974496
+      0.8031659175298027,
+      0.18190345905804178,
+      0.1584522180965409
     ],
-    "size": 193762
+    "size": 193746
   },
   "and-another-thing.jpg": {
     "color": [
@@ -305,11 +305,11 @@
   },
   "as-you-wish-inconceivable-tales-from-the-making-of-the-princess-bride.jpg": {
     "color": [
-      0.47894567663130827,
-      0.42481517197042745,
-      0.3798778527804564
+      0.4885340802987862,
+      0.4375536881419234,
+      0.3940989729225023
     ],
-    "size": 48805
+    "size": 48789
   },
   "atomic-accidents.jpg": {
     "color": [
@@ -357,7 +357,7 @@
       0.0,
       0.0
     ],
-    "size": 145209
+    "size": 145193
   },
   "becoming-sex-second-chances-and-figuring-out-who-the-hell-i-am.jpg": {
     "color": [
@@ -481,11 +481,11 @@
   },
   "carmilla.jpg": {
     "color": [
-      0.3855482933914307,
-      0.4421689663519729,
-      0.4961268458000484
+      0.36604859335038364,
+      0.42139812446717817,
+      0.47374254049445863
     ],
-    "size": 102659
+    "size": 102643
   },
   "carrying-the-fire.jpg": {
     "color": [
@@ -550,6 +550,14 @@
       0.2958717033139135
     ],
     "size": 61302
+  },
+  "confessions-of-the-fox.jpg": {
+    "color": [
+      0.644705882352941,
+      0.26023529411764706,
+      0.376156862745098
+    ],
+    "size": 62357
   },
   "creative-selection.png": {
     "color": [
@@ -761,11 +769,11 @@
   },
   "forgotten-sacrifice-the-arctic-convoys-of-world-war-ii.jpg": {
     "color": [
-      0.3476285344797453,
-      0.42320785711789166,
-      0.4982489252385448
+      0.3387502861066608,
+      0.4116655222400246,
+      0.484290836957351
     ],
-    "size": 29553
+    "size": 29537
   },
   "from-ace-to-ze.jpg": {
     "color": [
@@ -1085,7 +1093,7 @@
       0.0,
       0.0
     ],
-    "size": 66183
+    "size": 66167
   },
   "laymans-guide-to-the-greek-gods.jpg": {
     "color": [
@@ -1174,6 +1182,14 @@
       0.19906556372549017
     ],
     "size": 30350
+  },
+  "love-of-country-a-hebridean-journey.jpg": {
+    "color": [
+      0.3675931911226029,
+      0.4485383897148603,
+      0.27787114845938377
+    ],
+    "size": 231698
   },
   "make-games-with-python.jpg": {
     "color": [
@@ -1425,11 +1441,11 @@
   },
   "programmed-inequality.jpg": {
     "color": [
-      0.311484593837535,
-      0.36971175567000997,
-      0.5738501852353847
+      0.3175222816399287,
+      0.37591800356506244,
+      0.5814795008912658
     ],
-    "size": 199094
+    "size": 199078
   },
   "protecting-information-from-classical-error-correction-to-quantum-cryptography.jpg": {
     "color": [
@@ -1657,11 +1673,11 @@
   },
   "the-artist-and-the-mathematician.jpg": {
     "color": [
-      0.42520243592317475,
-      0.4367329184233418,
-      0.4718396573646528
+      0.42560080442433346,
+      0.4369297804591922,
+      0.47253226076755483
     ],
-    "size": 15410
+    "size": 15394
   },
   "the-box-how-the-shipping-container-made-the-world-smaller-and-the-world-economy-bigger.jpg": {
     "color": [
@@ -1697,11 +1713,11 @@
   },
   "the-chinese-typewriter-a-history.jpg": {
     "color": [
-      0.7397025924463745,
-      0.16181076457428606,
-      0.18339255165153273
+      0.7416765363863665,
+      0.16170548756415376,
+      0.18352414791419924
     ],
-    "size": 175889
+    "size": 175873
   },
   "the-chronicles-of-narnia-audio-collection.jpg": {
     "color": [
@@ -1745,11 +1761,11 @@
   },
   "the-design-of-everyday-things.jpg": {
     "color": [
-      0.21337872769686653,
-      0.5025282138578905,
-      0.5443288569447072
+      0.27065837717200725,
+      0.41753546947234205,
+      0.3573919974493862
     ],
-    "size": 631422
+    "size": 631406
   },
   "the-elements-of-style.jpg": {
     "color": [
@@ -1957,7 +1973,7 @@
       0.0,
       0.01568627450980392
     ],
-    "size": 36504
+    "size": 36488
   },
   "the-ones-who-walk-away-from-omelas.jpg": {
     "color": [
@@ -1985,19 +2001,19 @@
   },
   "the-origins-of-unfairness.jpg": {
     "color": [
-      0.16862745098039217,
-      0.40784313725490196,
-      0.3803921568627451
+      0.21697835203445537,
+      0.3352374475801882,
+      0.2242094525671544
     ],
-    "size": 49684
+    "size": 49668
   },
   "the-other-greek.jpg": {
     "color": [
-      0.36401384083044985,
+      0.36401384083044974,
       0.36960784313725487,
       0.31707035755478663
     ],
-    "size": 69634
+    "size": 69618
   },
   "the-paper-menagerie-and-other-stories.jpg": {
     "color": [
@@ -2193,11 +2209,11 @@
   },
   "the-wrong-kind-of-snow-how-the-weather-made-britain.jpg": {
     "color": [
-      0.37688498079644267,
-      0.4436021831412977,
-      0.4769355164746313
+      0.37249544626593817,
+      0.44019072109718205,
+      0.4740490731811851
     ],
-    "size": 19814
+    "size": 19779
   },
   "think-black.jpg": {
     "color": [
@@ -2301,7 +2317,7 @@
       0.00392156862745098,
       0.00392156862745098
     ],
-    "size": 31244
+    "size": 31223
   },
   "unicorn.png": {
     "color": [
