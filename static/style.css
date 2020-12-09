@@ -249,3 +249,8 @@ footer a:hover {
 #jump_to {
   margin-bottom: -0.5em;
 }
+
+.star_rating {
+  font-size: 140%;
+  letter-spacing: 4px;
+}

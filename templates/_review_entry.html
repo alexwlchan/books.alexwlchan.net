@@ -48,18 +48,21 @@ id="review_preview_{{ r }}_{{ g }}_{{ b }}">
           read {{ review_entry.review.date_read | render_date }}
             <br/>
           {% endif %}
-          {% if review_entry.review.rating %}
-            {% for _ in range(review_entry.review.rating) %}
-            ★
-            {% endfor %}
-            {% for _ in range(5 - review_entry.review.rating) %}
-            ☆
-            {% endfor %}
-          {% endif %}
-          {% if review_entry.review.did_not_finish %}
-            (did not finish)
-          {% endif %}
         </small>
+
+        <span class="star_rating">
+        {% if review_entry.review.rating %}
+          {% for _ in range(review_entry.review.rating) -%}
+          ★
+          {%- endfor -%}
+          {%- for _ in range(5 - review_entry.review.rating) -%}
+          ☆
+          {%- endfor %}
+        {% endif %}
+        </span>
+        {% if review_entry.review.did_not_finish %}
+          (did not finish)
+        {% endif %}
       </p>
     </div>
   </a>
