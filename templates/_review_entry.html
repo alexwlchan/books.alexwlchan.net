@@ -28,8 +28,9 @@ id="review_preview_{{ r }}_{{ g }}_{{ b }}">
             <br/>
           {% endif %}
 
-          <span class="star_rating">
-          {% if review_entry.review.rating %}
+          {% if review_entry.review.rating and not review_entry.review.did_not_finish %}
+            <span class="star_rating">
+
             {% for _ in range(review_entry.review.rating) -%}
             ★
             {%- endfor -%}
@@ -38,10 +39,11 @@ id="review_preview_{{ r }}_{{ g }}_{{ b }}">
             {%- endfor %}
           {% endif %}
           </span>
-        </small>
-        {% if review_entry.review.did_not_finish %}
+
+          {% if review_entry.review.did_not_finish %}
           (did not finish)
-        {% endif %}
+          {% endif %}
+        </small>
       </p>
     </div>
   </a>
