@@ -26,6 +26,43 @@ def rsync(dir1, dir2):
     subprocess.check_call(["rsync", "--recursive", "--delete", dir1, dir2])
 
 
+def git(*args):
+    return subprocess.check_output(["git"] + list(args)).strip().decode("utf8")
+
+
+def set_git_timestamps():
+    """
+    For everything in the covers/ directory, set the last modified timestamp to
+    the last time it was modified in Git.  This should make tint colour computations
+    stable across machines.
+    """
+    root = git("rev-parse", "--show-toplevel")
+
+    now = datetime.datetime.now().timestamp()
+
+    for f in os.listdir("src/covers"):
+        path = os.path.join("src/covers", f)
+
+        if not os.path.isfile(path):
+            continue
+
+        stat = os.stat(path)
+
+        # If the modified time is >7 days ago, skip setting the modified time.  This means
+        # the script stays pretty fast when doing a regular sync.
+        if now - stat.st_mtime > 7 * 24 * 60 * 60 and "--reset" not in sys.argv:
+            continue
+
+        revision = git("rev-list", "--max-count=1", "HEAD", path)
+
+        timestamp, *_ = git("show", "--pretty=format:%ai", "--abbrev-commit", revision).splitlines()
+        modified_time = datetime.datetime.strptime(timestamp, "%Y-%m-%d %H:%M:%S %z").timestamp()
+
+        access_time = stat.st_atime
+
+        os.utime(path, times=(access_time, modified_time))
+
+
 @attr.s
 class Book:
     title = attr.ib()
@@ -237,6 +274,8 @@ def css_hash(_):
 
 
 def main():
+    set_git_timestamps()
+
     env = Environment(
         loader=FileSystemLoader("templates"),
         autoescape=select_autoescape(["html", "xml"]),
