@@ -166,7 +166,7 @@ footer a:hover {
   background: rgba(0, 255, 221, 0.3);
 }
 
-.review_preview .book_thumbnail img, .reading_inner .book_thumbnail img {
+.review_preview img, .reading_inner img {
   max-width: 110px;
   max-height: 130px;
   margin-top: 12px;
@@ -251,9 +251,6 @@ footer a:hover {
 }
 
 .star_rating {
-  margin-top: 1px;
-}
-
-.star_rating img {
-  height: 0.9em;
+  font-size: 140%;
+  letter-spacing: 4px;
 }
