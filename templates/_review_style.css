@@ -8,13 +8,14 @@
 
   {% if review_entry.review.rating == 5 %}
     background: rgb(
-      {{ (r * 0.24 + 0.76 * 255) | int }},
-      {{ (g * 0.24 + 0.76 * 255) | int }},
-      {{ (b * 0.24 + 0.76 * 255) | int }}
+      {{ (r * 0.3 + 0.7 * 255) | int }},
+      {{ (g * 0.3 + 0.7 * 255) | int }},
+      {{ (b * 0.3 + 0.7 * 255) | int }}
     );
     border-width: 3px;
     margin-left:  -1px;
     margin-right: -1px;
+    box-shadow: 0px 0px 5px rgba({{r}}, {{g}}, {{ b }}, 0.3);
   {% else %}
     background: rgb(
       {{ (r * 0.08 + 0.92 * 255) | int }},
@@ -24,10 +25,22 @@
   {% endif %}
 }
 
+#review_preview_{{ r }}_{{ g }}_{{ b }}:hover {
+  {% if review_entry.review.rating == 5 %}
+    background: rgb(
+      {{ (r * 0.42 + 0.58 * 255) | int }},
+      {{ (g * 0.42 + 0.58 * 255) | int }},
+      {{ (b * 0.42 + 0.58 * 255) | int }}
+    );
+  {% else %}
+    background: rgb(
+      {{ (r * 0.48 + 0.52 * 255) | int }},
+      {{ (g * 0.48 + 0.52 * 255) | int }},
+      {{ (b * 0.48 + 0.52 * 255) | int }}
+    );
+  {% endif %}
+}
+
 #review_preview_{{ r }}_{{ g }}_{{ b }} a:hover {
-  background: rgb(
-    {{ (r * 0.3 + 0.7 * 255) | int }},
-    {{ (g * 0.3 + 0.7 * 255) | int }},
-    {{ (b * 0.3 + 0.7 * 255) | int }}
-  );
+  background: none;
 }

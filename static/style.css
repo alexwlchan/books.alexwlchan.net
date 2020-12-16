@@ -158,15 +158,9 @@ footer a:hover {
   min-height: 157px;
 }
 
-.review_preview a:hover {
-  background: rgba(0, 255, 221, 0.3);
-}
-
 .review_preview img, .reading_inner img {
   max-width: 110px;
   max-height: 130px;
-/*  margin-top: 12px;
-  margin-bottom: 7px;*/
   vertical-align: middle;
 }
 
