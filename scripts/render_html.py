@@ -169,9 +169,8 @@ def save_html(template, out_name="", **kwargs):
     html = template.render(**kwargs)
     out_path = pathlib.Path("_html") / out_name / "index.html"
     out_path.parent.mkdir(exist_ok=True, parents=True)
-    html_str = htmlmin.minify(html)
 
-    soup = bs4.BeautifulSoup(html_str, "html.parser")
+    soup = bs4.BeautifulSoup(html, "html.parser")
 
     # Minify the CSS in all inline <style> tags.
     for style_tag in soup.find_all("style"):
