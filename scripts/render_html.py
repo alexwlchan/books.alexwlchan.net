@@ -10,6 +10,8 @@ import subprocess
 import sys
 
 import attr
+import bs4
+import cssmin
 import frontmatter
 import htmlmin
 from jinja2 import Environment, FileSystemLoader, select_autoescape
@@ -168,7 +170,19 @@ def save_html(template, out_name="", **kwargs):
     html = template.render(**kwargs)
     out_path = pathlib.Path("_html") / out_name / "index.html"
     out_path.parent.mkdir(exist_ok=True, parents=True)
-    out_path.write_text(htmlmin.minify(html))
+    html_str = htmlmin.minify(html)
+
+    soup = bs4.BeautifulSoup(html_str, "html.parser")
+
+    # Minify the CSS in all inline <style> tags.
+    for style_tag in soup.find_all("style"):
+        style_tag.string = cssmin.cssmin(style_tag.string)
+
+    # Remove any comments
+    for comment in soup(text=lambda text: isinstance(text, bs4.Comment)):
+        comment.extract()
+
+    out_path.write_text(str(soup))
 
 
 def _create_new_thumbnail(src_path, dst_path):

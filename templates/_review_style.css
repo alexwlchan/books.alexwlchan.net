@@ -1,0 +1,26 @@
+{% set r = (tint_colors[review_entry.book.cover_image][0] * 255) | int %}
+{% set g = (tint_colors[review_entry.book.cover_image][1] * 255) | int %}
+{% set b = (tint_colors[review_entry.book.cover_image][2] * 255) | int %}
+
+#review_preview_{{ r }}_{{ g }}_{{ b }} {
+  background: rgba({{ r }}, {{ g }}, {{ b }}, 0.05);
+  border-color: rgb({{ r }}, {{ g }}, {{ b }});
+}
+
+{% if review_entry.review.rating == 5 %}
+  #review_preview_{{ r }}_{{ g }}_{{ b }}.review_fave {
+    background: rgba({{ r }}, {{ g }}, {{ b }}, 0.2);
+    border-color: rgb({{ r }}, {{ g }}, {{ b }});
+    border-width: 3px;
+    margin-left:  -1px;
+    margin-right: -1px;
+  }
+{% endif %}
+
+#review_preview_{{ r }}_{{ g }}_{{ b }} a:hover {
+  background: rgba({{ r }}, {{ g }}, {{ b }}, 0.3);
+}
+
+#review_preview_{{ r }}_{{ g }}_{{ b }} .review_preview img {
+  box-shadow: 0px 2.5px 2.5px rgba({{ r }}, {{ g }}, {{ b }}, 0.25);
+}
