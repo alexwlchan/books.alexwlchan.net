@@ -13,7 +13,6 @@ import attr
 import bs4
 import cssmin
 import frontmatter
-import htmlmin
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 import markdown
 from markdown.extensions.smarty import SmartyExtension
