@@ -16,7 +16,11 @@
 
   <style>
     #reading_{{ r }}_{{ g }}_{{ b }} {
-      background: rgba({{ r }}, {{ g }}, {{ b }}, 0.05);
+      background: rgb(
+        {{ (r * 0.08 + 0.92 * 255) | int }},
+        {{ (g * 0.08 + 0.92 * 255) | int }},
+        {{ (b * 0.08 + 0.92 * 255) | int }}
+      );
       border-color: rgb({{ r }}, {{ g }}, {{ b }});
     }
   </style>
