@@ -1,6 +1,19 @@
 {% if book.cover_image %}
+  <!--
+    This is a total fudge to make thumbnails be centred horizontally and vertically,
+    even if the book is wider than it is tall.
+
+    The two "thumbnail_helper" elements on either side have height 100% and are
+    vertically aligned, and then somehow the image picks it up.
+
+    See https://stackoverflow.com/a/7310398/1558022.  I had to add a helper on
+    both sides to stop it pushing the image towards the right edge.
+
+    -->
+  <span class="thumbnail_helper"></span>
   <img
     src="/thumbnails/{{ book.cover_image }}"
     alt="Cover of {{ book.title }}. {{ book.cover_desc }}"
   >
+  <span class="thumbnail_helper"></span>
 {% endif %}

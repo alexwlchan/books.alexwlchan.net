@@ -1,8 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  font: 13pt monospace;
-  line-height: 1.4em;
+  font: 12pt monospace;
+  line-height: 1.55em;
 
   /* Background from https://www.toptal.com/designers/subtlepatterns/light-paper-fibers/ */
   background: url('/static/lightpaperfibers.png');
@@ -137,13 +137,8 @@ footer a:hover {
   background: rgba(128, 128, 128, 0.3);
 }
 
-.reading {
-  min-height: 161px;
-}
-
 .review_preview, .reading {
-  border: 2px solid #00a892;
-  background: rgba(0, 255, 221, 0.05);
+  border: 2px solid;
   border-radius: 6px;
   margin-bottom: 1em;
 }
@@ -160,28 +155,19 @@ footer a:hover {
   width: 100%;
   color: black;
   text-decoration: none;
-}
-
-.review_preview a:hover {
-  background: rgba(0, 255, 221, 0.3);
+  min-height: 157px;
 }
 
 .review_preview img, .reading_inner img {
   max-width: 110px;
   max-height: 130px;
-  margin-top: 12px;
-  margin-bottom: 7px;
-  box-shadow: 0px 2.5px 2.5px rgba(0,0,0,0.25);
+  vertical-align: middle;
 }
 
-@media screen and (max-width: 500px) {
-  .review_preview img, .reading_inner img {
-    max-width: 70px;
-  }
-
-  .review_preview a, .reading_inner {
-    grid-template-columns: 95px auto;
-  }
+.thumbnail_helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
 }
 
 .book_thumbnail {
@@ -215,10 +201,6 @@ footer a:hover {
   margin: 0;
 }
 
-.nav {
-/*  margin-top: 0;*/
-}
-
 .nav .selected {
   font-weight: bold;
 }
@@ -248,4 +230,34 @@ footer a:hover {
 
 #jump_to {
   margin-bottom: -0.5em;
+}
+
+.star_rating {
+  font-size: 100%;
+  letter-spacing: 4px;
+}
+
+@media screen and (max-width: 500px) {
+  .review_preview img, .reading_inner img {
+    max-width: 250px;
+    max-height: 150px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  .review_preview a, .reading_inner {
+    grid-template-columns: auto;
+  }
+
+  .book_thumbnail {
+    grid-column: 1/1;
+    grid-row: 1/2;
+  }
+
+  .book_metadata {
+    grid-column: 1/1;
+    grid-row: 2/2;
+    padding: 15px;
+    padding-top: 0;
+  }
 }

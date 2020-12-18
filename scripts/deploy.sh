@@ -15,3 +15,5 @@ ssh alexwlchan@helene.linode 'chmod 644 ~/sites/books.alexwlchan.net/static/*'
 ssh alexwlchan@helene.linode 'chmod 644 ~/sites/books.alexwlchan.net/covers/*'
 ssh alexwlchan@helene.linode 'chmod 644 ~/sites/books.alexwlchan.net/thumbnails/*'
 ssh alexwlchan@helene.linode 'chmod 644 ~/sites/books.alexwlchan.net/**/*.html'
+
+git push origin

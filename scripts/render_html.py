@@ -10,8 +10,9 @@ import subprocess
 import sys
 
 import attr
+import bs4
+import cssmin
 import frontmatter
-import htmlmin
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 import markdown
 from markdown.extensions.smarty import SmartyExtension
@@ -23,6 +24,43 @@ from tint_colors import get_tint_colors, store_tint_color
 
 def rsync(dir1, dir2):
     subprocess.check_call(["rsync", "--recursive", "--delete", dir1, dir2])
+
+
+def git(*args):
+    return subprocess.check_output(["git"] + list(args)).strip().decode("utf8")
+
+
+def set_git_timestamps():
+    """
+    For everything in the covers/ directory, set the last modified timestamp to
+    the last time it was modified in Git.  This should make tint colour computations
+    stable across machines.
+    """
+    root = git("rev-parse", "--show-toplevel")
+
+    now = datetime.datetime.now().timestamp()
+
+    for f in os.listdir("src/covers"):
+        path = os.path.join("src/covers", f)
+
+        if not os.path.isfile(path):
+            continue
+
+        stat = os.stat(path)
+
+        # If the modified time is >7 days ago, skip setting the modified time.  This means
+        # the script stays pretty fast when doing a regular sync.
+        if now - stat.st_mtime > 7 * 24 * 60 * 60 and "--reset" not in sys.argv:
+            continue
+
+        revision = git("rev-list", "--max-count=1", "HEAD", path)
+
+        timestamp, *_ = git("show", "--pretty=format:%ai", "--abbrev-commit", revision).splitlines()
+        modified_time = datetime.datetime.strptime(timestamp, "%Y-%m-%d %H:%M:%S %z").timestamp()
+
+        access_time = stat.st_atime
+
+        os.utime(path, times=(access_time, modified_time))
 
 
 @attr.s
@@ -168,7 +206,18 @@ def save_html(template, out_name="", **kwargs):
     html = template.render(**kwargs)
     out_path = pathlib.Path("_html") / out_name / "index.html"
     out_path.parent.mkdir(exist_ok=True, parents=True)
-    out_path.write_text(htmlmin.minify(html))
+
+    soup = bs4.BeautifulSoup(html, "html.parser")
+
+    # Minify the CSS in all inline <style> tags.
+    for style_tag in soup.find_all("style"):
+        style_tag.string = cssmin.cssmin(style_tag.string)
+
+    # Remove any comments
+    for comment in soup(text=lambda text: isinstance(text, bs4.Comment)):
+        comment.extract()
+
+    out_path.write_text(str(soup))
 
 
 def _create_new_thumbnail(src_path, dst_path):
@@ -225,6 +274,8 @@ def css_hash(_):
 
 
 def main():
+    set_git_timestamps()
+
     env = Environment(
         loader=FileSystemLoader("templates"),
         autoescape=select_autoescape(["html", "xml"]),

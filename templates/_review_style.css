@@ -1,0 +1,46 @@
+{% set r = (tint_colors[review_entry.book.cover_image][0] * 255) | int %}
+{% set g = (tint_colors[review_entry.book.cover_image][1] * 255) | int %}
+{% set b = (tint_colors[review_entry.book.cover_image][2] * 255) | int %}
+
+/* See https://stackoverflow.com/a/11615135/1558022 */
+#review_preview_{{ r }}_{{ g }}_{{ b }} {
+  border-color: rgb({{ r }}, {{ g }}, {{ b }});
+
+  {% if review_entry.review.rating == 5 %}
+    background: rgb(
+      {{ (r * 0.3 + 0.7 * 255) | int }},
+      {{ (g * 0.3 + 0.7 * 255) | int }},
+      {{ (b * 0.3 + 0.7 * 255) | int }}
+    );
+    border-width: 3px;
+    margin-left:  -1px;
+    margin-right: -1px;
+    box-shadow: 0px 0px 5px rgba({{r}}, {{g}}, {{ b }}, 0.3);
+  {% else %}
+    background: rgb(
+      {{ (r * 0.08 + 0.92 * 255) | int }},
+      {{ (g * 0.08 + 0.92 * 255) | int }},
+      {{ (b * 0.08 + 0.92 * 255) | int }}
+    );
+  {% endif %}
+}
+
+#review_preview_{{ r }}_{{ g }}_{{ b }}:hover {
+  {% if review_entry.review.rating == 5 %}
+    background: rgb(
+      {{ (r * 0.42 + 0.58 * 255) | int }},
+      {{ (g * 0.42 + 0.58 * 255) | int }},
+      {{ (b * 0.42 + 0.58 * 255) | int }}
+    );
+  {% else %}
+    background: rgb(
+      {{ (r * 0.26 + 0.74 * 255) | int }},
+      {{ (g * 0.26 + 0.74 * 255) | int }},
+      {{ (b * 0.26 + 0.74 * 255) | int }}
+    );
+  {% endif %}
+}
+
+#review_preview_{{ r }}_{{ g }}_{{ b }} a:hover {
+  background: none;
+}
