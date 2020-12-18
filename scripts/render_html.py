@@ -55,6 +55,9 @@ def set_git_timestamps():
 
         revision = git("rev-list", "--max-count=1", "HEAD", path)
 
+        if not revision:
+            continue
+
         timestamp, *_ = git("show", "--pretty=format:%ai", "--abbrev-commit", revision).splitlines()
         modified_time = datetime.datetime.strptime(timestamp, "%Y-%m-%d %H:%M:%S %z").timestamp()
 

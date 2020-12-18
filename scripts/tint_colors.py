@@ -136,7 +136,7 @@ def store_tint_color(cover_path):
     # If the size of a file has changed since the previous run, we need to
     # recompute the tint colour.
     try:
-        if tint_colors[os.path.basename(cover_path)]["size"] == os.stat(cover_path).st_size:
+        if os.path.basename(cover_path) in tint_colors:
             return
     except KeyError as err:
         print(f"Recomputing tint color for {cover_path}")
