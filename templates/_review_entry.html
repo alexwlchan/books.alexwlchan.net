@@ -37,12 +37,12 @@ id="review_preview_{{ r }}_{{ g }}_{{ b }}">
             {%- for _ in range(5 - review_entry.review.rating) -%}
             ☆
             {%- endfor %}
-
-            {% if review_entry.review.did_not_finish %}
-            (did not finish)
-            {% endif %}
+            </span>
           {% endif %}
-          </span>
+
+          {% if review_entry.review.did_not_finish %}
+          (did not finish)
+          {% endif %}
         </small>
       </p>
     </div>
