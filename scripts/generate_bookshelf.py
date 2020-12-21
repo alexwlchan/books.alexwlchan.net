@@ -17,7 +17,7 @@ def get_bins(total_width, min_height, max_height):
     x_coord = 0
 
     while x_coord <= total_width:
-        width = R.randint(8, 40)
+        width = R.randint(4, 28)
         height = R.randint(min_height, max_height)
 
         yield [(x_coord, 0), (x_coord + width, height)]
