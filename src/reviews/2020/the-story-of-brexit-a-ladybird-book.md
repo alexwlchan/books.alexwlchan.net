@@ -9,6 +9,7 @@ review:
   date_read: 2020-12-25
   format: hardback
   rating: 3
+  date_order: 2
 ---
 
 Gift from Mum and Dad for Christmas 2020.

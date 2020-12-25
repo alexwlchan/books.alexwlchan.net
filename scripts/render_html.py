@@ -82,6 +82,7 @@ class Book:
 class Review:
     date_read = attr.ib()
     text = attr.ib()
+    date_order = attr.ib(default=1)
     format = attr.ib(default=None)
     rating = attr.ib(default=None)
     did_not_finish = attr.ib(default=False)
@@ -304,7 +305,7 @@ def main():
         get_entries(dirpath="src/reviews", constructor=get_review_entry_from_path)
     )
     all_reviews = sorted(
-        all_reviews, key=lambda rev: str(rev.review.date_read), reverse=True
+        all_reviews, key=lambda rev: f"{rev.review.date_read}/{rev.review.date_order}", reverse=True
     )
 
     for review_entry in all_reviews:
