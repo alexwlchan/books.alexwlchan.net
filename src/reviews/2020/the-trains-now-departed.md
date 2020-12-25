@@ -19,3 +19,5 @@ It's easy to read and flows nicely; it would benefit from a few maps to show wha
 
 But more than talking about any specific experience, what this book tries to do -- and succeeds in doing -- is convincing you that something has been lost on Britain's railways.
 The past wasn't perfect, but there was character and charm that is no longer present today.
+
+This was a gift from Grandma and Granddad for Christmas 2019.
