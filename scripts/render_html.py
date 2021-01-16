@@ -68,6 +68,7 @@ def set_git_timestamps():
 
 @attr.s
 class Book:
+    slug = attr.ib()
     title = attr.ib()
     author = attr.ib()
     publication_year = attr.ib()
@@ -109,6 +110,7 @@ def get_review_entry_from_path(path):
         except KeyError:
             pass
 
+    kwargs["slug"] = os.path.basename(os.path.splitext(path)[0])
     book = Book(**kwargs)
 
     review = Review(**post["review"], text=post.content)
@@ -131,7 +133,9 @@ class CurrentlyReadingEntry:
 def get_reading_entry_from_path(path):
     post = frontmatter.load(path)
 
-    book = Book(**post["book"])
+    slug = os.path.basename(os.path.splitext(path)[0])
+    book = Book(slug=slug, **post["book"])
+
     reading = CurrentlyReading(text=post.content)
 
     return CurrentlyReadingEntry(path=path, book=book, reading=reading)
@@ -160,7 +164,9 @@ class PlanEntry:
 def get_plan_entry_from_path(path):
     post = frontmatter.load(path)
 
-    book = Book(**post["book"])
+    slug = os.path.basename(os.path.splitext(path)[0])
+    book = Book(slug=slug, **post["book"])
+
     plan = Plan(date_added=post["plan"]["date_added"], text=post.content)
 
     return PlanEntry(path=path, book=book, plan=plan)

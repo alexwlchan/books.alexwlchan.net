@@ -3,7 +3,7 @@
 {% set b = (tint_colors[review_entry.book.cover_image][2] * 255) | int %}
 
 /* See https://stackoverflow.com/a/11615135/1558022 */
-#review_preview_{{ r }}_{{ g }}_{{ b }} {
+#review_preview_{{ review_entry.book.slug }} {
   border-color: rgb({{ r }}, {{ g }}, {{ b }});
 
   {% if review_entry.review.rating == 5 %}
@@ -25,7 +25,7 @@
   {% endif %}
 }
 
-#review_preview_{{ r }}_{{ g }}_{{ b }}:hover {
+#review_preview_{{ review_entry.book.slug }}:hover {
   {% if review_entry.review.rating == 5 %}
     background: rgb(
       {{ (r * 0.42 + 0.58 * 255) | int }},
@@ -41,6 +41,6 @@
   {% endif %}
 }
 
-#review_preview_{{ r }}_{{ g }}_{{ b }} a:hover {
+#review_preview_{{ review_entry.book.slug }} a:hover {
   background: none;
 }
