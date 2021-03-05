@@ -18,7 +18,17 @@ id="review_preview_{{ review_entry.book.slug }}">
       <p class="title">{{ review_entry.book.title | smartypants | safe }}</p>
       <p>
         <small>
-          by {{ review_entry.book.author }}
+          {% if review_entry.book.author %}
+            by {{ review_entry.book.author }}
+            {%- if review_entry.book.editor -%}
+            ,
+            {% endif %}
+          {% endif %}
+
+          {% if review_entry.book.editor %}
+          edited by {{ review_entry.book.editor }}
+          {% endif %}
+
           {%- if review_entry.book.publication_year %}
             ({{ review_entry.book.publication_year}})
           {%- endif -%}

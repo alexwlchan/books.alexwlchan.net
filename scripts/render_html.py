@@ -70,8 +70,11 @@ def set_git_timestamps():
 class Book:
     slug = attr.ib()
     title = attr.ib()
-    author = attr.ib()
     publication_year = attr.ib()
+
+    author = attr.ib(default="")
+    editor = attr.ib(default="")
+
     cover_image = attr.ib(default="")
     cover_desc = attr.ib(default="")
 

@@ -47,14 +47,26 @@
   <h1><span class="book-title">{{ review_entry.book.title | smartypants | safe }}</span></h1>
 
   <table class="book_metadata">
-    <tr>
-      <td>author{% if "and" in review_entry.book.author or ", " in review_entry.book.author or " & " in review_entry.book.author %}s{% endif %}:</td>
-      <th>{{ review_entry.book.author }}
-        {%- if review_entry.book.publication_year %}
-          ({{ review_entry.book.publication_year}})
-        {%- endif -%}
-      </th>
-    </tr>
+    {% if review_entry.book.author %}
+      <tr>
+        <td>author{% if "and" in review_entry.book.author or ", " in review_entry.book.author or " & " in review_entry.book.author %}s{% endif %}:</td>
+        <th>{{ review_entry.book.author }}
+          {%- if review_entry.book.publication_year %}
+            ({{ review_entry.book.publication_year}})
+          {%- endif -%}
+        </th>
+      </tr>
+    {% endif %}
+    {% if review_entry.book.editor %}
+      <tr>
+        <td>editor{% if "and" in review_entry.book.editor or ", " in review_entry.book.editor or " & " in review_entry.book.editor %}s{% endif %}:</td>
+        <th>{{ review_entry.book.editor }}
+          {%- if review_entry.book.publication_year %}
+            ({{ review_entry.book.publication_year}})
+          {%- endif -%}
+        </th>
+      </tr>
+    {% endif %}
     {% if review_entry.review.date_read %}
     <tr>
       <td>date read:</td>
