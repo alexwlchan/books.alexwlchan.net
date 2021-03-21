@@ -6,7 +6,7 @@ set -o verbose
 
 git pull origin development
 
-python3 scripts/render_html.py
+python3.8 scripts/render_html.py
 
 rsync --archive --verbose --compress --delete \
   _html/ alexwlchan@helene.linode:sites/books.alexwlchan.net
