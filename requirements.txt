@@ -20,7 +20,7 @@ markdown==3.1.1
     # via -r requirements.in
 markupsafe==1.1.1
     # via jinja2
-pillow==7.0.0
+pillow==8.1.1
     # via -r requirements.in
 python-editor==1.0.4
     # via inquirer
