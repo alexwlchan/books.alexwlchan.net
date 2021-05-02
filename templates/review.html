@@ -89,9 +89,6 @@
         {% for _ in range(5 - review_entry.review.rating) %}
         ☆
         {% endfor %}
-        {% if review_entry.review.did_not_finish %}
-        (did not finish)
-        {% endif %}
       </th>
     </tr>
     {% endif %}
