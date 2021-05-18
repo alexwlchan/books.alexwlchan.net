@@ -18,3 +18,5 @@ The hardback version has gorgeous illustrations, and feels like a proper book of
 It's a book with presence and heft.
 
 I enjoyed this both for the gender shenanigans, and for reading an older version of some of the fairy tales I'm used to.
+
+See also: [The origins of Gender Swapped Fairy Tales](https://www.foyles.co.uk/Public/Biblio/Detail.aspx?blogId=2055)
