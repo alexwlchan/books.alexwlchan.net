@@ -25,6 +25,10 @@
   {% endif %}
 }
 
+#review_preview_{{ review_entry.book.slug }} img {
+  border: 0.1px solid rgb({{ r }}, {{ g }}, {{ b }});
+}
+
 #review_preview_{{ review_entry.book.slug }}:hover {
   {% if review_entry.review.rating == 5 %}
     background: rgb(
