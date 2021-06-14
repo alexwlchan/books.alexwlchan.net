@@ -9,7 +9,7 @@ plan:
 review:
   date_read: 2021-06-06
   format: audiobook
-  rating: 5
+  rating: 4
 ---
 
 I first heard of this book in a [tweet from Hynek](https://twitter.com/hynek/status/1259536982411280386).

@@ -67,6 +67,12 @@
         </th>
       </tr>
     {% endif %}
+    {% if review_entry.book.narrator %}
+      <tr>
+        <td>narrator{% if "and" in review_entry.book.narrator or ", " in review_entry.book.narrator or " & " in review_entry.book.narrator %}s{% endif %}:</td>
+        <th>{{ review_entry.book.narrator }}</th>
+      </tr>
+    {% endif %}
     {% if review_entry.review.date_read %}
     <tr>
       <td>date read:</td>
