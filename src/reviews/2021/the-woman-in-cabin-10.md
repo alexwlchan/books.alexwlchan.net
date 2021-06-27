@@ -25,5 +25,7 @@ The narrative is interspersed between Lo's commentary and fragments of the world
 These fragments run a few days ahead of Lo, building tension without giving away the plot.
 
 Like the reviewer, I didn't see the twist coming – but it's quite a clever one, hidden in plain sight.
+I did feel it was stretching plausibility by the end, and it does wrap up a little too conveniently.
+
 The book kept me engaged, and I finished it in a weekend.
-I'm not sure I'll re-read it now I know the ending, but it was a good one-off.
+I'm not sure I'll re-read it now I know the ending, but it was a fun one-off.
