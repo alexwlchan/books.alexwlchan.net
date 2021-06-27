@@ -258,6 +258,7 @@ footer a:hover {
     grid-column: 1/1;
     grid-row: 2/2;
     padding: 15px;
+    padding-left: 0;
     padding-top: 0;
   }
 }
