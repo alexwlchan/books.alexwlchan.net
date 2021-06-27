@@ -301,6 +301,7 @@ def main():
     env.filters["thumbnail_1x"] = thumbnail_1x
     env.filters["css_hash"] = css_hash
     env.filters["create_shelf_data_uri"] = create_shelf_data_uri
+    env.filters["cap_rgb"] = lambda v: min([v, 255])
 
     create_thumbnails()
 

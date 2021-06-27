@@ -8,9 +8,9 @@
 
   {% if review_entry.review.rating == 5 %}
     background: rgb(
-      {{ (r * 0.3 + 0.7 * 255) | int }},
-      {{ (g * 0.3 + 0.7 * 255) | int }},
-      {{ (b * 0.3 + 0.7 * 255) | int }}
+      {{ (r * 0.3 + 0.8 * 255) | int | cap_rgb }},
+      {{ (g * 0.3 + 0.8 * 255) | int | cap_rgb }},
+      {{ (b * 0.3 + 0.8 * 255) | int | cap_rgb }}
     );
     border-width: 3px;
     margin-left:  -1px;
@@ -18,9 +18,9 @@
     box-shadow: 0px 0px 5px rgba({{r}}, {{g}}, {{ b }}, 0.3);
   {% else %}
     background: rgb(
-      {{ (r * 0.08 + 0.92 * 255) | int }},
-      {{ (g * 0.08 + 0.92 * 255) | int }},
-      {{ (b * 0.08 + 0.92 * 255) | int }}
+      {{ (r * 0.08 + 0.92 * 255) | int | cap_rgb }},
+      {{ (g * 0.08 + 0.92 * 255) | int | cap_rgb }},
+      {{ (b * 0.08 + 0.92 * 255) | int | cap_rgb }}
     );
   {% endif %}
 }
