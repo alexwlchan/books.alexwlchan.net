@@ -8,6 +8,7 @@ import pathlib
 import re
 import subprocess
 import sys
+import typing
 
 import attr
 import bs4
@@ -91,6 +92,10 @@ class Review:
     format = attr.ib(default=None)
     rating = attr.ib(default=None)
     did_not_finish = attr.ib(default=False)
+
+    @property
+    def finished(self):
+        return not self.did_not_finish
 
 
 @attr.s
@@ -287,6 +292,10 @@ def css_hash(_):
     return f"md5:{CSS_HASH}"
 
 
+def count_finished_books(review_entries: typing.List[ReviewEntry]):
+    return len([r for r in review_entries if r.review.finished])
+
+
 def main():
     set_git_timestamps()
 
@@ -302,6 +311,7 @@ def main():
     env.filters["css_hash"] = css_hash
     env.filters["create_shelf_data_uri"] = create_shelf_data_uri
     env.filters["cap_rgb"] = lambda v: min([v, 255])
+    env.filters["count_finished_books"] = count_finished_books
 
     create_thumbnails()
 

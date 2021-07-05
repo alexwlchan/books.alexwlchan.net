@@ -22,7 +22,7 @@
   <div class="divider"><img src="/static/book.svg"></div>
 
   <div class="books_by_year" id="books_by_year_{{ year }}">
-    <h3>the {{ reviews|length }} book{% if reviews|length != 1 %}s{% endif %}
+    <h3>the {{ reviews|count_finished_books }} book{% if reviews|count_finished_books != 1 %}s{% endif %}
       {% if year == this_year %}
         i&rsquo;ve read so far
       {% else %}
