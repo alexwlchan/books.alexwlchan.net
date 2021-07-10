@@ -76,6 +76,7 @@ class Book:
     author = attr.ib(default="")
     editor = attr.ib(default="")
     narrator = attr.ib(default="")
+    illustrator = attr.ib(default="")
 
     cover_image = attr.ib(default="")
     cover_desc = attr.ib(default="")

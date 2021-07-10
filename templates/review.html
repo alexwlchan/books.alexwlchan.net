@@ -46,33 +46,32 @@
 
   <h1><span class="book-title">{{ review_entry.book.title | smartypants | safe }}</span></h1>
 
+  {#
+    This means the publication year will be printed in parens next to
+    the first/principal contributor, but only the first contributor.
+    #}
+  {% set contributor_options = {"has_printed_year": False} %}
+
   <table class="book_metadata">
-    {% if review_entry.book.author %}
-      <tr>
-        <td>author{% if "and" in review_entry.book.author or ", " in review_entry.book.author or " & " in review_entry.book.author %}s{% endif %}:</td>
-        <th>{{ review_entry.book.author }}
-          {%- if review_entry.book.publication_year %}
-            ({{ review_entry.book.publication_year}})
-          {%- endif -%}
-        </th>
-      </tr>
-    {% endif %}
-    {% if review_entry.book.editor %}
-      <tr>
-        <td>editor{% if "and" in review_entry.book.editor or ", " in review_entry.book.editor or " & " in review_entry.book.editor %}s{% endif %}:</td>
-        <th>{{ review_entry.book.editor }}
-          {%- if review_entry.book.publication_year %}
-            ({{ review_entry.book.publication_year}})
-          {%- endif -%}
-        </th>
-      </tr>
-    {% endif %}
-    {% if review_entry.book.narrator %}
-      <tr>
-        <td>narrator{% if "and" in review_entry.book.narrator or ", " in review_entry.book.narrator or " & " in review_entry.book.narrator %}s{% endif %}:</td>
-        <th>{{ review_entry.book.narrator }}</th>
-      </tr>
-    {% endif %}
+    {% for label, contributor in [
+      ("author", review_entry.book.author),
+      ("editor", review_entry.book.editor),
+      ("illustrator", review_entry.book.illustrator),
+      ("narrator", review_entry.book.narrator),
+    ] %}
+      {% if contributor %}
+        <tr>
+          <td>{{ label }}{% if "and" in contributor or ", " in contributor or " & " in contributor %}s{% endif %}:</td>
+          <th>{{ contributor }}
+            {%- if review_entry.book.publication_year and not contributor_options["has_printed_year"] %}
+              ({{ review_entry.book.publication_year}})
+              {% set _ = contributor_options.update({"has_printed_year": True}) %}
+            {%- endif -%}
+          </th>
+        </tr>
+      {% endif %}
+    {% endfor %}
+
     {% if review_entry.review.date_read %}
     <tr>
       <td>date read:</td>
