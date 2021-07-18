@@ -108,16 +108,24 @@ aside a:hover {
 table.book_metadata {
   border-collapse: collapse;
   margin-bottom: 1em;
+  max-width: calc(100% - 230px);
 }
 
-td {
-  padding-right: 10px;
+td, th {
+  line-height: 1.4em;
+  vertical-align: top;
   padding-top:    3px;
   padding-bottom: 3px;
 }
 
+td {
+  font-weight: bold;
+}
+
 th {
+  padding-right: 10px;
   text-align: left;
+  font-weight: normal;
 }
 
 footer {

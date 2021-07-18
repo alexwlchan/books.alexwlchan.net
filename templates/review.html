@@ -61,40 +61,40 @@
     ] %}
       {% if contributor %}
         <tr>
-          <td>{{ label }}{% if "and" in contributor or ", " in contributor or " & " in contributor %}s{% endif %}:</td>
-          <th>{{ contributor }}
+          <th>{{ label }}{% if "and" in contributor or ", " in contributor or " & " in contributor %}s{% endif %}:</th>
+          <td>{{ contributor }}
             {%- if review_entry.book.publication_year and not contributor_options["has_printed_year"] %}
               ({{ review_entry.book.publication_year}})
               {% set _ = contributor_options.update({"has_printed_year": True}) %}
             {%- endif -%}
-          </th>
+          </td>
         </tr>
       {% endif %}
     {% endfor %}
 
     {% if review_entry.review.date_read %}
     <tr>
-      <td>date read:</td>
-      <th>{{ review_entry.review.date_read | render_date }}
+      <th>date read:</th>
+      <td>{{ review_entry.review.date_read | render_date }}
         {% if review_entry.review.did_not_finish %}
         <span class="did_not_finish">
           (did not finish)
         </span>
         {% endif %}
-      </th>
+      </td>
     </tr>
     {% endif %}
     {% if review_entry.review.rating %}
     <tr>
-      <td>rating:</td>
-      <th>
+      <th>rating:</th>
+      <td>
         {% for _ in range(review_entry.review.rating) %}
         ★
         {% endfor %}
         {% for _ in range(5 - review_entry.review.rating) %}
         ☆
         {% endfor %}
-      </th>
+      </td>
     </tr>
     {% endif %}
   </table>
