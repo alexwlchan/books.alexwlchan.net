@@ -8,7 +8,7 @@ book:
 review:
   date_read: 2021-07-18
   format: audiobook
-  rating: 4
+  rating: 3
 ---
 
 This was a gift from Mum in 2020.
@@ -19,7 +19,7 @@ She's dispatched to find the Vela, a refugee ship from a dying outer planet that
 Her journey takes her across several planets, and she discovers that it's not as simple as she was told.
 The ship was actually carrying technology that could help people escape the system—but she has to decide who gets it.
 
-The worldbuilding is excellent: it's a good concept that has parallels to real-world refugees, and it forces you to think about the difficult moral situations.
+The worldbuilding is fun: it's a good concept that has parallels to real-world refugees, and it forces you to think about the difficult moral situations.
 The characters are well fleshed-out and compelling, and it ends on a cliffhanger ending that leaves me wanting more.
 The narration is good, with enough sound effects to be fun, but not enough to be distracting.
 
