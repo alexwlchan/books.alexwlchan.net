@@ -84,7 +84,7 @@
       </td>
     </tr>
     {% endif %}
-    {% if review_entry.review.rating %}
+    {% if review_entry.review.rating and not review_entry.review.did_not_finish %}
     <tr>
       <th>rating:</th>
       <td>
