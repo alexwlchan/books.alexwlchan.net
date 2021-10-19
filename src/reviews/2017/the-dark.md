@@ -12,3 +12,5 @@ review:
 ---
 
 This is only short, but it’s quite a sweet and different take on the dark. Lovely illustrations and a good concept.
+
+I originally heard of this in [a post on Brain Pickings](https://www.brainpickings.org/2013/06/25/the-dark-lemony-snicket-jon-klassen/), which I got from Bloo.
