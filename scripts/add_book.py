@@ -125,7 +125,7 @@ def get_review_info():
 def save_cover(slug, cover_image_url):
     filename, headers = urlretrieve(cover_image_url)
 
-    if headers["Content-Type"] == "image/jpeg":
+    if headers["Content-Type"].lower() == "image/jpeg":
         extension = ".jpg"
     elif headers["Content-Type"] == "image/png":
         extension = ".png"
@@ -133,7 +133,7 @@ def save_cover(slug, cover_image_url):
         extension = ".gif"
     else:
         print(headers)
-        assert 0
+        assert 0, "Could not determine cover extension"
 
         url_path = hyperlink.URL.from_text(cover_image_url).path
         extension = os.path.splitext(url_path[-1])[-1]
@@ -147,12 +147,26 @@ def save_cover(slug, cover_image_url):
     return cover_name
 
 
+def copy_cover(slug, cover_image_path):
+    extension = cover_image_path.split(".")[-1]
+    cover_name = f"{slug}{extension}"
+    dst_path = f"src/covers/{cover_name}"
+
+    os.rename(cover_image_path, f"src/covers/{cover_name}")
+
+    return cover_name
+
+
+
 if __name__ == "__main__":
     book_info = get_book_info()
 
     slug = slugify(book_info["title"])
 
-    cover_name = save_cover(slug=slug, cover_image_url=book_info["cover_image_url"])
+    if book_info["cover_image_url"].startswith("http"):
+        cover_name = save_cover(slug=slug, cover_image_url=book_info["cover_image_url"])
+    else:
+        cover_name = copy_cover(slug=slug, cover_image_path=book_info["cover_image_url"])
 
     new_entry = {
         "book": {
