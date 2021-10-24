@@ -61,7 +61,7 @@
     ] %}
       {% if contributor %}
         <tr>
-          <th>{{ label }}{% if "and" in contributor or ", " in contributor or " & " in contributor %}s{% endif %}:</th>
+          <th>{{ label }}{% if " and" in contributor or ", " in contributor or " & " in contributor %}s{% endif %}:</th>
           <td>{{ contributor }}
             {%- if review_entry.book.publication_year and not contributor_options["has_printed_year"] %}
               ({{ review_entry.book.publication_year}})
