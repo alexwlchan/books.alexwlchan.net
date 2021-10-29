@@ -13,7 +13,7 @@ review:
 I first heard of this in [a review by The Snicket Sleuth](https://snicketsleuth.tumblr.com/post/661507207111819264/the-sleuth-reviews-poison-for-breakfast), and I borrowed the ebook from the library.
 
 It's a very Snicket-y Snicket book, with the usual mix of profundity and absurdity, this time in the frame of a murder mystery.
-There are lots of reflections on death and mortality, and I scribbled down a few of my favourite quotes.
+There are reflections on death and mortality, and I scribbled down a few of my favourite quotes.
 
-I enjoyed it, but I wasn't carried along as in some of the previous books.
+I enjoyed it, but I wasn't swept along like some of his other books.
 It's fine.
