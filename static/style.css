@@ -111,6 +111,10 @@ aside a:hover {
   max-width: calc(100% - 230px);
 }
 
+a .book_metadata {
+  max-width: calc(100% - 135px);
+}
+
 td, th {
   line-height: 1.4em;
   vertical-align: top;
@@ -126,6 +130,7 @@ th {
   padding-right: 10px;
   text-align: left;
   font-weight: normal;
+  min-width: 6.5em; /* wide enough for "date read" */
 }
 
 footer {
