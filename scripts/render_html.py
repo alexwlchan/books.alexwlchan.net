@@ -237,7 +237,13 @@ def save_html(template, out_name="", **kwargs):
     for comment in soup(text=lambda text: isinstance(text, bs4.Comment)):
         comment.extract()
 
-    out_path.write_text(str(soup))
+    # Fix non-breaking spaces.  This is a fixed list based on examples
+    # I've seen, rather than fixing the more general problem.
+    html = str(soup)
+    for name in ("Mar Hicks", "Thomas S. Mullaney", "Benjamin Peters", "Kavita Philip"):
+        html = html.replace(name, name.replace(" ", "&nbsp;"))
+
+    out_path.write_text(html)
 
 
 def _create_new_thumbnail(src_path, dst_path):
