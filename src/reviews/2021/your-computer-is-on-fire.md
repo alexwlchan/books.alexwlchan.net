@@ -8,7 +8,7 @@ book:
 review:
   date_read: 2021-10-31
   format: paperback
-  rating: 4
+  rating: 5
 ---
 
 This book is a series of essays about technology and computing, contradicting the myth of a technological utopia, and discussing the inequality and marginalisation caused by the current tech industry.
