@@ -44,7 +44,12 @@
     </div>
   {% endif %}
 
-  <h1><span class="book-title">{{ review_entry.book.title | smartypants | safe }}</span></h1>
+  <h1>
+    <span class="book-title">{{ review_entry.book.title | smartypants | safe }}</span>
+    {% if review_entry.book.series %}
+    <span class="book-series">({{ review_entry.book.series | smartypants | safe }})</span>
+    {% endif %}
+  </h1>
 
   {#
     This means the publication year will be printed in parens next to

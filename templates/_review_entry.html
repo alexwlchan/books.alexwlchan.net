@@ -15,7 +15,12 @@ id="review_preview_{{ review_entry.book.slug }}">
     </div>
 
     <div class="book_metadata">
-      <p class="title">{{ review_entry.book.title | smartypants | safe }}</p>
+      <p class="title">
+        {{ review_entry.book.title | smartypants | safe }}
+        {% if review_entry.book.series %}
+        <span class="book-series">({{ review_entry.book.series | smartypants | safe }})</span>
+        {% endif %}
+      </p>
       <p>
         <small>
           {% if review_entry.book.author %}

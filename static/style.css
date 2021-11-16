@@ -9,10 +9,10 @@ body {
 }
 
 h1 {
-  line-height: 1.15em;
+  line-height: 1.25em;
 }
 
-h1 .book-title {
+h1 .book-title, h1 .book-series {
   font-style: italic;
 }
 
@@ -248,6 +248,11 @@ footer a:hover {
 .star_rating {
   font-size: 100%;
   letter-spacing: 4px;
+}
+
+.book-series {
+  color: #999;
+  font-weight: normal;
 }
 
 @media screen and (max-width: 500px) {

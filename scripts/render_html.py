@@ -72,6 +72,7 @@ class Book:
     slug = attr.ib()
     title = attr.ib()
     publication_year = attr.ib()
+    series = attr.ib(default="")
 
     author = attr.ib(default="")
     editor = attr.ib(default="")
