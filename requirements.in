@@ -1,4 +1,6 @@
 attrs
+bs4
+cssmin
 hyperlink
 inquirer
 jinja2
@@ -7,3 +9,4 @@ Pillow
 python-frontmatter
 smartypants
 unidecode
+wcag_contrast_ratio

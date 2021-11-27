@@ -4,22 +4,27 @@
 #
 #    pip-compile
 #
-attrs==19.3.0
+attrs==19.3.0             # via -r requirements.in
+beautifulsoup4==4.10.0    # via bs4
 blessings==1.7            # via inquirer
-hyperlink==19.0.0
+bs4==0.0.1                # via -r requirements.in
+cssmin==0.2.0             # via -r requirements.in
+hyperlink==19.0.0         # via -r requirements.in
 idna==2.8                 # via hyperlink
-inquirer==2.6.3
-jinja2==2.11.1
-markdown==3.1.1
+inquirer==2.6.3           # via -r requirements.in
+jinja2==2.11.1            # via -r requirements.in
+markdown==3.1.1           # via -r requirements.in
 markupsafe==1.1.1         # via jinja2
-pillow==7.0.0
+pillow==7.0.0             # via -r requirements.in
 python-editor==1.0.4      # via inquirer
-python-frontmatter==0.5.0
+python-frontmatter==0.5.0  # via -r requirements.in
 pyyaml==5.3               # via python-frontmatter
 readchar==2.0.1           # via inquirer
 six==1.14.0               # via blessings, python-frontmatter
-smartypants==2.0.1
-unidecode==1.1.1
+smartypants==2.0.1        # via -r requirements.in
+soupsieve==2.3.1          # via beautifulsoup4
+unidecode==1.1.1          # via -r requirements.in
+wcag-contrast-ratio==0.9  # via -r requirements.in
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
