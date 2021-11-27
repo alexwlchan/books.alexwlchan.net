@@ -11,8 +11,8 @@ import sys
 import typing
 
 import attr
-import bs4
 import cssmin
+import htmlmin
 import frontmatter
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 import markdown
@@ -228,19 +228,11 @@ def save_html(template, out_name="", **kwargs):
     out_path = pathlib.Path("_html") / out_name / "index.html"
     out_path.parent.mkdir(exist_ok=True, parents=True)
 
-    soup = bs4.BeautifulSoup(html, "html.parser")
+    for s in list(re.finditer(r"<style>([^<]+)</style>", html)):
+        html = html.replace(s.group(1), cssmin.cssmin(s.group(1)))
 
-    # Minify the CSS in all inline <style> tags.
-    for style_tag in soup.find_all("style"):
-        style_tag.string = cssmin.cssmin(style_tag.string)
+    html = htmlmin.minify(html, remove_comments=True)
 
-    # Remove any comments
-    for comment in soup(text=lambda text: isinstance(text, bs4.Comment)):
-        comment.extract()
-
-    # Fix non-breaking spaces.  This is a fixed list based on examples
-    # I've seen, rather than fixing the more general problem.
-    html = str(soup)
     for name in ("Mar Hicks", "Thomas S. Mullaney", "Benjamin Peters", "Kavita Philip"):
         html = html.replace(name, name.replace(" ", "&nbsp;"))
 

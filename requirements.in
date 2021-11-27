@@ -1,6 +1,7 @@
 attrs
 bs4
 cssmin
+htmlmin
 hyperlink
 inquirer
 jinja2
