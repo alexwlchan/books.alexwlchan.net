@@ -1,51 +1,9 @@
-import collections
 import colorsys
 import json
-import math
 import os
+import subprocess
 
-from PIL import Image, UnidentifiedImageError
-from sklearn.cluster import KMeans
 import wcag_contrast_ratio as contrast
-
-
-def _get_colors_from_im(im):
-    # Resizing means less pixels to handle, so the *k*-means clustering converges
-    # faster.  Small details are lost, but the main details will be preserved.
-    if im.size > (100, 100):
-        resize_ratio = min([100 / im.width, 100 / im.height])
-
-        new_width = int(im.width * resize_ratio)
-        new_height = int(im.height * resize_ratio)
-
-        im = im.resize((new_width, new_height))
-
-    # Ensure the image is RGB for consistency.
-    im = im.convert("RGB")
-
-    return list(im.getdata())
-
-
-def get_colors_from(path):
-    """
-    Returns a list of the colors in the image at ``path``.
-    """
-    im = Image.open(str(path))
-
-    if getattr(im, "is_animated", False):
-        result = []
-
-        frame_count = im.n_frames
-
-        # Don't get all the frames from an animated GIF; if it has hundreds of
-        # frames this massively increases computation required for little gain.
-        # Take a sample and work from that.
-        for frame in range(0, frame_count, int(math.ceil(frame_count / 25))):
-            im.seek(frame)
-            result.extend(_get_colors_from_im(im))
-        return result
-    else:
-        return _get_colors_from_im(im)
 
 
 def choose_tint_color_from_dominant_colors(dominant_colors, background_color):
@@ -93,29 +51,20 @@ def choose_tint_color_from_dominant_colors(dominant_colors, background_color):
     return max(hsv_candidates, key=lambda rgb_col: hsv_candidates[rgb_col][2])
 
 
-def choose_tint_color(p, *, background_color):
-    try:
-        background_color = {"black": (0, 0, 0), "white": (1, 1, 1)}[background_color]
-    except KeyError:  # pragma: no cover
-        raise ValueError(f"Unrecognised background color: {background_color!r}")
+def choose_tint_color(path):
+    # This shells out to https://github.com/alexwlchan/dominant_colours to find
+    # the dominant colours in the book cover.
+    tool_output = subprocess.check_output([
+        "dominant_colours", path, '--max-colours=12', "--no-palette"
+    ])
 
-    colors = get_colors_from(p)
-
-    # Normalise to [0, 1]
-    colors = [(r / 255, g / 255, b / 255) for (r, g, b) in colors]
-
-    pixel_tally = collections.Counter(colors)
-    most_common, most_common_count = pixel_tally.most_common(1)[0]
-    if (
-        most_common_count >= len(colors) * 0.15
-        and contrast.rgb(most_common, background_color) >= 4.5
-    ):
-        return most_common
-
-    dominant_colors = KMeans(n_clusters=12).fit(colors).cluster_centers_
+    dominant_colors = [
+        (int(line[1:3], 16) / 255, int(line[3:5], 16) / 255, int(line[5:7], 16) / 255)
+        for line in tool_output.splitlines()
+    ]
 
     return choose_tint_color_from_dominant_colors(
-        dominant_colors=dominant_colors, background_color=background_color
+        dominant_colors=dominant_colors, background_color=(1, 1, 1)
     )
 
 
@@ -138,10 +87,10 @@ def store_tint_color(cover_path):
     try:
         if os.path.basename(cover_path) in tint_colors:
             return
-    except KeyError as err:
+    except KeyError:
         print(f"Recomputing tint color for {cover_path}")
 
-    cover_color = choose_tint_color(cover_path, background_color="white")
+    cover_color = choose_tint_color(cover_path)
     tint_colors[os.path.basename(cover_path)] = {
         "color": cover_color,
         "size": os.stat(cover_path).st_size,

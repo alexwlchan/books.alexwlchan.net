@@ -15,7 +15,6 @@ inquirer==2.6.3           # via -r requirements.in
 jinja2==2.11.1            # via -r requirements.in
 markdown==3.1.1           # via -r requirements.in
 markupsafe==1.1.1         # via jinja2
-pillow==7.0.0             # via -r requirements.in
 python-editor==1.0.4      # via inquirer
 python-frontmatter==0.5.0  # via -r requirements.in
 pyyaml==5.3               # via python-frontmatter
