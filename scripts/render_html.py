@@ -329,9 +329,11 @@ def main():
         all_reviews, key=lambda rev: f"{rev.review.date_read}/{rev.review.date_order}", reverse=True
     )
 
+    review_template = env.get_template("review.html")
+
     for review_entry in all_reviews:
         save_html(
-            template=env.get_template("review.html"),
+            template=review_template,
             out_name=review_entry.out_path(),
             review_entry=review_entry,
             title=f"My review of {review_entry.book.title}",
