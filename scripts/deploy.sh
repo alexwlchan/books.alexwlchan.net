@@ -6,7 +6,7 @@ set -o verbose
 
 git pull origin development
 
-rm -rf _html
+find _html -name '*.html' -delete
 
 python3.8 scripts/render_html.py
 
