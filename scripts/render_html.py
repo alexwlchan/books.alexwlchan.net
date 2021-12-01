@@ -60,8 +60,12 @@ def set_git_timestamps():
         if not revision:
             continue
 
-        timestamp, *_ = git("show", "--pretty=format:%ai", "--abbrev-commit", revision).splitlines()
-        modified_time = datetime.datetime.strptime(timestamp, "%Y-%m-%d %H:%M:%S %z").timestamp()
+        timestamp, *_ = git(
+            "show", "--pretty=format:%ai", "--abbrev-commit", revision
+        ).splitlines()
+        modified_time = datetime.datetime.strptime(
+            timestamp, "%Y-%m-%d %H:%M:%S %z"
+        ).timestamp()
 
         access_time = stat.st_atime
 
@@ -168,9 +172,7 @@ def _create_new_thumbnail(src_path, dst_path):
     dst_path.parent.mkdir(exist_ok=True, parents=True)
 
     # Thumbnails are 240x240 max, then 2x for retina displays
-    subprocess.check_call([
-        "convert", src_path, "-resize", "480x480>", dst_path
-    ])
+    subprocess.check_call(["convert", src_path, "-resize", "480x480>", dst_path])
 
 
 def thumbnail_1x(name):
@@ -181,10 +183,21 @@ def thumbnail_1x(name):
 def _create_new_square(src_path, square_path):
     square_path.parent.mkdir(exist_ok=True, parents=True)
 
-    subprocess.check_call([
-        "convert",
-        src_path, "-resize", "240x240", "-gravity", "center", "-background", "white", "-extent", "240x240", square_path
-    ])
+    subprocess.check_call(
+        [
+            "convert",
+            src_path,
+            "-resize",
+            "240x240",
+            "-gravity",
+            "center",
+            "-background",
+            "white",
+            "-extent",
+            "240x240",
+            square_path,
+        ]
+    )
 
 
 def create_thumbnails():
@@ -210,7 +223,7 @@ def create_thumbnails():
         store_tint_color(dst_path)
 
 
-CSS_HASH = hashlib.md5(open('static/style.css', 'rb').read()).hexdigest()
+CSS_HASH = hashlib.md5(open("static/style.css", "rb").read()).hexdigest()
 
 
 def css_hash(_):
@@ -251,7 +264,9 @@ def main():
         get_entries(dirpath="src/reviews", constructor=get_review_entry_from_path)
     )
     all_reviews = sorted(
-        all_reviews, key=lambda rev: f"{rev.review.date_read}/{rev.review.date_order}", reverse=True
+        all_reviews,
+        key=lambda rev: f"{rev.review.date_read}/{rev.review.date_order}",
+        reverse=True,
     )
 
     review_template = env.get_template("review.html")
@@ -262,7 +277,7 @@ def main():
             out_name=review_entry.out_path(),
             review_entry=review_entry,
             title=f"My review of {review_entry.book.title}",
-            tint_colors=tint_colors
+            tint_colors=tint_colors,
         )
 
     save_html(
@@ -276,7 +291,7 @@ def main():
         ],
         title="books i’ve read",
         this_year=str(datetime.datetime.now().year),
-        tint_colors=tint_colors
+        tint_colors=tint_colors,
     )
 
     # Render the "currently reading" page
@@ -292,7 +307,7 @@ def main():
         out_name="reading",
         all_reading=all_reading,
         title="books i’m currently reading",
-        tint_colors=tint_colors
+        tint_colors=tint_colors,
     )
 
     # Render the "want to read" page
@@ -324,7 +339,7 @@ def main():
         out_name="will-never-read",
         all_retired=all_retired,
         title="books i&rsquo;m never going to read",
-        tint_colors=tint_colors
+        tint_colors=tint_colors,
     )
 
     # Render the front page
@@ -333,7 +348,7 @@ def main():
         template=env.get_template("index.html"),
         text=open("src/index.md").read(),
         reviews=all_reviews[:5],
-        tint_colors=tint_colors
+        tint_colors=tint_colors,
     )
 
     print("✨ Rendered HTML files to _html ✨")
