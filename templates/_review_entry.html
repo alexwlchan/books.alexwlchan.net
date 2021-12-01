@@ -1,6 +1,4 @@
-{% set r = (tint_colors[review_entry.book.cover_image][0] * 255) | int %}
-{% set g = (tint_colors[review_entry.book.cover_image][1] * 255) | int %}
-{% set b = (tint_colors[review_entry.book.cover_image][2] * 255) | int %}
+{% set (r, g, b) = review_entry.book.cover.tint_color | from_hex %}
 
 <style>
   {% include "_review_style.css" %}

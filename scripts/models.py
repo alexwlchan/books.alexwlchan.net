@@ -23,7 +23,7 @@ class Book:
     narrator = attr.ib(default="")
     illustrator = attr.ib(default="")
 
-    cover = attr.ib()
+    cover = attr.ib(default="")
 
     isbn10 = attr.ib(default="")
     isbn13 = attr.ib(default="")

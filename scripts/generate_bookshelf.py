@@ -34,7 +34,7 @@ def get_repeatable_bins(**kwargs):
 
 def get_tint_colors(tint_color):
     r, g, b = tint_color
-    h, s, v = colorsys.rgb_to_hsv(r, g, b)
+    h, s, v = colorsys.rgb_to_hsv(r / 255, g / 255, b / 255)
 
     v = min(v, 0.45)
 

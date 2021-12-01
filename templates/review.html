@@ -4,45 +4,42 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@alexwlchan"/>
 <meta name="twitter:title" content="alexwlchan's review of {{ review_entry.book.title }}"/>
-<meta name="twitter:image" content="https://books.alexwlchan.net/squares/{{ review_entry.book.cover_image }}"/>
+<meta name="twitter:image" content="https://books.alexwlchan.net/squares/{{ review_entry.book.cover.name }}"/>
 
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://books.alexwlchan.net/{{ review_entry.out_path() }}">
 <meta property="og:title" content="alexwlchan's review of {{ review_entry.book.title }}">
-<meta property="og:image" content="https://books.alexwlchan.net/squares/{{ review_entry.book.cover_image }}"/>
+<meta property="og:image" content="https://books.alexwlchan.net/squares/{{ review_entry.book.cover.name }}"/>
 {% endblock %}
 
 {% block content %}
-  {% if tint_colors[review_entry.book.cover_image] %}
-    {% set r = tint_colors[review_entry.book.cover_image][0] * 255 | int %}
-    {% set g = tint_colors[review_entry.book.cover_image][1] * 255 | int %}
-    {% set b = tint_colors[review_entry.book.cover_image][2] * 255 | int %}
-    <style>
-      .review a {
-        color: rgb({{ r }}, {{ g }}, {{ b }});
-      }
+  {% set (r, g, b) = review_entry.book.cover.tint_color | from_hex %}
+  {% set r = r / 255 %}
+  {% set g = g / 255 %}
+  {% set b = b / 255 %}
+  <style>
+    .review a {
+      color: {{ review_entry.book.cover.tint_color | as_rgb }};
+    }
 
-      .review a:hover {
-        background: rgb({{ r }}, {{ g }}, {{ b }}, 0.3);
-      }
+    .review a:hover {
+      background: {{ review_entry.book.cover.tint_color | as_rgba(0.3) }};
+    }
 
-      .book-cover img {
-        box-shadow: 0px 5px 5px rgba({{ r }}, {{ g }}, {{ b }}, 0.25);
-      }
+    .book-cover img {
+      box-shadow: 0px 5px 5px {{ review_entry.book.cover.tint_color | as_rgba(0.25) }};
+    }
 
-      aside #shelf_background {
-        background: url({{ tint_colors[review_entry.book.cover_image] | create_shelf_data_uri }});
-        background-size: auto 100%;
-      }
-    </style>
-  {% endif %}
+    aside #shelf_background {
+      background: url({{ review_entry.book.cover.tint_color | from_hex | create_shelf_data_uri }});
+      background-size: auto 100%;
+    }
+  </style>
 
-  {% if review_entry.book.cover_image %}
-    <div class="book-cover">
-      {% set book = review_entry.book %}
-      {% include "_book_cover.html" %}
-    </div>
-  {% endif %}
+  <div class="book-cover">
+    {% set book = review_entry.book %}
+    {% include "_book_cover.html" %}
+  </div>
 
   <h1>
     <span class="book-title">{{ review_entry.book.title | smartypants | safe }}</span>

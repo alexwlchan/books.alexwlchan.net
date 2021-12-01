@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import datetime
+import functools
 import hashlib
 import itertools
 import os
@@ -21,7 +22,6 @@ import smartypants
 
 from generate_bookshelf import create_shelf_data_uri
 from models import *
-from tint_colors import get_tint_colors, store_tint_color
 
 
 def rsync(dir1, dir2):
@@ -229,8 +229,6 @@ def create_thumbnails():
         elif src_path.stat().st_mtime > square_path.stat().st_mtime:
             _create_new_square(src_path, square_path)
 
-        store_tint_color(dst_path)
-
 
 CSS_HASH = hashlib.md5(open("static/style.css", "rb").read()).hexdigest()
 
@@ -241,6 +239,16 @@ def css_hash(_):
 
 def count_finished_books(review_entries: typing.List[ReviewEntry]):
     return len([r for r in review_entries if r.review.finished])
+
+
+@functools.lru_cache
+def from_hex(hs):
+    return (int(hs[1:3], 16), int(hs[3:5], 16), int(hs[5:7], 16))
+
+
+def as_rgba(hs, alpha):
+    r, g, b = from_hex(hs)
+    return f"rgb({r / 255}, {g / 255}, {b / 255}, {alpha})"
 
 
 def main():
@@ -259,10 +267,10 @@ def main():
     env.filters["create_shelf_data_uri"] = create_shelf_data_uri
     env.filters["cap_rgb"] = lambda v: min([v, 255])
     env.filters["count_finished_books"] = count_finished_books
+    env.filters["from_hex"] = from_hex
+    env.filters["as_rgba"] = as_rgba
 
     create_thumbnails()
-
-    tint_colors = get_tint_colors()
 
     rsync("src/covers/", "_html/covers/")
     rsync("static/", "_html/static/")
@@ -281,7 +289,6 @@ def main():
             out_name=review_entry.out_path(),
             review_entry=review_entry,
             title=f"My review of {review_entry.book.title}",
-            tint_colors=tint_colors,
         )
 
     sorted_reviews = sorted(
@@ -303,7 +310,6 @@ def main():
         ],
         title="books i’ve read",
         this_year=str(datetime.datetime.now().year),
-        tint_colors=tint_colors,
     )
 
     # Render the "currently reading" page
@@ -321,7 +327,6 @@ def main():
         out_name="reading",
         all_reading=all_reading.values(),
         title="books i’m currently reading",
-        tint_colors=tint_colors,
     )
 
     # Render the "want to read" page
@@ -337,7 +342,6 @@ def main():
         out_name="to-read",
         all_plans=all_plans.values(),
         title="books i want to read",
-        tint_colors=tint_colors,
     )
 
     # Render the "never going to read this page"
@@ -355,7 +359,6 @@ def main():
             all_retired.values(), key=lambda plan: plan.plan.date_added, reverse=True
         ),
         title="books i&rsquo;m never going to read",
-        tint_colors=tint_colors,
     )
 
     # Render the front page
@@ -366,7 +369,6 @@ def main():
         template_name="index.html",
         text=open("src/index.md").read(),
         reviews=sorted_reviews[:5],
-        tint_colors=tint_colors,
     )
 
     print("✨ Rendered HTML files to _html ✨")

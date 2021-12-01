@@ -1,10 +1,8 @@
-{% set r = (tint_colors[review_entry.book.cover_image][0] * 255) | int %}
-{% set g = (tint_colors[review_entry.book.cover_image][1] * 255) | int %}
-{% set b = (tint_colors[review_entry.book.cover_image][2] * 255) | int %}
+{% set (r, g, b) = review_entry.book.cover.tint_color | from_hex %}
 
 /* See https://stackoverflow.com/a/11615135/1558022 */
 #review_preview_{{ review_entry.book.slug }} {
-  border-color: rgb({{ r }}, {{ g }}, {{ b }});
+  border-color: {{ review_entry.book.cover.tint_color }};
 
   {% if review_entry.review.rating == 5 %}
     background: rgb(
@@ -15,7 +13,7 @@
     border-width: 3px;
     margin-left:  -1px;
     margin-right: -1px;
-    box-shadow: 0px 0px 5px rgba({{r}}, {{g}}, {{ b }}, 0.3);
+    box-shadow: 0px 0px 5px {{ review_entry.book.cover.tint_color | as_rgba(0.3) }};
   {% else %}
     background: rgb(
       {{ (r * 0.08 + 0.92 * 255) | int | cap_rgb }},
@@ -26,7 +24,7 @@
 }
 
 #review_preview_{{ review_entry.book.slug }} img {
-  border: 0.1px solid rgb({{ r }}, {{ g }}, {{ b }});
+  border: 0.1px solid {{ review_entry.book.cover.tint_color }};
 }
 
 #review_preview_{{ review_entry.book.slug }}:hover {
