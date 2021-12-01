@@ -152,7 +152,7 @@ def render_date(date_value):
         return date_obj.strftime("%B %Y")
 
 
-def save_html(depends_on, template, out_name="", **kwargs):
+def save_html(env, *, depends_on, template_name, out_name="", **kwargs):
     out_path = pathlib.Path("_html") / out_name / "index.html"
 
     if (
@@ -162,6 +162,7 @@ def save_html(depends_on, template, out_name="", **kwargs):
     ):
         return
 
+    template = env.get_template(template_name)
     html = template.render(**kwargs)
     out_path.parent.mkdir(exist_ok=True, parents=True)
 
@@ -272,12 +273,11 @@ def main():
         get_entries(dirpath="src/reviews", constructor=get_review_entry_from_path)
     )
 
-    review_template = env.get_template("review.html")
-
     for review_path, review_entry in all_reviews.items():
         save_html(
+            env,
             depends_on=[review_path],
-            template=review_template,
+            template_name="review.html",
             out_name=review_entry.out_path(),
             review_entry=review_entry,
             title=f"My review of {review_entry.book.title}",
@@ -291,8 +291,9 @@ def main():
     )
 
     save_html(
+        env,
         depends_on=all_reviews.keys(),
-        template=env.get_template("list_reviews.html"),
+        template_name="list_reviews.html",
         out_name="reviews",
         all_reviews=[
             (year, list(reviews))
@@ -314,8 +315,9 @@ def main():
     )
 
     save_html(
+        env,
         depends_on=all_reading.keys(),
-        template=env.get_template("list_reading.html"),
+        template_name="list_reading.html",
         out_name="reading",
         all_reading=all_reading.values(),
         title="books i’m currently reading",
@@ -329,8 +331,9 @@ def main():
     )
 
     save_html(
+        env,
         depends_on=all_plans.keys(),
-        template=env.get_template("list_plans.html"),
+        template_name="list_plans.html",
         out_name="to-read",
         all_plans=all_plans.values(),
         title="books i want to read",
@@ -344,8 +347,9 @@ def main():
     )
 
     save_html(
+        env,
         depends_on=all_retired.keys(),
-        template=env.get_template("list_will_never_read.html"),
+        template_name="list_will_never_read.html",
         out_name="will-never-read",
         all_retired=sorted(
             all_retired.values(), key=lambda plan: plan.plan.date_added, reverse=True
@@ -357,8 +361,9 @@ def main():
     # Render the front page
 
     save_html(
+        env,
         depends_on=all_reviews.keys(),
-        template=env.get_template("index.html"),
+        template_name="index.html",
         text=open("src/index.md").read(),
         reviews=sorted_reviews[:5],
         tint_colors=tint_colors,
