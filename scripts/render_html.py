@@ -156,7 +156,7 @@ def save_html(depends_on, template, out_name="", **kwargs):
     out_path = pathlib.Path("_html") / out_name / "index.html"
 
     if (
-        os.path.exists(out_path)
+        out_path.exists()
         and depends_on
         and os.stat(out_path).st_mtime > max(os.stat(p).st_mtime for p in depends_on)
     ):
