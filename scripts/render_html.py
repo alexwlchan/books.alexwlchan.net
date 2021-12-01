@@ -20,6 +20,7 @@ from markdown.extensions.smarty import SmartyExtension
 import smartypants
 
 from generate_bookshelf import create_shelf_data_uri
+from models import *
 from tint_colors import get_tint_colors, store_tint_color
 
 
@@ -67,50 +68,6 @@ def set_git_timestamps():
         os.utime(path, times=(access_time, modified_time))
 
 
-@attr.s
-class Book:
-    slug = attr.ib()
-    title = attr.ib()
-    publication_year = attr.ib()
-    series = attr.ib(default="")
-
-    author = attr.ib(default="")
-    editor = attr.ib(default="")
-    narrator = attr.ib(default="")
-    illustrator = attr.ib(default="")
-
-    cover_image = attr.ib(default="")
-    cover_desc = attr.ib(default="")
-
-    isbn10 = attr.ib(default="")
-    isbn13 = attr.ib(default="")
-
-
-@attr.s
-class Review:
-    date_read = attr.ib()
-    text = attr.ib()
-    date_order = attr.ib(default=1)
-    format = attr.ib(default=None)
-    rating = attr.ib(default=None)
-    did_not_finish = attr.ib(default=False)
-
-    @property
-    def finished(self):
-        return not self.did_not_finish
-
-
-@attr.s
-class ReviewEntry:
-    path = attr.ib()
-    book = attr.ib()
-    review = attr.ib()
-
-    def out_path(self):
-        name = self.path.with_suffix("").name
-        return pathlib.Path(f"reviews/{name}")
-
-
 def get_review_entry_from_path(path):
     post = frontmatter.load(path)
 
@@ -129,18 +86,6 @@ def get_review_entry_from_path(path):
     return ReviewEntry(path=path, book=book, review=review)
 
 
-@attr.s
-class CurrentlyReading:
-    text = attr.ib()
-
-
-@attr.s
-class CurrentlyReadingEntry:
-    path = attr.ib()
-    book = attr.ib()
-    reading = attr.ib()
-
-
 def get_reading_entry_from_path(path):
     post = frontmatter.load(path)
 
@@ -150,26 +95,6 @@ def get_reading_entry_from_path(path):
     reading = CurrentlyReading(text=post.content)
 
     return CurrentlyReadingEntry(path=path, book=book, reading=reading)
-
-
-def _parse_date(value):
-    if isinstance(value, datetime.date):
-        return value
-    else:
-        return datetime.datetime.strptime(value, "%Y-%m-%d").date()
-
-
-@attr.s
-class Plan:
-    text = attr.ib()
-    date_added = attr.ib(converter=_parse_date)
-
-
-@attr.s
-class PlanEntry:
-    path = attr.ib()
-    book = attr.ib()
-    plan = attr.ib()
 
 
 def get_plan_entry_from_path(path):
@@ -375,8 +300,6 @@ def main():
     all_plans = list(
         get_entries(dirpath="src/plans", constructor=get_plan_entry_from_path)
     )
-
-    all_plans = sorted(all_plans, key=lambda plan: plan.plan.date_added, reverse=True)
 
     save_html(
         template=env.get_template("list_plans.html"),
