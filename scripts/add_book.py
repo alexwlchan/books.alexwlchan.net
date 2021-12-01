@@ -11,6 +11,8 @@ import hyperlink
 import inquirer
 from unidecode import unidecode
 
+from tint_colors import choose_tint_color
+
 
 def slugify(u):
     """Convert Unicode string into blog slug."""
@@ -38,7 +40,6 @@ def get_book_info():
         inquirer.Text("author", message="Who’s the author?"),
         inquirer.Text("publication_year", message="When was it published?"),
         inquirer.Text("cover_image_url", message="What’s the cover URL?"),
-        inquirer.Text("cover_desc", message="What’s the cover?"),
         inquirer.Text("isbn10", message="Do you know the ISBN-10?"),
         inquirer.Text("isbn13", message="Do you know the ISBN-13?"),
     ]
@@ -173,11 +174,15 @@ if __name__ == "__main__":
             "title": book_info["title"],
             "author": book_info["author"],
             "publication_year": book_info["publication_year"],
-            "cover_image": cover_name,
+            "cover": {
+                "name": cover_name,
+                "size": os.stat(os.path.join("src/covers", cover_name)).st_size,
+                "tint_color": choose_tint_color(os.path.join("src/covers", cover_name)),
+            },
         }
     }
 
-    for key in ("cover_desc", "isbn10", "isbn13"):
+    for key in ("isbn10", "isbn13"):
         if book_info[key]:
             new_entry["book"][key] = book_info[key]
 

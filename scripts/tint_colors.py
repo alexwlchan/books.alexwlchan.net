@@ -63,6 +63,8 @@ def choose_tint_color(path):
         for line in tool_output.splitlines()
     ]
 
-    return choose_tint_color_from_dominant_colors(
+    color = choose_tint_color_from_dominant_colors(
         dominant_colors=dominant_colors, background_color=(1, 1, 1)
     )
+
+    return "#%02x%02x%02x" % tuple(c * 255 for c in color)
