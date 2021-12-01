@@ -11,13 +11,9 @@ import subprocess
 import sys
 import typing
 
-import attr
 import cssmin
-import htmlmin
 import frontmatter
 from jinja2 import Environment, FileSystemLoader, select_autoescape
-import markdown
-from markdown.extensions.smarty import SmartyExtension
 import smartypants
 
 from generate_bookshelf import create_shelf_data_uri
@@ -128,6 +124,9 @@ def get_entries(dirpath, constructor):
 
 
 def render_markdown(text):
+    import markdown
+    from markdown.extensions.smarty import SmartyExtension
+
     return markdown.markdown(text, extensions=[SmartyExtension()])
 
 
@@ -169,6 +168,7 @@ def save_html(env, *, depends_on, template_name, out_name="", **kwargs):
     for s in list(re.finditer(r"<style>([^<]+)</style>", html)):
         html = html.replace(s.group(1), cssmin.cssmin(s.group(1)))
 
+    import htmlmin
     html = htmlmin.minify(html, remove_comments=True)
 
     for name in ("Mar Hicks", "Thomas S. Mullaney", "Benjamin Peters", "Kavita Philip"):

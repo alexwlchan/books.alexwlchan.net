@@ -7,8 +7,6 @@ import io
 import os
 import random
 
-from PIL import Image, ImageDraw
-
 
 R = random.Random(0)
 
@@ -48,6 +46,8 @@ def create_shelf(tint_color):
     bins = get_repeatable_bins(total_width=2000, min_height=60, max_height=90)
     colors = get_tint_colors(tint_color=tint_color)
 
+    from PIL import Image, ImageDraw
+
     im = Image.new("RGBA", size=(2000, 90))
 
     draw = ImageDraw.Draw(im)
@@ -60,31 +60,20 @@ def create_shelf(tint_color):
 
 
 def create_shelf_data_uri(tint_color):
-    r, g, b = tint_color
+    if max(tint_color) <= 13:
+        tint_color = (13, 13, 13)
 
-    if [r, g, b] == [0, 0, 0] or r <= 0.02 and g <= 0.02 and b <= 0.02:
-        tint_color = [0.2, 0.2, 0.2]
-        r, g, b = tint_color
+    out_name = f"_shelves/%02x%02x%02x.png" % tint_color
 
     try:
-        f = open(f"_shelves/{r}_{g}_{b}.png", "rb")
+        f = open(out_name, "rb")
     except FileNotFoundError:
         im = create_shelf(tint_color)
 
         os.makedirs("_shelves", exist_ok=True)
 
-        im.save(f"_shelves/{r}_{g}_{b}.png")
-        f = open(f"_shelves/{r}_{g}_{b}.png", "rb")
+        im.save(out_name)
+        f = open(out_name, "rb")
 
     b64_string = base64.b64encode(f.read()).decode("utf8")
     return f"data:image/png;base64,{b64_string}"
-
-
-if __name__ == "__main__":
-    im = get_shelf(tint_color=[
-        0.23529411764705882,
-        0.2627450980392157,
-        0.5294117647058824
-    ])
-
-    im.save("static/bookshelf_blue.png")
