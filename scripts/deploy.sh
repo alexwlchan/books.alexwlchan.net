@@ -6,6 +6,8 @@ set -o verbose
 
 git pull origin development
 
+rm -rf _html
+
 python3.8 scripts/render_html.py
 
 rsync --archive --verbose --compress --delete \

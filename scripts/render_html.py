@@ -121,7 +121,7 @@ def get_entries(dirpath, constructor):
             path = pathlib.Path(dirpath) / f
 
             try:
-                yield constructor(path)
+                yield path, constructor(path)
             except Exception:
                 print(f"Error parsing {path}", file=sys.stderr)
                 raise
@@ -152,9 +152,17 @@ def render_date(date_value):
         return date_obj.strftime("%B %Y")
 
 
-def save_html(template, out_name="", **kwargs):
-    html = template.render(**kwargs)
+def save_html(depends_on, template, out_name="", **kwargs):
     out_path = pathlib.Path("_html") / out_name / "index.html"
+
+    if (
+        os.path.exists(out_path)
+        and depends_on
+        and os.stat(out_path).st_mtime > max(os.stat(p).st_mtime for p in depends_on)
+    ):
+        return
+
+    html = template.render(**kwargs)
     out_path.parent.mkdir(exist_ok=True, parents=True)
 
     for s in list(re.finditer(r"<style>([^<]+)</style>", html)):
@@ -260,19 +268,15 @@ def main():
 
     # Render the "all reviews page"
 
-    all_reviews = list(
+    all_reviews = dict(
         get_entries(dirpath="src/reviews", constructor=get_review_entry_from_path)
-    )
-    all_reviews = sorted(
-        all_reviews,
-        key=lambda rev: f"{rev.review.date_read}/{rev.review.date_order}",
-        reverse=True,
     )
 
     review_template = env.get_template("review.html")
 
-    for review_entry in all_reviews:
+    for review_path, review_entry in all_reviews.items():
         save_html(
+            depends_on=[review_path],
             template=review_template,
             out_name=review_entry.out_path(),
             review_entry=review_entry,
@@ -280,13 +284,20 @@ def main():
             tint_colors=tint_colors,
         )
 
+    sorted_reviews = sorted(
+        all_reviews.values(),
+        key=lambda rev: f"{rev.review.date_read}/{rev.review.date_order}",
+        reverse=True,
+    )
+
     save_html(
+        depends_on=all_reviews.keys(),
         template=env.get_template("list_reviews.html"),
         out_name="reviews",
         all_reviews=[
             (year, list(reviews))
             for (year, reviews) in itertools.groupby(
-                all_reviews, key=lambda rev: str(rev.review.date_read)[:4]
+                sorted_reviews, key=lambda rev: str(rev.review.date_read)[:4]
             )
         ],
         title="books i’ve read",
@@ -296,48 +307,49 @@ def main():
 
     # Render the "currently reading" page
 
-    all_reading = list(
+    all_reading = dict(
         get_entries(
             dirpath="src/currently_reading", constructor=get_reading_entry_from_path
         )
     )
 
     save_html(
+        depends_on=all_reading.keys(),
         template=env.get_template("list_reading.html"),
         out_name="reading",
-        all_reading=all_reading,
+        all_reading=all_reading.values(),
         title="books i’m currently reading",
         tint_colors=tint_colors,
     )
 
     # Render the "want to read" page
 
-    all_plans = list(
+    all_plans = dict(
         get_entries(dirpath="src/plans", constructor=get_plan_entry_from_path)
     )
 
     save_html(
+        depends_on=all_plans.keys(),
         template=env.get_template("list_plans.html"),
         out_name="to-read",
-        all_plans=all_plans,
+        all_plans=all_plans.values(),
         title="books i want to read",
         tint_colors=tint_colors,
     )
 
     # Render the "never going to read this page"
 
-    all_retired = list(
+    all_retired = dict(
         get_entries(dirpath="src/will_never_read", constructor=get_plan_entry_from_path)
     )
 
-    all_retired = sorted(
-        all_retired, key=lambda plan: plan.plan.date_added, reverse=True
-    )
-
     save_html(
+        depends_on=all_retired.keys(),
         template=env.get_template("list_will_never_read.html"),
         out_name="will-never-read",
-        all_retired=all_retired,
+        all_retired=sorted(
+            all_retired.values(), key=lambda plan: plan.plan.date_added, reverse=True
+        ),
         title="books i&rsquo;m never going to read",
         tint_colors=tint_colors,
     )
@@ -345,9 +357,10 @@ def main():
     # Render the front page
 
     save_html(
+        depends_on=all_reviews.keys(),
         template=env.get_template("index.html"),
         text=open("src/index.md").read(),
-        reviews=all_reviews[:5],
+        reviews=sorted_reviews[:5],
         tint_colors=tint_colors,
     )
 
