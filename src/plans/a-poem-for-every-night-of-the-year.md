@@ -1,7 +1,10 @@
 ---
 book:
   author: Allie Esiri
-  cover_image: a-poem-for-every-night-of-the-year.jpg
+  cover:
+    name: a-poem-for-every-night-of-the-year.jpg
+    size: 14051
+    tint_color: '#586b88'
   publication_year: '2016'
   title: A Poem for Every Night of the Year
 plan:

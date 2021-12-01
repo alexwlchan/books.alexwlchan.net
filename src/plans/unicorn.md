@@ -1,7 +1,10 @@
 ---
 book:
   author: Amrou Al-Kadhi
-  cover_image: unicorn.png
+  cover:
+    name: unicorn.png
+    size: 49584
+    tint_color: '#715422'
   publication_year: '2019'
   title: Unicorn
 plan:

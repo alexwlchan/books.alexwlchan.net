@@ -1,7 +1,10 @@
 ---
 book:
   author: Thomas Geve
-  cover_image: the-boy-who-drew-auschwitz.jpg
+  cover:
+    name: the-boy-who-drew-auschwitz.jpg
+    size: 67311
+    tint_color: '#706a62'
   publication_year: '2021'
   title: The Boy Who Drew Auschwitz
 review:

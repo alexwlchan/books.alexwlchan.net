@@ -1,12 +1,15 @@
 ---
 book:
   author: Lemony Snicket
-  cover_image: shouldnt-you-be-in-school.jpg
+  cover:
+    name: shouldnt-you-be-in-school.jpg
+    size: 19608
+    tint_color: '#2474b8'
   isbn10: '0316123064'
   isbn13: '9780316123068'
   publication_year: '2014'
-  title: “Shouldn’t You Be in School?”
   series: 'All the Wrong Questions, #3'
+  title: “Shouldn’t You Be in School?”
 review:
   date_read: '2016-12-26'
   rating: 3

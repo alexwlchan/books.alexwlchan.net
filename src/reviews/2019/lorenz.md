@@ -1,7 +1,10 @@
 ---
 book:
   author: Jerry Roberts
-  cover_image: lorenz.jpg
+  cover:
+    name: lorenz.jpg
+    size: 10972
+    tint_color: '#b05d34'
   isbn10: 0750978856
   isbn13: '9780750978859'
   publication_year: '2018'

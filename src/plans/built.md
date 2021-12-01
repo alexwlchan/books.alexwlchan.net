@@ -1,7 +1,10 @@
 ---
 book:
   author: Roma Agrawal
-  cover_image: built.jpg
+  cover:
+    name: built.jpg
+    size: 6053
+    tint_color: '#737574'
   publication_year: '2018'
   title: Built
 plan:

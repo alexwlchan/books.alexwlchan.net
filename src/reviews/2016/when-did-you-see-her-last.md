@@ -1,12 +1,15 @@
 ---
 book:
   author: Lemony Snicket
-  cover_image: when-did-you-see-her-last.jpg
+  cover:
+    name: when-did-you-see-her-last.jpg
+    size: 14474
+    tint_color: '#8b6198'
   isbn10: '0316123056'
   isbn13: '9780316123051'
   publication_year: '2013'
-  title: “When Did You See Her Last?”
   series: 'All the Wrong Questions, #2'
+  title: “When Did You See Her Last?”
 review:
   date_read: '2016-10-24'
   rating: 3

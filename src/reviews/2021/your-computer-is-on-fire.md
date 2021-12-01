@@ -1,7 +1,10 @@
 ---
 book:
+  cover:
+    name: your-computer-is-on-fire.jpg
+    size: 32343
+    tint_color: '#988206'
   editor: Thomas S. Mullaney, Benjamin Peters, Mar Hicks, and Kavita Philip
-  cover_image: your-computer-is-on-fire.jpg
   isbn13: '9780262539739'
   publication_year: '2021'
   title: Your Computer is on Fire

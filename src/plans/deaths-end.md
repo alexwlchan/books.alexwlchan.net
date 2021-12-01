@@ -1,7 +1,10 @@
 ---
 book:
   author: Cixin Liu
-  cover_image: deaths-end.jpg
+  cover:
+    name: deaths-end.jpg
+    size: 9318
+    tint_color: '#943226'
   publication_year: '2016'
   title: Death’s End
 plan:

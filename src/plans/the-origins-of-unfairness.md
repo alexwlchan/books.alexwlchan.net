@@ -1,7 +1,10 @@
 ---
 book:
   author: Cailin O'Connor
-  cover_image: the-origins-of-unfairness.jpg
+  cover:
+    name: the-origins-of-unfairness.jpg
+    size: 15648
+    tint_color: '#39573a'
   publication_year: '2019'
   title: The Origins of Unfairness
 plan:

@@ -1,7 +1,10 @@
 ---
 book:
   author: the RNLI
-  cover_image: surviving-the-storms.jpg
+  cover:
+    name: surviving-the-storms.jpg
+    size: 33119
+    tint_color: '#0c6e79'
   isbn13: '9780008390129'
   publication_year: 2020
   title: Surviving the Storms

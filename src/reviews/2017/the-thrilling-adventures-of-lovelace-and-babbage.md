@@ -1,11 +1,14 @@
 ---
 book:
   author: Sydney Padua
-  cover_image: 'the-thrilling-adventures-of-lovelace-and-babbage.jpg'
+  cover:
+    name: the-thrilling-adventures-of-lovelace-and-babbage.jpg
+    size: 12356
+    tint_color: '#6d7472'
   isbn10: 0141981512
   isbn13: '9780141981512'
   publication_year: '2015'
-  title: 'The Thrilling Adventures of Lovelace and Babbage'
+  title: The Thrilling Adventures of Lovelace and Babbage
 review:
   date_read: '2017-05-15'
   rating: 5

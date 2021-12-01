@@ -1,7 +1,10 @@
 ---
 book:
   author: Martha Wells
-  cover_image: exit-strategy.jpg
+  cover:
+    name: exit-strategy.jpg
+    size: 9802
+    tint_color: '#797474'
   isbn13: '9781250185454'
   publication_year: '2018'
   title: 'Exit Strategy (The Murderbot Diaries, #4)'

@@ -1,7 +1,10 @@
 ---
 book:
   author: Chris Hadfield
-  cover_image: 'an-astronauts-guide-to-life-on-earth.jpg'
+  cover:
+    name: an-astronauts-guide-to-life-on-earth.jpg
+    size: 10390
+    tint_color: '#306089'
   isbn10: '1447257103'
   isbn13: '9781447257103'
   publication_year: '2013'

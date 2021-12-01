@@ -1,10 +1,13 @@
 ---
 book:
   author: Ann Leckie
-  cover_image: provenance.jpg
-  publication_year: '2018'
+  cover:
+    name: provenance.jpg
+    size: 10082
+    tint_color: '#ab2b33'
   isbn10: 0356506983
   isbn13: '9780356506982'
+  publication_year: '2018'
   title: Provenance
 review:
   date_read: '2019-10-12'

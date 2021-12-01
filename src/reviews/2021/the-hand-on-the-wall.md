@@ -1,14 +1,17 @@
 ---
 book:
   author: Maureen Johnson
-  cover_image: the-hand-on-the-wall.jpg
-  publication_year: '2020'
-  title: The Hand on the Wall
-  series: 'Truly Devious #3'
+  cover:
+    name: the-hand-on-the-wall.jpg
+    size: 48898
+    tint_color: '#0ba867'
   narrator: Kate Rudd
+  publication_year: '2020'
+  series: 'Truly Devious #3'
+  title: The Hand on the Wall
 review:
   date_read: 2021-11-27
-  format: 'audiobook'
+  format: audiobook
   rating: 4
 ---
 

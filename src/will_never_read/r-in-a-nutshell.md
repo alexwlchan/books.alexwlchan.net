@@ -1,11 +1,14 @@
 ---
 book:
   author: Joseph Adler
-  cover_image: 'r-in-a-nutshell.jpg'
-  publication_year: '2012'
-  title: 'R in a Nutshell'
-  isbn10: '144931208X'
+  cover:
+    name: r-in-a-nutshell.jpg
+    size: 8562
+    tint_color: '#ca3524'
+  isbn10: 144931208X
   isbn13: '9781449312084'
+  publication_year: '2012'
+  title: R in a Nutshell
 plan:
   date_added: '2019-08-12'
 retired:

@@ -1,7 +1,10 @@
 ---
 book:
   author: Dave Gorman
-  cover_image: 'too-much-information-or-can-everyone-just-shut-up-for-a-moment-some-of-us-are-trying-to-think.jpg'
+  cover:
+    name: too-much-information-or-can-everyone-just-shut-up-for-a-moment-some-of-us-are-trying-to-think.jpg
+    size: 11934
+    tint_color: '#667849'
   isbn10: 0091928508
   isbn13: '9780091928506'
   publication_year: '2015'

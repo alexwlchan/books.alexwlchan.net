@@ -1,7 +1,10 @@
 ---
 book:
   author: Marc Levinson
-  cover_image: 'the-box-how-the-shipping-container-made-the-world-smaller-and-the-world-economy-bigger.jpg'
+  cover:
+    name: the-box-how-the-shipping-container-made-the-world-smaller-and-the-world-economy-bigger.jpg
+    size: 12102
+    tint_color: '#566293'
   isbn10: 0691170819
   isbn13: '9780691170817'
   publication_year: '2016'

@@ -1,7 +1,10 @@
 ---
 book:
   author: Serhii Plokhy
-  cover_image: chernobyl-history-of-a-tragedy.jpg
+  cover:
+    name: chernobyl-history-of-a-tragedy.jpg
+    size: 10731
+    tint_color: '#7b582b'
   isbn10: 0141988355
   isbn13: '9780141988351'
   publication_year: '2018'

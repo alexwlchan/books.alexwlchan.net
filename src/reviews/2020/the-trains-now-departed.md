@@ -1,15 +1,18 @@
 ---
 book:
   author: Michael Williams
-  cover_image: the-trains-now-departed.jpg
+  cover:
+    name: the-trains-now-departed.jpg
+    size: 46771
+    tint_color: '#c03038'
   isbn13: '9780099590583'
   publication_year: '2015'
   title: The Trains Now Departed
 review:
+  date_order: 1
   date_read: 2020-12-25
   format: paperback
   rating: 4
-  date_order: 1
 ---
 
 This is a book about aspects of Britain's railways that have been lost and forgotten.

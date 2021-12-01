@@ -1,18 +1,22 @@
 ---
 book:
-  title: Trans Like Me
   author: C. N. Lester
-  publication_year: 2017
-  cover_image: trans-like-me.jpg
-  cover_desc: >
-    The words “trans like me” in lowercased, large letters, set on a slightly off-white background.
-    The words “trans” and “me” are in red; the word “like” is in black.
-  isbn13: 9780349008608
+  cover:
+    name: trans-like-me.jpg
+    size: 7818
+    tint_color: '#d92839'
+  cover_desc: 'The words “trans like me” in lowercased, large letters, set on a slightly
+    off-white background. The words “trans” and “me” are in red; the word “like” is
+    in black.
 
+    '
+  isbn13: 9780349008608
+  publication_year: 2017
+  title: Trans Like Me
 review:
   date_read: 2020-01-27
-  rating: 5
   format: paperback
+  rating: 5
 ---
 
 I put off reading this for ages, but I’m glad I finally got to reading it.

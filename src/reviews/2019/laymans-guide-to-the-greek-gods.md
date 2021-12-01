@@ -1,7 +1,10 @@
 ---
 book:
   author: Alan & Maureen Carter
-  cover_image: 'laymans-guide-to-the-greek-gods.jpg'
+  cover:
+    name: laymans-guide-to-the-greek-gods.jpg
+    size: 11789
+    tint_color: '#915e5b'
   isbn10: '9602264888'
   isbn13: '9789602264881'
   publication_year: '1994'

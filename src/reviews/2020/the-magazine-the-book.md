@@ -1,16 +1,19 @@
 ---
 book:
   author: Glenn Fleishman
-  publication_year: '2014'
-  cover_image: 'the-magazine-the-book.jpg'
-  title: 'The Magazine: The Book'
-  isbn10: '0991439902'
+  cover:
+    name: the-magazine-the-book.jpg
+    size: 12480
+    tint_color: '#677b54'
+  isbn10: 0991439902
   isbn13: '9780991439904'
+  publication_year: '2014'
+  title: 'The Magazine: The Book'
 plan:
   date_added: '2019-08-13'
 review:
   date_read: '2020-04-13'
-  format: 'hardback'
+  format: hardback
   rating: 5
 ---
 

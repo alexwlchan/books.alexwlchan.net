@@ -1,11 +1,14 @@
 ---
 book:
   author: The Revd. Tim W. Gladwin, Peter W. Neville, Douglas E. White
-  cover_image: welwyn-railways.jpg
+  cover:
+    name: welwyn-railways.jpg
+    size: 35294
+    tint_color: '#736954'
   isbn10: 0948555041
   isbn13: '9780948555046'
   publication_year: '1986'
-  title: "Welwyn's Railways"
+  title: Welwyn's Railways
 review:
   date_read: 2020-12-18
   format: hardback

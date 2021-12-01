@@ -1,7 +1,10 @@
 ---
 book:
   author: Emily Nagoski, Amelia Nagoski
-  cover_image: burnout.jpg
+  cover:
+    name: burnout.jpg
+    size: 7484
+    tint_color: '#cc1d57'
   publication_year: '2020'
   title: Burnout
 plan:

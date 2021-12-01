@@ -1,16 +1,19 @@
 ---
 book:
   author: R.J. Anderson
-  cover_image: 'quicksilver-ultraviolet-2.jpg'
-  publication_year: '2013'
-  title: 'Quicksilver (Ultraviolet, #2)'
+  cover:
+    name: quicksilver-ultraviolet-2.jpg
+    size: 9786
+    tint_color: '#667794'
   isbn10: '1408316285'
   isbn13: '9781408316283'
+  publication_year: '2013'
+  title: 'Quicksilver (Ultraviolet, #2)'
 plan:
   date_added: '2016-10-23'
 review:
   date_read: '2020-04-30'
-  format: 'paperback'
+  format: paperback
   rating: 4
 ---
 

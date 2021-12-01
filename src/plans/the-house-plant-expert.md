@@ -1,7 +1,10 @@
 ---
 book:
   author: D. G. Hessayon
-  cover_image: the-house-plant-expert.jpg
+  cover:
+    name: the-house-plant-expert.jpg
+    size: 16480
+    tint_color: '#916f1f'
   publication_year: '1993'
   title: The House Plant Expert
 plan:

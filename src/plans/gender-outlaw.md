@@ -1,7 +1,10 @@
 ---
 book:
   author: Kate Bornstein
-  cover_image: gender-outlaw.jpg
+  cover:
+    name: gender-outlaw.jpg
+    size: 10357
+    tint_color: '#3b6495'
   publication_year: '2016'
   title: Gender Outlaw
 plan:

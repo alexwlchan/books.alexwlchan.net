@@ -1,8 +1,11 @@
 ---
 book:
   author: Angela Burke Kunkel
+  cover:
+    name: digging-for-words.jpg
+    size: 157166
+    tint_color: '#617684'
   illustrator: Paola Escobar
-  cover_image: digging-for-words.jpg
   isbn13: '9781984892638'
   publication_year: '2020'
   title: Digging for Words

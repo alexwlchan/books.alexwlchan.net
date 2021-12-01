@@ -1,7 +1,10 @@
 ---
 book:
   author: Christine Burns
-  cover_image: trans-britain.jpg
+  cover:
+    name: trans-britain.jpg
+    size: 21455
+    tint_color: '#955594'
   isbn13: 978-1-78352-470-9
   publication_year: '2018'
   title: Trans Britain

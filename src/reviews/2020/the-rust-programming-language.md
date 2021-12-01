@@ -1,12 +1,15 @@
 ---
 book:
   author: Steve Klabnik and Carol Nichols
-  cover_image: the-rust-programming-language.jpg
+  cover:
+    name: the-rust-programming-language.jpg
+    size: 130296
+    tint_color: '#b64725'
   publication_year: '2018'
   title: The Rust Programming Language
 review:
   date_read: '2020-12-21'
-  format: 'ebook'
+  format: ebook
   rating: 4
 ---
 

@@ -1,10 +1,13 @@
 ---
 book:
   author: Marc McMenamin
-  cover_image: codebreaker-the-untold-story-of-richard-hayes.jpg
+  cover:
+    name: codebreaker-the-untold-story-of-richard-hayes.jpg
+    size: 52532
+    tint_color: '#737270'
+  narrator: Aidan Kelly
   publication_year: '2020'
   title: 'Codebreaker: The Untold Story of Richard Hayes'
-  narrator: Aidan Kelly
 review:
   date_read: 2021-11-06
   did_not_finish: true

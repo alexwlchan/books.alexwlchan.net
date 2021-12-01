@@ -1,7 +1,10 @@
 ---
 book:
   author: Nevil Shute
-  cover_image: on-the-beach.jpg
+  cover:
+    name: on-the-beach.jpg
+    size: 6412
+    tint_color: '#991b1e'
   isbn13: 978-1-55199-862-6
   publication_year: '1957'
   title: On the Beach

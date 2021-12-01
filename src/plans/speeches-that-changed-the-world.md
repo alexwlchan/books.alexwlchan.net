@@ -1,7 +1,10 @@
 ---
 book:
   author: Simon Sebag Montefiore
-  cover_image: speeches-that-changed-the-world.jpg
+  cover:
+    name: speeches-that-changed-the-world.jpg
+    size: 8324
+    tint_color: '#010101'
   publication_year: '2015'
   title: Speeches that Changed the World
 plan:

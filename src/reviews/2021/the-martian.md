@@ -1,8 +1,11 @@
 ---
 book:
   author: Andy Weir
+  cover:
+    name: the-martian.jpg
+    size: 12293
+    tint_color: '#fe5b29'
   narrator: Wil Wheaton
-  cover_image: the-martian.jpg
   publication_year: '2011'
   title: The Martian
 review:

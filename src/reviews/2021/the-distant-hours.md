@@ -1,7 +1,10 @@
 ---
 book:
   author: Kate Morton
-  cover_image: the-distant-hours.jpg
+  cover:
+    name: the-distant-hours.jpg
+    size: 54471
+    tint_color: '#62769d'
   isbn13: '9780330477581'
   publication_year: '2010'
   title: The Distant Hours

@@ -1,12 +1,15 @@
 ---
 book:
   author: Lemony Snicket
-  cover_image: who-could-that-be-at-this-hour.jpg
+  cover:
+    name: who-could-that-be-at-this-hour.jpg
+    size: 13282
+    tint_color: '#bb4f1c'
   isbn10: 0316123080
   isbn13: '9780316123082'
   publication_year: '2012'
-  title: “Who Could That Be at This Hour?”
   series: 'All the Wrong Questions, #1'
+  title: “Who Could That Be at This Hour?”
 review:
   date_read: '2016-10-23'
   rating: 3

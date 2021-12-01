@@ -1,7 +1,10 @@
 ---
 book:
   author: Thomas S. Mullaney
-  cover_image: the-chinese-typewriter-a-history.jpg
+  cover:
+    name: the-chinese-typewriter-a-history.jpg
+    size: 175873
+    tint_color: '#bd292f'
   publication_year: '2017'
   title: 'The Chinese Typewriter: A History'
 plan:

@@ -1,7 +1,10 @@
 ---
 book:
   author: Cecil Balmond
-  cover_image: 'number-9-the-search-for-the-sigma-code.jpg'
+  cover:
+    name: number-9-the-search-for-the-sigma-code.jpg
+    size: 17834
+    tint_color: '#8c623c'
   isbn10: '3791340670'
   isbn13: '9783791340678'
   publication_year: '2008'

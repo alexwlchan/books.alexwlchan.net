@@ -1,11 +1,14 @@
 ---
 book:
   author: Maureen Johnson
-  cover_image: the-vanishing-stair.jpg
-  publication_year: '2019'
-  title: The Vanishing Stair
+  cover:
+    name: the-vanishing-stair.jpg
+    size: 44546
+    tint_color: '#b5483d'
   narrator: Kate Rudd
-  series: "Truly Devious #2"
+  publication_year: '2019'
+  series: 'Truly Devious #2'
+  title: The Vanishing Stair
 review:
   date_read: 2021-11-20
   format: audiobook

@@ -1,7 +1,10 @@
 ---
 book:
   author: Alison Evans
-  cover_image: 'we-go-forward.jpg'
+  cover:
+    name: we-go-forward.jpg
+    size: 4979
+    tint_color: '#4d7790'
   isbn13: '9781620047255'
   publication_year: '2016'
   title: We Go Forward

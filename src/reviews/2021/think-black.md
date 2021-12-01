@@ -1,7 +1,10 @@
 ---
 book:
   author: Clyde W. Ford
-  cover_image: think-black.jpg
+  cover:
+    name: think-black.jpg
+    size: 11303
+    tint_color: '#353535'
   publication_year: '2019'
   title: Think Black
 plan:

@@ -1,7 +1,10 @@
 ---
 book:
   author: Iain M. Banks
-  cover_image: the-bridge.jpg
+  cover:
+    name: the-bridge.jpg
+    size: 6319
+    tint_color: '#25809a'
   publication_year: '1997'
   title: The Bridge
 plan:

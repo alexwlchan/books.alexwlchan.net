@@ -1,14 +1,17 @@
 ---
 book:
   author: Maureen Johnson
+  cover:
+    name: truly-devious.jpg
+    size: 47196
+    tint_color: '#393977'
   narrator: Kate Rudd
-  cover_image: truly-devious.jpg
   publication_year: '2018'
-  title: Truly Devious
   series: 'Truly Devious #1'
+  title: Truly Devious
 review:
   date_read: 2021-11-16
-  format: 'audiobook'
+  format: audiobook
   rating: 4
 ---
 

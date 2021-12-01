@@ -1,7 +1,10 @@
 ---
 book:
   author: Marc Epprecht
-  cover_image: sexuality-and-social-justice-in-africa.jpg
+  cover:
+    name: sexuality-and-social-justice-in-africa.jpg
+    size: 8081
+    tint_color: '#d71217'
   publication_year: '2013'
   title: Sexuality and Social Justice in Africa
 plan:

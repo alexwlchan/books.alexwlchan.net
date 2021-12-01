@@ -1,7 +1,10 @@
 ---
 book:
   author: Ruby Tandoh
-  cover_image: flavour.jpg
+  cover:
+    name: flavour.jpg
+    size: 5870
+    tint_color: '#388076'
   publication_year: '2016'
   title: Flavour
 plan:

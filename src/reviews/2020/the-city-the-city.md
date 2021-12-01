@@ -1,16 +1,19 @@
 ---
 book:
   author: China Miéville
-  cover_image: the-city-the-city.jpg
+  cover:
+    name: the-city-the-city.jpg
+    size: 9125
+    tint_color: '#3c4387'
   isbn13: '9781509870585'
   publication_year: '2009'
   title: The City & the City
+plan:
+  date_added: '2020-01-25'
 review:
   date_read: 2020-10-07
   format: paperback
   rating: 5
-plan:
-  date_added: '2020-01-25'
 ---
 
 This was a gift from Mum; bought on the recommendation of [Rae](https://twitter.com/RaeKnowler) and [David](https://twitter.com/zarkonnen_com).

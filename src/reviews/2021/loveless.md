@@ -1,8 +1,11 @@
 ---
 book:
   author: Alice Oseman
+  cover:
+    name: loveless.jpg
+    size: 45438
+    tint_color: '#914690'
   narrator: Elisabeth Hopper
-  cover_image: loveless.jpg
   publication_year: '2020'
   title: Loveless
 review:

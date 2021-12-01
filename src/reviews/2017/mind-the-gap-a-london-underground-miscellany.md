@@ -1,7 +1,10 @@
 ---
 book:
   author: Emily Kearns
-  cover_image: 'mind-the-gap-a-london-underground-miscellany.jpg'
+  cover:
+    name: mind-the-gap-a-london-underground-miscellany.jpg
+    size: 6789
+    tint_color: '#e10518'
   isbn10: '1849533571'
   isbn13: '9781849533577'
   publication_year: '2013'

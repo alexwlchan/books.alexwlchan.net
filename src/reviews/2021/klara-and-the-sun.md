@@ -1,7 +1,10 @@
 ---
 book:
   author: Kazuo Ishiguro
-  cover_image: klara-and-the-sun.jpg
+  cover:
+    name: klara-and-the-sun.jpg
+    size: 19757
+    tint_color: '#c14327'
   isbn13: '9780571364879'
   publication_year: '2021'
   title: Klara and the Sun

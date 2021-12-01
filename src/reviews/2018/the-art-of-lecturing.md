@@ -1,7 +1,10 @@
 ---
 book:
   author: Parham Aarabi
-  cover_image: 'the-art-of-lecturing.jpg'
+  cover:
+    name: the-art-of-lecturing.jpg
+    size: 7944
+    tint_color: '#011015'
   isbn10: '0521703522'
   isbn13: '9780521703529'
   publication_year: '2007'

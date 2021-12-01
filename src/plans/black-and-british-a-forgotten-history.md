@@ -1,7 +1,10 @@
 ---
 book:
   author: David Olusoga
-  cover_image: black-and-british-a-forgotten-history.jpg
+  cover:
+    name: black-and-british-a-forgotten-history.jpg
+    size: 15400
+    tint_color: '#826f44'
   publication_year: ''
   title: 'Black and British: A Forgotten History'
 plan:

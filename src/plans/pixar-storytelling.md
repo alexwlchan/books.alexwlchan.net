@@ -1,7 +1,10 @@
 ---
 book:
   author: Dean Movshovitz
-  cover_image: pixar-storytelling.jpg
+  cover:
+    name: pixar-storytelling.jpg
+    size: 16342
+    tint_color: '#5a6b8b'
   publication_year: '2015'
   title: Pixar Storytelling
 plan:

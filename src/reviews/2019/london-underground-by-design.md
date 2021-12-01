@@ -1,7 +1,10 @@
 ---
 book:
   author: Mark Ovenden
-  cover_image: 'london-underground-by-design.jpg'
+  cover:
+    name: london-underground-by-design.jpg
+    size: 7813
+    tint_color: '#746730'
   isbn10: '1846144175'
   isbn13: '9781846144172'
   publication_year: '2013'

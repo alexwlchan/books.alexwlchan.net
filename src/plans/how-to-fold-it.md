@@ -1,7 +1,10 @@
 ---
 book:
   author: Joseph O'Rourke
-  cover_image: 'how-to-fold-it.jpg'
+  cover:
+    name: how-to-fold-it.jpg
+    size: 6653
+    tint_color: '#6e5a80'
   publication_year: '2011'
   title: How to Fold It
 plan:

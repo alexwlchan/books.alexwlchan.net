@@ -1,7 +1,10 @@
 ---
 book:
   author: Robin J. Wilson
-  cover_image: introduction-to-graph-theory.jpg
+  cover:
+    name: introduction-to-graph-theory.jpg
+    size: 8134
+    tint_color: '#332d5d'
   isbn10: 027372889X
   isbn13: '9780273728894'
   publication_year: '2010'

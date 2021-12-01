@@ -1,7 +1,10 @@
 ---
 book:
   author: Erin Morgenstern
-  cover_image: the-starless-sea.jpg
+  cover:
+    name: the-starless-sea.jpg
+    size: 171084
+    tint_color: '#106986'
   publication_year: '2019'
   title: The Starless Sea
 plan:

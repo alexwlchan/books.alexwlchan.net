@@ -1,7 +1,10 @@
 ---
 book:
   author: Edwin Black
-  cover_image: ibm-and-the-holocaust.jpg
+  cover:
+    name: ibm-and-the-holocaust.jpg
+    size: 41340
+    tint_color: '#827469'
   isbn10: 0751531995
   isbn13: '9780751531992'
   publication_year: '2001'

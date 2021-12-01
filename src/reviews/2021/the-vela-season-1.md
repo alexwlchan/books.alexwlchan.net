@@ -1,8 +1,11 @@
 ---
 book:
   author: Yoon Ha Lee, Becky Chambers, Rivers Solomon, S.L. Huang
+  cover:
+    name: the-vela-season-1.jpg
+    size: 46150
+    tint_color: '#345f76'
   narrator: Robin Miles
-  cover_image: the-vela-season-1.jpg
   publication_year: '2019'
   title: The Vela (season 1)
 review:

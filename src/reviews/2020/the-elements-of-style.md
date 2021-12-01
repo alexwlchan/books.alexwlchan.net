@@ -1,10 +1,13 @@
 ---
 book:
   author: William Strunk Jr.
-  cover_image: 'the-elements-of-style.jpg'
+  cover:
+    name: the-elements-of-style.jpg
+    size: 9564
+    tint_color: '#497c90'
+  isbn13: '9780205309023'
   publication_year: '1918'
   title: The Elements of Style
-  isbn13: '9780205309023'
 plan:
   date_added: '2019-08-12'
 review:

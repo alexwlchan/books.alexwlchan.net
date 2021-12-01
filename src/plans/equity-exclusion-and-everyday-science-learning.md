@@ -1,7 +1,10 @@
 ---
 book:
   author: Emily Dawson
-  cover_image: equity-exclusion-and-everyday-science-learning.jpg
+  cover:
+    name: equity-exclusion-and-everyday-science-learning.jpg
+    size: 9942
+    tint_color: '#942639'
   publication_year: '2019'
   title: Equity, Exclusion and Everyday Science Learning
 plan:

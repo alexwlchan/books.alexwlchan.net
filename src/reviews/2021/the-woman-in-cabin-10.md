@@ -1,10 +1,13 @@
 ---
 book:
   author: Ruth Ware
-  cover_image: the-woman-in-cabin-10.jpg
+  cover:
+    name: the-woman-in-cabin-10.jpg
+    size: 21476
+    tint_color: '#12555a'
+  narrator: Imogen Church
   publication_year: '2016'
   title: The Woman in Cabin 10
-  narrator: Imogen Church
 review:
   date_read: 2021-06-27
   format: audiobook

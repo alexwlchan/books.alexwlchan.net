@@ -1,7 +1,10 @@
 ---
 book:
   author: Harriet Dyer
-  cover_image: from-ace-to-ze.jpg
+  cover:
+    name: from-ace-to-ze.jpg
+    size: 4731
+    tint_color: '#000000'
   publication_year: '2018'
   title: From Ace to Ze
 plan:

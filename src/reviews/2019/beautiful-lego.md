@@ -1,7 +1,10 @@
 ---
 book:
   author: Mike Doyle
-  cover_image: beautiful-lego.jpg
+  cover:
+    name: beautiful-lego.jpg
+    size: 13701
+    tint_color: '#000000'
   isbn10: '1593275080'
   isbn13: '9781593275082'
   publication_year: '2013'

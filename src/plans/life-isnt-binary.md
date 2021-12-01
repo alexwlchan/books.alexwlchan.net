@@ -1,7 +1,10 @@
 ---
 book:
   author: Alex Iantaffi, Meg-John Barker
-  cover_image: life-isnt-binary.jpg
+  cover:
+    name: life-isnt-binary.jpg
+    size: 4176
+    tint_color: '#000000'
   publication_year: '2019'
   title: Life Isn’t Binary
 plan:

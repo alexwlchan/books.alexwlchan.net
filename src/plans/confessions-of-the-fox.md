@@ -1,7 +1,10 @@
 ---
 book:
   author: Jordy Rosenberg
-  cover_image: confessions-of-the-fox.jpg
+  cover:
+    name: confessions-of-the-fox.jpg
+    size: 62357
+    tint_color: '#a44260'
   publication_year: '2018'
   title: Confessions of the Fox
 plan:

@@ -5,6 +5,13 @@ import attr
 
 
 @attr.s
+class CoverImage:
+    name = attr.ib()
+    tint_color = attr.ib()
+    size = attr.ib()
+
+
+@attr.s
 class Book:
     slug = attr.ib()
     title = attr.ib()
@@ -16,8 +23,7 @@ class Book:
     narrator = attr.ib(default="")
     illustrator = attr.ib(default="")
 
-    cover_image = attr.ib(default="")
-    cover_desc = attr.ib(default="")
+    cover = attr.ib()
 
     isbn10 = attr.ib(default="")
     isbn13 = attr.ib(default="")

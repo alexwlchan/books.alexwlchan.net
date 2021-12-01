@@ -1,7 +1,10 @@
 ---
 book:
   author: Becky Chambers
-  cover_image: to-be-taught-if-fortunate.jpg
+  cover:
+    name: to-be-taught-if-fortunate.jpg
+    size: 8013
+    tint_color: '#c8481a'
   isbn10: '1473697166'
   isbn13: '9781473697164'
   publication_year: '2019'

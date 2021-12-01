@@ -1,7 +1,10 @@
 ---
 book:
   author: Emma Dabiri
-  cover_image: what-white-people-can-do-next.jpg
+  cover:
+    name: what-white-people-can-do-next.jpg
+    size: 34938
+    tint_color: '#b3423e'
   publication_year: '2021'
   title: What White People Can Do Next
 plan:

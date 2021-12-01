@@ -1,7 +1,10 @@
 ---
 book:
   author: Bruce F. Torrence
-  cover_image: the-students-introduction-to-mathematica-r.jpg
+  cover:
+    name: the-students-introduction-to-mathematica-r.jpg
+    size: 9917
+    tint_color: '#b13c7d'
   publication_year: '2009'
   title: The Student's Introduction to Mathematica
 plan:

@@ -1,7 +1,10 @@
 ---
 book:
   author: Andrea Lawlor
-  cover_image: paul-takes-the-form-of-a-mortal-girl.jpg
+  cover:
+    name: paul-takes-the-form-of-a-mortal-girl.jpg
+    size: 8712
+    tint_color: '#956775'
   publication_year: '2019'
   title: Paul Takes the Form of A Mortal Girl
 plan:

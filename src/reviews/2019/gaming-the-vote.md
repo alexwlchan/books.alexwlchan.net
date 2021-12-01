@@ -1,7 +1,10 @@
 ---
 book:
   author: William Poundstone
-  cover_image: gaming-the-vote.jpg
+  cover:
+    name: gaming-the-vote.jpg
+    size: 4946
+    tint_color: '#594d4d'
   isbn10: 0809048930
   isbn13: '9780809048939'
   publication_year: '2008'

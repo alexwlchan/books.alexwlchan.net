@@ -1,7 +1,10 @@
 ---
 book:
   author: Louis de Bernières
-  cover_image: captain-corellis-mandolin.jpg
+  cover:
+    name: captain-corellis-mandolin.jpg
+    size: 15351
+    tint_color: '#270b60'
   isbn10: 0749397543
   isbn13: '9780749397548'
   publication_year: '1994'

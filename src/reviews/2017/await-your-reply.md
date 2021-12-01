@@ -1,7 +1,10 @@
 ---
 book:
   author: Dan Chaon
-  cover_image: await-your-reply.jpg
+  cover:
+    name: await-your-reply.jpg
+    size: 6196
+    tint_color: '#636874'
   isbn10: 0-345-47602-6
   isbn13: 978-0-345-47602-9
   publication_year: '2009'

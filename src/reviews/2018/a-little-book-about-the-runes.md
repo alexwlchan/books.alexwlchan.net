@@ -1,7 +1,10 @@
 ---
 book:
   author: Björn Jónasson
-  cover_image: 'a-little-book-about-the-runes.jpg'
+  cover:
+    name: a-little-book-about-the-runes.jpg
+    size: 7793
+    tint_color: '#70492f'
   isbn10: '9979856386'
   isbn13: '9789979856382'
   publication_year: '2002'

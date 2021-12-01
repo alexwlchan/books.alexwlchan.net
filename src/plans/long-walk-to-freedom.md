@@ -1,7 +1,10 @@
 ---
 book:
   author: Nelson Mandela
-  cover_image: long-walk-to-freedom.jpg
+  cover:
+    name: long-walk-to-freedom.jpg
+    size: 10453
+    tint_color: '#955e2a'
   publication_year: '1995'
   title: Long Walk to Freedom
 plan:

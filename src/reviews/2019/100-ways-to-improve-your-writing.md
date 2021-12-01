@@ -1,7 +1,10 @@
 ---
 book:
   author: Gary Provost
-  cover_image: 100-ways-to-improve-your-writing.jpg
+  cover:
+    name: 100-ways-to-improve-your-writing.jpg
+    size: 8914
+    tint_color: '#2d588c'
   isbn10: '0451627210'
   isbn13: '9780451627216'
   publication_year: '1985'

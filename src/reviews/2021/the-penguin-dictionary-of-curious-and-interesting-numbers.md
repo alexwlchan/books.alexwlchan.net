@@ -1,7 +1,10 @@
 ---
 book:
   author: David Wells
-  cover_image: the-penguin-dictionary-of-curious-and-interesting-numbers.jpg
+  cover:
+    name: the-penguin-dictionary-of-curious-and-interesting-numbers.jpg
+    size: 32778
+    tint_color: '#7f6634'
   isbn10: 0140261494
   isbn13: '9780140261493'
   publication_year: '1986'

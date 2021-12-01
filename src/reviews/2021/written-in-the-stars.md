@@ -1,8 +1,11 @@
 ---
 book:
   author: Alexandria Bellefleur
+  cover:
+    name: written-in-the-stars.jpg
+    size: 29086
+    tint_color: '#cc3830'
   narrator: Lauren Sweet
-  cover_image: written-in-the-stars.jpg
   publication_year: '2020'
   title: Written in the Stars
 review:

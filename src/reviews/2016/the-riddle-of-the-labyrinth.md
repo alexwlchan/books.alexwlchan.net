@@ -1,7 +1,10 @@
 ---
 book:
   author: Margalit Fox
-  cover_image: the-riddle-of-the-labyrinth.jpg
+  cover:
+    name: the-riddle-of-the-labyrinth.jpg
+    size: 9419
+    tint_color: '#9d4b2b'
   isbn10: '1781251320'
   isbn13: '9781781251324'
   publication_year: '2013'

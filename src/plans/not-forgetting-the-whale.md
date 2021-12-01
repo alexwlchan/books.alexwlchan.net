@@ -1,7 +1,10 @@
 ---
 book:
   author: John Ironmonger
-  cover_image: not-forgetting-the-whale.jpg
+  cover:
+    name: not-forgetting-the-whale.jpg
+    size: 7637
+    tint_color: '#0a74b7'
   publication_year: '2015'
   title: Not Forgetting The Whale
 plan:

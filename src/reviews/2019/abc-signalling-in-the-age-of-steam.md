@@ -1,7 +1,10 @@
 ---
 book:
   author: Ian Allan
-  cover_image: 'abc-signalling-in-the-age-of-steam.jpg'
+  cover:
+    name: abc-signalling-in-the-age-of-steam.jpg
+    size: 24469
+    tint_color: '#82736d'
   isbn10: '0711023506'
   isbn13: '9780711023505'
   publication_year: '2005'

@@ -1,7 +1,10 @@
 ---
 book:
   author: Sara Hendren
-  cover_image: what-can-a-body-do.jpg
+  cover:
+    name: what-can-a-body-do.jpg
+    size: 37169
+    tint_color: '#765c0b'
   publication_year: '2020'
   title: What Can a Body Do?
 plan:

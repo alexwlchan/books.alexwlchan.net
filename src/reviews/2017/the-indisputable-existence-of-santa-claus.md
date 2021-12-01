@@ -1,9 +1,12 @@
 ---
 book:
   author: Dr Hannah Fry & Dr Thomas Oléron Evans
-  cover_image: 'the-indisputable-existence-of-santa-claus.jpg'
+  cover:
+    name: the-indisputable-existence-of-santa-claus.jpg
+    size: 7802
+    tint_color: '#010101'
   publication_year: null
-  title: 'The Indisputable Existence of Santa Claus'
+  title: The Indisputable Existence of Santa Claus
 review:
   date_read: '2017-01-03'
   rating: 3

@@ -1,7 +1,10 @@
 ---
 book:
   author: Douglas Adams & Mark Carwadine
-  cover_image: 'last-chance-to-see.jpg'
+  cover:
+    name: last-chance-to-see.jpg
+    size: 10940
+    tint_color: '#ce1c1a'
   isbn10: 009953679X
   isbn13: '9780099536796'
   publication_year: '2009'

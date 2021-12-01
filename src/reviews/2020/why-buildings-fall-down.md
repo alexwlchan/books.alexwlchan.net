@@ -1,18 +1,22 @@
 ---
 book:
-  title: Why Buildings Fall Down
   author: Matthys Levy, Mario Salvadori
-  publication_year: 1992
-  cover_image: why-buildings-fall-down.jpg
-  cover_desc: >
-    White cover, with the words “Why Buildings Fall Down” in blue.
-    Below the title is a picture pof three buildings: (L-R) a multi-storey white building with rectangular windows, the Leaning Tower of Pisa on a blue-ish background, and a line of circular columns on a brown-ish background.
+  cover:
+    name: why-buildings-fall-down.jpg
+    size: 14896
+    tint_color: '#716a81'
+  cover_desc: 'White cover, with the words “Why Buildings Fall Down” in blue. Below
+    the title is a picture pof three buildings: (L-R) a multi-storey white building
+    with rectangular windows, the Leaning Tower of Pisa on a blue-ish background,
+    and a line of circular columns on a brown-ish background.
 
+    '
+  publication_year: 1992
+  title: Why Buildings Fall Down
 review:
   date_read: 2020-01-25
-  rating: 4
   format: paperbook
-
+  rating: 4
 ---
 
 Sequel to “Why Buildings Stand Up”. It’s an easy read, covering a variety of building styles, and explaining incidents in which the buildings failed. As before, clear writing and great illustrations.

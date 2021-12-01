@@ -1,7 +1,10 @@
 ---
 book:
   author: Andrew Donkin, David Wyatt
-  cover_image: space-stories-that-really-happened.jpg
+  cover:
+    name: space-stories-that-really-happened.jpg
+    size: 7406
+    tint_color: '#4e6168'
   isbn10: 0-590-11103-5
   isbn13: 978-0-590-11103-4
   publication_year: '1999'

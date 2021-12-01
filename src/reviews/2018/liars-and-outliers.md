@@ -1,11 +1,14 @@
 ---
 book:
   author: Bruce Schneier
-  cover_image: 'liars-and-outliers.jpg'
+  cover:
+    name: liars-and-outliers.jpg
+    size: 8297
+    tint_color: '#9c161e'
   isbn10: '1118143302'
   isbn13: '9781118143308'
   publication_year: '2012'
-  title: 'Liars and Outliers'
+  title: Liars and Outliers
 review:
   date_read: '2018-02-03'
   rating: 5

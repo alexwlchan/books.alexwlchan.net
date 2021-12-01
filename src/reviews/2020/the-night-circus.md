@@ -1,14 +1,17 @@
 ---
 book:
   author: Erin Morgenstern
-  cover_image: the-night-circus.jpg
+  cover:
+    name: the-night-circus.jpg
+    size: 8850
+    tint_color: '#050004'
   publication_year: '2011'
   title: The Night Circus
 plan:
   date_added: '2019-12-22'
 review:
   date_read: '2020-05-22'
-  format: 'ebook'
+  format: ebook
   rating: 5
 ---
 

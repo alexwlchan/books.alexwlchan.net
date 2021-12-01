@@ -1,7 +1,10 @@
 ---
 book:
   author: Andrew Royle
-  cover_image: yellow-trains.png
+  cover:
+    name: yellow-trains.png
+    size: 122581
+    tint_color: '#736c43'
   isbn13: '9781910809587'
   publication_year: '2019'
   title: Yellow Trains

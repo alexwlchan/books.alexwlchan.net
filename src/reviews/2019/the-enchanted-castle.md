@@ -1,7 +1,10 @@
 ---
 book:
   author: E. Nesbit
-  cover_image: 'the-enchanted-castle.jpg'
+  cover:
+    name: the-enchanted-castle.jpg
+    size: 7929
+    tint_color: '#cb3828'
   isbn10: 0140367438
   isbn13: '9780140367430'
   publication_year: '1994'

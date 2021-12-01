@@ -1,7 +1,10 @@
 ---
 book:
   author: Alison Bechdel
-  cover_image: fun-home.jpg
+  cover:
+    name: fun-home.jpg
+    size: 8413
+    tint_color: '#457569'
   isbn10: 0224080512
   isbn13: '9780224080514'
   publication_year: '2006'

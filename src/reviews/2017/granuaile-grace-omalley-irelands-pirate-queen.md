@@ -1,7 +1,10 @@
 ---
 book:
   author: Anne Chambers
-  cover_image: 'granuaile-grace-omalley-irelands-pirate-queen.jpg'
+  cover:
+    name: granuaile-grace-omalley-irelands-pirate-queen.jpg
+    size: 9980
+    tint_color: '#60616b'
   isbn10: 0717145824
   isbn13: '9780717145829'
   publication_year: '2009'

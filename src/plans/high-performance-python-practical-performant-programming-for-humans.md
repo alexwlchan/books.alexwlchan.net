@@ -1,7 +1,10 @@
 ---
 book:
   author: Micha Gorelick
-  cover_image: 'high-performance-python-practical-performant-programming-for-humans.jpg'
+  cover:
+    name: high-performance-python-practical-performant-programming-for-humans.jpg
+    size: 11506
+    tint_color: '#b43d94'
   publication_year: '2014'
   title: 'High Performance Python: Practical Performant Programming for Humans'
 plan:

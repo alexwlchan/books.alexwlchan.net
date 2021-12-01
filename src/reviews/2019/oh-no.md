@@ -1,7 +1,10 @@
 ---
 book:
   author: Alex Norris
-  cover_image: oh-no.jpg
+  cover:
+    name: oh-no.jpg
+    size: 6214
+    tint_color: '#586f7c'
   isbn10: '1449492533'
   isbn13: '9781449492533'
   publication_year: '2019'

@@ -1,8 +1,11 @@
 ---
 book:
   author: David Olusoga
+  cover:
+    name: black-and-british.jpg
+    size: 69142
+    tint_color: '#166e7e'
   narrator: Ben Onwukwe
-  cover_image: black-and-british.jpg
   publication_year: '2016'
   title: Black and British
 review:

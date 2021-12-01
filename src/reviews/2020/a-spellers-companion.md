@@ -1,7 +1,10 @@
 ---
 book:
   author: Brown and Brown
-  cover_image: a-spellers-companion.jpg
+  cover:
+    name: a-spellers-companion.jpg
+    size: 6803
+    tint_color: '#42342f'
   isbn13: '9781904874041'
   publication_year: '1987'
   title: A Speller's Companion

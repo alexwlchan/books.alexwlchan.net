@@ -1,7 +1,10 @@
 ---
 book:
   author: Becky Chambers
-  cover_image: the-galaxy-and-the-ground-within.jpg
+  cover:
+    name: the-galaxy-and-the-ground-within.jpg
+    size: 26746
+    tint_color: '#9d418d'
   isbn13: '9781529362947'
   publication_year: '2021'
   title: The Galaxy, and the Ground Within

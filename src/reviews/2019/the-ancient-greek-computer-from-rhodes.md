@@ -1,13 +1,16 @@
 ---
 book:
   author: V.J. Kean
-  cover_image: 'the-ancient-greek-computer-from-rhodes.jpg'
+  cover:
+    name: the-ancient-greek-computer-from-rhodes.jpg
+    size: 8399
+    tint_color: '#6e6d5a'
   isbn10: '9602262273'
   isbn13: '9789602262276'
   publication_year: '1991'
-  title: 'The Ancient Greek Computer From Rhodes'
+  title: The Ancient Greek Computer From Rhodes
 review:
   date_read: '2019-08-22'
+  format: hardback
   rating: 3
-  format: 'hardback'
 ---

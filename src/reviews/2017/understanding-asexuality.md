@@ -1,7 +1,10 @@
 ---
 book:
   author: Anthony F. Bogaert
-  cover_image: understanding-asexuality.jpg
+  cover:
+    name: understanding-asexuality.jpg
+    size: 3549
+    tint_color: '#69686f'
   isbn10: '1442200995'
   isbn13: '9781442200999'
   publication_year: '2012'

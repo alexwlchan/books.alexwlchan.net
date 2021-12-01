@@ -1,7 +1,10 @@
 ---
 book:
   author: Gail Honeyman
-  cover_image: 'eleanor-oliphant-is-completely-fine.jpg'
+  cover:
+    name: eleanor-oliphant-is-completely-fine.jpg
+    size: 7704
+    tint_color: '#6d6a67'
   isbn10: 0008172145
   isbn13: '9780008172145'
   publication_year: null

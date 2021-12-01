@@ -1,7 +1,10 @@
 ---
 book:
   author: Ian Stewart
-  cover_image: math-hysteria-fun-and-games-with-mathematics.jpg
+  cover:
+    name: math-hysteria-fun-and-games-with-mathematics.jpg
+    size: 11697
+    tint_color: '#5f6468'
   isbn13: 978-0-19-861336-7
   publication_year: '2004'
   title: 'Math Hysteria: Fun and games with mathematics'

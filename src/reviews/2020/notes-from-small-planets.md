@@ -1,7 +1,10 @@
 ---
 book:
   author: Nate Crowley
-  cover_image: notes-from-small-planets.jpg
+  cover:
+    name: notes-from-small-planets.jpg
+    size: 103272
+    tint_color: '#796787'
   isbn13: '9780008306861'
   publication_year: '2020'
   title: Notes from Small Planets

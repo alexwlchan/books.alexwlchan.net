@@ -1,7 +1,10 @@
 ---
 book:
   author: James Coglan
-  cover_image: building-git.jpg
+  cover:
+    name: building-git.jpg
+    size: 8381
+    tint_color: '#996a31'
   publication_year: '2019'
   title: Building Git
 plan:

@@ -1,7 +1,10 @@
 ---
 book:
   author: Daniel J. Levitin
-  cover_image: the-organized-mind.jpg
+  cover:
+    name: the-organized-mind.jpg
+    size: 6555
+    tint_color: '#705858'
   publication_year: '2014'
   title: The Organized Mind
 plan:

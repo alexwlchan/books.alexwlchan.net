@@ -1,15 +1,18 @@
 ---
 book:
   author: David Allen
-  cover_image: 'getting-things-done.jpg'
+  cover:
+    name: getting-things-done.jpg
+    size: 18426
+    tint_color: '#7b575c'
   isbn10: 0142000280
   isbn13: '9780142000281'
   publication_year: '2002'
-  title: 'Getting Things Done'
+  title: Getting Things Done
 review:
   date_read: '2016-11-26'
-  rating: 5
   format: audiobook
+  rating: 5
 ---
 
 Getting Things Done is a near-legendary series for productivity. I’ve tried it a couple of times – it’s an appealing idea, but I’ve never been able to make it stick. Maybe this time it’ll work?

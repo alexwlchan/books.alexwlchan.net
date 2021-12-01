@@ -1,10 +1,13 @@
 ---
 book:
   author: Arthur Cooper
-  cover_image: 'the-other-greek.jpg'
+  cover:
+    name: the-other-greek.jpg
+    size: 5643
+    tint_color: '#5c5f4e'
+  isbn13: '9789004369047'
   publication_year: '2108'
   title: The Other Greek
-  isbn13: '9789004369047'
 plan:
   date_added: '2020-03-01'
 ---

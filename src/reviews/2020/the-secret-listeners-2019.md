@@ -1,13 +1,16 @@
 ---
 book:
   author: Sinclair McKay
-  cover_image: 'the-secret-listeners.jpg'
+  cover:
+    name: the-secret-listeners.jpg
+    size: 21219
+    tint_color: '#c14d4b'
+  isbn13: '9781845137632'
   publication_year: '2012'
   title: The Secret Listeners
-  isbn13: '9781845137632'
 review:
   date_read: '2020-03-10'
-  format: 'hardback'
+  format: hardback
   rating: 5
 ---
 

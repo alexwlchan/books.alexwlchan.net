@@ -1,7 +1,10 @@
 ---
 book:
   author: Harville and Helen Hendrix
-  cover_image: getting-the-love-you-want.jpg
+  cover:
+    name: getting-the-love-you-want.jpg
+    size: 36028
+    tint_color: '#da0c10'
   publication_year: '2019'
   title: Getting the Love You Want
 plan:

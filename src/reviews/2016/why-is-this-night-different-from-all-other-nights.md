@@ -1,12 +1,15 @@
 ---
 book:
   author: Lemony Snicket
-  cover_image: why-is-this-night-different-from-all-other-nights.jpg
+  cover:
+    name: why-is-this-night-different-from-all-other-nights.jpg
+    size: 12565
+    tint_color: '#7f5ba0'
   isbn10: 0316123048
   isbn13: '9780316123044'
   publication_year: '2015'
-  title: “Why Is This Night Different from All Other Nights?”
   series: 'All the Wrong Questions, #4'
+  title: “Why Is This Night Different from All Other Nights?”
 review:
   date_read: '2016-12-27'
   rating: 4

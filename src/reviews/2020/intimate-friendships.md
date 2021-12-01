@@ -1,8 +1,11 @@
 ---
 book:
   author: James W. Ramey
-  cover_image: 'intimate-friendships.jpg'
-  isbn10: '0134768957'
+  cover:
+    name: intimate-friendships.jpg
+    size: 6561
+    tint_color: '#862a20'
+  isbn10: 0134768957
   isbn13: '9780134768953'
   publication_year: 1975
   title: Intimate Friendships

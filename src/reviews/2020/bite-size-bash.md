@@ -1,7 +1,10 @@
 ---
 book:
   author: Julia Evans
-  cover_image: bite-size-bash.jpg
+  cover:
+    name: bite-size-bash.jpg
+    size: 51146
+    tint_color: '#856155'
   publication_year: '2020'
   title: Bite Size Bash
 review:

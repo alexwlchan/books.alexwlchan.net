@@ -1,7 +1,10 @@
 ---
 book:
   author: Mario Salvadori
-  cover_image: why-buildings-stand-up.jpg
+  cover:
+    name: why-buildings-stand-up.jpg
+    size: 8633
+    tint_color: '#764145'
   isbn10: 0393306763
   isbn13: '9780393306767'
   publication_year: '1990'

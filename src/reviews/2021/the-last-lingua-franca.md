@@ -1,14 +1,17 @@
 ---
 book:
   author: Nicholas Ostler
-  cover_image: the-last-lingua-franca.jpg
+  cover:
+    name: the-last-lingua-franca.jpg
+    size: 19915
+    tint_color: '#787266'
   isbn13: '9781846142154'
   publication_year: '2010'
   title: The Last Lingua Franca
 review:
   date_read: 2021-04-25
-  format: hardback
   did_not_finish: true
+  format: hardback
 ---
 
 This seems like a well-researched and detailed book, but after two chapters it wasn't grabbing me.

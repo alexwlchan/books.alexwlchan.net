@@ -1,7 +1,10 @@
 ---
 book:
   author: Ted Chiang
-  cover_image: exhalation.jpg
+  cover:
+    name: exhalation.jpg
+    size: 8460
+    tint_color: '#5f5f5f'
   publication_year: '2019'
   title: Exhalation
 plan:

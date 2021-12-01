@@ -1,7 +1,10 @@
 ---
 book:
   author: Robin J. Wilson
-  cover_image: 'lewis-carroll-in-numberland-his-fantastical-mathematical-logical-life.jpg'
+  cover:
+    name: lewis-carroll-in-numberland-his-fantastical-mathematical-logical-life.jpg
+    size: 9480
+    tint_color: '#767163'
   isbn10: 0141016108
   isbn13: '9780141016108'
   publication_year: '2009'

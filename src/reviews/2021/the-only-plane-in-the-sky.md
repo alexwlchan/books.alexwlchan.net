@@ -1,10 +1,13 @@
 ---
 book:
   author: Garrett M. Graff
-  cover_image: the-only-plane-in-the-sky.jpg
+  cover:
+    name: the-only-plane-in-the-sky.jpg
+    size: 19351
+    tint_color: '#000000'
+  narrator: Holter Graham and a full cast
   publication_year: '2019'
   title: The Only Plane in the Sky
-  narrator: Holter Graham and a full cast
 review:
   date_read: 2021-06-25
   format: audiobook

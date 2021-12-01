@@ -1,7 +1,10 @@
 ---
 book:
+  cover:
+    name: disability-visibility.jpg
+    size: 86514
+    tint_color: '#945b9a'
   editor: Alice Wong
-  cover_image: 'disability-visibility.jpg'
   publication_year: '2020'
   title: Disability Visibility
 review:

@@ -1,12 +1,15 @@
 ---
 book:
   author: Becky Chambers
-  cover_image: 'a-closed-and-common-orbit.jpg'
+  cover:
+    name: a-closed-and-common-orbit.jpg
+    size: 7780
+    tint_color: '#c31413'
   isbn10: '1473621445'
   isbn13: '9781473621442'
   publication_year: '2016'
-  title: 'A Closed and Common Orbit'
   series: 'Wayfarers, #2'
+  title: A Closed and Common Orbit
 review:
   date_read: '2017-06-30'
   rating: 5

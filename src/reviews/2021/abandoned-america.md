@@ -1,9 +1,12 @@
 ---
 book:
   author: Matthew Christopher
-  cover_image: abandoned-america-the-age-of-consequences.jpg
+  cover:
+    name: abandoned-america-the-age-of-consequences.jpg
+    size: 9584
+    tint_color: '#726c66'
   publication_year: '2014'
-  title: 'Abandoned America'
+  title: Abandoned America
 plan:
   date_added: 2020-05-11
 review:

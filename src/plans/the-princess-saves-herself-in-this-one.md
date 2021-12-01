@@ -1,7 +1,10 @@
 ---
 book:
   author: Amanda Lovelace, ladybookmad
-  cover_image: the-princess-saves-herself-in-this-one.jpg
+  cover:
+    name: the-princess-saves-herself-in-this-one.jpg
+    size: 3350
+    tint_color: '#000000'
   publication_year: '2017'
   title: the princess saves herself in this one
 plan:

@@ -1,7 +1,10 @@
 ---
 book:
   author: Alex Iantaffi and Meg-John Barker
-  cover_image: how-to-understand-your-gender.jpg
+  cover:
+    name: how-to-understand-your-gender.jpg
+    size: 13024
+    tint_color: '#915f80'
   isbn13: '9781785927461'
   publication_year: '2018'
   title: How to Understand Your Gender

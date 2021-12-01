@@ -1,12 +1,15 @@
 ---
 book:
   author: Becky Chambers
-  cover_image: the-long-way-to-a-small-angry-planet.jpg
+  cover:
+    name: the-long-way-to-a-small-angry-planet.jpg
+    size: 4324
+    tint_color: '#6c6f84'
   isbn10: '1473619807'
   isbn13: '9781473619807'
   publication_year: '2015'
+  series: Wayfarers,
   title: The Long Way to a Small Angry Planet
-  series: Wayfarers, #1
 review:
   date_read: '2017-01-22'
   rating: 5

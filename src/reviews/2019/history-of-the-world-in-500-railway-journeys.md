@@ -1,9 +1,12 @@
 ---
 book:
   author: Sarah Baxter
-  cover_image: history-of-the-world-in-500-railway-journeys.jpg
-  publication_year: '2017'
+  cover:
+    name: history-of-the-world-in-500-railway-journeys.jpg
+    size: 14702
+    tint_color: '#6e4d31'
   isbn13: '9781781316788'
+  publication_year: '2017'
   title: History of the World in 500 Railway Journeys
 review:
   date_read: '2019-11-23'

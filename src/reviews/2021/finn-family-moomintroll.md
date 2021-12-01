@@ -1,7 +1,10 @@
 ---
 book:
   author: Tove Jansson
-  cover_image: finn-family-moomintroll.jpg
+  cover:
+    name: finn-family-moomintroll.jpg
+    size: 65392
+    tint_color: '#017d93'
   isbn13: '9781908745644'
   publication_year: '1948'
   title: Finn Family Moomintroll

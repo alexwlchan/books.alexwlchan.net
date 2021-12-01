@@ -1,7 +1,10 @@
 ---
 book:
   author: Gavin Menzies
-  cover_image: '1421-the-year-china-discovered-the-world.jpg'
+  cover:
+    name: 1421-the-year-china-discovered-the-world.jpg
+    size: 9526
+    tint_color: '#ce1125'
   isbn10: 0553815229
   isbn13: '9780553815221'
   publication_year: '2003'

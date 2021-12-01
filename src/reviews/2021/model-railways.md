@@ -1,7 +1,10 @@
 ---
 book:
   author: Cyril J. Freezer
-  cover_image: model-railways.jpg
+  cover:
+    name: model-railways.jpg
+    size: 37773
+    tint_color: '#bf3016'
   isbn13: 0000000021296
   publication_year: '1991'
   title: Model Railways

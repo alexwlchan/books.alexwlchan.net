@@ -1,7 +1,10 @@
 ---
 book:
   author: P.D. James
-  cover_image: 'an-unsuitable-job-for-a-woman.jpg'
+  cover:
+    name: an-unsuitable-job-for-a-woman.jpg
+    size: 8666
+    tint_color: '#cc181f'
   isbn10: '0571253407'
   isbn13: '9780571253401'
   publication_year: '2010'

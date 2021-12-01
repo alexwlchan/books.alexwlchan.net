@@ -1,7 +1,10 @@
 ---
 book:
   author: Yevgeny Zamyatin
-  cover_image: we.png
+  cover:
+    name: we.png
+    size: 83792
+    tint_color: '#705442'
   publication_year: '1924'
   title: We
 plan:

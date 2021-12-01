@@ -1,7 +1,10 @@
 ---
 book:
   author: Peter Caton
-  cover_image: remote-stations.jpg
+  cover:
+    name: remote-stations.jpg
+    size: 9205
+    tint_color: '#6b685c'
   isbn13: '9781789014082'
   publication_year: '2018'
   title: Remote Stations

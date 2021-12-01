@@ -1,7 +1,10 @@
 ---
 book:
   author: Chris Hadfield
-  cover_image: the-apollo-murders.jpg
+  cover:
+    name: the-apollo-murders.jpg
+    size: 49761
+    tint_color: '#1e1e1e'
   isbn13: '9781529417456'
   publication_year: '2021'
   title: The Apollo Murders

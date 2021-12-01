@@ -1,16 +1,19 @@
 ---
 book:
   author: R.J. Anderson
-  cover_image: 'ultraviolet-ultraviolet-1.jpg'
-  publication_year: '2011'
-  title: 'Ultraviolet (Ultraviolet, #1)'
+  cover:
+    name: ultraviolet-ultraviolet-1.jpg
+    size: 11657
+    tint_color: '#6b637e'
   isbn10: '1408312751'
   isbn13: '9781408312759'
+  publication_year: '2011'
+  title: 'Ultraviolet (Ultraviolet, #1)'
 plan:
   date_added: '2016-10-23'
 review:
   date_read: '2020-04-17'
-  format: 'paperback'
+  format: paperback
   rating: 4
 ---
 

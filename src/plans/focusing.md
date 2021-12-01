@@ -1,7 +1,10 @@
 ---
 book:
   author: Eugene T. Gendlin
-  cover_image: focusing.jpg
+  cover:
+    name: focusing.jpg
+    size: 7004
+    tint_color: '#960a10'
   publication_year: '1982'
   title: Focusing
 plan:

@@ -1,7 +1,10 @@
 ---
 book:
   author: Lane Moore
-  cover_image: how-to-be-alone.jpg
+  cover:
+    name: how-to-be-alone.jpg
+    size: 8328
+    tint_color: '#554439'
   publication_year: '2018'
   title: How To Be Alone
 plan:

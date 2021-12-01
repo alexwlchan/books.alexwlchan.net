@@ -1,7 +1,10 @@
 ---
 book:
   author: Mia Violet
-  cover_image: yes-you-are-trans-enough.jpg
+  cover:
+    name: yes-you-are-trans-enough.jpg
+    size: 9683
+    tint_color: '#427590'
   isbn10: '1785923153'
   isbn13: '9781785923159'
   publication_year: '2018'

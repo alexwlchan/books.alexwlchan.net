@@ -1,7 +1,10 @@
 ---
 book:
   author: Kacen Callender
-  cover_image: felix-ever-after.jpg
+  cover:
+    name: felix-ever-after.jpg
+    size: 10667
+    tint_color: '#975a3b'
   publication_year: '2020'
   title: Felix Ever After
 plan:

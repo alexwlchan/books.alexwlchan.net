@@ -1,7 +1,10 @@
 ---
 book:
   author: Sam Leith
-  cover_image: write-to-the-point.jpg
+  cover:
+    name: write-to-the-point.jpg
+    size: 7578
+    tint_color: '#3a3839'
   isbn10: '1781254761'
   isbn13: '9781781254769'
   publication_year: '2017'

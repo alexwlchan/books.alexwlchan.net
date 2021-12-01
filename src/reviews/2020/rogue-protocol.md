@@ -1,7 +1,10 @@
 ---
 book:
   author: Martha Wells
-  cover_image: rogue-protocol.jpg
+  cover:
+    name: rogue-protocol.jpg
+    size: 8107
+    tint_color: '#686d72'
   isbn13: '9781250185433'
   publication_year: '2018'
   title: 'Rogue Protocol (The Murderbot Diaries, #3)'

@@ -1,7 +1,10 @@
 ---
 book:
   author: Alan Weisman
-  cover_image: 'the-world-without-us.jpg'
+  cover:
+    name: the-world-without-us.jpg
+    size: 12401
+    tint_color: '#486469'
   isbn10: 0753513579
   isbn13: '9780753513576'
   publication_year: '2008'

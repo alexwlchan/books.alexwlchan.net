@@ -1,13 +1,16 @@
 ---
 book:
   author: Sophia Morrison
-  cover_image: 'manx-fairy-tales.jpg'
+  cover:
+    name: manx-fairy-tales.jpg
+    size: 22863
+    tint_color: '#506840'
   isbn10: 187312001X
   isbn13: '9781873120019'
   publication_year: '1991'
   title: Manx Fairy Tales
 review:
-  date_read: '2017-08'
+  date_read: 2017-08
   rating: 3
 ---
 

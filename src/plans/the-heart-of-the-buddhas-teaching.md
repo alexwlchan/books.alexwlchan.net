@@ -1,7 +1,10 @@
 ---
 book:
   author: Thich Nhat Hanh
-  cover_image: the-heart-of-the-buddhas-teaching.jpg
+  cover:
+    name: the-heart-of-the-buddhas-teaching.jpg
+    size: 7801
+    tint_color: '#932118'
   publication_year: '1999'
   title: The Heart of the Buddha's Teaching
 plan:

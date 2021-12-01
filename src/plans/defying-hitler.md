@@ -1,7 +1,10 @@
 ---
 book:
   author: Sebastian Haffner
-  cover_image: defying-hitler.jpg
+  cover:
+    name: defying-hitler.jpg
+    size: 4811
+    tint_color: '#725e40'
   publication_year: '2019'
   title: Defying Hitler
 plan:

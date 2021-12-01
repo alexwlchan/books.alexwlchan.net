@@ -1,7 +1,10 @@
 ---
 book:
   author: Jim Baggott
-  cover_image: atomic.jpg
+  cover:
+    name: atomic.jpg
+    size: 11826
+    tint_color: '#4f688e'
   publication_year: '2015'
   title: Atomic
 plan:

@@ -1,7 +1,10 @@
 ---
 book:
   author: Darryl Cunningham
-  cover_image: 'psychiatric-tales.jpg'
+  cover:
+    name: psychiatric-tales.jpg
+    size: 6208
+    tint_color: '#686868'
   isbn10: '1906653089'
   isbn13: '9781906653088'
   publication_year: '2010'

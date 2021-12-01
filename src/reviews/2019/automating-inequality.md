@@ -1,7 +1,10 @@
 ---
 book:
   author: Virginia Eubanks
-  cover_image: automating-inequality.jpg
+  cover:
+    name: automating-inequality.jpg
+    size: 8575
+    tint_color: '#6e655e'
   isbn10: '1250074312'
   isbn13: '9781250074317'
   publication_year: '2018'

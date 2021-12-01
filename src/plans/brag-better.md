@@ -1,7 +1,10 @@
 ---
 book:
   author: Meredith Fineman
-  cover_image: brag-better.jpg
+  cover:
+    name: brag-better.jpg
+    size: 11947
+    tint_color: '#c23e64'
   publication_year: '2020'
   title: Brag Better
 plan:

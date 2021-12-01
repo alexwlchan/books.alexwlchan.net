@@ -1,7 +1,10 @@
 ---
 book:
   author: Don Hale
-  cover_image: 'mallard-how-the-blue-streak-broke-the-world-speed-record.jpg'
+  cover:
+    name: mallard-how-the-blue-streak-broke-the-world-speed-record.jpg
+    size: 21617
+    tint_color: '#586c79'
   isbn10: '1854109391'
   isbn13: '9781854109392'
   publication_year: '2003'

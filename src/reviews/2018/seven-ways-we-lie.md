@@ -1,7 +1,10 @@
 ---
 book:
   author: Riley Redgate
-  cover_image: 'seven-ways-we-lie.jpg'
+  cover:
+    name: seven-ways-we-lie.jpg
+    size: 10373
+    tint_color: '#767078'
   isbn10: '1419723480'
   isbn13: '9781419723483'
   publication_year: '2017'

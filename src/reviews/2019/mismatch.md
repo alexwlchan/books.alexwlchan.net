@@ -1,7 +1,10 @@
 ---
 book:
   author: Kat Holmes
-  cover_image: mismatch.jpg
+  cover:
+    name: mismatch.jpg
+    size: 6104
+    tint_color: '#6f6f6f'
   isbn10: 0262038889
   isbn13: '9780262038881'
   publication_year: '2018'

@@ -1,7 +1,10 @@
 ---
 book:
   author: Benjamin Vincent
-  cover_image: transgender-health.jpg
+  cover:
+    name: transgender-health.jpg
+    size: 19578
+    tint_color: '#465470'
   isbn13: '9781784504755'
   publication_year: '2018'
   title: Transgender Health
