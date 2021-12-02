@@ -2,6 +2,10 @@ import datetime
 import pathlib
 
 import attr
+import cattr
+
+
+cattr.register_structure_hook(pathlib.Path, lambda d, t: pathlib.Path(d))
 
 
 @attr.s
@@ -45,9 +49,9 @@ class Review:
 
 @attr.s
 class ReviewEntry:
-    path = attr.ib()
-    book = attr.ib()
-    review = attr.ib()
+    path: pathlib.Path = attr.ib()
+    book: Book = attr.ib()
+    review: Review = attr.ib()
 
     def out_path(self):
         name = self.path.with_suffix("").name
@@ -56,14 +60,14 @@ class ReviewEntry:
 
 @attr.s
 class CurrentlyReading:
-    text = attr.ib()
+    text = attr.ib(default="")
 
 
 @attr.s
 class CurrentlyReadingEntry:
-    path = attr.ib()
-    book = attr.ib()
-    reading = attr.ib()
+    path: pathlib.Path = attr.ib()
+    book: Book = attr.ib()
+    reading: CurrentlyReading = attr.ib()
 
 
 def _parse_date(value):
@@ -75,12 +79,12 @@ def _parse_date(value):
 
 @attr.s
 class Plan:
-    text = attr.ib()
     date_added = attr.ib(converter=_parse_date)
+    text = attr.ib(default="")
 
 
 @attr.s
 class PlanEntry:
-    path = attr.ib()
-    book = attr.ib()
-    plan = attr.ib()
+    path: pathlib.Path = attr.ib()
+    book: Book = attr.ib()
+    plan: Plan = attr.ib()

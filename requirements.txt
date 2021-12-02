@@ -4,10 +4,11 @@
 #
 #    pip-compile
 #
-attrs==19.3.0             # via -r requirements.in
+attrs==21.2.0             # via -r requirements.in, cattrs
 beautifulsoup4==4.10.0    # via bs4
 blessings==1.7            # via inquirer
 bs4==0.0.1                # via -r requirements.in
+cattrs==1.8.0             # via -r requirements.in
 cssmin==0.2.0             # via -r requirements.in
 htmlmin==0.1.12           # via -r requirements.in
 hyperlink==19.0.0         # via -r requirements.in
