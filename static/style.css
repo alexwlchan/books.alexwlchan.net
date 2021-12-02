@@ -105,16 +105,6 @@ aside a:hover {
   background: rgba(255, 255, 255, 0.3);
 }
 
-.book_metadata {
-  border-collapse: collapse;
-  margin-bottom: 1em;
-  max-width: calc(100% - 230px);
-}
-
-a .book_metadata {
-  max-width: calc(100% - 135px);
-}
-
 td, th {
   line-height: 1.4em;
   vertical-align: top;
@@ -193,6 +183,7 @@ footer a:hover {
   display: inline-block;
   margin-top:    auto;
   margin-bottom: auto;
+  border-collapse: collapse;
   line-height: 1.25em;
   padding-right: 10px;
   padding-top:    10px;
