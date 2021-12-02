@@ -8,6 +8,7 @@ import json
 import os
 import pathlib
 import re
+import shutil
 import subprocess
 import sys
 import typing
@@ -23,8 +24,22 @@ from generate_bookshelf import create_shelf_data_uri
 from models import *
 
 
+def get_file_paths_under(root):
+    """Generates the paths to every file under ``root``."""
+    for dirpath, _, filenames in os.walk(root):
+        for f in filenames:
+            yield os.path.join(dirpath, f)
+
+
 def rsync(dir1, dir2):
-    subprocess.check_call(["rsync", "--recursive", "--delete", dir1, dir2])
+    for fp1 in get_file_paths_under(dir1):
+        relpath = os.path.relpath(fp1, dir1)
+        fp2 = os.path.join(dir2, relpath)
+
+        if os.path.exists(fp2) and os.stat(fp2).st_mtime >= os.stat(fp1).st_mtime:
+            continue
+        else:
+            shutil.copyfile(fp1, fp2)
 
 
 def git(*args):
