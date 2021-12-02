@@ -13,12 +13,7 @@ import subprocess
 import sys
 import typing
 
-import attr
 import cattr
-import cssmin
-import frontmatter
-from jinja2 import Environment, FileSystemLoader, select_autoescape
-import smartypants
 
 from generate_bookshelf import create_shelf_data_uri
 from models import *
@@ -36,57 +31,14 @@ def rsync(dir1, dir2):
         relpath = os.path.relpath(fp1, dir1)
         fp2 = os.path.join(dir2, relpath)
 
-        if os.path.exists(fp2) and os.stat(fp2).st_mtime >= os.stat(fp1).st_mtime:
+        if os.path.exists(fp2) and os.stat(fp2).st_size == os.stat(fp1).st_size:
             continue
         else:
             shutil.copyfile(fp1, fp2)
 
 
-def git(*args):
-    return subprocess.check_output(["git"] + list(args)).strip().decode("utf8")
-
-
-def set_git_timestamps():
-    """
-    For everything in the covers/ directory, set the last modified timestamp to
-    the last time it was modified in Git.  This should make tint colour computations
-    stable across machines.
-    """
-    root = git("rev-parse", "--show-toplevel")
-
-    now = datetime.datetime.now().timestamp()
-
-    for f in os.listdir("src/covers"):
-        path = os.path.join("src/covers", f)
-
-        if not os.path.isfile(path):
-            continue
-
-        stat = os.stat(path)
-
-        # If the modified time is >7 days ago, skip setting the modified time.  This means
-        # the script stays pretty fast when doing a regular sync.
-        if now - stat.st_mtime > 7 * 24 * 60 * 60 and "--reset" not in sys.argv:
-            continue
-
-        revision = git("rev-list", "--max-count=1", "HEAD", path)
-
-        if not revision:
-            continue
-
-        timestamp, *_ = git(
-            "show", "--pretty=format:%ai", "--abbrev-commit", revision
-        ).splitlines()
-        modified_time = datetime.datetime.strptime(
-            timestamp, "%Y-%m-%d %H:%M:%S %z"
-        ).timestamp()
-
-        access_time = stat.st_atime
-
-        os.utime(path, times=(access_time, modified_time))
-
-
 def get_review_entry_from_path(path):
+    import frontmatter
     post = frontmatter.load(path)
 
     kwargs = {}
@@ -105,6 +57,7 @@ def get_review_entry_from_path(path):
 
 
 def get_reading_entry_from_path(path):
+    import frontmatter
     post = frontmatter.load(path)
 
     slug = os.path.basename(os.path.splitext(path)[0])
@@ -116,6 +69,7 @@ def get_reading_entry_from_path(path):
 
 
 def get_plan_entry_from_path(path):
+    import frontmatter
     post = frontmatter.load(path)
 
     slug = os.path.basename(os.path.splitext(path)[0])
@@ -214,7 +168,7 @@ def render_date(date_value):
         return date_obj.strftime("%B %Y")
 
 
-def save_html(env, *, depends_on, template_name, out_name="", **kwargs):
+def save_html(*, depends_on, template_name, out_name="", **kwargs):
     out_path = pathlib.Path("_html") / out_name / "index.html"
 
     if (
@@ -224,14 +178,16 @@ def save_html(env, *, depends_on, template_name, out_name="", **kwargs):
     ):
         return
 
+    env = get_environment()
     template = env.get_template(template_name)
     html = template.render(**kwargs)
     out_path.parent.mkdir(exist_ok=True, parents=True)
 
+    import cssmin
+    import htmlmin
+
     for s in list(re.finditer(r"<style>([^<]+)</style>", html)):
         html = html.replace(s.group(1), cssmin.cssmin(s.group(1)))
-
-    import htmlmin
 
     html = htmlmin.minify(html, remove_comments=True)
 
@@ -315,8 +271,10 @@ def as_rgba(hs, alpha):
     return f"rgb({r / 255}, {g / 255}, {b / 255}, {alpha})"
 
 
-def main():
-    set_git_timestamps()
+@functools.lru_cache
+def get_environment():
+    from jinja2 import Environment, FileSystemLoader, select_autoescape
+    import smartypants
 
     env = Environment(
         loader=FileSystemLoader("templates"),
@@ -334,6 +292,10 @@ def main():
     env.filters["from_hex"] = from_hex
     env.filters["as_rgba"] = as_rgba
 
+    return env
+
+
+def main():
     create_thumbnails()
 
     rsync("src/covers/", "_html/covers/")
@@ -350,7 +312,6 @@ def main():
 
     for review_path, review_entry in all_reviews.items():
         save_html(
-            env,
             depends_on=[review_path],
             template_name="review.html",
             out_name=review_entry.out_path(),
@@ -365,7 +326,6 @@ def main():
     )
 
     save_html(
-        env,
         depends_on=all_reviews.keys(),
         template_name="list_reviews.html",
         out_name="reviews",
@@ -389,7 +349,6 @@ def main():
     )
 
     save_html(
-        env,
         depends_on=all_reading.keys(),
         template_name="list_reading.html",
         out_name="reading",
@@ -407,7 +366,6 @@ def main():
     )
 
     save_html(
-        env,
         depends_on=all_plans.keys(),
         template_name="list_plans.html",
         out_name="to-read",
@@ -425,7 +383,6 @@ def main():
     )
 
     save_html(
-        env,
         depends_on=all_retired.keys(),
         template_name="list_will_never_read.html",
         out_name="will-never-read",
@@ -438,7 +395,6 @@ def main():
     # Render the front page
 
     save_html(
-        env,
         depends_on=all_reviews.keys(),
         template_name="index.html",
         text=open("src/index.md").read(),
