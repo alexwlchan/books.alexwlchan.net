@@ -67,4 +67,4 @@ def choose_tint_color(path):
         dominant_colors=dominant_colors, background_color=(1, 1, 1)
     )
 
-    return "#%02x%02x%02x" % tuple(c * 255 for c in color)
+    return "#%02x%02x%02x" % tuple(int(c * 255) for c in color)
