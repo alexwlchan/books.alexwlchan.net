@@ -6,4 +6,15 @@ edition = "2018"
 
 [dependencies]
 clap = "2.33"
+imageproc = "0.22.0"
+palette = "0.5"
 regex = "1"
+
+[dependencies.rand]
+version = "0.8.4"
+features = ["small_rng"]
+
+[dependencies.image]
+version = "0.23"
+features = ["png"]
+default-features = false
