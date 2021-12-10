@@ -1,3 +1,9 @@
+// This file creates the "bookshelf" which appears as the header of
+// every page.
+//
+// The bookshelves are tinted with the dominant colour of the cover of
+// the book on that page (or black on the index pages).
+
 use std::fs;
 use std::path::PathBuf;
 use std::time::Duration;
@@ -25,23 +31,27 @@ pub fn subcommand() -> App<'static, 'static> {
         )
 }
 
-// Creates a shelf file.
+// Creates a shelf image.
 //
 // This function assumes the hex string is correctly formatted.
 pub fn create_shelf(hex_string: &str) -> () {
-    let mut rng = SmallRng::seed_from_u64(0);
-
-    let width: i32 = 2000;
-    let height: i32 = 90;
-
-    let mut img: RgbaImage = ImageBuffer::new(width as u32, height as u32);
-
-    let mut x_coord: i32 = 0;
 
     let rgb: Srgb = parse_hex_string(hex_string);
     let hsl: Hsl = rgb.into_hsl();
 
-    while x_coord < width {
+    // We seed the random generator to ensure we always get the same shape.
+    // i.e. the rectangles that make up the shelf.
+    //
+    // In particular, as somebody navigates around the site, they should
+    // see the bookshelf changing colours, but it should never change
+    // shape -- that would be too jarring.
+    let mut rng = SmallRng::seed_from_u64(0);
+
+    let mut img: RgbaImage = ImageBuffer::new(2000, 90);
+
+    let mut x_coord: i32 = 0;
+
+    while x_coord < img.width() as i32 {
         let shelf_width: i32 = rng.gen_range(4..28);
 
         // Shelves go from 30px to 45px height, then 2x for retina displays.
@@ -56,6 +66,10 @@ pub fn create_shelf(hex_string: &str) -> () {
         x_coord += shelf_width;
     }
 
+    // The use of .unwrap() here is very naughty, I know, I know...
+    //
+    // But since this is only ever going to run on a machine I control
+    // and it'll be pretty obvious if any of this fails, I'm fine with that.
     fs::create_dir_all("_shelves").unwrap();
 
     let out_path = format!("_shelves/{:02x}{:02x}{:02x}.png", (rgb.red * 255.0) as i32, (rgb.green * 255.0) as i32, (rgb.blue * 255.0) as i32);
@@ -83,6 +97,15 @@ fn max(f1: f32, f2: f32) -> f32 {
     if f1 > f2 { f1 } else { f2 }
 }
 
+// Create a random colour that's similar to the given colour.
+//
+// All this does is modify the "lightness" parameter in HSL space.
+// There are probably better ways to create similar colours within a
+// given hue (colour is neither linear nor simple), but this creates
+// good enough results.
+//
+// I don't remember how I picked all these constants -- I might have
+// chosen them arbitrarily until I got something that looked good.
 fn create_random_colour_like(rng: &mut SmallRng, hsl: &Hsl) -> Rgba<u8> {
     let v = min(hsl.lightness, 0.45);
     let new_lightness = rng.gen_range(max(v * 3.0 / 4.0, 0.0)..min(v * 4.0 / 3.0, 1.0));
