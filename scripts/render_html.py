@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import base64
 import datetime
 import functools
 import hashlib
@@ -15,7 +16,6 @@ import typing
 
 import cattr
 
-from generate_bookshelf import create_shelf_data_uri
 from models import *
 
 
@@ -27,6 +27,8 @@ def get_file_paths_under(root):
 
 
 def rsync(dir1, dir2):
+    os.makedirs(os.path.dirname(dir2), exist_ok=True)
+
     for fp1 in get_file_paths_under(dir1):
         relpath = os.path.relpath(fp1, dir1)
         fp2 = os.path.join(dir2, relpath)
@@ -248,6 +250,22 @@ def create_thumbnails():
             _create_new_square(src_path, square_path)
         elif src_path.stat().st_mtime > square_path.stat().st_mtime:
             _create_new_square(src_path, square_path)
+
+
+def create_shelf_data_uri(tint_color):
+    if max(tint_color) <= 13:
+        tint_color = (13, 13, 13)
+
+    out_name = "_shelves/%02x%02x%02x.png" % tint_color
+
+    try:
+        f = open(out_name, "rb")
+    except FileNotFoundError:
+        subprocess.check_call(["bookish", "create_shelf", "#%02x%02x%02x" % tint_color])
+        f = open(out_name, "rb")
+
+    b64_string = base64.b64encode(f.read()).decode("utf8")
+    return f"data:image/png;base64,{b64_string}"
 
 
 CSS_HASH = hashlib.md5(open("static/style.css", "rb").read()).hexdigest()

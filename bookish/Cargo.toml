@@ -1,12 +1,13 @@
 [package]
 name = "bookish"
-version = "0.1.0"
+version = "1.0.0"
 authors = ["Alex Chan <alex@alexwlchan.net>"]
-edition = "2018"
+edition = "2021"
 
 [dependencies]
 clap = "2.33"
 imageproc = "0.22.0"
+oxipng = "5.0.1"
 palette = "0.5"
 regex = "1"
 

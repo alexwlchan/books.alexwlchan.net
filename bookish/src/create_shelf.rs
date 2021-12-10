@@ -1,15 +1,18 @@
-use clap::{Arg, App, SubCommand};
-use image::{ImageBuffer, RgbaImage};
+use std::fs;
+use std::path::PathBuf;
+use std::time::Duration;
 
+use clap::{Arg, App, SubCommand};
+use image::{ImageBuffer, Rgba, RgbaImage};
+use imageproc::drawing::draw_filled_rect_mut;
+use imageproc::rect::Rect;
+use oxipng;
 use regex::Regex;
 use rand::{Rng, SeedableRng};
 use rand::rngs::SmallRng;
 use palette::IntoColor;
 use palette::{Srgb, Hsl};
 use palette::rgb::Rgb;
-use imageproc::drawing::draw_filled_rect_mut;
-use imageproc::rect::Rect;
-use image::Rgba;
 
 pub fn subcommand() -> App<'static, 'static> {
     SubCommand::with_name("create_shelf")
@@ -53,7 +56,23 @@ pub fn create_shelf(hex_string: &str) -> () {
         x_coord += shelf_width;
     }
 
-    img.save("shelf.png").unwrap();
+    fs::create_dir_all("_shelves").unwrap();
+
+    let out_path = format!("_shelves/{:02x}{:02x}{:02x}.png", (rgb.red * 255.0) as i32, (rgb.green * 255.0) as i32, (rgb.blue * 255.0) as i32);
+
+    img.save(&out_path).unwrap();
+    optimise_png(&out_path);
+}
+
+// Optimise a PNG image using oxipng.
+//
+// This can get significantly smaller files (~12KB down to 1KB).
+fn optimise_png(p: &str) -> () {
+    let mut options = oxipng::Options::from_preset(5);
+    options.timeout = Some(Duration::from_secs(2));
+    let infile = oxipng::InFile::Path(PathBuf::from(p));
+    let outfile = oxipng::OutFile::Path(Some(PathBuf::from(p)));
+    oxipng::optimize(&infile, &outfile, &options).unwrap();
 }
 
 fn min(f1: f32, f2: f32) -> f32 {
