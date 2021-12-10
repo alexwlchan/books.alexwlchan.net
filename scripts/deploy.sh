@@ -4,7 +4,7 @@ set -o errexit
 set -o nounset
 set -o verbose
 
-git pull origin development
+git pull origin live
 
 find _html -name '*.html' -delete
 
