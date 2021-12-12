@@ -16,9 +16,11 @@ use oxipng;
 use regex::Regex;
 use rand::{Rng, SeedableRng};
 use rand::rngs::SmallRng;
-use palette::IntoColor;
+use palette::FromColor;
 use palette::{Srgb, Hsl};
 use palette::rgb::Rgb;
+
+use crate::colours;
 
 pub fn subcommand() -> App<'static, 'static> {
     SubCommand::with_name("create_shelf")
@@ -36,8 +38,8 @@ pub fn subcommand() -> App<'static, 'static> {
 // This function assumes the hex string is correctly formatted.
 pub fn create_shelf(hex_string: &str) -> () {
 
-    let rgb: Srgb = parse_hex_string(hex_string);
-    let hsl: Hsl = rgb.into_hsl();
+    let rgb: Srgb<u8> = colours::parse_hex_string(hex_string);
+    let hsl: Hsl = Hsl::from_color(Srgb::<f32>::new(rgb.red as f32 / 255.0, rgb.green as f32 / 255.0, rgb.blue as f32 / 255.0));
 
     // We seed the random generator to ensure we always get the same shape.
     // i.e. the rectangles that make up the shelf.
@@ -72,7 +74,7 @@ pub fn create_shelf(hex_string: &str) -> () {
     // and it'll be pretty obvious if any of this fails, I'm fine with that.
     fs::create_dir_all("_shelves").unwrap();
 
-    let out_path = format!("_shelves/{:02x}{:02x}{:02x}.png", (rgb.red * 255.0) as i32, (rgb.green * 255.0) as i32, (rgb.blue * 255.0) as i32);
+    let out_path = format!("_shelves/{:02x}{:02x}{:02x}.png", rgb.red, rgb.green, rgb.blue);
 
     img.save(&out_path).unwrap();
     optimise_png(&out_path);
@@ -112,7 +114,7 @@ fn create_random_colour_like(rng: &mut SmallRng, hsl: &Hsl) -> Rgba<u8> {
 
     let new_hsl = Hsl::new(hsl.hue, hsl.saturation, new_lightness);
 
-    let rgb: Srgb = Rgb::from_linear(new_hsl.into_rgb());
+    let rgb: Srgb = Rgb::from_color(new_hsl);
     Rgba::from([(rgb.red * 255.0) as u8, (rgb.green * 255.0) as u8, (rgb.blue * 255.0) as u8, 255])
 }
 
@@ -126,15 +128,4 @@ fn is_hex_string(s: String) -> Result<(), String> {
     } else {
         Err(format!("Expected a hex string, e.g. #d01c11, got {}", s))
     }
-}
-
-// Parses a hex string as an RGB tuple, e.g. #d01c11 ~> (208, 28, 17)
-//
-// This function assumes the hex string is correctly formatted.
-fn parse_hex_string(s: &str) -> Srgb {
-    assert_eq!(s.len(), 7);
-    let r = u8::from_str_radix(&s[1..3], 16).unwrap() as f32;
-    let g = u8::from_str_radix(&s[3..5], 16).unwrap() as f32;
-    let b = u8::from_str_radix(&s[5..7], 16).unwrap() as f32;
-    Srgb::new(r / 255f32, g / 255f32, b / 255f32)
 }

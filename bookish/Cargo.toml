@@ -5,11 +5,13 @@ authors = ["Alex Chan <alex@alexwlchan.net>"]
 edition = "2021"
 
 [dependencies]
+chrono = "0.4.19"
 clap = "2.33"
 imageproc = "0.22.0"
 oxipng = "5.0.1"
-palette = "0.5"
+palette = "0.6"
 regex = "1"
+serde_yaml = "0.8"
 unidecode = "0.3.0"
 
 [dependencies.inquire]
@@ -23,6 +25,10 @@ features = ["small_rng"]
 [dependencies.reqwest]
 version = "0.11.7"
 features = ["blocking"]
+
+[dependencies.serde]
+version = "1.0"
+features = ["derive"]
 
 [dependencies.image]
 version = "0.23"

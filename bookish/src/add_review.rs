@@ -4,12 +4,66 @@
 // frontmatter of the Markdown file.
 
 use std::fs;
-use std::io::{Read, Cursor};
+use std::fs::OpenOptions;
+use std::io::{Cursor, Write};
+use std::process::Command;
 
+use chrono::Datelike;
 use clap::{App, SubCommand};
 use inquire::{DateSelect, Text, Select};
 use inquire::validator::StringValidator;
+use palette::{RelativeContrast, Srgb};
 use regex::Regex;
+use serde::{Serialize, Deserialize};
+
+use crate::colours;
+
+fn is_false(b: &bool) -> bool {
+    !b
+}
+
+#[derive(Serialize, Deserialize)]
+struct Cover {
+    name: String,
+    size: i32,
+    tint_color: String,
+}
+
+#[derive(Serialize, Deserialize)]
+struct Book {
+    author: String,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    narrator: Option<String>,
+
+    cover: Cover,
+    publication_year: String,
+    title: String,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    isbn10: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    isbn13: Option<String>,
+}
+
+#[derive(Serialize, Deserialize)]
+struct Review {
+    date_read: String,
+    format: String,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    rating: Option<usize>,
+
+    #[serde(skip_serializing_if = "is_false")]
+    did_not_finish: bool
+}
+
+#[derive(Serialize, Deserialize)]
+struct ReviewEntry {
+    book: Book,
+    review: Review,
+}
 
 pub fn subcommand() -> App<'static, 'static> {
     SubCommand::with_name("add_review")
@@ -73,79 +127,147 @@ fn slugify(s: &str) -> String {
 }
 
 pub fn add_review() -> () {
-    // let title = get_non_empty_string_value("What's the title of the book?");
-    // let author = get_non_empty_string_value("Who's the author?");
-    // let publication_year = get_year_value("When was it published?");
-    // let cover_url = get_non_empty_string_value("What's the cover URL?");
-    //
-    // let format = Select::new("What format did you read it in?", vec!["audiobook", "paperback", "hardback", "ebook"])
-    //     .prompt()
-    //     .unwrap();
-    //
-    // let narrator = if format == "audiobook" {
-    //     Some(get_string_value("Who was the narrator?"))
-    // } else {
-    //     None
-    // };
-    //
-    // let [isbn10, isbn13] = if format == "paperback" || format == "hardback" {
-    //     let input10 = get_string_value("Do you know the ISBN-10?");
-    //     let input13 = get_string_value("Do you know the ISBN-13?");
-    //
-    //     [
-    //         if input10.len() > 0 { Some(input10) } else { None },
-    //         if input13.len() > 0 { Some(input13) } else { None },
-    //     ]
-    // } else {
-    //     [None, None]
-    // };
-    //
-    // let did_finish =
-    //     Select::new("Did you finish reading it?", vec!["yes", "no"])
-    //         .prompt()
-    //         .unwrap() == "yes";
-    //
-    // let finished_date_message = format!("When did you {} reading it?", if did_finish { "finish" } else { "stop" });
-    //
-    // let finished_date =
-    //     DateSelect::new(&finished_date_message)
-    //         .prompt()
-    //         .unwrap();
-    //
-    // let rating = if did_finish {
-    //     Some(Select::new("What's your rating?", vec!["★★★★★", "★★★★☆", "★★★☆☆", "★★☆☆☆", "★☆☆☆☆"])
-    //         .prompt()
-    //         .unwrap())
-    // } else {
-    //     None
-    // };
-    //
-    // println!("The finished date = {:?}", finished_date);
-    // println!("The rating = {:?}", rating);
-    //
-    // let isbns = [isbn10, isbn13, narrator];
-    // println!("The slug is {:?}", isbns);
-    //
-    // let answers = [author, publication_year];
-    // println!("The slug is {:?}", slugify(&title));
-    //
-    // println!("The answers are {:?}", answers);
-    // println!("Add review!");
+    let title = get_non_empty_string_value("What's the title of the book?");
+    let author = get_non_empty_string_value("Who's the author?");
+    let publication_year = get_year_value("When was it published?");
 
-    let title = "Lemoiny Snicket";
-    let cover_url = "https://books.alexwlchan.net/thumbnails/cosmogramma.jpg";
+    let format = Select::new("What format did you read it in?", vec!["audiobook", "paperback", "hardback", "ebook"])
+        .prompt()
+        .unwrap()
+        .to_string();
+
+    let narrator = if format == "audiobook" {
+        Some(get_string_value("Who was the narrator?"))
+    } else {
+        None
+    };
+
+    let [isbn10, isbn13] = if format == "paperback" || format == "hardback" {
+        let input10 = get_string_value("Do you know the ISBN-10?");
+        let input13 = get_string_value("Do you know the ISBN-13?");
+
+        [
+            if input10.len() > 0 { Some(input10) } else { None },
+            if input13.len() > 0 { Some(input13) } else { None },
+        ]
+    } else {
+        [None, None]
+    };
+
+    let did_finish =
+        Select::new("Did you finish reading it?", vec!["yes", "no"])
+            .prompt()
+            .unwrap() == "yes";
+
+    let finished_date_message = format!("When did you {} reading it?", if did_finish { "finish" } else { "stop" });
+
+    let date_read =
+        DateSelect::new(&finished_date_message)
+            .prompt()
+            .unwrap();
+
+    let rating = if did_finish {
+        Some(Select::new("What's your rating?", vec!["★★★★★", "★★★★", "★★★", "★★", "★"])
+            .prompt()
+            .unwrap()
+            .len() / 3  // to account for the width of a ★ character = 3 bytes
+        )
+    } else {
+        None
+    };
+
+    let cover_url = get_non_empty_string_value("What's the cover URL?");
+
+    let resp = reqwest::blocking::get(&cover_url).unwrap();
 
     let extension = cover_url.split(".").last().unwrap();
-
-    let mut resp = reqwest::blocking::get(cover_url).unwrap();
-
-    let cover_name = format!("{}.{}", slugify(title), extension);
-    let cover_path = format!("src/covers/{}", cover_name);
+    let slug = slugify(&title);
+    let cover_name = format!("{}.{}", slug, extension);
+    let cover_path = format!("src/covers/{}", &cover_name);
 
     let mut file = std::fs::File::create(&cover_path).unwrap();
     let mut content =  Cursor::new(resp.bytes().unwrap());
     std::io::copy(&mut content, &mut file).unwrap();
 
-    let cover_size = fs::metadata(cover_path).unwrap().len();
-    println!("cover_size = {}", cover_size);
+    let cover_size = fs::metadata(&cover_path).unwrap().len();
+
+    let output = String::from_utf8(Command::new("dominant_colours")
+        .arg(&cover_path)
+        .arg("--max-colours=12")
+        .arg("--no-palette")
+        .output()
+        .unwrap()
+        .stdout).unwrap();
+
+    let dominant_colours = output
+        .trim()
+        .split_ascii_whitespace()
+        .map(|line| colours::parse_hex_string(line));
+
+    let white_background: Srgb<f32> = Srgb::new(1.0, 1.0, 1.0);
+
+    let usable_colours = dominant_colours.filter( |rgb| {
+        let f32_c = Srgb::<f32>::new(rgb.red as f32 / 255.0, rgb.green as f32 / 255.0, rgb.blue as f32 / 255.0);
+        white_background.has_min_contrast_text(&f32_c)
+    }).collect::<Vec<Srgb<u8>>>();
+
+    let tint_colour = match usable_colours.len() {
+        0 => String::from("#ffffff"),
+        1 => {
+            let c = usable_colours[0];
+            format!("#{:02x}{:02x}{:02x}", c.red, c.green, c.blue)
+        },
+        _ => {
+            let hex_strings = usable_colours.into_iter().map(|c| {
+                let hs = format!("#{:02x}{:02x}{:02x}", c.red, c.green, c.blue);
+                format!("\x1B[38;2;{};{};{}m▇ {}\x1B[0m", c.red, c.green, c.blue, hs)
+                }).collect::<Vec<String>>();
+            let hs = Select::new("What's the tint colour?", hex_strings)
+                .prompt()
+                .unwrap();
+            hs.split(" ").collect::<Vec<&str>>().last().unwrap().replace("\x1B[0m", "")
+        },
+    };
+
+    let cover = Cover {
+        name: cover_name.to_owned(),
+        size: cover_size as i32,
+        tint_color: tint_colour.to_string(),
+    };
+
+    let book = Book {
+        author: author,
+        narrator: narrator,
+        publication_year: publication_year,
+        title: title,
+        isbn10: isbn10,
+        isbn13: isbn13,
+        cover: cover,
+    };
+
+    let review = Review {
+        date_read: date_read.format("%Y-%m-%d").to_string(),
+        format: format,
+        rating: rating,
+        did_not_finish: !did_finish
+    };
+
+    let review_entry = ReviewEntry {
+        book: book,
+        review: review,
+    };
+
+    let out_dir = format!("src/reviews/{}", date_read.year());
+    fs::create_dir_all(&out_dir).unwrap();
+
+    let out_path = format!("src/reviews/{}/{}.md", date_read.year(), slug);
+
+    let mut file = OpenOptions::new().write(true).create_new(true).open(&out_path).unwrap();
+    file.write_all(serde_yaml::to_string(&review_entry).unwrap().as_bytes()).unwrap();
+    file.write("---\n\n".as_bytes()).unwrap();
+
+    Command::new("open")
+            .arg(out_path)
+            .output()
+            .unwrap();
 }

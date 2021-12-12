@@ -5,6 +5,7 @@ extern crate regex;
 extern crate reqwest;
 
 mod add_review;
+mod colours;
 mod create_shelf;
 
 use clap::{App, AppSettings};
