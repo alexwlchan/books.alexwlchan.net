@@ -18,4 +18,4 @@ ssh alexwlchan@helene.linode 'chmod 644 ~/sites/books.alexwlchan.net/covers/*'
 ssh alexwlchan@helene.linode 'chmod 644 ~/sites/books.alexwlchan.net/thumbnails/*'
 ssh alexwlchan@helene.linode 'chmod 644 ~/sites/books.alexwlchan.net/**/*.html'
 
-git push origin
+git push origin live
