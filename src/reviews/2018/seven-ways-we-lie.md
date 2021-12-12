@@ -19,3 +19,5 @@ This is a very character-driven book. It switches between the seven characters, 
 The characters come at the expense of the plot. We see more of their inner monologues, their thoughts and feelings, than actual events – and the teacher/student romance that’s set up as the central plot line gets scant time on the page. I enjoyed the characters enough not to mind, but it may not be everyone’s cup of tea. It’s very “high school”.
 
 I enjoyed reading it, it was a nice way to welcome in 2018, but I won’t be rushing to re-read it.
+
+I picked this up [on Sass's advice](https://twitter.com/supergirl_sass/status/803333728030179328).
