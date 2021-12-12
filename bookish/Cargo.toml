@@ -10,10 +10,19 @@ imageproc = "0.22.0"
 oxipng = "5.0.1"
 palette = "0.5"
 regex = "1"
+unidecode = "0.3.0"
+
+[dependencies.inquire]
+version = "0.2.1"
+features = ["date"]
 
 [dependencies.rand]
 version = "0.8.4"
 features = ["small_rng"]
+
+[dependencies.reqwest]
+version = "0.11.7"
+features = ["blocking"]
 
 [dependencies.image]
 version = "0.23"
