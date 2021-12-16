@@ -14,6 +14,7 @@ use inquire::{DateSelect, Text, Select};
 use inquire::validator::StringValidator;
 use palette::{RelativeContrast, Srgb};
 use regex::Regex;
+use url::Url;
 
 use crate::colours;
 use crate::models;
@@ -44,17 +45,21 @@ fn get_non_empty_string_value(question: &str) -> String {
         .unwrap()
 }
 
-pub fn get_url_value(question: &str) -> String {
+pub fn get_url_value(question: &str) -> Url {
     let url_validator: StringValidator = &|input| if urls::is_url(input) {
         Err(String::from("You need to enter a URL!"))
     } else {
         Ok(())
     };
 
-    Text::new(question)
+    let response = Text::new(question)
          .with_validator(url_validator)
          .prompt()
-         .unwrap()
+         .unwrap();
+
+    // We know calling .unwrap() is safe here because the validator ensures
+    // the user has entered a valid URL.
+    Url::parse(&response).unwrap()
 }
 
 fn get_year_value(question: &str) -> String {
@@ -140,9 +145,9 @@ pub fn add_review() -> () {
 
     let cover_url = get_url_value("What's the cover URL?");
 
-    let resp = reqwest::blocking::get(&cover_url).unwrap();
+    let resp = reqwest::blocking::get(cover_url.as_str()).unwrap();
 
-    let extension = cover_url.split(".").last().unwrap();
+    let extension = cover_url.path().split(".").last().unwrap();
     let slug = text::slugify(&title);
     let cover_name = format!("{}.{}", slug, extension);
     let cover_path = format!("src/covers/{}", &cover_name);

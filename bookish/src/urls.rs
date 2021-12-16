@@ -13,12 +13,12 @@ mod tests {
         assert!(is_url("https://example.net/"));
         assert!(is_url("https://example.net/picture.jpg"));
         assert!(is_url("https://example.net/picture.jpg?query=cat"));
+
     }
 
     #[test]
     fn is_url_does_not_match_invalid_urls() {
-        assert!(is_url("cheese"));
-        assert!(is_url("https://example.net/picture.jpg?query?query?query"));
-        assert!(is_url(""));
+        assert!(!is_url("XXX"));
+        assert!(!is_url(""));
     }
 }
