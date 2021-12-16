@@ -1,4 +1,4 @@
-// #![deny(warnings)]
+#![deny(warnings)]
 
 extern crate inquire;
 extern crate regex;
@@ -7,6 +7,7 @@ extern crate reqwest;
 mod add_review;
 mod colours;
 mod create_shelf;
+mod models;
 
 use clap::{App, AppSettings};
 

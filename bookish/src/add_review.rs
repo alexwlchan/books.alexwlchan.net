@@ -14,56 +14,9 @@ use inquire::{DateSelect, Text, Select};
 use inquire::validator::StringValidator;
 use palette::{RelativeContrast, Srgb};
 use regex::Regex;
-use serde::{Serialize, Deserialize};
 
 use crate::colours;
-
-fn is_false(b: &bool) -> bool {
-    !b
-}
-
-#[derive(Serialize, Deserialize)]
-struct Cover {
-    name: String,
-    size: i32,
-    tint_color: String,
-}
-
-#[derive(Serialize, Deserialize)]
-struct Book {
-    author: String,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
-    narrator: Option<String>,
-
-    cover: Cover,
-    publication_year: String,
-    title: String,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
-    isbn10: Option<String>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
-    isbn13: Option<String>,
-}
-
-#[derive(Serialize, Deserialize)]
-struct Review {
-    date_read: String,
-    format: String,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
-    rating: Option<usize>,
-
-    #[serde(skip_serializing_if = "is_false")]
-    did_not_finish: bool
-}
-
-#[derive(Serialize, Deserialize)]
-struct ReviewEntry {
-    book: Book,
-    review: Review,
-}
+use crate::models;
 
 pub fn subcommand() -> App<'static, 'static> {
     SubCommand::with_name("add_review")
@@ -229,13 +182,13 @@ pub fn add_review() -> () {
         },
     };
 
-    let cover = Cover {
+    let cover = models::Cover {
         name: cover_name.to_owned(),
         size: cover_size as i32,
         tint_color: tint_colour.to_string(),
     };
 
-    let book = Book {
+    let book = models::Book {
         author: author,
         narrator: narrator,
         publication_year: publication_year,
@@ -245,14 +198,14 @@ pub fn add_review() -> () {
         cover: cover,
     };
 
-    let review = Review {
+    let review = models::Review {
         date_read: date_read.format("%Y-%m-%d").to_string(),
         format: format,
         rating: rating,
         did_not_finish: !did_finish
     };
 
-    let review_entry = ReviewEntry {
+    let review_entry = models::ReviewEntry {
         book: book,
         review: review,
     };
