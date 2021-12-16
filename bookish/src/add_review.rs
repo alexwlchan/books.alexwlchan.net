@@ -17,6 +17,7 @@ use regex::Regex;
 
 use crate::colours;
 use crate::models;
+use crate::text;
 
 pub fn subcommand() -> App<'static, 'static> {
     SubCommand::with_name("add_review")
@@ -57,26 +58,20 @@ fn get_year_value(question: &str) -> String {
         .unwrap()
 }
 
-fn slugify(s: &str) -> String {
-    // Replace separating punctuation
-    let punctuation_regex = Regex::new("[–—/:;,.]").unwrap();
-    let s = punctuation_regex.replace_all(s, "-").to_string();
+fn save_review(year: i32, slug: &str, review_entry: models::ReviewEntry) -> () {
+    let out_dir = format!("src/reviews/{}", year);
+    fs::create_dir_all(&out_dir).unwrap();
 
-    // Best ASCII substitutions, lowercased
-    let s = unidecode::unidecode(&s).to_lowercase();
+    let out_path = format!("{}/{}.md", out_dir, slug);
 
-    // Delete any other characters
-    let non_ascii_regex = Regex::new("[^a-z0-9 -]").unwrap();
-    let s = non_ascii_regex.replace_all(&s, "").to_string();
+    let mut file = OpenOptions::new().write(true).create_new(true).open(&out_path).unwrap();
+    file.write_all(serde_yaml::to_string(&review_entry).unwrap().as_bytes()).unwrap();
+    file.write("---\n\n".as_bytes()).unwrap();
 
-    // Convert spaces to hyphens
-    let s = s.replace(" ", "-");
-
-    // Condense repeated hyphens
-    let repeated_hyphen_regex = Regex::new("-+").unwrap();
-    let s = repeated_hyphen_regex.replace_all(&s, "-");
-
-    s.to_string()
+    Command::new("open")
+            .arg(out_path)
+            .output()
+            .unwrap();
 }
 
 pub fn add_review() -> () {
@@ -134,7 +129,7 @@ pub fn add_review() -> () {
     let resp = reqwest::blocking::get(&cover_url).unwrap();
 
     let extension = cover_url.split(".").last().unwrap();
-    let slug = slugify(&title);
+    let slug = text::slugify(&title);
     let cover_name = format!("{}.{}", slug, extension);
     let cover_path = format!("src/covers/{}", &cover_name);
 
@@ -210,17 +205,5 @@ pub fn add_review() -> () {
         review: review,
     };
 
-    let out_dir = format!("src/reviews/{}", date_read.year());
-    fs::create_dir_all(&out_dir).unwrap();
-
-    let out_path = format!("src/reviews/{}/{}.md", date_read.year(), slug);
-
-    let mut file = OpenOptions::new().write(true).create_new(true).open(&out_path).unwrap();
-    file.write_all(serde_yaml::to_string(&review_entry).unwrap().as_bytes()).unwrap();
-    file.write("---\n\n".as_bytes()).unwrap();
-
-    Command::new("open")
-            .arg(out_path)
-            .output()
-            .unwrap();
+    save_review(date_read.year(), &slug, review_entry);
 }

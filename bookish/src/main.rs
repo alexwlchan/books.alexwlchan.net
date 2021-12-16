@@ -8,6 +8,7 @@ mod add_review;
 mod colours;
 mod create_shelf;
 mod models;
+mod text;
 
 use clap::{App, AppSettings};
 
