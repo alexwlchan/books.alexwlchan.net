@@ -99,6 +99,7 @@ dependencies = [
  "serde",
  "serde_yaml",
  "unidecode",
+ "url",
 ]
 
 [[package]]

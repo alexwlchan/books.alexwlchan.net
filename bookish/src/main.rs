@@ -9,6 +9,7 @@ mod colours;
 mod create_shelf;
 mod models;
 mod text;
+mod urls;
 
 use clap::{App, AppSettings};
 

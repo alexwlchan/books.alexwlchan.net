@@ -13,6 +13,7 @@ palette = "0.6"
 regex = "1"
 serde_yaml = "0.8"
 unidecode = "0.3.0"
+url = "2.2.2"
 
 [dependencies.inquire]
 version = "0.2.1"

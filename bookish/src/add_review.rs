@@ -18,6 +18,7 @@ use regex::Regex;
 use crate::colours;
 use crate::models;
 use crate::text;
+use crate::urls;
 
 pub fn subcommand() -> App<'static, 'static> {
     SubCommand::with_name("add_review")
@@ -41,6 +42,19 @@ fn get_non_empty_string_value(question: &str) -> String {
         .with_validator(non_empty_validator)
         .prompt()
         .unwrap()
+}
+
+pub fn get_url_value(question: &str) -> String {
+    let url_validator: StringValidator = &|input| if urls::is_url(input) {
+        Err(String::from("You need to enter a URL!"))
+    } else {
+        Ok(())
+    };
+
+    Text::new(question)
+         .with_validator(url_validator)
+         .prompt()
+         .unwrap()
 }
 
 fn get_year_value(question: &str) -> String {
@@ -124,7 +138,7 @@ pub fn add_review() -> () {
         None
     };
 
-    let cover_url = get_non_empty_string_value("What's the cover URL?");
+    let cover_url = get_url_value("What's the cover URL?");
 
     let resp = reqwest::blocking::get(&cover_url).unwrap();
 
