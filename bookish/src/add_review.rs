@@ -46,7 +46,7 @@ fn get_non_empty_string_value(question: &str) -> String {
 }
 
 pub fn get_url_value(question: &str) -> Url {
-    let url_validator: StringValidator = &|input| if urls::is_url(input) {
+    let url_validator: StringValidator = &|input| if !urls::is_url(input) {
         Err(String::from("You need to enter a URL!"))
     } else {
         Ok(())
