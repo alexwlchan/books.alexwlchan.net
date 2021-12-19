@@ -104,6 +104,7 @@ pub fn add_review() -> () {
     let title = get_non_empty_string_value("What's the title of the book?");
     let author = get_non_empty_string_value("Who's the author?");
     let publication_year = get_year_value("When was it published?");
+    let series = ask_optional_question("Is the book part of a series?");
 
     let format = Select::new("What format did you read it in?", vec!["audiobook", "paperback", "hardback", "ebook"])
         .prompt()
@@ -206,13 +207,14 @@ pub fn add_review() -> () {
     };
 
     let book = models::Book {
-        author: author,
-        narrator: narrator,
-        publication_year: publication_year,
-        title: title,
-        isbn10: isbn10,
-        isbn13: isbn13,
-        cover: cover,
+        author,
+        narrator,
+        publication_year,
+        title,
+        series,
+        isbn10,
+        isbn13,
+        cover,
     };
 
     let review = models::Review {

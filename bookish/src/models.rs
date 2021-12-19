@@ -23,6 +23,9 @@ pub struct Book {
     pub title: String,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    pub series: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub isbn10: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
