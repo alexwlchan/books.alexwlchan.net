@@ -1,7 +1,19 @@
+use std::io::Cursor;
+
 use url::Url;
 
 pub fn is_url(s: &str) -> bool {
     Url::parse(s).is_ok()
+}
+
+pub fn download_url(url: &Url, download_path: &str) -> Result<(), String> {
+    let resp = reqwest::blocking::get(url.as_str()).unwrap();
+
+    let mut file = std::fs::File::create(download_path).unwrap();
+    let mut content =  Cursor::new(resp.bytes().unwrap());
+    std::io::copy(&mut content, &mut file).unwrap();
+
+    Ok(())
 }
 
 #[cfg(test)]
