@@ -5,7 +5,7 @@
 
 use std::fs;
 use std::fs::OpenOptions;
-use std::io::{Cursor, Write};
+use std::io::Write;
 use std::process::Command;
 
 use chrono::Datelike;
@@ -145,16 +145,15 @@ pub fn add_review() -> () {
 
     let cover_url = get_url_value("What's the cover URL?");
 
-    let resp = reqwest::blocking::get(cover_url.as_str()).unwrap();
-
     let extension = cover_url.path().split(".").last().unwrap();
     let slug = text::slugify(&title);
     let cover_name = format!("{}.{}", slug, extension);
     let cover_path = format!("src/covers/{}", &cover_name);
 
-    let mut file = std::fs::File::create(&cover_path).unwrap();
-    let mut content =  Cursor::new(resp.bytes().unwrap());
-    std::io::copy(&mut content, &mut file).unwrap();
+    urls::download_url(&cover_url, &cover_path).unwrap_or_else(|e| {
+        eprintln!("{}", e);
+        std::process::exit(1);
+    });
 
     let cover_size = fs::metadata(&cover_path).unwrap().len();
 
