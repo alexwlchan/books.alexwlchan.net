@@ -150,7 +150,10 @@ pub fn add_review() -> () {
     let cover_name = format!("{}.{}", slug, extension);
     let cover_path = format!("src/covers/{}", &cover_name);
 
-    urls::download_url(&cover_url, &cover_path).unwrap();
+    urls::download_url(&cover_url, &cover_path).unwrap_or_else(|e| {
+        eprintln!("{}", e);
+        std::process::exit(1);
+    });
 
     let cover_size = fs::metadata(&cover_path).unwrap().len();
 
