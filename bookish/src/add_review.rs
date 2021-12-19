@@ -148,17 +148,25 @@ pub fn add_review() -> () {
         None
     };
 
-    let cover_url = get_url_value("What's the cover URL?");
+    let cover_url = get_url_value("What's the URL of the cover image?");
 
     let extension = cover_url.path().split(".").last().unwrap();
     let slug = text::slugify(&title);
     let cover_name = format!("{}.{}", slug, extension);
     let cover_path = format!("src/covers/{}", &cover_name);
 
-    urls::download_url(&cover_url, &cover_path).unwrap_or_else(|e| {
-        eprintln!("{}", e);
-        std::process::exit(1);
-    });
+    match urls::download_url(&cover_url, &cover_path) {
+        Ok(_) => (),
+        Err(e) => {
+            // If we can't download the cover, retrieve it from a local
+            // download.
+            // TODO: Add more validation here that the path exists, use a
+            // Suggester for path, etc.
+            eprintln!("{}", e);
+            let local_cover_path = get_non_empty_string_value("What's the path to the cover image?");
+            std::fs::rename(local_cover_path, &cover_path).unwrap();
+        }
+    };
 
     let cover_size = fs::metadata(&cover_path).unwrap().len();
 
