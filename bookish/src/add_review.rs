@@ -26,10 +26,17 @@ pub fn subcommand() -> App<'static, 'static> {
         .about("Start a review of a new book")
 }
 
-fn get_string_value(question: &str) -> String {
-    Text::new(question)
-        .prompt()
-        .unwrap()
+/// Asks the user an optional question.
+///
+/// Returns either their answer (as text) or None (if they don't answer).
+///
+fn ask_optional_question(question: &str) -> Option<String> {
+    let result =
+        Text::new(question)
+            .prompt()
+            .unwrap();
+
+    if result.len() > 0 { Some(result) } else { None }
 }
 
 fn get_non_empty_string_value(question: &str) -> String {
@@ -43,6 +50,8 @@ fn get_non_empty_string_value(question: &str) -> String {
         .with_validator(non_empty_validator)
         .prompt()
         .unwrap()
+        .trim()
+        .to_owned()
 }
 
 pub fn get_url_value(question: &str) -> Url {
@@ -97,6 +106,7 @@ pub fn add_review() -> () {
     let title = get_non_empty_string_value("What's the title of the book?");
     let author = get_non_empty_string_value("Who's the author?");
     let publication_year = get_year_value("When was it published?");
+    let series = ask_optional_question("Is the book part of a series?");
 
     let format = Select::new("What format did you read it in?", vec!["audiobook", "paperback", "hardback", "ebook"])
         .prompt()
@@ -104,18 +114,15 @@ pub fn add_review() -> () {
         .to_string();
 
     let narrator = if format == "audiobook" {
-        Some(get_string_value("Who was the narrator?"))
+        Some(get_non_empty_string_value("Who was the narrator?"))
     } else {
         None
     };
 
     let [isbn10, isbn13] = if format == "paperback" || format == "hardback" {
-        let input10 = get_string_value("Do you know the ISBN-10?");
-        let input13 = get_string_value("Do you know the ISBN-13?");
-
         [
-            if input10.len() > 0 { Some(input10) } else { None },
-            if input13.len() > 0 { Some(input13) } else { None },
+            ask_optional_question("Do you know the ISBN-10?"),
+            ask_optional_question("Do you know the ISBN-13?"),
         ]
     } else {
         [None, None]
@@ -143,17 +150,25 @@ pub fn add_review() -> () {
         None
     };
 
-    let cover_url = get_url_value("What's the cover URL?");
+    let cover_url = get_url_value("What's the URL of the cover image?");
 
     let extension = cover_url.path().split(".").last().unwrap();
     let slug = text::slugify(&title);
     let cover_name = format!("{}.{}", slug, extension);
     let cover_path = format!("src/covers/{}", &cover_name);
 
-    urls::download_url(&cover_url, &cover_path).unwrap_or_else(|e| {
-        eprintln!("{}", e);
-        std::process::exit(1);
-    });
+    match urls::download_url(&cover_url, &cover_path) {
+        Ok(_) => (),
+        Err(e) => {
+            // If we can't download the cover, retrieve it from a local
+            // download.
+            // TODO: Add more validation here that the path exists, use a
+            // Suggester for path, etc.
+            eprintln!("{}", e);
+            let local_cover_path = get_non_empty_string_value("What's the path to the cover image?");
+            std::fs::rename(local_cover_path, &cover_path).unwrap();
+        }
+    };
 
     let cover_size = fs::metadata(&cover_path).unwrap().len();
 
@@ -202,13 +217,14 @@ pub fn add_review() -> () {
     };
 
     let book = models::Book {
-        author: author,
-        narrator: narrator,
-        publication_year: publication_year,
-        title: title,
-        isbn10: isbn10,
-        isbn13: isbn13,
-        cover: cover,
+        author,
+        narrator,
+        publication_year,
+        title,
+        series,
+        isbn10,
+        isbn13,
+        cover,
     };
 
     let review = models::Review {
