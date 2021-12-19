@@ -50,6 +50,8 @@ fn get_non_empty_string_value(question: &str) -> String {
         .with_validator(non_empty_validator)
         .prompt()
         .unwrap()
+        .trim()
+        .to_owned()
 }
 
 pub fn get_url_value(question: &str) -> Url {
