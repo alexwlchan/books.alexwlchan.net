@@ -16,3 +16,5 @@ review:
 
 Book of advice for anybody who wants to keep a cat.
 Detailed, interesting, and some lovely illustrations.
+
+I’d take the advice with a pinch of salt (I disagree with bits of it), but it's a good book to find out what questions to ask.
