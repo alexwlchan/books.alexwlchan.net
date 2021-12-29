@@ -152,7 +152,18 @@ pub fn add_review() -> () {
 
     let cover_url = get_url_value("What's the URL of the cover image?");
 
+    // TODO: Have a better approach to picking the extension.  In a previous
+    // version of this code, I used the Content-Type header from the HTTP request.
+    // This is decidedly open to mistakes, e.g. creating a download path like
+    //
+    //      src/covers/my-book./book/cover/picture
+    //
+    // from the URL https://example.net/book/cover/picture, which will throw an
+    // error "No such file or directory" in `urls.rs` because it's a nonsense
+    // directory.
+    //
     let extension = cover_url.path().split(".").last().unwrap();
+
     let slug = text::slugify(&title);
     let cover_name = format!("{}.{}", slug, extension);
     let cover_path = format!("src/covers/{}", &cover_name);
