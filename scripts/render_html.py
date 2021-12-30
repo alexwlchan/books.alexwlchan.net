@@ -175,59 +175,6 @@ def save_html(*, depends_on, template_name, out_name="", **kwargs):
     out_path.write_text(html)
 
 
-def _create_new_thumbnail(src_path, dst_path):
-    dst_path.parent.mkdir(exist_ok=True, parents=True)
-
-    # Thumbnails are 240x240 max, then 2x for retina displays
-    subprocess.check_call(["convert", src_path, "-resize", "480x480>", dst_path])
-
-
-def thumbnail_1x(name):
-    pth = pathlib.Path(name)
-    return pth.stem + "_1x" + pth.suffix
-
-
-def _create_new_square(src_path, square_path):
-    square_path.parent.mkdir(exist_ok=True, parents=True)
-
-    subprocess.check_call(
-        [
-            "convert",
-            src_path,
-            "-resize",
-            "240x240",
-            "-gravity",
-            "center",
-            "-background",
-            "white",
-            "-extent",
-            "240x240",
-            square_path,
-        ]
-    )
-
-
-def create_thumbnails():
-    for image_name in os.listdir("src/covers"):
-        if image_name == ".DS_Store":
-            continue
-
-        src_path = pathlib.Path("src/covers") / image_name
-        dst_path = pathlib.Path("_html/thumbnails") / image_name
-
-        if not dst_path.exists():
-            _create_new_thumbnail(src_path, dst_path)
-        elif src_path.stat().st_mtime > dst_path.stat().st_mtime:
-            _create_new_thumbnail(src_path, dst_path)
-
-        square_path = pathlib.Path("_html/squares") / image_name
-
-        if not square_path.exists():
-            _create_new_square(src_path, square_path)
-        elif src_path.stat().st_mtime > square_path.stat().st_mtime:
-            _create_new_square(src_path, square_path)
-
-
 def create_shelf_data_uri(tint_color):
     if max(tint_color) <= 13:
         tint_color = (13, 13, 13)
@@ -278,7 +225,6 @@ def get_environment():
     env.filters["render_markdown"] = render_markdown
     env.filters["render_date"] = render_date
     env.filters["smartypants"] = smartypants.smartypants
-    env.filters["thumbnail_1x"] = thumbnail_1x
     env.filters["css_hash"] = css_hash
     env.filters["create_shelf_data_uri"] = create_shelf_data_uri
     env.filters["cap_rgb"] = lambda v: min([v, 255])
@@ -290,8 +236,6 @@ def get_environment():
 
 
 def main():
-    create_thumbnails()
-
     # Render the "all reviews page"
 
     all_reviews = get_entries(

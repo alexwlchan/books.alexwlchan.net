@@ -8,6 +8,7 @@ use clap::{App, AppSettings};
 mod add_review;
 mod colours;
 mod create_shelf;
+mod fs_helpers;
 mod models;
 mod render_html;
 mod text;
