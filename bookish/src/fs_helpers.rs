@@ -1,3 +1,4 @@
+use std::ffi::OsStr;
 use std::fs::{self, File};
 use std::io::{self, BufReader, Read, Write};
 use std::path::Path;
@@ -18,6 +19,10 @@ pub fn write_file(p: &Path, bytes: Vec<u8>) -> io::Result<()> {
     Ok(())
 }
 
+pub fn is_ds_store(p: &Path) -> bool {
+    p.file_name() == Some(&OsStr::new(".DS_Store"))
+}
+
 /// This is used when we generate a derivative file from a source file, where
 /// we only want to regenerate the derivative if the source has changed.
 
@@ -33,7 +38,7 @@ impl IsNewerThan<Path, io::Error> for Path {
                 Ok(self_metadata.modified()? > other_metadata.modified()?)
             }
 
-            _ => Ok(false)
+            _ => Ok(true)
         }
     }
 }
