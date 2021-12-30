@@ -1,12 +1,8 @@
 attrs
 cattrs
-bs4
 cssmin
 hyperlink
-inquirer
 jinja2
 Markdown
 python-frontmatter
 smartypants
-unidecode
-wcag_contrast_ratio
