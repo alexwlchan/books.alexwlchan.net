@@ -90,7 +90,5 @@ pub fn render_html() -> Result<(), RenderHtmlError> {
         return Err(RenderHtmlError::Python("Python script did not exit successfully"))
     }
 
-    println!("status = {}", status);
-
     minify_html(Path::new("_html"))
 }
