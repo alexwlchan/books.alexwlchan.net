@@ -19,19 +19,12 @@ import cattr
 from models import *
 
 
-def get_file_paths_under(root):
-    """Generates the paths to every file under ``root``."""
-    for dirpath, _, filenames in os.walk(root):
-        for f in filenames:
-            yield os.path.join(dirpath, f)
-
-
 def rsync(dir1, dir2):
-    os.makedirs(os.path.dirname(dir2), exist_ok=True)
+    os.makedirs(dir2, exist_ok=True)
 
-    for fp1 in get_file_paths_under(dir1):
-        relpath = os.path.relpath(fp1, dir1)
-        fp2 = os.path.join(dir2, relpath)
+    for name in os.listdir(dir1):
+        fp1 = os.path.join(dir1, name)
+        fp2 = os.path.join(dir2, name)
 
         if os.path.exists(fp2) and os.stat(fp2).st_size == os.stat(fp1).st_size:
             continue
@@ -186,12 +179,9 @@ def save_html(*, depends_on, template_name, out_name="", **kwargs):
     out_path.parent.mkdir(exist_ok=True, parents=True)
 
     import cssmin
-    import htmlmin
 
     for s in list(re.finditer(r"<style>([^<]+)</style>", html)):
         html = html.replace(s.group(1), cssmin.cssmin(s.group(1)))
-
-    html = htmlmin.minify(html, remove_comments=True)
 
     for name in ("Mar Hicks", "Thomas S. Mullaney", "Benjamin Peters", "Kavita Philip"):
         html = html.replace(name, name.replace(" ", "&nbsp;"))
@@ -316,7 +306,6 @@ def get_environment():
 def main():
     create_thumbnails()
 
-    rsync("src/covers/", "_html/covers/")
     rsync("static/", "_html/static/")
 
     # Render the "all reviews page"
@@ -418,8 +407,6 @@ def main():
         text=open("src/index.md").read(),
         reviews=sorted_reviews[:5],
     )
-
-    print("✨ Rendered HTML files to _html ✨")
 
 
 if __name__ == "__main__":

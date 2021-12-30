@@ -10,7 +10,6 @@ blessings==1.7            # via inquirer
 bs4==0.0.1                # via -r requirements.in
 cattrs==1.8.0             # via -r requirements.in
 cssmin==0.2.0             # via -r requirements.in
-htmlmin==0.1.12           # via -r requirements.in
 hyperlink==19.0.0         # via -r requirements.in
 idna==2.8                 # via hyperlink
 inquirer==2.6.3           # via -r requirements.in

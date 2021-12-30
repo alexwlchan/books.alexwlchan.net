@@ -14,10 +14,6 @@
 {% endblock %}
 
 {% block content %}
-  {% set (r, g, b) = review_entry.book.cover.tint_color | from_hex %}
-  {% set r = r / 255 %}
-  {% set g = g / 255 %}
-  {% set b = b / 255 %}
   <style>
     .review a {
       color: {{ review_entry.book.cover.tint_color }};
