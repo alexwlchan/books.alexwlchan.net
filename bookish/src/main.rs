@@ -8,6 +8,7 @@ mod add_review;
 mod colours;
 mod create_shelf;
 mod models;
+mod render_html;
 mod text;
 mod urls;
 
@@ -23,7 +24,8 @@ fn main() {
             .about("Generates the HTML files for books.alexwlchan.net")
             .setting(AppSettings::SubcommandRequired)
             .subcommand(add_review::subcommand())
-            .subcommand(create_shelf::subcommand());
+            .subcommand(create_shelf::subcommand())
+            .subcommand(render_html::subcommand());
 
     let matches = app.get_matches();
 
@@ -36,6 +38,7 @@ fn main() {
 
             create_shelf::create_shelf(&hex_string);
         },
+        ("render_html", _) => render_html::render_html(),
         _ => unreachable!(),
     };
 }

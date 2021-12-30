@@ -412,8 +412,6 @@ def main():
         reviews=sorted_reviews[:5],
     )
 
-    print("✨ Rendered HTML files to _html ✨")
-
 
 if __name__ == "__main__":
     main()
