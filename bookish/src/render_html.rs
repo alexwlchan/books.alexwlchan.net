@@ -17,5 +17,10 @@ pub fn render_html() -> () {
             .unwrap();
 
     let elapsed = start.elapsed();
-    println!("✨ Rendered HTML files to _html in {:?}ms ✨", elapsed.as_millis());
+
+    if elapsed.as_secs() == 0 {
+        println!("✨ Rendered HTML files to _html in {:?}ms ✨", elapsed.as_millis());
+    } else {
+        println!("✨ Rendered HTML files to _html in {:.1}s ✨", elapsed.as_secs_f32());
+    }
 }
