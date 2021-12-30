@@ -20,7 +20,7 @@ It starts with her being abandoned by her mother, to finding her own home, matin
 Along the way, we get lots of detail about how they live, and the broader ecosystem around them – including the fish, ducks, crayfish, rabbits, and other creatures they eat for dinner.
 It's a nature book as much as an otter book.
 
-I was struck byhow solitary and unsociable otters are – because I've only ever seen otters in captivity, I think of them as a friendly species.
+I was struck by how solitary and unsociable otters are – because I've only ever seen otters in captivity, I think of them as a friendly species.
 That's very much not the case with wild otters!
 
 A fun, easy read.
