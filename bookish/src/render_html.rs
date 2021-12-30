@@ -1,15 +1,15 @@
 use std::ffi::OsStr;
 use std::fmt;
-use std::fs::{self, File};
+use std::fs;
 use std::io;
-use std::io::{BufReader, Read, Write};
 use std::path::Path;
 use std::process::{Command, Stdio};
 
+use clap::{App, SubCommand};
 use minify_html::{Cfg, minify};
 use walkdir::WalkDir;
 
-use clap::{App, SubCommand};
+use crate::fs_helpers;
 
 pub fn subcommand() -> App<'static, 'static> {
     SubCommand::with_name("render_html")
@@ -43,22 +43,6 @@ impl From<walkdir::Error> for RenderHtmlError {
     fn from(err: walkdir::Error) -> RenderHtmlError {
         RenderHtmlError::Walk(err)
     }
-}
-
-fn read_file(p: &Path) -> Result<Vec<u8>, io::Error> {
-    let f = File::open(p)?;
-    let mut reader = BufReader::new(f);
-    let mut buffer = Vec::new();
-    reader.read_to_end(&mut buffer)?;
-
-    Ok(buffer)
-}
-
-fn write_file(p: &Path, bytes: Vec<u8>) -> io::Result<()> {
-    let mut f = File::create(p)?;
-    f.write_all(bytes.as_slice())?;
-
-    Ok(())
 }
 
 /// Do a basic sync of files from one directory to another.
@@ -115,9 +99,9 @@ fn minify_html(root: &Path) -> Result<(), RenderHtmlError> {
         let entry = entry?;
 
         if entry.path().extension() == Some(OsStr::new("html")) {
-            let html = read_file(entry.path())?;
+            let html = fs_helpers::read_file(entry.path())?;
             let minified_html = minify(&html, &cfg);
-            write_file(entry.path(), minified_html)?;
+            fs_helpers::write_file(entry.path(), minified_html)?;
         }
     }
 
