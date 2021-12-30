@@ -8,7 +8,7 @@ git pull origin live
 
 find _html -name '*.html' -delete
 
-python3.8 scripts/render_html.py
+bookish render_html
 
 rsync --archive --verbose --compress --delete \
   _html/ alexwlchan@helene.linode:sites/books.alexwlchan.net
