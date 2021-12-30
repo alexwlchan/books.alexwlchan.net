@@ -9,7 +9,7 @@ use clap::{App, SubCommand};
 use minify_html::{Cfg, minify};
 use walkdir::WalkDir;
 
-use crate::fs_helpers;
+use crate::fs_helpers::{self, IsNewerThan};
 
 pub fn subcommand() -> App<'static, 'static> {
     SubCommand::with_name("render_html")
@@ -67,23 +67,7 @@ fn sync_files(src: &Path, dst: &Path) -> io::Result<()> {
         let src_path = entry.path();
         let dst_path = dst.join(entry.path().file_name().unwrap());
 
-        // If this was Python, I'd try to get the metadata on dst path and react
-        // to its absence -- a more `try … catch` style approach.
-        //
-        // That approach is more robust and not subject to weird races if `dst_path`
-        // pops in or out of existence.
-        //
-        // TODO: Rewrite this code to use the `try … catch` approach.
-        let should_copy = if dst_path.exists() {
-            let src_metadata = fs::metadata(&src_path)?;
-            let dst_metadata = fs::metadata(&dst_path)?;
-
-            src_metadata.modified()? > dst_metadata.modified()?
-        } else {
-            true
-        };
-
-        if should_copy {
+        if src_path.is_newer_than(&dst_path)? {
             fs::copy(src_path, dst_path)?;
         }
     }
