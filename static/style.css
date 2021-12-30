@@ -246,6 +246,13 @@ footer a:hover {
   font-weight: normal;
 }
 
+@media screen and (min-width: 500px) {
+  /* For books with long attribution info, e.g. "Your Computer is on Fire" */
+  .book_metadata {
+    max-width: calc(100% - 210px);
+  }
+}
+
 @media screen and (max-width: 500px) {
   .review_preview img, .reading_inner img {
     max-width: 250px;
@@ -269,7 +276,7 @@ footer a:hover {
     padding: 15px;
     padding-left: 0px;
     padding-top: 0;
-    max-width: calc(100%);
+    max-width: 100%;
   }
 
   .review_preview .book_metadata {

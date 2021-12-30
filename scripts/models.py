@@ -26,6 +26,7 @@ class Book:
     editor = attr.ib(default="")
     narrator = attr.ib(default="")
     illustrator = attr.ib(default="")
+    retold_by = attr.ib(default="")
 
     cover = attr.ib(default="")
 
