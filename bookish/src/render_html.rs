@@ -1,6 +1,6 @@
 use std::ffi::OsStr;
 use std::fmt;
-use std::fs::File;
+use std::fs::{self, File};
 use std::io;
 use std::io::{BufReader, Read, Write};
 use std::path::Path;
@@ -54,9 +54,55 @@ fn read_file(p: &Path) -> Result<Vec<u8>, io::Error> {
     Ok(buffer)
 }
 
-fn write_file(p: &Path, bytes: Vec<u8>) -> Result<(), io::Error> {
+fn write_file(p: &Path, bytes: Vec<u8>) -> io::Result<()> {
     let mut f = File::create(p)?;
     f.write_all(bytes.as_slice())?;
+
+    Ok(())
+}
+
+/// Do a basic sync of files from one directory to another.
+///
+/// It uses the modified time to decide whether to re-copy a file from the source
+/// to the destination; files are only copied if they're newer in the source.
+///
+/// This function:
+///
+///     - Does not remove files from the destination that are no longer in
+///       the destination
+///     - Only looks at files that are directly below the source dir
+///
+fn sync_files(src: &Path, dst: &Path) -> io::Result<()> {
+    for entry in fs::read_dir(src)? {
+        let entry = entry?;
+
+        if entry.path().file_name() == Some(&OsStr::new(".DS_Store")) {
+            continue;
+        }
+
+        let src_path = entry.path();
+        let dst_path = dst.join(entry.path().file_name().unwrap());
+
+        // If this was Python, I'd try to get the metadata on dst path and react
+        // to its absence -- a more `try … catch` style approach.
+        //
+        // That approach is more robust and not subject to weird races if `dst_path`
+        // pops in or out of existence.
+        //
+        // TODO: Rewrite this code to use the `try … catch` approach.
+        let should_copy = if dst_path.exists() {
+            let src_metadata = fs::metadata(&src_path)?;
+            let dst_metadata = fs::metadata(&dst_path)?;
+
+            src_metadata.modified()? > dst_metadata.modified()?
+        } else {
+            true
+        };
+
+        if should_copy {
+            fs::copy(src_path, dst_path)?;
+        }
+    }
 
     Ok(())
 }
@@ -79,6 +125,8 @@ fn minify_html(root: &Path) -> Result<(), RenderHtmlError> {
 }
 
 pub fn render_html() -> Result<(), RenderHtmlError> {
+    sync_files(Path::new("static"), Path::new("_html/static/"))?;
+
     let status =
         Command::new("python3")
             .arg("scripts/render_html.py")

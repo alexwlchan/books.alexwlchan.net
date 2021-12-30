@@ -9,7 +9,6 @@ import json
 import os
 import pathlib
 import re
-import shutil
 import subprocess
 import sys
 import typing
@@ -17,19 +16,6 @@ import typing
 import cattr
 
 from models import *
-
-
-def rsync(dir1, dir2):
-    os.makedirs(dir2, exist_ok=True)
-
-    for name in os.listdir(dir1):
-        fp1 = os.path.join(dir1, name)
-        fp2 = os.path.join(dir2, name)
-
-        if os.path.exists(fp2) and os.stat(fp2).st_size == os.stat(fp1).st_size:
-            continue
-        else:
-            shutil.copyfile(fp1, fp2)
 
 
 def get_review_entry_from_path(path):
@@ -305,8 +291,6 @@ def get_environment():
 
 def main():
     create_thumbnails()
-
-    rsync("static/", "_html/static/")
 
     # Render the "all reviews page"
 
