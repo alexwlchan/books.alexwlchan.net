@@ -306,7 +306,6 @@ def get_environment():
 def main():
     create_thumbnails()
 
-    rsync("src/covers/", "_html/covers/")
     rsync("static/", "_html/static/")
 
     # Render the "all reviews page"
