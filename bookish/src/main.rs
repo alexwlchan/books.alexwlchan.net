@@ -1,8 +1,9 @@
 #![deny(warnings)]
 
-extern crate inquire;
-extern crate regex;
-extern crate reqwest;
+use std::process::exit;
+use std::time::Instant;
+
+use clap::{App, AppSettings};
 
 mod add_review;
 mod colours;
@@ -11,8 +12,6 @@ mod models;
 mod render_html;
 mod text;
 mod urls;
-
-use clap::{App, AppSettings};
 
 const VERSION: &str = env!("CARGO_PKG_VERSION");
 
@@ -38,7 +37,30 @@ fn main() {
 
             create_shelf::create_shelf(&hex_string);
         },
-        ("render_html", _) => render_html::render_html(),
+
+        ("render_html", _) => {
+            let start = Instant::now();
+
+            match render_html::render_html() {
+                Ok(_) => {
+                    let elapsed = start.elapsed();
+
+                    if elapsed.as_secs() == 0 {
+                        println!("✨ Rendered HTML files to _html in {:?}ms ✨", elapsed.as_millis());
+                    } else {
+                        println!("✨ Rendered HTML files to _html in {:.1}s ✨", elapsed.as_secs_f32());
+                    }
+                }
+
+                Err(e) => {
+                    eprintln!("💥 Something went wrong! 💥\n{}", e);
+                    exit(1);
+                }
+            }
+
+
+        },
+
         _ => unreachable!(),
     };
 }
