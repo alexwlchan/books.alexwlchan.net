@@ -32,6 +32,10 @@ id="review_preview_{{ review_entry.book.slug }}">
           edited by {{ review_entry.book.editor }}
           {% endif %}
 
+          {% if review_entry.book.retold_by %}
+          retold by {{ review_entry.book.retold_by }}
+          {% endif %}
+
           {%- if review_entry.book.publication_year %}
             ({{ review_entry.book.publication_year}})
           {%- endif -%}
