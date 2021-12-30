@@ -146,7 +146,9 @@ fn minify_html(root: &Path) -> Result<(), RenderHtmlError> {
         if entry.path().extension() == Some(OsStr::new("html")) {
             let html = fs_helpers::read_file(entry.path())?;
             let minified_html = minify(&html, &cfg);
-            fs_helpers::write_file(entry.path(), minified_html)?;
+            if html != minified_html {
+                fs_helpers::write_file(entry.path(), minified_html)?;
+            }
         }
     }
 
