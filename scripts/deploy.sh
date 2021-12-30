@@ -14,7 +14,6 @@ rsync --archive --verbose --compress --delete \
   _html/ alexwlchan@helene.linode:sites/books.alexwlchan.net
 
 ssh alexwlchan@helene.linode 'chmod 644 ~/sites/books.alexwlchan.net/static/*'
-ssh alexwlchan@helene.linode 'chmod 644 ~/sites/books.alexwlchan.net/covers/*'
 ssh alexwlchan@helene.linode 'chmod 644 ~/sites/books.alexwlchan.net/thumbnails/*'
 ssh alexwlchan@helene.linode 'chmod 644 ~/sites/books.alexwlchan.net/**/*.html'
 
