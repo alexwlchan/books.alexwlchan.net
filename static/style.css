@@ -248,7 +248,7 @@ footer a:hover {
 
 @media screen and (min-width: 500px) {
   /* For books with long attribution info, e.g. "Your Computer is on Fire" */
-  .book_metadata {
+  main > .book_metadata {
     max-width: calc(100% - 210px);
   }
 }
