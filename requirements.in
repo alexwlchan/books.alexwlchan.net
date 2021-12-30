@@ -2,7 +2,6 @@ attrs
 cattrs
 bs4
 cssmin
-htmlmin
 hyperlink
 inquirer
 jinja2
