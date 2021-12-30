@@ -24,7 +24,7 @@ markupsafe==1.1.1
     # via jinja2
 python-frontmatter==0.5.0
     # via -r requirements.in
-pyyaml==5.3
+pyyaml==5.4
     # via python-frontmatter
 six==1.14.0
     # via python-frontmatter
