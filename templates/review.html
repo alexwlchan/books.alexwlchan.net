@@ -8,8 +8,9 @@
 
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://books.alexwlchan.net/{{ review_entry.out_path() }}">
-<meta property="og:title" content="alexwlchan's review of {{ review_entry.book.title }}">
+<meta property="og:title" content="{{ review_entry.book.title }}">
 <meta property="og:image" content="https://books.alexwlchan.net/squares/{{ review_entry.book.cover.name }}"/>
+<meta property="og:description" content="{{ review_entry.book.title }}{% if review_entry.book.author %}, by {{ review_entry.book.author }}{% endif %}.{% if review_entry.review.date_read and not review_entry.review.did_not_finish %} Read {{ review_entry.review.date_read | render_date }}.{% endif %}{% if review_entry.review.rating and not review_entry.review.did_not_finish %} {% for _ in range(review_entry.review.rating) %}★{% endfor %}{% for _ in range(5 - review_entry.review.rating) %}☆{% endfor %}{% endif %}">
 {% endblock %}
 
 {% block content %}
