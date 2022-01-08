@@ -26,4 +26,6 @@ As an adult, I can understand why some of the adults in the book are making deci
 
 It's based on the author's own experience with the disease.
 
+I found it while browsing the children's fiction in the library audiobook catalogue, but I think this story could be read by somebody of any age.
+
 [Stargardt's disease]: https://en.wikipedia.org/wiki/Stargardt_disease
