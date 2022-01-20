@@ -1,0 +1,33 @@
+---
+book:
+  author: Susanna Clarke
+  narrator: Chiwetel Ejiofor
+  cover:
+    name: piranesi.jpg
+    size: 1992812
+    tint_color: "#916540"
+  publication_year: "2020"
+  title: Piranesi
+review:
+  date_read: 2022-01-20
+  format: audiobook
+  rating: 5
+---
+
+This is a weird but delightful book.
+The protagonist lives in "the House", a seemingly endless series of halls filled with statues, sea, and sky.
+He records his life in his journals, which is the style of the whole book.
+He believes he's lived their his whole life, and assists "the Other" in scientific experiments, but the truth – which is gradually revealed through the book – is much more horrifying.
+
+I love the world, and so does the protagonist – and I think his attitude helps offset the horror.
+He sees the House as a loving, benevolent entity, a place to be respected and enjoyed – other characters take a dimmer view.
+He speaks with great reverence about the statues, and the birds, and the halls, and the dead.
+
+The ending isn't quite as clean as I'd like; it all wraps up a bit quickly, and I got a bit confused in the closing moments.
+(For example, it's implied that the name "Piranesi" was chosen deliberately by the Other, but it's never explained or mentioned again.)
+
+Chiwetel Ejiofor is a superb narrator, and this was a great book to listen to.
+
+It feels similar to [*The Starless Sea*](/reviews/the-starless-sea/), which I also enjoyed.
+
+I bought this after Jason mentioned it in [The Incomparable's 2021 review episode](https://www.theincomparable.com/theincomparable/595/), and then several people mentioned it in The Incomparable Slack.
