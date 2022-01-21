@@ -23,11 +23,16 @@ I love the world, and so does the protagonist – and I think his attitude helps
 He sees the House as a loving, benevolent entity, a place to be respected and enjoyed – other characters take a dimmer view.
 He speaks with great reverence about the statues, and the birds, and the halls, and the dead.
 
+I could think about this book a lot.
+It's full of unreliable narrators, and it's not always obvious what the "right" decision is.
+(I'm a bit late to the party, but it's hard not to spot the parallels with living through a lockdown.)
+
 The ending isn't quite as clean as I'd like; it all wraps up a bit quickly, and I got a bit confused in the closing moments.
 (For example, it's implied that the name "Piranesi" was chosen deliberately by the Other, but it's never explained or mentioned again.)
 
 Chiwetel Ejiofor is a superb narrator, and this was a great book to listen to.
 
 It feels similar to [*The Starless Sea*](/reviews/the-starless-sea/), which I also enjoyed.
+It also reminded me of C.S. Lewis, which I enjoyed less.
 
 I bought this after Jason mentioned it in [The Incomparable's 2021 review episode](https://www.theincomparable.com/theincomparable/595/), and then several people mentioned it in The Incomparable Slack.
