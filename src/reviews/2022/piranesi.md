@@ -17,7 +17,7 @@ review:
 This is a weird but delightful book.
 The protagonist lives in "the House", a seemingly endless series of halls filled with statues, sea, and sky.
 He records his life in his journals, which is the style of the whole book.
-He believes he's lived their his whole life, and assists "the Other" in scientific experiments, but the truth – which is gradually revealed through the book – is much more horrifying.
+He believes he's lived there his whole life, and assists "the Other" in scientific experiments, but the truth – which is gradually revealed through the book – is much more horrifying.
 
 I love the world, and so does the protagonist – and I think his attitude helps offset the horror.
 He sees the House as a loving, benevolent entity, a place to be respected and enjoyed – other characters take a dimmer view.
