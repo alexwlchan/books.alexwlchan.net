@@ -10,8 +10,6 @@ attrs==21.2.0
     #   cattrs
 cattrs==1.8.0
     # via -r requirements.in
-cssmin==0.2.0
-    # via -r requirements.in
 hyperlink==19.0.0
     # via -r requirements.in
 idna==2.8

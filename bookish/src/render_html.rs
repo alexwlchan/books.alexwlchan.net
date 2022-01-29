@@ -6,7 +6,7 @@ use std::path::Path;
 use std::process::{Command, Stdio};
 
 use clap::{App, SubCommand};
-use minify_html::{Cfg, minify};
+use html_minifier::{HTMLMinifierError, HTMLMinifier};
 use walkdir::WalkDir;
 
 use crate::fs_helpers::{self, is_ds_store, IsNewerThan};
@@ -22,15 +22,17 @@ pub enum RenderHtmlError {
     Walk(walkdir::Error),
     Python(&'static str),
     Thumbnail(String),
+    HtmlMinifierError(HTMLMinifierError),
 }
 
 impl fmt::Display for RenderHtmlError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         match *self {
-            RenderHtmlError::Io(ref err)        => write!(f, "IO error: {}", err),
-            RenderHtmlError::Walk(ref err)      => write!(f, "Walkdir error: {}", err),
-            RenderHtmlError::Python(ref err)    => write!(f, "Python error: {}", err),
-            RenderHtmlError::Thumbnail(ref err) => write!(f, "Thumbnailing error: {}", err)
+            RenderHtmlError::Io(ref err)                => write!(f, "IO error: {}", err),
+            RenderHtmlError::Walk(ref err)              => write!(f, "Walkdir error: {}", err),
+            RenderHtmlError::Python(ref err)            => write!(f, "Python error: {}", err),
+            RenderHtmlError::Thumbnail(ref err)         => write!(f, "Thumbnailing error: {}", err),
+            RenderHtmlError::HtmlMinifierError(ref err) => write!(f, "HTML minifier: {}", err),
         }
     }
 }
@@ -44,6 +46,12 @@ impl From<io::Error> for RenderHtmlError {
 impl From<walkdir::Error> for RenderHtmlError {
     fn from(err: walkdir::Error) -> RenderHtmlError {
         RenderHtmlError::Walk(err)
+    }
+}
+
+impl From<HTMLMinifierError> for RenderHtmlError {
+    fn from(err: HTMLMinifierError) -> RenderHtmlError {
+        RenderHtmlError::HtmlMinifierError(err)
     }
 }
 
@@ -138,16 +146,18 @@ fn create_thumbnails() -> Result<(), RenderHtmlError> {
 
 /// Minify all the HTML files found anywhere in or under the given directory.
 fn minify_html(root: &Path) -> Result<(), RenderHtmlError> {
-    let cfg = Cfg::new();
-
     for entry in WalkDir::new(root) {
         let entry = entry?;
 
         if entry.path().extension() == Some(OsStr::new("html")) {
             let html = fs_helpers::read_file(entry.path())?;
-            let minified_html = minify(&html, &cfg);
+
+            let mut html_minifier = HTMLMinifier::new();
+            html_minifier.digest(&html)?;
+            let minified_html = html_minifier.get_html();
+
             if html != minified_html {
-                fs_helpers::write_file(entry.path(), minified_html)?;
+                fs_helpers::write_file(entry.path(), minified_html.to_owned())?;
             }
         }
     }
