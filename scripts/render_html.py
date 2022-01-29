@@ -164,11 +164,6 @@ def save_html(*, depends_on, template_name, out_name="", **kwargs):
     html = template.render(**kwargs)
     out_path.parent.mkdir(exist_ok=True, parents=True)
 
-    import cssmin
-
-    for s in list(re.finditer(r"<style>([^<]+)</style>", html)):
-        html = html.replace(s.group(1), cssmin.cssmin(s.group(1)))
-
     for name in ("Mar Hicks", "Thomas S. Mullaney", "Benjamin Peters", "Kavita Philip"):
         html = html.replace(name, name.replace(" ", "&nbsp;"))
 
