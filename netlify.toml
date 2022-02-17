@@ -1,23 +1,21 @@
-[build.processing.css]
-  minify = true
-
-[build.processing.js]
-  minify = true
+[build]
+  base = ""
+  publish = "_html/"
 
 [[headers]]
-  for = "/covers"
+  for = "/covers/*"
 
   [headers.values]
 		cache-control = "public, max-age=31536000"
 
 [[headers]]
-  for = "/static"
+  for = "/static/*"
 
   [headers.values]
 		cache-control = "public, max-age=31536000"
 
 [[headers]]
-  for = "/thumbnails"
+  for = "/thumbnails/*"
 
   [headers.values]
 		cache-control = "public, max-age=31536000"

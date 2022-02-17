@@ -7,6 +7,6 @@ set -o verbose
 git pull origin live
 
 bookish render_html
-netlify deploy --dir=_html/ --prod
+netlify deploy --prod
 
 git push origin live
