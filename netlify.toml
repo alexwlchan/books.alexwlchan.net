@@ -1,0 +1,23 @@
+[build.processing.css]
+  minify = true
+
+[build.processing.js]
+  minify = true
+
+[[headers]]
+  for = "/covers"
+
+  [headers.values]
+		cache-control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/static"
+
+  [headers.values]
+		cache-control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/thumbnails"
+
+  [headers.values]
+		cache-control = "public, max-age=31536000"
