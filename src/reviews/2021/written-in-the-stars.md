@@ -4,10 +4,11 @@ book:
   cover:
     name: written-in-the-stars.jpg
     size: 29086
-    tint_color: '#cc3830'
+    tint_color: '#0f5987'
   narrator: Lauren Sweet
   publication_year: '2020'
   title: Written in the Stars
+  series: "Written in the Stars, #1"
 review:
   date_read: 2021-10-24
   format: audiobook
