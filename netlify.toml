@@ -32,7 +32,7 @@
     content-security-policy = """\
       default-src ; \
       style-src 'self' 'unsafe-inline'; \
-      img-src 'self' data; \
+      img-src 'self' data:; \
     """
 
     # https://scotthelme.co.uk/a-new-security-header-feature-policy/
