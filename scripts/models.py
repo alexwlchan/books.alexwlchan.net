@@ -58,35 +58,3 @@ class ReviewEntry:
     def out_path(self):
         name = self.path.with_suffix("").name
         return pathlib.Path(f"reviews/{name}")
-
-
-@attr.s
-class CurrentlyReading:
-    text = attr.ib(default="")
-
-
-@attr.s
-class CurrentlyReadingEntry:
-    path: pathlib.Path = attr.ib()
-    book: Book = attr.ib()
-    reading: CurrentlyReading = attr.ib()
-
-
-def _parse_date(value):
-    if isinstance(value, datetime.date):
-        return value
-    else:
-        return datetime.datetime.strptime(value, "%Y-%m-%d").date()
-
-
-@attr.s
-class Plan:
-    date_added = attr.ib(converter=_parse_date)
-    text = attr.ib(default="")
-
-
-@attr.s
-class PlanEntry:
-    path: pathlib.Path = attr.ib()
-    book: Book = attr.ib()
-    plan: Plan = attr.ib()

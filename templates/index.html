@@ -3,12 +3,13 @@
 {% block content %}
 {{ text | render_markdown | safe }}
 
-<p>Here are a few of the books I&rsquo;ve read recently:</p>
+<p>Here are a few books I&rsquo;ve read recently:</p>
 
 <div class="books_by_year">
   {% set is_index = true %}
   {% for review_entry in reviews %}
     {% include "_review_entry.html" %}
   {% endfor %}
+  <a href="/reviews">read more reviews &rarr;</a>
 </div>
 {% endblock %}

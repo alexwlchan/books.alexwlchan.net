@@ -67,6 +67,8 @@ impl From<HTMLMinifierError> for RenderHtmlError {
 ///     - Only looks at files that are directly below the source dir
 ///
 fn sync_files(src: &Path, dst: &Path) -> io::Result<()> {
+    fs::create_dir_all(dst)?;
+
     for entry in fs::read_dir(src)? {
         let entry = entry?;
         let src_path = entry.path();
@@ -86,6 +88,9 @@ fn sync_files(src: &Path, dst: &Path) -> io::Result<()> {
 }
 
 fn create_thumbnails() -> Result<(), RenderHtmlError> {
+    fs::create_dir_all("_html/squares")?;
+    fs::create_dir_all("_html/thumbnails")?;
+
     for entry in fs::read_dir("src/covers")? {
         let entry = entry?;
         let src_path = entry.path();

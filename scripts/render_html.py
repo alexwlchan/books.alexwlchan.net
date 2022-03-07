@@ -15,7 +15,7 @@ import typing
 
 import cattr
 
-from models import *
+from models import Book, Review, ReviewEntry
 
 
 def get_review_entry_from_path(path):
@@ -35,30 +35,6 @@ def get_review_entry_from_path(path):
     review = Review(**post["review"], text=post.content)
 
     return ReviewEntry(path=path, book=book, review=review)
-
-
-def get_reading_entry_from_path(path):
-    import frontmatter
-    post = frontmatter.load(path)
-
-    slug = os.path.basename(os.path.splitext(path)[0])
-    book = Book(slug=slug, **post["book"])
-
-    reading = CurrentlyReading(text=post.content)
-
-    return CurrentlyReadingEntry(path=path, book=book, reading=reading)
-
-
-def get_plan_entry_from_path(path):
-    import frontmatter
-    post = frontmatter.load(path)
-
-    slug = os.path.basename(os.path.splitext(path)[0])
-    book = Book(slug=slug, **post["book"])
-
-    plan = Plan(date_added=post["plan"]["date_added"], text=post.content)
-
-    return PlanEntry(path=path, book=book, plan=plan)
 
 
 def get_entries(T, name, dirpath, constructor):
@@ -267,59 +243,6 @@ def main():
         ],
         title="books i’ve read",
         this_year=str(datetime.datetime.now().year),
-    )
-
-    # Render the "currently reading" page
-
-    all_reading = get_entries(
-        CurrentlyReadingEntry,
-        name="currently_reading",
-        dirpath="src/currently_reading",
-        constructor=get_reading_entry_from_path,
-    )
-
-    save_html(
-        depends_on=all_reading.keys(),
-        template_name="list_reading.html",
-        out_name="reading",
-        all_reading=all_reading.values(),
-        title="books i’m currently reading",
-    )
-
-    # Render the "want to read" page
-
-    all_plans = get_entries(
-        PlanEntry,
-        name="plans",
-        dirpath="src/plans",
-        constructor=get_plan_entry_from_path,
-    )
-
-    save_html(
-        depends_on=all_plans.keys(),
-        template_name="list_plans.html",
-        out_name="to-read",
-        all_plans=all_plans.values(),
-        title="books i want to read",
-    )
-
-    # Render the "never going to read this page"
-
-    all_retired = get_entries(
-        PlanEntry,
-        name="will_never_read",
-        dirpath="src/will_never_read",
-        constructor=get_plan_entry_from_path,
-    )
-
-    save_html(
-        depends_on=all_retired.keys(),
-        template_name="list_will_never_read.html",
-        out_name="will-never-read",
-        all_retired=sorted(
-            all_retired.values(), key=lambda plan: plan.plan.date_added, reverse=True
-        ),
-        title="books i&rsquo;m never going to read",
     )
 
     # Render the front page
