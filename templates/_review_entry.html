@@ -1,8 +1,12 @@
+{% set book = review_entry.book %}
+{% set review = review_entry.review %}
+{% set slug = review_entry.slug %}
+
 <style>
   {% include "_review_style.css" %}
 </style>
 
-<div class="review_preview {% if review.rating is defined and review.rating == 5 and not is_index %}review_fave{% endif %}"
+<div class="review_preview {% if review.rating is defined and review.rating == 5 and not is_homepage %}review_fave{% endif %}"
 id="review_preview_{{ slug }}">
   <a href="/reviews/{{ slug }}">
     <div class="book_thumbnail">

@@ -41,10 +41,6 @@
       {% set_global heading_year = review_entry|year %}
     {% endif %}
 
-    {% set book = review_entry.book %}
-    {% set review = review_entry.review %}
-    {% set slug = review_entry.slug %}
-
     {% include "_review_entry.html" %}
   {% endfor %}
   </details>

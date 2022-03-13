@@ -19,7 +19,7 @@ pub fn write_file(p: &Path, bytes: Vec<u8>) -> io::Result<()> {
     Ok(())
 }
 
-fn is_ds_store(p: &Path) -> bool {
+pub fn is_ds_store(p: &Path) -> bool {
     p.file_name() == Some(&OsStr::new(".DS_Store"))
 }
 

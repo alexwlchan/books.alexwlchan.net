@@ -21,14 +21,18 @@ mod text_helpers;
 use axum::{http::StatusCode, service, Router};
 use tower_http::services::ServeDir;
 
-use render_html::{render_html, sync_static_files};
+use render_html::{create_thumbnails, render_html, sync_static_files};
 
 #[tokio::main]
 async fn main() {
     let cached_templates = templates::get_templates().unwrap();
 
-    render_html(&cached_templates, Path::new("reviews"), Path::new("_html"));
+    match render_html(&cached_templates, Path::new("reviews"), Path::new("_html")) {
+        Ok(_) => (),
+        Err(err) => eprintln!("💥 Error rendering HTML: {}", err),
+    };
     sync_static_files(Path::new("_html"));
+    create_thumbnails(Path::new("_html"));
 
     tokio::task::spawn_blocking(move || {
         println!("listening for changes: reviews");
@@ -36,8 +40,8 @@ async fn main() {
 
         hotwatch
             .watch("covers", |_| {
-                let cached_templates = templates::get_templates().unwrap();
-                render_html(&cached_templates, Path::new("reviews"), Path::new("_html")); })
+                create_thumbnails(Path::new("_html"));
+            })
             .expect("failed to watch covers folder!");
         hotwatch
             .watch("reviews", |_| {

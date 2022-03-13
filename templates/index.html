@@ -1,13 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-{{ text | render_markdown | safe }}
+<h1>Welcome to my book tracker!</h1>
+
+<p>
+  This is a small app I created to track the books I've read, inspired by a <a href="https://github.com/tessalt/books">similar book tracker</a> made by <a href="https://twitter.com/tessthornton">Tessa Thornton</a>.
+</p>
 
 <p>Here are a few books I&rsquo;ve read recently:</p>
 
 <div class="books_by_year">
-  {% set is_index = true %}
-  {% for review_entry in reviews %}
+  {% for review_entry in reviews|slice(end = 5) %}
     {% include "_review_entry.html" %}
   {% endfor %}
   <a href="/reviews">read more reviews &rarr;</a>
