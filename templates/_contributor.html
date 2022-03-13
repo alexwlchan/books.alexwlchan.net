@@ -1,0 +1,11 @@
+{% if contributor %}
+  <tr>
+    <th>{{ label }}{% if " and" in contributor or ", " in contributor or " & " in contributor %}s{% endif %}:</th>
+    <td>{{ contributor }}
+      {%- if book.publication_year and not year_has_been_printed %}
+        ({{ book.publication_year}})
+        {% set_global year_has_been_printed = true %}
+      {% endif %}
+    </td>
+  </tr>
+{% endif %}

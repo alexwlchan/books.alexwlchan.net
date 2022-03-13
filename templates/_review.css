@@ -1,0 +1,11 @@
+.review a {
+  color: {{ book.cover.tint_color }};
+}
+
+.review a:hover {
+  background: {{ book.cover.tint_color | as_rgba(opacity=0.3) }};
+}
+
+.book-cover img {
+  box-shadow: 0px 5px 5px {{ book.cover.tint_color | as_rgba(opacity=0.25) }};
+}

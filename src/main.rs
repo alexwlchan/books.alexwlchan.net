@@ -6,6 +6,9 @@ use std::path::Path;
 use std::thread;
 use std::time::Duration;
 
+#[macro_use]
+extern crate lazy_static;
+
 mod colours;
 mod create_shelf;
 mod errors;
@@ -13,17 +16,19 @@ mod fs_helpers;
 mod models;
 mod render_html;
 mod templates;
+mod text_helpers;
 
 use axum::{http::StatusCode, service, Router};
 use tower_http::services::ServeDir;
 
-use render_html::render_html;
+use render_html::{render_html, sync_static_files};
 
 #[tokio::main]
 async fn main() {
     let cached_templates = templates::get_templates().unwrap();
 
     render_html(&cached_templates, Path::new("reviews"), Path::new("_html"));
+    sync_static_files(Path::new("_html"));
 
     tokio::task::spawn_blocking(move || {
         println!("listening for changes: reviews");
@@ -40,10 +45,7 @@ async fn main() {
                 render_html(&cached_templates, Path::new("reviews"), Path::new("_html")); })
             .expect("failed to watch reviews folder!");
         hotwatch
-            .watch("static", |_| {
-                let cached_templates = templates::get_templates().unwrap();
-                render_html(&cached_templates, Path::new("reviews"), Path::new("_html"));
-            })
+            .watch("static", |_| { sync_static_files(Path::new("_html")); })
             .expect("failed to watch static folder!");
         hotwatch
             .watch("templates", |_| {

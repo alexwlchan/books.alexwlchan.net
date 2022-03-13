@@ -1,5 +1,6 @@
 use std::ffi::OsStr;
 use std::fs;
+use std::io;
 use std::path::{Path, PathBuf};
 use std::str;
 use std::time::Instant;
@@ -38,11 +39,19 @@ fn get_reviews(root: &Path) -> Result<Vec<models::Review>, VfdError> {
                 .to_str().unwrap()
                 .replace(".md", "");
 
-            result.push(models::Review { metadata, slug, text });
+            let review = metadata.review;
+            let book = metadata.book;
+
+            result.push(models::Review { book, review, slug, text });
         }
     }
 
     Ok(result)
+}
+
+pub fn sync_static_files(dst: &Path) -> io::Result<()> {
+    println!("Syncing static files...");
+    fs_helpers::sync_files(Path::new("static"), &dst.join("static"))
 }
 
 pub fn render_html(templates: &Tera, src: &Path, dst: &Path) -> Result<(), VfdError> {
@@ -61,8 +70,15 @@ pub fn render_html(templates: &Tera, src: &Path, dst: &Path) -> Result<(), VfdEr
         let out_path = out_dir.join("index.html");
 
         let mut context = tera::Context::new();
-        context.insert("review", &rev);
-        context.insert("tint_colour", &rev.metadata.book.cover.tint_color);
+
+        context.insert("review", &rev.review);
+        context.insert("book", &rev.book);
+        context.insert("slug", &rev.slug);
+        context.insert("text", &rev.text);
+
+        context.insert("title", &rev.book.title);
+        context.insert("tint_colour", &rev.book.cover.tint_color);
+
         let html = templates.render("review.html", &context).unwrap();
 
         fs_helpers::write_file(&out_path, html.into_bytes())?;

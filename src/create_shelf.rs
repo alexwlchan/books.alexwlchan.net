@@ -75,13 +75,18 @@ fn create_shelf(hex_string: &str) -> PathBuf {
         x_coord += shelf_width;
     }
 
+    // If the shelves directory doesn't exist, we'll have to recreate all the
+    // images from scratch.  Because the RNG is seeded, this should be fine --
+    // the images are deterministic -- but let's provide some feedback to the
+    // user about what we're doing.
+    if !PathBuf::from("_shelves").exists() {
+        println!("Creating shelf header images for the first time, this may take a while...");
+    }
+
     // The use of .unwrap() here is very naughty, I know, I know...
     //
     // But since this is only ever going to run on a machine I control
     // and it'll be pretty obvious if any of this fails, I'm fine with that.
-    if !Path::new("_shelves").exists() {
-        println!("Creating shelf header images for the first time, this may take a while...");
-    }
 
     fs::create_dir_all("_shelves").unwrap();
 

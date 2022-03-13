@@ -24,6 +24,18 @@ pub struct Book {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub narrator: Option<String>,
 
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub editor: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub retold_by: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub translated_by: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub illustrator: Option<String>,
+
     pub cover: Cover,
     pub publication_year: String,
     pub title: String,
@@ -63,7 +75,8 @@ pub struct Metadata {
 
 #[derive(Debug, Deserialize, Serialize)]
 pub struct Review {
-    pub metadata: Metadata,
+    pub book: Book,
+    pub review: ReviewMetadata,
     pub text: String,
     pub slug: String,
 }

@@ -9,12 +9,13 @@
       I dropped it in the Rust rewrite, but it needs sorting.
     -->
     <link rel="stylesheet" href="/static/style.css">
-
-    {% block head_content %}{% endblock %}
-
     <style>
       {% include "_base.css" %}
+
+      {% block extra_css %}{% endblock %}
     </style>
+
+    {% block head_content %}{% endblock %}
 
     <title>{% if title %}{{ title | smartypants | safe }} {% endif %}📚 alexwlchan&rsquo;s book tracker</title>
   </head>

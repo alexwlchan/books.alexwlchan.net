@@ -1,50 +1,31 @@
 {% extends "base.html" %}
 
-{% raw %}
-{% extends "base.html" %}
+{% block extra_css %}
+  {% include "_review.css" %}
+{% endblock %}
 
 {% block head_content %}
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@alexwlchan"/>
-<meta name="twitter:title" content="alexwlchan's review of {{ review_entry.book.title }}"/>
-<meta name="twitter:image" content="https://books.alexwlchan.net/squares/{{ review_entry.book.cover.name }}"/>
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@alexwlchan"/>
+  <meta name="twitter:title" content="alexwlchan's review of {{ book.title }}"/>
+  <meta name="twitter:image" content="https://books.alexwlchan.net/squares/{{ book.cover.name }}"/>
 
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://books.alexwlchan.net/{{ review_entry.out_path() }}">
-<meta property="og:title" content="{{ review_entry.book.title }}">
-<meta property="og:image" content="https://books.alexwlchan.net/squares/{{ review_entry.book.cover.name }}"/>
-<meta property="og:description" content="{{ review_entry.book.title }}{% if review_entry.book.author %}, by {{ review_entry.book.author }}{% endif %}.{% if review_entry.review.date_read and not review_entry.review.did_not_finish %} Read {{ review_entry.review.date_read | render_date }}.{% endif %}{% if review_entry.review.rating and not review_entry.review.did_not_finish %} {% for _ in range(review_entry.review.rating) %}★{% endfor %}{% for _ in range(5 - review_entry.review.rating) %}☆{% endfor %}{% endif %}">
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://books.alexwlchan.net/reviews/{{ slug }}">
+  <meta property="og:title" content="{{ book.title }}">
+  <meta property="og:image" content="https://books.alexwlchan.net/squares/{{ book.cover.name }}"/>
+  <meta property="og:description" content="{{ book.title }}{% if book.author %}, by {{ book.author }}{% endif %}.{% if review.date_read and not review.did_not_finish %} Read {{ review.date_read | render_date }}.{% endif %}{% if review.rating and not review.did_not_finish %} {{ review.rating|star_rating }}{% endif %}">
 {% endblock %}
 
 {% block content %}
-  <style>
-    .review a {
-      color: {{ review_entry.book.cover.tint_color }};
-    }
-
-    .review a:hover {
-      background: {{ review_entry.book.cover.tint_color | as_rgba(0.3) }};
-    }
-
-    .book-cover img {
-      box-shadow: 0px 5px 5px {{ review_entry.book.cover.tint_color | as_rgba(0.25) }};
-    }
-
-    aside #shelf_background {
-      background: url({{ review_entry.book.cover.tint_color | from_hex | create_shelf_data_uri }});
-      background-size: auto 100%;
-    }
-  </style>
-
   <div class="book-cover">
-    {% set book = review_entry.book %}
     {% include "_book_cover.html" %}
   </div>
 
   <h1>
-    <span class="book-title">{{ review_entry.book.title | smartypants | safe }}</span>
-    {% if review_entry.book.series %}
-    <span class="book-series">({{ review_entry.book.series | smartypants | safe }})</span>
+    <span class="book-title">{{ book.title | smartypants | safe }}</span>
+    {% if book.series %}
+    <span class="book-series">({{ book.series | smartypants | safe }})</span>
     {% endif %}
   </h1>
 
@@ -52,62 +33,51 @@
     This means the publication year will be printed in parens next to
     the first/principal contributor, but only the first contributor.
     #}
-  {% set contributor_options = {"has_printed_year": False} %}
+  {% set year_has_been_printed = false %}
+
+  {% set contributors = [
+    "author", "retold_by", "translated_by", "editor", "illustrator", "narrator"
+  ] %}
 
   <table class="book_metadata">
-    {% for label, contributor in [
-      ("author", review_entry.book.author),
-      ("retold by", review_entry.book.retold_by),
-      ("translated by", review_entry.book.translated_by),
-      ("editor", review_entry.book.editor),
-      ("illustrator", review_entry.book.illustrator),
-      ("narrator", review_entry.book.narrator),
-    ] %}
-      {% if contributor %}
+    {% for contributor in contributors %}
+      {% if book is containing(contributor) %}
+        {% set label = contributor | replace(from="_", to=" ") %}
         <tr>
           <th>{{ label }}{% if " and" in contributor or ", " in contributor or " & " in contributor %}s{% endif %}:</th>
-          <td>{{ contributor }}
-            {%- if review_entry.book.publication_year and not contributor_options["has_printed_year"] %}
-              ({{ review_entry.book.publication_year}})
-              {% set _ = contributor_options.update({"has_printed_year": True}) %}
-            {%- endif -%}
+          <td>{{ book[contributor] }}
+            {%- if book.publication_year and not year_has_been_printed %}
+              ({{ book.publication_year}})
+              {% set_global year_has_been_printed = true %}
+            {% endif %}
           </td>
         </tr>
       {% endif %}
     {% endfor %}
 
-    {% if review_entry.review.date_read %}
+    {% if review.date_read %}
     <tr>
       <th>date read:</th>
-      <td>{{ review_entry.review.date_read | render_date }}
-        {% if review_entry.review.did_not_finish %}
-        <span class="did_not_finish">
-          (did not finish)
-        </span>
+      <td>{{ review.date_read | render_date }}
+        {% if review.did_not_finish %}
+          <span class="did_not_finish">
+            (did not finish)
+          </span>
         {% endif %}
       </td>
     </tr>
     {% endif %}
-    {% if review_entry.review.rating and not review_entry.review.did_not_finish %}
+    {% if review.rating and not review.did_not_finish %}
     <tr>
       <th>rating:</th>
-      <td>
-        {% for _ in range(review_entry.review.rating) %}
-        ★
-        {% endfor %}
-        {% for _ in range(5 - review_entry.review.rating) %}
-        ☆
-        {% endfor %}
-      </td>
+      <td>{{ review.rating|star_rating }}</td>
     </tr>
     {% endif %}
   </table>
 
   <div class="review">
-    {{ review_entry.review.text | render_markdown | safe }}
+    {{ text | markdown | safe }}
 
     <p>(see <a href="/reviews">all reviews</a>)</p>
   </div>
 {% endblock %}
-
-{% endraw %}
