@@ -24,6 +24,11 @@ pub fn render_date(value: &Value, _: &HashMap<String, Value>) -> tera::Result<Va
     Ok(to_value(text_helpers::render_date(&s)).unwrap())
 }
 
+pub fn spread_star_rating(value: &Value, _: &HashMap<String, Value>) -> tera::Result<Value> {
+    let rating = try_get_value!("spread_star_rating", "value", usize, value);
+    Ok(to_value(text_helpers::spread_star_rating(rating)).unwrap())
+}
+
 pub fn star_rating(value: &Value, _: &HashMap<String, Value>) -> tera::Result<Value> {
     let rating = try_get_value!("star_rating", "value", usize, value);
     Ok(to_value(text_helpers::star_rating(rating)).unwrap())
@@ -55,6 +60,7 @@ pub fn get_templates() -> Result<Tera, tera::Error> {
     tera.register_filter("render_date", render_date);
     tera.register_filter("markdown", markdown);
     tera.register_filter("smartypants", smartypants);
+    tera.register_filter("spread_star_rating", spread_star_rating);
     tera.register_filter("star_rating", star_rating);
 
     Ok(tera)

@@ -1,5 +1,5 @@
 aside #shelf_background {
-  background: {{ create_shelf_data_uri(tint_colour=tint_colour) }};
+  background: url({{ create_shelf_data_uri(tint_colour=tint_colour) | safe }});
   background-size: auto 100%;
 }
 

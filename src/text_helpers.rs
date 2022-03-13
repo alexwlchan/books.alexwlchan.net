@@ -19,6 +19,11 @@ pub fn star_rating(rating: usize) -> String {
     format!("{}{}", "★".repeat(rating), "☆".repeat(5 - rating))
 }
 
+pub fn spread_star_rating(rating: usize) -> String {
+    assert!(rating <= 5);
+    format!("{}{}", "★ ".repeat(rating), "☆ ".repeat(5 - rating))
+}
+
 static MONTHS: phf::Map<&'static str, &'static str> = phf_map! {
     "01" => "January",
     "02" => "February",

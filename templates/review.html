@@ -70,7 +70,7 @@
     {% if review.rating and not review.did_not_finish %}
     <tr>
       <th>rating:</th>
-      <td>{{ review.rating|star_rating }}</td>
+      <td>{{ review.rating | spread_star_rating }}</td>
     </tr>
     {% endif %}
   </table>
