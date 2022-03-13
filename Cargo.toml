@@ -7,9 +7,9 @@ edition = "2021"
 axum = "0.2"
 base64 = "0.13.0"
 hotwatch = "0.4"
-lazy_static = "1.4.0"
 image = { version = "0.23", features = ["png"], default-features = false }
 imageproc = "0.22.0"
+lazy_static = "1.4.0"
 oxipng = "5.0.1"
 palette = "0.6"
 phf = { version = "0.10", features = ["macros"] }

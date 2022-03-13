@@ -2,8 +2,3 @@ aside #shelf_background {
   background: url({{ create_shelf_data_uri(tint_colour=tint_colour) | safe }});
   background-size: auto 100%;
 }
-
-footer span.heart {
-  color: {{ tint_colour }};
-}
-

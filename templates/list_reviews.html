@@ -1,42 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <!-- <p class="nav">
-    <a class="selected" href="/reviews">by year</a> /
-  </p> -->
-
   <h2>books i&rsquo;ve read</h2>
 
-  <p id="jump_to">jump to:
-    {% for year, _ in all_reviews %}
-    <a href="#books_by_year_{{ year }}">
-      {% if year %}{{ year }}{% else %}other times{% endif -%}
-    </a>
-    {% if not loop.last %} / {% endif %}
-    {% endfor %}
-  </p>
+  {% for review_entry in reviews %}
+    {% set book = review_entry.book %}
+    {% set review = review_entry.review %}
+    {% set slug = review_entry.slug %}
 
-  {% for year, reviews in all_reviews %}
-  <div class="divider"><img src="/static/book.svg"></div>
-
-    {% if year %}
-      <div class="books_by_year" id="books_by_year_{{ year }}">
-        <h3>the {{ reviews|count_finished_books }} book{% if reviews|count_finished_books != 1 %}s{% endif %}
-          {% if year == this_year %}
-            i&rsquo;ve read so far
-          {% else %}
-            i read
-          {% endif %}
-          in {{ year }}
-        </h3>
-
-        {% for review_entry in reviews %}
-          {% include "_review_entry.html" %}
-        {% endfor %}
-      </div>
-    {% else %}
-      {% include "list_old_reviews.html" %}
-    {% endif %}
-
+    {% include "_review_entry.html" %}
   {% endfor %}
 {% endblock %}

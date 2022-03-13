@@ -62,6 +62,20 @@ pub fn render_html(templates: &Tera, src: &Path, dst: &Path) -> Result<(), VfdEr
 
     let reviews = get_reviews(src).unwrap();
 
+    // Write the "all reviews" page
+    // let reviews_by_year = reviews.into_iter()
+    //     .group_by(|r| (&r.review.date_read)[0..4].parse::<usize>().unwrap());
+    // println!("{:?}", reviews_by_year);
+
+    let mut context = tera::Context::new();
+    context.insert("reviews", &reviews);
+    context.insert("tint_colour", "#000000");
+    let html = templates.render("list_reviews.html", &context).unwrap();
+
+    let out_path = dst.join("reviews/index.html");
+    fs_helpers::write_file(&out_path, html.into_bytes())?;
+    written_paths.push(out_path);
+
     for rev in reviews {
         // Write individual HTML pages for each of the reviews.
         let out_dir = dst.join("reviews").join(&rev.slug);

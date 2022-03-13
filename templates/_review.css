@@ -9,3 +9,7 @@
 .book-cover img {
   box-shadow: 0px 5px 5px {{ book.cover.tint_color | as_rgba(opacity=0.25) }};
 }
+
+footer span.heart {
+  color: {{ tint_colour }};
+}

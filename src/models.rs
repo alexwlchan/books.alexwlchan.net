@@ -64,7 +64,10 @@ pub struct ReviewMetadata {
 
     #[serde(skip_serializing_if = "is_false")]
     #[serde(default = "default_as_false")]
-    pub did_not_finish: bool
+    pub did_not_finish: bool,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub date_order: Option<usize>
 }
 
 #[derive(Debug, Deserialize, Serialize)]

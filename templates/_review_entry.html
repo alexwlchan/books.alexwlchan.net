@@ -1,64 +1,54 @@
-{% raw %}
-{% set (r, g, b) = review_entry.book.cover.tint_color | from_hex %}
-
 <style>
   {% include "_review_style.css" %}
 </style>
 
-<div class="review_preview {% if review_entry.review.rating == 5 and not is_index %}review_fave{% endif %}"
-id="review_preview_{{ review_entry.book.slug }}">
-  <a href="/{{ review_entry.out_path() }}/">
+<div class="review_preview {% if review.rating is defined and review.rating == 5 and not is_index %}review_fave{% endif %}"
+id="review_preview_{{ slug }}">
+  <a href="/reviews/{{ slug }}">
     <div class="book_thumbnail">
-      {% set book = review_entry.book %}
       {% include "_book_cover.html" %}
     </div>
 
     <div class="book_metadata">
       <p class="title">
-        {{ review_entry.book.title | smartypants | safe }}
-        {% if review_entry.book.series %}
-        <span class="book-series">({{ review_entry.book.series | smartypants | safe }})</span>
+        {{ book.title | smartypants | safe }}
+        {% if book.series %}
+        <span class="book-series">({{ book.series | smartypants | safe }})</span>
         {% endif %}
       </p>
       <p>
         <small>
-          {% if review_entry.book.author %}
-            by {{ review_entry.book.author }}
-            {%- if review_entry.book.editor -%}
+          {% if book.author %}
+            by {{ book.author }}
+            {%- if book.editor -%}
             ,
             {% endif %}
           {% endif %}
 
-          {% if review_entry.book.editor %}
-          edited by {{ review_entry.book.editor }}
+          {% if book.editor %}
+          edited by {{ book.editor }}
           {% endif %}
 
-          {% if review_entry.book.retold_by %}
-          retold by {{ review_entry.book.retold_by }}
+          {% if book.retold_by %}
+          retold by {{ book.retold_by }}
           {% endif %}
 
-          {%- if review_entry.book.publication_year %}
-            ({{ review_entry.book.publication_year}})
+          {%- if book.publication_year %}
+            ({{ book.publication_year}})
           {%- endif -%}
             <br/>
-          {% if review_entry.review.date_read %}
-          read {{ review_entry.review.date_read | render_date }}
+          {% if review.date_read %}
+          read {{ review.date_read | render_date }}
             <br/>
           {% endif %}
 
-          {% if review_entry.review.rating and not review_entry.review.did_not_finish %}
+          {% if review.rating and not review.did_not_finish %}
             <span class="star_rating">
-
-            {% for _ in range(review_entry.review.rating) -%}
-            ★
-            {%- endfor -%}
-            {%- for _ in range(5 - review_entry.review.rating) -%}
-            ☆
-            {%- endfor %}
+              {{ review.rating | spread_star_rating }}
             </span>
           {% endif %}
 
-          {% if review_entry.review.did_not_finish %}
+          {% if review.did_not_finish %}
           (did not finish)
           {% endif %}
         </small>
@@ -66,5 +56,3 @@ id="review_preview_{{ review_entry.book.slug }}">
     </div>
   </a>
 </div>
-
-{% endraw %}
