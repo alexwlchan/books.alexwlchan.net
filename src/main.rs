@@ -23,40 +23,54 @@ use tower_http::services::ServeDir;
 
 use render_html::{create_thumbnails, render_html, sync_static_files};
 
-#[tokio::main]
-async fn main() {
+fn create_html_pages() {
+    // This was an idea where I'd cache the templates between runs, so I could
+    // detect whether the templates/source data had changed and skip re-reading
+    // the unchanged data.  I haven't finished it yet, but it's still here as
+    // an option.
     let cached_templates = templates::get_templates().unwrap();
 
     match render_html(&cached_templates, Path::new("reviews"), Path::new("_html")) {
         Ok(_) => (),
         Err(err) => eprintln!("💥 Error rendering HTML: {}", err),
     };
-    sync_static_files(Path::new("_html"));
-    create_thumbnails(Path::new("_html"));
+}
+
+fn create_static_files() {
+    match sync_static_files(Path::new("_html")) {
+        Ok(_) => (),
+        Err(err) => eprintln!("💥 Error syncing static files: {}", err),
+    };
+}
+
+fn create_images() {
+    match create_thumbnails(Path::new("_html")) {
+        Ok(_) => (),
+        Err(err) => eprintln!("💥 Error creating thumbnail images: {}", err),
+    };
+}
+
+#[tokio::main]
+async fn main() {
+    create_html_pages();
+    create_static_files();
+    create_images();
 
     tokio::task::spawn_blocking(move || {
-        println!("listening for changes: reviews");
-        let mut hotwatch = hotwatch::Hotwatch::new().expect("hotwatch failed to initialize!");
+        let mut hotwatch = hotwatch::Hotwatch::new()
+            .expect("hotwatch failed to initialize!");
 
         hotwatch
-            .watch("covers", |_| {
-                create_thumbnails(Path::new("_html"));
-            })
+            .watch("covers", |_| { create_images(); })
             .expect("failed to watch covers folder!");
         hotwatch
-            .watch("reviews", |_| {
-                let cached_templates = templates::get_templates().unwrap();
-                render_html(&cached_templates, Path::new("reviews"), Path::new("_html")); })
+            .watch("reviews", |_| { create_html_pages(); })
             .expect("failed to watch reviews folder!");
         hotwatch
-            .watch("static", |_| { sync_static_files(Path::new("_html")); })
+            .watch("static", |_| { create_static_files(); })
             .expect("failed to watch static folder!");
         hotwatch
-            .watch("templates", |_| {
-                // TODO: Can I skip getting templates when other dirs change?
-                let cached_templates = templates::get_templates().unwrap();
-                render_html(&cached_templates, Path::new("reviews"), Path::new("_html"));
-            })
+            .watch("templates", |_| { create_html_pages(); })
             .expect("failed to watch templates folder!");
 
         loop {
