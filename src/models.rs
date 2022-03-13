@@ -41,7 +41,7 @@ pub struct Book {
 }
 
 #[derive(Debug, Deserialize, Serialize)]
-pub struct Review {
+pub struct ReviewMetadata {
     pub date_read: String,
 
     #[serde(skip_deserializing)]
@@ -56,7 +56,14 @@ pub struct Review {
 }
 
 #[derive(Debug, Deserialize, Serialize)]
-pub struct ReviewEntry {
+pub struct Metadata {
     pub book: Book,
-    pub review: Review,
+    pub review: ReviewMetadata,
+}
+
+#[derive(Debug, Deserialize, Serialize)]
+pub struct Review {
+    pub metadata: Metadata,
+    pub text: String,
+    pub slug: String,
 }

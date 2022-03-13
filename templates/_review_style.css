@@ -1,3 +1,4 @@
+{% raw %}
 {% set (r, g, b) = review_entry.book.cover.tint_color | from_hex %}
 
 /* See https://stackoverflow.com/a/11615135/1558022 */
@@ -46,3 +47,4 @@
 #review_preview_{{ review_entry.book.slug }} a:hover {
   background: none;
 }
+{% endraw %}

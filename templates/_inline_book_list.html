@@ -1,3 +1,4 @@
+{% raw %}
 {% for book_entry in all_books %}
 {% set (r, g, b) = book_entry.book.cover.tint_color | from_hex %}
 
@@ -50,3 +51,4 @@
   {% endif %}
 </div>
 {% endfor %}
+{% endraw %}

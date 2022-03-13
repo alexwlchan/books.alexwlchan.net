@@ -4,8 +4,10 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+hotwatch = "0.4"
 lazy_static = "1.4.0"
 serde = { version = "1.0", features = ["derive"] }
 serde_yaml = "0.8"
 tera = "1.15.0"
+tokio = { version = "1", features = ["full"] }
 walkdir = "2"
