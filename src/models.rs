@@ -83,3 +83,11 @@ pub struct Review {
     pub text: String,
     pub slug: String,
 }
+
+pub fn year(rev: &Review) -> String {
+    if rev.review.date_read == "" {
+        "another time".to_string()
+    } else {
+        rev.review.date_read[0..4].to_string()
+    }
+}

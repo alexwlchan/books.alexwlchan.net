@@ -44,7 +44,7 @@ id="review_preview_{{ slug }}">
 
           {% if review.rating and not review.did_not_finish %}
             <span class="star_rating">
-              {{ review.rating | spread_star_rating }}
+              {{ review.rating | star_rating }}
             </span>
           {% endif %}
 

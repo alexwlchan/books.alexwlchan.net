@@ -6,6 +6,7 @@ edition = "2021"
 [dependencies]
 axum = "0.2"
 base64 = "0.13.0"
+chrono = "0.4.19"
 hotwatch = "0.4"
 image = { version = "0.23", features = ["png"], default-features = false }
 imageproc = "0.22.0"

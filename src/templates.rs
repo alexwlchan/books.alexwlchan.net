@@ -34,10 +34,21 @@ pub fn star_rating(value: &Value, _: &HashMap<String, Value>) -> tera::Result<Va
     Ok(to_value(text_helpers::star_rating(rating)).unwrap())
 }
 
-fn sorted_reviews(value: &Value, _: &HashMap<String, Value>) -> tera::Result<Value> {
-    let reviews = try_get_value!("sorted_reviews", "value", Vec<models::Review>, value);
-    println!("{:?}", reviews);
-    Ok(to_value("hello").unwrap())
+pub fn year(value: &Value, _: &HashMap<String, Value>) -> tera::Result<Value> {
+    let review = try_get_value!("year", "value", models::Review, value);
+    Ok(to_value(models::year(&review)).unwrap())
+}
+
+pub fn books_in_year(value: &Value, args: &HashMap<String, Value>) -> tera::Result<Value> {
+    let reviews = try_get_value!("books_in_year", "value", Vec<models::Review>, value);
+    let year: String = from_value(args.get("year").unwrap().to_owned()).unwrap();
+
+    let count = reviews
+        .into_iter()
+        .filter(|r| !r.review.did_not_finish && models::year(&r) == year)
+        .count();
+
+    Ok(to_value(count).unwrap())
 }
 
 pub fn as_rgba(value: &Value, args: &HashMap<String, Value>) -> tera::Result<Value> {
@@ -85,13 +96,14 @@ pub fn get_templates() -> Result<Tera, tera::Error> {
     tera.register_function("create_shelf_data_uri", create_shelf_data_uri);
 
     tera.register_filter("as_rgba", as_rgba);
+    tera.register_filter("books_in_year", books_in_year);
     tera.register_filter("boost", boost);
     tera.register_filter("render_date", render_date);
     tera.register_filter("markdown", markdown);
     tera.register_filter("smartypants", smartypants);
-    tera.register_filter("sorted_reviews", sorted_reviews);
     tera.register_filter("spread_star_rating", spread_star_rating);
     tera.register_filter("star_rating", star_rating);
+    tera.register_filter("year", year);
 
     Ok(tera)
 }

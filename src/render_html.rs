@@ -5,6 +5,7 @@ use std::path::{Path, PathBuf};
 use std::str;
 use std::time::Instant;
 
+use chrono::Datelike;
 use tera::Tera;
 use walkdir::WalkDir;
 
@@ -60,16 +61,27 @@ pub fn render_html(templates: &Tera, src: &Path, dst: &Path) -> Result<(), VfdEr
 
     let mut written_paths: Vec<PathBuf> = vec![];
 
-    let reviews = get_reviews(src).unwrap();
-
     // Write the "all reviews" page
-    // let reviews_by_year = reviews.into_iter()
-    //     .group_by(|r| (&r.review.date_read)[0..4].parse::<usize>().unwrap());
-    // println!("{:?}", reviews_by_year);
+    let mut reviews = get_reviews(src).unwrap();
+    reviews.sort_by(|a, b|
+        if a.review.date_read == b.review.date_read {
+            if a.review.date_read == "" {
+                a.book.publication_year.cmp(&b.book.publication_year)
+            } else {
+                a.review.date_order.cmp(&b.review.date_order)
+            }
+        } else {
+            a.review.date_read.cmp(&b.review.date_read)
+        }
+    );
+    reviews.reverse();
+
+    let this_year = chrono::offset::Utc::now().year();
 
     let mut context = tera::Context::new();
     context.insert("reviews", &reviews);
     context.insert("tint_colour", "#000000");
+    context.insert("this_year", &this_year.to_string());
     let html = templates.render("list_reviews.html", &context).unwrap();
 
     let out_path = dst.join("reviews/index.html");

@@ -11,7 +11,7 @@ pub fn markdown(s: &str) -> String {
 }
 
 pub fn smartypants(s: &str) -> String {
-    markdown(s).replace("<p>", "").replace("</p>", "")
+    markdown(s).replace("<p>", "").replace("</p>", "").trim().to_string()
 }
 
 pub fn star_rating(rating: usize) -> String {
