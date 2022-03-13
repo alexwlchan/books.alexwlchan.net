@@ -4,15 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="/static/style.css?hash={{ '' | css_hash }}">
+    <!--
+      TODO: Implement cache invalidation when the CSS file changes.
+      I dropped it in the Rust rewrite, but it needs sorting.
+    -->
+    <link rel="stylesheet" href="/static/style.css">
 
     {% block head_content %}{% endblock %}
 
     <style>
-      aside #shelf_background {
-        background: url({{ [0, 0, 0] | create_shelf_data_uri }});
-        background-size: auto 100%;
-      }
+      {% include "_base.css" %}
     </style>
 
     <title>{% if title %}{{ title | smartypants | safe }} {% endif %}📚 alexwlchan&rsquo;s book tracker</title>

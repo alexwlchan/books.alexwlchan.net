@@ -2,11 +2,13 @@ use std::ffi::OsStr;
 use std::fs;
 use std::path::{Path, PathBuf};
 use std::str;
+use std::time::Instant;
 
+use tera::Tera;
 use walkdir::WalkDir;
 
 use crate::errors::VfdError;
-use crate::{fs_helpers, models, templates};
+use crate::{fs_helpers, models};
 
 /// Returns a list of all the reviews and the review text under a given path.
 fn get_reviews(root: &Path) -> Result<Vec<models::Review>, VfdError> {
@@ -43,7 +45,10 @@ fn get_reviews(root: &Path) -> Result<Vec<models::Review>, VfdError> {
     Ok(result)
 }
 
-pub fn render_html(src: &Path, dst: &Path) -> Result<(), VfdError> {
+pub fn render_html(templates: &Tera, src: &Path, dst: &Path) -> Result<(), VfdError> {
+    let start = Instant::now();
+    print!("Building HTML... ");
+
     let mut written_paths: Vec<PathBuf> = vec![];
 
     let reviews = get_reviews(src).unwrap();
@@ -54,26 +59,22 @@ pub fn render_html(src: &Path, dst: &Path) -> Result<(), VfdError> {
         fs::create_dir_all(&out_dir)?;
 
         let out_path = out_dir.join("index.html");
-        println!("{:?}", out_path);
 
         let mut context = tera::Context::new();
         context.insert("review", &rev);
-        let html = templates::render("review.html", &context).unwrap();
+        context.insert("tint_colour", &rev.metadata.book.cover.tint_color);
+        let html = templates.render("review.html", &context).unwrap();
 
         fs_helpers::write_file(&out_path, html.into_bytes())?;
         written_paths.push(out_path);
     }
 
-    // let mut context = tera::Context::new();
-    //
-    //
-    //
-    // let titles: Vec<String> = reviews.into_iter().map(|r| r.slug).collect();
-    // context.insert("titles", &titles);
-
-    // println!("{:?}", templates::render("base.html", &context));
-
-    println!("{:?}", dst);
+    let elapsed = start.elapsed();
+    if elapsed.as_secs() == 0 {
+        println!("done in {:?}ms", elapsed.as_millis());
+    } else {
+        println!("done in {:.1}s", elapsed.as_secs_f32());
+    }
 
     Ok(())
 }

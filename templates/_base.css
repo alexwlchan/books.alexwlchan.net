@@ -1,0 +1,9 @@
+aside #shelf_background {
+  background: {{ create_shelf_data_uri(tint_colour=tint_colour) }};
+  background-size: auto 100%;
+}
+
+footer span.heart {
+  color: {{ tint_colour }};
+}
+
