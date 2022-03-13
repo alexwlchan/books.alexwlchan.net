@@ -1,4 +1,4 @@
-// #![deny(warnings)]
+#![deny(warnings)]
 
 use std::convert::Infallible;
 use std::net::SocketAddr;
@@ -9,6 +9,7 @@ use std::time::Duration;
 #[macro_use]
 extern crate lazy_static;
 
+mod add_review;
 mod colours;
 mod create_shelf;
 mod errors;
@@ -17,8 +18,10 @@ mod models;
 mod render_html;
 mod templates;
 mod text_helpers;
+mod urls;
 
 use axum::{http::StatusCode, service, Router};
+use clap::{App, SubCommand, AppSettings};
 use tower_http::services::ServeDir;
 
 use render_html::{create_thumbnails, render_html, sync_static_files};
@@ -50,8 +53,39 @@ fn create_images() {
     };
 }
 
+pub fn serve_subcommand() -> App<'static, 'static> {
+    SubCommand::with_name("serve")
+        .about("Render the HTML files for the site")
+}
+
 #[tokio::main]
 async fn main() {
+    const VERSION: &str = env!("CARGO_PKG_VERSION");
+
+    let app =
+        App::new("vfd")
+            .version(VERSION)
+            .author("Alex Chan <alex@alexwlchan.net>")
+            .about("Generates the HTML files for books.alexwlchan.net")
+            .setting(AppSettings::SubcommandRequired)
+            .subcommand(add_review::subcommand())
+            .subcommand(serve_subcommand());
+
+    let matches = app.get_matches();
+
+    match matches.subcommand() {
+        ("add_review", _) => {
+            add_review::add_review();
+            build_and_serve()
+        },
+
+        ("serve", _) => build_and_serve(),
+
+        _ => unreachable!(),
+    }.await;
+}
+
+async fn build_and_serve() {
     create_html_pages();
     create_static_files();
     create_images();

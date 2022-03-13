@@ -12,7 +12,6 @@ use image::{ImageBuffer, Rgba, RgbaImage};
 use imageproc::drawing::draw_filled_rect_mut;
 use imageproc::rect::Rect;
 use oxipng;
-use regex::Regex;
 use rand::{Rng, SeedableRng};
 use rand::rngs::SmallRng;
 use palette::FromColor;
@@ -132,16 +131,4 @@ fn create_random_colour_like(rng: &mut SmallRng, hsl: &Hsl) -> Rgba<u8> {
 
     let rgb: Srgb = Rgb::from_color(new_hsl);
     Rgba::from([(rgb.red * 255.0) as u8, (rgb.green * 255.0) as u8, (rgb.blue * 255.0) as u8, 255])
-}
-
-// Checks whether a given string is a valid hex string.
-//
-// See https://docs.rs/clap/latest/clap/struct.Arg.html#method.validator
-fn is_hex_string(s: String) -> Result<(), String> {
-    let hex_regex = Regex::new(r"^#[0-9a-fA-F]{6}$").unwrap();
-    if hex_regex.is_match(&s) {
-        Ok(())
-    } else {
-        Err(format!("Expected a hex string, e.g. #d01c11, got {}", s))
-    }
 }

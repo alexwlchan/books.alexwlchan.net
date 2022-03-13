@@ -7,9 +7,11 @@ edition = "2021"
 axum = "0.2"
 base64 = "0.13.0"
 chrono = "0.4.19"
+clap = "2.33"
 hotwatch = "0.4"
 image = { version = "0.23", features = ["png"], default-features = false }
 imageproc = "0.22.0"
+inquire = { version = "0.2.1", features = ["date"] }
 lazy_static = "1.4.0"
 oxipng = "5.0.1"
 palette = "0.6"
@@ -17,9 +19,12 @@ phf = { version = "0.10", features = ["macros"] }
 pulldown-cmark = "0.9.1"
 rand = { version = "0.8.4", features = ["small_rng"] }
 regex = "1"
+reqwest = { version = "0.11.7", features = ["blocking"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_yaml = "0.8"
 tera = "1.15.0"
 tokio = { version = "1", features = ["full"] }
 tower-http = { version = "0.1", features = ["fs"] }
+unidecode = "0.3.0"
+url = "2.2.2"
 walkdir = "2"
