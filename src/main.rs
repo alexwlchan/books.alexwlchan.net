@@ -47,10 +47,12 @@ fn get_reviews(root: &Path) -> Result<Vec<(models::ReviewEntry, String)>, errors
 }
 
 fn main() {
-    let reviews = get_reviews(Path::new("reviews"));
-    println!("{:?}", reviews);
+    let reviews = get_reviews(Path::new("reviews")).unwrap();
+    // println!("{:?}", reviews);
 
-    let context = tera::Context::new();
+    let mut context = tera::Context::new();
+    let titles: Vec<String> = reviews.into_iter().map(|(r, _)| r.book.title).collect();
+    context.insert("titles", &titles);
 
     println!("{:?}", templates::render("base.html", &context));
 }
