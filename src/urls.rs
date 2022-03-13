@@ -22,7 +22,7 @@ pub fn download_url(url: &Url, download_path: &str) -> Result<(), reqwest::Error
 
     // Return an error if the GET request completely fails, e.g. if we can't
     // connect to the network at all.
-    let resp = reqwest::blocking::get(url.as_str())?;
+    let resp = futures::executor::block_on(reqwest::get(url.as_str())).unwrap();
 
     // Return an error if we don't get a 200 OK status code.
     let resp = resp.error_for_status()?;
@@ -37,7 +37,7 @@ pub fn download_url(url: &Url, download_path: &str) -> Result<(), reqwest::Error
     // Note: this code can throw a "No such file or directory" if the download_path
     // it's passed contains invalid data, e.g. pointing to a non-existent directory.
     let mut file = std::fs::File::create(download_path).unwrap();
-    let mut content = Cursor::new(resp.bytes()?);
+    let mut content = Cursor::new(futures::executor::block_on(resp.bytes()).unwrap());
     std::io::copy(&mut content, &mut file).unwrap();
 
     Ok(())

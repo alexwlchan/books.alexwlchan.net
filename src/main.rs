@@ -73,19 +73,13 @@ async fn main() {
 
     let matches = app.get_matches();
 
-    match matches.subcommand() {
-        ("add_review", _) => {
-            add_review::add_review();
-            build_and_serve()
-        },
+    if matches.subcommand_name() == Some("add_review") {
+        add_review::add_review();
+    }
 
-        ("serve", _) => build_and_serve(),
+    // otherwise we're in serve or add_review, in either case start serving
+    // the site locally
 
-        _ => unreachable!(),
-    }.await;
-}
-
-async fn build_and_serve() {
     create_html_pages();
     create_static_files();
     create_images();

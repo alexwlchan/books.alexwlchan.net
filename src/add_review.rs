@@ -94,7 +94,7 @@ struct FrontMatter {
 }
 
 fn save_review(year: i32, slug: &str, book: models::Book, metadata: models::ReviewMetadata) -> () {
-    let out_dir = format!("src/reviews/{}", year);
+    let out_dir = format!("reviews/{}", year);
     fs::create_dir_all(&out_dir).unwrap();
 
     let out_path = format!("{}/{}.md", out_dir, slug);
@@ -165,7 +165,7 @@ pub fn add_review() -> () {
     // version of this code, I used the Content-Type header from the HTTP request.
     // This is decidedly open to mistakes, e.g. creating a download path like
     //
-    //      src/covers/my-book./book/cover/picture
+    //      covers/my-book./book/cover/picture
     //
     // from the URL https://example.net/book/cover/picture, which will throw an
     // error "No such file or directory" in `urls.rs` because it's a nonsense
@@ -175,7 +175,7 @@ pub fn add_review() -> () {
 
     let slug = text_helpers::slugify(&title);
     let cover_name = format!("{}.{}", slug, extension);
-    let cover_path = format!("src/covers/{}", &cover_name);
+    let cover_path = format!("covers/{}", &cover_name);
 
     match urls::download_url(&cover_url, &cover_path) {
         Ok(_) => (),
