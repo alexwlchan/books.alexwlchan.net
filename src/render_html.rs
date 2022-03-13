@@ -1,10 +1,10 @@
+use std::collections::HashSet;
 use std::ffi::OsStr;
 use std::fs;
 use std::io;
 use std::path::{Path, PathBuf};
 use std::process::Command;
 use std::str;
-use std::time::Instant;
 
 use chrono::Datelike;
 use tera::Tera;
@@ -53,15 +53,11 @@ fn get_reviews(root: &Path) -> Result<Vec<models::Review>, VfdError> {
 }
 
 pub fn sync_static_files(dst: &Path) -> io::Result<()> {
-    println!("Syncing static files...");
     fs_helpers::sync_files(Path::new("static"), &dst.join("static"))
 }
 
 pub fn render_html(templates: &Tera, src: &Path, dst: &Path) -> Result<(), VfdError> {
-    let start = Instant::now();
-    print!("Building HTML... ");
-
-    let mut written_paths: Vec<PathBuf> = vec![];
+    let mut written_paths: HashSet<PathBuf> = HashSet::new();
 
     // Write the "all reviews" page
     let mut reviews = get_reviews(src).unwrap();
@@ -88,7 +84,7 @@ pub fn render_html(templates: &Tera, src: &Path, dst: &Path) -> Result<(), VfdEr
 
     let out_path = dst.join("reviews/index.html");
     fs_helpers::write_file(&out_path, html.into_bytes())?;
-    written_paths.push(out_path);
+    written_paths.insert(out_path);
 
     // Write the homepage
     let mut context = tera::Context::new();
@@ -99,7 +95,7 @@ pub fn render_html(templates: &Tera, src: &Path, dst: &Path) -> Result<(), VfdEr
 
     let out_path = dst.join("index.html");
     fs_helpers::write_file(&out_path, html.into_bytes())?;
-    written_paths.push(out_path);
+    written_paths.insert(out_path);
 
     // Write individual HTML pages for each of the reviews.
     for rev in reviews {
@@ -121,21 +117,29 @@ pub fn render_html(templates: &Tera, src: &Path, dst: &Path) -> Result<(), VfdEr
         let html = templates.render("review.html", &context).unwrap();
 
         fs_helpers::write_file(&out_path, html.into_bytes())?;
-        written_paths.push(out_path);
+        written_paths.insert(out_path);
     }
 
-    let elapsed = start.elapsed();
-    if elapsed.as_secs() == 0 {
-        println!("done in {:?}ms", elapsed.as_millis());
-    } else {
-        println!("done in {:.1}s", elapsed.as_secs_f32());
+    // Clean up any HTML files that were written by a previous version of the
+    // site, but which we no longer need.
+    //
+    // Note: I'm deliberately discarding the result of the `remove_file()`; if
+    // I was being picky I might want to look for an ENOENT error result
+    // and throw if I don't get that, but this is fine for now.
+    for entry in WalkDir::new(&dst) {
+        let entry = entry?;
+
+        if entry.path().extension() == Some(OsStr::new("html")) {
+            if !written_paths.contains(entry.path()) {
+                let _ = fs::remove_file(entry.path());
+            }
+        }
     }
 
     Ok(())
 }
 
 pub fn create_thumbnails(dst: &Path) -> Result<(), VfdError> {
-    println!("Creating thumbnails...");
     fs::create_dir_all(&dst.join("squares"))?;
     fs::create_dir_all(&dst.join("thumbnails"))?;
 

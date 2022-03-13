@@ -4,7 +4,7 @@ use std::convert::Infallible;
 use std::net::SocketAddr;
 use std::path::Path;
 use std::thread;
-use std::time::Duration;
+use std::time::{Duration, Instant};
 
 #[macro_use]
 extern crate lazy_static;
@@ -27,6 +27,9 @@ use tower_http::services::ServeDir;
 use render_html::{create_thumbnails, render_html, sync_static_files};
 
 fn create_html_pages() {
+    let start = Instant::now();
+    print!("Building HTML pages... ");
+
     // This was an idea where I'd cache the templates between runs, so I could
     // detect whether the templates/source data had changed and skip re-reading
     // the unchanged data.  I haven't finished it yet, but it's still here as
@@ -37,20 +40,47 @@ fn create_html_pages() {
         Ok(_) => (),
         Err(err) => eprintln!("💥 Error rendering HTML: {}", err),
     };
+
+    let elapsed = start.elapsed();
+    if elapsed.as_secs() == 0 {
+        println!("done in {:?}ms", elapsed.as_millis());
+    } else {
+        println!("done in {:.1}s", elapsed.as_secs_f32());
+    }
 }
 
 fn create_static_files() {
+    let start = Instant::now();
+    print!("Syncing static files... ");
+
     match sync_static_files(Path::new("_html")) {
         Ok(_) => (),
         Err(err) => eprintln!("💥 Error syncing static files: {}", err),
     };
+
+    let elapsed = start.elapsed();
+    if elapsed.as_secs() == 0 {
+        println!("done in {:?}ms", elapsed.as_millis());
+    } else {
+        println!("done in {:.1}s", elapsed.as_secs_f32());
+    }
 }
 
 fn create_images() {
+    let start = Instant::now();
+    print!("Creating thumbnail images... ");
+
     match create_thumbnails(Path::new("_html")) {
         Ok(_) => (),
         Err(err) => eprintln!("💥 Error creating thumbnail images: {}", err),
     };
+
+    let elapsed = start.elapsed();
+    if elapsed.as_secs() == 0 {
+        println!("done in {:?}ms", elapsed.as_millis());
+    } else {
+        println!("done in {:.1}s", elapsed.as_secs_f32());
+    }
 }
 
 pub fn serve_subcommand() -> App<'static, 'static> {
@@ -117,7 +147,7 @@ async fn main() {
     );
 
     let addr = SocketAddr::from(([127, 0, 0, 1], 5959));
-    println!("serving site on http://localhost:5959");
+    println!("🚀 Serving site on http://localhost:5959");
     axum::Server::bind(&addr)
         .serve(app.into_make_service())
         .await
