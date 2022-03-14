@@ -47,7 +47,7 @@ It helps me manage the site:
 
 -   `vfd add_review` helps me create a new review.
     It asks a series of questions as interactive prompts in my terminal, including the title, author, and publication year of the book.
-    It uses this to populate the Markdown file in the `reviews` directory.
+    It uses my answers to populate the Markdown file in the `reviews` directory.
 
 -   `vfd serve` builds the site locally, and serves it on <http://localhost:5959>.
     When the source files change, it rebuilds the site.
@@ -70,6 +70,11 @@ The tool is very [situated] and unlikely to be useful to anybody else, but there
     It includes free text fields, selecting from a fixed list, and even a calendar picker:
 
     ![Screenshot of a terminal with an inline calendar picker.](inquire_screenshot.png)
+    
+    I customise some of the questions based on the answers; for example, it only asks "Who was the narrator?" if I read the book as an audiobook.
+
+*   I use [the **hotwatch** crate](https://crates.io/crates/hotwatch) to watch for changes in the source folder, and rebuild the HTML.
+    Because the source files are split across several directories, I listen to each directory individually and only rebuild the relevant parts of the site.
 
 *   Dr Drang's blog post [**ASCIIfying**](http://www.leancrew.com/all-this/2014/10/asciifying/) continues to be my go-to when I need to turn arbitrary text (book titles) into a URL-safe slug.
 
