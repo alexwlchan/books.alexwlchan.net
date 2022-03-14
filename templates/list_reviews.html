@@ -22,6 +22,8 @@
   {% for review_entry in reviews %}
     {% if review_entry|year != heading_year %}
 
+      <div class="divider"><img src="/static/book.svg"></div>
+
       {% set count = reviews|books_in_year(year = review_entry|year) %}
 
       {% if review_entry|year == this_year %}

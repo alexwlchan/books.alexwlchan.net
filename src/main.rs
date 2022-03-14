@@ -3,6 +3,7 @@
 use std::convert::Infallible;
 use std::net::SocketAddr;
 use std::path::Path;
+use std::process::Command;
 use std::thread;
 use std::time::{Duration, Instant};
 
@@ -88,6 +89,11 @@ pub fn serve_subcommand() -> App<'static, 'static> {
         .about("Render the HTML files for the site")
 }
 
+pub fn deploy_subcommand() -> App<'static, 'static> {
+    SubCommand::with_name("deploy")
+        .about("Deploy a new version of the site to Netlify")
+}
+
 #[tokio::main]
 async fn main() {
     const VERSION: &str = env!("CARGO_PKG_VERSION");
@@ -99,6 +105,7 @@ async fn main() {
             .about("Generates the HTML files for books.alexwlchan.net")
             .setting(AppSettings::SubcommandRequired)
             .subcommand(add_review::subcommand())
+            .subcommand(deploy_subcommand())
             .subcommand(serve_subcommand());
 
     let matches = app.get_matches();
@@ -107,49 +114,60 @@ async fn main() {
         add_review::add_review();
     }
 
-    // otherwise we're in serve or add_review, in either case start serving
-    // the site locally
+    // Whatever the command is, we always want to build a fresh copy of the
+    // site before doing anything else.
 
     create_html_pages();
     create_static_files();
     create_images();
 
-    tokio::task::spawn_blocking(move || {
-        let mut hotwatch = hotwatch::Hotwatch::new()
-            .expect("hotwatch failed to initialize!");
+    if matches.subcommand_name() == Some("add_review") || matches.subcommand_name() == Some("serve") {
+        tokio::task::spawn_blocking(move || {
+            let mut hotwatch = hotwatch::Hotwatch::new()
+                .expect("hotwatch failed to initialize!");
 
-        hotwatch
-            .watch("covers", |_| { create_images(); })
-            .expect("failed to watch covers folder!");
-        hotwatch
-            .watch("reviews", |_| { create_html_pages(); })
-            .expect("failed to watch reviews folder!");
-        hotwatch
-            .watch("static", |_| { create_static_files(); })
-            .expect("failed to watch static folder!");
-        hotwatch
-            .watch("templates", |_| { create_html_pages(); })
-            .expect("failed to watch templates folder!");
+            hotwatch
+                .watch("covers", |_| { create_images(); })
+                .expect("failed to watch covers folder!");
+            hotwatch
+                .watch("reviews", |_| { create_html_pages(); })
+                .expect("failed to watch reviews folder!");
+            hotwatch
+                .watch("static", |_| { create_static_files(); })
+                .expect("failed to watch static folder!");
+            hotwatch
+                .watch("templates", |_| { create_html_pages(); })
+                .expect("failed to watch templates folder!");
 
-        loop {
-            thread::sleep(Duration::from_secs(1));
+            loop {
+                thread::sleep(Duration::from_secs(1));
+            }
+        });
+
+        let app = Router::new().nest(
+            "/",
+            service::get(ServeDir::new("_html")).handle_error(|error: std::io::Error| {
+                Ok::<_, Infallible>((
+                    StatusCode::INTERNAL_SERVER_ERROR,
+                    format!("Unhandled internal error: {}", error),
+                ))
+            }),
+        );
+
+        let addr = SocketAddr::from(([127, 0, 0, 1], 5959));
+        println!("🚀 Serving site on http://localhost:5959");
+        axum::Server::bind(&addr)
+            .serve(app.into_make_service())
+            .await
+            .unwrap();
+    }
+
+    if matches.subcommand_name() == Some("deploy") {
+        let status = Command::new("netlify").args(vec!["deploy", "--prod"]).status().unwrap();
+
+        if !status.success() {
+            eprintln!("Could not deploy to Netlify!");
+            std::process::exit(2);
         }
-    });
-
-    let app = Router::new().nest(
-        "/",
-        service::get(ServeDir::new("_html")).handle_error(|error: std::io::Error| {
-            Ok::<_, Infallible>((
-                StatusCode::INTERNAL_SERVER_ERROR,
-                format!("Unhandled internal error: {}", error),
-            ))
-        }),
-    );
-
-    let addr = SocketAddr::from(([127, 0, 0, 1], 5959));
-    println!("🚀 Serving site on http://localhost:5959");
-    axum::Server::bind(&addr)
-        .serve(app.into_make_service())
-        .await
-        .unwrap();
+    }
 }

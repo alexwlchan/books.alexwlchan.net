@@ -3,7 +3,7 @@
 This is the source code for <https://books.alexwlchan.net>, a site I use to track the books I've read.
 This repo contains both the scripts that build the site, and the source data used by the scripts.
 
-![](books_screenshot.png)
+![A screenshot of the homepage, which has a brief introductory paragraph and a list of three recent books.](books_screenshot.png)
 
 ## How it works
 
