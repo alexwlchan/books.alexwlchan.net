@@ -11,7 +11,10 @@ pub fn markdown(s: &str) -> String {
 }
 
 pub fn smartypants(s: &str) -> String {
-    markdown(s).replace("<p>", "").replace("</p>", "").trim().to_string()
+    let md = markdown(s);
+
+    // remove the leading <p> and trailing </p> tags
+    md[3..md.len() - 5].to_string()
 }
 
 pub fn star_rating(rating: usize) -> String {
@@ -58,6 +61,12 @@ pub fn render_date(s: &str) -> String {
 #[cfg(test)]
 mod tests {
     use crate::text_helpers::*;
+
+    #[test]
+    fn test_smartypants() {
+        assert_eq!(smartypants("Hello world"), "Hello world");
+        assert_eq!(smartypants("Isn't this nice?"), "Isn’t this nice?");
+    }
 
     #[test]
     fn test_star_rating() {
