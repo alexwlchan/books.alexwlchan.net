@@ -234,6 +234,10 @@ footer a:hover {
 }
 
 @media screen and (max-width: 500px) {
+  .review_preview a {
+    grid-template-columns: auto;
+  }
+
   .review_preview img, .reading_inner img {
     max-width: 250px;
     max-height: 150px;
