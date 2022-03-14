@@ -7,6 +7,7 @@ use std::process::Command;
 use std::str;
 
 use chrono::Datelike;
+use html_minifier::HTMLMinifier;
 use tera::Tera;
 use walkdir::WalkDir;
 
@@ -56,6 +57,16 @@ pub fn sync_static_files(dst: &Path) -> io::Result<()> {
     fs_helpers::sync_files(Path::new("static"), &dst.join("static"))
 }
 
+fn write_html(p: &Path, html: String) -> Result<(), VfdError> {
+    let mut html_minifier = HTMLMinifier::new();
+    html_minifier.digest(&html)?;
+    let minified_html = html_minifier.get_html();
+
+    fs_helpers::write_file(p, minified_html.to_vec())?;
+
+    Ok(())
+}
+
 pub fn render_html(templates: &Tera, src: &Path, dst: &Path) -> Result<(), VfdError> {
     let mut written_paths: HashSet<PathBuf> = HashSet::new();
 
@@ -83,7 +94,7 @@ pub fn render_html(templates: &Tera, src: &Path, dst: &Path) -> Result<(), VfdEr
     let html = templates.render("list_reviews.html", &context)?;
 
     let out_path = dst.join("reviews/index.html");
-    fs_helpers::write_file(&out_path, html.into_bytes())?;
+    write_html(&out_path, html)?;
     written_paths.insert(out_path);
 
     // Write the homepage
@@ -94,7 +105,7 @@ pub fn render_html(templates: &Tera, src: &Path, dst: &Path) -> Result<(), VfdEr
     let html = templates.render("index.html", &context)?;
 
     let out_path = dst.join("index.html");
-    fs_helpers::write_file(&out_path, html.into_bytes())?;
+    write_html(&out_path, html)?;
     written_paths.insert(out_path);
 
     // Write individual HTML pages for each of the reviews.
@@ -116,7 +127,7 @@ pub fn render_html(templates: &Tera, src: &Path, dst: &Path) -> Result<(), VfdEr
 
         let html = templates.render("review.html", &context).unwrap();
 
-        fs_helpers::write_file(&out_path, html.into_bytes())?;
+        write_html(&out_path, html)?;
         written_paths.insert(out_path);
     }
 
