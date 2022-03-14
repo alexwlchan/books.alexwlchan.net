@@ -6,12 +6,13 @@ Each card links to a longer, more detailed review.
 
 ![A screenshot of the homepage, which has a brief introductory paragraph and a list of three recent books.](books_screenshot.png)
 
+This repo contains my reviews, the cover images, and the Rust tool that creates the site.
+
 
 
 ## How I store my reviews
 
-The `reviews` directory contains text files, one per book I've read.
-Each file has some metadata at the top, and Markdown-formatted text in the body.
+Individual reviews are stored as plaintext files in the `reviews` directory, one per book I've read.
 Here's an example:
 
 ```
@@ -32,9 +33,14 @@ review:
 This is a weird but delightful book.
 ```
 
-I have a CLI tool that helps me pre-populate this file, including downloading the cover image and extracting the tint colour.
+Each book also has a cover image in the `covers` directory, which is linked in the `book.cover.name` metadata field.
 
-The same CLI tool will turn these files into a set of HTML pages, which get deployed to [Netlify].
+I have a CLI tool that helps me create these two files.
+It asks me a series of questions about the book, then creates the review file, downloads the cover image, and extracts the tint colour.
+
+The same CLI tool will generate the site.
+It reads the Markdown files, renders them as HTML, and resizes the cover images so they're the right size to use on the site.
+These files then get deployed to [Netlify].
 
 [Netlify]: https://www.netlify.com/
 
@@ -45,7 +51,7 @@ The same CLI tool will turn these files into a set of HTML pages, which get depl
 This repo includes a CLI tool called "vfd", which stands for "Vivid Folio Deliberations".
 It's named after the [secret organisation of the same acronym][vfd] from the Lemony Snicket books.
 
-It helps me manage the site:
+It has three commands:
 
 -   `vfd add_review` helps me create a new review.
     It asks a series of questions as interactive prompts in my terminal, including the title, author, and publication year of the book.
@@ -57,6 +63,8 @@ It helps me manage the site:
 -   `vfd deploy` builds the HTML pages, and uploads them to Netlify.
 
 The tool is very [situated] and unlikely to be useful to anybody else, but there might be some ideas that you can use elsewhere.
+
+To find out how vfd works, read the comments [in the source code](./src/main.rs).
 
 [vfd]: https://snicket.fandom.com/wiki/Volunteer_Fire_Department
 [situated]: https://www.drmaciver.com/2018/11/situated-software/
@@ -72,11 +80,13 @@ The tool is very [situated] and unlikely to be useful to anybody else, but there
     It includes free text fields, selecting from a fixed list, and even a calendar picker:
 
     ![Screenshot of a terminal with an inline calendar picker.](inquire_screenshot.png)
-    
+
     I customise some of the questions based on the answers; for example, it only asks "Who was the narrator?" if I read the book as an audiobook.
 
 *   I use [the **hotwatch** crate](https://crates.io/crates/hotwatch) to watch for changes in the source folder, and rebuild the HTML.
     Because the source files are split across several directories, I listen to each directory individually and only rebuild the relevant parts of the site.
+
+    For example, if there's a change in the `covers` directory, I only need to re-run the image processing, and not rebuild the HTML files.
 
 *   Dr Drang's blog post [**ASCIIfying**](http://www.leancrew.com/all-this/2014/10/asciifying/) continues to be my go-to when I need to turn arbitrary text (book titles) into a URL-safe slug.
 

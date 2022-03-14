@@ -1,3 +1,24 @@
+/// This is a tool for generating the static files for my book tracker.
+///
+/// It needs four input directories:
+///
+///   - `reviews` contains Markdown files with YAML front matter, one for each
+///     book I've read.  The front matter should match the `Metadata` model
+///     in `models.rs`, and the Markdown is free text that will be used for
+///     the body of the review.
+///
+///   - `covers` contains cover images for each of the books.  These will be resized
+///     to the appropriate size (e.g. 480px high for thumbnails), to avoid sending
+///     unnecessarily large images to the user's browser.
+///
+///   - `static` contains files that should be copied unmodified, e.g. CSS styles.
+///
+///   - `templates` contains HTML templates for the site, which use the Tera template
+///     engine (similar to Jinja2 and Django).
+///
+/// The code is somewhat scrappy Rust and shouldn't be taken as an example of how
+/// to write Rust, but it works well enough.
+
 #![deny(warnings)]
 
 use std::convert::Infallible;

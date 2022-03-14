@@ -1,7 +1,8 @@
-// This file contains the logic for adding a new review.
-//
-// It asks me a series of questions that are used to populate the YAML
-// frontmatter of the Markdown file.
+/// This file helps me add a new review.
+///
+/// It asks a series of interactive questions that are used to populate the
+/// YAML front matter in a review file, and download a cover image to the
+/// right directory.
 
 use std::fs;
 use std::fs::OpenOptions;
