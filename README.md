@@ -40,7 +40,7 @@ The same CLI tool will turn these files into a set of HTML pages, which get depl
 
 ## How I manage my reviews (the VFD CLI tool)
 
-This repo includes a CLI tool called "vfd", which stands for "Various Folio Descriptions".
+This repo includes a CLI tool called "vfd", which stands for "Various Folio Deliberations".
 It's named after the [mysterious organisation of the same acronym][vfd] from the Lemony Snicket books.
 
 It helps me manage the site:
