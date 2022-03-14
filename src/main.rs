@@ -163,6 +163,7 @@ async fn main() {
     }
 
     if matches.subcommand_name() == Some("deploy") {
+        println!("Deploying to Netlify...");
         let status = Command::new("netlify").args(vec!["deploy", "--prod"]).status().unwrap();
 
         if !status.success() {

@@ -52,7 +52,6 @@ mod tests {
         assert!(is_url("https://example.net/"));
         assert!(is_url("https://example.net/picture.jpg"));
         assert!(is_url("https://example.net/picture.jpg?query=cat"));
-
     }
 
     #[test]
