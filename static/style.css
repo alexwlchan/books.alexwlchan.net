@@ -146,10 +146,6 @@ footer a:hover {
   margin-bottom: 1em;
 }
 
-.review_fave {
-  background: rgba(0, 255, 221, 0.2);
-}
-
 .review_preview a, .reading_inner {
   grid-template-columns: 135px auto;
   display: grid;
@@ -205,23 +201,6 @@ footer a:hover {
   margin: 0;
 }
 
-.nav .selected {
-  font-weight: bold;
-}
-
-.note {
-  margin-left:  1em;
-  margin-right: 1em;
-}
-
-.note p:first-child {
-  margin-top: 0;
-}
-
-.note p:last-child {
-  margin-bottom: 0.75em;
-}
-
 .divider {
   text-align: center;
   margin-top:    1.5em;
@@ -232,6 +211,7 @@ footer a:hover {
   width: 50px;
 }
 
+/* TODO: Do I still want this? */
 #jump_to {
   margin-bottom: -0.5em;
 }
@@ -259,10 +239,6 @@ footer a:hover {
     max-height: 150px;
     margin-top: 15px;
     margin-bottom: 10px;
-  }
-
-  .review_preview a, .reading_inner {
-    grid-template-columns: auto;
   }
 
   .book_thumbnail {

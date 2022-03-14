@@ -1,42 +1,49 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <!-- <p class="nav">
-    <a class="selected" href="/reviews">by year</a> /
-  </p> -->
-
   <h2>books i&rsquo;ve read</h2>
 
-  <p id="jump_to">jump to:
-    {% for year, _ in all_reviews %}
-    <a href="#books_by_year_{{ year }}">
-      {% if year %}{{ year }}{% else %}other times{% endif -%}
-    </a>
-    {% if not loop.last %} / {% endif %}
-    {% endfor %}
+  <p>jump to:
+  {% set linked_year = "" %}
+  {% for review_entry in reviews %}
+    {% if review_entry|year != linked_year %}
+      {% if review_entry|year == 'another time' %}
+        <a href="#another_time">another time</a>
+      {% else %}
+        <a href="#year_{{ review_entry|year }}">{{ review_entry|year }}</a> /
+      {% endif %}
+    {% endif %}
+    {% set_global linked_year = review_entry|year %}
+  {% endfor %}
   </p>
 
-  {% for year, reviews in all_reviews %}
-  <div class="divider"><img src="/static/book.svg"></div>
+  {% set heading_year = "" %}
 
-    {% if year %}
-      <div class="books_by_year" id="books_by_year_{{ year }}">
-        <h3>the {{ reviews|count_finished_books }} book{% if reviews|count_finished_books != 1 %}s{% endif %}
-          {% if year == this_year %}
-            i&rsquo;ve read so far
-          {% else %}
-            i read
-          {% endif %}
-          in {{ year }}
-        </h3>
+  {% for review_entry in reviews %}
+    {% if review_entry|year != heading_year %}
 
-        {% for review_entry in reviews %}
-          {% include "_review_entry.html" %}
-        {% endfor %}
-      </div>
-    {% else %}
-      {% include "list_old_reviews.html" %}
+      <div class="divider"><img src="/static/book.svg"></div>
+
+      {% set count = reviews|books_in_year(year = review_entry|year) %}
+
+      {% if review_entry|year == this_year %}
+        <h3 id="year_{{ review_entry|year }}">the {{ count }} book{% if count > 1 %}s{% endif %} i&rsquo;ve read so far in {{ review_entry|year }}</h3>
+      {% elif review_entry|year == 'another time' %}
+        <h3 id="another_time">books i read at another time</h3>
+
+        <details>
+          <summary style="margin-bottom: 1em">
+            this is an (incomplete) list of the books I read before I started keeping proper records.
+            the list is ordered by publication date, not reading date, and lacks a lot of detail.
+          </summary>
+
+      {% else %}
+        <h3 id="year_{{ review_entry|year }}">the {{ count }} book{% if count > 1 %}s{% endif %} i read in {{ review_entry|year }}</h3>
+      {% endif %}
+      {% set_global heading_year = review_entry|year %}
     {% endif %}
 
+    {% include "_review_entry.html" %}
   {% endfor %}
+  </details>
 {% endblock %}
