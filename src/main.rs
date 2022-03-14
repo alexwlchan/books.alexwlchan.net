@@ -1,3 +1,5 @@
+#![deny(warnings)]
+
 /// This is a tool for generating the static files for my book tracker.
 ///
 /// It needs four input directories:
@@ -18,8 +20,6 @@
 ///
 /// The code is somewhat scrappy Rust and shouldn't be taken as an example of how
 /// to write Rust, but it works well enough.
-
-#![deny(warnings)]
 
 use std::convert::Infallible;
 use std::fs;
