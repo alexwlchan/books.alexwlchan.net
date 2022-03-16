@@ -38,7 +38,8 @@ fn get_reviews(root: &Path) -> Result<Vec<models::Review>, VfdError> {
             };
 
             let text = parts[2].to_string();
-            let slug = entry.path()
+            let path = entry.path();
+            let slug = path
                 .file_name().unwrap()
                 .to_str().unwrap()
                 .replace(".md", "");
@@ -46,7 +47,7 @@ fn get_reviews(root: &Path) -> Result<Vec<models::Review>, VfdError> {
             let review = metadata.review;
             let book = metadata.book;
 
-            result.push(models::Review { book, review, slug, text });
+            result.push(models::Review { book, review, slug, text, path: path.to_owned() });
         }
     }
 
@@ -67,7 +68,15 @@ fn write_html(p: &Path, html: String) -> Result<(), VfdError> {
     Ok(())
 }
 
-pub fn render_html(templates: &Tera, src: &Path, dst: &Path) -> Result<(), VfdError> {
+/// This describes the two modes of rendering HTML: a full rebuild will rebuild
+/// everything, an incremental build will skip building pages that haven't changed.
+#[derive(Debug, PartialEq, Eq)]
+pub enum HtmlRenderMode {
+    Incremental,
+    Full,
+}
+
+pub fn render_html(templates: &Tera, src: &Path, dst: &Path, mode: HtmlRenderMode) -> Result<(), VfdError> {
     let mut written_paths: HashSet<PathBuf> = HashSet::new();
 
     // Write the "all reviews" page
@@ -115,19 +124,30 @@ pub fn render_html(templates: &Tera, src: &Path, dst: &Path) -> Result<(), VfdEr
 
         let out_path = out_dir.join("index.html");
 
-        let mut context = tera::Context::new();
+        // To speed up incremental rebuilds, we skip writing individual review
+        // pages if:
+        //
+        //    - the build mode is incremental, and
+        //    - the existing HTML file is newer than the source file
+        //
+        // If for some reason we can't get the modified time of one of the files,
+        // we assume we need to rebuild, to be on the safe side.
+        //
+        if mode == HtmlRenderMode::Full || rev.path.is_newer_than(&out_path).unwrap_or(true) {
+            let mut context = tera::Context::new();
 
-        context.insert("review", &rev.review);
-        context.insert("book", &rev.book);
-        context.insert("slug", &rev.slug);
-        context.insert("text", &rev.text);
+            context.insert("review", &rev.review);
+            context.insert("book", &rev.book);
+            context.insert("slug", &rev.slug);
+            context.insert("text", &rev.text);
 
-        context.insert("title", &rev.book.title);
-        context.insert("tint_colour", &rev.book.cover.tint_color);
+            context.insert("title", &rev.book.title);
+            context.insert("tint_colour", &rev.book.cover.tint_color);
 
-        let html = templates.render("review.html", &context).unwrap();
+            let html = templates.render("review.html", &context).unwrap();
+            write_html(&out_path, html)?;
+        }
 
-        write_html(&out_path, html)?;
         written_paths.insert(out_path);
     }
 

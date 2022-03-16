@@ -1,3 +1,4 @@
+use std::path::PathBuf;
 use serde::{Deserialize, Serialize};
 
 fn is_false(b: &bool) -> bool {
@@ -82,6 +83,7 @@ pub struct Review {
     pub review: ReviewMetadata,
     pub text: String,
     pub slug: String,
+    pub path: PathBuf,
 }
 
 pub fn year(rev: &Review) -> String {

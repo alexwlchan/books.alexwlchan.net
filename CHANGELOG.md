@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## v1.0.4 - 2022-03-16
+
+Internal refactoring that should speed up HTML generation when running `vfd serve`.
+
+In particular, this patch adds incremental compilation of the individual review pages.
+When I'm working locally and editing individual review files, it skips rebuilding the HTML page if the original review file hasn't change.
+This makes updates ~40% faster.
+
 ## v1.0.3 - 2022-03-14
 
 Make a small tweak to hopefully make HTML generation a bit faster.

@@ -47,9 +47,9 @@ use axum::{http::StatusCode, service, Router};
 use clap::{App, SubCommand, AppSettings};
 use tower_http::services::ServeDir;
 
-use render_html::{create_thumbnails, render_html, sync_static_files};
+use render_html::{create_thumbnails, render_html, sync_static_files, HtmlRenderMode};
 
-fn create_html_pages() {
+fn create_html_pages(mode: HtmlRenderMode) {
     let start = Instant::now();
     print!("Building HTML pages... ");
 
@@ -59,7 +59,7 @@ fn create_html_pages() {
     // an option.
     let cached_templates = templates::get_templates().unwrap();
 
-    match render_html(&cached_templates, Path::new("reviews"), Path::new("_html")) {
+    match render_html(&cached_templates, Path::new("reviews"), Path::new("_html"), mode) {
         Ok(_) => (),
         Err(err) => eprintln!("💥 Error rendering HTML: {}", err),
     };
@@ -139,7 +139,7 @@ async fn main() {
     // Whatever the command is, we always want to build a fresh copy of the
     // site before doing anything else.
 
-    create_html_pages();
+    create_html_pages(HtmlRenderMode::Full);
     create_static_files();
     create_images();
 
@@ -152,13 +152,13 @@ async fn main() {
                 .watch("covers", |_| { create_images(); })
                 .expect("failed to watch covers folder!");
             hotwatch
-                .watch("reviews", |_| { create_html_pages(); })
+                .watch("reviews", |_| { create_html_pages(HtmlRenderMode::Incremental); })
                 .expect("failed to watch reviews folder!");
             hotwatch
                 .watch("static", |_| { create_static_files(); })
                 .expect("failed to watch static folder!");
             hotwatch
-                .watch("templates", |_| { create_html_pages(); })
+                .watch("templates", |_| { create_html_pages(HtmlRenderMode::Full); })
                 .expect("failed to watch templates folder!");
 
             loop {
