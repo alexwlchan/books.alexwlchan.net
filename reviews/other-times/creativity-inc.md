@@ -9,7 +9,5 @@ book:
   isbn13: '9780593070093'
   publication_year: 2014
   title: Creativity, Inc.
-review:
-  date_read: ''
   format: hardback
 ---

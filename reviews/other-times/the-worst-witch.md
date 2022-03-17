@@ -10,6 +10,4 @@ book:
   publication_year: 1991
   series: 'The Worst Witch #1'
   title: The Worst Witch
-review:
-  date_read: ''
 ---

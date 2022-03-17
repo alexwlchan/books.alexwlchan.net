@@ -9,6 +9,4 @@ book:
   isbn13: '9780571253425'
   publication_year: 2010
   title: How Many Friends Does One Person Need?
-review:
-  date_read: ''
 ---
