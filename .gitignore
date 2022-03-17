@@ -1,7 +1,4 @@
 _html
 _shelves
 
-*.pyc
-.cache
-
 target
