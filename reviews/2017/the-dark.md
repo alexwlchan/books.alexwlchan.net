@@ -7,7 +7,7 @@ book:
     tint_color: '#000000'
   isbn10: 0316187488
   isbn13: '9780316187480'
-  publication_year: '2013'
+  publication_year: 2013
   title: The Dark
 review:
   date_read: '2017-01-03'

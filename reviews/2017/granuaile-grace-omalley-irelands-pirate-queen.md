@@ -7,7 +7,7 @@ book:
     tint_color: '#60616b'
   isbn10: 0717145824
   isbn13: '9780717145829'
-  publication_year: '2009'
+  publication_year: 2009
   title: 'Granuaile: Grace O''Malley - Ireland''s Pirate Queen'
 review:
   date_read: '2017-04-17'

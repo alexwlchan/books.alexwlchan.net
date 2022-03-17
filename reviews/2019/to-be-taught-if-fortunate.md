@@ -7,7 +7,7 @@ book:
     tint_color: '#c8481a'
   isbn10: '1473697166'
   isbn13: '9781473697164'
-  publication_year: '2019'
+  publication_year: 2019
   title: To Be Taught, If Fortunate
 review:
   date_read: '2019-09-28'

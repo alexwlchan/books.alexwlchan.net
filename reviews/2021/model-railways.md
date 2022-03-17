@@ -6,7 +6,7 @@ book:
     size: 37773
     tint_color: '#bf3016'
   isbn13: 0000000021296
-  publication_year: '1991'
+  publication_year: 1991
   title: Model Railways
 review:
   date_read: 2021-11-10

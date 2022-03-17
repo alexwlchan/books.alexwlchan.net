@@ -6,7 +6,7 @@ book:
     size: 12293
     tint_color: '#fe5b29'
   narrator: Wil Wheaton
-  publication_year: '2011'
+  publication_year: 2011
   title: The Martian
 review:
   date_read: 2021-08-27

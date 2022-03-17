@@ -7,7 +7,7 @@ book:
     tint_color: '#854f26'
   isbn10: '1447208145'
   isbn13: '9781447208143'
-  publication_year: '2012'
+  publication_year: 2012
   title: Fire Season
 review:
   date_read: '2017-01-22'

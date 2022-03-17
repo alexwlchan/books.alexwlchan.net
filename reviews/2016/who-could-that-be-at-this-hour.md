@@ -7,7 +7,7 @@ book:
     tint_color: '#bb4f1c'
   isbn10: 0316123080
   isbn13: '9780316123082'
-  publication_year: '2012'
+  publication_year: 2012
   series: 'All the Wrong Questions, #1'
   title: “Who Could That Be at This Hour?”
 review:

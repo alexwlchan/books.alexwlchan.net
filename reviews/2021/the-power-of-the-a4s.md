@@ -5,7 +5,7 @@ book:
     name: the-power-of-the-a4s.jpg
     size: 112001
     tint_color: "#2e3167"
-  publication_year: "1978"
+  publication_year: 1978
   title: The Power of the A4s
   isbn10: "0860930327"
   isbn13: "9780860930327"

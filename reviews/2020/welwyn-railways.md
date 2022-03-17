@@ -7,7 +7,7 @@ book:
     tint_color: '#736954'
   isbn10: 0948555041
   isbn13: '9780948555046'
-  publication_year: '1986'
+  publication_year: 1986
   title: Welwyn's Railways
 review:
   date_read: 2020-12-18

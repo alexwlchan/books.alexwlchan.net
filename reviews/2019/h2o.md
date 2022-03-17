@@ -6,7 +6,7 @@ book:
     size: 11804
     tint_color: '#2b8093'
   isbn13: 978-0-7538-1092-7
-  publication_year: '2000'
+  publication_year: 2000
   title: H2O
 review:
   date_read: '2019-12-26'

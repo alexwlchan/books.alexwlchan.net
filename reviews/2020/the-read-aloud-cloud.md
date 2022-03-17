@@ -6,7 +6,7 @@ book:
     size: 168769
     tint_color: '#5d686d'
   isbn13: '9781119677628'
-  publication_year: '2020'
+  publication_year: 2020
   title: The Read Aloud Cloud
 review:
   date_read: 2020-12-26

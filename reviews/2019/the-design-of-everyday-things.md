@@ -7,7 +7,7 @@ book:
     tint_color: '#456b5c'
   isbn10: '0262525674'
   isbn13: '9780262525671'
-  publication_year: '1988'
+  publication_year: 1988
   title: The Design of Everyday Things
 review:
   date_read: '2019-11-07'

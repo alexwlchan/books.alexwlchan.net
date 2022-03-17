@@ -7,7 +7,7 @@ book:
     tint_color: '#72577c'
   isbn10: 0439978408
   isbn13: '9780439978408'
-  publication_year: '2003'
+  publication_year: 2003
   title: Montmorency
 review:
   date_read: 2020-08-16

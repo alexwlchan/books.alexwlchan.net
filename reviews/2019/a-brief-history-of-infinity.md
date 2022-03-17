@@ -7,7 +7,7 @@ book:
     tint_color: '#72695f'
   isbn10: '1841196509'
   isbn13: '9781841196503'
-  publication_year: '2003'
+  publication_year: 2003
   title: A Brief History of Infinity
 review:
   date_read: '2019-08-11'

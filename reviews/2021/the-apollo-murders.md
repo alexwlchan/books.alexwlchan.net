@@ -6,7 +6,7 @@ book:
     size: 49761
     tint_color: '#1e1e1e'
   isbn13: '9781529417456'
-  publication_year: '2021'
+  publication_year: 2021
   title: The Apollo Murders
 review:
   date_read: 2021-11-18

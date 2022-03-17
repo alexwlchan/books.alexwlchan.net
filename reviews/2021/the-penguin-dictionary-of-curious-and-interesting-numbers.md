@@ -7,7 +7,7 @@ book:
     tint_color: '#7f6634'
   isbn10: 0140261494
   isbn13: '9780140261493'
-  publication_year: '1986'
+  publication_year: 1986
   title: The Penguin Dictionary of Curious and Interesting Numbers
 review:
   date_read: 2021-05-01

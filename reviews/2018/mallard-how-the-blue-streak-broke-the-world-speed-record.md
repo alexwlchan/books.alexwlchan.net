@@ -7,7 +7,7 @@ book:
     tint_color: '#586c79'
   isbn10: '1854109391'
   isbn13: '9781854109392'
-  publication_year: '2003'
+  publication_year: 2003
   title: 'Mallard: How the Blue Streak Broke the World Speed Record'
 review:
   date_read: '2018-02-11'

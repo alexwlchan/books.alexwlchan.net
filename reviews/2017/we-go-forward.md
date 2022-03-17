@@ -6,7 +6,7 @@ book:
     size: 4979
     tint_color: '#4d7790'
   isbn13: '9781620047255'
-  publication_year: '2016'
+  publication_year: 2016
   title: We Go Forward
 review:
   date_read: '2017-04-05'

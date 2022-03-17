@@ -6,7 +6,7 @@ book:
     size: 9125
     tint_color: '#3c4387'
   isbn13: '9781509870585'
-  publication_year: '2009'
+  publication_year: 2009
   title: The City & the City
 plan:
   date_added: '2020-01-25'

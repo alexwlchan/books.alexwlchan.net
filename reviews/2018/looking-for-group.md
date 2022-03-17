@@ -7,7 +7,7 @@ book:
     tint_color: '#776038'
   isbn10: '1626494460'
   isbn13: '9781626494466'
-  publication_year: '2016'
+  publication_year: 2016
   title: Looking for Group
 review:
   date_read: '2018-05-21'

@@ -7,7 +7,7 @@ book:
     tint_color: '#764145'
   isbn10: 0393306763
   isbn13: '9780393306767'
-  publication_year: '1990'
+  publication_year: 1990
   title: Why Buildings Stand Up
 review:
   date_read: '2019-10-20'

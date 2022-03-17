@@ -6,7 +6,7 @@ book:
     name: the-haunting-of-tram-car-015.jpg
     size: 97462
     tint_color: "#975b29"
-  publication_year: "2019"
+  publication_year: 2019
   title: The Haunting of Tram Car 015
 review:
   date_read: 2022-02-24

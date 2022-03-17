@@ -5,7 +5,7 @@ book:
     name: atomic.jpg
     size: 11826
     tint_color: '#4f688e'
-  publication_year: '2015'
+  publication_year: 2015
   title: Atomic
 plan:
   date_added: '2020-01-01'

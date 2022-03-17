@@ -5,7 +5,7 @@ book:
     name: homers-the-iliad-and-the-odyssey.jpg
     size: 210618
     tint_color: "#587c1d"
-  publication_year: "2007"
+  publication_year: 2007
   title: "Homer's The Iliad and the Odyssey"
   isbn13: "9781843544029"
 review:

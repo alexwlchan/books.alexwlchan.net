@@ -6,7 +6,7 @@ book:
     size: 7926
     tint_color: '#bb0a0a'
   isbn13: '9780198203278'
-  publication_year: '1993'
+  publication_year: 1993
   title: 'Codebreakers: The inside story of Bletchley Park'
 review:
   date_read: 2020-09-15

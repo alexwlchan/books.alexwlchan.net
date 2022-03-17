@@ -6,7 +6,7 @@ book:
     size: 48898
     tint_color: '#0ba867'
   narrator: Kate Rudd
-  publication_year: '2020'
+  publication_year: 2020
   series: 'Truly Devious #3'
   title: The Hand on the Wall
 review:

@@ -7,7 +7,7 @@ book:
     tint_color: '#b12b35'
   isbn10: 0297860992
   isbn13: '9780297860990'
-  publication_year: '2011'
+  publication_year: 2011
   title: The Art of Betrayal
 review:
   date_read: '2019-11-14'

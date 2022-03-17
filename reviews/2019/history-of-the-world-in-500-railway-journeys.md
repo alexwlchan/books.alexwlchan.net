@@ -6,7 +6,7 @@ book:
     size: 14702
     tint_color: '#6e4d31'
   isbn13: '9781781316788'
-  publication_year: '2017'
+  publication_year: 2017
   title: History of the World in 500 Railway Journeys
 review:
   date_read: '2019-11-23'

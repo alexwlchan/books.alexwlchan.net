@@ -7,7 +7,7 @@ book:
     name: the-distance-between-me-and-the-cherry-tree.jpg
     size: 79956
     tint_color: "#132c44"
-  publication_year: "2018"
+  publication_year: 2018
   title: The Distance Between Me and the Cherry Tree
   isbn13: 9781489483829
 review:

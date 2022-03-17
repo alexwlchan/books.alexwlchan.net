@@ -6,7 +6,7 @@ book:
     size: 23713
     tint_color: '#845657'
   narrator: Bahni Turpin
-  publication_year: '2016'
+  publication_year: 2016
   title: The Underground Railroad
 review:
   date_read: 2021-06-21

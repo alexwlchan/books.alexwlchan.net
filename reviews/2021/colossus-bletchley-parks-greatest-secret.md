@@ -5,7 +5,7 @@ book:
     name: colossus-bletchley-parks-greatest-secret.jpg
     size: 14621
     tint_color: '#cf2c4e'
-  publication_year: '2007'
+  publication_year: 2007
   title: 'Colossus: Bletchley Park''s Greatest Secret'
 plan:
   date_added: '2019-08-13'

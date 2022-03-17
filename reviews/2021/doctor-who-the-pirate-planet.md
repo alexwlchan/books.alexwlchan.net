@@ -6,7 +6,7 @@ book:
     size: 35676
     tint_color: '#1f1927'
   narrator: Jon Culshaw
-  publication_year: '2017'
+  publication_year: 2017
   title: 'Doctor Who: The Pirate Planet'
 review:
   date_read: 2021-08-03

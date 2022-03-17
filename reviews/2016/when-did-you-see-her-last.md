@@ -7,7 +7,7 @@ book:
     tint_color: '#8b6198'
   isbn10: '0316123056'
   isbn13: '9780316123051'
-  publication_year: '2013'
+  publication_year: 2013
   series: 'All the Wrong Questions, #2'
   title: “When Did You See Her Last?”
 review:

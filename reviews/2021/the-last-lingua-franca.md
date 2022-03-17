@@ -6,7 +6,7 @@ book:
     size: 19915
     tint_color: '#787266'
   isbn13: '9781846142154'
-  publication_year: '2010'
+  publication_year: 2010
   title: The Last Lingua Franca
 review:
   date_read: 2021-04-25

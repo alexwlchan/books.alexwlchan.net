@@ -7,7 +7,7 @@ book:
     tint_color: '#767078'
   isbn10: '1419723480'
   isbn13: '9781419723483'
-  publication_year: '2017'
+  publication_year: 2017
   title: Seven Ways We Lie
 review:
   date_read: '2018-01-04'

@@ -7,7 +7,7 @@ book:
     tint_color: '#667794'
   isbn10: '1408316285'
   isbn13: '9781408316283'
-  publication_year: '2013'
+  publication_year: 2013
   title: 'Quicksilver (Ultraviolet, #2)'
 plan:
   date_added: '2016-10-23'

@@ -7,7 +7,7 @@ book:
     tint_color: '#6b637e'
   isbn10: '1408312751'
   isbn13: '9781408312759'
-  publication_year: '2011'
+  publication_year: 2011
   title: 'Ultraviolet (Ultraviolet, #1)'
 plan:
   date_added: '2016-10-23'

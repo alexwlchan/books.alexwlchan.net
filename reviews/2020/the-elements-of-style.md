@@ -6,7 +6,7 @@ book:
     size: 9564
     tint_color: '#497c90'
   isbn13: '9780205309023'
-  publication_year: '1918'
+  publication_year: 1918
   title: The Elements of Style
 plan:
   date_added: '2019-08-12'

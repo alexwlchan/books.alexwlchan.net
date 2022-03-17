@@ -5,7 +5,7 @@ book:
     name: the-indisputable-existence-of-santa-claus.jpg
     size: 7802
     tint_color: '#010101'
-  publication_year: null
+  publication_year: 2016
   title: The Indisputable Existence of Santa Claus
 review:
   date_read: '2017-01-03'

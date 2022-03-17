@@ -6,7 +6,7 @@ book:
     size: 103272
     tint_color: '#796787'
   isbn13: '9780008306861'
-  publication_year: '2020'
+  publication_year: 2020
   title: Notes from Small Planets
 review:
   date_read: 2020-12-16

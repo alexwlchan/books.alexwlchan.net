@@ -7,7 +7,7 @@ book:
     tint_color: '#ce1125'
   isbn10: 0553815229
   isbn13: '9780553815221'
-  publication_year: '2003'
+  publication_year: 2003
   title: '1421: The Year China Discovered The World'
 review:
   date_read: '2019-03-24'

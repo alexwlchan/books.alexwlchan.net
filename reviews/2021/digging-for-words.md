@@ -7,7 +7,7 @@ book:
     tint_color: '#617684'
   illustrator: Paola Escobar
   isbn13: '9781984892638'
-  publication_year: '2020'
+  publication_year: 2020
   title: Digging for Words
 review:
   date_read: 2021-07-08

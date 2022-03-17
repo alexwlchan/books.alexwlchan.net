@@ -6,7 +6,7 @@ book:
     size: 7686
     tint_color: '#19202a'
   isbn13: 978-1-4736-8035-7
-  publication_year: '2019'
+  publication_year: 2019
   title: How To
 review:
   date_read: '2019-12-27'

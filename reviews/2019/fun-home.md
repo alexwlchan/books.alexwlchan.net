@@ -7,7 +7,7 @@ book:
     tint_color: '#457569'
   isbn10: 0224080512
   isbn13: '9780224080514'
-  publication_year: '2006'
+  publication_year: 2006
   title: Fun Home
 review:
   date_read: '2019-12-02'

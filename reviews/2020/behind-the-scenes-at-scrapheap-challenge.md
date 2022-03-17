@@ -7,7 +7,7 @@ book:
     tint_color: '#424f83'
   isbn10: 0752219995
   isbn13: '9780752219998'
-  publication_year: '2001'
+  publication_year: 2001
   title: Behind the Scenes at Scrapheap Challenge
 review:
   date_read: 2020-07-30

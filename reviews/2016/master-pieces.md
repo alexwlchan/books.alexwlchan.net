@@ -7,7 +7,7 @@ book:
     tint_color: '#557664'
   isbn10: '1840921536'
   isbn13: '9781840921533'
-  publication_year: '2000'
+  publication_year: 2000
   title: Master Pieces
 review:
   date_read: '2016-12-26'

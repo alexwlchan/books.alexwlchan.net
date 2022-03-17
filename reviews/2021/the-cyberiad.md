@@ -6,7 +6,7 @@ book:
     size: 87822
     tint_color: '#805385'
   isbn13: '9780241467992'
-  publication_year: '1965'
+  publication_year: 1965
   title: The Cyberiad
 review:
   date_read: 2021-03-15

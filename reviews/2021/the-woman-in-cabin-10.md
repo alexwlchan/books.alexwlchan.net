@@ -6,7 +6,7 @@ book:
     size: 21476
     tint_color: '#12555a'
   narrator: Imogen Church
-  publication_year: '2016'
+  publication_year: 2016
   title: The Woman in Cabin 10
 review:
   date_read: 2021-06-27

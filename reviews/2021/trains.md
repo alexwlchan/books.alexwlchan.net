@@ -6,7 +6,7 @@ book:
     name: trains.jpg
     size: 48552
     tint_color: "#b82b1d"
-  publication_year: "1974"
+  publication_year: 1974
   title: Trains
   series: Ladybird Books
   isbn10: "0721403743"

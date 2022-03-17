@@ -7,7 +7,7 @@ book:
     tint_color: '#69686f'
   isbn10: '1442200995'
   isbn13: '9781442200999'
-  publication_year: '2012'
+  publication_year: 2012
   title: Understanding Asexuality
 review:
   date_read: '2017-03-31'

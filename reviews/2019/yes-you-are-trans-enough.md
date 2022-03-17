@@ -7,7 +7,7 @@ book:
     tint_color: '#427590'
   isbn10: '1785923153'
   isbn13: '9781785923159'
-  publication_year: '2018'
+  publication_year: 2018
   title: Yes, You Are Trans Enough
 review:
   date_read: '2019-01-13'

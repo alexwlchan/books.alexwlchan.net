@@ -7,7 +7,7 @@ book:
     tint_color: '#c31413'
   isbn10: '1473621445'
   isbn13: '9781473621442'
-  publication_year: '2016'
+  publication_year: 2016
   series: 'Wayfarers, #2'
   title: A Closed and Common Orbit
 review:

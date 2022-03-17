@@ -7,7 +7,7 @@ book:
     tint_color: '#7f5ba0'
   isbn10: 0316123048
   isbn13: '9780316123044'
-  publication_year: '2015'
+  publication_year: 2015
   series: 'All the Wrong Questions, #4'
   title: “Why Is This Night Different from All Other Nights?”
 review:

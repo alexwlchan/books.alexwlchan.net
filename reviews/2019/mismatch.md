@@ -7,7 +7,7 @@ book:
     tint_color: '#6f6f6f'
   isbn10: 0262038889
   isbn13: '9780262038881'
-  publication_year: '2018'
+  publication_year: 2018
   title: Mismatch
 review:
   date_read: '2019-01-16'

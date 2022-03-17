@@ -6,7 +6,7 @@ book:
     size: 29696
     tint_color: '#5e62a7'
   narrator: Stephen Briggs
-  publication_year: '2014'
+  publication_year: 2014
   title: Going Postal
 plan:
   date_added: '2020-01-08'

@@ -7,7 +7,7 @@ book:
     tint_color: '#965535'
   isbn10: '1871980186'
   isbn13: '9781871980189'
-  publication_year: null
+  publication_year: 1993
   title: 'Volk''s Railways, Brighton: An Illustrated History'
 review:
   date_read: '2019-07-27'

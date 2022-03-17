@@ -5,7 +5,7 @@ book:
     size: 86514
     tint_color: '#945b9a'
   editor: Alice Wong
-  publication_year: '2020'
+  publication_year: 2020
   title: Disability Visibility
 review:
   date_read: 2021-03-05

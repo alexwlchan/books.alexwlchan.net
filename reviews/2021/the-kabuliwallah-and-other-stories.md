@@ -5,7 +5,7 @@ book:
     name: the-kabuliwallah-and-other-stories.jpg
     size: 42638
     tint_color: '#c01b1b'
-  publication_year: '2020'
+  publication_year: 2020
   title: The Kabuliwallah and Other Stories
 review:
   date_read: 2021-07-05

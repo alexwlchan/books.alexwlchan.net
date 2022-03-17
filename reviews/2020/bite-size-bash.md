@@ -5,7 +5,7 @@ book:
     name: bite-size-bash.jpg
     size: 51146
     tint_color: '#856155'
-  publication_year: '2020'
+  publication_year: 2020
   title: Bite Size Bash
 review:
   date_read: 2020-12-23

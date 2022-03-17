@@ -6,7 +6,7 @@ book:
     size: 40482
     tint_color: '#8f560e'
   isbn13: '9781447213673'
-  publication_year: '2012'
+  publication_year: 2012
   title: Railsea
 review:
   date_read: 2021-04-28

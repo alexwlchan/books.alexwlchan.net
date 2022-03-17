@@ -5,7 +5,7 @@ book:
     name: historic-railway-disasters.jpg
     size: 1890225
     tint_color: "#2b6183"
-  publication_year: "1983"
+  publication_year: 1983
   title: Historic Railway Disasters
   isbn10: "0711012059"
 review:

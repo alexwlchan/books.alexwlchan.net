@@ -5,7 +5,7 @@ book:
     name: the-otters-tale.jpg
     size: 48156
     tint_color: "#164060"
-  publication_year: "2017"
+  publication_year: 2017
   title: "The Otters' Tale"
   isbn13: "9780008189747"
 review:

@@ -7,7 +7,7 @@ book:
     tint_color: '#896229'
   isbn10: '1847083153'
   isbn13: '9781847083159'
-  publication_year: '2011'
+  publication_year: 2011
   title: The Butterfly Isles
 review:
   date_read: '2018-04-07'

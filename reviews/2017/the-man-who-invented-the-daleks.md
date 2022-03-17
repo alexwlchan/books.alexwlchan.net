@@ -7,7 +7,7 @@ book:
     tint_color: '#804034'
   isbn10: '1845136098'
   isbn13: '9781845136093'
-  publication_year: '2011'
+  publication_year: 2011
   title: The Man who Invented the Daleks
 review:
   date_read: '2017-02-26'

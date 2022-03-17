@@ -7,7 +7,7 @@ book:
     tint_color: '#506840'
   isbn10: 187312001X
   isbn13: '9781873120019'
-  publication_year: '1991'
+  publication_year: 1991
   title: Manx Fairy Tales
 review:
   date_read: 2017-08

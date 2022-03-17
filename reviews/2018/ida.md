@@ -7,7 +7,7 @@ book:
     tint_color: '#307e8b'
   isbn10: '1760404381'
   isbn13: '9781760404383'
-  publication_year: '2017'
+  publication_year: 2017
   title: Ida
 review:
   date_read: '2018-02-16'

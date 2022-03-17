@@ -6,7 +6,7 @@ book:
     size: 6995
     tint_color: '#715e36'
   isbn10: 0140009930
-  publication_year: '1951'
+  publication_year: 1951
   title: The Day of the Triffids
 review:
   date_read: 2020-02-07

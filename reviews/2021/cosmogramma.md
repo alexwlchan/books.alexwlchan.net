@@ -5,7 +5,7 @@ book:
     name: cosmogramma.jpg
     size: 936468
     tint_color: '#c75027'
-  publication_year: '2021'
+  publication_year: 2021
   title: Cosmogramma
   narrator: Neil Reidman and Brenda Iyalla
 review:

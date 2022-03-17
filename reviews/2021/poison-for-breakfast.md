@@ -5,7 +5,7 @@ book:
     name: poison-for-breakfast.png
     size: 287192
     tint_color: '#bf3625'
-  publication_year: '2021'
+  publication_year: 2021
   title: Poison for Breakfast
 review:
   date_read: 2021-10-28
