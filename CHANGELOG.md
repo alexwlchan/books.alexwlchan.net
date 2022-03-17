@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.1.0 - 2022-03-17
+
+Store the publication year as a number, not a string.
+
+This should prevent `null` or other non-years sneaking through as a publication year in the rendered version of the site.
+
 ## v1.0.4 - 2022-03-16
 
 Internal refactoring that should speed up HTML generation when running `vfd serve`.
