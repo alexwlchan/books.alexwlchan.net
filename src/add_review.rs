@@ -73,7 +73,7 @@ pub fn get_url_value(question: &str) -> Url {
     Url::parse(&response).unwrap()
 }
 
-fn get_year_value(question: &str) -> String {
+fn get_year_value(question: &str) -> u16 {
     let year_regex = Regex::new(r"^[0-9]{4}$").unwrap();
 
     let validator: StringValidator = &|input| if !year_regex.is_match(input) {
@@ -82,10 +82,14 @@ fn get_year_value(question: &str) -> String {
         Ok(())
     };
 
-    Text::new(question)
+    let answer = Text::new(question)
         .with_validator(validator)
         .prompt()
-        .unwrap()
+        .unwrap();
+
+    // I know this .unwrap() is safe because the regex is ensuring that
+    // the user enters a 4-digit numeric value.
+    answer.parse::<u16>().unwrap()
 }
 
 #[derive(Serialize)]

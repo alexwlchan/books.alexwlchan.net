@@ -38,8 +38,11 @@ pub struct Book {
     pub illustrator: Option<String>,
 
     pub cover: Cover,
-    pub publication_year: String,
+
     pub title: String,
+
+    // This has to represent 4-digit years
+    pub publication_year: u16,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     pub series: Option<String>,
