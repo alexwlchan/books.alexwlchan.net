@@ -6,7 +6,7 @@ book:
     size: 21455
     tint_color: '#955594'
   isbn13: 978-1-78352-470-9
-  publication_year: '2018'
+  publication_year: 2018
   title: Trans Britain
 review:
   date_read: '2020-01-10'

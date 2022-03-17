@@ -6,7 +6,7 @@ book:
     size: 46150
     tint_color: '#345f76'
   narrator: Robin Miles
-  publication_year: '2019'
+  publication_year: 2019
   title: The Vela (season 1)
 review:
   date_read: 2021-07-18

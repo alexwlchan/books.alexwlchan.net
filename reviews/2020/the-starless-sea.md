@@ -5,7 +5,7 @@ book:
     name: the-starless-sea.jpg
     size: 171084
     tint_color: '#106986'
-  publication_year: '2019'
+  publication_year: 2019
   title: The Starless Sea
 plan:
   date_added: 2020-02-09

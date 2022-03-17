@@ -6,7 +6,7 @@ book:
     size: 6908
     tint_color: '#752d1e'
   isbn13: '9780765397522'
-  publication_year: '2017'
+  publication_year: 2017
   title: 'All Systems Red (The Murderbot Diaries, #1)'
 review:
   date_read: 2020-05-04

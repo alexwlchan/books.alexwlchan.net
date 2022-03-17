@@ -6,7 +6,7 @@ book:
     size: 45933
     tint_color: '#0dc59a'
   isbn13: '9780224101288'
-  publication_year: '2020'
+  publication_year: 2020
   title: Solutions and Other Problems
 review:
   date_read: 2021-03-23

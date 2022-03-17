@@ -6,7 +6,7 @@ book:
     size: 21219
     tint_color: '#c14d4b'
   isbn13: '9781845137632'
-  publication_year: '2012'
+  publication_year: 2012
   title: The Secret Listeners
 review:
   date_read: '2017-11-16'

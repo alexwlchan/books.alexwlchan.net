@@ -7,7 +7,7 @@ book:
     tint_color: '#915e5b'
   isbn10: '9602264888'
   isbn13: '9789602264881'
-  publication_year: '1994'
+  publication_year: 1994
   title: A Layman's Guide to the Greek Gods
 review:
   date_read: '2019-09-07'

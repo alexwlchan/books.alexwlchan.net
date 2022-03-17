@@ -7,7 +7,7 @@ book:
     tint_color: '#5b6d7f'
   isbn10: '1849087180'
   isbn13: '9781849087186'
-  publication_year: '2012'
+  publication_year: 2012
   title: 'Forgotten Sacrifice: The Arctic Convoys of World War II'
 review:
   date_read: '2017-02-13'

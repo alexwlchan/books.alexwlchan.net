@@ -6,7 +6,7 @@ book:
     size: 38881
     tint_color: '#547290'
   isbn13: '9780500513743'
-  publication_year: '2007'
+  publication_year: 2007
   title: How to Fly a Plane
 review:
   date_read: 2021-05-15

@@ -7,7 +7,7 @@ book:
     tint_color: '#1f5b95'
   isbn10: 0563486074
   isbn13: '9780563486077'
-  publication_year: '2003'
+  publication_year: 2003
   title: 'Doctor Who: Timeless'
 review:
   date_read: '2017-04-11'

@@ -7,7 +7,7 @@ book:
     tint_color: '#9d4b2b'
   isbn10: '1781251320'
   isbn13: '9781781251324'
-  publication_year: '2013'
+  publication_year: 2013
   title: The Riddle of the Labyrinth
 review:
   date_read: '2016-10-16'

@@ -6,7 +6,7 @@ book:
     size: 45438
     tint_color: '#914690'
   narrator: Elisabeth Hopper
-  publication_year: '2020'
+  publication_year: 2020
   title: Loveless
 review:
   date_read: 2021-06-14

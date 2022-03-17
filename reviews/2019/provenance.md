@@ -7,7 +7,7 @@ book:
     tint_color: '#ab2b33'
   isbn10: 0356506983
   isbn13: '9780356506982'
-  publication_year: '2018'
+  publication_year: 2018
   title: Provenance
 review:
   date_read: '2019-10-12'

@@ -6,7 +6,7 @@ book:
     size: 47196
     tint_color: '#393977'
   narrator: Kate Rudd
-  publication_year: '2018'
+  publication_year: 2018
   series: 'Truly Devious #1'
   title: Truly Devious
 review:

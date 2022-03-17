@@ -6,7 +6,7 @@ book:
     size: 49424
     tint_color: '#936f4a'
   isbn13: '9781786223937'
-  publication_year: '2021'
+  publication_year: 2021
   title: The Backwater Sermons
 review:
   date_read: 2021-10-02

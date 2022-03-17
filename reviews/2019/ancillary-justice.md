@@ -7,7 +7,7 @@ book:
     tint_color: '#b7162d'
   isbn10: 031624662X
   isbn13: '9780316246620'
-  publication_year: '2013'
+  publication_year: 2013
   series: 'Imperial Radch #1'
   title: Ancillary Justice
 review:

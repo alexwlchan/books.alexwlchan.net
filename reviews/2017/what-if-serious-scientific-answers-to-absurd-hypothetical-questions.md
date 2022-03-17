@@ -7,7 +7,7 @@ book:
     tint_color: '#ad2f33'
   isbn10: 0544272994
   isbn13: '9780544272996'
-  publication_year: '2014'
+  publication_year: 2014
   title: What If? Serious Scientific Answers to Absurd Hypothetical Questions
 review:
   date_read: '2017-07-15'

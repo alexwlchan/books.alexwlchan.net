@@ -7,7 +7,7 @@ book:
     tint_color: '#5f717a'
   isbn10: 0340937882
   isbn13: '9780340937884'
-  publication_year: '2008'
+  publication_year: 2008
   title: 'The Wrong Kind of Snow: How the Weather Made Britain'
 review:
   date_read: '2017-12-31'

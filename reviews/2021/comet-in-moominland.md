@@ -6,7 +6,7 @@ book:
     size: 54777
     tint_color: '#2d5980'
   isbn13: '9781908745651'
-  publication_year: '1946'
+  publication_year: 1946
   title: Comet in Moominland
 review:
   date_read: 2021-07-17

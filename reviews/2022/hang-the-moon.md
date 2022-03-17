@@ -5,7 +5,7 @@ book:
     name: hang-the-moon.jpg
     size: 245716
     tint_color: "#965792"
-  publication_year: "2021"
+  publication_year: 2021
   title: Hang the Moon
   series: "Written in the Stars, #2"
 review:

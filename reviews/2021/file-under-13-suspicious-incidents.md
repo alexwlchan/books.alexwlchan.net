@@ -5,7 +5,7 @@ book:
     name: file-under-13-suspicious-incidents.jpeg
     size: 1338990
     tint_color: "#1d588e"
-  publication_year: "2014"
+  publication_year: 2014
   title: "File Under: 13 Suspicious Incidents"
 review:
   date_read: 2021-12-09

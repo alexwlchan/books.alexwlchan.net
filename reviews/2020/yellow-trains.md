@@ -6,7 +6,7 @@ book:
     size: 122581
     tint_color: '#736c43'
   isbn13: '9781910809587'
-  publication_year: '2019'
+  publication_year: 2019
   title: Yellow Trains
 review:
   date_read: 2020-04-18

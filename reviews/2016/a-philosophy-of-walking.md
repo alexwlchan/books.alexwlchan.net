@@ -7,7 +7,7 @@ book:
     tint_color: '#6c7b4e'
   isbn10: '1781682704'
   isbn13: '9781781682708'
-  publication_year: '2014'
+  publication_year: 2014
   title: A Philosophy of Walking
 review:
   date_read: '2016-11-26'

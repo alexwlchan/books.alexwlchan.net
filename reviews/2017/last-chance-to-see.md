@@ -7,7 +7,7 @@ book:
     tint_color: '#ce1c1a'
   isbn10: 009953679X
   isbn13: '9780099536796'
-  publication_year: '2009'
+  publication_year: 2009
   title: Last Chance to See
 review:
   date_read: '2017-04-27'

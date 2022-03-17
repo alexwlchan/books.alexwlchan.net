@@ -7,7 +7,7 @@ book:
     tint_color: '#011015'
   isbn10: '0521703522'
   isbn13: '9780521703529'
-  publication_year: '2007'
+  publication_year: 2007
   title: The Art of Lecturing
 review:
   date_read: '2018-03-04'

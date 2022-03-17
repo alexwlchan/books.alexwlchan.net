@@ -5,7 +5,7 @@ book:
     name: the-wandering-wombles.jpg
     size: 10825
     tint_color: '#d23675'
-  publication_year: '1970'
+  publication_year: 1970
   title: The Wandering Wombles
 review:
   date_read: 2020-09-09

@@ -7,7 +7,7 @@ book:
     tint_color: '#000000'
   isbn10: 0747235287
   isbn13: '9780747235286'
-  publication_year: '2003'
+  publication_year: 2003
   title: The Universe Next Door
 review:
   date_read: '2019-03-23'

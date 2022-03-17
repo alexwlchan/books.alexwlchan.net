@@ -6,7 +6,7 @@ book:
     size: 29415
     tint_color: '#b25e67'
   narrator: Lara Hogan
-  publication_year: '2019'
+  publication_year: 2019
   title: Resilient Management
 review:
   date_read: 2021-09-18

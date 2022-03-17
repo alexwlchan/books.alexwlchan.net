@@ -7,7 +7,7 @@ book:
     tint_color: '#823b44'
   isbn10: 125012932X
   isbn13: '9781250129321'
-  publication_year: '2017'
+  publication_year: 2017
   series: 'I Hate Everyone But You, #1'
   title: I Hate Everyone But You
 review:

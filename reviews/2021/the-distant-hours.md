@@ -6,7 +6,7 @@ book:
     size: 54471
     tint_color: '#62769d'
   isbn13: '9780330477581'
-  publication_year: '2010'
+  publication_year: 2010
   title: The Distant Hours
 review:
   date_read: 2021-09-25

@@ -6,7 +6,7 @@ book:
     size: 10742
     tint_color: '#646357'
   isbn13: '9780007278473'
-  publication_year: '2010'
+  publication_year: 2010
   title: GCHQ
 plan:
   date_added: '2020-06-26'

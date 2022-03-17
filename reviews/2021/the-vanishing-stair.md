@@ -6,7 +6,7 @@ book:
     size: 44546
     tint_color: '#b5483d'
   narrator: Kate Rudd
-  publication_year: '2019'
+  publication_year: 2019
   series: 'Truly Devious #2'
   title: The Vanishing Stair
 review:

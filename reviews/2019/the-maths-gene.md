@@ -7,7 +7,7 @@ book:
     tint_color: '#974450'
   isbn10: 0297645714
   isbn13: '9780297645719'
-  publication_year: null
+  publication_year: 2000
   title: The Maths Gene
 review:
   date_read: '2019-12-09'

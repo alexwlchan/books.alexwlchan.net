@@ -7,7 +7,7 @@ book:
     tint_color: '#2474b8'
   isbn10: '0316123064'
   isbn13: '9780316123068'
-  publication_year: '2014'
+  publication_year: 2014
   series: 'All the Wrong Questions, #3'
   title: “Shouldn’t You Be in School?”
 review:

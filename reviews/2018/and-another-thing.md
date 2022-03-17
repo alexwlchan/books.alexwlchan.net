@@ -7,7 +7,7 @@ book:
     tint_color: '#a53829'
   isbn10: '1401323588'
   isbn13: '9781401323585'
-  publication_year: '2009'
+  publication_year: 2009
   series: 'Hitchhiker''s Guide to the Galaxy, #6'
   title: And Another Thing…
 review:

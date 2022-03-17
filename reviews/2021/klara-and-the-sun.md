@@ -6,7 +6,7 @@ book:
     size: 19757
     tint_color: '#c14327'
   isbn13: '9780571364879'
-  publication_year: '2021'
+  publication_year: 2021
   title: Klara and the Sun
 review:
   date_read: 2021-08-13

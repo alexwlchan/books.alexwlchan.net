@@ -6,7 +6,7 @@ book:
     size: 65392
     tint_color: '#017d93'
   isbn13: '9781908745644'
-  publication_year: '1948'
+  publication_year: 1948
   title: Finn Family Moomintroll
 review:
   date_read: 2021-07-03

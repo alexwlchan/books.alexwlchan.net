@@ -7,7 +7,7 @@ book:
     tint_color: '#9c161e'
   isbn10: '1118143302'
   isbn13: '9781118143308'
-  publication_year: '2012'
+  publication_year: 2012
   title: Liars and Outliers
 review:
   date_read: '2018-02-03'

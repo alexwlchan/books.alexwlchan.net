@@ -6,7 +6,7 @@ book:
     name: a-big-ship-at-the-edge-of-the-universe.jpeg
     size: 488912
     tint_color: "#090a1d"
-  publication_year: "2018"
+  publication_year: 2018
   title: A Big Ship at the Edge of the Universe
 review:
   date_read: 2021-12-11

@@ -7,7 +7,7 @@ book:
     tint_color: '#636466'
   isbn10: '1843549123'
   isbn13: '9781843549123'
-  publication_year: '2010'
+  publication_year: 2010
   title: Inside Steve’s Brain
 review:
   date_read: ''

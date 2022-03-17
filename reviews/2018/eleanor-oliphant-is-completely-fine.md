@@ -7,7 +7,7 @@ book:
     tint_color: '#6d6a67'
   isbn10: 0008172145
   isbn13: '9780008172145'
-  publication_year: null
+  publication_year: 2017
   title: Eleanor Oliphant Is Completely Fine
 review:
   date_read: '2018-12-26'

@@ -6,7 +6,7 @@ book:
     size: 8107
     tint_color: '#686d72'
   isbn13: '9781250185433'
-  publication_year: '2018'
+  publication_year: 2018
   title: 'Rogue Protocol (The Murderbot Diaries, #3)'
 review:
   date_read: 2020-05-08

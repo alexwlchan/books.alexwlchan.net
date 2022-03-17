@@ -6,7 +6,7 @@ book:
     size: 47313
     tint_color: '#795a44'
   isbn13: '9780241386569'
-  publication_year: '2018'
+  publication_year: 2018
   title: The Story of Brexit
 review:
   date_order: 2

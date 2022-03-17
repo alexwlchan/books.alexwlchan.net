@@ -7,7 +7,7 @@ book:
     tint_color: '#332d5d'
   isbn10: 027372889X
   isbn13: '9780273728894'
-  publication_year: '2010'
+  publication_year: 2010
   title: Introduction to Graph Theory
 review:
   date_read: '2019-10-26'

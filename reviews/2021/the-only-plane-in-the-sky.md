@@ -6,7 +6,7 @@ book:
     size: 19351
     tint_color: '#000000'
   narrator: Holter Graham and a full cast
-  publication_year: '2019'
+  publication_year: 2019
   title: The Only Plane in the Sky
 review:
   date_read: 2021-06-25

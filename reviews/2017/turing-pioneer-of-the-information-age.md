@@ -7,7 +7,7 @@ book:
     tint_color: '#883638'
   isbn10: 0199639795
   isbn13: '9780199639793'
-  publication_year: '2013'
+  publication_year: 2013
   title: 'Turing: Pioneer of the Information Age'
 review:
   date_read: '2017-11-29'

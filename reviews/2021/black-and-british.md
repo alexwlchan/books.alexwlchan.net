@@ -6,7 +6,7 @@ book:
     size: 69142
     tint_color: '#166e7e'
   narrator: Ben Onwukwe
-  publication_year: '2016'
+  publication_year: 2016
   title: Black and British
 review:
   date_read: 2021-07-24

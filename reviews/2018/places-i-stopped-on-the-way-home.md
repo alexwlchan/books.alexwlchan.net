@@ -7,7 +7,7 @@ book:
     tint_color: '#5f706d'
   isbn10: '1785783033'
   isbn13: '9781785783036'
-  publication_year: '2018'
+  publication_year: 2018
   title: Places I Stopped on the Way Home
 review:
   date_read: '2018-10-20'

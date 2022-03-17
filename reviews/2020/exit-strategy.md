@@ -6,7 +6,7 @@ book:
     size: 9802
     tint_color: '#797474'
   isbn13: '9781250185454'
-  publication_year: '2018'
+  publication_year: 2018
   title: 'Exit Strategy (The Murderbot Diaries, #4)'
 review:
   date_read: 2020-05-08

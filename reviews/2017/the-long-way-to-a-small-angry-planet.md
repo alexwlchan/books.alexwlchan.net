@@ -7,7 +7,7 @@ book:
     tint_color: '#6c6f84'
   isbn10: '1473619807'
   isbn13: '9781473619807'
-  publication_year: '2015'
+  publication_year: 2015
   series: Wayfarers,
   title: The Long Way to a Small Angry Planet
 review:

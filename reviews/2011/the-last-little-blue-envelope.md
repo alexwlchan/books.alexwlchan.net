@@ -7,7 +7,7 @@ book:
     tint_color: '#d22c2d'
   isbn10: 0061976792
   isbn13: '9780061976797'
-  publication_year: '2011'
+  publication_year: 2011
   series: 'Little Blue Envelope, #2'
   title: The Last Little Blue Envelope
 review:

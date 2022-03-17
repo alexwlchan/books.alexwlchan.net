@@ -7,7 +7,7 @@ book:
     tint_color: '#826f55'
   isbn10: '0345476514'
   isbn13: '9780345476517'
-  publication_year: '2005'
+  publication_year: 2005
   title: 'Wish You Were Here: The Official Biography of Douglas Adams'
 review:
   date_read: '2018-05-10'

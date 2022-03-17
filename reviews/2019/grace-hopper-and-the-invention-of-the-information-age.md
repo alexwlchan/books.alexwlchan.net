@@ -7,7 +7,7 @@ book:
     tint_color: '#68686f'
   isbn10: '0262517264'
   isbn13: '9780262517263'
-  publication_year: '2012'
+  publication_year: 2012
   title: Grace Hopper and the Invention of the Information Age
 review:
   date_read: '2019-08-30'

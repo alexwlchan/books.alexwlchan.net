@@ -7,7 +7,7 @@ book:
     tint_color: '#686868'
   isbn10: '1906653089'
   isbn13: '9781906653088'
-  publication_year: '2010'
+  publication_year: 2010
   title: Psychiatric Tales
 review:
   date_read: '2017-08-21'

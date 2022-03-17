@@ -6,7 +6,7 @@ book:
     size: 192777
     tint_color: '#406a82'
   isbn13: '9781908745705'
-  publication_year: '1948'
+  publication_year: 1948
   title: Moominpappa at Sea
 review:
   date_read: 2021-08-22

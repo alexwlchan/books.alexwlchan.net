@@ -6,7 +6,7 @@ book:
     size: 6803
     tint_color: '#42342f'
   isbn13: '9781904874041'
-  publication_year: '1987'
+  publication_year: 1987
   title: A Speller's Companion
 review:
   date_read: 2020-09-17

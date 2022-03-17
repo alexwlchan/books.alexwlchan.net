@@ -7,7 +7,7 @@ book:
     tint_color: '#677b54'
   isbn10: 0991439902
   isbn13: '9780991439904'
-  publication_year: '2014'
+  publication_year: 2014
   title: 'The Magazine: The Book'
 plan:
   date_added: '2019-08-13'

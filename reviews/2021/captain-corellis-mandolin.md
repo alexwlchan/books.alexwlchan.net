@@ -7,7 +7,7 @@ book:
     tint_color: '#270b60'
   isbn10: 0749397543
   isbn13: '9780749397548'
-  publication_year: '1994'
+  publication_year: 1994
   title: Captain Corelli's Mandolin
 review:
   date_read: 2021-03-21
