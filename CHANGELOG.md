@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.1.1 - 2022-03-17
+
+Internal refactoring that should have no user-visible effect.
+
 ## v1.1.0 - 2022-03-17
 
 Store the publication year as a number, not a string.
