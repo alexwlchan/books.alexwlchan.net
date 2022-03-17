@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## v1.2.0 - 2022-03-17
+
+Better handling of books that were read before I started writing down when I read books ("books read at another time").
+
+-  Don't generate individual review pages for them, because they don't have anything useful
+-  Omit the `review:` entry entirely in their YAML frontmatter, rather than having it there with empty values
+
 ## v1.1.1 - 2022-03-17
 
 Internal refactoring that should have no user-visible effect.

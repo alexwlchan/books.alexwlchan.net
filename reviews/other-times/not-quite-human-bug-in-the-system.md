@@ -10,6 +10,4 @@ book:
   publication_year: 1986
   series: The Dragon Books
   title: 'Not Quite Human: Bug in the System'
-review:
-  date_read: ''
 ---

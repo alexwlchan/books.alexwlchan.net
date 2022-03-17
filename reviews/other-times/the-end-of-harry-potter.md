@@ -8,8 +8,6 @@ book:
   publication_year: 2006
   title: The End of Harry Potter?
   isbn13: "9780575080546"
-review:
-  date_read: ''
   format: paperback
 ---
 

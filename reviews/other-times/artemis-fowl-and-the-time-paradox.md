@@ -9,6 +9,4 @@ book:
   isbn13: 978-0-14-132220-9
   publication_year: 2009
   title: Artemis Fowl and the Time Paradox
-review:
-  date_read: ''
 ---

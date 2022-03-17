@@ -9,6 +9,4 @@ book:
   isbn13: 978-0-14-135639-6
   publication_year: 2001
   title: Artemis Fowl
-review:
-  date_read: ''
 ---

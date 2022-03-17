@@ -1,3 +1,4 @@
+use std::cmp::Ordering;
 use std::collections::HashSet;
 use std::ffi::OsStr;
 use std::fs;
@@ -82,14 +83,16 @@ pub fn render_html(templates: &Tera, src: &Path, dst: &Path, mode: HtmlRenderMod
     // Write the "all reviews" page
     let mut reviews = get_reviews(src).unwrap();
     reviews.sort_by(|a, b|
-        if a.review.date_read == b.review.date_read {
-            if a.review.date_read == "" {
-                a.book.publication_year.cmp(&b.book.publication_year)
-            } else {
-                a.review.date_order.cmp(&b.review.date_order)
-            }
-        } else {
-            a.review.date_read.cmp(&b.review.date_read)
+        match (a.review.as_ref(), b.review.as_ref()) {
+            (None, None)    => a.book.publication_year.cmp(&b.book.publication_year),
+            (None, Some(_)) => Ordering::Less,
+            (Some(_), None) => Ordering::Greater,
+            (Some(a_rev), Some(b_rev)) =>
+                if a_rev.date_read == b_rev.date_read {
+                    a_rev.date_order.cmp(&b_rev.date_order)
+                } else {
+                    a_rev.date_read.cmp(&b_rev.date_read)
+                }
         }
     );
     reviews.reverse();
@@ -119,6 +122,13 @@ pub fn render_html(templates: &Tera, src: &Path, dst: &Path, mode: HtmlRenderMod
 
     // Write individual HTML pages for each of the reviews.
     for rev in reviews {
+
+        // Don't bother writing individual review pages for books I read at
+        // another time; there's nothing useful there.
+        if rev.review.is_none() {
+            continue;
+        }
+
         let out_dir = dst.join("reviews").join(&rev.slug);
         fs::create_dir_all(&out_dir)?;
 

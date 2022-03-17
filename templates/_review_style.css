@@ -16,6 +16,7 @@
   border: 0.1px solid {{ book.cover.tint_color }};
 }
 
+{% if not read_at_another_time %}
 #review_preview_{{ slug }}:hover {
   {% if review.rating is defined and review.rating == 5 %}
     background: {{ book.cover.tint_color | boost(multiplier = 0.42, boost = 0.58) }};
@@ -27,3 +28,4 @@
 #review_preview_{{ slug }} a:hover {
   background: none;
 }
+{% endif %}

@@ -8,8 +8,6 @@ book:
   isbn13: 978-0-19-861336-7
   publication_year: 2004
   title: 'Math Hysteria: Fun and games with mathematics'
-review:
-  date_read: ''
   format: paperback
   rating: 3
 ---

@@ -24,9 +24,8 @@
 
       <div class="divider"><img src="/static/book.svg"></div>
 
-      {% set count = reviews|books_in_year(year = review_entry|year_read) %}
-
       {% if review_entry|year_read == this_year %}
+        {% set count = reviews|books_in_year(year = review_entry|year_read) %}
         <h3 id="year_{{ review_entry|year_read }}">the {{ count }} book{% if count > 1 %}s{% endif %} i&rsquo;ve read so far in {{ review_entry|year_read }}</h3>
       {% elif review_entry|year_read == 'another time' %}
         <h3 id="another_time">books i read at another time</h3>
@@ -37,7 +36,10 @@
             the list is ordered by publication date, not reading date, and lacks a lot of detail.
           </summary>
 
+          {% set_global read_at_another_time = true %}
+
       {% else %}
+        {% set count = reviews|books_in_year(year = review_entry|year_read) %}
         <h3 id="year_{{ review_entry|year_read }}">the {{ count }} book{% if count > 1 %}s{% endif %} i read in {{ review_entry|year_read }}</h3>
       {% endif %}
       {% set_global heading_year = review_entry|year_read %}

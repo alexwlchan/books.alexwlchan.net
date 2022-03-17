@@ -45,7 +45,13 @@ pub fn books_in_year(value: &Value, args: &HashMap<String, Value>) -> tera::Resu
 
     let count = reviews
         .into_iter()
-        .filter(|r| !r.review.did_not_finish && models::year_read(&r) == year)
+        .filter(|r|
+            // This relies on the fact that I know I don't call this function
+            // for books read at another time, so `r.review` will always be
+            // defined.
+            models::year_read(&r) == year &&
+            !r.review.as_ref().unwrap().did_not_finish
+        )
         .count();
 
     Ok(to_value(count).unwrap())

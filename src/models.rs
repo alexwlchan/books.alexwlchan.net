@@ -77,22 +77,21 @@ pub struct ReviewMetadata {
 #[derive(Deserialize, Serialize)]
 pub struct Metadata {
     pub book: Book,
-    pub review: ReviewMetadata,
+    pub review: Option<ReviewMetadata>,
 }
 
 #[derive(Deserialize, Serialize)]
 pub struct Review {
     pub book: Book,
-    pub review: ReviewMetadata,
+    pub review: Option<ReviewMetadata>,
     pub text: String,
     pub slug: String,
     pub path: PathBuf,
 }
 
 pub fn year_read(rev: &Review) -> &str {
-    if rev.review.date_read == "" {
-        "another time"
-    } else {
-        &rev.review.date_read[0..4]
+    match &rev.review {
+        Some(rev) => &rev.date_read[0..4],
+        None      => "another time",
     }
 }

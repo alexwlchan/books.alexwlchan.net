@@ -9,6 +9,4 @@ book:
   isbn13: '9780140343892'
   publication_year: 1994
   title: The Worst Witch All at Sea
-review:
-  date_read: ''
 ---
