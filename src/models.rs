@@ -89,10 +89,10 @@ pub struct Review {
     pub path: PathBuf,
 }
 
-pub fn year(rev: &Review) -> String {
+pub fn year_read(rev: &Review) -> &str {
     if rev.review.date_read == "" {
-        "another time".to_string()
+        "another time"
     } else {
-        rev.review.date_read[0..4].to_string()
+        &rev.review.date_read[0..4]
     }
 }

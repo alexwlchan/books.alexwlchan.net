@@ -34,9 +34,9 @@ pub fn star_rating(value: &Value, _: &HashMap<String, Value>) -> tera::Result<Va
     Ok(to_value(text_helpers::star_rating(rating)).unwrap())
 }
 
-pub fn year(value: &Value, _: &HashMap<String, Value>) -> tera::Result<Value> {
-    let review = try_get_value!("year", "value", models::Review, value);
-    Ok(to_value(models::year(&review)).unwrap())
+pub fn year_read(value: &Value, _: &HashMap<String, Value>) -> tera::Result<Value> {
+    let review = try_get_value!("year_read", "value", models::Review, value);
+    Ok(to_value(models::year_read(&review)).unwrap())
 }
 
 pub fn books_in_year(value: &Value, args: &HashMap<String, Value>) -> tera::Result<Value> {
@@ -45,7 +45,7 @@ pub fn books_in_year(value: &Value, args: &HashMap<String, Value>) -> tera::Resu
 
     let count = reviews
         .into_iter()
-        .filter(|r| !r.review.did_not_finish && models::year(&r) == year)
+        .filter(|r| !r.review.did_not_finish && models::year_read(&r) == year)
         .count();
 
     Ok(to_value(count).unwrap())
@@ -103,7 +103,7 @@ pub fn get_templates() -> Result<Tera, tera::Error> {
     tera.register_filter("smartypants", smartypants);
     tera.register_filter("spread_star_rating", spread_star_rating);
     tera.register_filter("star_rating", star_rating);
-    tera.register_filter("year", year);
+    tera.register_filter("year_read", year_read);
 
     Ok(tera)
 }
