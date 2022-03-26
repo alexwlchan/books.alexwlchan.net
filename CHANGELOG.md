@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v1.2.2 - 2022-03-26
+
+Add a startup check that you're running the latest version.
+If not, vfd will prompt you to download the newest version.
+
 ## v1.2.1 - 2022-03-26
 
 No-op release to test the auto-release mechanism.

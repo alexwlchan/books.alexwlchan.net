@@ -1,6 +1,6 @@
 [package]
 name = "vfd"
-version = "1.2.1"
+version = "1.2.2"
 edition = "2021"
 
 [dependencies]
@@ -23,6 +23,7 @@ rand = { version = "0.8.4", features = ["small_rng"] }
 regex = "1"
 reqwest = { version = "0.11.7", features = ["blocking"] }
 serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0.79"
 serde_yaml = "0.8"
 tera = "1.15.0"
 tokio = { version = "1", features = ["full"] }
