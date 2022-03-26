@@ -42,6 +42,7 @@ mod render_html;
 mod templates;
 mod text_helpers;
 mod urls;
+mod version;
 
 use axum::{http::StatusCode, service, Router};
 use clap::{App, SubCommand, AppSettings};
@@ -119,6 +120,18 @@ pub fn deploy_subcommand() -> App<'static, 'static> {
 #[tokio::main]
 async fn main() {
     const VERSION: &str = env!("CARGO_PKG_VERSION");
+
+    // Before we start up, check if we're running the latest version.
+    //
+    // This logic is a bit rough, e.g. it'll warn if you're running a
+    // newer version than what's on GitHub, but it's good enough for
+    // my purposes.
+    match version::get_latest_version().await {
+        Ok(Some(latest_version)) if latest_version.strip_prefix("v") != Some(VERSION) => {
+            println!("\x1b[96mA newer version of vfd is available, please update:\nhttps://github.com/alexwlchan/books.alexwlchan.net/releases/tag/{latest_version}\x1b[0m");
+        },
+        _ => (),
+    };
 
     let app =
         App::new("vfd")
