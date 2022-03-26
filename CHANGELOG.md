@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.2.1 - 2022-03-26
+
+No-op release to test the auto-release mechanism.
+
 ## v1.2.0 - 2022-03-17
 
 Better handling of books that were read before I started writing down when I read books ("books read at another time").
