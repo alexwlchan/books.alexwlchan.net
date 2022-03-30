@@ -196,8 +196,6 @@ pub fn create_thumbnails(dst: &Path) -> Result<(), VfdError> {
 
         let thumbnail_path = dst.join("thumbnails").join(name);
         if src_path.is_newer_than(&thumbnail_path)? {
-            println!("Creating new thumbnail for {}", name.to_str().unwrap());
-
             let args = [
                 src_path.to_str().unwrap(),
 
@@ -218,8 +216,6 @@ pub fn create_thumbnails(dst: &Path) -> Result<(), VfdError> {
 
         let square_path = dst.join("squares").join(name);
         if src_path.is_newer_than(&square_path)? {
-            println!("Creating new square for {}", name.to_str().unwrap());
-
             let args = [
                 src_path.to_str().unwrap(),
                 "-resize", "240x240",
