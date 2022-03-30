@@ -7,6 +7,7 @@
 use std::fs;
 use std::fs::OpenOptions;
 use std::io::Write;
+use std::path::PathBuf;
 use std::process::Command;
 
 use chrono::Datelike;
@@ -166,24 +167,12 @@ pub fn add_review() -> () {
 
     let cover_url = get_url_value("What's the URL of the cover image?");
 
-    // TODO: Have a better approach to picking the extension.  In a previous
-    // version of this code, I used the Content-Type header from the HTTP request.
-    // This is decidedly open to mistakes, e.g. creating a download path like
-    //
-    //      covers/my-book./book/cover/picture
-    //
-    // from the URL https://example.net/book/cover/picture, which will throw an
-    // error "No such file or directory" in `urls.rs` because it's a nonsense
-    // directory.
-    //
-    let extension = cover_url.path().split(".").last().unwrap();
-
     let slug = text_helpers::slugify(&title);
-    let cover_name = format!("{}.{}", slug, extension);
-    let cover_path = format!("covers/{}", &cover_name);
 
-    match urls::download_url(&cover_url, &cover_path) {
-        Ok(_) => (),
+    let download_path: PathBuf = ["covers", &slug].iter().collect();
+
+    let cover_path = match urls::download_url(&cover_url, download_path) {
+        Ok(path) => (path),
         Err(e) => {
             // If we can't download the cover, retrieve it from a local
             // download.
@@ -191,9 +180,18 @@ pub fn add_review() -> () {
             // Suggester for path, etc.
             eprintln!("{}", e);
             let local_cover_path = get_non_empty_string_value("What's the path to the cover image?");
-            std::fs::rename(local_cover_path, &cover_path).unwrap();
+
+            let base_path: PathBuf = ["covers", &slug].iter().collect();
+            let download_path = match PathBuf::from(&local_cover_path).extension() {
+                Some(ext) => base_path.with_extension(ext),
+                None      => base_path,
+            };
+            std::fs::rename(local_cover_path, &download_path).unwrap();
+            download_path
         }
     };
+
+    let cover_name = cover_path.file_name().unwrap().to_str().unwrap();
 
     let cover_size = fs::metadata(&cover_path).unwrap().len();
 
@@ -236,7 +234,7 @@ pub fn add_review() -> () {
     };
 
     let cover = models::Cover {
-        name: cover_name.to_owned(),
+        name: cover_name.to_string(),
         size: cover_size as i32,
         tint_color: tint_colour.to_string(),
     };
