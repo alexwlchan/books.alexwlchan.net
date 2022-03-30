@@ -1,6 +1,7 @@
 [build]
   base = ""
   publish = "_html/"
+  command = "./netlify_deploy.sh"
 
 [[headers]]
   for = "/covers/*"
