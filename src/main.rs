@@ -22,7 +22,6 @@
 /// to write Rust, but it works well enough.
 
 use std::convert::Infallible;
-use std::fs;
 use std::io::Write;
 use std::net::SocketAddr;
 use std::path::Path;
@@ -215,13 +214,6 @@ async fn main() {
 
     if matches.subcommand_name() == Some("deploy") {
         println!("Deploying to Netlify...");
-
-        // Copy the _redirects file into place.  This is a Netlify-specific feature,
-        // which is why I don't copy it as part of the build process.
-        //
-        // See https://docs.netlify.com/routing/redirects/
-        fs::copy("_redirects", "_html/_redirects")
-            .expect("failed to copy Netlify redirects into place!");
 
         let status = Command::new("netlify").args(vec!["deploy", "--prod"]).status().unwrap();
 

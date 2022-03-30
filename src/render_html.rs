@@ -56,6 +56,11 @@ fn get_reviews(root: &Path) -> Result<Vec<models::Review>, VfdError> {
 }
 
 pub fn sync_static_files(dst: &Path) -> io::Result<()> {
+    // Copy the _redirects file into place.  This is a Netlify-specific feature.
+    //
+    // See https://docs.netlify.com/routing/redirects/
+    fs::copy("_redirects", &dst.join("_redirects"))?;
+
     fs_helpers::sync_files(Path::new("static"), &dst.join("static"))
 }
 
