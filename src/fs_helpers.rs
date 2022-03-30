@@ -13,6 +13,13 @@ pub fn read_file(p: &Path) -> Result<Vec<u8>, io::Error> {
 }
 
 pub fn write_file(p: &Path, bytes: Vec<u8>) -> io::Result<()> {
+    // Ensure the parent directory exists before we write to a file,
+    // otherwise we get errors like:
+    //
+    //    Error rendering HTML: IO error: No such file or directory (os error 2)
+    //
+    fs::create_dir_all(p.parent().unwrap())?;
+
     let mut f = File::create(p)?;
     f.write_all(bytes.as_slice())?;
 

@@ -23,6 +23,7 @@
 
 use std::convert::Infallible;
 use std::fs;
+use std::io::Write;
 use std::net::SocketAddr;
 use std::path::Path;
 use std::process::Command;
@@ -93,6 +94,11 @@ fn create_static_files() {
 fn create_images() {
     let start = Instant::now();
     print!("Creating thumbnail images... ");
+
+    // We flush stdout here because it can sometimes take a long time
+    // to generate thumbnail images (if we're starting from cold); if so,
+    // we want the message above to appear immediately.
+    std::io::stdout().flush().unwrap();
 
     match create_thumbnails(Path::new("_html")) {
         Ok(_) => (),

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.3.1 - 2022-03-30
+
+Fix a couple of bugs that happen when building the HTML from scratch, i.e. without a pre-existing local copy of the HTML.
+
 ## v1.3.0 - 2022-03-30
 
 Add a `build` command that does a one-off build of the HTML.
