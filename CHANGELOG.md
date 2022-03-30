@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v1.3.0 - 2022-03-30
+
+Add a `build` command that does a one-off build of the HTML.
+This is meant for doing automated builds in CI.
+
 ## v1.2.2 - 2022-03-26
 
 Add a startup check that you're running the latest version.

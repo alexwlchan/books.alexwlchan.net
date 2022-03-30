@@ -107,9 +107,14 @@ fn create_images() {
     }
 }
 
+pub fn build_subcommand() -> App<'static, 'static> {
+    SubCommand::with_name("build")
+        .about("Build the HTML pages for the site")
+}
+
 pub fn serve_subcommand() -> App<'static, 'static> {
     SubCommand::with_name("serve")
-        .about("Render the HTML files for the site")
+        .about("Run a local web server with the site and live changes")
 }
 
 pub fn deploy_subcommand() -> App<'static, 'static> {
@@ -140,6 +145,7 @@ async fn main() {
             .about("Generates the HTML files for books.alexwlchan.net")
             .setting(AppSettings::SubcommandRequired)
             .subcommand(add_review::subcommand())
+            .subcommand(build_subcommand())
             .subcommand(deploy_subcommand())
             .subcommand(serve_subcommand());
 
@@ -155,6 +161,10 @@ async fn main() {
     create_html_pages(HtmlRenderMode::Full);
     create_static_files();
     create_images();
+
+    if matches.subcommand_name() == Some("build") {
+        std::process::exit(0);
+    }
 
     if matches.subcommand_name() == Some("add_review") || matches.subcommand_name() == Some("serve") {
         tokio::task::spawn_blocking(move || {
