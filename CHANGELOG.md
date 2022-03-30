@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.3.3 - 2022-03-30
+
+Fix a bug where sometimes covers wouldn't download correctly when adding a review.
+
 ## v1.3.2 - 2022-03-30
 
 Fix a bug where the Netlify builds process wasn't picking up the `_redirects` file.
