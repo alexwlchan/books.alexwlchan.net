@@ -97,8 +97,7 @@ To find out how vfd works, read the comments [in the source code](./src/main.rs)
 
 I want a good way to track my books -- both to help me remember what I've read, and so I think more about why I like the books I do.
 
-I've tried Goodreads and a couple of other sites, but they don't really work for me -- they emphasise more social features than book tracking, and I don't like having my data in somebody else's proprietary database.
-For Goodreads in particular, I'm not a massive fan of Amazon, their parent company.
+I've tried Goodreads and a couple of other sites, but they don't really work for me -- they emphasise more social features than book tracking, and I can't be as nit picky with the details as I'd like.
 
 Building my own site allows me to be very picky, which is particularly useful for book covers.
 I find covers easy to remember -- I may not know a book if you tell me the title, but show me the cover and you'll get instant recognition.
