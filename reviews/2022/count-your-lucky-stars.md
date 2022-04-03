@@ -12,7 +12,7 @@ book:
 review:
   date_read: 2022-04-03
   format: paperback
-  rating: 5
+  rating: 4
 ---
 
 This is the sequel to [*Written in the Stars*](/reviews/written-in-the-stars/) and [*Hang the Moon*](/reviews/hang-the-moon/), in a way that presumably ties off the trilogy -- all the main characters are now paired off and have their happily ever after.
