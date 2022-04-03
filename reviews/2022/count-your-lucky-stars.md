@@ -25,4 +25,4 @@ I was less invested in their relationship because I never got to see it grow.
 I felt more about the friendships between Margot and the established cast, than about the romance between her and Olivia.
 We still get flashes of Elle, Darcy, Brendon, and Annie – enough to enjoy, not so much as to be distracting.
 
-I feel like I'm picking nits in a book I still quite enjoyed, and I'm glad to have finished the series -- but I do think this is the weakest book of the three.
+I feel like I'm picking nits in a book I still quite enjoyed, and I'm glad to have finished the series -- this sticks the landing for the series as a whole -- but I do think it's the weakest of the three.
