@@ -23,4 +23,6 @@ In an industry full of boasting and ego, this book is somewhat restrained.
 I trust the broad strokes, all of which I've heard in bits before (but it's nice to have a single narrative), but I'm dubious about some of the details.
 For example, the description of the iPhone introduction is flat-out wrong in key aspects, e.g. the original iPhone didn't have the blue "you are here" dot.
 
+I found the book [from a Twitter thread](https://twitter.com/swearyanthony/status/1327556892365709313) from somebody else who worked on Google's mapping efforts, doing disaster response work.
+
 Overall I enjoyed it and the narration is fine; it's a compelling story and remarkable to reflect on how relatively recent it is.
