@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.3.4 - 2022-04-11
+
+Make the black shelves in the header of the homepage/list of reviews a little less black, so it looks more like a collection of books.
+
 ## v1.3.3 - 2022-03-30
 
 Fix a bug where sometimes covers wouldn't download correctly when adding a review.

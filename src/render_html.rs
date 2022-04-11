@@ -106,7 +106,7 @@ pub fn render_html(templates: &Tera, src: &Path, dst: &Path, mode: HtmlRenderMod
 
     let mut context = tera::Context::new();
     context.insert("reviews", &reviews);
-    context.insert("tint_colour", "#000000");
+    context.insert("tint_colour", "#191919");
     context.insert("this_year", &this_year.to_string());
     let html = templates.render("list_reviews.html", &context)?;
 
@@ -117,7 +117,7 @@ pub fn render_html(templates: &Tera, src: &Path, dst: &Path, mode: HtmlRenderMod
     // Write the homepage
     let mut context = tera::Context::new();
     context.insert("reviews", &reviews);
-    context.insert("tint_colour", "#000000");
+    context.insert("tint_colour", "#191919");
     context.insert("is_homepage", &true);
     let html = templates.render("index.html", &context)?;
 
