@@ -8,7 +8,7 @@
       TODO: Implement cache invalidation when the CSS file changes.
       I dropped it in the Rust rewrite, but it needs sorting.
     -->
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/style.css?t={{ now() | date(format="%s") }}">
     <style>
       {% include "_base.css" %}
 
