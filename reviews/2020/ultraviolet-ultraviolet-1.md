@@ -3,7 +3,6 @@ book:
   author: R.J. Anderson
   cover:
     name: ultraviolet-ultraviolet-1.jpg
-    size: 11657
     tint_color: '#6b637e'
   isbn10: '1408312751'
   isbn13: '9781408312759'

@@ -3,7 +3,6 @@ book:
   author: Eoin Colfer
   cover:
     name: and-another-thing.jpg
-    size: 9012
     tint_color: '#a53829'
   isbn10: '1401323588'
   isbn13: '9781401323585'

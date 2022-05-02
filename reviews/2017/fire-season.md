@@ -3,7 +3,6 @@ book:
   author: Philip Connors
   cover:
     name: fire-season.jpg
-    size: 5660
     tint_color: '#854f26'
   isbn10: '1447208145'
   isbn13: '9781447208143'

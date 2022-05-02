@@ -3,7 +3,6 @@ book:
   author: Mark Vernon
   cover:
     name: platos-podcasts.jpg
-    size: 10071
     tint_color: '#c24d48'
   isbn13: 978-1-85168-706-0
   publication_year: 2009

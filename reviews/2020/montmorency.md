@@ -3,7 +3,6 @@ book:
   author: Eleanor Updale
   cover:
     name: montmorency.jpg
-    size: 7100
     tint_color: '#72577c'
   isbn10: 0439978408
   isbn13: '9780439978408'

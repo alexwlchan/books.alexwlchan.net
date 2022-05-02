@@ -3,7 +3,6 @@ book:
   author: Andy Weir
   cover:
     name: the-martian.jpg
-    size: 12293
     tint_color: '#fe5b29'
   narrator: Wil Wheaton
   publication_year: 2011

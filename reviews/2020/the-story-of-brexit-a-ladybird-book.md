@@ -3,7 +3,6 @@ book:
   author: Ladybird Books
   cover:
     name: the-story-of-brexit-a-ladybird-book.jpg
-    size: 47313
     tint_color: '#795a44'
   isbn13: '9780241386569'
   publication_year: 2018

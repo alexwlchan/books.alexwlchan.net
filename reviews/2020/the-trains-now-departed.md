@@ -3,7 +3,6 @@ book:
   author: Michael Williams
   cover:
     name: the-trains-now-departed.jpg
-    size: 46771
     tint_color: '#c03038'
   isbn13: '9780099590583'
   publication_year: 2015

@@ -3,7 +3,6 @@ book:
   author: Maureen Johnson
   cover:
     name: the-last-little-blue-envelope.jpg
-    size: 10059
     tint_color: '#d22c2d'
   isbn10: 0061976792
   isbn13: '9780061976797'

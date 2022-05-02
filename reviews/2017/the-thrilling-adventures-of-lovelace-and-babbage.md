@@ -3,7 +3,6 @@ book:
   author: Sydney Padua
   cover:
     name: the-thrilling-adventures-of-lovelace-and-babbage.jpg
-    size: 12356
     tint_color: '#6d7472'
   isbn10: 0141981512
   isbn13: '9780141981512'

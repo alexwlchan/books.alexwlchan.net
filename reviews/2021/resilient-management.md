@@ -3,7 +3,6 @@ book:
   author: Lara Hogan
   cover:
     name: resilient-management.png
-    size: 29415
     tint_color: '#b25e67'
   narrator: Lara Hogan
   publication_year: 2019

@@ -3,7 +3,6 @@ book:
   author: Alexandria Bellefleur
   cover:
     name: count-your-lucky-stars.jpg
-    size: 257642
     tint_color: "#285263"
   title: Count Your Lucky Stars
   publication_year: 2022

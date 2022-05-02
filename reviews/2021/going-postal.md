@@ -3,7 +3,6 @@ book:
   author: Terry Pratchett
   cover:
     name: going-postal-reviewed.jpg
-    size: 29696
     tint_color: '#5e62a7'
   narrator: Stephen Briggs
   publication_year: 2014

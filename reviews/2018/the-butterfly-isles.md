@@ -3,7 +3,6 @@ book:
   author: Patrick Barkham
   cover:
     name: the-butterfly-isles.jpg
-    size: 9289
     tint_color: '#896229'
   isbn10: '1847083153'
   isbn13: '9781847083159'

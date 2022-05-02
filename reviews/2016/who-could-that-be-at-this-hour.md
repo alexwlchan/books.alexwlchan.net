@@ -3,7 +3,6 @@ book:
   author: Lemony Snicket
   cover:
     name: who-could-that-be-at-this-hour.jpg
-    size: 13282
     tint_color: '#bb4f1c'
   isbn10: 0316123080
   isbn13: '9780316123082'

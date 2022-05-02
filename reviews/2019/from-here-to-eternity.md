@@ -3,7 +3,6 @@ book:
   author: Caitlin Doughty
   cover:
     name: from-here-to-eternity.jpg
-    size: 8467
     tint_color: '#000000'
   isbn10: 0393356280
   isbn13: '9780393356281'

@@ -3,7 +3,6 @@ book:
   author: Nicholas Ostler
   cover:
     name: the-last-lingua-franca.jpg
-    size: 19915
     tint_color: '#787266'
   isbn13: '9781846142154'
   publication_year: 2010

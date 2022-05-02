@@ -3,7 +3,6 @@ book:
   author: O. S. Nock
   cover:
     name: historic-railway-disasters.jpg
-    size: 1890225
     tint_color: "#2b6183"
   publication_year: 1983
   title: Historic Railway Disasters

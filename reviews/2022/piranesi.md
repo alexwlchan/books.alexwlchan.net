@@ -4,7 +4,6 @@ book:
   narrator: Chiwetel Ejiofor
   cover:
     name: piranesi.jpg
-    size: 1992812
     tint_color: "#916540"
   publication_year: 2020
   title: Piranesi

@@ -3,7 +3,6 @@ book:
   author: Thomas Heasman-Hunt
   cover:
     name: small-robots.jpg
-    size: 15159
     tint_color: '#68565e'
   isbn13: '9781783528226'
   publication_year: 2019

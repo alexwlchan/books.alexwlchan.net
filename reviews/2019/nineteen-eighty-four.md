@@ -3,7 +3,6 @@ book:
   author: George Orwell
   cover:
     name: nineteen-eighty-four.jpg
-    size: 9468
     tint_color: '#000000'
   isbn10: 0140009728
   isbn13: '9780140009729'

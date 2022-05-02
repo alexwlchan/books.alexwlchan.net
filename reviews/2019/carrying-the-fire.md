@@ -3,7 +3,6 @@ book:
   author: Michael Collins
   cover:
     name: carrying-the-fire.jpg
-    size: 6602
     tint_color: '#b14547'
   isbn10: 0374531943
   isbn13: '9780374531942'

@@ -3,7 +3,6 @@ book:
   author: Philip Ball
   cover:
     name: h2o.jpg
-    size: 11804
     tint_color: '#2b8093'
   isbn13: 978-0-7538-1092-7
   publication_year: 2000

@@ -3,7 +3,6 @@ book:
   author: Tove Jansson
   cover:
     name: finn-family-moomintroll.jpg
-    size: 65392
     tint_color: '#017d93'
   isbn13: '9781908745644'
   publication_year: 1948

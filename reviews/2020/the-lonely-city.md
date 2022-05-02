@@ -3,7 +3,6 @@ book:
   author: Olivia Laing
   cover:
     name: the-lonely-city.jpg
-    size: 8152
     tint_color: '#bc4035'
   isbn13: 9781782111245
   publication_year: 2016

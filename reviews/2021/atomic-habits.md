@@ -3,7 +3,6 @@ book:
   author: James Clear
   cover:
     name: atomic-habits.jpg
-    size: 8657
     tint_color: '#a8663e'
   publication_year: 2018
   title: Atomic Habits

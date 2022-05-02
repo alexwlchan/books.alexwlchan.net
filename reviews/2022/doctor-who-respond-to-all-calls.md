@@ -3,7 +3,6 @@ book:
   author: Lisa McMullin, Tim Foley, and Timothy X. Atack
   cover:
     name: doctor-who-respond-to-all-calls.jpg
-    size: 144419
     tint_color: "#b32641"
   title: "Doctor Who: Respond to All Calls"
   publication_year: 2021

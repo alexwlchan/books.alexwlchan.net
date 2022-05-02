@@ -3,7 +3,6 @@ book:
   author: James Mahaffey
   cover:
     name: atomic-accidents.jpg
-    size: 9882
     tint_color: '#48458c'
   isbn10: '1605986801'
   isbn13: '9781605986807'

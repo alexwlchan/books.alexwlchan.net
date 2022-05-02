@@ -3,7 +3,6 @@ book:
   author: Joe Kutner
   cover:
     name: the-healthy-programmer.jpg
-    size: 3839
     tint_color: '#2773b0'
   isbn10: '1937785319'
   isbn13: '9781937785314'

@@ -3,7 +3,6 @@ book:
   author: Randall Munroe
   cover:
     name: how-to.jpg
-    size: 7686
     tint_color: '#19202a'
   isbn13: 978-1-4736-8035-7
   publication_year: 2019

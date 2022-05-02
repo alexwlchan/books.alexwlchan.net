@@ -3,7 +3,6 @@ book:
   author: Kurt W. Beyer
   cover:
     name: grace-hopper-and-the-invention-of-the-information-age.jpg
-    size: 6180
     tint_color: '#68686f'
   isbn10: '0262517264'
   isbn13: '9780262517263'

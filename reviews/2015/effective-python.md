@@ -3,7 +3,6 @@ book:
   author: Brett Slatkin
   cover:
     name: effective-python.jpg
-    size: 6703
     tint_color: '#222021'
   isbn10: 0134034287
   isbn13: '9780134034287'

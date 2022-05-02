@@ -3,7 +3,6 @@ book:
   author: China Miéville
   cover:
     name: the-city-the-city.jpg
-    size: 9125
     tint_color: '#3c4387'
   isbn13: '9781509870585'
   publication_year: 2009

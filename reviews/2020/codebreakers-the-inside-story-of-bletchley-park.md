@@ -3,7 +3,6 @@ book:
   author: F.H. Hinsley and Alan Tripp
   cover:
     name: codebreakers-the-inside-story-of-bletchley-park.jpg
-    size: 7926
     tint_color: '#bb0a0a'
   isbn13: '9780198203278'
   publication_year: 1993

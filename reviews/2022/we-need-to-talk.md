@@ -3,7 +3,6 @@ book:
   author: Celeste Headlee
   cover:
     name: we-need-to-talk.jpg
-    size: 88169
     tint_color: "#be7d0e"
   title: We Need to Talk
   publication_year: 2017

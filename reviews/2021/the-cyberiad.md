@@ -3,7 +3,6 @@ book:
   author: Stanislaw Lem
   cover:
     name: the-cyberiad.jpg
-    size: 87822
     tint_color: '#805385'
   isbn13: '9780241467992'
   publication_year: 1965

@@ -3,7 +3,6 @@ book:
   author: Ann Leckie
   cover:
     name: ancillary-justice.jpg
-    size: 8077
     tint_color: '#b7162d'
   isbn10: 031624662X
   isbn13: '9780316246620'

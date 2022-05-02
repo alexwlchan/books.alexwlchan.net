@@ -4,7 +4,6 @@ book:
   narrator: Tinashe Warikandwa
   cover:
     name: the-library-of-the-dead.jpeg
-    size: 549831
     tint_color: "#206969"
   publication_year: 2021
   title: The Library of the Dead

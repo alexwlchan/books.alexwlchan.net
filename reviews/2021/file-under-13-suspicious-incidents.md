@@ -3,7 +3,6 @@ book:
   author: Lemony Snicket
   cover:
     name: file-under-13-suspicious-incidents.jpeg
-    size: 1338990
     tint_color: "#1d588e"
   publication_year: 2014
   title: "File Under: 13 Suspicious Incidents"

@@ -3,7 +3,6 @@ book:
   author: Alan A. Jackson
   cover:
     name: volks-railways-brighton-an-illustrated-history.jpg
-    size: 10016
     tint_color: '#965535'
   isbn10: '1871980186'
   isbn13: '9781871980189'

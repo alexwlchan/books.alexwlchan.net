@@ -3,7 +3,6 @@ book:
   author: Jane Austen
   cover:
     name: pride-and-prejudice.jpg
-    size: 68085
     tint_color: '#947204'
   publication_year: 1813
   title: Pride and Prejudice

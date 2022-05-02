@@ -3,7 +3,6 @@ book:
   author: Allie Brosh
   cover:
     name: hyperbole-and-a-half.jpg
-    size: 11419
     tint_color: '#544f3d'
   isbn10: 0224095374
   isbn13: '9780224095372'

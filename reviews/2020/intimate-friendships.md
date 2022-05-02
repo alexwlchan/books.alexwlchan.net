@@ -3,7 +3,6 @@ book:
   author: James W. Ramey
   cover:
     name: intimate-friendships.jpg
-    size: 6561
     tint_color: '#862a20'
   isbn10: 0134768957
   isbn13: '9780134768953'

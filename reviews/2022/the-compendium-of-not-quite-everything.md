@@ -3,7 +3,6 @@ book:
   author: Jonn Elledge
   cover:
     name: the-compendium-of-not-quite-everything.png
-    size: 1245070
     tint_color: "#094685"
   title: The Compendium of (Not Quite) Everything
   publication_year: 2021

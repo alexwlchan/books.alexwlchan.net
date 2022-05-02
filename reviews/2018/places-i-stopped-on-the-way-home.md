@@ -3,7 +3,6 @@ book:
   author: Meg Fee
   cover:
     name: places-i-stopped-on-the-way-home.jpg
-    size: 6977
     tint_color: '#5f706d'
   isbn10: '1785783033'
   isbn13: '9781785783036'

@@ -3,7 +3,6 @@ book:
   author: qntm
   cover:
     name: there-is-no-antimemetics-division.jpg
-    size: 133742
     tint_color: "#dd4366"
   title: There Is No Antimemetics Division
   publication_year: 2021

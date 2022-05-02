@@ -3,7 +3,6 @@ book:
   author: Alexandria Bellefleur
   cover:
     name: hang-the-moon.jpg
-    size: 245716
     tint_color: "#965792"
   publication_year: 2021
   title: Hang the Moon

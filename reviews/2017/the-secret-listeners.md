@@ -3,7 +3,6 @@ book:
   author: Sinclair McKay
   cover:
     name: the-secret-listeners.jpg
-    size: 21219
     tint_color: '#c14d4b'
   isbn13: '9781845137632'
   publication_year: 2012

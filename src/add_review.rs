@@ -212,8 +212,6 @@ pub fn add_review() -> () {
 
     let cover_name = cover_path.file_name().unwrap().to_str().unwrap();
 
-    let cover_size = fs::metadata(&cover_path).unwrap().len();
-
     let output = String::from_utf8(
         Command::new("dominant_colours")
             .arg(&cover_path)
@@ -270,7 +268,6 @@ pub fn add_review() -> () {
 
     let cover = models::Cover {
         name: cover_name.to_string(),
-        size: cover_size as i32,
         tint_color: tint_colour.to_string(),
     };
 

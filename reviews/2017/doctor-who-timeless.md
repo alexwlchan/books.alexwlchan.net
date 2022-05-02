@@ -3,7 +3,6 @@ book:
   author: Stephen Cole
   cover:
     name: doctor-who-timeless.jpg
-    size: 23190
     tint_color: '#1f5b95'
   isbn10: 0563486074
   isbn13: '9780563486077'

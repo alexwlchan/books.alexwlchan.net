@@ -3,7 +3,6 @@ book:
   author: Garrett M. Graff
   cover:
     name: the-only-plane-in-the-sky.jpg
-    size: 19351
     tint_color: '#000000'
   narrator: Holter Graham and a full cast
   publication_year: 2019

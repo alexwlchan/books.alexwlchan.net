@@ -3,7 +3,6 @@ book:
   author: Michael G. Walling
   cover:
     name: forgotten-sacrifice-the-arctic-convoys-of-world-war-ii.jpg
-    size: 11826
     tint_color: '#5b6d7f'
   isbn10: '1849087180'
   isbn13: '9781849087186'

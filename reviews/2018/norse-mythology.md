@@ -3,7 +3,6 @@ book:
   author: Neil Gaiman
   cover:
     name: norse-mythology.jpg
-    size: 7327
     tint_color: '#756861'
   isbn10: '1408886804'
   isbn13: '9781408886809'

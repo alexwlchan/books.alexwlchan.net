@@ -3,7 +3,6 @@ book:
   author: Maureen Johnson
   cover:
     name: the-hand-on-the-wall.jpg
-    size: 48898
     tint_color: '#0ba867'
   narrator: Kate Rudd
   publication_year: 2020

@@ -3,7 +3,6 @@ book:
   author: Dr. Yuki Hattori
   cover:
     name: what-cats-want.jpg
-    size: 490
     tint_color: "#707072"
   publication_year: 2020
   title: What Cats Want

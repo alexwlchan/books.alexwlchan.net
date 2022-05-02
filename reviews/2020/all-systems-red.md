@@ -3,7 +3,6 @@ book:
   author: Martha Wells
   cover:
     name: all-systems-red.jpg
-    size: 6908
     tint_color: '#752d1e'
   isbn13: '9780765397522'
   publication_year: 2017

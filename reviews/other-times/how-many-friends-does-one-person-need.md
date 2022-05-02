@@ -3,7 +3,6 @@ book:
   author: Robin I.M. Dunbar
   cover:
     name: how-many-friends-does-one-person-need.jpg
-    size: 12562
     tint_color: '#9d4a52'
   isbn10: '0571253423'
   isbn13: '9780571253425'

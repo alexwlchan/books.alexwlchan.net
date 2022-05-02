@@ -3,7 +3,6 @@ book:
   author: Cary Cherniss
   cover:
     name: beyond-burnout.jpg
-    size: 9343
     tint_color: '#5c767e'
   isbn10: 0415912067
   isbn13: '9780415912068'

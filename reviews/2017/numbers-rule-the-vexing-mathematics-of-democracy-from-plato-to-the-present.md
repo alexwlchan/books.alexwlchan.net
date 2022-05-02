@@ -3,7 +3,6 @@ book:
   author: George G. Szpiro
   cover:
     name: numbers-rule-the-vexing-mathematics-of-democracy-from-plato-to-the-present.jpg
-    size: 9528
     tint_color: '#a4543e'
   isbn10: 0691139946
   isbn13: '9780691139944'

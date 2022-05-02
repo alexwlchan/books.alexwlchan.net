@@ -4,7 +4,6 @@ book:
   narrator: Mary Robinette Kowal
   cover:
     name: the-calculating-stars.jpg
-    size: 1808117
     tint_color: "#296a93"
   publication_year: 2018
   title: The Calculating Stars

@@ -3,7 +3,6 @@ book:
   author: V.J. Kean
   cover:
     name: the-ancient-greek-computer-from-rhodes.jpg
-    size: 8399
     tint_color: '#6e6d5a'
   isbn10: '9602262273'
   isbn13: '9789602262276'

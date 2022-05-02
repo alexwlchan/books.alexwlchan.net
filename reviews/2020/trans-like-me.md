@@ -3,7 +3,6 @@ book:
   author: C. N. Lester
   cover:
     name: trans-like-me.jpg
-    size: 7818
     tint_color: '#d92839'
   cover_desc: 'The words “trans like me” in lowercased, large letters, set on a slightly
     off-white background. The words “trans” and “me” are in red; the word “like” is

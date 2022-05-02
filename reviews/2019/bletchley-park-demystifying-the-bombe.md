@@ -3,7 +3,6 @@ book:
   author: Dermot Turing
   cover:
     name: bletchley-park-demystifying-the-bombe.jpg
-    size: 14311
     tint_color: '#a83a39'
   isbn13: '9781841655666'
   publication_year: 2015

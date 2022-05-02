@@ -3,7 +3,6 @@ book:
   author: Frank Close
   cover:
     name: antimatter.jpg
-    size: 9160
     tint_color: '#ae202b'
   isbn10: 0199550166
   isbn13: '9780199550166'

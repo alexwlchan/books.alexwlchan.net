@@ -3,7 +3,6 @@ book:
   author: Becky Chambers
   cover:
     name: record-of-a-spaceborn-few.jpg
-    size: 9177
     tint_color: '#2c5094'
   isbn10: '1473647606'
   isbn13: '9781473647602'

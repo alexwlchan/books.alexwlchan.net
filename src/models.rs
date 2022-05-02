@@ -13,7 +13,6 @@ fn default_as_false() -> bool {
 #[derive(Deserialize, Serialize)]
 pub struct Cover {
     pub name: String,
-    pub size: i32,
     pub tint_color: String,
 }
 

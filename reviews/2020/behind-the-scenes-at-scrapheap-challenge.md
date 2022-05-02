@@ -3,7 +3,6 @@ book:
   author: Robert Llewellyn
   cover:
     name: behind-the-scenes-at-scrapheap-challenge.jpg
-    size: 11183
     tint_color: '#424f83'
   isbn10: 0752219995
   isbn13: '9780752219998'

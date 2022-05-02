@@ -3,7 +3,6 @@ book:
   author: Nina Mingya Powles
   cover:
     name: small-bodies-of-water.jpg
-    size: 48189
     tint_color: '#0967b2'
   narrator: Nina Mingya Powles
   publication_year: 2021

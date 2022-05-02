@@ -3,7 +3,6 @@ book:
   author: Martha Wells
   cover:
     name: artificial-condition-murderbot-2.jpg
-    size: 7718
     tint_color: '#966b45'
   isbn13: '9781250186935'
   publication_year: 2018
