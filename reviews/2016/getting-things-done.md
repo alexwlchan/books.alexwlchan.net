@@ -3,7 +3,6 @@ book:
   author: David Allen
   cover:
     name: getting-things-done.jpg
-    size: 18426
     tint_color: '#7b575c'
   isbn10: 0142000280
   isbn13: '9780142000281'

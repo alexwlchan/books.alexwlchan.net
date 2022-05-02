@@ -3,7 +3,6 @@ book:
   author: Reni Eddo-Lodge
   cover:
     name: why-im-no-longer-talking-to-white-people-about-race.jpg
-    size: 8563
     tint_color: '#696969'
   isbn13: '9781408870587'
   publication_year: 2017

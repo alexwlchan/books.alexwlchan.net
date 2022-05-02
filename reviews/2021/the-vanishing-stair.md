@@ -3,7 +3,6 @@ book:
   author: Maureen Johnson
   cover:
     name: the-vanishing-stair.jpg
-    size: 44546
     tint_color: '#b5483d'
   narrator: Kate Rudd
   publication_year: 2019

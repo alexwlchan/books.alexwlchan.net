@@ -3,7 +3,6 @@ book:
   author: Stephen Grosz
   cover:
     name: the-examined-life-how-we-lose-and-find-ourselves.jpg
-    size: 5421
     tint_color: '#716361'
   isbn10: 0393349322
   isbn13: '9780393349320'

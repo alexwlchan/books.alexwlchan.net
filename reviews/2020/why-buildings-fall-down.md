@@ -3,7 +3,6 @@ book:
   author: Matthys Levy, Mario Salvadori
   cover:
     name: why-buildings-fall-down.jpg
-    size: 14896
     tint_color: '#716a81'
   cover_desc: 'White cover, with the words “Why Buildings Fall Down” in blue. Below
     the title is a picture pof three buildings: (L-R) a multi-storey white building

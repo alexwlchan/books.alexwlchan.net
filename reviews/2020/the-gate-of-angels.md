@@ -3,7 +3,6 @@ book:
   author: Penelope Fitzgerald
   cover:
     name: the-gate-of-angels.jpg
-    size: 7449
     tint_color: '#81593a'
   isbn10: '0002235277'
   isbn13: '9780002235273'

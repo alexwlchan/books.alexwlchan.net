@@ -3,7 +3,6 @@ book:
   author: Alexis Hall
   cover:
     name: looking-for-group.jpg
-    size: 9077
     tint_color: '#776038'
   isbn10: '1626494460'
   isbn13: '9781626494466'

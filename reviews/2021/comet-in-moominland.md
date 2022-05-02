@@ -3,7 +3,6 @@ book:
   author: Tove Jansson
   cover:
     name: comet-in-moominland.jpg
-    size: 54777
     tint_color: '#2d5980'
   isbn13: '9781908745651'
   publication_year: 1946

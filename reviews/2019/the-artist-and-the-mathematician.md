@@ -3,7 +3,6 @@ book:
   author: Amir D. Aczel
   cover:
     name: the-artist-and-the-mathematician.jpg
-    size: 10891
     tint_color: '#6d7079'
   isbn10: '1843440393'
   isbn13: '9781843440390'

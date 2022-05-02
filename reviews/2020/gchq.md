@@ -3,7 +3,6 @@ book:
   author: Richard Aldrich
   cover:
     name: gchq.jpg
-    size: 10742
     tint_color: '#646357'
   isbn13: '9780007278473'
   publication_year: 2010

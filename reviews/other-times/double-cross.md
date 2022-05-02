@@ -3,7 +3,6 @@ book:
   author: Ben Macintyre
   cover:
     name: double-cross.jpg
-    size: 11286
     tint_color: '#8e722f'
   isbn10: '1408830620'
   isbn13: '9781408830628'

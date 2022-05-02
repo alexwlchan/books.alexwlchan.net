@@ -3,7 +3,6 @@ book:
   author: R.J. Anderson
   cover:
     name: quicksilver-ultraviolet-2.jpg
-    size: 9786
     tint_color: '#667794'
   isbn10: '1408316285'
   isbn13: '9781408316283'

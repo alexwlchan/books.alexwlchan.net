@@ -3,7 +3,6 @@ book:
   author: Becky Chambers
   cover:
     name: a-closed-and-common-orbit.jpg
-    size: 7780
     tint_color: '#c31413'
   isbn10: '1473621445'
   isbn13: '9781473621442'

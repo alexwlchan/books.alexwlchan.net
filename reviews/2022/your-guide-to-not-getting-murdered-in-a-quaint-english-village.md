@@ -4,7 +4,6 @@ book:
   illustrator: Jay Cooper
   cover:
     name: your-guide-to-not-getting-murdered-in-a-quaint-english-village.jpg
-    size: 213768
     tint_color: "#c60017"
   publication_year: 2021
   title: Your Guide to Not Getting Murdered in a Quaint English Village

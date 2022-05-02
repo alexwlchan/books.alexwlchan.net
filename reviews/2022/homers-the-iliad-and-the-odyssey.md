@@ -3,7 +3,6 @@ book:
   author: Alberto Manguel
   cover:
     name: homers-the-iliad-and-the-odyssey.jpg
-    size: 210618
     tint_color: "#587c1d"
   publication_year: 2007
   title: "Homer's The Iliad and the Odyssey"

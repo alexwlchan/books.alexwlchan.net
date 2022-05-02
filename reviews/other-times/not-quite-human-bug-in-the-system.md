@@ -3,7 +3,6 @@ book:
   author: Seth McEvoy
   cover:
     name: not-quite-human-bug-in-the-system.jpg
-    size: 11864
     tint_color: '#986a43'
   isbn10: 0583309844
   isbn13: '9780583309844'

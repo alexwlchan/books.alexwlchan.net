@@ -3,7 +3,6 @@ book:
   author: Terry Pratchett
   cover:
     name: good-omens.jpg
-    size: 9904
     tint_color: '#717170'
   isbn10: 0552171891
   isbn13: '9780552171892'

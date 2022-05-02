@@ -3,7 +3,6 @@ book:
   author: Ken Kocienda
   cover:
     name: creative-selection.png
-    size: 7450
     tint_color: '#0772b8'
   publication_year: 2018
   title: Creative Selection

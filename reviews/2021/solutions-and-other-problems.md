@@ -3,7 +3,6 @@ book:
   author: Allie Brosh
   cover:
     name: solutions-and-other-problems.jpg
-    size: 45933
     tint_color: '#0dc59a'
   isbn13: '9780224101288'
   publication_year: 2020

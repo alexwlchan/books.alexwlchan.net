@@ -3,7 +3,6 @@ book:
   author: Ruth Ware
   cover:
     name: the-woman-in-cabin-10.jpg
-    size: 21476
     tint_color: '#12555a'
   narrator: Imogen Church
   publication_year: 2016

@@ -3,7 +3,6 @@ book:
   author: Lemony Snicket
   cover:
     name: when-did-you-see-her-last.jpg
-    size: 14474
     tint_color: '#8b6198'
   isbn10: '0316123056'
   isbn13: '9780316123051'

@@ -3,7 +3,6 @@ book:
   author: Nancy G. Leveson
   cover:
     name: engineering-a-safer-world.jpg
-    size: 5492
     tint_color: '#000000'
   publication_year: 2012
   title: Engineering a Safer World

@@ -3,7 +3,6 @@ book:
   author: Richard P. Feynman
   cover:
     name: the-meaning-of-it-all.jpg
-    size: 10853
     tint_color: '#b74946'
   isbn10: '0141031441'
   isbn13: '9780141031446'

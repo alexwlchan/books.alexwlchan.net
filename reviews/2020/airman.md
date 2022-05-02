@@ -3,7 +3,6 @@ book:
   author: Eoin Colfer
   cover:
     name: airman.jpg
-    size: 11508
     tint_color: '#276560'
   isbn13: '9780141383354'
   publication_year: 2008

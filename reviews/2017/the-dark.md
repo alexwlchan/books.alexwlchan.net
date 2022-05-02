@@ -3,7 +3,6 @@ book:
   author: Lemony Snicket
   cover:
     name: the-dark.jpg
-    size: 5308
     tint_color: '#000000'
   isbn10: 0316187488
   isbn13: '9780316187480'

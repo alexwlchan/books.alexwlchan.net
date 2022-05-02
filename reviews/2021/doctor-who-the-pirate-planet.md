@@ -3,7 +3,6 @@ book:
   author: Douglas Adams, James Goss
   cover:
     name: doctor-who-the-pirate-planet.jpg
-    size: 35676
     tint_color: '#1f1927'
   narrator: Jon Culshaw
   publication_year: 2017

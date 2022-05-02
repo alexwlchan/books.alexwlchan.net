@@ -3,7 +3,6 @@ book:
   author: C.S. Lewis
   cover:
     name: the-chronicles-of-narnia-audio-collection.jpg
-    size: 13350
     tint_color: '#6d4f31'
   isbn10: 0694524662
   isbn13: '9780694524662'

@@ -2,7 +2,6 @@
 book:
   cover:
     name: disability-visibility.jpg
-    size: 86514
     tint_color: '#945b9a'
   editor: Alice Wong
   publication_year: 2020

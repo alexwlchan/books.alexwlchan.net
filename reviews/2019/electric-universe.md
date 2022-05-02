@@ -3,7 +3,6 @@ book:
   author: David Bodanis
   cover:
     name: electric-universe.jpg
-    size: 11913
     tint_color: '#c8191d'
   isbn10: 0349117667
   isbn13: '9780349117669'

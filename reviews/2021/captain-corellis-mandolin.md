@@ -3,7 +3,6 @@ book:
   author: Louis de Bernières
   cover:
     name: captain-corellis-mandolin.jpg
-    size: 15351
     tint_color: '#270b60'
   isbn10: 0749397543
   isbn13: '9780749397548'

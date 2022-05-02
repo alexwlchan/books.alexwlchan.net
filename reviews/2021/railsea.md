@@ -3,7 +3,6 @@ book:
   author: China Miéville
   cover:
     name: railsea.jpg
-    size: 40482
     tint_color: '#8f560e'
   isbn13: '9781447213673'
   publication_year: 2012

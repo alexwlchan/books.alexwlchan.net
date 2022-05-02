@@ -3,7 +3,6 @@ book:
   author: John Wyndham
   cover:
     name: the-day-of-the-triffids.jpg
-    size: 6995
     tint_color: '#715e36'
   isbn10: 0140009930
   publication_year: 1951

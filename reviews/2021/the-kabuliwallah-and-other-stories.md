@@ -3,7 +3,6 @@ book:
   author: Rabindranath Tagore
   cover:
     name: the-kabuliwallah-and-other-stories.jpg
-    size: 42638
     tint_color: '#c01b1b'
   publication_year: 2020
   title: The Kabuliwallah and Other Stories

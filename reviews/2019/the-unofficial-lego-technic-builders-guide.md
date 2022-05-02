@@ -3,7 +3,6 @@ book:
   author: Paweł "Sariel" Kmieć
   cover:
     name: the-unofficial-lego-technic-builders-guide.jpg
-    size: 8838
     tint_color: '#2772b7'
   isbn10: '1593274343'
   isbn13: '9781593274344'

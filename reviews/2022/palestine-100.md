@@ -3,7 +3,6 @@ book:
   editor: Basma Ghalayini
   cover:
     name: palestine-100.jpg
-    size: 525009
     tint_color: "#b05f40"
   publication_year: 2019
   title: "Palestine + 100"

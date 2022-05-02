@@ -3,7 +3,6 @@ book:
   author: Simon Garfield
   cover:
     name: just-my-type.jpg
-    size: 9408
     tint_color: '#3e7b89'
   isbn10: '1846683017'
   isbn13: '9781846683015'

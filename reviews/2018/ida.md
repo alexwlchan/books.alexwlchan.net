@@ -3,7 +3,6 @@ book:
   author: Alison Evans
   cover:
     name: ida.jpg
-    size: 6942
     tint_color: '#307e8b'
   isbn10: '1760404381'
   isbn13: '9781760404383'

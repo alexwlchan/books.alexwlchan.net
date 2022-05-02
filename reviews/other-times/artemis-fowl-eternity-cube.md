@@ -3,7 +3,6 @@ book:
   author: Eoin Colfer
   cover:
     name: artemis-fowl-eternity-cube.jpg
-    size: 7572
     tint_color: '#b52b1e'
   isbn10: 0-14-131548-2
   isbn13: 978-0-14-131548-5

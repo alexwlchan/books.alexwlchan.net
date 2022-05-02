@@ -3,7 +3,6 @@ book:
   author: Gaby Dunn & Allison Raskin
   cover:
     name: i-hate-everyone-but-you.jpg
-    size: 11598
     tint_color: '#823b44'
   isbn10: 125012932X
   isbn13: '9781250129321'

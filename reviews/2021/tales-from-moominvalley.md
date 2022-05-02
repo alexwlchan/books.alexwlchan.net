@@ -3,7 +3,6 @@ book:
   author: Tove Jansson
   cover:
     name: tales-from-moominvalley.jpg
-    size: 31505
     tint_color: '#404e46'
   isbn13: '9781908745682'
   publication_year: 1962

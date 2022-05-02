@@ -3,7 +3,6 @@ book:
   author: Joshua Piven
   cover:
     name: the-worst-case-scenario-survival-handbook-travel.jpg
-    size: 9658
     tint_color: '#000000'
   isbn10: 0811831310
   isbn13: '9780811831314'

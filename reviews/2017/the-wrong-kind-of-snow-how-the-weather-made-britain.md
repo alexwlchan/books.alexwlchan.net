@@ -3,7 +3,6 @@ book:
   author: Rob Penn
   cover:
     name: the-wrong-kind-of-snow-how-the-weather-made-britain.jpg
-    size: 12952
     tint_color: '#5f717a'
   isbn10: 0340937882
   isbn13: '9780340937884'

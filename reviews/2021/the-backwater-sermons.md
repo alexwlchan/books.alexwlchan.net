@@ -3,7 +3,6 @@ book:
   author: Jay Hulme
   cover:
     name: the-backwater-sermons.jpg
-    size: 49424
     tint_color: '#936f4a'
   isbn13: '9781786223937'
   publication_year: 2021

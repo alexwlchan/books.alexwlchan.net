@@ -3,7 +3,6 @@ book:
   author: Frédéric Gros
   cover:
     name: a-philosophy-of-walking.jpg
-    size: 8134
     tint_color: '#6c7b4e'
   isbn10: '1781682704'
   isbn13: '9781781682708'

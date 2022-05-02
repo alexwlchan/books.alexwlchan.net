@@ -2,7 +2,6 @@
 book:
   cover:
     name: your-computer-is-on-fire.jpg
-    size: 32343
     tint_color: '#988206'
   editor: Thomas S. Mullaney, Benjamin Peters, Mar Hicks, and Kavita Philip
   isbn13: '9780262539739'

@@ -3,7 +3,6 @@ book:
   author: Marcus Chown
   cover:
     name: the-universe-next-door.jpg
-    size: 5744
     tint_color: '#000000'
   isbn10: 0747235287
   isbn13: '9780747235286'

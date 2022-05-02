@@ -3,7 +3,6 @@ book:
   author: Caitlin Doughty
   cover:
     name: smoke-gets-in-your-eyes.jpg
-    size: 8196
     tint_color: '#6d675e'
   isbn10: '1782111050'
   isbn13: '9781782111054'

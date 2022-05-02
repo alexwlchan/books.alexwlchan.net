@@ -3,7 +3,6 @@ book:
   author: Colson Whitehead
   cover:
     name: the-underground-railroad.jpg
-    size: 23713
     tint_color: '#845657'
   narrator: Bahni Turpin
   publication_year: 2016

@@ -3,7 +3,6 @@ book:
   author: Becky Chambers
   cover:
     name: a-psalm-for-the-wild-built.jpg
-    size: 922516
     tint_color: "#917546"
   publication_year: 2021
   title: A Psalm for the Wild-Built

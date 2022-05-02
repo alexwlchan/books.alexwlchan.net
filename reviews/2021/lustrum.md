@@ -3,7 +3,6 @@ book:
   author: Robert Harris
   cover:
     name: lustrum.jpg
-    size: 65270
     tint_color: '#231f20'
   isbn13: '9780091801007'
   publication_year: 2009

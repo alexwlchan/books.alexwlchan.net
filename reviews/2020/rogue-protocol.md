@@ -3,7 +3,6 @@ book:
   author: Martha Wells
   cover:
     name: rogue-protocol.jpg
-    size: 8107
     tint_color: '#686d72'
   isbn13: '9781250185433'
   publication_year: 2018

@@ -3,7 +3,6 @@ book:
   author: Elisabeth Beresford
   cover:
     name: the-wandering-wombles.jpg
-    size: 10825
     tint_color: '#d23675'
   publication_year: 1970
   title: The Wandering Wombles

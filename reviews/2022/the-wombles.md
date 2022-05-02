@@ -3,7 +3,6 @@ book:
   author: Elisabeth Beresford
   cover:
     name: the-wombles.jpg
-    size: 198104
     tint_color: "#578132"
   title: The Wombles
   publication_year: 1968

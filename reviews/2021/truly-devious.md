@@ -3,7 +3,6 @@ book:
   author: Maureen Johnson
   cover:
     name: truly-devious.jpg
-    size: 47196
     tint_color: '#393977'
   narrator: Kate Rudd
   publication_year: 2018

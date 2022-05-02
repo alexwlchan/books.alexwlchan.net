@@ -3,7 +3,6 @@ book:
   author: Leo Babauta
   cover:
     name: focus.png
-    size: 9092
     tint_color: '#6a696b'
   isbn10: ''
   isbn13: ''

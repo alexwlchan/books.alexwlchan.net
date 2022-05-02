@@ -5,7 +5,6 @@ book:
   series: 'Truly Devious #4'
   cover:
     name: the-box-in-the-woods.jpg
-    size: 421054
     tint_color: '#674288'
   publication_year: 2021
   title: The Box in the Woods

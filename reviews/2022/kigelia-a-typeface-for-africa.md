@@ -3,7 +3,6 @@ book:
   author: Mark Jamra and Neil Patel
   cover:
     name: kigelia-a-typeface-for-africa.jpg
-    size: 158583
     tint_color: "#b25405"
   title: "Kigelia: A Typeface for Africa"
   publication_year: 2018

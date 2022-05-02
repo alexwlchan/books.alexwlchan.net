@@ -3,7 +3,6 @@ book:
   author: Gideon Defoe
   cover:
     name: an-atlas-of-extinct-countries.jpg
-    size: 15007
     tint_color: '#0c7e72'
   publication_year: 2020
   title: An Atlas of Extinct Countries

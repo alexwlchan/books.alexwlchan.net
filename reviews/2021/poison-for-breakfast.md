@@ -3,7 +3,6 @@ book:
   author: Lemony Snicket
   cover:
     name: poison-for-breakfast.png
-    size: 287192
     tint_color: '#bf3625'
   publication_year: 2021
   title: Poison for Breakfast

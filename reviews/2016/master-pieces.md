@@ -3,7 +3,6 @@ book:
   author: Gareth Williams
   cover:
     name: master-pieces.jpg
-    size: 5379
     tint_color: '#557664'
   isbn10: '1840921536'
   isbn13: '9781840921533'
