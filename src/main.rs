@@ -223,10 +223,13 @@ async fn main() {
     if matches.subcommand_name() == Some("deploy") {
         println!("Deploying to Netlify...");
 
-        let status = Command::new("netlify")
-            .args(vec!["deploy", "--prod"])
-            .status()
-            .unwrap();
+        let status = match Command::new("netlify").args(vec!["deploy", "--prod"]).status() {
+            Ok(result) => (result),
+            Err(err) => {
+                eprintln!("💥 Error deploying to Netlify: {}", err);
+                std::process::exit(1);
+            },
+        };
 
         if !status.success() {
             eprintln!("Could not deploy to Netlify!");
