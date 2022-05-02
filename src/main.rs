@@ -21,7 +21,7 @@
 /// The code is somewhat scrappy Rust and shouldn't be taken as an example of how
 /// to write Rust, but it works well enough.
 use std::convert::Infallible;
-use std::io::Write;
+use std::io::{ErrorKind, Write};
 use std::net::SocketAddr;
 use std::path::Path;
 use std::process::Command;
@@ -225,9 +225,15 @@ async fn main() {
 
         let status = match Command::new("netlify").args(vec!["deploy", "--prod"]).status() {
             Ok(result) => (result),
-            Err(err) => {
-                eprintln!("💥 Error deploying to Netlify: {}", err);
-                std::process::exit(1);
+            Err(err) => match err.kind() {
+                ErrorKind::NotFound => {
+                    eprintln!("💥 Could not find the Netlify CLI; is it installed?");
+                    std::process::exit(1);
+                },
+                _ => {
+                    eprintln!("💥 Error deploying to Netlify: {}", err);
+                    std::process::exit(1);
+                },
             },
         };
 
