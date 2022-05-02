@@ -1,5 +1,5 @@
-use std::path::PathBuf;
 use serde::{Deserialize, Serialize};
+use std::path::PathBuf;
 
 fn is_false(b: &bool) -> bool {
     !b
@@ -71,7 +71,7 @@ pub struct ReviewMetadata {
     pub did_not_finish: bool,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub date_order: Option<usize>
+    pub date_order: Option<usize>,
 }
 
 #[derive(Deserialize, Serialize)]
@@ -92,6 +92,6 @@ pub struct Review {
 pub fn year_read(rev: &Review) -> &str {
     match &rev.review {
         Some(rev) => &rev.date_read[0..4],
-        None      => "another time",
+        None => "another time",
     }
 }

@@ -45,7 +45,7 @@ impl IsNewerThan<Path, io::Error> for Path {
                 Ok(self_metadata.modified()? > other_metadata.modified()?)
             }
 
-            _ => Ok(true)
+            _ => Ok(true),
         }
     }
 }

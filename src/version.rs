@@ -22,9 +22,13 @@ pub async fn get_latest_version() -> Result<Option<String>, reqwest::Error> {
         client
             .get(url)
             .header("Accept", "application/vnd.github.v3+json")
-            .header("User-Agent", "alexwlchan (via https://github.com/alexwlchan/books.alexwlchan.net)")
-            .send()
-    ).unwrap();
+            .header(
+                "User-Agent",
+                "alexwlchan (via https://github.com/alexwlchan/books.alexwlchan.net)",
+            )
+            .send(),
+    )
+    .unwrap();
 
     // Return an error if we don't get a 200 OK status code.
     let resp = resp.error_for_status()?;
@@ -34,6 +38,6 @@ pub async fn get_latest_version() -> Result<Option<String>, reqwest::Error> {
 
     match api_response {
         Ok(resp) => Ok(Some(resp.tag_name)),
-        Err(_)   => Ok(None),
+        Err(_) => Ok(None),
     }
 }

@@ -12,11 +12,11 @@ use image::{ImageBuffer, Rgba, RgbaImage};
 use imageproc::drawing::draw_filled_rect_mut;
 use imageproc::rect::Rect;
 use oxipng;
-use rand::{Rng, SeedableRng};
-use rand::rngs::SmallRng;
-use palette::FromColor;
-use palette::{Srgb, Hsl};
 use palette::rgb::Rgb;
+use palette::FromColor;
+use palette::{Hsl, Srgb};
+use rand::rngs::SmallRng;
+use rand::{Rng, SeedableRng};
 
 use crate::colours;
 use crate::errors::VfdError;
@@ -36,7 +36,10 @@ pub fn create_shelf_data_uri(hex_string: &str) -> Result<String, VfdError> {
 fn create_shelf(hex_string: &str) -> PathBuf {
     let rgb: Srgb<u8> = colours::parse_hex_string(hex_string);
 
-    let out_path = PathBuf::from(format!("_shelves/{:02x}{:02x}{:02x}.png", rgb.red, rgb.green, rgb.blue));
+    let out_path = PathBuf::from(format!(
+        "_shelves/{:02x}{:02x}{:02x}.png",
+        rgb.red, rgb.green, rgb.blue
+    ));
     if out_path.exists() {
         return out_path;
     }
@@ -44,7 +47,11 @@ fn create_shelf(hex_string: &str) -> PathBuf {
     let hsl: Hsl = if rgb.red <= 13 && rgb.green <= 13 && rgb.blue <= 13 {
         Hsl::from_color(Srgb::<f32>::new(13.0 / 255.0, 13.0 / 255.0, 13.0 / 255.0))
     } else {
-        Hsl::from_color(Srgb::<f32>::new(rgb.red as f32 / 255.0, rgb.green as f32 / 255.0, rgb.blue as f32 / 255.0))
+        Hsl::from_color(Srgb::<f32>::new(
+            rgb.red as f32 / 255.0,
+            rgb.green as f32 / 255.0,
+            rgb.blue as f32 / 255.0,
+        ))
     };
 
     // We seed the random generator to ensure we always get the same shape.
@@ -68,7 +75,7 @@ fn create_shelf(hex_string: &str) -> PathBuf {
         draw_filled_rect_mut(
             &mut img,
             Rect::at(x_coord, 0).of_size(shelf_width as u32, shelf_height),
-            create_random_colour_like(&mut rng, &hsl)
+            create_random_colour_like(&mut rng, &hsl),
         );
 
         x_coord += shelf_width;
@@ -107,11 +114,19 @@ fn optimise_png(p: &PathBuf) -> () {
 }
 
 fn min(f1: f32, f2: f32) -> f32 {
-    if f1 > f2 { f2 } else { f1 }
+    if f1 > f2 {
+        f2
+    } else {
+        f1
+    }
 }
 
 fn max(f1: f32, f2: f32) -> f32 {
-    if f1 > f2 { f1 } else { f2 }
+    if f1 > f2 {
+        f1
+    } else {
+        f2
+    }
 }
 
 // Create a random colour that's similar to the given colour.
@@ -130,5 +145,10 @@ fn create_random_colour_like(rng: &mut SmallRng, hsl: &Hsl) -> Rgba<u8> {
     let new_hsl = Hsl::new(hsl.hue, hsl.saturation, new_lightness);
 
     let rgb: Srgb = Rgb::from_color(new_hsl);
-    Rgba::from([(rgb.red * 255.0) as u8, (rgb.green * 255.0) as u8, (rgb.blue * 255.0) as u8, 255])
+    Rgba::from([
+        (rgb.red * 255.0) as u8,
+        (rgb.green * 255.0) as u8,
+        (rgb.blue * 255.0) as u8,
+        255,
+    ])
 }

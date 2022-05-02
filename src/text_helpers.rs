@@ -2,7 +2,7 @@ use phf::phf_map;
 use regex::Regex;
 
 pub fn markdown(s: &str) -> String {
-    let parser = pulldown_cmark::Parser::new_ext(&s,  pulldown_cmark::Options::all());
+    let parser = pulldown_cmark::Parser::new_ext(&s, pulldown_cmark::Options::all());
 
     let mut body = String::new();
     pulldown_cmark::html::push_html(&mut body, parser);
@@ -44,7 +44,8 @@ static MONTHS: phf::Map<&'static str, &'static str> = phf_map! {
 
 pub fn render_date(s: &str) -> String {
     lazy_static! {
-        static ref RE: Regex = Regex::new(r"^(?P<year>\d{4})-(?P<month>\d{2})(?:-(?P<day>\d{2}))?$").unwrap();
+        static ref RE: Regex =
+            Regex::new(r"^(?P<year>\d{4})-(?P<month>\d{2})(?:-(?P<day>\d{2}))?$").unwrap();
     }
 
     let date_match = (*RE).captures(s).unwrap();
@@ -54,7 +55,7 @@ pub fn render_date(s: &str) -> String {
 
     match date_match.name("day") {
         Some(d) => format!("{} {} {}", d.as_str().trim_start_matches('0'), month, year),
-        None    => format!("{} {}", month, year),
+        None => format!("{} {}", month, year),
     }
 }
 
