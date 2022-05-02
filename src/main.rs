@@ -20,7 +20,6 @@
 ///
 /// The code is somewhat scrappy Rust and shouldn't be taken as an example of how
 /// to write Rust, but it works well enough.
-
 use std::convert::Infallible;
 use std::io::Write;
 use std::net::SocketAddr;
@@ -45,7 +44,7 @@ mod urls;
 mod version;
 
 use axum::{http::StatusCode, service, Router};
-use clap::{App, SubCommand, AppSettings};
+use clap::{App, AppSettings, SubCommand};
 use tower_http::services::ServeDir;
 
 use render_html::{create_thumbnails, render_html, sync_static_files, HtmlRenderMode};
@@ -60,7 +59,12 @@ fn create_html_pages(mode: HtmlRenderMode) {
     // an option.
     let cached_templates = templates::get_templates().unwrap();
 
-    match render_html(&cached_templates, Path::new("reviews"), Path::new("_html"), mode) {
+    match render_html(
+        &cached_templates,
+        Path::new("reviews"),
+        Path::new("_html"),
+        mode,
+    ) {
         Ok(_) => (),
         Err(err) => eprintln!("💥 Error rendering HTML: {}", err),
     };
@@ -113,18 +117,15 @@ fn create_images() {
 }
 
 pub fn build_subcommand() -> App<'static, 'static> {
-    SubCommand::with_name("build")
-        .about("Build the HTML pages for the site")
+    SubCommand::with_name("build").about("Build the HTML pages for the site")
 }
 
 pub fn serve_subcommand() -> App<'static, 'static> {
-    SubCommand::with_name("serve")
-        .about("Run a local web server with the site and live changes")
+    SubCommand::with_name("serve").about("Run a local web server with the site and live changes")
 }
 
 pub fn deploy_subcommand() -> App<'static, 'static> {
-    SubCommand::with_name("deploy")
-        .about("Deploy a new version of the site to Netlify")
+    SubCommand::with_name("deploy").about("Deploy a new version of the site to Netlify")
 }
 
 #[tokio::main]
@@ -139,20 +140,19 @@ async fn main() {
     match version::get_latest_version().await {
         Ok(Some(latest_version)) if latest_version.strip_prefix("v") != Some(VERSION) => {
             println!("\x1b[96mA newer version of vfd is available, please update:\nhttps://github.com/alexwlchan/books.alexwlchan.net/releases/tag/{latest_version}\x1b[0m");
-        },
+        }
         _ => (),
     };
 
-    let app =
-        App::new("vfd")
-            .version(VERSION)
-            .author("Alex Chan <alex@alexwlchan.net>")
-            .about("Generates the HTML files for books.alexwlchan.net")
-            .setting(AppSettings::SubcommandRequired)
-            .subcommand(add_review::subcommand())
-            .subcommand(build_subcommand())
-            .subcommand(deploy_subcommand())
-            .subcommand(serve_subcommand());
+    let app = App::new("vfd")
+        .version(VERSION)
+        .author("Alex Chan <alex@alexwlchan.net>")
+        .about("Generates the HTML files for books.alexwlchan.net")
+        .setting(AppSettings::SubcommandRequired)
+        .subcommand(add_review::subcommand())
+        .subcommand(build_subcommand())
+        .subcommand(deploy_subcommand())
+        .subcommand(serve_subcommand());
 
     let matches = app.get_matches();
 
@@ -171,22 +171,30 @@ async fn main() {
         std::process::exit(0);
     }
 
-    if matches.subcommand_name() == Some("add_review") || matches.subcommand_name() == Some("serve") {
+    if matches.subcommand_name() == Some("add_review") || matches.subcommand_name() == Some("serve")
+    {
         tokio::task::spawn_blocking(move || {
-            let mut hotwatch = hotwatch::Hotwatch::new()
-                .expect("hotwatch failed to initialize!");
+            let mut hotwatch = hotwatch::Hotwatch::new().expect("hotwatch failed to initialize!");
 
             hotwatch
-                .watch("covers", |_| { create_images(); })
+                .watch("covers", |_| {
+                    create_images();
+                })
                 .expect("failed to watch covers folder!");
             hotwatch
-                .watch("reviews", |_| { create_html_pages(HtmlRenderMode::Incremental); })
+                .watch("reviews", |_| {
+                    create_html_pages(HtmlRenderMode::Incremental);
+                })
                 .expect("failed to watch reviews folder!");
             hotwatch
-                .watch("static", |_| { create_static_files(); })
+                .watch("static", |_| {
+                    create_static_files();
+                })
                 .expect("failed to watch static folder!");
             hotwatch
-                .watch("templates", |_| { create_html_pages(HtmlRenderMode::Full); })
+                .watch("templates", |_| {
+                    create_html_pages(HtmlRenderMode::Full);
+                })
                 .expect("failed to watch templates folder!");
 
             loop {
@@ -215,7 +223,10 @@ async fn main() {
     if matches.subcommand_name() == Some("deploy") {
         println!("Deploying to Netlify...");
 
-        let status = Command::new("netlify").args(vec!["deploy", "--prod"]).status().unwrap();
+        let status = Command::new("netlify")
+            .args(vec!["deploy", "--prod"])
+            .status()
+            .unwrap();
 
         if !status.success() {
             eprintln!("Could not deploy to Netlify!");

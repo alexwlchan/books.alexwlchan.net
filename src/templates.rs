@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 use tera::{from_value, to_value, try_get_value, Tera, Value};
 
-use crate::{create_shelf, colours, models, text_helpers};
+use crate::{colours, create_shelf, models, text_helpers};
 
 fn create_shelf_data_uri(args: &HashMap<String, Value>) -> tera::Result<Value> {
     let s: String = from_value(args.get("tint_colour").unwrap().to_owned()).unwrap();
@@ -50,8 +50,7 @@ pub fn books_in_year(value: &Value, args: &HashMap<String, Value>) -> tera::Resu
             // for books read at another time, so `r.review` will always be
             // defined.
             models::year_read(&r) == year &&
-            !r.review.as_ref().unwrap().did_not_finish
-        )
+            !r.review.as_ref().unwrap().did_not_finish)
         .count();
 
     Ok(to_value(count).unwrap())
@@ -62,7 +61,10 @@ pub fn as_rgba(value: &Value, args: &HashMap<String, Value>) -> tera::Result<Val
     let opacity: f32 = from_value(args.get("opacity").unwrap().to_owned()).unwrap();
 
     let rgb = colours::parse_hex_string(&hex_string);
-    let output = format!("rgba({}, {}, {}, {})", rgb.red, rgb.green, rgb.blue, opacity);
+    let output = format!(
+        "rgba({}, {}, {}, {})",
+        rgb.red, rgb.green, rgb.blue, opacity
+    );
 
     Ok(to_value(output).unwrap())
 }
@@ -75,15 +77,27 @@ pub fn boost(value: &Value, args: &HashMap<String, Value>) -> tera::Result<Value
     let rgb = colours::parse_hex_string(&hex_string);
 
     /* See https://stackoverflow.com/a/11615135/1558022 */
-    let red: f32   = rgb.red as f32 * multiplier + boost * 255.0;
+    let red: f32 = rgb.red as f32 * multiplier + boost * 255.0;
     let green: f32 = rgb.green as f32 * multiplier + boost * 255.0;
-    let blue: f32  = rgb.blue as f32 * multiplier + boost * 255.0;
+    let blue: f32 = rgb.blue as f32 * multiplier + boost * 255.0;
 
     let output = format!(
         "rgb({}, {}, {})",
-        if red.round() as i32 > 255   { 255 } else { red.round()   as i32 },
-        if green.round() as i32 > 255 { 255 } else { green.round() as i32 },
-        if blue.round() as i32 > 255  { 255 } else { blue.round()  as i32 }
+        if red.round() as i32 > 255 {
+            255
+        } else {
+            red.round() as i32
+        },
+        if green.round() as i32 > 255 {
+            255
+        } else {
+            green.round() as i32
+        },
+        if blue.round() as i32 > 255 {
+            255
+        } else {
+            blue.round() as i32
+        }
     );
 
     Ok(to_value(output).unwrap())

@@ -18,12 +18,16 @@ pub enum VfdError {
 impl fmt::Display for VfdError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         match *self {
-            VfdError::Io(ref err)               => write!(f, "IO error: {}", err),
-            VfdError::Walk(ref err)             => write!(f, "Walkdir error: {}", err),
-            VfdError::Parse(ref err, ref path)  => write!(f, "Couldn't parse file {:?}: {}", path, err),
-            VfdError::Utf8(ref err, ref path)   => write!(f, "Couldn't read {:?} as a UTF-8 string: {}", path, err),
-            VfdError::Thumbnail(ref message)    => write!(f, "Couldn't create thumbnail: {}", message),
-            VfdError::Template(ref err)         => write!(f, "Error rendering the template: {:?}", err),
+            VfdError::Io(ref err) => write!(f, "IO error: {}", err),
+            VfdError::Walk(ref err) => write!(f, "Walkdir error: {}", err),
+            VfdError::Parse(ref err, ref path) => {
+                write!(f, "Couldn't parse file {:?}: {}", path, err)
+            }
+            VfdError::Utf8(ref err, ref path) => {
+                write!(f, "Couldn't read {:?} as a UTF-8 string: {}", path, err)
+            }
+            VfdError::Thumbnail(ref message) => write!(f, "Couldn't create thumbnail: {}", message),
+            VfdError::Template(ref err) => write!(f, "Error rendering the template: {:?}", err),
             VfdError::HtmlMinification(ref err) => write!(f, "Error minifying the HTML: {:?}", err),
         }
     }

@@ -13,8 +13,8 @@ use tera::Tera;
 use walkdir::WalkDir;
 
 use crate::errors::VfdError;
-use crate::{fs_helpers, models};
 use crate::fs_helpers::IsNewerThan;
+use crate::{fs_helpers, models};
 
 /// Returns a list of all the reviews and the review text under a given path.
 fn get_reviews(root: &Path) -> Result<Vec<models::Review>, VfdError> {
@@ -27,28 +27,36 @@ fn get_reviews(root: &Path) -> Result<Vec<models::Review>, VfdError> {
             let buf = fs_helpers::read_file(entry.path())?;
 
             let md = match str::from_utf8(&buf) {
-                Ok(md)   => md,
+                Ok(md) => md,
                 Err(err) => return Err(VfdError::Utf8(err, entry.path().to_owned())),
             };
 
             let parts: Vec<&str> = md.split("---").collect();
 
             let metadata: models::Metadata = match serde_yaml::from_str(&parts[1]) {
-                Ok(r)    => r,
+                Ok(r) => r,
                 Err(err) => return Err(VfdError::Parse(err, entry.path().to_owned())),
             };
 
             let text = parts[2].to_string();
             let path = entry.path();
             let slug = path
-                .file_name().unwrap()
-                .to_str().unwrap()
+                .file_name()
+                .unwrap()
+                .to_str()
+                .unwrap()
                 .replace(".md", "");
 
             let review = metadata.review;
             let book = metadata.book;
 
-            result.push(models::Review { book, review, slug, text, path: path.to_owned() });
+            result.push(models::Review {
+                book,
+                review,
+                slug,
+                text,
+                path: path.to_owned(),
+            });
         }
     }
 
@@ -82,24 +90,28 @@ pub enum HtmlRenderMode {
     Full,
 }
 
-pub fn render_html(templates: &Tera, src: &Path, dst: &Path, mode: HtmlRenderMode) -> Result<(), VfdError> {
+pub fn render_html(
+    templates: &Tera,
+    src: &Path,
+    dst: &Path,
+    mode: HtmlRenderMode,
+) -> Result<(), VfdError> {
     let mut written_paths: HashSet<PathBuf> = HashSet::new();
 
     // Write the "all reviews" page
     let mut reviews = get_reviews(src).unwrap();
-    reviews.sort_by(|a, b|
-        match (a.review.as_ref(), b.review.as_ref()) {
-            (None, None)    => a.book.publication_year.cmp(&b.book.publication_year),
-            (None, Some(_)) => Ordering::Less,
-            (Some(_), None) => Ordering::Greater,
-            (Some(a_rev), Some(b_rev)) =>
-                if a_rev.date_read == b_rev.date_read {
-                    a_rev.date_order.cmp(&b_rev.date_order)
-                } else {
-                    a_rev.date_read.cmp(&b_rev.date_read)
-                }
+    reviews.sort_by(|a, b| match (a.review.as_ref(), b.review.as_ref()) {
+        (None, None) => a.book.publication_year.cmp(&b.book.publication_year),
+        (None, Some(_)) => Ordering::Less,
+        (Some(_), None) => Ordering::Greater,
+        (Some(a_rev), Some(b_rev)) => {
+            if a_rev.date_read == b_rev.date_read {
+                a_rev.date_order.cmp(&b_rev.date_order)
+            } else {
+                a_rev.date_read.cmp(&b_rev.date_read)
+            }
         }
-    );
+    });
     reviews.reverse();
 
     let this_year = chrono::offset::Utc::now().year();
@@ -127,7 +139,6 @@ pub fn render_html(templates: &Tera, src: &Path, dst: &Path, mode: HtmlRenderMod
 
     // Write individual HTML pages for each of the reviews.
     for rev in reviews {
-
         // Don't bother writing individual review pages for books I read at
         // another time; there's nothing useful there.
         if rev.review.is_none() {
@@ -203,19 +214,19 @@ pub fn create_thumbnails(dst: &Path) -> Result<(), VfdError> {
         if src_path.is_newer_than(&thumbnail_path)? {
             let args = [
                 src_path.to_str().unwrap(),
-
                 // Thumbnails are 240x240 max, then 2x for retina displays
-                "-resize", "480x480>",
-
+                "-resize",
+                "480x480>",
                 thumbnail_path.to_str().unwrap(),
             ];
 
             let status = Command::new("convert").args(args).status()?;
 
             if !status.success() {
-                return Err(VfdError::Thumbnail(
-                    format!("Could not create thumbnail for {} successfully", name.to_str().unwrap())
-                ));
+                return Err(VfdError::Thumbnail(format!(
+                    "Could not create thumbnail for {} successfully",
+                    name.to_str().unwrap()
+                )));
             }
         }
 
@@ -223,19 +234,24 @@ pub fn create_thumbnails(dst: &Path) -> Result<(), VfdError> {
         if src_path.is_newer_than(&square_path)? {
             let args = [
                 src_path.to_str().unwrap(),
-                "-resize", "240x240",
-                "-gravity", "center",
-                "-background", "white",
-                "-extent", "240x240",
+                "-resize",
+                "240x240",
+                "-gravity",
+                "center",
+                "-background",
+                "white",
+                "-extent",
+                "240x240",
                 square_path.to_str().unwrap(),
             ];
 
             let status = Command::new("convert").args(args).status()?;
 
             if !status.success() {
-                return Err(VfdError::Thumbnail(
-                    format!("Could not create square for {} successfully", name.to_str().unwrap())
-                ));
+                return Err(VfdError::Thumbnail(format!(
+                    "Could not create square for {} successfully",
+                    name.to_str().unwrap()
+                )));
             }
         }
     }

@@ -24,7 +24,6 @@ pub fn is_url(s: &str) -> bool {
 /// Returns the path where the file was actually downloaded.
 ///
 pub fn download_url(url: &Url, download_path: PathBuf) -> Result<PathBuf, reqwest::Error> {
-
     // Return an error if the GET request completely fails, e.g. if we can't
     // connect to the network at all.
     let resp = futures::executor::block_on(reqwest::get(url.as_str())).unwrap();
@@ -39,9 +38,13 @@ pub fn download_url(url: &Url, download_path: PathBuf) -> Result<PathBuf, reqwes
     // have a wrong extension or no extension at all).
     //
     // This mapping will likely have to be extended over time.
-    let extension = match resp.headers().get(CONTENT_TYPE).and_then(|value| value.to_str().ok()) {
+    let extension = match resp
+        .headers()
+        .get(CONTENT_TYPE)
+        .and_then(|value| value.to_str().ok())
+    {
         Some("image/jpeg") => "jpg",
-        Some("image/png")  => "png",
+        Some("image/png") => "png",
         _ => "",
     };
 

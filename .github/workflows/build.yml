@@ -1,0 +1,36 @@
+# This means the build should skip running in cases where I'm just adding
+# a new review, and not touching any of the Rust code.
+#
+# See https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onpushpull_requestpull_request_targetpathspaths-ignore
+on:
+  push:
+    paths-ignore:
+      - 'covers/**'
+      - 'reviews/**'
+      - 'static/**'
+      - 'templates/**'
+      - '**/*.md'
+      - 'netlify.toml'
+
+name: build
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - name: build
+        uses: actions-rs/cargo@v1
+        with:
+          command: build
+      - name: test
+        uses: actions-rs/cargo@v1
+        with:
+          command: test
+      - name: check formatting
+        uses: actions-rs/cargo@v1
+        with:
+          command: fmt
+          args: --check
