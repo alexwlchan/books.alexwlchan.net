@@ -11,14 +11,6 @@ on:
       - 'templates/**'
       - '**/*.md'
       - 'netlify.toml'
-  pull_request:
-    paths-ignore:
-      - 'covers/**'
-      - 'reviews/**'
-      - 'static/**'
-      - 'templates/**'
-      - '**/*.md'
-      - 'netlify.toml'
 
 name: build
 jobs:
