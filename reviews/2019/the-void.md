@@ -3,7 +3,7 @@ book:
   author: Frank Close
   cover:
     name: the-void.jpg
-    tint_color: '#c41018'
+    tint_color: '#2a6f91'
   isbn10: 0199225907
   isbn13: '9780199225903'
   publication_year: 2007
