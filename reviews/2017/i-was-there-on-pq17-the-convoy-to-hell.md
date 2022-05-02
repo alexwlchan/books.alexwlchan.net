@@ -3,7 +3,7 @@ book:
   author: Paul Lund
   cover:
     name: i-was-there-on-pq17-the-convoy-to-hell.jpg
-    tint_color: '#af4f31'
+    tint_color: '#841c42'
   isbn10: 057203542X
   isbn13: '9780572035426'
   publication_year: 2010
