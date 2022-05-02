@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.3.5 - 2022-05-02
+
+Improve the error message when you run `vfd deploy` and something goes wrong when deploying to Netlify.
+
 ## v1.3.4 - 2022-04-11
 
 Make the black shelves in the header of the homepage/list of reviews a little less black, so it looks more like a collection of books.
