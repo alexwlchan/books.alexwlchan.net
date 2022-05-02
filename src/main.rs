@@ -223,17 +223,20 @@ async fn main() {
     if matches.subcommand_name() == Some("deploy") {
         println!("Deploying to Netlify...");
 
-        let status = match Command::new("netlify").args(vec!["deploy", "--prod"]).status() {
+        let status = match Command::new("netlify")
+            .args(vec!["deploy", "--prod"])
+            .status()
+        {
             Ok(result) => (result),
             Err(err) => match err.kind() {
                 ErrorKind::NotFound => {
                     eprintln!("💥 Could not find the Netlify CLI; is it installed?");
                     std::process::exit(1);
-                },
+                }
                 _ => {
                     eprintln!("💥 Error deploying to Netlify: {}", err);
                     std::process::exit(1);
-                },
+                }
             },
         };
 
