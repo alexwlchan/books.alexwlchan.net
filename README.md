@@ -51,7 +51,7 @@ These files then get deployed to [Netlify].
 This repo includes a CLI tool called "vfd", which stands for "Vivid Folio Deliberations".
 It's named after the [secret organisation of the same acronym][vfd] from the Lemony Snicket books.
 
-It has three commands:
+It has four commands:
 
 -   `vfd add_review` helps me create a new review.
     It asks a series of questions as interactive prompts in my terminal, including the title, author, and publication year of the book.
@@ -60,7 +60,9 @@ It has three commands:
 -   `vfd serve` builds the site locally, and serves it on <http://localhost:5959>.
     When the source files change, it rebuilds the site.
 
--   `vfd deploy` builds the HTML pages, and uploads them to Netlify.
+-   `vfd build` does a one-off build of the site.
+
+-   `vfd deploy` does a one-off build of the site, then uploads it to Netlify.
 
 The tool is very [situated] and unlikely to be useful to anybody else, but there might be some ideas that you can use elsewhere.
 
