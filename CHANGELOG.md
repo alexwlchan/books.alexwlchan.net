@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.3.6 - 2022-05-02
+
+Remove some now-unused code for tracking the size of cover images.
+
 ## v1.3.5 - 2022-05-02
 
 Improve the error message when you run `vfd deploy` and something goes wrong when deploying to Netlify.
