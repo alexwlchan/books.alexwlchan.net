@@ -28,4 +28,5 @@ Perhaps unsurprising given the authors wrote for LBD, but pleasant nonetheless.
 I liked the use of her psychology classes as a frame; the juxtaposition of what she's learning in class and what she's feeling worked well for me.
 
 I finally read it after it was mentioned in Ashley Clements' Patreon Discord, and I'm glad I did.
+I found it easy to read and I finished it quickly.
 I didn't love it, but it's nice to get closure for Lydia.
