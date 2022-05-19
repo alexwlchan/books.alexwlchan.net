@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.3.7 - 2022-05-19
+
+Expose the last Git commit to modify the CSS to the templates, so I can serve CSS files with long-lasting cache headers but also be able to modify them and have browsers fetch up-to-date CSS.
+
 ## v1.3.6 - 2022-05-02
 
 Remove some now-unused code for tracking the size of cover images.

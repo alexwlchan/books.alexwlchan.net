@@ -114,12 +114,31 @@ pub fn render_html(
     });
     reviews.reverse();
 
+    // Finds the last Git commit where the CSS file was modified.
+    //
+    // This gets embedded in the URL to the CSS file, so I can set a
+    // very long Cache-Control header but still have browsers fetch
+    // the file fresh whenever it changes.
+    let css_commit = String::from_utf8(
+        Command::new("git")
+            .arg("log")
+            .arg("--max-count=1")
+            .arg("--pretty=format:%H")
+            .arg("--")
+            .arg("static/style.css")
+            .output()
+            .unwrap()
+            .stdout,
+    )
+    .unwrap();
+
     let this_year = chrono::offset::Utc::now().year();
 
     let mut context = tera::Context::new();
     context.insert("reviews", &reviews);
     context.insert("tint_colour", "#191919");
     context.insert("this_year", &this_year.to_string());
+    context.insert("css_commit", &css_commit.trim().to_string());
     let html = templates.render("list_reviews.html", &context)?;
 
     let out_path = dst.join("reviews/index.html");
@@ -131,6 +150,7 @@ pub fn render_html(
     context.insert("reviews", &reviews);
     context.insert("tint_colour", "#191919");
     context.insert("is_homepage", &true);
+    context.insert("css_commit", &css_commit.trim().to_string());
     let html = templates.render("index.html", &context)?;
 
     let out_path = dst.join("index.html");
@@ -169,6 +189,8 @@ pub fn render_html(
 
             context.insert("title", &rev.book.title);
             context.insert("tint_colour", &rev.book.cover.tint_color);
+
+            context.insert("css_commit", &css_commit.trim().to_string());
 
             let html = templates.render("review.html", &context).unwrap();
             write_html(&out_path, html)?;
