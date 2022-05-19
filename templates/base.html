@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!--
-      TODO: Implement cache invalidation when the CSS file changes.
-      I dropped it in the Rust rewrite, but it needs sorting.
+      Note: this URL includes the last Git commit where the
+      CSS file was modified.
+
+      This means I can set a very long Cache-Control header but still
+      have browsers fetch the file fresh whenever it changes.
     -->
-    <link rel="stylesheet" href="/static/style.css?t={{ now() | date(format="%s") }}">
+    <link rel="stylesheet" href="/static/style.css?commit={{ css_commit }}">
     <style>
       {% include "_base.css" %}
 
