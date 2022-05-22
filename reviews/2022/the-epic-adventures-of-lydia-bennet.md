@@ -14,7 +14,7 @@ review:
   rating: 4
 ---
 
-This book concludes Lydia's story from [*The Lizzie Bennet Diaries*](Safhttps://en.wikipedia.org/wiki/The_Lizzie_Bennet_Diaries), a web series I adored when it was first airing.
+This book concludes Lydia's story from [*The Lizzie Bennet Diaries*](https://en.wikipedia.org/wiki/The_Lizzie_Bennet_Diaries), a web series I adored when it was first airing.
 
 Lydia is trying to rebuild her life after George Wickham, preparing to study psychology, and making friends who don't know her from The Internet.
 It's not an entirely smooth ride, and it speaks to the strength of this character that I was still upset when things fell apart – even after all this time.
