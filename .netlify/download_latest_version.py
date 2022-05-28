@@ -94,9 +94,5 @@ def download_asset(url):
 
 
 if __name__ == "__main__":
-    opener = urllib.request.build_opener()
-    opener.addheaders = [("User-Agent", "alexwlchan")]
-    urllib.request.install_opener(opener)
-
     download_url = get_asset_download_url()
     download_asset(download_url)
