@@ -9,6 +9,8 @@ use std::str;
 
 use chrono::Datelike;
 use html_minifier::HTMLMinifier;
+use image::imageops::FilterType;
+use image::GenericImageView;
 use tera::Tera;
 use walkdir::WalkDir;
 
@@ -233,48 +235,47 @@ pub fn create_thumbnails(dst: &Path) -> Result<(), VfdError> {
         let name = src_path.file_name().unwrap();
 
         let thumbnail_path = dst.join("thumbnails").join(name);
-        if src_path.is_newer_than(&thumbnail_path)? {
-            let args = [
-                src_path.to_str().unwrap(),
-                // Thumbnails are 240x240 max, then 2x for retina displays
-                "-resize",
-                "480x480>",
-                thumbnail_path.to_str().unwrap(),
-            ];
-
-            let status = Command::new("convert").args(args).status()?;
-
-            if !status.success() {
-                return Err(VfdError::Thumbnail(format!(
-                    "Could not create thumbnail for {} successfully",
-                    name.to_str().unwrap()
-                )));
-            }
-        }
-
         let square_path = dst.join("squares").join(name);
-        if src_path.is_newer_than(&square_path)? {
-            let args = [
-                src_path.to_str().unwrap(),
-                "-resize",
-                "240x240",
-                "-gravity",
-                "center",
-                "-background",
-                "white",
-                "-extent",
-                "240x240",
-                square_path.to_str().unwrap(),
-            ];
 
-            let status = Command::new("convert").args(args).status()?;
+        if src_path.is_newer_than(&thumbnail_path)? || src_path.is_newer_than(&square_path)? {
+            let src_img = match image::open(&src_path) {
+                Ok(im) => im,
+                Err(e) => return Err(VfdError::Thumbnail(e)),
+            };
 
-            if !status.success() {
-                return Err(VfdError::Thumbnail(format!(
-                    "Could not create square for {} successfully",
-                    name.to_str().unwrap()
-                )));
-            }
+            // Thumbnails are 240x240 max, then 2x for retina displays
+            let thumbnail_img = src_img.resize(480, 480, FilterType::Gaussian);
+
+            match thumbnail_img.save(&thumbnail_path) {
+                Ok(_) => (),
+                Err(e) => return Err(VfdError::Thumbnail(e)),
+            };
+
+            let mut square_img =
+                image::ImageBuffer::from_pixel(480, 480, image::Rgba([255, 255, 255, 1]));
+
+            let (x_offset, y_offset) =
+                // Portrait image
+                if thumbnail_img.width() < thumbnail_img.height() {
+                    let x_offset = (480 - thumbnail_img.width()) / 2;
+                    (x_offset, 0)
+                }
+                // Landscape image
+                else if thumbnail_img.width() > thumbnail_img.height() {
+                    let y_offset = (480 - thumbnail_img.height()) / 2;
+                    (0, y_offset)
+                }
+                // Square image
+                else {
+                    (0, 0)
+                };
+
+            image::imageops::overlay(&mut square_img, &thumbnail_img, x_offset, y_offset);
+
+            match square_img.save(&square_path) {
+                Ok(_) => (),
+                Err(e) => return Err(VfdError::Thumbnail(e)),
+            };
         }
     }
 

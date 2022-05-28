@@ -3,6 +3,7 @@ use std::io;
 use std::path::PathBuf;
 
 use html_minifier::HTMLMinifierError;
+use image::error::ImageError;
 
 #[derive(Debug)]
 pub enum VfdError {
@@ -10,7 +11,7 @@ pub enum VfdError {
     Walk(walkdir::Error),
     Parse(serde_yaml::Error, PathBuf),
     Utf8(std::str::Utf8Error, PathBuf),
-    Thumbnail(String),
+    Thumbnail(ImageError),
     Template(tera::Error),
     HtmlMinification(HTMLMinifierError),
 }
@@ -26,7 +27,7 @@ impl fmt::Display for VfdError {
             VfdError::Utf8(ref err, ref path) => {
                 write!(f, "Couldn't read {:?} as a UTF-8 string: {}", path, err)
             }
-            VfdError::Thumbnail(ref message) => write!(f, "Couldn't create thumbnail: {}", message),
+            VfdError::Thumbnail(ref err) => write!(f, "Couldn't create thumbnail: {:?}", err),
             VfdError::Template(ref err) => write!(f, "Error rendering the template: {:?}", err),
             VfdError::HtmlMinification(ref err) => write!(f, "Error minifying the HTML: {:?}", err),
         }
