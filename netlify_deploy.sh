@@ -20,7 +20,6 @@ do
   then
     break
   else
-    echo "No binaries available yet, waiting..."
     sleep 1
   fi
 done
