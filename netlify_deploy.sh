@@ -25,8 +25,6 @@ do
   fi
 done
 
-echo "|$DOWNLOAD_URL|"
-
 # The --location flag means we follow redirects
 curl --location "$DOWNLOAD_URL" > ~/.cargo/bin/vfd.tar.gz
 tar -xzf ~/.cargo/bin/vfd.tar.gz
