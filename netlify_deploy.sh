@@ -13,9 +13,22 @@ set -o nounset
 # Netlify build minutes waiting for GitHub Actions.
 for i in {1,..,600}
 do
-  DOWNLOAD_URL=$(curl --silent 'https://api.github.com/repos/alexwlchan/books.alexwlchan.net/releases/latest' \
-    | jq -r ' .assets | map(.browser_download_url) | map(select(test(".*linux.*")))[0]'
+
+  ASSETS=$(curl --silent 'https://api.github.com/repos/alexwlchan/books.alexwlchan.net/releases/latest' \
+    | jq -r ' .assets')
+
+  if [[ "$ASSETS" == '[]' ]]
+  then
+    echo "No assets available yet, waiting..."
+    sleep 1
+    continue
+  fi
+
+  DOWNLOAD_URL=$(
+    echo "$ASSETS"
+      | jq -r ' .map(.browser_download_url) | map(select(test(".*linux.*")))[0]'
   )
+
   if [[ "$DOWNLOAD_URL" != "null" ]]
   then
     break
