@@ -25,7 +25,8 @@ do
   fi
 
   DOWNLOAD_URL=$(
-    echo "$ASSETS" | jq -r 'map(.browser_download_url) | map(select(test(".*linux.*")))[0]'
+    echo "$ASSETS"
+      | jq -r ' .map(.browser_download_url) | map(select(test(".*linux.*")))[0]'
   )
 
   if [[ "$DOWNLOAD_URL" != "null" ]]
@@ -36,6 +37,8 @@ do
     sleep 1
   fi
 done
+
+echo "|$DOWNLOAD_URL|"
 
 # The --location flag means we follow redirects
 curl --location "$DOWNLOAD_URL" > ~/.cargo/bin/vfd.tar.gz
