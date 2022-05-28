@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v1.3.8 - 2022-05-28
+
+Use the [`image` crate](https://crates.io/crates/image) to create thumbnails rather than Rust.
+In informal testing, this is ~25% faster.
+
 ## v1.3.7 - 2022-05-19
 
 Expose the last Git commit to modify the CSS to the templates, so I can serve CSS files with long-lasting cache headers but also be able to modify them and have browsers fetch up-to-date CSS.
