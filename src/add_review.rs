@@ -183,6 +183,15 @@ pub fn add_review() -> () {
         None
     };
 
+    // Open a pre-filled image search for the book in question, to help
+    // me find suitable covers.
+    let search_query = format!("{} by {}", title, author);
+    let search_url = format!(
+        "https://www.google.co.uk/search?safe=images&tbm=isch&as_q={}&tbs=isz%3Al",
+        urlencoding::encode(&search_query)
+    );
+    let _ = webbrowser::open(&search_url);
+
     let cover_url = get_url_value("What's the URL of the cover image?");
 
     let slug = text_helpers::slugify(&title);
