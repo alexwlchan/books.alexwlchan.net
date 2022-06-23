@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## v1.3.9 - 2022-06-21
+## v1.3.9 - 2022-06-23
 
 When adding a review, vfd now opens a pre-filled Google Images search for possible covers to help me pick a cover image.
 
