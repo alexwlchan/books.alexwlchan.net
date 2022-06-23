@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.3.9 - 2022-06-21
+
+When adding a review, vfd now opens a pre-filled Google Images search for possible covers to help me pick a cover image.
+
 ## v1.3.8 - 2022-05-28
 
 Use the [`image` crate](https://crates.io/crates/image) to create thumbnails rather than Rust.
