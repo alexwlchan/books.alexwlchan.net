@@ -18,8 +18,7 @@ When adding a review, vfd now opens a pre-filled Google Images search for possib
 
 ## v1.3.8 - 2022-05-28
 
-Use the [`image` crate](https://crates.io/crates/image) to create thumbnails rather than Rust.
-In informal testing, this is ~25% faster.
+Use the [`image` crate](https://crates.io/crates/image) instead of ImageMagick to create thumbnails. In informal testing, this is ~25% faster.
 
 ## v1.3.7 - 2022-05-19
 
