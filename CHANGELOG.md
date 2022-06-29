@@ -1,9 +1,12 @@
 # CHANGELOG
 
+## v1.3.12 - 2022-06-29
+
+Tweak the way shelves are generated, so there's more variety of light/dark books on different pages.
+
 ## v1.3.11 - 2022-06-29
 
-Add support for favicons.
-vfd will now look for files `static/favicon_16.png` and `static/favicon_32.png` which are fully black images with transparency (i.e. every pixel is `rgba(0, 0, 0, alpha)`), and then create appropriately tinted versions for each review page.
+Add support for favicons.  vfd will now look for files `static/favicon_16.png` and `static/favicon_32.png` which are fully black images with transparency (i.e. every pixel is `rgba(0, 0, 0, alpha)`), and then create appropriately tinted versions for each review page.
 
 ## v1.3.10 - 2022-06-29
 
