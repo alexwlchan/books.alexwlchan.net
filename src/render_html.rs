@@ -14,6 +14,7 @@ use image::GenericImageView;
 use tera::Tera;
 use walkdir::WalkDir;
 
+use crate::create_favicon::create_favicon;
 use crate::errors::VfdError;
 use crate::fs_helpers::IsNewerThan;
 use crate::{fs_helpers, models};
@@ -142,6 +143,7 @@ pub fn render_html(
     context.insert("this_year", &this_year.to_string());
     context.insert("css_commit", &css_commit.trim().to_string());
     let html = templates.render("list_reviews.html", &context)?;
+    create_favicon("#191919");
 
     let out_path = dst.join("reviews/index.html");
     write_html(&out_path, html)?;
@@ -196,6 +198,8 @@ pub fn render_html(
 
             let html = templates.render("review.html", &context).unwrap();
             write_html(&out_path, html)?;
+
+            create_favicon(&rev.book.cover.tint_color);
         }
 
         written_paths.insert(out_path);

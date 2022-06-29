@@ -21,6 +21,12 @@
   [headers.values]
 		cache-control = "public, max-age=31536000"
 
+[[headers]]
+  for = "/favicons/*"
+
+  [headers.values]
+		cache-control = "public, max-age=31536000"
+
 # I test my security headers with https://securityheaders.com/
 [[headers]]
   for = "/*"

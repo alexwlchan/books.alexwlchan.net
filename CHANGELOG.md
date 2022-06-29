@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v1.3.11 - 2022-06-29
+
+Add support for favicons.
+vfd will now look for files `static/favicon_16.png` and `static/favicon_32.png` which are fully black images with transparency (i.e. every pixel is `rgba(0, 0, 0, alpha)`), and then create appropriately tinted versions for each review page.
+
 ## v1.3.10 - 2022-06-29
 
 Fix a bug where `vfd build` would panic when trying to check the latest version if it was unable to connect to the GitHub API, e.g. if the Internet connection was offline.
