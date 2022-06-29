@@ -17,6 +17,9 @@
   <meta property="og:description" content="{{ book.title }}{% if book.author %}, by {{ book.author }}{% endif %}.{% if review.date_read and not review.did_not_finish %} Read {{ review.date_read | render_date }}.{% endif %}{% if review.rating and not review.did_not_finish %} {{ review.rating|star_rating }}{% endif %}">
 
   <meta name="theme-color" content="{{ book.cover.tint_color }}">
+
+  <link rel="shortcut icon" type="image/png" href="/favicons/{{ book.cover.tint_color | replace(from='#', to='') }}.png">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicons/{{ book.cover.tint_color | replace(from='#', to='') }}.ico">
 {% endblock %}
 
 {% block content %}

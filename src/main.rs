@@ -33,6 +33,7 @@ extern crate lazy_static;
 
 mod add_review;
 mod colours;
+mod create_favicon;
 mod create_shelf;
 mod errors;
 mod fs_helpers;
