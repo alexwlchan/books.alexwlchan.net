@@ -13,10 +13,7 @@ pub fn create_favicon(hex_string: &str) -> () {
 
     let prefix = format!("{:02x}{:02x}{:02x}", rgb.red, rgb.green, rgb.blue);
 
-    let ico_path = PathBuf::from(format!(
-        "_html/favicons/{}.ico", prefix
-
-    ));
+    let ico_path = PathBuf::from(format!("_html/favicons/{}.ico", prefix));
     if ico_path.exists() {
         return;
     }
@@ -49,11 +46,12 @@ pub fn create_favicon(hex_string: &str) -> () {
     let ico32 = ico::IconImage::from_rgba_data(32, 32, img32.to_vec());
     icon_dir.add_entry(ico::IconDirEntry::encode(&ico32).unwrap());
 
-    img32.save(format!("_html/favicons/{}.png", prefix )).unwrap();
+    img32
+        .save(format!("_html/favicons/{}.png", prefix))
+        .unwrap();
 
     // We save the ico file last, so we can use its presence to skip
     // recreating it next time.
     let file = std::fs::File::create(ico_path).unwrap();
     icon_dir.write(file).unwrap();
 }
-
