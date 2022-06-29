@@ -80,12 +80,19 @@ pub struct Metadata {
 }
 
 #[derive(Deserialize, Serialize)]
+pub struct DerivedCoverInfo {
+    pub width: u32,
+    pub height: u32,
+}
+
+#[derive(Deserialize, Serialize)]
 pub struct Review {
     pub book: Book,
     pub review: Option<ReviewMetadata>,
     pub text: String,
     pub slug: String,
     pub path: PathBuf,
+    pub derived_cover_info: DerivedCoverInfo,
 }
 
 pub fn year_read(rev: &Review) -> &str {
