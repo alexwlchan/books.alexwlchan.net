@@ -54,28 +54,39 @@ fn create_shelf(hex_string: &str) -> PathBuf {
         ))
     };
 
-    // We seed the random generator to ensure we always get the same shape.
-    // i.e. the rectangles that make up the shelf.
+    // These two RNGs serve two different purposes:
     //
-    // In particular, as somebody navigates around the site, they should
-    // see the bookshelf changing colours, but it should never change
-    // shape -- that would be too jarring.
-    let mut rng = SmallRng::seed_from_u64(0);
+    //    - The shape RNG creates the shape of the different shelves; we
+    //      seed with a constant to ensure a consistent output on all pages.
+    //
+    //      In particular, as somebody navigates around the site, they should
+    //      see the bookshelf changing colours, but it should never change
+    //      shape -- that would be too jarring.
+    //
+    //    - The luminosity RNG chooses the light/dark of individual books
+    //      on the shelves.  This is seeded based on the colour so it's
+    //      consistent across runs, but is different for each colour so we
+    //      get different patterns of light/dark.
+    //
+    let mut shape_rng = SmallRng::seed_from_u64(0);
+    let mut luminosity_rng = SmallRng::seed_from_u64(
+        rgb.red as u64 * 256 * 256 + rgb.green as u64 * 256 + rgb.blue as u64,
+    );
 
     let mut img: RgbaImage = ImageBuffer::new(2000, 90);
 
     let mut x_coord: i32 = 0;
 
     while x_coord < img.width() as i32 {
-        let shelf_width: i32 = rng.gen_range(4..28);
+        let shelf_width: i32 = shape_rng.gen_range(4..28);
 
         // Shelves go from 30px to 45px height, then 2x for retina displays.
-        let shelf_height: u32 = rng.gen_range(60..90);
+        let shelf_height: u32 = shape_rng.gen_range(60..90);
 
         draw_filled_rect_mut(
             &mut img,
             Rect::at(x_coord, 0).of_size(shelf_width as u32, shelf_height),
-            create_random_colour_like(&mut rng, &hsl),
+            create_random_colour_like(&mut luminosity_rng, &hsl),
         );
 
         x_coord += shelf_width;
