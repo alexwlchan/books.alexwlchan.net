@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.3.13 - 2022-06-29
+
+Fetch the dimensions of cover images and pass it to templates, so this information can be passed in the CSS on the `/review` page to simplify page layout.
+
+In particular, now we can give exact dimensions for images *before* the browser loads them, so the page doesn't need to be continually re-laid out as images are loaded.
+
 ## v1.3.12 - 2022-06-29
 
 Tweak the way shelves are generated, so there's more variety of light/dark books on different pages.

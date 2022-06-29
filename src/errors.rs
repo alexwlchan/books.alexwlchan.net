@@ -11,6 +11,7 @@ pub enum VfdError {
     Walk(walkdir::Error),
     Parse(serde_yaml::Error, PathBuf),
     Utf8(std::str::Utf8Error, PathBuf),
+    CoverInfo(ImageError, PathBuf),
     Thumbnail(ImageError),
     Template(tera::Error),
     HtmlMinification(HTMLMinifierError),
@@ -27,6 +28,7 @@ impl fmt::Display for VfdError {
             VfdError::Utf8(ref err, ref path) => {
                 write!(f, "Couldn't read {:?} as a UTF-8 string: {}", path, err)
             }
+            VfdError::CoverInfo(ref err, ref path) => write!(f, "Error getting cover info for {:?}: {}", path, err),
             VfdError::Thumbnail(ref err) => write!(f, "Couldn't create thumbnail: {:?}", err),
             VfdError::Template(ref err) => write!(f, "Error rendering the template: {:?}", err),
             VfdError::HtmlMinification(ref err) => write!(f, "Error minifying the HTML: {:?}", err),
