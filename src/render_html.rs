@@ -56,11 +56,9 @@ fn get_reviews(root: &Path) -> Result<Vec<models::Review>, VfdError> {
             let cover_path = PathBuf::from("covers").join(&book.cover.name);
             let (width, height) = match image::image_dimensions(&cover_path) {
                 Ok(dim) => dim,
-                Err(e)  => return Err(VfdError::CoverInfo(e, cover_path)),
+                Err(e) => return Err(VfdError::CoverInfo(e, cover_path)),
             };
-            let derived_cover_info = models::DerivedCoverInfo {
-                width, height,
-            };
+            let derived_cover_info = models::DerivedCoverInfo { width, height };
 
             result.push(models::Review {
                 book,
