@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.3.10 - 2022-06-29
+
+Fix a bug where `vfd build` would panic when trying to check the latest version if it was unable to connect to the GitHub API, e.g. if the Internet connection was offline.
+
 ## v1.3.9 - 2022-06-23
 
 When adding a review, vfd now opens a pre-filled Google Images search for possible covers to help me pick a cover image.

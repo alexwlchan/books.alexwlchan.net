@@ -27,8 +27,7 @@ pub async fn get_latest_version() -> Result<Option<String>, reqwest::Error> {
                 "alexwlchan (via https://github.com/alexwlchan/books.alexwlchan.net)",
             )
             .send(),
-    )
-    .unwrap();
+    )?;
 
     // Return an error if we don't get a 200 OK status code.
     let resp = resp.error_for_status()?;
