@@ -13,7 +13,7 @@ review:
   rating: 4
 ---
 
-I think this was a gift from Mum, although I don't remember exactly when.
+This was a gift from Mum, although I don't remember exactly when.
 
 It's about an investigative journalism group [Bellingcat], who do fact checking and investigation based on "open-source information" -- looking at information from publicly accessible sources, like social media and online maps.
 The book explains how Eliot went from being a blogger to leading the group, which has worked on an impressive list of cases -- including the downing of MH17, the poisoning of the Skripals in Salisbury, and the Syrian civil war.
