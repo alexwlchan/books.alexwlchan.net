@@ -25,8 +25,8 @@ id="review_preview_{{ slug }}">
 
         -->
       <span class="thumbnail_helper"></span>
-      {% if cover_dimensions.width > cover_dimensions.height %}
-        <img src="/thumbnails/{{ book.cover.name }}" style="width: 130px; height: {{ cover_dimensions.height * 130 }} / cover_dimensions.width | round}}px;" loading="lazy">
+      {% if cover_dimensions.width / 110.0 > cover_dimensions.height / 130.0 %}
+        <img src="/thumbnails/{{ book.cover.name }}" style="width: 110px; height: {{ cover_dimensions.height * 110 / cover_dimensions.width | round}}px;" loading="lazy">
       {% else %}
         <img src="/thumbnails/{{ book.cover.name }}" style="height: 130px; width: {{ cover_dimensions.width * 130 / cover_dimensions.height | round }}px;" loading="lazy">
       {% endif %}
