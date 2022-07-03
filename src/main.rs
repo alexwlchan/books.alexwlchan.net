@@ -180,6 +180,12 @@ async fn main() {
             hotwatch
                 .watch("covers", |_| {
                     create_images();
+
+                    // We need to recreate the HTML because the dimensions
+                    // of the cover images get baked into the HTML; if we
+                    // don't re-render then crops/dimensions may not update
+                    // correctly.
+                    create_html_pages(HtmlRenderMode::Full);
                 })
                 .expect("failed to watch covers folder!");
             hotwatch

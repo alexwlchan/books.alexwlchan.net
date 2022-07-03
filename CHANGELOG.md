@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.3.14 - 2022-07-03
+
+Fix a bug where images would look misshapen if re-cropped while running `vfd serve`.
+
 ## v1.3.13 - 2022-06-29
 
 Fetch the dimensions of cover images and pass it to templates, so this information can be passed in the CSS on the `/review` page to simplify page layout.
