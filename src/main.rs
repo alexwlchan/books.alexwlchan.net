@@ -28,6 +28,9 @@ use std::time::Instant;
 #[macro_use]
 extern crate lazy_static;
 
+#[macro_use]
+extern crate clap;
+
 mod add_review;
 mod colours;
 mod create_favicon;
@@ -42,7 +45,7 @@ mod text_helpers;
 mod urls;
 mod version;
 
-use clap::{App, AppSettings, SubCommand};
+use clap::{App, AppSettings, Arg, SubCommand};
 
 use crate::render_html::{create_thumbnails, render_html, sync_static_files, HtmlRenderMode};
 
@@ -113,11 +116,30 @@ fn create_images() {
     }
 }
 
-pub fn build_subcommand() -> App<'static, 'static> {
+pub fn build_subcommand() -> App<'static> {
     SubCommand::with_name("build").about("Build the HTML pages for the site")
 }
 
-pub fn deploy_subcommand() -> App<'static, 'static> {
+pub fn serve_subcommand() -> App<'static> {
+    SubCommand::with_name("serve")
+        .about("Run a local web server with the site and live changes")
+        .arg(
+            Arg::with_name("host")
+                .long("host")
+                .value_parser(["127.0.0.1", "0.0.0.0"])
+                .default_value("127.0.0.1")
+                .help("Specify an address to bind to")
+                .takes_value(true),
+        )
+        .arg(
+            Arg::with_name("port")
+                .long("port")
+                .default_value("5959")
+                .help("Specify a port to bind to"),
+        )
+}
+
+pub fn deploy_subcommand() -> App<'static> {
     SubCommand::with_name("deploy").about("Deploy a new version of the site to Netlify")
 }
 
@@ -145,7 +167,7 @@ async fn main() {
         .subcommand(add_review::subcommand())
         .subcommand(build_subcommand())
         .subcommand(deploy_subcommand())
-        .subcommand(serve::subcommand());
+        .subcommand(serve_subcommand());
 
     let matches = app.get_matches();
 
@@ -160,13 +182,22 @@ async fn main() {
     create_static_files();
     create_images();
 
-    if matches.subcommand_name() == Some("build") {
-        std::process::exit(0);
-    }
+    match matches.subcommand() {
+        Some(("build", _)) => {
+            std::process::exit(0);
+        }
 
-    if matches.subcommand_name() == Some("serve") {
-        crate::serve::run_server().await;
-    }
+        Some(("serve", sub_m)) => {
+            let host = sub_m.value_of("host").unwrap();
+
+            // Get the port as a number.
+            // See https://github.com/clap-rs/clap/blob/v2.33.1/examples/12_typed_values.rs
+            let port = value_t!(sub_m, "port", u16).unwrap_or_else(|e| e.exit());
+
+            crate::serve::run_server(host, port).await;
+        }
+        _ => {}
+    };
 
     if matches.subcommand_name() == Some("deploy") {
         println!("Deploying to Netlify...");

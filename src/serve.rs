@@ -4,16 +4,11 @@ use std::thread;
 use std::time::Duration;
 
 use axum::{http::StatusCode, service, Router};
-use clap::{App, SubCommand};
 use tower_http::services::ServeDir;
 
 use crate::render_html::HtmlRenderMode;
 
-pub fn subcommand() -> App<'static, 'static> {
-    SubCommand::with_name("serve").about("Run a local web server with the site and live changes")
-}
-
-pub async fn run_server() -> () {
+pub async fn run_server(host: &str, port: u16) -> () {
     tokio::task::spawn_blocking(move || {
         let mut hotwatch = hotwatch::Hotwatch::new().expect("hotwatch failed to initialize!");
 
@@ -59,8 +54,16 @@ pub async fn run_server() -> () {
         }),
     );
 
-    let addr = SocketAddr::from(([127, 0, 0, 1], 5959));
-    println!("🚀 Serving site on http://localhost:5959");
+    let (label, addr) = match host {
+        "127.0.0.1" => ("localhost", SocketAddr::from(([127, 0, 0, 1], port))),
+        "0.0.0.0" => ("0.0.0.0", SocketAddr::from(([0, 0, 0, 0], port))),
+        _ => {
+            eprintln!("💥 Unrecognised host: {}", host);
+            std::process::exit(1);
+        }
+    };
+
+    println!("🚀 Serving site on http://{}:{}", label, port);
     axum::Server::bind(&addr)
         .serve(app.into_make_service())
         .await

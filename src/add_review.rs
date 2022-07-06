@@ -23,7 +23,7 @@ use crate::models;
 use crate::text_helpers;
 use crate::urls;
 
-pub fn subcommand() -> App<'static, 'static> {
+pub fn subcommand() -> App<'static> {
     SubCommand::with_name("add_review").about("Start a review of a new book")
 }
 
