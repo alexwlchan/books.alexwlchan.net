@@ -164,8 +164,7 @@ async fn main() {
         std::process::exit(0);
     }
 
-    if matches.subcommand_name() == Some("add_review") || matches.subcommand_name() == Some("serve")
-    {
+    if matches.subcommand_name() == Some("serve") {
         crate::serve::run_server().await;
     }
 
