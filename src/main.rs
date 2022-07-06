@@ -173,6 +173,7 @@ async fn main() {
 
     if matches.subcommand_name() == Some("add_review") {
         add_review::add_review();
+        std::process::exit(0);
     }
 
     // Whatever the command is, we always want to build a fresh copy of the
@@ -196,32 +197,33 @@ async fn main() {
 
             crate::serve::run_server(host, port).await;
         }
+
+        Some(("deploy", _)) => {
+            println!("Deploying to Netlify...");
+
+            let status = match Command::new("netlify")
+                .args(vec!["deploy", "--prod"])
+                .status()
+            {
+                Ok(result) => (result),
+                Err(err) => match err.kind() {
+                    ErrorKind::NotFound => {
+                        eprintln!("💥 Could not find the Netlify CLI; is it installed?");
+                        std::process::exit(1);
+                    }
+                    _ => {
+                        eprintln!("💥 Error deploying to Netlify: {}", err);
+                        std::process::exit(1);
+                    }
+                },
+            };
+
+            if !status.success() {
+                eprintln!("Could not deploy to Netlify!");
+                std::process::exit(2);
+            }
+        }
+
         _ => {}
     };
-
-    if matches.subcommand_name() == Some("deploy") {
-        println!("Deploying to Netlify...");
-
-        let status = match Command::new("netlify")
-            .args(vec!["deploy", "--prod"])
-            .status()
-        {
-            Ok(result) => (result),
-            Err(err) => match err.kind() {
-                ErrorKind::NotFound => {
-                    eprintln!("💥 Could not find the Netlify CLI; is it installed?");
-                    std::process::exit(1);
-                }
-                _ => {
-                    eprintln!("💥 Error deploying to Netlify: {}", err);
-                    std::process::exit(1);
-                }
-            },
-        };
-
-        if !status.success() {
-            eprintln!("Could not deploy to Netlify!");
-            std::process::exit(2);
-        }
-    }
 }
