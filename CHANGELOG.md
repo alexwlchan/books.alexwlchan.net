@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.4.0 - 2022-07-06
+
+Allow setting `--host` and `--port` as arguments to `vfd serve`.
+
+Also remove the automatic web server start from `add_review`.
+
 ## v1.3.14 - 2022-07-03
 
 Fix a bug where images would look misshapen if re-cropped while running `vfd serve`.

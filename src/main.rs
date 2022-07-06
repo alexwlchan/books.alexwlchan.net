@@ -20,16 +20,16 @@
 ///
 /// The code is somewhat scrappy Rust and shouldn't be taken as an example of how
 /// to write Rust, but it works well enough.
-use std::convert::Infallible;
 use std::io::{ErrorKind, Write};
-use std::net::SocketAddr;
 use std::path::Path;
 use std::process::Command;
-use std::thread;
-use std::time::{Duration, Instant};
+use std::time::Instant;
 
 #[macro_use]
 extern crate lazy_static;
+
+#[macro_use]
+extern crate clap;
 
 mod add_review;
 mod colours;
@@ -39,18 +39,17 @@ mod errors;
 mod fs_helpers;
 mod models;
 mod render_html;
+mod serve;
 mod templates;
 mod text_helpers;
 mod urls;
 mod version;
 
-use axum::{http::StatusCode, service, Router};
-use clap::{App, AppSettings, SubCommand};
-use tower_http::services::ServeDir;
+use clap::{App, AppSettings, Arg, SubCommand};
 
-use render_html::{create_thumbnails, render_html, sync_static_files, HtmlRenderMode};
+use crate::render_html::{create_thumbnails, render_html, sync_static_files, HtmlRenderMode};
 
-fn create_html_pages(mode: HtmlRenderMode) {
+pub fn create_html_pages(mode: HtmlRenderMode) {
     let start = Instant::now();
     print!("Building HTML pages... ");
 
@@ -117,15 +116,30 @@ fn create_images() {
     }
 }
 
-pub fn build_subcommand() -> App<'static, 'static> {
+pub fn build_subcommand() -> App<'static> {
     SubCommand::with_name("build").about("Build the HTML pages for the site")
 }
 
-pub fn serve_subcommand() -> App<'static, 'static> {
-    SubCommand::with_name("serve").about("Run a local web server with the site and live changes")
+pub fn serve_subcommand() -> App<'static> {
+    SubCommand::with_name("serve")
+        .about("Run a local web server with the site and live changes")
+        .arg(
+            Arg::with_name("host")
+                .long("host")
+                .value_parser(["127.0.0.1", "0.0.0.0"])
+                .default_value("127.0.0.1")
+                .help("Specify an address to bind to")
+                .takes_value(true),
+        )
+        .arg(
+            Arg::with_name("port")
+                .long("port")
+                .default_value("5959")
+                .help("Specify a port to bind to"),
+        )
 }
 
-pub fn deploy_subcommand() -> App<'static, 'static> {
+pub fn deploy_subcommand() -> App<'static> {
     SubCommand::with_name("deploy").about("Deploy a new version of the site to Netlify")
 }
 
@@ -159,6 +173,7 @@ async fn main() {
 
     if matches.subcommand_name() == Some("add_review") {
         add_review::add_review();
+        std::process::exit(0);
     }
 
     // Whatever the command is, we always want to build a fresh copy of the
@@ -168,88 +183,47 @@ async fn main() {
     create_static_files();
     create_images();
 
-    if matches.subcommand_name() == Some("build") {
-        std::process::exit(0);
-    }
-
-    if matches.subcommand_name() == Some("add_review") || matches.subcommand_name() == Some("serve")
-    {
-        tokio::task::spawn_blocking(move || {
-            let mut hotwatch = hotwatch::Hotwatch::new().expect("hotwatch failed to initialize!");
-
-            hotwatch
-                .watch("covers", |_| {
-                    create_images();
-
-                    // We need to recreate the HTML because the dimensions
-                    // of the cover images get baked into the HTML; if we
-                    // don't re-render then crops/dimensions may not update
-                    // correctly.
-                    create_html_pages(HtmlRenderMode::Full);
-                })
-                .expect("failed to watch covers folder!");
-            hotwatch
-                .watch("reviews", |_| {
-                    create_html_pages(HtmlRenderMode::Incremental);
-                })
-                .expect("failed to watch reviews folder!");
-            hotwatch
-                .watch("static", |_| {
-                    create_static_files();
-                })
-                .expect("failed to watch static folder!");
-            hotwatch
-                .watch("templates", |_| {
-                    create_html_pages(HtmlRenderMode::Full);
-                })
-                .expect("failed to watch templates folder!");
-
-            loop {
-                thread::sleep(Duration::from_secs(1));
-            }
-        });
-
-        let app = Router::new().nest(
-            "/",
-            service::get(ServeDir::new("_html")).handle_error(|error: std::io::Error| {
-                Ok::<_, Infallible>((
-                    StatusCode::INTERNAL_SERVER_ERROR,
-                    format!("Unhandled internal error: {}", error),
-                ))
-            }),
-        );
-
-        let addr = SocketAddr::from(([127, 0, 0, 1], 5959));
-        println!("🚀 Serving site on http://localhost:5959");
-        axum::Server::bind(&addr)
-            .serve(app.into_make_service())
-            .await
-            .unwrap();
-    }
-
-    if matches.subcommand_name() == Some("deploy") {
-        println!("Deploying to Netlify...");
-
-        let status = match Command::new("netlify")
-            .args(vec!["deploy", "--prod"])
-            .status()
-        {
-            Ok(result) => (result),
-            Err(err) => match err.kind() {
-                ErrorKind::NotFound => {
-                    eprintln!("💥 Could not find the Netlify CLI; is it installed?");
-                    std::process::exit(1);
-                }
-                _ => {
-                    eprintln!("💥 Error deploying to Netlify: {}", err);
-                    std::process::exit(1);
-                }
-            },
-        };
-
-        if !status.success() {
-            eprintln!("Could not deploy to Netlify!");
-            std::process::exit(2);
+    match matches.subcommand() {
+        Some(("build", _)) => {
+            std::process::exit(0);
         }
-    }
+
+        Some(("serve", sub_m)) => {
+            let host = sub_m.value_of("host").unwrap();
+
+            // Get the port as a number.
+            // See https://github.com/clap-rs/clap/blob/v2.33.1/examples/12_typed_values.rs
+            let port = value_t!(sub_m, "port", u16).unwrap_or_else(|e| e.exit());
+
+            crate::serve::run_server(host, port).await;
+        }
+
+        Some(("deploy", _)) => {
+            println!("Deploying to Netlify...");
+
+            let status = match Command::new("netlify")
+                .args(vec!["deploy", "--prod"])
+                .status()
+            {
+                Ok(result) => (result),
+                Err(err) => match err.kind() {
+                    ErrorKind::NotFound => {
+                        eprintln!("💥 Could not find the Netlify CLI; is it installed?");
+                        std::process::exit(1);
+                    }
+                    _ => {
+                        eprintln!("💥 Error deploying to Netlify: {}", err);
+                        std::process::exit(1);
+                    }
+                },
+            };
+
+            if !status.success() {
+                eprintln!("Could not deploy to Netlify!");
+                std::process::exit(2);
+            }
+        }
+
+        _ => {}
+    };
 }
