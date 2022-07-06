@@ -32,6 +32,11 @@ h1 .book-title, h1 .book-series {
   }
 }
 
+aside #aside_inner, main, footer {
+  padding-left:  calc(1em + env(safe-area-inset-left));
+  padding-right: calc(1em + env(safe-area-inset-right));
+}
+
 aside {
   color: white;
   font-size: 13pt;
@@ -59,7 +64,8 @@ aside #shelf_background {
 }
 
 aside #aside_inner {
-  padding: 3px 1em;
+  padding-top: calc(3px + env(safe-area-inset-top));
+  padding-bottom: 3px;
 }
 
 aside a {
@@ -86,7 +92,8 @@ main, aside #aside_inner, footer #footer_inner {
 }
 
 main {
-  padding: 1em;
+  padding-top:    1em;
+  padding-bottom: 1em;
 }
 
 a {
