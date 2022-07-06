@@ -3,7 +3,7 @@ book:
   author: The School of Life
   cover:
     name: dating.jpg
-    tint_color: "#bd8d93"
+    tint_color: "#363738"
   title: Dating
   publication_year: 2019
   isbn13: "9781912891047"
