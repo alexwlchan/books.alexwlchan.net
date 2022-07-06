@@ -1,4 +1,4 @@
-// #![deny(warnings)]
+#![deny(warnings)]
 
 /// This is a tool for generating the static files for my book tracker.
 ///
