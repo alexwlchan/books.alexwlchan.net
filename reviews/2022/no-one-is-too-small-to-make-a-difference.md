@@ -9,6 +9,7 @@ book:
   isbn13: 9780141991740
 review:
   date_read: 2022-07-14
+  date_order: 1
   format: paperback
   rating: 4
 ---
