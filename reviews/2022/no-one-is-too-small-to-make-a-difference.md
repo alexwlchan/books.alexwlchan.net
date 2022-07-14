@@ -6,6 +6,7 @@ book:
     tint_color: "#0a090d"
   title: "No One is Too Small to Make a Difference"
   publication_year: 2019
+  isbn13: 9780141991740
 review:
   date_read: 2022-07-14
   format: paperback
