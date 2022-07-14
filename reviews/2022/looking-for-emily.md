@@ -2,7 +2,7 @@
 book:
   author: Fiona Longmuir
   cover:
-    name: looking-for-emily.md
+    name: looking-for-emily.jpg
     tint_color: "#74c9e5"
   title: "Looking for Emily"
   publication_year: 2022
