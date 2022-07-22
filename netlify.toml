@@ -3,6 +3,9 @@
   publish = "_html/"
   command = "pip3 install httpx; .netlify/install_vfd_and_build.py"
 
+[context.live]
+  environment = { PYTHON_VERSION = "3" }
+
 [[headers]]
   for = "/covers/*"
 
