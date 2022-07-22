@@ -1,7 +1,7 @@
 [build]
   base = ""
   publish = "_html/"
-  command = "./netlify_deploy.sh"
+  command = "pip3 install httpx; .netlify/install_vfd_and_build.py"
 
 [[headers]]
   for = "/covers/*"
