@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.4.1 - 2022-07-23
+
+Improve the accuracy of reported time taken; in particular `<1ms` rather than `0ms`.
+
 ## v1.4.0 - 2022-07-06
 
 Allow setting `--host` and `--port` as arguments to `vfd serve`.
