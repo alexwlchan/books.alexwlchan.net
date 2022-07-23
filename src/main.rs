@@ -49,6 +49,18 @@ use clap::{App, AppSettings, Arg, SubCommand};
 
 use crate::render_html::{create_thumbnails, render_html, sync_static_files, HtmlRenderMode};
 
+fn print_elapsed(start: Instant) -> () {
+    let elapsed = start.elapsed();
+
+    if elapsed.as_secs() == 0 && elapsed.as_millis() == 0 {
+        println!("done in <1ms");
+    } else if elapsed.as_secs() == 0 {
+        println!("done in {:?}ms", elapsed.as_millis());
+    } else {
+        println!("done in {:.1}s", elapsed.as_secs_f32());
+    }
+}
+
 pub fn create_html_pages(mode: HtmlRenderMode) {
     let start = Instant::now();
     print!("Building HTML pages... ");
@@ -69,12 +81,7 @@ pub fn create_html_pages(mode: HtmlRenderMode) {
         Err(err) => eprintln!("💥 Error rendering HTML: {}", err),
     };
 
-    let elapsed = start.elapsed();
-    if elapsed.as_secs() == 0 {
-        println!("done in {:?}ms", elapsed.as_millis());
-    } else {
-        println!("done in {:.1}s", elapsed.as_secs_f32());
-    }
+    print_elapsed(start);
 }
 
 fn create_static_files() {
@@ -86,12 +93,7 @@ fn create_static_files() {
         Err(err) => eprintln!("💥 Error syncing static files: {}", err),
     };
 
-    let elapsed = start.elapsed();
-    if elapsed.as_secs() == 0 {
-        println!("done in {:?}ms", elapsed.as_millis());
-    } else {
-        println!("done in {:.1}s", elapsed.as_secs_f32());
-    }
+    print_elapsed(start);
 }
 
 fn create_images() {
@@ -108,12 +110,7 @@ fn create_images() {
         Err(err) => eprintln!("💥 Error creating thumbnail images: {}", err),
     };
 
-    let elapsed = start.elapsed();
-    if elapsed.as_secs() == 0 {
-        println!("done in {:?}ms", elapsed.as_millis());
-    } else {
-        println!("done in {:.1}s", elapsed.as_secs_f32());
-    }
+    print_elapsed(start);
 }
 
 pub fn build_subcommand() -> App<'static> {
