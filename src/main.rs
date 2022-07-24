@@ -78,7 +78,7 @@ pub fn create_html_pages(mode: HtmlRenderMode) {
         mode,
     ) {
         Ok(_) => (),
-        Err(err) => eprintln!("💥 Error rendering HTML: {}", err),
+        Err(err) => eprintln!("💥 {}", err),
     };
 
     print_elapsed(start);

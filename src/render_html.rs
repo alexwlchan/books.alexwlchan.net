@@ -56,7 +56,7 @@ fn get_reviews(root: &Path) -> Result<Vec<models::Review>, VfdError> {
             let cover_path = PathBuf::from("covers").join(&book.cover.name);
             let (width, height) = match image::image_dimensions(&cover_path) {
                 Ok(dim) => dim,
-                Err(e) => return Err(VfdError::CoverInfo(e, cover_path)),
+                Err(e) => return Err(VfdError::CoverInfo(entry.path().to_owned(), e, cover_path)),
             };
             let derived_cover_info = models::DerivedCoverInfo { width, height };
 
@@ -110,7 +110,7 @@ pub fn render_html(
     let mut written_paths: HashSet<PathBuf> = HashSet::new();
 
     // Write the "all reviews" page
-    let mut reviews = get_reviews(src).unwrap();
+    let mut reviews = get_reviews(src)?;
     reviews.sort_by(|a, b| match (a.review.as_ref(), b.review.as_ref()) {
         (None, None) => a.book.publication_year.cmp(&b.book.publication_year),
         (None, Some(_)) => Ordering::Less,

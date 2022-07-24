@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.4.2 - 2022-07-24
+
+Improve the error message when there's an issue with the cover image specified in a review's metadata.
+
 ## v1.4.1 - 2022-07-23
 
 Improve the accuracy of reported time taken; in particular `<1ms` rather than `0ms`.
