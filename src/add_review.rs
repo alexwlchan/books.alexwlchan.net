@@ -11,6 +11,7 @@ use std::process::Command;
 
 use chrono::Datelike;
 use clap::{App, SubCommand};
+use inquire::error::InquireResult;
 use inquire::validator::StringValidator;
 use inquire::{DateSelect, Select, Text};
 use palette::{RelativeContrast, Srgb};
@@ -31,17 +32,17 @@ pub fn subcommand() -> App<'static> {
 ///
 /// Returns either their answer (as text) or None (if they don't answer).
 ///
-fn ask_optional_question(question: &str) -> Option<String> {
-    let result = Text::new(question).prompt().unwrap();
+fn ask_optional_question(question: &str) -> InquireResult<Option<String>> {
+    let result = Text::new(question).prompt()?;
 
     if result.len() > 0 {
-        Some(result)
+        Ok(Some(result))
     } else {
-        None
+        Ok(None)
     }
 }
 
-fn get_non_empty_string_value(question: &str) -> String {
+fn get_non_empty_string_value(question: &str) -> InquireResult<String> {
     let non_empty_validator: StringValidator = &|input| {
         if input.chars().count() == 0 {
             Err(String::from("You need to enter a value!"))
@@ -50,15 +51,14 @@ fn get_non_empty_string_value(question: &str) -> String {
         }
     };
 
-    Text::new(question)
+    let answer = Text::new(question)
         .with_validator(non_empty_validator)
-        .prompt()
-        .unwrap()
-        .trim()
-        .to_owned()
+        .prompt()?;
+
+    Ok(answer.trim().to_owned())
 }
 
-pub fn get_url_value(question: &str) -> Url {
+pub fn get_url_value(question: &str) -> InquireResult<Url> {
     let url_validator: StringValidator = &|input| {
         if !urls::is_url(input) {
             Err(String::from("You need to enter a URL!"))
@@ -67,17 +67,14 @@ pub fn get_url_value(question: &str) -> Url {
         }
     };
 
-    let response = Text::new(question)
-        .with_validator(url_validator)
-        .prompt()
-        .unwrap();
+    let response = Text::new(question).with_validator(url_validator).prompt()?;
 
     // We know calling .unwrap() is safe here because the validator ensures
     // the user has entered a valid URL.
-    Url::parse(&response).unwrap()
+    Ok(Url::parse(&response).unwrap())
 }
 
-fn get_year_value(question: &str) -> u16 {
+fn get_year_value(question: &str) -> InquireResult<u16> {
     let year_regex = Regex::new(r"^[0-9]{4}$").unwrap();
 
     let validator: StringValidator = &|input| {
@@ -88,14 +85,11 @@ fn get_year_value(question: &str) -> u16 {
         }
     };
 
-    let answer = Text::new(question)
-        .with_validator(validator)
-        .prompt()
-        .unwrap();
+    let answer = Text::new(question).with_validator(validator).prompt()?;
 
     // I know this .unwrap() is safe because the regex is ensuring that
     // the user enters a 4-digit numeric value.
-    answer.parse::<u16>().unwrap()
+    Ok(answer.parse::<u16>().unwrap())
 }
 
 #[derive(Serialize)]
@@ -127,46 +121,43 @@ fn save_review(year: i32, slug: &str, book: models::Book, metadata: models::Revi
     Command::new("open").arg(out_path).output().unwrap();
 }
 
-pub fn add_review() -> () {
-    let title = get_non_empty_string_value("What's the title of the book?");
-    let author = get_non_empty_string_value("Who's the author?");
-    let publication_year = get_year_value("When was it published?");
-    let series = ask_optional_question("Is the book part of a series?");
+pub fn add_review() -> InquireResult<()> {
+    let title = get_non_empty_string_value("What's the title of the book?")?;
+    let author = get_non_empty_string_value("Who's the author?")?;
+    let publication_year = get_year_value("When was it published?")?;
+    let series = ask_optional_question("Is the book part of a series?")?;
 
     let format = Select::new(
         "What format did you read it in?",
         vec!["audiobook", "paperback", "hardback", "ebook"],
     )
-    .prompt()
-    .unwrap()
+    .prompt()?
     .to_string();
 
     let narrator = if format == "audiobook" {
-        Some(get_non_empty_string_value("Who was the narrator?"))
+        Some(get_non_empty_string_value("Who was the narrator?")?)
     } else {
         None
     };
 
     let [isbn10, isbn13] = if format == "paperback" || format == "hardback" {
         [
-            ask_optional_question("Do you know the ISBN-10?"),
-            ask_optional_question("Do you know the ISBN-13?"),
+            ask_optional_question("Do you know the ISBN-10?")?,
+            ask_optional_question("Do you know the ISBN-13?")?,
         ]
     } else {
         [None, None]
     };
 
-    let did_finish = Select::new("Did you finish reading it?", vec!["yes", "no"])
-        .prompt()
-        .unwrap()
-        == "yes";
+    let did_finish =
+        Select::new("Did you finish reading it?", vec!["yes", "no"]).prompt()? == "yes";
 
     let finished_date_message = format!(
         "When did you {} reading it?",
         if did_finish { "finish" } else { "stop" }
     );
 
-    let date_read = DateSelect::new(&finished_date_message).prompt().unwrap();
+    let date_read = DateSelect::new(&finished_date_message).prompt()?;
 
     let rating = if did_finish {
         Some(
@@ -174,8 +165,7 @@ pub fn add_review() -> () {
                 "What's your rating?",
                 vec!["★★★★★", "★★★★", "★★★", "★★", "★"],
             )
-            .prompt()
-            .unwrap()
+            .prompt()?
             .len()
                 / 3, // to account for the width of a ★ character = 3 bytes
         )
@@ -192,7 +182,7 @@ pub fn add_review() -> () {
     );
     let _ = webbrowser::open(&search_url);
 
-    let cover_url = get_url_value("What's the URL of the cover image?");
+    let cover_url = get_url_value("What's the URL of the cover image?")?;
 
     let slug = text_helpers::slugify(&title);
 
@@ -207,7 +197,7 @@ pub fn add_review() -> () {
             // Suggester for path, etc.
             eprintln!("{}", e);
             let local_cover_path =
-                get_non_empty_string_value("What's the path to the cover image?");
+                get_non_empty_string_value("What's the path to the cover image?")?;
 
             let base_path: PathBuf = ["covers", &slug].iter().collect();
             let download_path = match PathBuf::from(&local_cover_path).extension() {
@@ -264,9 +254,7 @@ pub fn add_review() -> () {
                     format!("\x1B[38;2;{};{};{}m▇ {}\x1B[0m", c.red, c.green, c.blue, hs)
                 })
                 .collect::<Vec<String>>();
-            let hs = Select::new("What's the tint colour?", hex_strings)
-                .prompt()
-                .unwrap();
+            let hs = Select::new("What's the tint colour?", hex_strings).prompt()?;
             hs.split(" ")
                 .collect::<Vec<&str>>()
                 .last()
@@ -304,4 +292,6 @@ pub fn add_review() -> () {
     };
 
     save_review(date_read.year(), &slug, book, metadata);
+
+    Ok(())
 }

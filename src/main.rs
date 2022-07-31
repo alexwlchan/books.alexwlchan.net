@@ -46,6 +46,7 @@ mod urls;
 mod version;
 
 use clap::{App, AppSettings, Arg, SubCommand};
+use inquire::error::InquireError;
 
 use crate::render_html::{create_thumbnails, render_html, sync_static_files, HtmlRenderMode};
 
@@ -169,8 +170,21 @@ async fn main() {
     let matches = app.get_matches();
 
     if matches.subcommand_name() == Some("add_review") {
-        add_review::add_review();
-        std::process::exit(0);
+        match add_review::add_review() {
+            Ok(_) => std::process::exit(0),
+            Err(InquireError::OperationInterrupted) => {
+                eprintln!("^C");
+                std::process::exit(1);
+            }
+            Err(InquireError::OperationCanceled) => {
+                eprintln!("<esc>");
+                std::process::exit(1);
+            }
+            Err(e) => {
+                eprintln!("Error adding review: {}", e);
+                std::process::exit(1);
+            }
+        }
     }
 
     // Whatever the command is, we always want to build a fresh copy of the
