@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.4.4 - 2022-08-07
+
+Present a full list of dominant colours for selection when using `vfd add_review`.
+
 ## v1.4.3 - 2022-07-31
 
 Improve the error message when the user presses Ctrl+C while using `vfd add_review`.
