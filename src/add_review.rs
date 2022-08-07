@@ -222,7 +222,8 @@ pub fn add_review() -> InquireResult<()> {
     let hex_strings = output.split("\n").collect();
 
     let hs = Select::new("What's the tint colour?", hex_strings).prompt()?;
-    let tint_colour = hs.split(" ")
+    let tint_colour = hs
+        .split(" ")
         .collect::<Vec<&str>>()
         .last()
         .unwrap()
