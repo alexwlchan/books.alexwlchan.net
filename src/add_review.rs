@@ -14,12 +14,10 @@ use clap::{App, SubCommand};
 use inquire::error::InquireResult;
 use inquire::validator::StringValidator;
 use inquire::{DateSelect, Select, Text};
-use palette::{RelativeContrast, Srgb};
 use regex::Regex;
 use serde::Serialize;
 use url::Url;
 
-use crate::colours;
 use crate::models;
 use crate::text_helpers;
 use crate::urls;
@@ -215,53 +213,21 @@ pub fn add_review() -> InquireResult<()> {
         Command::new("dominant_colours")
             .arg(&cover_path)
             .arg("--max-colours=12")
-            .arg("--no-palette")
             .output()
             .unwrap()
             .stdout,
     )
     .unwrap();
 
-    let dominant_colours = output
-        .trim()
-        .split_ascii_whitespace()
-        .map(|line| colours::parse_hex_string(line));
+    let hex_strings = output.split("\n").collect();
 
-    let white_background: Srgb<f32> = Srgb::new(1.0, 1.0, 1.0);
-
-    let usable_colours = dominant_colours
-        .filter(|rgb| {
-            let f32_c = Srgb::<f32>::new(
-                rgb.red as f32 / 255.0,
-                rgb.green as f32 / 255.0,
-                rgb.blue as f32 / 255.0,
-            );
-            white_background.has_min_contrast_text(&f32_c)
-        })
-        .collect::<Vec<Srgb<u8>>>();
-
-    let tint_colour = match usable_colours.len() {
-        0 => String::from("#ffffff"),
-        1 => {
-            let c = usable_colours[0];
-            format!("#{:02x}{:02x}{:02x}", c.red, c.green, c.blue)
-        }
-        _ => {
-            let hex_strings = usable_colours
-                .into_iter()
-                .map(|c| {
-                    let hs = format!("#{:02x}{:02x}{:02x}", c.red, c.green, c.blue);
-                    format!("\x1B[38;2;{};{};{}m▇ {}\x1B[0m", c.red, c.green, c.blue, hs)
-                })
-                .collect::<Vec<String>>();
-            let hs = Select::new("What's the tint colour?", hex_strings).prompt()?;
-            hs.split(" ")
-                .collect::<Vec<&str>>()
-                .last()
-                .unwrap()
-                .replace("\x1B[0m", "")
-        }
-    };
+    let hs = Select::new("What's the tint colour?", hex_strings).prompt()?;
+    let tint_colour = hs
+        .split(" ")
+        .collect::<Vec<&str>>()
+        .last()
+        .unwrap()
+        .replace("\x1B[0m", "");
 
     let cover = models::Cover {
         name: cover_name.to_string(),
