@@ -53,6 +53,9 @@ pub struct Book {
     #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(skip_deserializing)]
     pub isbn13: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Vec<String>>,
 }
 
 #[derive(Deserialize, Serialize)]

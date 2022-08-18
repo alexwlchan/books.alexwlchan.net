@@ -19,6 +19,7 @@ use serde::Serialize;
 use url::Url;
 
 use crate::models;
+use crate::tags::get_tag_value_input;
 use crate::text_helpers;
 use crate::urls;
 
@@ -147,6 +148,8 @@ pub fn add_review() -> InquireResult<()> {
         [None, None]
     };
 
+    let tags = get_tag_value_input("What is the book about?");
+
     let did_finish =
         Select::new("Did you finish reading it?", vec!["yes", "no"]).prompt()? == "yes";
 
@@ -247,6 +250,7 @@ pub fn add_review() -> InquireResult<()> {
         illustrator: None,
         retold_by: None,
         translated_by: None,
+        tags: Some(tags),
     };
 
     let metadata = models::ReviewMetadata {
