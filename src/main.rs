@@ -142,6 +142,10 @@ pub fn deploy_subcommand() -> App<'static> {
     SubCommand::with_name("deploy").about("Deploy a new version of the site to Netlify")
 }
 
+pub fn backfill_tags_subcommand() -> App<'static> {
+    SubCommand::with_name("backfill_tags").about("Backfill tag metadata on existing books")
+}
+
 #[tokio::main]
 async fn main() {
     const VERSION: &str = env!("CARGO_PKG_VERSION");
@@ -164,6 +168,7 @@ async fn main() {
         .about("Generates the HTML files for books.alexwlchan.net")
         .setting(AppSettings::SubcommandRequired)
         .subcommand(add_review::subcommand())
+        .subcommand(backfill_tags_subcommand())
         .subcommand(build_subcommand())
         .subcommand(deploy_subcommand())
         .subcommand(serve_subcommand());
@@ -186,6 +191,11 @@ async fn main() {
                 std::process::exit(1);
             }
         }
+    }
+
+    if matches.subcommand_name() == Some("backfill_tags") {
+        tags::backfill_tags();
+        std::process::exit(0);
     }
 
     // Whatever the command is, we always want to build a fresh copy of the

@@ -125,3 +125,18 @@ pub fn get_tag_value_input(question: &str) -> Vec<String> {
 
     answer.split_whitespace().into_iter().map(|s| s.to_string()).collect()
 }
+
+pub fn backfill_tags() -> () {
+    let root = Path::new("reviews");
+
+    for rev in get_reviews(&root).unwrap().iter() {
+        match &rev.book.tags {
+            None => {
+                let question = format!("What are the tags for {}, by {} ({})", rev.book.title, rev.book.author.as_ref().unwrap_or(&"<none>".to_string()), rev.book.publication_year);
+                let tags = get_tag_value_input(&question);
+                println!("Need to update tags on");
+            },
+            Some(tags) => (),
+        };
+    }
+}
