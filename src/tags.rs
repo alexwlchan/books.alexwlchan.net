@@ -1,11 +1,16 @@
 use std::collections::{HashMap, HashSet};
+use std::fs::OpenOptions;
+use std::io::Write;
 use std::path::Path;
 
 use inquire::{error::CustomUserError, Text};
 
+use crate::models;
 use crate::render_html::get_reviews;
 
 fn get_tags() -> HashMap<String, usize> {
+    println!("@@AWLC Calling get_tags()!!!!");
+
     let root = Path::new("reviews");
 
     let mut tally: HashMap<String, usize> = HashMap::new();
@@ -24,8 +29,7 @@ fn get_tags() -> HashMap<String, usize> {
     tally
 }
 
-fn suggester(val: &str) -> Result<Vec<String>, CustomUserError> {
-    let tags = get_tags();
+fn suggester(tags: &HashMap<String, usize>, val: &str) -> Result<Vec<String>, CustomUserError> {
     let tags_set: HashSet<String> = tags.keys().cloned().collect();
 
     // What tags have already been used?  Tags can only be selected
@@ -71,8 +75,8 @@ fn suggester(val: &str) -> Result<Vec<String>, CustomUserError> {
         .collect())
 }
 
-fn completer(val: &str) -> Result<Option<String>, CustomUserError> {
-    let suggestions = suggester(val)?;
+fn completer(tags: &HashMap<String, usize>, val: &str) -> Result<Option<String>, CustomUserError> {
+    let suggestions = suggester(tags, val)?;
 
     if suggestions.len() == 1 {
         Ok(Some(suggestions[0].clone()))
@@ -80,63 +84,107 @@ fn completer(val: &str) -> Result<Option<String>, CustomUserError> {
         Ok(None)
     }
 }
-
-#[cfg(test)]
-mod tests {
-    use crate::suggester;
-
-    #[test]
-    fn it_offers_all_options_initially() {
-        let result = suggester("");
-        assert_eq!(
-            result.unwrap(),
-            vec!["adventure ", "fiction ", "mystery ", "romance ", "scifi "]
-        );
-    }
-
-    #[test]
-    fn it_offers_all_options_with_a_matching_substring() {
-        let result = suggester("s");
-        assert_eq!(result.unwrap(), vec!["mystery ", "scifi "]);
-    }
-
-    #[test]
-    fn it_only_offers_unused_options() {
-        let result = suggester("scifi s");
-        assert_eq!(result.unwrap(), vec!["scifi mystery "]);
-    }
-
-    #[test]
-    fn it_offers_no_options_if_no_matches() {
-        let result = suggester("scifi z");
-        assert_eq!(result.unwrap().len(), 0);
-
-        let result = suggester("z");
-        assert_eq!(result.unwrap().len(), 0);
-    }
-}
+//
+// #[cfg(test)]
+// mod tests {
+//     use crate::suggester;
+//
+//     #[test]
+//     fn it_offers_all_options_initially() {
+//         let result = suggester("");
+//         assert_eq!(
+//             result.unwrap(),
+//             vec!["adventure ", "fiction ", "mystery ", "romance ", "scifi "]
+//         );
+//     }
+//
+//     #[test]
+//     fn it_offers_all_options_with_a_matching_substring() {
+//         let result = suggester("s");
+//         assert_eq!(result.unwrap(), vec!["mystery ", "scifi "]);
+//     }
+//
+//     #[test]
+//     fn it_only_offers_unused_options() {
+//         let result = suggester("scifi s");
+//         assert_eq!(result.unwrap(), vec!["scifi mystery "]);
+//     }
+//
+//     #[test]
+//     fn it_offers_no_options_if_no_matches() {
+//         let result = suggester("scifi z");
+//         assert_eq!(result.unwrap().len(), 0);
+//
+//         let result = suggester("z");
+//         assert_eq!(result.unwrap().len(), 0);
+//     }
+// }
 
 pub fn get_tag_value_input(question: &str) -> Vec<String> {
+    let tags = get_tags();
+
+    println!("@@AWLC tags = {:?}", tags);
+
     let answer = Text::new(question)
-        .with_suggester(&suggester)
-        .with_completer(&completer)
+        .with_suggester(&|val| suggester(&tags, val))
+        .with_completer(&|val| completer(&tags, val))
         .prompt()
         .unwrap();
 
     answer.split_whitespace().into_iter().map(|s| s.to_string()).collect()
 }
 
+fn save_review(review: models::Review) -> () {
+    let front_matter = models::FrontMatter {
+        book: review.book,
+        review: review.review.unwrap(),
+    };
+
+    let mut file = OpenOptions::new()
+        .write(true)
+        .create_new(false)
+        .open(&review.path)
+        .unwrap();
+    file.write_all(serde_yaml::to_string(&front_matter).unwrap().as_bytes())
+        .unwrap();
+    file.write("---".as_bytes()).unwrap();
+    file.write(review.text.as_bytes()).unwrap();
+}
+
+fn update_tags_on_review(rev: models::Review) -> () {
+    let question = format!("What are the tags for \"{}\", by {} ({})", rev.book.title, rev.book.author.as_ref().unwrap_or(&"<none>".to_string()), rev.book.publication_year);
+    let tags = get_tag_value_input(&question);
+
+    let updated_book = models::Book {
+        tags: Some(tags),
+        ..rev.book
+    };
+
+    let updated_review = models::Review {
+
+        book: updated_book,
+// |               ^^^ expected struct `Review`, found `&Review`
+        review: rev.review,
+        text: rev.text,
+        slug: rev.slug,
+        path: rev.path,
+        derived_cover_info: rev.derived_cover_info,
+        // ..rev
+    };
+
+    save_review(updated_review);
+}
+
 pub fn backfill_tags() -> () {
     let root = Path::new("reviews");
 
-    for rev in get_reviews(&root).unwrap().iter() {
-        match &rev.book.tags {
-            None => {
-                let question = format!("What are the tags for {}, by {} ({})", rev.book.title, rev.book.author.as_ref().unwrap_or(&"<none>".to_string()), rev.book.publication_year);
-                let tags = get_tag_value_input(&question);
-                println!("Need to update tags on");
-            },
-            Some(tags) => (),
-        };
+    for rev in get_reviews(&root).unwrap() {
+        if rev.book.tags.is_some() {
+            continue;
+        }
+
+        update_tags_on_review(rev);
+
+        break;
     }
 }

@@ -47,11 +47,9 @@ pub struct Book {
     pub series: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(skip_deserializing)]
     pub isbn10: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(skip_deserializing)]
     pub isbn13: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -62,8 +60,8 @@ pub struct Book {
 pub struct ReviewMetadata {
     pub date_read: String,
 
-    #[serde(skip_deserializing)]
-    pub format: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub format: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     pub rating: Option<usize>,
@@ -96,6 +94,12 @@ pub struct Review {
     pub slug: String,
     pub path: PathBuf,
     pub derived_cover_info: DerivedCoverInfo,
+}
+
+#[derive(Serialize)]
+pub struct FrontMatter {
+    pub book: Book,
+    pub review: ReviewMetadata,
 }
 
 pub fn year_read(rev: &Review) -> &str {

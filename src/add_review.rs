@@ -15,7 +15,6 @@ use inquire::error::InquireResult;
 use inquire::validator::StringValidator;
 use inquire::{DateSelect, Select, Text, validator::Validation};
 use regex::Regex;
-use serde::Serialize;
 use url::Url;
 
 use crate::models;
@@ -91,19 +90,13 @@ fn get_year_value(question: &str) -> InquireResult<u16> {
     Ok(answer.parse::<u16>().unwrap())
 }
 
-#[derive(Serialize)]
-struct FrontMatter {
-    book: models::Book,
-    review: models::ReviewMetadata,
-}
-
 fn save_review(year: i32, slug: &str, book: models::Book, metadata: models::ReviewMetadata) -> () {
     let out_dir = format!("reviews/{}", year);
     fs::create_dir_all(&out_dir).unwrap();
 
     let out_path = format!("{}/{}.md", out_dir, slug);
 
-    let front_matter = FrontMatter {
+    let front_matter = models::FrontMatter {
         book,
         review: metadata,
     };
@@ -255,8 +248,8 @@ pub fn add_review() -> InquireResult<()> {
 
     let metadata = models::ReviewMetadata {
         date_read: date_read.format("%Y-%m-%d").to_string(),
-        format: format,
-        rating: rating,
+        format: Some(format),
+        rating,
         did_not_finish: !did_finish,
         date_order: None,
     };
