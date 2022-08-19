@@ -14,7 +14,7 @@ review:
   rating: 3
 ---
 
-Interesting bookn about [a theory](https://en.wikipedia.org/wiki/Snowball_Earth) that at one point the Earth was entirely covered in ice, and the aftermath led to the rapid growth of complex life as we know it today.
+Interesting book about [a theory](https://en.wikipedia.org/wiki/Snowball_Earth) that at one point the Earth was entirely covered in ice, and the aftermath led to the rapid growth of complex life as we know it today.
 
 The basic gist: the continents gather at the equator, which means there's nothing to stop the polar ice from spreading.
 By the time it reaches the equator, too much of the sun's light is being reflected away, and the Earth cools down.
