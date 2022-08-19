@@ -7,6 +7,10 @@ book:
     tint_color: "#167dab"
   title: Never Lost Again
   publication_year: 2018
+  tags:
+    - non-fiction
+    - tech-industry
+    - geography
 review:
   date_read: 2022-03-30
   format: audiobook

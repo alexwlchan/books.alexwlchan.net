@@ -4,9 +4,13 @@ book:
   cover:
     name: physics-of-the-impossible.jpg
     tint_color: "#7b512d"
-  publication_year: 2008
   title: Physics of the Impossible
+  publication_year: 2008
   isbn13: "9780141030906"
+  tags:
+    - non-fiction
+    - science
+    - physics
 review:
   date_read: 2022-01-18
   format: paperback

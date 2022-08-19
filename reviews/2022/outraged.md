@@ -7,6 +7,9 @@ book:
   title: Outraged
   publication_year: 2020
   isbn13: "9781526605078"
+  tags:
+    - non-fiction
+    - internet
 review:
   date_read: 2022-07-02
   format: paperback

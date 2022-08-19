@@ -4,9 +4,13 @@ book:
   cover:
     name: palestine-100.jpg
     tint_color: "#b05f40"
+  title: Palestine + 100
   publication_year: 2019
-  title: "Palestine + 100"
   isbn13: "9781910974445"
+  tags:
+    - fiction
+    - sci-fi
+    - speculative-fiction
 review:
   date_read: 2022-01-28
   format: paperback

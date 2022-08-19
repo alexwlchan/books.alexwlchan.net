@@ -8,6 +8,9 @@ book:
   title: Before the Coffee Gets Cold
   publication_year: 2019
   isbn13: "9781529029581"
+  tags:
+    - fiction
+    - time-travel
 review:
   date_read: 2022-07-18
   format: paperback

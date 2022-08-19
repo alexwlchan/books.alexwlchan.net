@@ -4,9 +4,13 @@ book:
   cover:
     name: homers-the-iliad-and-the-odyssey.jpg
     tint_color: "#587c1d"
-  publication_year: 2007
   title: "Homer's The Iliad and the Odyssey"
+  publication_year: 2007
   isbn13: "9781843544029"
+  tags:
+    - non-fiction
+    - history
+    - mythology
 review:
   date_read: 2022-03-11
   format: hardback

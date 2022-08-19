@@ -8,6 +8,10 @@ book:
   publication_year: 2005
   isbn10: "0593054970"
   isbn13: "9780593054970"
+  tags:
+    - non-fiction
+    - science
+    - physics
 review:
   date_read: 2022-05-28
   format: hardback

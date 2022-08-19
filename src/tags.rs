@@ -9,8 +9,6 @@ use crate::models;
 use crate::render_html::get_reviews;
 
 fn get_tags() -> HashMap<String, usize> {
-    println!("@@AWLC Calling get_tags()!!!!");
-
     let root = Path::new("reviews");
 
     let mut tally: HashMap<String, usize> = HashMap::new();
@@ -123,8 +121,6 @@ fn completer(tags: &HashMap<String, usize>, val: &str) -> Result<Option<String>,
 pub fn get_tag_value_input(question: &str) -> Vec<String> {
     let tags = get_tags();
 
-    println!("@@AWLC tags = {:?}", tags);
-
     let answer = Text::new(question)
         .with_suggester(&|val| suggester(&tags, val))
         .with_completer(&|val| completer(&tags, val))
@@ -185,6 +181,6 @@ pub fn backfill_tags() -> () {
 
         update_tags_on_review(rev);
 
-        break;
+        // break;
     }
 }

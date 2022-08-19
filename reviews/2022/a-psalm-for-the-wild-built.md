@@ -4,9 +4,13 @@ book:
   cover:
     name: a-psalm-for-the-wild-built.jpg
     tint_color: "#917546"
-  publication_year: 2021
   title: A Psalm for the Wild-Built
+  publication_year: 2021
   isbn13: "9781250236210"
+  tags:
+    - fiction
+    - sci-fi
+    - solarpunk
 review:
   date_read: 2022-01-03
   format: hardback

@@ -8,6 +8,10 @@ book:
   publication_year: 2015
   isbn10: "1476763232"
   isbn13: "9781476763231"
+  tags:
+    - fiction
+    - fandom
+    - ya
 review:
   date_read: 2022-05-04
   format: paperback

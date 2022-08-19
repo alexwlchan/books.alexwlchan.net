@@ -4,9 +4,13 @@ book:
   cover:
     name: historic-railway-disasters.jpg
     tint_color: "#2b6183"
-  publication_year: 1983
   title: Historic Railway Disasters
+  publication_year: 1983
   isbn10: "0711012059"
+  tags:
+    - non-fiction
+    - history
+    - railways
 review:
   date_read: 2022-02-11
   format: hardback

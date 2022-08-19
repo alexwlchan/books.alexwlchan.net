@@ -4,9 +4,13 @@ book:
   cover:
     name: hang-the-moon.jpg
     tint_color: "#965792"
-  publication_year: 2021
   title: Hang the Moon
+  publication_year: 2021
   series: "Written in the Stars, #2"
+  tags:
+    - fiction
+    - romance
+    - queer
 review:
   date_read: 2022-03-05
   format: paperback
