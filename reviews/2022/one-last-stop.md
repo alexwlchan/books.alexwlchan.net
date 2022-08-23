@@ -3,7 +3,7 @@ book:
   author: Casey McQuiston
   cover:
     name: one-last-stop.jpg
-    tint_color: "#aa7094"
+    tint_color: "#a96894"
   title: One Last Stop
   publication_year: 2021
   isbn13: "9781250244499"
