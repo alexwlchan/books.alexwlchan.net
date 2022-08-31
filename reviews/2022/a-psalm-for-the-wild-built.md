@@ -7,6 +7,7 @@ book:
   publication_year: 2021
   title: A Psalm for the Wild-Built
   isbn13: "9781250236210"
+  series: Monk & Robot Book 1
 review:
   date_read: 2022-01-03
   format: hardback
