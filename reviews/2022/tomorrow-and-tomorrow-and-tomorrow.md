@@ -3,7 +3,7 @@ book:
   author: Gabrielle Zevin
   cover:
     name: tomorrow-and-tomorrow-and-tomorrow.jpg
-    tint_color: "#5c6d76"
+    tint_color: "#30678f"
   title: "Tomorrow, and Tomorrow, and Tomorrow"
   publication_year: 2022
   isbn13: "9781784744649"
