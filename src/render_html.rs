@@ -252,7 +252,7 @@ pub fn create_thumbnails(dst: &Path) -> Result<(), VfdError> {
         if src_path.is_newer_than(&thumbnail_path)? || src_path.is_newer_than(&square_path)? {
             let src_img = match image::open(&src_path) {
                 Ok(im) => im,
-                Err(e) => return Err(VfdError::Thumbnail(e)),
+                Err(e) => return Err(VfdError::Thumbnail(src_path, e)),
             };
 
             // Thumbnails are 240x240 max, then 2x for retina displays
@@ -260,7 +260,7 @@ pub fn create_thumbnails(dst: &Path) -> Result<(), VfdError> {
 
             match thumbnail_img.save(&thumbnail_path) {
                 Ok(_) => (),
-                Err(e) => return Err(VfdError::Thumbnail(e)),
+                Err(e) => return Err(VfdError::Thumbnail(src_path, e)),
             };
 
             let mut square_img =
@@ -286,7 +286,7 @@ pub fn create_thumbnails(dst: &Path) -> Result<(), VfdError> {
 
             match square_img.save(&square_path) {
                 Ok(_) => (),
-                Err(e) => return Err(VfdError::Thumbnail(e)),
+                Err(e) => return Err(VfdError::Thumbnail(src_path, e)),
             };
         }
     }
