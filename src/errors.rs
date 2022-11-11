@@ -35,7 +35,9 @@ impl fmt::Display for VfdError {
                     path, src, err
                 )
             }
-            VfdError::Thumbnail(ref path, ref err) => write!(f, "Couldn't create thumbnail for {:?}: {:?}", path, err),
+            VfdError::Thumbnail(ref path, ref err) => {
+                write!(f, "Couldn't create thumbnail for {:?}: {:?}", path, err)
+            }
             VfdError::Template(ref err) => write!(f, "Error rendering the template: {:?}", err),
             VfdError::HtmlMinification(ref err) => write!(f, "Error minifying the HTML: {:?}", err),
         }
