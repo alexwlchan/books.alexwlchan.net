@@ -187,7 +187,7 @@ pub fn add_review() -> InquireResult<()> {
     let download_path: PathBuf = ["covers", &slug].iter().collect();
 
     let cover_path = match urls::download_url(&cover_url, download_path) {
-        Ok(path) => (path),
+        Ok(path) => path,
         Err(e) => {
             // If we can't download the cover, retrieve it from a local
             // download.

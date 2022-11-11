@@ -216,7 +216,7 @@ async fn main() {
                 .args(vec!["deploy", "--prod"])
                 .status()
             {
-                Ok(result) => (result),
+                Ok(result) => result,
                 Err(err) => match err.kind() {
                     ErrorKind::NotFound => {
                         eprintln!("💥 Could not find the Netlify CLI; is it installed?");
