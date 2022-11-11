@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.4.5 - 2022-11-11
+
+When something goes wrong creating thumbnails, the error message now includes the name of the file that had an issue.
+
 ## v1.4.4 - 2022-08-07
 
 Present a full list of dominant colours for selection when using `vfd add_review`.
