@@ -12,7 +12,7 @@ pub enum VfdError {
     Parse(serde_yaml::Error, PathBuf),
     Utf8(std::str::Utf8Error, PathBuf),
     CoverInfo(PathBuf, ImageError, PathBuf),
-    Thumbnail(ImageError),
+    Thumbnail(PathBuf, ImageError),
     Template(tera::Error),
     HtmlMinification(HTMLMinifierError),
 }
@@ -35,7 +35,7 @@ impl fmt::Display for VfdError {
                     path, src, err
                 )
             }
-            VfdError::Thumbnail(ref err) => write!(f, "Couldn't create thumbnail: {:?}", err),
+            VfdError::Thumbnail(ref path, ref err) => write!(f, "Couldn't create thumbnail for {:?}: {:?}", path, err),
             VfdError::Template(ref err) => write!(f, "Error rendering the template: {:?}", err),
             VfdError::HtmlMinification(ref err) => write!(f, "Error minifying the HTML: {:?}", err),
         }
