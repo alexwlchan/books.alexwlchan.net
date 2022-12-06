@@ -21,8 +21,9 @@ pub struct Book {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub author: Option<String>,
 
-    #[serde(skip_serializing)]
-    pub author_names: Vec<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(skip_deserializing)]
+    pub author_names: Option<Vec<String>>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     pub narrator: Option<String>,
