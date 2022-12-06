@@ -86,6 +86,68 @@ mod tests {
     }
 }
 
+pub fn get_author_names(s: &str) -> Vec<String> {
+    if s == "Alan & Maureen Carter" {
+        return vec!["Alan Carter".to_owned(), "Maureen Carter".to_owned()];
+    }
+
+    if s == "Steven Hawking with Leonard Mlodinow" {
+        return vec!["Stephen Hawking".to_owned(), "Leonard Mlodinow".to_owned()];
+    }
+
+    let re = Regex::new(r",|&| and ").unwrap();
+    re.split(s).map(|s| s.trim().to_owned()).filter(|s| !s.is_empty()).collect()
+}
+
+macro_rules! get_author_name_tests {
+  ($($name:ident: $value:expr,)*) => {
+    $(
+      #[test]
+      fn $name() {
+        let (input, expected) = $value;
+        assert_eq!(expected, get_author_names(input));
+      }
+    )*
+  }
+}
+
+get_author_name_tests! {
+    single_author: (
+        "Laura Jane Williams",
+        vec!["Laura Jane Williams"]
+    ),
+
+    single_author_with_period: (
+        "J. K. Rowling",
+        vec!["J. K. Rowling"]
+    ),
+
+    single_author_with_and_substring: (
+        "B. Jack Copeland",
+        vec!["B. Jack Copeland"]
+    ),
+
+    multiple_authors_with_commas: (
+        "Ben Crystal, David Crystal",
+        vec!["Ben Crystal", "David Crystal"]
+    ),
+
+    multiple_authors_with_ampersand: (
+        "Douglas Adams & Mark Carwadine",
+        vec!["Douglas Adams", "Mark Carwadine"]
+    ),
+
+    multiple_authors_with_and: (
+        "F.H. Hinsley and Alan Tripp",
+        vec!["F.H. Hinsley", "Alan Tripp"]
+    ),
+
+    multiple_authors_with_oxford_comma: (
+        "Lisa McMullin, Tim Foley, and Timothy X. Atack",
+        vec!["Lisa McMullin", "Tim Foley", "Timothy X. Atack"]
+    ),
+}
+
 pub fn slugify(s: &str) -> String {
     // Replace separating punctuation
     let punctuation_regex = Regex::new("[–—/:;,.]").unwrap();
