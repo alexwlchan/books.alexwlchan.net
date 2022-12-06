@@ -17,7 +17,7 @@ use walkdir::WalkDir;
 use crate::create_favicon::create_favicon;
 use crate::errors::VfdError;
 use crate::fs_helpers::IsNewerThan;
-use crate::{fs_helpers, models};
+use crate::{fs_helpers, models, text_helpers};
 
 /// Returns a list of all the reviews and the review text under a given path.
 pub fn get_reviews(root: &Path) -> Result<Vec<models::Review>, VfdError> {
@@ -51,7 +51,13 @@ pub fn get_reviews(root: &Path) -> Result<Vec<models::Review>, VfdError> {
                 .replace(".md", "");
 
             let review = metadata.review;
-            let book = metadata.book;
+            let book = models::Book {
+                author_names: match metadata.book.author {
+                    Some(ref author) => text_helpers::get_author_names(&author),
+                    None => vec![],
+                },
+                ..metadata.book
+            };
 
             let cover_path = PathBuf::from("covers").join(&book.cover.name);
             let (width, height) = match image::image_dimensions(&cover_path) {
@@ -145,6 +151,7 @@ pub fn render_html(
 
     let this_year = chrono::offset::Utc::now().year();
 
+    // Write the list of reviews
     let mut context = tera::Context::new();
     context.insert("reviews", &reviews);
     context.insert("tint_colour", "#191919");
