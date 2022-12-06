@@ -244,7 +244,7 @@ pub fn add_review() -> InquireResult<()> {
 
     let book = models::Book {
         author: Some(author),
-        author_names: vec![],
+        author_names: None,
         narrator,
         publication_year,
         title,

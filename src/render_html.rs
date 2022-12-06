@@ -53,8 +53,8 @@ pub fn get_reviews(root: &Path) -> Result<Vec<models::Review>, VfdError> {
             let review = metadata.review;
             let book = models::Book {
                 author_names: match metadata.book.author {
-                    Some(ref author) => text_helpers::get_author_names(&author),
-                    None => vec![],
+                    Some(ref author) => Some(text_helpers::get_author_names(&author)),
+                    None => Some(vec![]),
                 },
                 ..metadata.book
             };

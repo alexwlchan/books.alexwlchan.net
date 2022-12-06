@@ -32,19 +32,6 @@
     <button id="myButton">author</button>
   </p>
 
-  <script>
-    // With the above scripts loaded, you can call `tippy()` with a CSS
-    // selector and a `content` prop:
-    tippy('#myButton', {
-      content: '<ul style="padding: 0; margin: 0; list-style: none;"><li><input type="checkbox" name="author:jane-bennett" value="Jane Bennett"><label for="author:jane-bennett">Jane Bennett</label></li></ul>',
-      trigger: 'click',
-      placement: 'bottom',
-      allowHTML: true,
-      // https://atomiks.github.io/tippyjs/v6/all-props/#interactive
-      interactive: true,
-    });
-  </script>
-
   <!-- <div id="covers" style="justify-content: space-between; text-align: center;">
   {% for review_entry in reviews %}
     {% set cover_dimensions = review_entry.derived_cover_info %}
@@ -83,4 +70,29 @@
     {% include "_review_entry.html" %}
   {% endfor %}
   </details>
+
+  <script>
+    const authorsSet = new Set(
+      [...document.querySelectorAll('.review_preview')]
+        .flatMap(rp => rp.getAttribute('data-book-authors').split(';'))
+        .filter(s => s.length > 0)
+    );
+    const authors = Array.from(authorsSet);
+    authors.sort();
+
+    // With the above scripts loaded, you can call `tippy()` with a CSS
+    // selector and a `content` prop:
+    tippy('#myButton', {
+      content: `
+        <ul style="padding: 0; margin: 0; list-style: none;">
+          ${authors.map((name, i) => `<li><input type="checkbox" name="${name}"><label for="${name}">${name}</label></li>`).join("")}
+        </ul>
+      `,
+      trigger: 'click',
+      placement: 'bottom',
+      allowHTML: true,
+      // https://atomiks.github.io/tippyjs/v6/all-props/#interactive
+      interactive: true,
+    });
+  </script>
 {% endblock %}
