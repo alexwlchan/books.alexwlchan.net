@@ -8,7 +8,7 @@
 
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://unpkg.com/tippy.js@6"></script>
-<script src="/static/list_reviews.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy.css"></script>
 {% endblock %}
 
 {% block content %}
@@ -29,7 +29,7 @@
   </p>
 
   <p>filter by:
-    <button id="myButton">author</button>
+    <button id="authorFilters">author</button>
   </p>
 
   <!-- <div id="covers" style="justify-content: space-between; text-align: center;">
@@ -82,15 +82,25 @@
 
     // With the above scripts loaded, you can call `tippy()` with a CSS
     // selector and a `content` prop:
-    tippy('#myButton', {
+    tippy('#authorFilters', {
       content: `
         <ul style="padding: 0; margin: 0; list-style: none;">
-          ${authors.map((name, i) => `<li><input type="checkbox" name="${name}"><label for="${name}">${name}</label></li>`).join("")}
+          ${
+            authors.map((name, i) =>
+              `<li>
+                 <input type="checkbox" name="${name}">
+                 <label for="${name}">${name}</label>
+              </li>`
+            ).join("")
+          }
         </ul>
       `,
       trigger: 'click',
       placement: 'bottom',
       allowHTML: true,
+      theme: 'light',
+          // 350px
+          maxWidth: '',
       // https://atomiks.github.io/tippyjs/v6/all-props/#interactive
       interactive: true,
     });
