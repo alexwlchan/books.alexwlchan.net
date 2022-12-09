@@ -14,6 +14,10 @@
 {% block content %}
   <h2>books i&rsquo;ve read</h2>
 
+  <p id="filters">filter by:
+    <a href="#" id="authorFilters">author</a>
+  </p>
+
   <p>jump to:
   {% set linked_year = "" %}
   {% for review_entry in reviews %}
@@ -26,10 +30,6 @@
     {% endif %}
     {% set_global linked_year = review_entry|year_read %}
   {% endfor %}
-  </p>
-
-  <p>filter by:
-    <button id="authorFilters">author</button>
   </p>
 
   <!-- <div id="covers" style="justify-content: space-between; text-align: center;">
@@ -72,6 +72,12 @@
   </details>
 
   <script>
+    // https://ourcodeworld.com/articles/read/255/creating-url-slugs-properly-in-javascript-including-transliteration-for-utf-8
+    function slugify(text)
+    {
+        return text.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'');
+    }
+
     const authorsSet = new Set(
       [...document.querySelectorAll('.review_preview')]
         .flatMap(rp => rp.getAttribute('data-book-authors').split(';'))
@@ -84,12 +90,12 @@
     // selector and a `content` prop:
     tippy('#authorFilters', {
       content: `
-        <ul style="padding: 0; margin: 0; list-style: none;">
+        <ul style="padding: 0; margin: 0; list-style: none; padding-right: 10px;">
           ${
             authors.map((name, i) =>
               `<li>
-                 <input type="checkbox" name="${name}">
-                 <label for="${name}">${name}</label>
+                 <input id="author:${name}" type="checkbox" name="author">
+                 <label for="author:${name}">${name}</label>
               </li>`
             ).join("")
           }
