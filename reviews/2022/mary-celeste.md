@@ -8,6 +8,10 @@ book:
   publication_year: 2005
   isbn10: "0582784220"
   isbn13: "9780582784222"
+  tags:
+    - non-fiction
+    - history
+    - maritime
 review:
   date_read: 2022-05-19
   format: hardback

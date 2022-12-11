@@ -8,6 +8,9 @@ book:
   isbn13: '9781408886809'
   publication_year: 2017
   title: Norse Mythology
+  tags:
+    - fiction
+    - mythology
 review:
   date_read: '2018-07-13'
   rating: 5

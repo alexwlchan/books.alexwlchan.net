@@ -8,6 +8,10 @@ book:
   publication_year: 2018
   title: The Calculating Stars
   series: "The Lady Astronaut series #1"
+  tags:
+    - fiction
+    - sci-fi
+    - space-exploration
 review:
   date_read: 2022-02-05
   format: audiobook

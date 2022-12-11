@@ -9,6 +9,9 @@ book:
   publication_year: 2014
   series: 'Imperial Radch #2'
   title: Ancillary Sword
+  tags:
+    - fiction
+    - sci-fi
 review:
   date_read: '2019-02-19'
   rating: 4

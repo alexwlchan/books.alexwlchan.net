@@ -8,6 +8,12 @@ book:
   title: 'Colossus: Bletchley Park''s Greatest Secret'
 plan:
   date_added: '2019-08-13'
+  tags:
+    - non-fiction
+    - bletchley-park
+    - espionage
+    - history
+    - computing
 review:
   date_read: 2021-02-07
   format: paperback

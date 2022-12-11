@@ -8,6 +8,9 @@ book:
   title: Abandoned America
 plan:
   date_added: 2020-05-11
+  tags:
+    - non-fiction
+    - architecture
 review:
   date_read: 2021-10-07
   format: hardback

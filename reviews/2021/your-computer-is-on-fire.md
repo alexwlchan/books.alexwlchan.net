@@ -7,6 +7,10 @@ book:
   isbn13: '9780262539739'
   publication_year: 2021
   title: Your Computer is on Fire
+  tags:
+    - non-fiction
+    - computing
+    - politics
 review:
   date_read: 2021-10-31
   format: paperback

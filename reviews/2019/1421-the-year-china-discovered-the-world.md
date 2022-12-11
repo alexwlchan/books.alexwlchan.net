@@ -8,6 +8,9 @@ book:
   isbn13: '9780553815221'
   publication_year: 2003
   title: '1421: The Year China Discovered The World'
+  tags:
+    - non-fiction
+    - history
 review:
   date_read: '2019-03-24'
   did_not_finish: true

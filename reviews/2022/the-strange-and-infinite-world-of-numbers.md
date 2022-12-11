@@ -7,6 +7,9 @@ book:
   title: The Strange and Infinite World of Numbers
   publication_year: 2019
   isbn13: "9781788884136"
+  tags:
+    - non-fiction
+    - maths
 review:
   date_read: 2022-09-19
   format: hardback

@@ -8,6 +8,11 @@ book:
   title: Atomic
 plan:
   date_added: '2020-01-01'
+  tags:
+    - non-fiction
+    - science
+    - history
+    - physics
 review:
   date_read: 2020-06-26
   did_not_finish: true

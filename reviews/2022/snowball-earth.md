@@ -8,6 +8,11 @@ book:
   publication_year: 2003
   isbn10: 074756051X
   isbn13: "9780747560517"
+  tags:
+    - non-fiction
+    - geology
+    - history
+    - science
 review:
   date_read: 2022-08-18
   format: hardback

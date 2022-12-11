@@ -9,6 +9,9 @@ book:
   publication_year: 2016
   series: 'Wayfarers, #2'
   title: A Closed and Common Orbit
+  tags:
+    - fiction
+    - sci-fi
 review:
   date_read: '2017-06-30'
   rating: 5

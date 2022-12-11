@@ -7,6 +7,8 @@ book:
   title: The Wombles
   publication_year: 1968
   isbn10: "0140305726"
+  tags:
+    - fiction
 review:
   date_read: 2022-03-27
   format: paperback

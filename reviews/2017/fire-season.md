@@ -8,6 +8,8 @@ book:
   isbn13: '9781447208143'
   publication_year: 2012
   title: Fire Season
+  tags:
+    - non-fiction
 review:
   date_read: '2017-01-22'
   rating: 5

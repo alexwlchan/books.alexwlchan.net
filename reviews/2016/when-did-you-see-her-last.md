@@ -9,6 +9,8 @@ book:
   publication_year: 2013
   series: 'All the Wrong Questions, #2'
   title: “When Did You See Her Last?”
+  tags:
+    - fiction
 review:
   date_read: '2016-10-24'
   rating: 3

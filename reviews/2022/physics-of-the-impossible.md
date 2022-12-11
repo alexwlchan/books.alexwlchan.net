@@ -7,6 +7,10 @@ book:
   publication_year: 2008
   title: Physics of the Impossible
   isbn13: "9780141030906"
+  tags:
+    - non-fiction
+    - physics
+    - science
 review:
   date_read: 2022-01-18
   format: paperback

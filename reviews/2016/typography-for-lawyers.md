@@ -8,6 +8,9 @@ book:
   isbn13: '9781598392623'
   publication_year: 2015
   title: Typography for Lawyers
+  tags:
+    - non-fiction
+    - typography
 review:
   date_read: 2016-04
 ---

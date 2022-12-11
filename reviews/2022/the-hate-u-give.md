@@ -7,6 +7,9 @@ book:
   title: The Hate U Give
   publication_year: 2017
   isbn13: "9781406387162"
+  tags:
+    - fiction
+    - race
 review:
   date_read: 2022-08-22
   format: paperback

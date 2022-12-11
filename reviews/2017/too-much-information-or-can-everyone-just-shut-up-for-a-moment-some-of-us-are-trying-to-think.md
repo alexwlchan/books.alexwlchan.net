@@ -9,6 +9,9 @@ book:
   publication_year: 2015
   title: 'Too Much Information: Or: Can Everyone Just Shut Up for a Moment, Some of
     Us Are Trying to Think'
+  tags:
+    - humour
+    - non-fiction
 review:
   date_read: '2017-03-15'
   rating: 3

@@ -7,6 +7,9 @@ book:
   isbn13: '9781908745651'
   publication_year: 1946
   title: Comet in Moominland
+  tags:
+    - fiction
+    - moomins
 review:
   date_read: 2021-07-17
   format: hardback

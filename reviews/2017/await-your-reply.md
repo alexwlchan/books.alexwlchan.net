@@ -8,6 +8,8 @@ book:
   isbn13: 978-0-345-47602-9
   publication_year: 2009
   title: Await Your Reply
+  tags:
+    - fiction
 review:
   date_read: '2017-01-31'
   rating: 3

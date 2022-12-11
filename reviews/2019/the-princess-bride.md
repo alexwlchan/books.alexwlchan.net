@@ -8,6 +8,10 @@ book:
   isbn13: '9780747545187'
   publication_year: 1973
   title: The Princess Bride
+  tags:
+    - fiction
+    - fantasy
+    - fairy-tales
 review:
   date_read: '2019-08-18'
   format: paperback

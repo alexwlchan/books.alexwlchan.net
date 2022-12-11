@@ -8,6 +8,10 @@ book:
   isbn13: '9781760404383'
   publication_year: 2017
   title: Ida
+  tags:
+    - fiction
+    - time-travel
+    - queer-rep
 review:
   date_read: '2018-02-16'
   rating: 4

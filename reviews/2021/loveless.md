@@ -7,6 +7,10 @@ book:
   narrator: Elisabeth Hopper
   publication_year: 2020
   title: Loveless
+  tags:
+    - fiction
+    - asexuality
+    - queer-rep
 review:
   date_read: 2021-06-14
   format: audiobook

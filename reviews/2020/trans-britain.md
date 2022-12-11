@@ -7,6 +7,10 @@ book:
   isbn13: 978-1-78352-470-9
   publication_year: 2018
   title: Trans Britain
+  tags:
+    - non-fiction
+    - history
+    - gender
 review:
   date_read: '2020-01-10'
   format: paperback

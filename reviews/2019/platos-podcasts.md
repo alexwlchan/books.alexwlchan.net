@@ -7,6 +7,9 @@ book:
   isbn13: 978-1-85168-706-0
   publication_year: 2009
   title: Plato's Podcasts
+  tags:
+    - non-fiction
+    - philosophy
 review:
   date_read: '2019-12-23'
   did_not_finish: true

@@ -8,6 +8,8 @@ book:
   isbn13: '9781501161902'
   publication_year: 2014
   title: 'As You Wish: Inconceivable Tales from the Making of The Princess Bride'
+  tags:
+    - non-fiction
 review:
   date_read: '2019-07-16'
   rating: 5

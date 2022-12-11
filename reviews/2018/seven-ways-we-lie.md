@@ -8,6 +8,8 @@ book:
   isbn13: '9781419723483'
   publication_year: 2017
   title: Seven Ways We Lie
+  tags:
+    - fiction
 review:
   date_read: '2018-01-04'
   rating: 4

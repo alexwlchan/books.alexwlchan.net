@@ -7,6 +7,12 @@ book:
   title: This Is How You Lose the Time War
   publication_year: 2019
   isbn13: "9781529405231"
+  tags:
+    - fiction
+    - romance
+    - time-travel
+    - sci-fi
+    - letters
 review:
   date_read: 2022-09-03
   format: paperback

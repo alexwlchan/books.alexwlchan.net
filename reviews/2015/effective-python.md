@@ -8,6 +8,9 @@ book:
   isbn13: '9780134034287'
   publication_year: 2015
   title: Effective Python
+  tags:
+    - non-fiction
+    - programming
 review:
   date_read: 2015-08
 ---

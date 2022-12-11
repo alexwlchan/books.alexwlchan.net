@@ -8,6 +8,9 @@ book:
   isbn13: '9780711023505'
   publication_year: 2005
   title: ABC Signalling In The Age Of Steam
+  tags:
+    - non-fiction
+    - trains
 review:
   date_read: '2019-06-29'
 ---

@@ -7,6 +7,10 @@ book:
   title: Our Stop
   publication_year: 2019
   isbn13: "9780008320522"
+  tags:
+    - fiction
+    - romance
+    - stories-set-on-trains
 review:
   date_read: 2022-12-02
   format: paperback

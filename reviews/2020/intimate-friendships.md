@@ -10,6 +10,9 @@ book:
   title: Intimate Friendships
 plan:
   date_added: '2019-08-12'
+  tags:
+    - non-fiction
+    - relationships
 review:
   date_read: '2020-02-20'
   format: paperback

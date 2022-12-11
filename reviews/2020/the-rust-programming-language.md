@@ -6,6 +6,9 @@ book:
     tint_color: '#b64725'
   publication_year: 2018
   title: The Rust Programming Language
+  tags:
+    - non-fiction
+    - programming
 review:
   date_read: '2020-12-21'
   format: ebook

@@ -7,6 +7,9 @@ book:
   publication_year: 2021
   title: Hang the Moon
   series: "Written in the Stars, #2"
+  tags:
+    - fiction
+    - romance
 review:
   date_read: 2022-03-05
   format: paperback

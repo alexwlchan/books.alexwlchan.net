@@ -9,6 +9,9 @@ book:
   publication_year: 2016
   title: 'The Box: How the Shipping Container Made the World Smaller and the World
     Economy Bigger'
+  tags:
+    - non-fiction
+    - logistics
 review:
   date_read: '2019-07-27'
   rating: 4

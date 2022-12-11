@@ -7,6 +7,10 @@ book:
   isbn13: 978-1-55199-862-6
   publication_year: 1957
   title: On the Beach
+  tags:
+    - fiction
+    - dystopia
+    - sci-fi
 review:
   date_read: '2020-01-11'
   format: paperback

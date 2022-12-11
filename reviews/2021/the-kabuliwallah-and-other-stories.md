@@ -6,6 +6,9 @@ book:
     tint_color: '#c01b1b'
   publication_year: 2020
   title: The Kabuliwallah and Other Stories
+  tags:
+    - fiction
+    - short-stories
 review:
   date_read: 2021-07-05
   did_not_finish: true

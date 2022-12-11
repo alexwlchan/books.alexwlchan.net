@@ -8,6 +8,9 @@ book:
   isbn13: '9780140367430'
   publication_year: 1994
   title: The Enchanted Castle
+  tags:
+    - fiction
+    - fantasy
 review:
   date_read: '2019-08-13'
   did_not_finish: true

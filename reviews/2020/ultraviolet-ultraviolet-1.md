@@ -10,6 +10,10 @@ book:
   title: 'Ultraviolet (Ultraviolet, #1)'
 plan:
   date_added: '2016-10-23'
+  tags:
+    - fiction
+    - sci-fi
+    - ya
 review:
   date_read: '2020-04-17'
   format: paperback

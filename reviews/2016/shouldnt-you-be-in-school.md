@@ -9,6 +9,8 @@ book:
   publication_year: 2014
   series: 'All the Wrong Questions, #3'
   title: “Shouldn’t You Be in School?”
+  tags:
+    - fiction
 review:
   date_read: '2016-12-26'
   rating: 3

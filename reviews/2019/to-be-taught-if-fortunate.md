@@ -8,6 +8,9 @@ book:
   isbn13: '9781473697164'
   publication_year: 2019
   title: To Be Taught, If Fortunate
+  tags:
+    - fiction
+    - sci-fi
 review:
   date_read: '2019-09-28'
   format: hardback

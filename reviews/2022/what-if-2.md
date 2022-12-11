@@ -7,6 +7,10 @@ book:
   title: What If? 2
   publication_year: 2022
   isbn13: "9781399804233"
+  tags:
+    - non-fiction
+    - humour
+    - science
 review:
   date_read: 2022-09-14
   format: hardback

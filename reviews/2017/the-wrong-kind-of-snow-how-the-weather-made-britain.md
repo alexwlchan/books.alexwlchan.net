@@ -8,6 +8,10 @@ book:
   isbn13: '9780340937884'
   publication_year: 2008
   title: 'The Wrong Kind of Snow: How the Weather Made Britain'
+  tags:
+    - non-fiction
+    - weather
+    - geography
 review:
   date_read: '2017-12-31'
   rating: 3

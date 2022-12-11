@@ -8,6 +8,8 @@ book:
   isbn13: '9780262525671'
   publication_year: 1988
   title: The Design of Everyday Things
+  tags:
+    - non-fiction
 review:
   date_read: '2019-11-07'
   format: paperback

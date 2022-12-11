@@ -8,6 +8,9 @@ book:
   isbn13: '9781781254769'
   publication_year: 2017
   title: Write to the Point
+  tags:
+    - non-fiction
+    - writing
 review:
   date_read: '2019-08-17'
   rating: 3

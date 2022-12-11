@@ -8,6 +8,9 @@ book:
   publication_year: 2014
   isbn10: "1634502434"
   isbn13: "9781634502436"
+  tags:
+    - non-fiction
+    - asexuality
 review:
   date_read: 2022-06-04
   format: paperback

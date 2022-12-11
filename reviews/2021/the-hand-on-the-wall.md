@@ -8,6 +8,9 @@ book:
   publication_year: 2020
   series: 'Truly Devious #3'
   title: The Hand on the Wall
+  tags:
+    - fiction
+    - mystery
 review:
   date_read: 2021-11-27
   format: audiobook

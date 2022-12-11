@@ -8,6 +8,9 @@ book:
   title: Creative Selection
 plan:
   date_added: '2019-12-22'
+  tags:
+    - non-fiction
+    - business
 review:
   date_read: 2020-07-26
   format: paperback

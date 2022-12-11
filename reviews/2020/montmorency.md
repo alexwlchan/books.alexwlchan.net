@@ -8,6 +8,8 @@ book:
   isbn13: '9780439978408'
   publication_year: 2003
   title: Montmorency
+  tags:
+    - fiction
 review:
   date_read: 2020-08-16
   format: paperback

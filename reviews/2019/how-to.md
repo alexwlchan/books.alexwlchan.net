@@ -7,6 +7,10 @@ book:
   isbn13: 978-1-4736-8035-7
   publication_year: 2019
   title: How To
+  tags:
+    - non-fiction
+    - science
+    - humour
 review:
   date_read: '2019-12-27'
   format: hardback

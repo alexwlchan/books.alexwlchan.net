@@ -8,6 +8,11 @@ book:
   isbn13: '9781937785314'
   publication_year: 2013
   title: The Healthy Programmer
+  tags:
+    - non-fiction
+    - programming
+    - health
+    - lifestyle
 review:
   date_read: 2017-02
   rating: 4

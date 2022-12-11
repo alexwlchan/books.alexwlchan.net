@@ -7,6 +7,9 @@ book:
   title: Underground Cities
   publication_year: 2020
   isbn13: "9781781318935"
+  tags:
+    - non-fiction
+    - architecture
 review:
   date_read: 2022-05-06
   format: hardback

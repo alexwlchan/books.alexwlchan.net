@@ -7,6 +7,10 @@ book:
   narrator: Aidan Kelly
   publication_year: 2020
   title: 'Codebreaker: The Untold Story of Richard Hayes'
+  tags:
+    - non-fiction
+    - espionage
+    - history
 review:
   date_read: 2021-11-06
   did_not_finish: true

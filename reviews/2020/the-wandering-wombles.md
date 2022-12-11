@@ -6,6 +6,8 @@ book:
     tint_color: '#d23675'
   publication_year: 1970
   title: The Wandering Wombles
+  tags:
+    - fiction
 review:
   date_read: 2020-09-09
   format: paperback

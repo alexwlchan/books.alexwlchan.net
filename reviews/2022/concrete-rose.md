@@ -6,6 +6,9 @@ book:
     tint_color: "#172e36"
   title: Concrete Rose
   publication_year: 2021
+  tags:
+    - fiction
+    - race
 review:
   date_read: 2022-08-26
   format: ebook

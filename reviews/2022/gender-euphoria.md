@@ -7,6 +7,11 @@ book:
   title: Gender Euphoria
   publication_year: 2021
   isbn13: "978180018056705"
+  tags:
+    - non-fiction
+    - memoirs
+    - gender
+    - identity
 review:
   date_read: 2022-06-23
   format: paperback

@@ -9,6 +9,9 @@ book:
   publication_year: 2018
   series: 'Wayfarers, #3'
   title: Record of a Spaceborn Few
+  tags:
+    - fiction
+    - sci-fi
 review:
   date_read: '2018-10-07'
   rating: 5

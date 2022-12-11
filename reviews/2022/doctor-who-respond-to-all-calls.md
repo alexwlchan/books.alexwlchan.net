@@ -7,6 +7,10 @@ book:
   title: "Doctor Who: Respond to All Calls"
   publication_year: 2021
   series: The Ninth Doctor Adventures
+  tags:
+    - fiction
+    - doctor-who
+    - sci-fi
 review:
   date_read: 2022-04-18
   format: audiobook

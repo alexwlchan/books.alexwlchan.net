@@ -8,6 +8,9 @@ book:
   isbn13: '9781442200999'
   publication_year: 2012
   title: Understanding Asexuality
+  tags:
+    - asexuality
+    - non-fiction
 review:
   date_read: '2017-03-31'
   rating: 2

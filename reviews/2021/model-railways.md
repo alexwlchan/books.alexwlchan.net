@@ -7,6 +7,9 @@ book:
   isbn13: 0000000021296
   publication_year: 1991
   title: Model Railways
+  tags:
+    - non-fiction
+    - trains
 review:
   date_read: 2021-11-10
   format: hardback

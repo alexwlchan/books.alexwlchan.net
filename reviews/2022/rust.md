@@ -7,6 +7,10 @@ book:
   title: Rust
   publication_year: 2015
   isbn13: "9781451691603"
+  tags:
+    - non-fiction
+    - science
+    - chemistry
 review:
   date_read: 2022-11-15
   format: paperback

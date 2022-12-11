@@ -8,6 +8,10 @@ book:
   isbn13: '9781849533577'
   publication_year: 2013
   title: 'Mind the Gap: A London Underground Miscellany'
+  tags:
+    - non-fiction
+    - trains
+    - trivia
 review:
   date_read: '2017-05-16'
   rating: 3

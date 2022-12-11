@@ -6,6 +6,9 @@ book:
   editor: Alice Wong
   publication_year: 2020
   title: Disability Visibility
+  tags:
+    - non-fiction
+    - disability
 review:
   date_read: 2021-03-05
   format: paperback

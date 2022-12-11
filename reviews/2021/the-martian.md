@@ -7,6 +7,10 @@ book:
   narrator: Wil Wheaton
   publication_year: 2011
   title: The Martian
+  tags:
+    - fiction
+    - sci-fi
+    - space-exploration
 review:
   date_read: 2021-08-27
   format: audiobook

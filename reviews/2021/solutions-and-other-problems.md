@@ -7,6 +7,11 @@ book:
   isbn13: '9780224101288'
   publication_year: 2020
   title: Solutions and Other Problems
+  tags:
+    - non-fiction
+    - graphic-novel
+    - mental-health
+    - humour
 review:
   date_read: 2021-03-23
   format: paperback

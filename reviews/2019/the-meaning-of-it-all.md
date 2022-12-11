@@ -8,6 +8,9 @@ book:
   isbn13: '9780141031446'
   publication_year: 2007
   title: The Meaning of It All
+  tags:
+    - non-fiction
+    - science
 review:
   date_read: '2019-12-11'
   rating: 5

@@ -9,6 +9,9 @@ book:
   title: Trains
   series: Ladybird Books
   isbn10: "0721403743"
+  tags:
+    - non-fiction
+    - trains
 review:
   date_read: 2021-12-30
   date_order: 3

@@ -8,6 +8,10 @@ book:
   publication_year: 1999
   isbn10: "9605403366"
   isbn13: "9789605403362"
+  tags:
+    - non-fiction
+    - travel
+    - greece
 review:
   date_read: 2022-11-22
   format: paperback

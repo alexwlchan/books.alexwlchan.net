@@ -8,6 +8,9 @@ book:
   publication_year: 2021
   title: The Library of the Dead
   series: "Edinburgh Nights #1"
+  tags:
+    - fiction
+    - fantasy
 review:
   date_read: 2021-12-19
   format: audiobook

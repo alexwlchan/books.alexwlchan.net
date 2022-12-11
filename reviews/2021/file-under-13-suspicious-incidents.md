@@ -6,6 +6,8 @@ book:
     tint_color: "#1d588e"
   publication_year: 2014
   title: "File Under: 13 Suspicious Incidents"
+  tags:
+    - fiction
 review:
   date_read: 2021-12-09
   format: ebook

@@ -7,6 +7,9 @@ book:
   isbn13: '9781447213673'
   publication_year: 2012
   title: Railsea
+  tags:
+    - fiction
+    - trains
 review:
   date_read: 2021-04-28
   format: paperback

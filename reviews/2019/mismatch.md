@@ -8,6 +8,9 @@ book:
   isbn13: '9780262038881'
   publication_year: 2018
   title: Mismatch
+  tags:
+    - fiction
+    - inclusion
 review:
   date_read: '2019-01-16'
   rating: 5

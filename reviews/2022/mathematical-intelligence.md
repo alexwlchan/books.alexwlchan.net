@@ -7,6 +7,10 @@ book:
   title: Mathematical Intelligence
   publication_year: 2022
   isbn13: "9781788166836"
+  tags:
+    - non-fiction
+    - maths
+    - computing
 review:
   date_read: 2022-09-25
   format: hardback

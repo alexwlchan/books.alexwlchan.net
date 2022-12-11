@@ -8,6 +8,9 @@ book:
   title: The Starless Sea
 plan:
   date_added: 2020-02-09
+  tags:
+    - fiction
+    - fantasy
 review:
   date_read: 2020-11-22
   format: hardback

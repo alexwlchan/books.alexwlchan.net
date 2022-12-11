@@ -7,6 +7,9 @@ book:
   title: A Prayer for the Crown-Shy
   publication_year: 2022
   series: Monk & Robot Book 2
+  tags:
+    - fiction
+    - sci-fi
 review:
   date_read: 2022-08-31
   format: ebook

@@ -7,6 +7,9 @@ book:
   isbn13: '9781908745743'
   publication_year: 1962
   title: The Invisible Child and the Fir Tree
+  tags:
+    - fiction
+    - moomins
 review:
   date_read: 2021-05-03
   format: hardback

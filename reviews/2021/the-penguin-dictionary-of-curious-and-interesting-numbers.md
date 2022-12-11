@@ -8,6 +8,9 @@ book:
   isbn13: '9780140261493'
   publication_year: 1986
   title: The Penguin Dictionary of Curious and Interesting Numbers
+  tags:
+    - non-fiction
+    - maths
 review:
   date_read: 2021-05-01
   did_not_finish: true

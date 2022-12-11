@@ -8,6 +8,10 @@ book:
   isbn13: '9780747235286'
   publication_year: 2003
   title: The Universe Next Door
+  tags:
+    - non-fiction
+    - science
+    - physics
 review:
   date_read: '2019-03-23'
   rating: 3

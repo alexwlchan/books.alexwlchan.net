@@ -7,6 +7,10 @@ book:
   title: Sea of Tranquility
   publication_year: 2022
   isbn13: "9781529083491"
+  tags:
+    - fiction
+    - sci-fi
+    - time-travel
 review:
   date_read: 2022-10-27
   format: hardback

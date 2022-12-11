@@ -7,6 +7,11 @@ book:
   title: Light Years
   publication_year: 2008
   isbn13: "9780230527256"
+  tags:
+    - non-fiction
+    - science
+    - physics
+    - history
 review:
   date_read: 2022-03-25
   format: paperback

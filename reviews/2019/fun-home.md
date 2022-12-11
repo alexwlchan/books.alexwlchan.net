@@ -8,6 +8,10 @@ book:
   isbn13: '9780224080514'
   publication_year: 2006
   title: Fun Home
+  tags:
+    - fiction
+    - graphic-novel
+    - queer-rep
 review:
   date_read: '2019-12-02'
   format: paperback

@@ -8,6 +8,11 @@ book:
   isbn13: '9780141981512'
   publication_year: 2015
   title: The Thrilling Adventures of Lovelace and Babbage
+  tags:
+    - non-fiction
+    - history
+    - graphic-novel
+    - computing
 review:
   date_read: '2017-05-15'
   rating: 5

@@ -7,6 +7,11 @@ book:
   isbn13: '9780198203278'
   publication_year: 1993
   title: 'Codebreakers: The inside story of Bletchley Park'
+  tags:
+    - non-fiction
+    - bletchley-park
+    - espionage
+    - history
 review:
   date_read: 2020-09-15
   format: hardback

@@ -8,6 +8,10 @@ book:
   publication_year: 2004
   isbn10: "0486436748"
   isbn13: "9780486436746"
+  tags:
+    - non-fiction
+    - history
+    - mythology
 review:
   date_read: 2022-06-14
   format: paperback

@@ -8,6 +8,10 @@ book:
   isbn13: '9789602262276'
   publication_year: 1991
   title: The Ancient Greek Computer From Rhodes
+  tags:
+    - non-fiction
+    - computing
+    - greece
 review:
   date_read: '2019-08-22'
   format: hardback

@@ -8,6 +8,9 @@ book:
   isbn13: '9781847083159'
   publication_year: 2011
   title: The Butterfly Isles
+  tags:
+    - non-fiction
+    - travel
 review:
   date_read: '2018-04-07'
   rating: 4

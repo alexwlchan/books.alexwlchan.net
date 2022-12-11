@@ -7,6 +7,9 @@ book:
   narrator: Imogen Church
   publication_year: 2016
   title: The Woman in Cabin 10
+  tags:
+    - fiction
+    - mystery
 review:
   date_read: 2021-06-27
   format: audiobook

@@ -9,6 +9,9 @@ book:
   title: The Elements of Style
 plan:
   date_added: '2019-08-12'
+  tags:
+    - non-fiction
+    - writing
 review:
   date_read: '2020-02-06'
   rating: 3

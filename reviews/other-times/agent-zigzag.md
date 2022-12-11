@@ -8,4 +8,8 @@ book:
   isbn13: '9781408811498'
   publication_year: 2010
   title: Agent Zigzag
+  tags:
+    - non-fiction
+    - history
+    - espionage
 ---

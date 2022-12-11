@@ -6,6 +6,8 @@ book:
     tint_color: "#fd7c58"
   title: The Last Library
   publication_year: 2021
+  tags:
+    - fiction
 review:
   date_read: 2022-10-21
   format: ebook

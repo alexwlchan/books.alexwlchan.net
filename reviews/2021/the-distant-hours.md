@@ -7,6 +7,9 @@ book:
   isbn13: '9780330477581'
   publication_year: 2010
   title: The Distant Hours
+  tags:
+    - fiction
+    - mystery
 review:
   date_read: 2021-09-25
   format: paperback

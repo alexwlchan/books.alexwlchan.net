@@ -8,6 +8,9 @@ book:
   isbn13: '9780753513576'
   publication_year: 2008
   title: The World Without Us
+  tags:
+    - non-fiction
+    - science
 review:
   date_read: '2018-03-01'
   did_not_finish: true

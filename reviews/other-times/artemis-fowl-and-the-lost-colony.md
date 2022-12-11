@@ -8,4 +8,7 @@ book:
   isbn13: 978-1-4056-6148-5
   publication_year: 2006
   title: Artemis Fowl and the Lost Colony
+  tags:
+    - fiction
+    - fantasy
 ---

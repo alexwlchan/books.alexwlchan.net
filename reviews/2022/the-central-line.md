@@ -7,6 +7,10 @@ book:
   title: The Central Line
   publication_year: 2022
   isbn13: "9780349428710"
+  tags:
+    - fiction
+    - stories-set-on-trains
+    - romance
 review:
   date_read: 2022-10-13
   format: paperback

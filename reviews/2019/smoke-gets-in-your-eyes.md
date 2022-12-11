@@ -8,6 +8,9 @@ book:
   isbn13: '9781782111054'
   publication_year: 2015
   title: Smoke Gets in Your Eyes
+  tags:
+    - non-fiction
+    - death
 review:
   date_read: '2019-02-13'
   rating: 5

@@ -7,6 +7,10 @@ book:
   isbn13: 978-0-571-36018-5
   publication_year: 2020
   title: Gender Swapped Fairy Tales
+  tags:
+    - fiction
+    - gender
+    - fairy-tales
 review:
   date_read: 2021-05-18
   format: hardback

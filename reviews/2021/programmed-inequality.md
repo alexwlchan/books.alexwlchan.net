@@ -11,6 +11,10 @@ book:
     Its Edge in Computing'
 plan:
   date_added: '2017-03-19'
+  tags:
+    - non-fiction
+    - history
+    - computing
 review:
   date_read: 2021-03-31
   format: hardback

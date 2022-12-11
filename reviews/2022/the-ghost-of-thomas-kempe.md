@@ -8,6 +8,9 @@ book:
   publication_year: 1973
   isbn10: "0749707917"
   isbn13: "9780749707910"
+  tags:
+    - fiction
+    - fantasy
 review:
   date_read: 2022-06-05
   format: paperback

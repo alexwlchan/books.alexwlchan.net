@@ -8,6 +8,10 @@ book:
   isbn13: '9781854109392'
   publication_year: 2003
   title: 'Mallard: How the Blue Streak Broke the World Speed Record'
+  tags:
+    - non-fiction
+    - trains
+    - history
 review:
   date_read: '2018-02-11'
   rating: 4

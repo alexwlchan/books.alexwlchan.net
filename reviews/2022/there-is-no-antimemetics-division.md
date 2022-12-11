@@ -6,6 +6,10 @@ book:
     tint_color: "#dd4366"
   title: There Is No Antimemetics Division
   publication_year: 2021
+  tags:
+    - fiction
+    - sci-fi
+    - horror
 review:
   date_read: 2022-03-30
   format: ebook

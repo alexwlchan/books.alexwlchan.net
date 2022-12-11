@@ -9,6 +9,8 @@ book:
   publication_year: 2017
   series: 'I Hate Everyone But You, #1'
   title: I Hate Everyone But You
+  tags:
+    - fiction
 review:
   date_read: '2018-04-09'
   rating: 3

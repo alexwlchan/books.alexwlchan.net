@@ -8,6 +8,9 @@ book:
   isbn13: '9781840921533'
   publication_year: 2000
   title: Master Pieces
+  tags:
+    - non-fiction
+    - chess
 review:
   date_read: '2016-12-26'
   rating: 4

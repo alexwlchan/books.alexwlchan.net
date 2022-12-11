@@ -7,6 +7,9 @@ book:
   isbn13: '9781786223937'
   publication_year: 2021
   title: The Backwater Sermons
+  tags:
+    - poetry
+    - religion
 review:
   date_read: 2021-10-02
   format: paperback

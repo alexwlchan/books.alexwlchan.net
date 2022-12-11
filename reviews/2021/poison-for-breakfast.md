@@ -6,6 +6,8 @@ book:
     tint_color: '#bf3625'
   publication_year: 2021
   title: Poison for Breakfast
+  tags:
+    - fiction
 review:
   date_read: 2021-10-28
   format: ebook

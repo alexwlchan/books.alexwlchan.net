@@ -8,5 +8,7 @@ book:
   title: The End of Harry Potter?
   isbn13: "9780575080546"
   format: paperback
+  tags:
+    - fiction
 ---
 

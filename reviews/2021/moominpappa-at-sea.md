@@ -7,6 +7,9 @@ book:
   isbn13: '9781908745705'
   publication_year: 1948
   title: Moominpappa at Sea
+  tags:
+    - fiction
+    - moomins
 review:
   date_read: 2021-08-22
   format: hardback

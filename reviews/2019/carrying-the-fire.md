@@ -8,6 +8,10 @@ book:
   isbn13: '9780374531942'
   publication_year: 2009
   title: Carrying the Fire
+  tags:
+    - non-fiction
+    - memoirs
+    - space-exploration
 review:
   date_read: '2019-05-01'
   rating: 5

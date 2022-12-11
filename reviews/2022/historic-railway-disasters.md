@@ -7,6 +7,10 @@ book:
   publication_year: 1983
   title: Historic Railway Disasters
   isbn10: "0711012059"
+  tags:
+    - non-fiction
+    - trains
+    - history
 review:
   date_read: 2022-02-11
   format: hardback

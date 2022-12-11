@@ -7,6 +7,10 @@ book:
   title: We Are Bellingcat
   publication_year: 2021
   isbn13: "9781526615756"
+  tags:
+    - non-fiction
+    - memoirs
+    - politics
 review:
   date_read: 2022-06-29
   format: hardback

@@ -8,6 +8,8 @@ book:
   isbn13: '9780316187480'
   publication_year: 2013
   title: The Dark
+  tags:
+    - fiction
 review:
   date_read: '2017-01-03'
   rating: 4

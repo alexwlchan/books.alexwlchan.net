@@ -8,6 +8,10 @@ book:
   isbn13: '9781910463871'
   publication_year: 2018
   title: The Railway Adventures
+  tags:
+    - non-fiction
+    - memoirs
+    - trains
 review:
   date_read: '2019-01-20'
   rating: 4

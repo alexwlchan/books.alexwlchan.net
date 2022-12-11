@@ -8,4 +8,7 @@ book:
   isbn13: 978-1-4071-0713-4
   publication_year: 2009
   title: The Phantom X
+  tags:
+    - non-fiction
+    - maths
 ---

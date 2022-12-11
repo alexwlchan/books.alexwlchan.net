@@ -7,6 +7,10 @@ book:
   title: Attention All Shipping
   publication_year: 2004
   isbn13: "9780349116037"
+  tags:
+    - non-fiction
+    - maritime
+    - travel
 review:
   date_read: 2022-11-05
   format: paperback

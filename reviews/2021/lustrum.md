@@ -7,6 +7,8 @@ book:
   isbn13: '9780091801007'
   publication_year: 2009
   title: Lustrum
+  tags:
+    - fiction
 review:
   date_read: 2021-01-02
   format: hardback

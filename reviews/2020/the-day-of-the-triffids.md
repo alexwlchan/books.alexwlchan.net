@@ -7,6 +7,10 @@ book:
   isbn10: 0140009930
   publication_year: 1951
   title: The Day of the Triffids
+  tags:
+    - fiction
+    - dystopia
+    - sci-fi
 review:
   date_read: 2020-02-07
   format: paperback

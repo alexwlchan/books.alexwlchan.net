@@ -8,6 +8,9 @@ book:
   title: Pride and Prejudice
 plan:
   date_added: '2019-08-13'
+  tags:
+    - fiction
+    - romance
 review:
   date_read: 2021-02-28
   format: hardback

@@ -8,6 +8,11 @@ book:
   isbn13: '9780297860990'
   publication_year: 2011
   title: The Art of Betrayal
+  tags:
+    - non-fiction
+    - espionage
+    - history
+    - warfare
 review:
   date_read: '2019-11-14'
   rating: 5

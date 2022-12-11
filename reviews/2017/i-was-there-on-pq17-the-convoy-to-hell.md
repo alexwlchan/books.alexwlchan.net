@@ -8,6 +8,11 @@ book:
   isbn13: '9780572035426'
   publication_year: 2010
   title: I Was There on PQ17, the Convoy to Hell
+  tags:
+    - non-fiction
+    - maritime
+    - history
+    - warfare
 review:
   date_read: '2017-01-11'
   rating: 4

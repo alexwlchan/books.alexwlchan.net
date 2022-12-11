@@ -8,6 +8,9 @@ book:
   isbn13: '9781847240491'
   publication_year: 2007
   title: How Many Lightbulbs Does It Take to Change a Planet?
+  tags:
+    - non-fiction
+    - science
 review:
   date_read: 2011-08
 ---

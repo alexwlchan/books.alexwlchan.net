@@ -7,6 +7,10 @@ book:
   title: Seats of London
   publication_year: 2019
   isbn13: "9781916045316"
+  tags:
+    - non-fiction
+    - trains
+    - fashion
 review:
   date_read: 2022-09-09
   format: paperback

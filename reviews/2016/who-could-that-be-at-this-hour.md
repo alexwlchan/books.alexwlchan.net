@@ -9,6 +9,8 @@ book:
   publication_year: 2012
   series: 'All the Wrong Questions, #1'
   title: “Who Could That Be at This Hour?”
+  tags:
+    - fiction
 review:
   date_read: '2016-10-23'
   rating: 3

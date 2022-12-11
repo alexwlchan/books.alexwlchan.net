@@ -8,6 +8,8 @@ book:
   isbn13: '9781118143308'
   publication_year: 2012
   title: Liars and Outliers
+  tags:
+    - non-fiction
 review:
   date_read: '2018-02-03'
   rating: 5

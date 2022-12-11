@@ -8,6 +8,9 @@ book:
   isbn13: '9781481424363'
   publication_year: 2016
   title: The Paper Menagerie and Other Stories
+  tags:
+    - fiction
+    - short-stories
 review:
   date_read: '2018-11-23'
   rating: 5

@@ -7,6 +7,9 @@ book:
   isbn13: '9781250186935'
   publication_year: 2018
   title: 'Artificial Condition (The Murderbot Diaries, #2)'
+  tags:
+    - fiction
+    - sci-fi
 review:
   date_read: 2020-05-05
   format: ebook

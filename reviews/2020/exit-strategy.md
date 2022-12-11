@@ -7,6 +7,9 @@ book:
   isbn13: '9781250185454'
   publication_year: 2018
   title: 'Exit Strategy (The Murderbot Diaries, #4)'
+  tags:
+    - fiction
+    - sci-fi
 review:
   date_read: 2020-05-08
   format: ebook

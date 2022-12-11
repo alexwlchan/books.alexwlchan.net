@@ -7,6 +7,9 @@ book:
   title: Paul Takes the Form of a Mortal Girl
   publication_year: 2017
   isbn13: "9781529007671"
+  tags:
+    - fiction
+    - gender
 review:
   date_read: 2022-07-29
   format: paperback

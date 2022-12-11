@@ -6,6 +6,11 @@ book:
     tint_color: '#706a62'
   publication_year: 2021
   title: The Boy Who Drew Auschwitz
+  tags:
+    - non-fiction
+    - biography
+    - warfare
+    - history
 review:
   date_read: 2021-07-28
   format: audiobook

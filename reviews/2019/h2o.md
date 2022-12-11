@@ -7,6 +7,10 @@ book:
   isbn13: 978-0-7538-1092-7
   publication_year: 2000
   title: H2O
+  tags:
+    - non-fiction
+    - chemistry
+    - science
 review:
   date_read: '2019-12-26'
   format: paperback

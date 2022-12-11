@@ -7,6 +7,8 @@ book:
   title: We Need to Talk
   publication_year: 2017
   isbn13: "9780349416380"
+  tags:
+    - non-fiction
 review:
   date_read: 2022-04-09
   format: paperback

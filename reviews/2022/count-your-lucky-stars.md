@@ -8,6 +8,10 @@ book:
   publication_year: 2022
   series: "Written in the Stars, #3"
   isbn13: "9780063000889"
+  tags:
+    - fiction
+    - romance
+    - wlw
 review:
   date_read: 2022-04-03
   format: paperback

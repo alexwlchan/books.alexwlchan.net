@@ -6,6 +6,9 @@ book:
     tint_color: '#856155'
   publication_year: 2020
   title: Bite Size Bash
+  tags:
+    - non-fiction
+    - programming
 review:
   date_read: 2020-12-23
   format: zine

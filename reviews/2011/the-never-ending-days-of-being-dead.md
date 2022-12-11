@@ -8,6 +8,8 @@ book:
   isbn13: '9780571220564'
   publication_year: 2007
   title: The Never-Ending Days of Being Dead
+  tags:
+    - non-fiction
 review:
   date_read: 2011-07
 ---

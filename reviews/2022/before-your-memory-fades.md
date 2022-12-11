@@ -8,6 +8,11 @@ book:
   title: Before Your Memory Fades
   publication_year: 2022
   isbn13: "9781035004614"
+  tags:
+    - fiction
+    - fantasy
+    - time-travel
+    - grief
 review:
   date_read: 2022-09-12
   format: hardback

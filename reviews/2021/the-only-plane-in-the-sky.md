@@ -7,6 +7,9 @@ book:
   narrator: Holter Graham and a full cast
   publication_year: 2019
   title: The Only Plane in the Sky
+  tags:
+    - non-fiction
+    - disasters
 review:
   date_read: 2021-06-25
   format: audiobook

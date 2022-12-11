@@ -9,6 +9,9 @@ book:
   publication_year: 2018
   title: The Distance Between Me and the Cherry Tree
   isbn13: 9781489483829
+  tags:
+    - fiction
+    - disability
 review:
   date_read: 2022-01-08
   format: audiobook

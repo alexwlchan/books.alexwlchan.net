@@ -10,6 +10,8 @@ book:
   title: 'The Magazine: The Book'
 plan:
   date_added: '2019-08-13'
+  tags:
+    - non-fiction
 review:
   date_read: '2020-04-13'
   format: hardback

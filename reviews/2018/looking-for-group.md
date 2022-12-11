@@ -8,6 +8,8 @@ book:
   isbn13: '9781626494466'
   publication_year: 2016
   title: Looking for Group
+  tags:
+    - fiction
 review:
   date_read: '2018-05-21'
   rating: 5

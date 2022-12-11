@@ -8,6 +8,9 @@ book:
   publication_year: 2019
   series: 'Truly Devious #2'
   title: The Vanishing Stair
+  tags:
+    - fiction
+    - mystery
 review:
   date_read: 2021-11-20
   format: audiobook

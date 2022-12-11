@@ -7,6 +7,11 @@ book:
   isbn13: '9781783528226'
   publication_year: 2019
   title: Small Robots
+  tags:
+    - graphic-novel
+    - fiction
+    - sci-fi
+    - humour
 review:
   date_read: 2020-07-10
   format: hardback

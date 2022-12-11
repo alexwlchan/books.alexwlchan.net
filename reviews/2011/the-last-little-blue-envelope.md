@@ -9,6 +9,8 @@ book:
   publication_year: 2011
   series: 'Little Blue Envelope, #2'
   title: The Last Little Blue Envelope
+  tags:
+    - fiction
 review:
   date_read: 2011-05
 ---

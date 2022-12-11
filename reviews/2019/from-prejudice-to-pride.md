@@ -8,6 +8,10 @@ book:
   isbn13: '9781526301901'
   publication_year: 2017
   title: From Prejudice to Pride
+  tags:
+    - non-fiction
+    - queer-rep
+    - history
 review:
   date_read: '2019-10-28'
   format: hardback

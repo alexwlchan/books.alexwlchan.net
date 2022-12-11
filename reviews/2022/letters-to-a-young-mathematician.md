@@ -8,6 +8,10 @@ book:
   publication_year: 2006
   isbn10: "0465082319"
   isbn13: "9780465082315"
+  tags:
+    - non-fiction
+    - maths
+    - letters
 review:
   date_read: 2022-08-07
   format: hardback

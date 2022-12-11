@@ -7,6 +7,10 @@ book:
   title: "Homer's Odyssey"
   publication_year: 2010
   isbn13: "9780593064665"
+  tags:
+    - cats
+    - memoirs
+    - non-fiction
 review:
   date_read: 2022-05-26
   format: hardback

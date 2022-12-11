@@ -7,6 +7,9 @@ book:
   isbn13: '9780241386569'
   publication_year: 2018
   title: The Story of Brexit
+  tags:
+    - non-fiction
+    - politics
 review:
   date_order: 2
   date_read: 2020-12-25

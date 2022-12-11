@@ -6,6 +6,10 @@ book:
     tint_color: '#010101'
   publication_year: 2016
   title: The Indisputable Existence of Santa Claus
+  tags:
+    - non-fiction
+    - maths
+    - trivia
 review:
   date_read: '2017-01-03'
   rating: 3

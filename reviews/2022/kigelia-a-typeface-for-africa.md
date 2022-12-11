@@ -6,6 +6,10 @@ book:
     tint_color: "#b25405"
   title: "Kigelia: A Typeface for Africa"
   publication_year: 2018
+  tags:
+    - non-fiction
+    - typography
+    - graphic-design
 review:
   date_read: 2022-03-26
   format: paperback
