@@ -10,13 +10,13 @@ fn default_as_false() -> bool {
     false
 }
 
-#[derive(Deserialize, Serialize)]
+#[derive(Deserialize, Serialize, Clone)]
 pub struct Cover {
     pub name: String,
     pub tint_color: String,
 }
 
-#[derive(Deserialize, Serialize)]
+#[derive(Deserialize, Serialize, Clone)]
 pub struct Book {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub author: Option<String>,
@@ -47,22 +47,18 @@ pub struct Book {
     pub series: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(skip_deserializing)]
     pub isbn10: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(skip_deserializing)]
     pub isbn13: Option<String>,
 
     pub tags: Option<Vec<String>>,
 }
 
-#[derive(Deserialize, Serialize)]
+#[derive(Deserialize, Serialize, Clone)]
 pub struct ReviewMetadata {
     pub date_read: String,
-
-    #[serde(skip_deserializing)]
-    pub format: String,
+    pub format: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     pub rating: Option<usize>,
