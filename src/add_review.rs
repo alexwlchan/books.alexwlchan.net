@@ -247,6 +247,7 @@ pub fn add_review() -> InquireResult<()> {
         illustrator: None,
         retold_by: None,
         translated_by: None,
+        tags: None,
     };
 
     let metadata = models::ReviewMetadata {
