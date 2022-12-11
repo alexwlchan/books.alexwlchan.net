@@ -94,11 +94,11 @@ struct FrontMatter {
     review: models::ReviewMetadata,
 }
 
-fn save_review(year: i32, slug: &str, book: models::Book, metadata: models::ReviewMetadata) -> () {
-    let out_dir = format!("reviews/{}", year);
+fn save_review(root: &Path, year: i32, slug: &str, book: models::Book, metadata: models::ReviewMetadata) -> () {
+    let out_dir = root.join(year.to_string());
     fs::create_dir_all(&out_dir).unwrap();
 
-    let out_path = format!("{}/{}.md", out_dir, slug);
+    let out_path = out_dir.join(slug).with_extension("md");
 
     let front_matter = FrontMatter {
         book,
@@ -117,7 +117,7 @@ fn save_review(year: i32, slug: &str, book: models::Book, metadata: models::Revi
     Command::new("open").arg(out_path).output().unwrap();
 }
 
-pub fn add_review() -> InquireResult<()> {
+pub fn add_review(root: &Path) -> InquireResult<()> {
     let title = get_non_empty_string_value("What's the title of the book?")?;
     let author = get_non_empty_string_value("Who's the author?")?;
     let publication_year = get_year_value("When was it published?")?;
@@ -227,7 +227,7 @@ pub fn add_review() -> InquireResult<()> {
         .unwrap()
         .replace("\x1B[0m", "");
 
-    let used_tags = tags::get_used_tags(Path::new("reviews"));
+    let used_tags = tags::get_used_tags(root);
     let tags = Text::new("What's the book about?")
         .with_autocomplete(tags::TagCompleter::new(used_tags.into_iter().collect()))
         .prompt()
@@ -267,7 +267,7 @@ pub fn add_review() -> InquireResult<()> {
         date_order: None,
     };
 
-    save_review(date_read.year(), &slug, book, metadata);
+    save_review(root, date_read.year(), &slug, book, metadata);
 
     Ok(())
 }

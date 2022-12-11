@@ -171,7 +171,7 @@ async fn main() {
     let matches = app.get_matches();
 
     if matches.subcommand_name() == Some("add_review") {
-        match add_review::add_review() {
+        match add_review::add_review(Path::new("reviews")) {
             Ok(_) => std::process::exit(0),
             Err(InquireError::OperationInterrupted) => {
                 eprintln!("^C");
