@@ -12,7 +12,7 @@ use std::process::Command;
 use chrono::Datelike;
 use clap::{App, SubCommand};
 use inquire::error::InquireResult;
-use inquire::validator::StringValidator;
+use inquire::validator::Validation;
 use inquire::{DateSelect, Select, Text};
 use regex::Regex;
 use serde::Serialize;
@@ -41,11 +41,11 @@ fn ask_optional_question(question: &str) -> InquireResult<Option<String>> {
 }
 
 fn get_non_empty_string_value(question: &str) -> InquireResult<String> {
-    let non_empty_validator: StringValidator = &|input| {
+    let non_empty_validator = |input: &str| {
         if input.chars().count() == 0 {
-            Err(String::from("You need to enter a value!"))
+            Ok(Validation::Invalid("You need to enter a value!".into()))
         } else {
-            Ok(())
+            Ok(Validation::Valid)
         }
     };
 
@@ -57,11 +57,11 @@ fn get_non_empty_string_value(question: &str) -> InquireResult<String> {
 }
 
 pub fn get_url_value(question: &str) -> InquireResult<Url> {
-    let url_validator: StringValidator = &|input| {
+    let url_validator = |input: &str| {
         if !urls::is_url(input) {
-            Err(String::from("You need to enter a URL!"))
+            Ok(Validation::Invalid("You need to enter a URL!".into()))
         } else {
-            Ok(())
+            Ok(Validation::Valid)
         }
     };
 
@@ -73,13 +73,13 @@ pub fn get_url_value(question: &str) -> InquireResult<Url> {
 }
 
 fn get_year_value(question: &str) -> InquireResult<u16> {
-    let year_regex = Regex::new(r"^[0-9]{4}$").unwrap();
+    let validator = |input: &str| {
+        let year_regex = Regex::new(r"^[0-9]{4}$").unwrap();
 
-    let validator: StringValidator = &|input| {
         if !year_regex.is_match(input) {
-            Err(String::from("You need to enter a year!"))
+            Ok(Validation::Invalid("You need to enter a year!".into()))
         } else {
-            Ok(())
+            Ok(Validation::Valid)
         }
     };
 

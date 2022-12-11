@@ -14,7 +14,7 @@ html-minifier = "3.0.14"
 ico = "0.1.0"
 image = { version = "0.23", features = ["gif", "jpeg", "png"], default-features = false }
 imageproc = "0.22.0"
-inquire = { version = "0.2.1", features = ["date"] }
+inquire = { version = "0.5", features = ["date"] }
 lazy_static = "1.4.0"
 oxipng = "5.0.1"
 palette = "0.6"
