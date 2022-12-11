@@ -20,11 +20,8 @@
   {% set linked_year = "" %}
   {% for review_entry in reviews %}
     {% if review_entry|year_read != linked_year %}
-      {% if review_entry|year_read == 'another time' %}
-        <a data-group-year="another_time" href="#another_time">another time</a>
-      {% else %}
-        <a data-group-year="{{ review_entry|year_read }}" href="#year_{{ review_entry|year_read }}">{{ review_entry|year_read }}</a> /
-      {% endif %}
+      <a data-group-year="{{ review_entry|year_read }}" href="#year_{{ review_entry|year_read }}">{{ review_entry|year_read }}</a>
+      {% if review_entry|year_read != "another time" %}/{% endif %}
     {% endif %}
     {% set_global linked_year = review_entry|year_read %}
   {% endfor %}
@@ -67,7 +64,7 @@
         <h3
           class="year_heading"
           id="another_time"
-          data-group-year="another_time"
+          data-group-year="another time"
         >books i read at another time</h3>
 
         <details id="another_time_books">
@@ -98,8 +95,15 @@
   <script>
     var filters = {
       authors: [],
+      publicationYear: {
+        before: undefined,
+        after: undefined,
+      },
+      starRating: undefined,
     };
 
     createAuthorTippy(filters);
+    createPublicationYearTippy(filters);
+    createStarRatingTippy(filters);
   </script>
 {% endblock %}

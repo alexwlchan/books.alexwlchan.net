@@ -358,3 +358,7 @@ footer a:hover {
 #jumpTo a[disabled="true"]:hover {
   background: none;
 }
+
+input[type="text"] {
+  font-size: 120%;
+}

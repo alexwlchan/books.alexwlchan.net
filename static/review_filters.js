@@ -1,3 +1,11 @@
+function isUndefined(t) {
+  return typeof t === 'undefined';
+}
+
+function isNotUndefined(t) {
+  return !isUndefined(t);
+}
+
 /** Creates a Counter of an array, similar to Python's collections.Counter().
   * e.g.
   *
@@ -19,7 +27,11 @@ function Counter(array) {
   * visible.  This should be called whenever the filter state changes.
   */
 function applyFilters(filters) {
-  const hasFilters = filters['authors'].length > 0;
+  const hasFilters =
+    filters['authors'].length > 0 ||
+    isNotUndefined(filters['publicationYear']['before']) ||
+    isNotUndefined(filters['publicationYear']['after']) ||
+    isNotUndefined(filters['starRating']);
 
   // First work out which books these filters apply to.
   //
@@ -30,15 +42,34 @@ function applyFilters(filters) {
       rp =>
         filters['authors'].length === 0 ||
         rp.getAttribute('data-book-authors').split(';').some(a => filters['authors'].indexOf(a) !== -1)
+    )
+    .filter(
+      rp =>
+        isUndefined(filters['publicationYear']['after']) ||
+        rp.getAttribute("data-publication-year") >= filters['publicationYear']['after']
+    )
+    .filter(
+      rp =>
+        isUndefined(filters['publicationYear']['before']) ||
+        rp.getAttribute("data-publication-year") <= filters['publicationYear']['before']
+    )
+    .filter(
+      rp =>
+        isUndefined(filters['starRating']) ||
+        rp.hasAttribute('data-star-rating') && Number(rp.getAttribute('data-star-rating')) >= filters['starRating']
     );
 
   const yearTally = Counter(selectedReviews.map(rp => rp.getAttribute("data-review-year")));
   const selectedReviewIds = new Set(selectedReviews.map(rp => rp.getAttribute("id")));
 
   // Show/hide the individual reviews
-  document.querySelectorAll(".review_preview").forEach(rp =>
-    rp.style.display = selectedReviewIds.has(rp.getAttribute("id")) ? "block" : "none"
-  );
+  document.querySelectorAll(".review_preview").forEach(rp => {
+    if (rp.getAttribute("data-review-year") == "another time") {
+      rp.style.display = selectedReviewIds.has(rp.getAttribute("id")) ? "grid" : "none"
+    } else {
+      rp.style.display = selectedReviewIds.has(rp.getAttribute("id")) ? "block" : "none"
+    }
+  });
 
   // Show/hide the year headings, and the dividers between them.
   //
@@ -53,7 +84,7 @@ function applyFilters(filters) {
     yh.style.display = yearTally[thisYear] > 0 ? "block" : "none";
     if (yh.hasAttribute("data-is-current-year")) {
       yh.innerHTML = `the ${yearTally[thisYear]} book${yearTally[thisYear] > 1 ? 's' : ''} i&rsquo;ve read so far in ${thisYear}`;
-    } else if (thisYear === "another_time") {
+    } else if (thisYear === "another time") {
       yh.innerHTML = 'books i read at another time';
     } else {
       yh.innerHTML = `the ${yearTally[thisYear]} book${yearTally[thisYear] > 1 ? 's' : ''} i read in ${thisYear}`;
@@ -63,8 +94,6 @@ function applyFilters(filters) {
   // Update the "jump to" links for individual years.
   document.querySelectorAll("#jumpTo a").forEach(jt => {
     const thisYear = jt.getAttribute("data-group-year");
-    console.log(thisYear);
-    console.log(yearTally[thisYear]);
 
     if (yearTally[thisYear] > 0 ) {
       jt.removeAttribute("disabled");
@@ -81,7 +110,11 @@ function applyFilters(filters) {
 
   // The "read at another time" books are stored in a <details> element,
   // we show/hide the parent collapsible element.
-  document.querySelector("#another_time_books").style.display = yearTally["another_time"] > 0 ? "block" : "none";
+  document.querySelector("#another_time_books").style.display = yearTally["another time"] > 0 ? "block" : "none";
+
+  if (yearTally["another time"] > 0 && Object.keys(yearTally).filter(k => yearTally[k] > 0).length === 1) {
+    document.querySelector("#another_time_books").open = true;
+  }
 
   // Update the list of selected filters, which also allows the user to
   // remove filters.
@@ -95,6 +128,46 @@ function applyFilters(filters) {
           <a href="#" onclick="script:removeAuthorFilter(filters, '${name}')" class="removeFilter">[x]</span>
         </span>
       `;
+    }
+
+    if (isNotUndefined(filters['publicationYear']['after']) && isNotUndefined(filters['publicationYear']['before'])) {
+      document.getElementById("filtersApplied").innerHTML += `
+        <span class="appliedFilter">
+          <span class="appliedFilterValue">published between ${filters['publicationYear']['after']} and ${filters['publicationYear']['before']}</span>
+          <a href="#" onclick="script:removePublicationYearFilters(filters)" class="removeFilter">[x]</span>
+        </span>
+      `
+    } else if (isNotUndefined(filters['publicationYear']['after'])) {
+      document.getElementById("filtersApplied").innerHTML += `
+        <span class="appliedFilter">
+          <span class="appliedFilterValue">published after ${filters['publicationYear']['after']}</span>
+          <a href="#" onclick="script:removePublicationYearFilters(filters)" class="removeFilter">[x]</span>
+        </span>
+      `
+    } else if (isNotUndefined(filters['publicationYear']['before'])) {
+      document.getElementById("filtersApplied").innerHTML += `
+        <span class="appliedFilter">
+          <span class="appliedFilterValue">published before ${filters['publicationYear']['before']}</span>
+          <a href="#" onclick="script:removePublicationYearFilters(filters)" class="removeFilter">[x]</span>
+        </span>
+      `
+    }
+
+    if (isNotUndefined(filters['starRating'])) {
+      const label = {
+        5: '★★★★★',
+        4: '★★★★☆ or higher',
+        3: '★★★☆☆ or higher',
+        2: '★★☆☆☆ or higher',
+        1: '★☆☆☆☆ or higher',
+      };
+
+      document.getElementById("filtersApplied").innerHTML += `
+        <span class="appliedFilter">
+          <span class="appliedFilterValue">${label[filters['starRating']]}</span>
+          <a href="#" onclick="script:removeStarRatingFilter(filters)" class="removeFilter">[x]</span>
+        </span>
+      `
     }
 
     document.getElementById("filtersApplied").style.display = "block";
@@ -111,10 +184,50 @@ function applyAuthorFilters(filters) {
   applyFilters(filters);
 }
 
+function applyPublicationFilters(filters) {
+  const publishedAfter = document.getElementById("published:after").value;
+  const publishedBefore = document.getElementById("published:before").value;
+
+  if (publishedAfter.length === 4) {
+    filters['publicationYear']['after'] = publishedAfter;
+  }
+
+  if (publishedBefore.length === 4) {
+    filters['publicationYear']['before'] = publishedBefore;
+  }
+
+  applyFilters(filters);
+}
+
+function applyStarRatingFilters(filters) {
+  filters['starRating'] = Number(
+    Array.from(document.querySelectorAll("#star_rating_filters input"))
+      .filter(input => input.checked)
+      .find(_ => _)
+      .value
+  );
+
+  applyFilters(filters);
+}
+
 function removeAuthorFilter(filters, name) {
   filters['authors'] = filters['authors'].filter(n => n !== name);
 
-  createAuthorTippy();
+  createAuthorTippy(filters);
+  applyFilters(filters);
+}
+
+function removePublicationYearFilters(filters) {
+  filters['publicationYear'] = {'before': undefined, 'after': undefined};
+
+  createPublicationYearTippy(filters);
+  applyFilters(filters);
+}
+
+function removeStarRatingFilter(filters) {
+  filters['starRating'] = undefined;
+
+  createStarRatingTippy(filters);
   applyFilters(filters);
 }
 
@@ -142,6 +255,7 @@ function createTippy(id, content) {
 function createAuthorTippy(filters) {
   const authorsSet = new Set(
     [...document.querySelectorAll('.review_preview')]
+      .filter(rp => rp.style.display !== 'none')
       .flatMap(rp => rp.getAttribute('data-book-authors').split(';'))
       .filter(s => s.length > 0)
   );
@@ -170,4 +284,45 @@ function createAuthorTippy(filters) {
       </ul>
     `
   )
+}
+
+function createPublicationYearTippy(filters) {
+  createTippy(
+    '#publicationFilters',
+    `
+      published between
+      <input
+        id="published:after"
+        type="text"
+        onchange="applyPublicationFilters(filters)"
+        placeholder="year"
+        size="4"
+        ${typeof filters['publicationYear']['after'] !== 'undefined' ? `value="${filters['publicationYear']['after']}"` : ''}
+      >
+      and
+      <input
+        id="published:before"
+        type="text"
+        onchange="applyPublicationFilters(filters)"
+        placeholder="year"
+        size="4"
+        ${typeof filters['publicationYear']['before'] !== 'undefined' ? `value="${filters['publicationYear']['before']}"` : ''}
+      >
+    `
+  );
+}
+
+function createStarRatingTippy(filters) {
+  createTippy(
+    '#ratingFilters',
+    `
+      <ul id="star_rating_filters" style="padding: 0; margin: 0; list-style: none; padding-right: 10px;">
+        <li><input onchange="applyStarRatingFilters(filters)" name="star_rating" type="radio" value="5" id="star_rating:5" ${filters['starRating'] === 5 ? 'checked' : ''}><label for="star_rating:5"> ★★★★★</label></li>
+        <li><input onchange="applyStarRatingFilters(filters)" name="star_rating" type="radio" value="4" id="star_rating:4" ${filters['starRating'] === 4 ? 'checked' : ''}><label for="star_rating:4"> ★★★★☆ or higher</label></li>
+        <li><input onchange="applyStarRatingFilters(filters)" name="star_rating" type="radio" value="3" id="star_rating:3" ${filters['starRating'] === 3 ? 'checked' : ''}><label for="star_rating:3"> ★★★☆☆ or higher</label></li>
+        <li><input onchange="applyStarRatingFilters(filters)" name="star_rating" type="radio" value="2" id="star_rating:2" ${filters['starRating'] === 2 ? 'checked' : ''}><label for="star_rating:2"> ★★☆☆☆ or higher</label></li>
+        <li><input onchange="applyStarRatingFilters(filters)" name="star_rating" type="radio" value="1" id="star_rating:1" ${filters['starRating'] === 1 ? 'checked' : ''}><label for="star_rating:1"> ★☆☆☆☆ or higher</label></li>
+      </ul>
+    `
+  );
 }

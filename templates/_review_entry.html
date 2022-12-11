@@ -12,6 +12,10 @@
   id="review_preview_{{ slug }}"
   data-book-authors="{{ book.author_names | join(sep=";") }}"
   data-review-year="{{ review_entry|year_read }}"
+  data-publication-year="{{ book.publication_year }}"
+  {% if review.rating and not review.did_not_finish %}
+    data-star-rating="{{ review.rating }}"
+  {% endif %}
 >
   {% if not read_at_another_time %}
   <a href="/reviews/{{ slug }}">
