@@ -8,15 +8,13 @@
 
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://unpkg.com/tippy.js@6"></script>
-<script src="https://unpkg.com/tippy.js@6/dist/tippy.css"></script>
+<script src="/static/review_filters.js"></script>
+
+<link href="https://unpkg.com/tippy.js@6/dist/tippy.css">
 {% endblock %}
 
 {% block content %}
   <h2>books i&rsquo;ve read</h2>
-
-  <p id="filters">filter by:
-    <a href="#" id="authorFilters">author</a>
-  </p>
 
   <p>jump to:
   {% set linked_year = "" %}
@@ -31,6 +29,15 @@
     {% set_global linked_year = review_entry|year_read %}
   {% endfor %}
   </p>
+
+  <p id="filters">filter by:
+    <button href="#" id="authorFilters">author</button>
+    <button href="#" id="publicationFilters">publication year</button>
+    <button href="#" id="ratingFilters">star rating</button>
+    <button href="#" id="tagFilters">topic tag</button>
+  </p>
+
+  <p id="filtersApplied"></p>
 
   <!-- <div id="covers" style="justify-content: space-between; text-align: center;">
   {% for review_entry in reviews %}
@@ -48,7 +55,9 @@
 
       {% if review_entry|year_read == this_year %}
         {% set count = reviews|books_in_year(year = review_entry|year_read) %}
-        <h3 id="year_{{ review_entry|year_read }}">the {{ count }} book{% if count > 1 %}s{% endif %} i&rsquo;ve read so far in {{ review_entry|year_read }}</h3>
+        <h3 class="year_heading" id="year_{{ review_entry|year_read }}">
+          the {{ count }} book{% if count > 1 %}s{% endif %} i&rsquo;ve read so far in {{ review_entry|year_read }}
+        </h3>
       {% elif review_entry|year_read == 'another time' %}
         <h3 id="another_time">books i read at another time</h3>
 
@@ -62,7 +71,9 @@
 
       {% else %}
         {% set count = reviews|books_in_year(year = review_entry|year_read) %}
-        <h3 id="year_{{ review_entry|year_read }}">the {{ count }} book{% if count > 1 %}s{% endif %} i read in {{ review_entry|year_read }}</h3>
+        <h3 class="year_heading" id="year_{{ review_entry|year_read }}">
+          the {{ count }} book{% if count > 1 %}s{% endif %} i read in {{ review_entry|year_read }}
+        </h3>
       {% endif %}
       {% set_global heading_year = review_entry|year_read %}
     {% endif %}
@@ -72,11 +83,9 @@
   </details>
 
   <script>
-    // https://ourcodeworld.com/articles/read/255/creating-url-slugs-properly-in-javascript-including-transliteration-for-utf-8
-    function slugify(text)
-    {
-        return text.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'');
-    }
+    var filters = {
+      authors: [],
+    };
 
     const authorsSet = new Set(
       [...document.querySelectorAll('.review_preview')]
@@ -86,29 +95,93 @@
     const authors = Array.from(authorsSet);
     authors.sort();
 
-    // With the above scripts loaded, you can call `tippy()` with a CSS
-    // selector and a `content` prop:
-    tippy('#authorFilters', {
-      content: `
-        <ul style="padding: 0; margin: 0; list-style: none; padding-right: 10px;">
+    function applyAuthorFilters() {
+      filters['authors'] = Array.from(document.querySelectorAll("#author_filters input"))
+        .filter(input => input.checked)
+        .map(input => input.getAttribute("data-author-name"));
+
+      renderFilters();
+    }
+
+    function removeAuthorFilter(name) {
+      filters['authors'] = filters['authors'].filter(n => n !== name);
+
+      renderFilters();
+    }
+
+    function renderFilters() {
+      const hasFilters = filters['authors'].length > 0;
+
+      const selectedReviews = Array.from(document.querySelectorAll(".review_preview"))
+        .filter(
+          rp =>
+            filters['authors'].length === 0 ||
+            rp.getAttribute('data-book-authors').split(';').some(a => filters['authors'].indexOf(a) !== -1)
+        );
+
+      const yearTally = Counter(selectedReviews.map(rp => rp.getAttribute("data-review-year")));
+      const selectedReviewIds = new Set(selectedReviews.map(rp => rp.getAttribute("id")));
+
+      document.querySelectorAll(".review_preview").forEach(rp =>
+        rp.style.display = selectedReviewIds.has(rp.getAttribute("id")) ? "block" : "none"
+      );
+
+      console.log(selectedReviewIds);
+      console.log(yearTally);
+
+      if (hasFilters) {
+        document.getElementById("filtersApplied").innerHTML = "selected filters: ";
+
+        for (let name of filters['authors']) {
+          document.getElementById("filtersApplied").innerHTML += `
+            <span class="appliedAuthorFilter">
+              <span class="appliedFilterValue">${name}</span>
+              <a href="#" onclick="script:removeAuthorFilter('${name}')" class="removeFilter">[x]</span>
+            </span>
+          `;
+        }
+
+        document.getElementById("filtersApplied").style.display = "block";
+      } else {
+        document.getElementById("filtersApplied").style.display = "none";
+      }
+    }
+
+    function createTippy(id, content) {
+      tippy(id, {
+        content,
+        trigger: 'click',
+        placement: 'bottom',
+        allowHTML: true,
+        theme: 'light',
+            // 350px
+            maxWidth: '',
+        // https://atomiks.github.io/tippyjs/v6/all-props/#interactive
+        interactive: true,
+      });
+    }
+
+    createTippy(
+      '#authorFilters',
+      `
+        <ul id="author_filters" style="padding: 0; margin: 0; list-style: none; padding-right: 10px;">
           ${
             authors.map((name, i) =>
               `<li>
-                 <input id="author:${name}" type="checkbox" name="author">
+                 <input
+                    id="author:${name}"
+                    type="checkbox"
+                    ${filters['authors'].indexOf(name) !== -1 ? 'checked' : ''}
+                    name="author"
+                    data-author-name="${name}"
+                    onchange="applyAuthorFilters()"
+                  >
                  <label for="author:${name}">${name}</label>
               </li>`
             ).join("")
           }
         </ul>
-      `,
-      trigger: 'click',
-      placement: 'bottom',
-      allowHTML: true,
-      theme: 'light',
-          // 350px
-          maxWidth: '',
-      // https://atomiks.github.io/tippyjs/v6/all-props/#interactive
-      interactive: true,
-    });
+      `
+    )
   </script>
 {% endblock %}

@@ -306,7 +306,7 @@ footer a:hover {
   border-radius: 10px;
   max-width: 100%;
   line-height: 1.75em;
-  padding: 20px 30px;
+  padding: 20px 22px;
   max-height: 450px;
   overflow: scroll;
 }
@@ -315,4 +315,34 @@ footer a:hover {
   .tippy-content {
     padding: 10px 15px;
   }
+}
+
+#filters button {
+  background: white;
+  border: 1px solid black;
+  font: 12pt monospace;
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 3px 10px;
+}
+
+#filtersApplied {
+  display: none;
+}
+
+#filtersApplied .appliedAuthorFilter {
+  margin-right: 1em;
+}
+
+#filtersApplied .appliedFilterValue {
+  font-weight: bold;
+}
+
+#filtersApplied .removeFilter {
+  color: #d01c11;
+  text-decoration: none;
+}
+
+#filtersApplied .removeFilter:hover {
+  background: none;
 }

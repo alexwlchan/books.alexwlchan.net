@@ -11,6 +11,7 @@
   class="review_preview {% if review.rating is defined and review.rating == 5 and not is_homepage %}review_fave{% endif %} {% if read_at_another_time %}read_at_another_time{% endif %}"
   id="review_preview_{{ slug }}"
   data-book-authors="{{ book.author_names | join(sep=";") }}"
+  data-review-year="{{ review_entry|year_read }}"
 >
   {% if not read_at_another_time %}
   <a href="/reviews/{{ slug }}">
