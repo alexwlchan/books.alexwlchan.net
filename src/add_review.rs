@@ -6,7 +6,7 @@
 use std::fs;
 use std::fs::OpenOptions;
 use std::io::Write;
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 use std::process::Command;
 
 use chrono::Datelike;
@@ -18,9 +18,7 @@ use regex::Regex;
 use serde::Serialize;
 use url::Url;
 
-use crate::models;
-use crate::text_helpers;
-use crate::urls;
+use crate::{models, tags, text_helpers, urls};
 
 pub fn subcommand() -> App<'static> {
     SubCommand::with_name("add_review").about("Start a review of a new book")
@@ -229,6 +227,16 @@ pub fn add_review() -> InquireResult<()> {
         .unwrap()
         .replace("\x1B[0m", "");
 
+    let used_tags = tags::get_used_tags(Path::new("reviews"));
+    let tags = Text::new("What's the book about?")
+        .with_autocomplete(tags::TagCompleter::new(used_tags.into_iter().collect()))
+        .prompt()
+        .unwrap()
+        .trim()
+        .split(" ")
+        .map(|s| s.to_owned())
+        .collect();
+
     let cover = models::Cover {
         name: cover_name.to_string(),
         tint_color: tint_colour.to_string(),
@@ -247,7 +255,7 @@ pub fn add_review() -> InquireResult<()> {
         illustrator: None,
         retold_by: None,
         translated_by: None,
-        tags: None,
+        tags: Some(tags),
     };
 
     let metadata = models::ReviewMetadata {

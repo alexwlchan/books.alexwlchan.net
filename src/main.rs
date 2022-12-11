@@ -40,6 +40,7 @@ mod fs_helpers;
 mod models;
 mod render_html;
 mod serve;
+mod tags;
 mod templates;
 mod text_helpers;
 mod urls;

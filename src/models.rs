@@ -54,7 +54,7 @@ pub struct Book {
     #[serde(skip_deserializing)]
     pub isbn13: Option<String>,
 
-    pub tags: Vec<String>,
+    pub tags: Option<Vec<String>>,
 }
 
 #[derive(Deserialize, Serialize)]
