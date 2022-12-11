@@ -51,17 +51,26 @@
   {% for review_entry in reviews %}
     {% if review_entry|year_read != heading_year %}
 
-      <div class="divider"><img src="/static/book.svg"></div>
+      <div class="divider" data-group-year="{{ review_entry|year_read }}"><img src="/static/book.svg"></div>
 
       {% if review_entry|year_read == this_year %}
         {% set count = reviews|books_in_year(year = review_entry|year_read) %}
-        <h3 class="year_heading" id="year_{{ review_entry|year_read }}">
+        <h3
+          class="year_heading"
+          id="year_{{ review_entry|year_read }}"
+          data-group-year="{{ review_entry|year_read }}"
+          data-is-current-year
+        >
           the {{ count }} book{% if count > 1 %}s{% endif %} i&rsquo;ve read so far in {{ review_entry|year_read }}
         </h3>
       {% elif review_entry|year_read == 'another time' %}
-        <h3 id="another_time">books i read at another time</h3>
+        <h3
+          class="year_heading"
+          id="another_time"
+          data-group-year="another_time"
+        >books i read at another time</h3>
 
-        <details>
+        <details id="another_time_books">
           <summary style="margin-bottom: 1em">
             this is an (incomplete) list of the books I read before I started keeping proper records.
             the list is ordered by publication date, not reading date, and lacks a lot of detail.
@@ -71,7 +80,11 @@
 
       {% else %}
         {% set count = reviews|books_in_year(year = review_entry|year_read) %}
-        <h3 class="year_heading" id="year_{{ review_entry|year_read }}">
+        <h3
+          class="year_heading"
+          id="year_{{ review_entry|year_read }}"
+          data-group-year="{{ review_entry|year_read }}"
+        >
           the {{ count }} book{% if count > 1 %}s{% endif %} i read in {{ review_entry|year_read }}
         </h3>
       {% endif %}
@@ -106,6 +119,14 @@
     function removeAuthorFilter(name) {
       filters['authors'] = filters['authors'].filter(n => n !== name);
 
+      document.querySelectorAll("#author_filters input").forEach(af => {
+        if (af.getAttribute("data-author-name") === name) {
+          console.log(af);
+          af.value = false;
+        }
+      });
+
+      createAuthorTippy();
       renderFilters();
     }
 
@@ -126,6 +147,25 @@
         rp.style.display = selectedReviewIds.has(rp.getAttribute("id")) ? "block" : "none"
       );
 
+      document.querySelectorAll(".divider").forEach(dv =>
+        dv.style.display = yearTally[dv.getAttribute("data-group-year")] > 0 ? "block" : "none"
+      );
+
+      document.querySelectorAll(".year_heading").forEach(yh => {
+        const thisYear = yh.getAttribute("data-group-year");
+
+        yh.style.display = yearTally[thisYear] > 0 ? "block" : "none";
+        if (yh.getAttribute("data-is-current-year")) {
+          yh.innerHTML = `the ${yearTally[thisYear]} book${yearTally[thisYear] > 1 ? 's' : ''} i&rsquo;ve read so far in ${thisYear}`;
+        } else if (thisYear === "another_time") {
+          yh.innerHTML = 'books i read at another time';
+        } else {
+          yh.innerHTML = `the ${yearTally[thisYear]} book${yearTally[thisYear] > 1 ? 's' : ''} i read in ${thisYear}`;
+        }
+      });
+
+      document.querySelector("#another_time_books").style.display = yearTally["another_time"] > 0 ? "block" : "none";
+
       console.log(selectedReviewIds);
       console.log(yearTally);
 
@@ -134,7 +174,7 @@
 
         for (let name of filters['authors']) {
           document.getElementById("filtersApplied").innerHTML += `
-            <span class="appliedAuthorFilter">
+            <span class="appliedFilter">
               <span class="appliedFilterValue">${name}</span>
               <a href="#" onclick="script:removeAuthorFilter('${name}')" class="removeFilter">[x]</span>
             </span>
@@ -161,27 +201,31 @@
       });
     }
 
-    createTippy(
-      '#authorFilters',
-      `
-        <ul id="author_filters" style="padding: 0; margin: 0; list-style: none; padding-right: 10px;">
-          ${
-            authors.map((name, i) =>
-              `<li>
-                 <input
-                    id="author:${name}"
-                    type="checkbox"
-                    ${filters['authors'].indexOf(name) !== -1 ? 'checked' : ''}
-                    name="author"
-                    data-author-name="${name}"
-                    onchange="applyAuthorFilters()"
-                  >
-                 <label for="author:${name}">${name}</label>
-              </li>`
-            ).join("")
-          }
-        </ul>
-      `
-    )
+    function createAuthorTippy() {
+      createTippy(
+        '#authorFilters',
+        `
+          <ul id="author_filters" style="padding: 0; margin: 0; list-style: none; padding-right: 10px;">
+            ${
+              authors.map((name, i) =>
+                `<li>
+                   <input
+                      id="author:${name}"
+                      type="checkbox"
+                      ${filters['authors'].indexOf(name) !== -1 ? 'checked' : ''}
+                      name="author"
+                      data-author-name="${name}"
+                      onchange="applyAuthorFilters()"
+                    >
+                   <label for="author:${name}">${name}</label>
+                </li>`
+              ).join("")
+            }
+          </ul>
+        `
+      )
+    }
+
+    createAuthorTippy();
   </script>
 {% endblock %}
