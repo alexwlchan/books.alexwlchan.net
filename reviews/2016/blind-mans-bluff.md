@@ -8,6 +8,12 @@ book:
   isbn13: '9780099409984'
   publication_year: 2000
   title: Blind Mans Bluff
+  tags:
+    - non-fiction
+    - maritime
+    - espionage
+    - warfare
+    - history
 review:
   date_read: 2016-07
 ---

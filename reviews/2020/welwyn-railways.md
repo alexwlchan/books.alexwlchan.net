@@ -8,6 +8,9 @@ book:
   isbn13: '9780948555046'
   publication_year: 1986
   title: Welwyn's Railways
+  tags:
+    - non-fiction
+    - trains
 review:
   date_read: 2020-12-18
   format: hardback

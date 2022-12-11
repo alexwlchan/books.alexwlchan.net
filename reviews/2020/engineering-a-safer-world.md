@@ -8,6 +8,9 @@ book:
   title: Engineering a Safer World
 plan:
   date_added: '2018-07-13'
+  tags:
+    - non-fiction
+    - engineering
 review:
   date_read: 2020-09-27
   format: paperback

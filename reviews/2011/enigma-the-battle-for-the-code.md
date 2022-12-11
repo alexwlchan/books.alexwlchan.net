@@ -8,6 +8,11 @@ book:
   isbn13: '9780304366620'
   publication_year: 2001
   title: Enigma - The Battle for the Code
+  tags:
+    - non-fiction
+    - espionage
+    - bletchley-park
+    - history
 review:
   date_read: 2011-05
 ---

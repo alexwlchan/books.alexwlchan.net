@@ -8,6 +8,9 @@ book:
   publication_year: 2006
   isbn10: "0297845683"
   isbn13: "9780297845683"
+  tags:
+    - non-fiction
+    - history
 review:
   date_read: 2022-08-20
   format: hardback

@@ -7,6 +7,11 @@ book:
   title: One Last Stop
   publication_year: 2021
   isbn13: "9781250244499"
+  tags:
+    - fiction
+    - stories-set-on-trains
+    - romance
+    - wlw
 review:
   date_read: 2022-08-19
   format: paperback

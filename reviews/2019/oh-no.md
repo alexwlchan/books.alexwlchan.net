@@ -8,6 +8,8 @@ book:
   isbn13: '9781449492533'
   publication_year: 2019
   title: oh no
+  tags:
+    - graphic-novel
 review:
   date_read: '2019-10-07'
   format: hardback

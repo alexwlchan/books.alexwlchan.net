@@ -7,6 +7,10 @@ book:
   title: Alpha Beta
   publication_year: 2000
   isbn13: "9780553819656"
+  tags:
+    - non-fiction
+    - history
+    - languages
 review:
   date_read: 2022-10-12
   format: paperback

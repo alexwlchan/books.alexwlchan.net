@@ -20,7 +20,7 @@ use crate::fs_helpers::IsNewerThan;
 use crate::{fs_helpers, models};
 
 /// Returns a list of all the reviews and the review text under a given path.
-fn get_reviews(root: &Path) -> Result<Vec<models::Review>, VfdError> {
+pub fn get_reviews(root: &Path) -> Result<Vec<models::Review>, VfdError> {
     let mut result = vec![];
 
     for entry in WalkDir::new(root) {

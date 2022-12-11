@@ -8,5 +8,8 @@ book:
   publication_year: 2006
   isbn10: "0714531154"
   isbn13: "9780714531151"
+  tags:
+    - non-fiction
+    - maths
 ---
 

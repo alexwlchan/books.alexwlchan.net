@@ -9,6 +9,8 @@ book:
   publication_year: 1966
   title: Dick Whittington and his cat
   isbn10: "0721400825"
+  tags:
+    - fiction
 review:
   date_read: 2021-12-30
   format: hardback

@@ -8,6 +8,9 @@ book:
   isbn13: '9780224095372'
   publication_year: 2013
   title: Hyperbole and a Half
+  tags:
+    - fiction
+    - humour
 review:
   date_read: '2018-04-07'
   rating: 4

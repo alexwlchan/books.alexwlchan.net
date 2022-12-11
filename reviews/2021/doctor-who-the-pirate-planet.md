@@ -7,6 +7,10 @@ book:
   narrator: Jon Culshaw
   publication_year: 2017
   title: 'Doctor Who: The Pirate Planet'
+  tags:
+    - fiction
+    - sci-fi
+    - doctor-who
 review:
   date_read: 2021-08-03
   did_not_finish: true

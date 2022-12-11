@@ -9,4 +9,6 @@ book:
   publication_year: 2016
   title: Five Go On A Strategy Away Day
   rating: 3
+  tags:
+    - fiction
 ---

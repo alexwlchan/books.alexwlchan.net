@@ -7,6 +7,9 @@ book:
   title: The Compendium of (Not Quite) Everything
   publication_year: 2021
   isbn13: "9781472276476"
+  tags:
+    - non-fiction
+    - trivia
 review:
   date_read: 2022-04-12
   format: hardback

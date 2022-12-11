@@ -8,6 +8,9 @@ book:
   isbn13: '9781846683015'
   publication_year: 2010
   title: Just My Type
+  tags:
+    - non-fiction
+    - typography
 review:
   date_read: 2015-11
 ---

@@ -7,6 +7,9 @@ book:
   publication_year: 2007
   title: "Homer's The Iliad and the Odyssey"
   isbn13: "9781843544029"
+  tags:
+    - non-fiction
+    - mythology
 review:
   date_read: 2022-03-11
   format: hardback

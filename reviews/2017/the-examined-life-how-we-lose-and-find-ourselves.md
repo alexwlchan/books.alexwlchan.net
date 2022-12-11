@@ -8,6 +8,10 @@ book:
   isbn13: '9780393349320'
   publication_year: 2014
   title: 'The Examined Life: How We Lose and Find Ourselves'
+  tags:
+    - non-fiction
+    - memoirs
+    - mental-health
 review:
   date_read: 2017-04
   rating: 4

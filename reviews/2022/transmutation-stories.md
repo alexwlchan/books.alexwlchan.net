@@ -7,6 +7,9 @@ book:
   title: Transmutation Stories
   publication_year: 2021
   isbn13: "9781644210666"
+  tags:
+    - fiction
+    - identity
 review:
   date_read: 2022-08-16
   format: paperback

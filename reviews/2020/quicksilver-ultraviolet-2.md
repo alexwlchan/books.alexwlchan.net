@@ -10,6 +10,10 @@ book:
   title: 'Quicksilver (Ultraviolet, #2)'
 plan:
   date_added: '2016-10-23'
+  tags:
+    - fiction
+    - sci-fi
+    - queer-rep
 review:
   date_read: '2020-04-30'
   format: paperback

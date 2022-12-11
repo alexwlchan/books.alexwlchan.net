@@ -6,6 +6,11 @@ book:
     tint_color: "#2a3d67"
   title: Asexual Fairy Tales
   publication_year: 2019
+  tags:
+    - fiction
+    - mythology
+    - asexuality
+    - fairy-tales
 review:
   date_read: 2022-11-22
   format: ebook

@@ -8,6 +8,9 @@ book:
   isbn13: '9781409355724'
   publication_year: 2014
   title: LEGO Architecture The Visual Guide
+  tags:
+    - non-fiction
+    - lego
 review:
   date_read: '2019-08-14'
   format: hardback

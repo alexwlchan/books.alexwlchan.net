@@ -7,6 +7,9 @@ book:
   isbn13: '9780008306861'
   publication_year: 2020
   title: Notes from Small Planets
+  tags:
+    - fiction
+    - sci-fi
 review:
   date_read: 2020-12-16
   format: hardback

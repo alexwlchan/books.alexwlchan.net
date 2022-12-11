@@ -7,6 +7,9 @@ book:
   title: "Tomorrow, and Tomorrow, and Tomorrow"
   publication_year: 2022
   isbn13: "9781784744649"
+  tags:
+    - fiction
+    - gaming
 review:
   date_read: 2022-10-02
   format: hardback

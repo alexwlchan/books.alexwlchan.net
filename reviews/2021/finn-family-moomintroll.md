@@ -7,6 +7,9 @@ book:
   isbn13: '9781908745644'
   publication_year: 1948
   title: Finn Family Moomintroll
+  tags:
+    - fiction
+    - moomins
 review:
   date_read: 2021-07-03
   format: hardback

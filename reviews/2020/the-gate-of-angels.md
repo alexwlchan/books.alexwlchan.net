@@ -8,6 +8,8 @@ book:
   isbn13: '9780002235273'
   publication_year: 1990
   title: The Gate of Angels
+  tags:
+    - fiction
 review:
   date_read: 2020-07-12
   format: hardback

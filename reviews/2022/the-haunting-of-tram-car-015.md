@@ -7,6 +7,9 @@ book:
     tint_color: "#975b29"
   publication_year: 2019
   title: The Haunting of Tram Car 015
+  tags:
+    - fiction
+    - sci-fi
 review:
   date_read: 2022-02-24
   format: audiobook

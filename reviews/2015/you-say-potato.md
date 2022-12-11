@@ -8,6 +8,9 @@ book:
   isbn13: '9781447249696'
   publication_year: 2014
   title: You Say Potato
+  tags:
+    - non-fiction
+    - languages
 review:
   date_read: 2015-02
 ---

@@ -7,6 +7,9 @@ book:
   title: "Psychotherapy: A Very Short Introduction"
   publication_year: 2015
   isbn13: "9780199689361"
+  tags:
+    - non-fiction
+    - science
 review:
   date_read: 2022-06-02
   format: paperback

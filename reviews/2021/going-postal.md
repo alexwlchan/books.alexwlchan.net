@@ -9,6 +9,9 @@ book:
   title: Going Postal
 plan:
   date_added: '2020-01-08'
+  tags:
+    - fiction
+    - fantasy
 review:
   date_read: 2021-07-02
   format: audiobook

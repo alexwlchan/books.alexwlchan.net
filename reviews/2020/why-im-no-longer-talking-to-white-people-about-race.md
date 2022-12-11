@@ -7,6 +7,9 @@ book:
   isbn13: '9781408870587'
   publication_year: 2017
   title: Why I'm No Longer Talking to White People About Race
+  tags:
+    - non-fiction
+    - race
 review:
   date_read: 2020-07-18
   format: paperback

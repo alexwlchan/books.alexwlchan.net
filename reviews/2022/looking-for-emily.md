@@ -7,6 +7,9 @@ book:
   title: "Looking for Emily"
   publication_year: 2022
   isbn13: 9781839942754
+  tags:
+    - fiction
+    - mystery
 review:
   date_read: 2022-07-14
   date_order: 2

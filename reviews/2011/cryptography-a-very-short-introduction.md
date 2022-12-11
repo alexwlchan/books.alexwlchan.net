@@ -8,6 +8,9 @@ book:
   isbn13: '9780192803153'
   publication_year: 2002
   title: 'Cryptography: A Very Short Introduction'
+  tags:
+    - non-fiction
+    - maths
 review:
   date_read: 2011-07
 ---

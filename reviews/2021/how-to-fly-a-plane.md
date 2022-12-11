@@ -7,6 +7,8 @@ book:
   isbn13: '9780500513743'
   publication_year: 2007
   title: How to Fly a Plane
+  tags:
+    - non-fiction
 review:
   date_read: 2021-05-15
   format: hardback

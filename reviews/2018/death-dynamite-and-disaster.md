@@ -8,6 +8,10 @@ book:
   isbn13: '9780752492667'
   publication_year: 2014
   title: Death, Dynamite and Disaster
+  tags:
+    - non-fiction
+    - trains
+    - disasters
 review:
   date_read: '2018-02-05'
   rating: 4

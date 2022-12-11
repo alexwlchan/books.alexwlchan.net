@@ -8,6 +8,9 @@ book:
   publication_year: 2021
   series: Wayfarers, #4
   title: The Galaxy, and the Ground Within
+  tags:
+    - fiction
+    - sci-fi
 review:
   date_read: 2021-04-17
   format: hardback

@@ -7,6 +7,8 @@ book:
   publication_year: 2017
   title: "The Otters' Tale"
   isbn13: "9780008189747"
+  tags:
+    - non-fiction
 review:
   date_read: 2021-12-29
   format: paperback

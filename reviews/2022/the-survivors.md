@@ -7,6 +7,9 @@ book:
   title: The Survivors
   publication_year: 2020
   isbn13: "9781408711989"
+  tags:
+    - fiction
+    - mystery
 review:
   date_read: 2022-07-22
   format: hardback

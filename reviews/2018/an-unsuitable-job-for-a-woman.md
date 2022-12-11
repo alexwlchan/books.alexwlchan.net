@@ -8,6 +8,8 @@ book:
   isbn13: '9780571253401'
   publication_year: 2010
   title: An Unsuitable Job for a Woman
+  tags:
+    - fiction
 review:
   date_read: '2018-05-24'
   rating: 4

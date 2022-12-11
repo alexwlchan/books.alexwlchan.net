@@ -8,6 +8,11 @@ book:
   title: "Before the Coffee Gets Cold: Tales from the Café"
   publication_year: 2017
   isbn13: "9781529050868"
+  tags:
+    - fiction
+    - grief
+    - time-travel
+    - fantasy
 review:
   date_read: 2022-07-09
   format: paperback

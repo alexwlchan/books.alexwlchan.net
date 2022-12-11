@@ -7,6 +7,8 @@ book:
   narrator: Nina Mingya Powles
   publication_year: 2021
   title: Small Bodies of Water
+  tags:
+    - fiction
 review:
   date_read: 2021-09-02
   did_not_finish: true

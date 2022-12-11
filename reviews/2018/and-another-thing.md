@@ -9,6 +9,9 @@ book:
   publication_year: 2009
   series: 'Hitchhiker''s Guide to the Galaxy, #6'
   title: And Another Thing…
+  tags:
+    - fiction
+    - sci-fi
 review:
   date_read: '2018-07-10'
   did_not_finish: true

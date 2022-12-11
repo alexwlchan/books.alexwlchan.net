@@ -7,6 +7,10 @@ book:
   isbn13: '9781845137632'
   publication_year: 2012
   title: The Secret Listeners
+  tags:
+    - non-fiction
+    - history
+    - espionage
 review:
   date_read: '2017-11-16'
   format: hardback

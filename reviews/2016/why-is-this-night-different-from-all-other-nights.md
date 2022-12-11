@@ -9,6 +9,8 @@ book:
   publication_year: 2015
   series: 'All the Wrong Questions, #4'
   title: “Why Is This Night Different from All Other Nights?”
+  tags:
+    - fiction
 review:
   date_read: '2016-12-27'
   rating: 4

@@ -7,6 +7,9 @@ book:
   isbn13: 978-0-19-921842-4
   publication_year: 2007
   title: Nets, Puzzles, and Postmen
+  tags:
+    - non-fiction
+    - maths
 review:
   date_read: '2020-01-14'
   format: hardback

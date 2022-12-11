@@ -7,6 +7,10 @@ book:
   title: The Society for Soulless Girls
   publication_year: 2022
   isbn13: "9781405296939"
+  tags:
+    - fiction
+    - fantasy
+    - magic
 review:
   date_read: 2022-09-21
   format: paperback

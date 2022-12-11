@@ -8,6 +8,10 @@ book:
   isbn13: '9781447257103'
   publication_year: 2013
   title: An Astronaut's Guide to Life on Earth
+  tags:
+    - non-fiction
+    - space-exploration
+    - lifestyle
 review:
   date_read: '2018-09-19'
   rating: 5

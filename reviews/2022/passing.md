@@ -7,6 +7,10 @@ book:
   title: Passing
   publication_year: 1929
   isbn13: "9780008590154"
+  tags:
+    - identity
+    - race
+    - fiction
 review:
   date_read: 2022-11-06
   format: paperback

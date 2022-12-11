@@ -7,6 +7,9 @@ book:
   narrator: Robin Miles
   publication_year: 2019
   title: The Vela (season 1)
+  tags:
+    - fiction
+    - sci-fi
 review:
   date_read: 2021-07-18
   format: audiobook

@@ -8,6 +8,9 @@ book:
   isbn13: '9780273728894'
   publication_year: 2010
   title: Introduction to Graph Theory
+  tags:
+    - non-fiction
+    - maths
 review:
   date_read: '2019-10-26'
   format: paperback

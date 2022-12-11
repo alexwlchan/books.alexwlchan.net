@@ -8,6 +8,11 @@ book:
   isbn13: '9780007395873'
   publication_year: 2012
   title: 'Operation Fortitude: The Greatest Hoax Of The Second World War'
+  tags:
+    - non-fiction
+    - espionage
+    - history
+    - warfare
 review:
   date_read: 2015-10
 ---

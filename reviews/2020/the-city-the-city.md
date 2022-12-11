@@ -9,6 +9,9 @@ book:
   title: The City & the City
 plan:
   date_added: '2020-01-25'
+  tags:
+    - fiction
+    - sci-fi
 review:
   date_read: 2020-10-07
   format: paperback

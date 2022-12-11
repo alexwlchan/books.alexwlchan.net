@@ -8,6 +8,9 @@ book:
   title: Atomic Habits
 plan:
   date_added: 2020-05-17
+  tags:
+    - non-fiction
+    - productivity
 review:
   date_read: 2021-06-06
   format: audiobook

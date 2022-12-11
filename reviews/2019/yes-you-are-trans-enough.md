@@ -8,6 +8,11 @@ book:
   isbn13: '9781785923159'
   publication_year: 2018
   title: Yes, You Are Trans Enough
+  tags:
+    - non-fiction
+    - memoirs
+    - queer-rep
+    - gender
 review:
   date_read: '2019-01-13'
   rating: 5

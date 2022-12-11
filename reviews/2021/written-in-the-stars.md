@@ -8,6 +8,10 @@ book:
   publication_year: 2020
   title: Written in the Stars
   series: "Written in the Stars, #1"
+  tags:
+    - fiction
+    - romance
+    - wlw
 review:
   date_read: 2021-10-24
   format: audiobook

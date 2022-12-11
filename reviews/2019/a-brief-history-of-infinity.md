@@ -8,6 +8,9 @@ book:
   isbn13: '9781841196503'
   publication_year: 2003
   title: A Brief History of Infinity
+  tags:
+    - non-fiction
+    - maths
 review:
   date_read: '2019-08-11'
   rating: 4

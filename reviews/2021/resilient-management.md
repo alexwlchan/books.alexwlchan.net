@@ -7,6 +7,9 @@ book:
   narrator: Lara Hogan
   publication_year: 2019
   title: Resilient Management
+  tags:
+    - non-fiction
+    - workplace
 review:
   date_read: 2021-09-18
   format: audiobook

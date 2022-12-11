@@ -7,6 +7,10 @@ book:
   isbn13: '9781620047255'
   publication_year: 2016
   title: We Go Forward
+  tags:
+    - fiction
+    - asexuality
+    - queer-rep
 review:
   date_read: '2017-04-05'
   rating: 5

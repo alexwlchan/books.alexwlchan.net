@@ -8,6 +8,9 @@ book:
   isbn13: '9781593274344'
   publication_year: 2012
   title: The Unofficial LEGO Technic Builder's Guide
+  tags:
+    - non-fiction
+    - lego
 review:
   date_read: '2019-11-02'
   format: paperback

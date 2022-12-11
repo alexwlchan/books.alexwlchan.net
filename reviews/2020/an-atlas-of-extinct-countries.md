@@ -6,6 +6,10 @@ book:
     tint_color: '#0c7e72'
   publication_year: 2020
   title: An Atlas of Extinct Countries
+  tags:
+    - non-fiction
+    - trivia
+    - geography
 review:
   date_read: 2020-09-19
   format: hardback

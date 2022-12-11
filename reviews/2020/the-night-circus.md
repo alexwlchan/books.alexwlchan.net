@@ -8,6 +8,10 @@ book:
   title: The Night Circus
 plan:
   date_added: '2019-12-22'
+  tags:
+    - fiction
+    - fantasy
+    - magic
 review:
   date_read: '2020-05-22'
   format: ebook

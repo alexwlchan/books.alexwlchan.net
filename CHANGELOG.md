@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.5.0 - 2022-12-11
+
+Add support for keyword tagging. The `add_review` command will now ask for tags as part of saving a new book, and this will be saved as part of the metadata.
+
+This is prep for a future change, which will allow filtering by tag (and other attributes) in the UI.
+
 ## v1.4.5 - 2022-11-11
 
 When something goes wrong creating thumbnails, the error message now includes the name of the file that had an issue.

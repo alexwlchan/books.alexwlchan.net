@@ -8,6 +8,10 @@ book:
   isbn13: '9780571298105'
   publication_year: 2013
   title: Adventures with the Wife in Space
+  tags:
+    - non-fiction
+    - doctor-who
+    - memoirs
 review:
   date_read: '2016-11-27'
   rating: 5

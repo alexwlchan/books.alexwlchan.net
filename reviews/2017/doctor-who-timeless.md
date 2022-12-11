@@ -8,6 +8,10 @@ book:
   isbn13: '9780563486077'
   publication_year: 2003
   title: 'Doctor Who: Timeless'
+  tags:
+    - fiction
+    - sci-fi
+    - doctor-who
 review:
   date_read: '2017-04-11'
   did_not_finish: true

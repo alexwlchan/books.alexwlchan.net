@@ -8,4 +8,7 @@ book:
   isbn13: 978-0-14-131548-5
   publication_year: 2004
   title: 'Artemis Fowl: The Eternity Cube'
+  tags:
+    - fiction
+    - fantasy
 ---

@@ -8,6 +8,9 @@ book:
   isbn13: '9781873120019'
   publication_year: 1991
   title: Manx Fairy Tales
+  tags:
+    - fiction
+    - fairy-tales
 review:
   date_read: 2017-08
   rating: 3

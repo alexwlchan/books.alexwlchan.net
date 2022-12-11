@@ -8,6 +8,9 @@ book:
   publication_year: 2021
   title: Your Guide to Not Getting Murdered in a Quaint English Village
   isbn13: "9781984859624"
+  tags:
+    - non-fiction
+    - humour
 review:
   date_read: 2022-03-14
   format: hardback

@@ -7,6 +7,10 @@ book:
   publication_year: 2019
   title: "Palestine + 100"
   isbn13: "9781910974445"
+  tags:
+    - fiction
+    - palestine
+    - sci-fi
 review:
   date_read: 2022-01-28
   format: paperback

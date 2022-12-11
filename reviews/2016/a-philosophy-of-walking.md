@@ -8,6 +8,8 @@ book:
   isbn13: '9781781682708'
   publication_year: 2014
   title: A Philosophy of Walking
+  tags:
+    - non-fiction
 review:
   date_read: '2016-11-26'
   rating: 3

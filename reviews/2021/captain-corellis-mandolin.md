@@ -8,6 +8,9 @@ book:
   isbn13: '9780749397548'
   publication_year: 1994
   title: Captain Corelli's Mandolin
+  tags:
+    - fiction
+    - romance
 review:
   date_read: 2021-03-21
   format: paperback

@@ -7,6 +7,9 @@ book:
   isbn13: '9781910809587'
   publication_year: 2019
   title: Yellow Trains
+  tags:
+    - non-fiction
+    - trains
 review:
   date_read: 2020-04-18
   format: hardback

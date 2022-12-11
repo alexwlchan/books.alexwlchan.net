@@ -9,6 +9,9 @@ book:
   publication_year: 2013
   series: 'Imperial Radch #1'
   title: Ancillary Justice
+  tags:
+    - fiction
+    - sci-fi
 review:
   date_read: '2019-02-11'
   rating: 4

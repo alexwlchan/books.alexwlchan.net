@@ -8,6 +8,11 @@ book:
   isbn13: '9781849087186'
   publication_year: 2012
   title: 'Forgotten Sacrifice: The Arctic Convoys of World War II'
+  tags:
+    - non-fiction
+    - history
+    - maritime
+    - warfare
 review:
   date_read: '2017-02-13'
   rating: 4

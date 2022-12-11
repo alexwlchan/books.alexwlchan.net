@@ -7,6 +7,10 @@ book:
   publication_year: 2017
   title: 'Hidden Figures: The Untold Story of the African American Women Who Helped
     Win the Space Race'
+  tags:
+    - non-fiction
+    - history
+    - space-exploration
 review:
   date_read: '2018-07-04'
   rating: 5

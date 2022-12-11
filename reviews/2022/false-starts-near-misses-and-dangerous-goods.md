@@ -7,6 +7,10 @@ book:
   title: "False Starts, Near Misses and Dangerous Goods"
   publication_year: 2017
   isbn13: "9780750970273"
+  tags:
+    - trains
+    - non-fiction
+    - history
 review:
   date_read: 2022-07-17
   format: paperback

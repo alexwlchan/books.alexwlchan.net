@@ -7,6 +7,9 @@ book:
   isbn13: '9781529417456'
   publication_year: 2021
   title: The Apollo Murders
+  tags:
+    - fiction
+    - mystery
 review:
   date_read: 2021-11-18
   format: hardback

@@ -8,6 +8,10 @@ book:
   title: We
   publication_year: 1921
   isbn13: "9780812974621"
+  tags:
+    - fiction
+    - dystopia
+    - sci-fi
 review:
   date_read: 2022-11-09
   format: paperback

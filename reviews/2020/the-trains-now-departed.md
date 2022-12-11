@@ -7,6 +7,10 @@ book:
   isbn13: '9780099590583'
   publication_year: 2015
   title: The Trains Now Departed
+  tags:
+    - non-fiction
+    - history
+    - trains
 review:
   date_order: 1
   date_read: 2020-12-25

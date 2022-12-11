@@ -9,4 +9,7 @@ book:
   publication_year: 2014
   title: Creativity, Inc.
   format: hardback
+  tags:
+    - non-fiction
+    - business
 ---

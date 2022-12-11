@@ -8,4 +8,7 @@ book:
   isbn13: 978-0-14-132059-5
   publication_year: 2005
   title: Artemis Fowl and the Opal Deception
+  tags:
+    - fiction
+    - fantasy
 ---

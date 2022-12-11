@@ -7,6 +7,9 @@ book:
     tint_color: "#090a1d"
   publication_year: 2018
   title: A Big Ship at the Edge of the Universe
+  tags:
+    - fiction
+    - sci-fi
 review:
   date_read: 2021-12-11
   format: audiobook

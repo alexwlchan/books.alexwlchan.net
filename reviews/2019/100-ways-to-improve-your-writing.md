@@ -8,6 +8,9 @@ book:
   isbn13: '9780451627216'
   publication_year: 1985
   title: 100 Ways to Improve Your Writing
+  tags:
+    - non-fiction
+    - writing
 review:
   date_read: '2019-09-09'
   format: paperback

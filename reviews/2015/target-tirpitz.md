@@ -8,6 +8,10 @@ book:
   isbn13: '9780007319244'
   publication_year: 2012
   title: Target Tirpitz
+  tags:
+    - non-fiction
+    - history
+    - warfare
 review:
   date_read: 2015-04
 ---

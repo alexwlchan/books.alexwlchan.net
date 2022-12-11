@@ -8,6 +8,9 @@ book:
   isbn13: '9781781251324'
   publication_year: 2013
   title: The Riddle of the Labyrinth
+  tags:
+    - non-fiction
+    - languages
 review:
   date_read: '2016-10-16'
   rating: 4

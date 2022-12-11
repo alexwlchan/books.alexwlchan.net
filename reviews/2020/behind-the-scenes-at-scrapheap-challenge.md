@@ -8,6 +8,8 @@ book:
   isbn13: '9780752219998'
   publication_year: 2001
   title: Behind the Scenes at Scrapheap Challenge
+  tags:
+    - non-fiction
 review:
   date_read: 2020-07-30
   format: hardback

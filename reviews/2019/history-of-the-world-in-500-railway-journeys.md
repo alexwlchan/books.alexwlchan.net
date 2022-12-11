@@ -7,6 +7,9 @@ book:
   isbn13: '9781781316788'
   publication_year: 2017
   title: History of the World in 500 Railway Journeys
+  tags:
+    - non-fiction
+    - trains
 review:
   date_read: '2019-11-23'
   format: hardback

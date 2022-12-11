@@ -8,6 +8,9 @@ book:
   isbn13: '9781984892638'
   publication_year: 2020
   title: Digging for Words
+  tags:
+    - non-fiction
+    - graphic-novel
 review:
   date_read: 2021-07-08
   format: hardback

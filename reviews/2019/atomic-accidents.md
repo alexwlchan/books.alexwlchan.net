@@ -8,6 +8,9 @@ book:
   isbn13: '9781605986807'
   publication_year: 2015
   title: Atomic Accidents
+  tags:
+    - non-fiction
+    - disasters
 review:
   date_read: '2019-12-01'
   format: paperback

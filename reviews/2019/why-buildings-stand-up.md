@@ -8,6 +8,10 @@ book:
   isbn13: '9780393306767'
   publication_year: 1990
   title: Why Buildings Stand Up
+  tags:
+    - non-fiction
+    - architecture
+    - engineering
 review:
   date_read: '2019-10-20'
   format: paperback

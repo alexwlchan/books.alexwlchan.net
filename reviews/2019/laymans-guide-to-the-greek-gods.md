@@ -8,6 +8,10 @@ book:
   isbn13: '9789602264881'
   publication_year: 1994
   title: A Layman's Guide to the Greek Gods
+  tags:
+    - non-fiction
+    - mythology
+    - greece
 review:
   date_read: '2019-09-07'
   rating: 4

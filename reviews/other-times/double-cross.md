@@ -9,4 +9,8 @@ book:
   publication_year: 2012
   title: Double Cross
   format: paperback
+  tags:
+    - non-fiction
+    - history
+    - espionage
 ---

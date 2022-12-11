@@ -9,6 +9,9 @@ book:
   title: 'Math Hysteria: Fun and games with mathematics'
   format: paperback
   rating: 3
+  tags:
+    - non-fiction
+    - maths
 ---
 
 I grabbed this from my parents’ bookshelf while visiting at Christmas 2019 – a quick skim and I remember that I read it before, although I don’t remember exactly when.

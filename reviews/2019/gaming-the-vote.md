@@ -8,6 +8,9 @@ book:
   isbn13: '9780809048939'
   publication_year: 2008
   title: Gaming the Vote
+  tags:
+    - non-fiction
+    - politics
 review:
   date_read: '2019-06-11'
   rating: 4

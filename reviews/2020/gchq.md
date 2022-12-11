@@ -9,6 +9,9 @@ book:
   title: GCHQ
 plan:
   date_added: '2020-06-26'
+  tags:
+    - non-fiction
+    - espionage
 review:
   date_read: 2020-07-05
   format: hardback

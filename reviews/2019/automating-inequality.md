@@ -8,6 +8,10 @@ book:
   isbn13: '9781250074317'
   publication_year: 2018
   title: Automating Inequality
+  tags:
+    - non-fiction
+    - dystopia
+    - politics
 review:
   date_read: '2019-01-27'
   rating: 3

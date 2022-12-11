@@ -6,6 +6,8 @@ book:
     tint_color: "#cf1e25"
   publication_year: 2014
   title: The Secret Diary of Lizzie Bennet
+  tags:
+    - fiction
 review:
   date_read: 2022-05-22
   format: paperback

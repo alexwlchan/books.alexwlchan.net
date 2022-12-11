@@ -7,6 +7,9 @@ book:
   title: Night Trains
   publication_year: 2017
   isbn13: "9781781255599"
+  tags:
+    - non-fiction
+    - trains
 review:
   date_read: 2022-06-24
   format: hardback

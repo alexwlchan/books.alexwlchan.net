@@ -8,6 +8,9 @@ book:
   publication_year: 2007
   isbn10: "0811858278"
   isbn13: "9780811858274"
+  tags:
+    - non-fiction
+    - trivia
 review:
   date_read: 2022-07-30
   format: paperback

@@ -7,6 +7,9 @@ book:
   title: A Cosmic Kind of Love
   publication_year: 2022
   isbn13: "9780349435398"
+  tags:
+    - fiction
+    - romance
 review:
   date_read: 2022-11-10
   format: paperback

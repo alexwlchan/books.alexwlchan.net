@@ -8,6 +8,8 @@ book:
   isbn13: '9780142414934'
   publication_year: 2009
   title: Paper Towns
+  tags:
+    - fiction
 review:
   date_read: 2015-04
 ---

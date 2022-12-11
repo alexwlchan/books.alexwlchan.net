@@ -8,6 +8,10 @@ book:
   isbn13: '9780141988351'
   publication_year: 2018
   title: Chernobyl
+  tags:
+    - non-fiction
+    - history
+    - disasters
 review:
   date_read: '2019-09-26'
   format: paperback

@@ -6,6 +6,9 @@ book:
     tint_color: "#ef4f25"
   title: Against the Loveless World
   publication_year: 2019
+  tags:
+    - fiction
+    - warfare
 review:
   date_read: 2022-10-18
   format: ebook

@@ -7,6 +7,9 @@ book:
   isbn13: '9781846142154'
   publication_year: 2010
   title: The Last Lingua Franca
+  tags:
+    - non-fiction
+    - languages
 review:
   date_read: 2021-04-25
   did_not_finish: true

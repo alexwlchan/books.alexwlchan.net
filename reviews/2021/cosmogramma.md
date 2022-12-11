@@ -7,6 +7,10 @@ book:
   publication_year: 2021
   title: Cosmogramma
   narrator: Neil Reidman and Brenda Iyalla
+  tags:
+    - fiction
+    - sci-fi
+    - short-stories
 review:
   date_read: 2021-12-04
   did_not_finish: true

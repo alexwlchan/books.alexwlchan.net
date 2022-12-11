@@ -7,6 +7,10 @@ book:
   title: Another Life
   publication_year: 2021
   isbn13: "9781405946322"
+  tags:
+    - fiction
+    - romance
+    - religion
 review:
   date_read: 2022-11-19
   format: paperback

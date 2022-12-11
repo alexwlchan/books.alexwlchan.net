@@ -8,6 +8,10 @@ book:
   isbn13: '9781906653088'
   publication_year: 2010
   title: Psychiatric Tales
+  tags:
+    - non-fiction
+    - graphic-novel
+    - mental-health
 review:
   date_read: '2017-08-21'
   rating: 3

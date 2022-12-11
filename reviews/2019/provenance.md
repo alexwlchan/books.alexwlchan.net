@@ -8,6 +8,9 @@ book:
   isbn13: '9780356506982'
   publication_year: 2018
   title: Provenance
+  tags:
+    - fiction
+    - sci-fi
 review:
   date_read: '2019-10-12'
   format: paperback

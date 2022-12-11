@@ -8,6 +8,9 @@ book:
   isbn13: '9780297645719'
   publication_year: 2000
   title: The Maths Gene
+  tags:
+    - non-fiction
+    - maths
 review:
   date_read: '2019-12-09'
   rating: 2

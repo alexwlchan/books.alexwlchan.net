@@ -7,6 +7,9 @@ book:
     tint_color: "#916540"
   publication_year: 2020
   title: Piranesi
+  tags:
+    - fiction
+    - fantasy
 review:
   date_read: 2022-01-20
   format: audiobook

@@ -8,6 +8,9 @@ book:
   publication_year: 2018
   series: 'Truly Devious #1'
   title: Truly Devious
+  tags:
+    - fiction
+    - mystery
 review:
   date_read: 2021-11-16
   format: audiobook

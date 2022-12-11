@@ -8,6 +8,9 @@ book:
   isbn13: '9781846149375'
   publication_year: 2018
   title: Seashaken Houses
+  tags:
+    - non-fiction
+    - maritime
 review:
   date_read: '2019-04-09'
   rating: 4

@@ -7,6 +7,10 @@ book:
   narrator: Ben Onwukwe
   publication_year: 2016
   title: Black and British
+  tags:
+    - non-fiction
+    - history
+    - race
 review:
   date_read: 2021-07-24
   format: audiobook

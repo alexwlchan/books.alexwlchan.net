@@ -7,6 +7,9 @@ book:
   isbn13: '9781250185433'
   publication_year: 2018
   title: 'Rogue Protocol (The Murderbot Diaries, #3)'
+  tags:
+    - fiction
+    - sci-fi
 review:
   date_read: 2020-05-08
   format: ebook

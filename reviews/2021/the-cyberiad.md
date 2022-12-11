@@ -7,6 +7,9 @@ book:
   isbn13: '9780241467992'
   publication_year: 1965
   title: The Cyberiad
+  tags:
+    - fiction
+    - sci-fi
 review:
   date_read: 2021-03-15
   format: paperback

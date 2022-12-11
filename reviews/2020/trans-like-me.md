@@ -12,6 +12,10 @@ book:
   isbn13: 9780349008608
   publication_year: 2017
   title: Trans Like Me
+  tags:
+    - non-fiction
+    - gender
+    - queer-rep
 review:
   date_read: 2020-01-27
   format: paperback

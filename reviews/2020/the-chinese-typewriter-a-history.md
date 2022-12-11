@@ -8,6 +8,10 @@ book:
   title: 'The Chinese Typewriter: A History'
 plan:
   date_added: 2020-05-11
+  tags:
+    - non-fiction
+    - history
+    - languages
 review:
   date_read: 2020-11-16
   format: paperback

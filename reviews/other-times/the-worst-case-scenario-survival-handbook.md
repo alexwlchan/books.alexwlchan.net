@@ -9,4 +9,7 @@ book:
   publication_year: 1999
   series: The Worst-Case Scenario Survival Handbooks
   title: The Worst-Case Scenario Survival Handbook
+  tags:
+    - non-fiction
+    - trivia
 ---

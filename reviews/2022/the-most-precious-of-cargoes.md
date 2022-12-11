@@ -8,6 +8,11 @@ book:
   title: The Most Precious of Cargoes
   publication_year: 2019
   isbn13: "9781529019582"
+  tags:
+    - fiction
+    - history
+    - warfare
+    - fairy-tales
 review:
   date_read: 2022-03-17
   format: paperback

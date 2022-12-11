@@ -10,6 +10,10 @@ book:
   title: 'Mathematics and Politics: Strategy, Voting, Power, and Proof'
 plan:
   date_added: '2019-08-12'
+  tags:
+    - non-fiction
+    - politics
+    - maths
 review:
   date_read: 2021-03-12
   format: paperback

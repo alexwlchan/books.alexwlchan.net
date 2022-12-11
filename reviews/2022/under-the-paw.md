@@ -7,6 +7,10 @@ book:
   title: Under the Paw
   publication_year: 2008
   isbn13: "9781471136856"
+  tags:
+    - cats
+    - memoirs
+    - non-fiction
 review:
   date_read: 2022-07-06
   format: paperback

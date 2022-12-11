@@ -8,6 +8,11 @@ book:
   title: Think Black
 plan:
   date_added: 2020-06-08
+  tags:
+    - non-fiction
+    - race
+    - computing
+    - history
 review:
   date_read: 2021-09-07
   format: hardback

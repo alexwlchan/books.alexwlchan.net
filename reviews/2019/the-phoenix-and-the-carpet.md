@@ -9,6 +9,9 @@ book:
   publication_year: 1994
   series: 'Five Children #2'
   title: The Phoenix and the Carpet
+  tags:
+    - fiction
+    - fantasy
 review:
   date_read: '2019-07-31'
   rating: 3

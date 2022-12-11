@@ -9,6 +9,9 @@ book:
   publication_year: 2015
   series: Wayfarers, #1
   title: The Long Way to a Small Angry Planet
+  tags:
+    - fiction
+    - sci-fi
 review:
   date_read: '2017-01-22'
   rating: 5

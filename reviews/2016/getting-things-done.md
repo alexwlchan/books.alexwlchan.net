@@ -8,6 +8,9 @@ book:
   isbn13: '9780142000281'
   publication_year: 2002
   title: Getting Things Done
+  tags:
+    - non-fiction
+    - productivity
 review:
   date_read: '2016-11-26'
   format: audiobook

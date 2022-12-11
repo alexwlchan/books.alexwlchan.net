@@ -7,6 +7,10 @@ book:
   narrator: Bahni Turpin
   publication_year: 2016
   title: The Underground Railroad
+  tags:
+    - fiction
+    - race
+    - slavery
 review:
   date_read: 2021-06-21
   format: audiobook

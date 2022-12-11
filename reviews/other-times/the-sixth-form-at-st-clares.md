@@ -8,4 +8,6 @@ book:
   isbn13: '9780749742690'
   publication_year: 2000
   title: The Sixth Form at St. Clare's
+  tags:
+    - fiction
 ---

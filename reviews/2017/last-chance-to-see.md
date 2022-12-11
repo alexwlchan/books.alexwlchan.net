@@ -8,6 +8,10 @@ book:
   isbn13: '9780099536796'
   publication_year: 2009
   title: Last Chance to See
+  tags:
+    - non-fiction
+    - science
+    - zoology
 review:
   date_read: '2017-04-27'
   rating: 5

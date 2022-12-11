@@ -7,6 +7,8 @@ book:
   isbn13: '9780141383354'
   publication_year: 2008
   title: Airman
+  tags:
+    - fiction
 review:
   date_read: 2020-08-08
   format: hardback

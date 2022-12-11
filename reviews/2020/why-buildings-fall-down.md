@@ -12,6 +12,10 @@ book:
     '
   publication_year: 1992
   title: Why Buildings Fall Down
+  tags:
+    - non-fiction
+    - architecture
+    - disasters
 review:
   date_read: 2020-01-25
   format: paperbook

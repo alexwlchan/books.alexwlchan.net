@@ -8,6 +8,9 @@ book:
   publication_year: 2006
   isbn10: "081184540"
   isbn13: "9780811845403"
+  tags:
+    - history
+    - non-fiction
 review:
   date_read: 2022-05-08
   format: paperback

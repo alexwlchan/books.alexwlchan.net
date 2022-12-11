@@ -7,6 +7,9 @@ book:
   isbn13: '9781857945805'
   publication_year: 2018
   title: Bure Valley Recollections
+  tags:
+    - non-fiction
+    - trains
 review:
   date_read: 2021-11-05
   format: paperback

@@ -8,6 +8,9 @@ book:
   title: The Power of the A4s
   isbn10: "0860930327"
   isbn13: "9780860930327"
+  tags:
+    - non-fiction
+    - trains
 review:
   date_read: 2021-12-30
   format: hardback

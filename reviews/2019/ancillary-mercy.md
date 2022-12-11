@@ -9,6 +9,9 @@ book:
   publication_year: 2015
   series: 'Imperial Radch, #3'
   title: Ancillary Mercy
+  tags:
+    - fiction
+    - sci-fi
 review:
   date_read: '2019-02-23'
   rating: 4

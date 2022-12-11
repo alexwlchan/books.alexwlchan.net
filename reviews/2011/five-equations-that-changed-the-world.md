@@ -8,6 +8,9 @@ book:
   isbn13: '9781567314052'
   publication_year: 2000
   title: Five Equations That Changed the World
+  tags:
+    - non-fiction
+    - science
 review:
   date_read: 2011-08
 ---

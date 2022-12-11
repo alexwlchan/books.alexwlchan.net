@@ -7,6 +7,10 @@ book:
   isbn13: '9780008390129'
   publication_year: 2020
   title: Surviving the Storms
+  tags:
+    - non-fiction
+    - disasters
+    - maritime
 review:
   date_read: 2021-09-26
   format: hardback

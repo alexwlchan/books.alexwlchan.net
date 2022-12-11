@@ -8,6 +8,9 @@ book:
     tint_color: '#674288'
   publication_year: 2021
   title: The Box in the Woods
+  tags:
+    - fiction
+    - mystery
 review:
   date_read: 2021-12-01
   format: audiobook

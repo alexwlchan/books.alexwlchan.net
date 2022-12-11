@@ -7,6 +7,10 @@ book:
   isbn13: '9781119677628'
   publication_year: 2020
   title: The Read Aloud Cloud
+  tags:
+    - non-fiction
+    - computing
+    - humour
 review:
   date_read: 2020-12-26
   format: paperback

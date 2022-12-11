@@ -8,6 +8,9 @@ book:
   isbn13: '9781851684885'
   publication_year: 2007
   title: Two's Company, Three Is Complexity
+  tags:
+    - non-fiction
+    - sociology
 review:
   date_read: 2011-04
 ---

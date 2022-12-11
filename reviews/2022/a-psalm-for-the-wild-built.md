@@ -8,6 +8,9 @@ book:
   title: A Psalm for the Wild-Built
   isbn13: "9781250236210"
   series: Monk & Robot Book 1
+  tags:
+    - fiction
+    - sci-fi
 review:
   date_read: 2022-01-03
   format: hardback

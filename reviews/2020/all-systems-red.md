@@ -7,6 +7,9 @@ book:
   isbn13: '9780765397522'
   publication_year: 2017
   title: 'All Systems Red (The Murderbot Diaries, #1)'
+  tags:
+    - fiction
+    - sci-fi
 review:
   date_read: 2020-05-04
   format: ebook

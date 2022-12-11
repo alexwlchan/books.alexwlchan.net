@@ -7,6 +7,9 @@ book:
   title: Dating
   publication_year: 2019
   isbn13: "9781912891047"
+  tags:
+    - non-fiction
+    - romance
 review:
   date_read: 2022-07-03
   format: hardback

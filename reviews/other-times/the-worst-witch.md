@@ -9,4 +9,7 @@ book:
   publication_year: 1991
   series: 'The Worst Witch #1'
   title: The Worst Witch
+  tags:
+    - fiction
+    - fantasy
 ---

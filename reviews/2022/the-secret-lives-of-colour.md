@@ -7,6 +7,9 @@ book:
   publication_year: 2016
   title: "The Secret Lives of Colour"
   isbn13: "9781473630833"
+  tags:
+    - non-fiction
+    - fashion
 review:
   date_read: 2022-07-13
   format: paperback
