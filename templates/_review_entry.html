@@ -13,10 +13,15 @@
   data-book-authors="{{ book.author_names | join(sep=";") }}"
   data-review-year="{{ review_entry|year_read }}"
   data-publication-year="{{ book.publication_year }}"
+  {% if review.did_not_finish %}
+    data-did-not-finish="{{ review.did_not_finish }}"
+  {% endif %}
   {% if review.rating and not review.did_not_finish %}
     data-star-rating="{{ review.rating }}"
   {% endif %}
+  data-review-tags="{% if book.tags %}{{ book.tags | join(sep=";") }}{% endif %}"
 >
+  {% if book.tags %}{% else %}NOTAGS{% endif %}
   {% if not read_at_another_time %}
   <a href="/reviews/{{ slug }}">
   {% endif %}

@@ -31,7 +31,8 @@ function applyFilters(filters) {
     filters['authors'].length > 0 ||
     isNotUndefined(filters['publicationYear']['before']) ||
     isNotUndefined(filters['publicationYear']['after']) ||
-    isNotUndefined(filters['starRating']);
+    isNotUndefined(filters['starRating']) ||
+    filters['tags'].length > 0;
 
   // First work out which books these filters apply to.
   //
@@ -57,9 +58,19 @@ function applyFilters(filters) {
       rp =>
         isUndefined(filters['starRating']) ||
         rp.hasAttribute('data-star-rating') && Number(rp.getAttribute('data-star-rating')) >= filters['starRating']
+    )
+    .filter(
+      rp => {
+        const rpTags = new Set(rp.getAttribute('data-review-tags').split(';'));
+
+        return filters['tags'].length === 0 || filters['tags'].every(t => rpTags.has(t));
+      }
     );
 
-  const yearTally = Counter(selectedReviews.map(rp => rp.getAttribute("data-review-year")));
+  const yearTally = Counter(selectedReviews
+    .filter(rp => rp.getAttribute("data-did-not-finish") !== "true")
+    .map(rp => rp.getAttribute("data-review-year"))
+  );
   const selectedReviewIds = new Set(selectedReviews.map(rp => rp.getAttribute("id")));
 
   // Show/hide the individual reviews
@@ -170,6 +181,15 @@ function applyFilters(filters) {
       `
     }
 
+    for (let name of filters['tags']) {
+      document.getElementById("filtersApplied").innerHTML += `
+        <span class="appliedFilter">
+          <span class="appliedFilterValue">${name}</span>
+          <a href="#" onclick="script:removeTagFilter(filters, '${name}')" class="removeFilter">[x]</span>
+        </span>
+      `;
+    }
+
     document.getElementById("filtersApplied").style.display = "block";
   } else {
     document.getElementById("filtersApplied").style.display = "none";
@@ -210,6 +230,14 @@ function applyStarRatingFilters(filters) {
   applyFilters(filters);
 }
 
+function applyTagFilters(filters) {
+  filters['tags'] = Array.from(document.querySelectorAll("#tag_filters input"))
+    .filter(input => input.checked)
+    .map(input => input.getAttribute("data-tag-name"));
+
+  applyFilters(filters);
+}
+
 function removeAuthorFilter(filters, name) {
   filters['authors'] = filters['authors'].filter(n => n !== name);
 
@@ -228,6 +256,13 @@ function removeStarRatingFilter(filters) {
   filters['starRating'] = undefined;
 
   createStarRatingTippy(filters);
+  applyFilters(filters);
+}
+
+function removeTagFilter(filters, name) {
+  filters['tags'] = filters['tags'].filter(n => n !== name);
+
+  createTagTippy(filters);
   applyFilters(filters);
 }
 
@@ -255,7 +290,6 @@ function createTippy(id, content) {
 function createAuthorTippy(filters) {
   const authorsSet = new Set(
     [...document.querySelectorAll('.review_preview')]
-      .filter(rp => rp.style.display !== 'none')
       .flatMap(rp => rp.getAttribute('data-book-authors').split(';'))
       .filter(s => s.length > 0)
   );
@@ -325,4 +359,37 @@ function createStarRatingTippy(filters) {
       </ul>
     `
   );
+}
+
+function createTagTippy(filters) {
+  const tagsSet = new Set(
+    [...document.querySelectorAll('.review_preview')]
+      .flatMap(rp => rp.getAttribute('data-review-tags').split(';'))
+      .filter(s => s.length > 0)
+  );
+  const tags = Array.from(tagsSet);
+  tags.sort();
+
+  createTippy(
+    '#tagFilters',
+    `
+      <ul id="tag_filters" style="padding: 0; margin: 0; list-style: none; padding-right: 10px;">
+        ${
+          tags.map((name, i) =>
+            `<li>
+               <input
+                  id="tags:${name}"
+                  type="checkbox"
+                  ${filters['tags'].indexOf(name) !== -1 ? 'checked' : ''}
+                  name="tags"
+                  data-tag-name="${name}"
+                  onchange="applyTagFilters(filters)"
+                >
+               <label for="tags:${name}">${name}</label>
+            </li>`
+          ).join("")
+        }
+      </ul>
+    `
+  )
 }
