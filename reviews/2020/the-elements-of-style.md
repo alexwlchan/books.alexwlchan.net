@@ -7,8 +7,6 @@ book:
   isbn13: '9780205309023'
   publication_year: 1918
   title: The Elements of Style
-plan:
-  date_added: '2019-08-12'
   tags:
     - non-fiction
     - writing

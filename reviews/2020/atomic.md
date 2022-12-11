@@ -6,8 +6,6 @@ book:
     tint_color: '#4f688e'
   publication_year: 2015
   title: Atomic
-plan:
-  date_added: '2020-01-01'
   tags:
     - non-fiction
     - science

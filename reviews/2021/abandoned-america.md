@@ -6,8 +6,6 @@ book:
     tint_color: '#726c66'
   publication_year: 2014
   title: Abandoned America
-plan:
-  date_added: 2020-05-11
   tags:
     - non-fiction
     - architecture

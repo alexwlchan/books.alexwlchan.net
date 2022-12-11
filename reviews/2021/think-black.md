@@ -6,8 +6,6 @@ book:
     tint_color: '#353535'
   publication_year: 2019
   title: Think Black
-plan:
-  date_added: 2020-06-08
   tags:
     - non-fiction
     - race

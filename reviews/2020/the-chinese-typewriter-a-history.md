@@ -6,8 +6,6 @@ book:
     tint_color: '#bd292f'
   publication_year: 2017
   title: 'The Chinese Typewriter: A History'
-plan:
-  date_added: 2020-05-11
   tags:
     - non-fiction
     - history

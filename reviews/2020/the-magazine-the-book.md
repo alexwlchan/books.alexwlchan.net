@@ -8,8 +8,6 @@ book:
   isbn13: '9780991439904'
   publication_year: 2014
   title: 'The Magazine: The Book'
-plan:
-  date_added: '2019-08-13'
   tags:
     - non-fiction
 review:

@@ -8,8 +8,6 @@ book:
   isbn13: '9780751531992'
   publication_year: 2001
   title: IBM and the Holocaust
-plan:
-  date_added: 2019-10-15
   tags:
     - non-fiction
     - history

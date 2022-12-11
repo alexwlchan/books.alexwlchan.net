@@ -6,8 +6,6 @@ book:
     tint_color: '#cf2c4e'
   publication_year: 2007
   title: 'Colossus: Bletchley Park''s Greatest Secret'
-plan:
-  date_added: '2019-08-13'
   tags:
     - non-fiction
     - bletchley-park

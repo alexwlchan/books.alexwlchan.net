@@ -6,8 +6,6 @@ book:
     tint_color: '#a8663e'
   publication_year: 2018
   title: Atomic Habits
-plan:
-  date_added: 2020-05-17
   tags:
     - non-fiction
     - productivity

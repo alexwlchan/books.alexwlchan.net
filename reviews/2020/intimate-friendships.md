@@ -8,8 +8,6 @@ book:
   isbn13: '9780134768953'
   publication_year: 1975
   title: Intimate Friendships
-plan:
-  date_added: '2019-08-12'
   tags:
     - non-fiction
     - relationships

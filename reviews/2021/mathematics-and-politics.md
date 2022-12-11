@@ -8,8 +8,6 @@ book:
   isbn13: '9781441926616'
   publication_year: 1995
   title: 'Mathematics and Politics: Strategy, Voting, Power, and Proof'
-plan:
-  date_added: '2019-08-12'
   tags:
     - non-fiction
     - politics

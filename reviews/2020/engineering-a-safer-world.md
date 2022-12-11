@@ -6,8 +6,6 @@ book:
     tint_color: '#000000'
   publication_year: 2012
   title: Engineering a Safer World
-plan:
-  date_added: '2018-07-13'
   tags:
     - non-fiction
     - engineering

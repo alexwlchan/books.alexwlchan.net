@@ -9,8 +9,6 @@ book:
   publication_year: 2017
   title: 'Programmed Inequality: How Britain Discarded Women Technologists and Lost
     Its Edge in Computing'
-plan:
-  date_added: '2017-03-19'
   tags:
     - non-fiction
     - history
