@@ -9,8 +9,6 @@
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://unpkg.com/tippy.js@6"></script>
 <script src="/static/review_filters.js"></script>
-
-<link href="https://unpkg.com/tippy.js@6/dist/tippy.css">
 {% endblock %}
 
 {% block content %}
@@ -30,25 +28,20 @@
   <p id="filters">filter by:
     <button href="#" id="authorFilters">author</button>
     <button href="#" id="publicationFilters">publication year</button>
-    <button href="#" id="ratingFilters">star rating</button>
-    <button href="#" id="tagFilters">topic tag</button>
+    <button href="#" id="ratingFilters">rating</button>
+    <button href="#" id="tagFilters">tags</button>
   </p>
 
   <p id="filtersApplied"></p>
-
-  <!-- <div id="covers" style="justify-content: space-between; text-align: center;">
-  {% for review_entry in reviews %}
-    {% set cover_dimensions = review_entry.derived_cover_info %}
-    <img src="/thumbnails/{{ review_entry.book.cover.name }}" style="height: 65px; width: {{ cover_dimensions.width * 65 / cover_dimensions.height | round }}px;" loading="lazy">
-  {% endfor %}
-  </div> -->
 
   {% set heading_year = "" %}
 
   {% for review_entry in reviews %}
     {% if review_entry|year_read != heading_year %}
 
-      <div class="divider" data-group-year="{{ review_entry|year_read }}"><img src="/static/book.svg"></div>
+      <div class="divider" data-group-year="{{ review_entry|year_read }}">
+        <img src="/static/book.svg">
+      </div>
 
       {% if review_entry|year_read == this_year %}
         {% set count = reviews|books_in_year(year = review_entry|year_read) %}
@@ -68,7 +61,7 @@
         >books i read at another time</h3>
 
         <details id="another_time_books">
-          <summary style="margin-bottom: 1em">
+          <summary>
             this is an (incomplete) list of the books I read before I started keeping proper records.
             the list is ordered by publication date, not reading date, and lacks a lot of detail.
           </summary>

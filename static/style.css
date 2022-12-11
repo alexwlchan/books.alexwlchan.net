@@ -228,6 +228,10 @@ footer a:hover {
   font-weight: normal;
 }
 
+#another_time_books summary {
+  margin-bottom: 1em;
+}
+
 @media screen and (min-width: 500px) {
   /* For books with long attribution info, e.g. "Your Computer is on Fire" */
   main > .book_metadata {
