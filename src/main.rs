@@ -1,4 +1,4 @@
-// #![deny(warnings)]
+#![deny(warnings)]
 
 /// This is a tool for generating the static files for my book tracker.
 ///
@@ -32,7 +32,6 @@ extern crate lazy_static;
 extern crate clap;
 
 mod add_review;
-mod backfill_tags;
 mod colours;
 mod create_favicon;
 mod create_shelf;
@@ -147,8 +146,6 @@ pub fn deploy_subcommand() -> App<'static> {
 async fn main() {
     const VERSION: &str = env!("CARGO_PKG_VERSION");
 
-    let src = Path::new("reviews");
-
     // Before we start up, check if we're running the latest version.
     //
     // This logic is a bit rough, e.g. it'll warn if you're running a
@@ -167,7 +164,6 @@ async fn main() {
         .about("Generates the HTML files for books.alexwlchan.net")
         .setting(AppSettings::SubcommandRequired)
         .subcommand(add_review::subcommand())
-        .subcommand(backfill_tags::subcommand())
         .subcommand(build_subcommand())
         .subcommand(deploy_subcommand())
         .subcommand(serve_subcommand());
@@ -190,11 +186,6 @@ async fn main() {
                 std::process::exit(1);
             }
         }
-    }
-
-    if matches.subcommand_name() == Some("backfill_tags") {
-        backfill_tags::backfill_tags(src);
-        std::process::exit(0);
     }
 
     // Whatever the command is, we always want to build a fresh copy of the

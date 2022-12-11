@@ -88,23 +88,10 @@ fn get_year_value(question: &str) -> InquireResult<u16> {
     Ok(answer.parse::<u16>().unwrap())
 }
 
-pub fn get_tags(question: &str) -> Vec<String> {
-    let used_tags = tags::get_used_tags(Path::new("reviews"));
-
-    Text::new(question)
-        .with_autocomplete(tags::TagCompleter::new(used_tags.into_iter().collect()))
-        .prompt()
-        .unwrap()
-        .trim()
-        .split(" ")
-        .map(|s| s.to_owned())
-        .collect()
-}
-
 #[derive(Serialize)]
-pub struct FrontMatter {
-    pub book: models::Book,
-    pub review: models::ReviewMetadata,
+struct FrontMatter {
+    book: models::Book,
+    review: models::ReviewMetadata,
 }
 
 fn save_review(year: i32, slug: &str, book: models::Book, metadata: models::ReviewMetadata) -> () {
@@ -240,6 +227,16 @@ pub fn add_review() -> InquireResult<()> {
         .unwrap()
         .replace("\x1B[0m", "");
 
+    let used_tags = tags::get_used_tags(Path::new("reviews"));
+    let tags = Text::new("What's the book about?")
+        .with_autocomplete(tags::TagCompleter::new(used_tags.into_iter().collect()))
+        .prompt()
+        .unwrap()
+        .trim()
+        .split(" ")
+        .map(|s| s.to_owned())
+        .collect();
+
     let cover = models::Cover {
         name: cover_name.to_string(),
         tint_color: tint_colour.to_string(),
@@ -258,13 +255,13 @@ pub fn add_review() -> InquireResult<()> {
         illustrator: None,
         retold_by: None,
         translated_by: None,
-        tags: Some(get_tags("What's the book about?")),
+        tags: Some(tags),
     };
 
     let metadata = models::ReviewMetadata {
         date_read: date_read.format("%Y-%m-%d").to_string(),
-        format: Some(format),
-        rating,
+        format: format,
+        rating: rating,
         did_not_finish: !did_finish,
         date_order: None,
     };
