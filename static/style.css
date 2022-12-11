@@ -348,3 +348,13 @@ footer a:hover {
 #filtersApplied .removeFilter:hover {
   background: none;
 }
+
+#jumpTo a[disabled="true"] {
+  color: #999;
+  text-decoration: none;
+  cursor: default;
+}
+
+#jumpTo a[disabled="true"]:hover {
+  background: none;
+}

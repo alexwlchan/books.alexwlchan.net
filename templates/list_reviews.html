@@ -16,14 +16,14 @@
 {% block content %}
   <h2>books i&rsquo;ve read</h2>
 
-  <p>jump to:
+  <p id="jumpTo">jump to:
   {% set linked_year = "" %}
   {% for review_entry in reviews %}
     {% if review_entry|year_read != linked_year %}
       {% if review_entry|year_read == 'another time' %}
-        <a href="#another_time">another time</a>
+        <a data-group-year="another_time" href="#another_time">another time</a>
       {% else %}
-        <a href="#year_{{ review_entry|year_read }}">{{ review_entry|year_read }}</a> /
+        <a data-group-year="{{ review_entry|year_read }}" href="#year_{{ review_entry|year_read }}">{{ review_entry|year_read }}</a> /
       {% endif %}
     {% endif %}
     {% set_global linked_year = review_entry|year_read %}
@@ -100,132 +100,6 @@
       authors: [],
     };
 
-    const authorsSet = new Set(
-      [...document.querySelectorAll('.review_preview')]
-        .flatMap(rp => rp.getAttribute('data-book-authors').split(';'))
-        .filter(s => s.length > 0)
-    );
-    const authors = Array.from(authorsSet);
-    authors.sort();
-
-    function applyAuthorFilters() {
-      filters['authors'] = Array.from(document.querySelectorAll("#author_filters input"))
-        .filter(input => input.checked)
-        .map(input => input.getAttribute("data-author-name"));
-
-      renderFilters();
-    }
-
-    function removeAuthorFilter(name) {
-      filters['authors'] = filters['authors'].filter(n => n !== name);
-
-      document.querySelectorAll("#author_filters input").forEach(af => {
-        if (af.getAttribute("data-author-name") === name) {
-          console.log(af);
-          af.value = false;
-        }
-      });
-
-      createAuthorTippy();
-      renderFilters();
-    }
-
-    function renderFilters() {
-      const hasFilters = filters['authors'].length > 0;
-
-      const selectedReviews = Array.from(document.querySelectorAll(".review_preview"))
-        .filter(
-          rp =>
-            filters['authors'].length === 0 ||
-            rp.getAttribute('data-book-authors').split(';').some(a => filters['authors'].indexOf(a) !== -1)
-        );
-
-      const yearTally = Counter(selectedReviews.map(rp => rp.getAttribute("data-review-year")));
-      const selectedReviewIds = new Set(selectedReviews.map(rp => rp.getAttribute("id")));
-
-      document.querySelectorAll(".review_preview").forEach(rp =>
-        rp.style.display = selectedReviewIds.has(rp.getAttribute("id")) ? "block" : "none"
-      );
-
-      document.querySelectorAll(".divider").forEach(dv =>
-        dv.style.display = yearTally[dv.getAttribute("data-group-year")] > 0 ? "block" : "none"
-      );
-
-      document.querySelectorAll(".year_heading").forEach(yh => {
-        const thisYear = yh.getAttribute("data-group-year");
-
-        yh.style.display = yearTally[thisYear] > 0 ? "block" : "none";
-        if (yh.getAttribute("data-is-current-year")) {
-          yh.innerHTML = `the ${yearTally[thisYear]} book${yearTally[thisYear] > 1 ? 's' : ''} i&rsquo;ve read so far in ${thisYear}`;
-        } else if (thisYear === "another_time") {
-          yh.innerHTML = 'books i read at another time';
-        } else {
-          yh.innerHTML = `the ${yearTally[thisYear]} book${yearTally[thisYear] > 1 ? 's' : ''} i read in ${thisYear}`;
-        }
-      });
-
-      document.querySelector("#another_time_books").style.display = yearTally["another_time"] > 0 ? "block" : "none";
-
-      console.log(selectedReviewIds);
-      console.log(yearTally);
-
-      if (hasFilters) {
-        document.getElementById("filtersApplied").innerHTML = "selected filters: ";
-
-        for (let name of filters['authors']) {
-          document.getElementById("filtersApplied").innerHTML += `
-            <span class="appliedFilter">
-              <span class="appliedFilterValue">${name}</span>
-              <a href="#" onclick="script:removeAuthorFilter('${name}')" class="removeFilter">[x]</span>
-            </span>
-          `;
-        }
-
-        document.getElementById("filtersApplied").style.display = "block";
-      } else {
-        document.getElementById("filtersApplied").style.display = "none";
-      }
-    }
-
-    function createTippy(id, content) {
-      tippy(id, {
-        content,
-        trigger: 'click',
-        placement: 'bottom',
-        allowHTML: true,
-        theme: 'light',
-            // 350px
-            maxWidth: '',
-        // https://atomiks.github.io/tippyjs/v6/all-props/#interactive
-        interactive: true,
-      });
-    }
-
-    function createAuthorTippy() {
-      createTippy(
-        '#authorFilters',
-        `
-          <ul id="author_filters" style="padding: 0; margin: 0; list-style: none; padding-right: 10px;">
-            ${
-              authors.map((name, i) =>
-                `<li>
-                   <input
-                      id="author:${name}"
-                      type="checkbox"
-                      ${filters['authors'].indexOf(name) !== -1 ? 'checked' : ''}
-                      name="author"
-                      data-author-name="${name}"
-                      onchange="applyAuthorFilters()"
-                    >
-                   <label for="author:${name}">${name}</label>
-                </li>`
-              ).join("")
-            }
-          </ul>
-        `
-      )
-    }
-
-    createAuthorTippy();
+    createAuthorTippy(filters);
   </script>
 {% endblock %}
