@@ -136,46 +136,84 @@ mod tests {
 
     #[test]
     fn it_offers_all_options_initially() {
-        let mut ac = TagCompleter::new(vec!["adventure", "action", "mystery", "romance", "scifi"]);
+        let tags = vec![
+            String::from("action"),
+            String::from("adventure"),
+            String::from("mystery"),
+            String::from("romance"),
+            String::from("scifi"),
+        ];
+
+        let mut ac = TagCompleter::new(tags.clone());
 
         let suggestions = ac.get_suggestions("").unwrap();
+        assert_eq!(suggestions, tags);
+    }
 
+    #[test]
+    fn it_sorts_the_options() {
+        let mut ac = TagCompleter::new(vec![
+            String::from("comedy"),
+            String::from("drama"),
+            String::from("action"),
+        ]);
+
+        let suggestions = ac.get_suggestions("").unwrap();
         assert_eq!(
             suggestions,
-            vec!["adventure", "action", "mystery", "romance", "scifi"]
+            vec![
+                String::from("action"),
+                String::from("comedy"),
+                String::from("drama"),
+            ]
         );
     }
 
     #[test]
     fn it_offers_all_options_with_a_matching_substring() {
-        let mut ac = TagCompleter::new(vec!["adventure", "action", "mystery", "romance", "scifi"]);
+        let mut ac = TagCompleter::new(vec![
+            String::from("adventure"),
+            String::from("action"),
+            String::from("mystery"),
+            String::from("romance"),
+            String::from("scifi"),
+        ]);
 
         let suggestions = ac.get_suggestions("s").unwrap();
-
-        assert_eq!(suggestions, vec!["mystery", "scifi"]);
+        assert_eq!(
+            suggestions,
+            vec![String::from("mystery"), String::from("scifi")]
+        );
     }
 
     #[test]
     fn it_only_offers_unused_options() {
-        let mut ac = TagCompleter::new(vec!["adventure", "action", "mystery", "romance", "scifi"]);
+        let mut ac = TagCompleter::new(vec![
+            String::from("adventure"),
+            String::from("action"),
+            String::from("mystery"),
+            String::from("romance"),
+            String::from("scifi"),
+        ]);
 
         let suggestions = ac.get_suggestions("scifi s").unwrap();
-
-        assert_eq!(suggestions, vec!["mystery"]);
+        assert_eq!(suggestions, vec![String::from("mystery")]);
     }
 
     #[test]
     fn it_offers_no_options_if_no_matches() {
-        let mut ac = TagCompleter::new(vec!["adventure", "action", "mystery", "romance", "scifi"]);
+        let mut ac = TagCompleter::new(vec![
+            String::from("adventure"),
+            String::from("action"),
+            String::from("mystery"),
+            String::from("romance"),
+            String::from("scifi"),
+        ]);
 
         let suggestions = ac.get_suggestions("scifi z").unwrap();
-
         assert_eq!(suggestions.len(), 0);
 
-        let mut ac = TagCompleter::new(vec!["adventure", "action", "mystery", "romance", "scifi"]);
-
         let suggestions = ac.get_suggestions("z").unwrap();
-
         assert_eq!(suggestions.len(), 0);
     }
 }
