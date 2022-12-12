@@ -13,6 +13,6 @@ book:
     - letters
     - maritime
 review:
-  date_read: '2019-05-06'
+  date_read: 2019-05-06
   rating: 3
 ---

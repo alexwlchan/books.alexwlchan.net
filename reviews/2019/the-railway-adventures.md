@@ -13,6 +13,6 @@ book:
     - memoirs
     - trains
 review:
-  date_read: '2019-01-20'
+  date_read: 2019-01-20
   rating: 4
 ---

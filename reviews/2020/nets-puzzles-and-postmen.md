@@ -11,7 +11,7 @@ book:
     - non-fiction
     - maths
 review:
-  date_read: '2020-01-14'
+  date_read: 2020-01-14
   format: hardback
   rating: 3
 ---

@@ -13,6 +13,6 @@ book:
     - mythology
     - greece
 review:
-  date_read: '2019-08-10'
+  date_read: 2019-08-10
   rating: 3
 ---

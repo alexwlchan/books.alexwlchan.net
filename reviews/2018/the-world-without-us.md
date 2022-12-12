@@ -12,7 +12,7 @@ book:
     - non-fiction
     - science
 review:
-  date_read: '2018-03-01'
+  date_read: 2018-03-01
   did_not_finish: true
 ---
 

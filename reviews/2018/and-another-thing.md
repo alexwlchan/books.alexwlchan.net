@@ -13,7 +13,7 @@ book:
     - fiction
     - sci-fi
 review:
-  date_read: '2018-07-10'
+  date_read: 2018-07-10
   did_not_finish: true
   rating: 2
 ---

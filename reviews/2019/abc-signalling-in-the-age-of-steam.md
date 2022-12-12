@@ -12,5 +12,5 @@ book:
     - non-fiction
     - trains
 review:
-  date_read: '2019-06-29'
+  date_read: 2019-06-29
 ---

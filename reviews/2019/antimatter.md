@@ -13,7 +13,7 @@ book:
     - science
     - physics
 review:
-  date_read: '2019-11-24'
+  date_read: 2019-11-24
   format: hardback
   rating: 3
 ---

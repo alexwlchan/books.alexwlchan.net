@@ -13,6 +13,6 @@ book:
     - fiction
     - sci-fi
 review:
-  date_read: '2019-02-23'
+  date_read: 2019-02-23
   rating: 4
 ---

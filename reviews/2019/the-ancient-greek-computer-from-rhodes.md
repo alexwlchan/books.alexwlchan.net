@@ -13,7 +13,7 @@ book:
     - computing
     - greece
 review:
-  date_read: '2019-08-22'
+  date_read: 2019-08-22
   format: hardback
   rating: 3
 ---

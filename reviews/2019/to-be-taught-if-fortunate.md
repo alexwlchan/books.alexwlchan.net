@@ -12,7 +12,7 @@ book:
     - fiction
     - sci-fi
 review:
-  date_read: '2019-09-28'
+  date_read: 2019-09-28
   format: hardback
   rating: 4
 ---

@@ -12,6 +12,6 @@ book:
     - non-fiction
     - biography
 review:
-  date_read: '2018-05-10'
+  date_read: 2018-05-10
   rating: 4
 ---

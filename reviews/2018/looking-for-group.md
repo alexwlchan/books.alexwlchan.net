@@ -11,7 +11,7 @@ book:
   tags:
     - fiction
 review:
-  date_read: '2018-05-21'
+  date_read: 2018-05-21
   rating: 5
 ---
 

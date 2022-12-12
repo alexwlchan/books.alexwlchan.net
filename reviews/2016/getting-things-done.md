@@ -12,7 +12,7 @@ book:
     - non-fiction
     - productivity
 review:
-  date_read: '2016-11-26'
+  date_read: 2016-11-26
   format: audiobook
   rating: 5
 ---

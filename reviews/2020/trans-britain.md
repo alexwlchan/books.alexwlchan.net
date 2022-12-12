@@ -12,7 +12,7 @@ book:
     - history
     - gender
 review:
-  date_read: '2020-01-10'
+  date_read: 2020-01-10
   format: paperback
   rating: 5
 ---

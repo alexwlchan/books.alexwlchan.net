@@ -12,6 +12,6 @@ book:
     - trains
     - travel
 review:
-  date_read: '2019-07-27'
+  date_read: 2019-07-27
   rating: 3
 ---

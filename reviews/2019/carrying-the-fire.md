@@ -13,7 +13,7 @@ book:
     - memoirs
     - space-exploration
 review:
-  date_read: '2019-05-01'
+  date_read: 2019-05-01
   rating: 5
 ---
 

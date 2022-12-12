@@ -12,7 +12,7 @@ book:
     - science
     - humour
 review:
-  date_read: '2019-12-27'
+  date_read: 2019-12-27
   format: hardback
   rating: 4
 ---

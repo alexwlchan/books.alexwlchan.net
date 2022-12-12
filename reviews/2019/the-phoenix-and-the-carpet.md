@@ -13,6 +13,6 @@ book:
     - fiction
     - fantasy
 review:
-  date_read: '2019-07-31'
+  date_read: 2019-07-31
   rating: 3
 ---

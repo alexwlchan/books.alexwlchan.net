@@ -12,7 +12,7 @@ book:
     - non-fiction
     - science
 review:
-  date_read: '2019-12-11'
+  date_read: 2019-12-11
   rating: 5
 ---
 

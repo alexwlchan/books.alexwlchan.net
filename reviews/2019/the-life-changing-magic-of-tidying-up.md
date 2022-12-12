@@ -13,7 +13,7 @@ book:
     - lifestyle
     - domestic
 review:
-  date_read: '2019-06-19'
+  date_read: 2019-06-19
   format: ebook
   rating: 4
 ---

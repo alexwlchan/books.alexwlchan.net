@@ -12,7 +12,7 @@ book:
     - non-fiction
     - languages
 review:
-  date_read: '2016-10-16'
+  date_read: 2016-10-16
   rating: 4
 ---
 

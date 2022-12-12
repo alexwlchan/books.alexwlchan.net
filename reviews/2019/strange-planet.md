@@ -12,7 +12,7 @@ book:
     - humour
     - sci-fi
 review:
-  date_read: '2019-12-25'
+  date_read: 2019-12-25
   format: hardback
   rating: 3
 ---

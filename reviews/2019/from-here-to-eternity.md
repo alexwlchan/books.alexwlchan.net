@@ -12,6 +12,6 @@ book:
     - non-fiction
     - death
 review:
-  date_read: '2019-03-02'
+  date_read: 2019-03-02
   rating: 4
 ---

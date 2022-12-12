@@ -12,7 +12,7 @@ book:
     - asexuality
     - non-fiction
 review:
-  date_read: '2017-03-31'
+  date_read: 2017-03-31
   rating: 2
 ---
 

@@ -12,7 +12,7 @@ book:
     - fiction
     - mythology
 review:
-  date_read: '2018-07-13'
+  date_read: 2018-07-13
   rating: 5
 ---
 

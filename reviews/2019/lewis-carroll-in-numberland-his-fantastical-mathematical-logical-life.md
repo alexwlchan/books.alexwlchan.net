@@ -13,6 +13,6 @@ book:
     - biography
     - maths
 review:
-  date_read: '2019-08-04'
+  date_read: 2019-08-04
   rating: 3
 ---

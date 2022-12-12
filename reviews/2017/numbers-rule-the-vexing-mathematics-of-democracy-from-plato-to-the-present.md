@@ -13,7 +13,7 @@ book:
     - politics
     - maths
 review:
-  date_read: '2017-08-14'
+  date_read: 2017-08-14
   rating: 5
 ---
 

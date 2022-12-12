@@ -13,7 +13,7 @@ book:
     - architecture
     - engineering
 review:
-  date_read: '2019-10-20'
+  date_read: 2019-10-20
   format: paperback
   rating: 4
 ---

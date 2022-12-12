@@ -12,6 +12,6 @@ book:
     - non-fiction
     - politics
 review:
-  date_read: '2019-06-11'
+  date_read: 2019-06-11
   rating: 4
 ---

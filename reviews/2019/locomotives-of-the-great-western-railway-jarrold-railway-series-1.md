@@ -12,7 +12,7 @@ book:
     - non-fiction
     - trains
 review:
-  date_read: '2019-11-02'
+  date_read: 2019-11-02
   rating: 4
 ---
 

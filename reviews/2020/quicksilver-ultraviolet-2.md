@@ -13,7 +13,7 @@ book:
     - sci-fi
     - queer-rep
 review:
-  date_read: '2020-04-30'
+  date_read: 2020-04-30
   format: paperback
   rating: 4
 ---

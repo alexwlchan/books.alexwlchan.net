@@ -13,7 +13,7 @@ book:
     - fiction
     - sci-fi
 review:
-  date_read: '2017-01-22'
+  date_read: 2017-01-22
   rating: 5
 ---
 

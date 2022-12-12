@@ -12,6 +12,6 @@ book:
     - history
     - space-exploration
 review:
-  date_read: '2018-07-04'
+  date_read: 2018-07-04
   rating: 5
 ---

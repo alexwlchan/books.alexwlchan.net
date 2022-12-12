@@ -14,7 +14,7 @@ book:
     - history
     - computing
 review:
-  date_read: '2019-08-30'
+  date_read: 2019-08-30
   format: paperback
   rating: 5
 ---

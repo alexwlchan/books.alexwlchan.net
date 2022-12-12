@@ -13,7 +13,7 @@ book:
     - trains
     - trivia
 review:
-  date_read: '2017-05-16'
+  date_read: 2017-05-16
   rating: 3
 ---
 

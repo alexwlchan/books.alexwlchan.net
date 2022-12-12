@@ -13,7 +13,7 @@ book:
     - history
     - maritime
 review:
-  date_read: '2017-04-17'
+  date_read: 2017-04-17
   rating: 4
 ---
 

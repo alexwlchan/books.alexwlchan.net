@@ -11,7 +11,7 @@ book:
     - non-fiction
     - trains
 review:
-  date_read: '2019-11-23'
+  date_read: 2019-11-23
   format: hardback
   rating: 3
 ---

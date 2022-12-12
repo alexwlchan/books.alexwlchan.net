@@ -12,6 +12,6 @@ book:
     - fiction
     - fantasy
 review:
-  date_read: '2019-08-13'
+  date_read: 2019-08-13
   did_not_finish: true
 ---

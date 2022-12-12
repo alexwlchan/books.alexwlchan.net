@@ -11,6 +11,6 @@ book:
     - non-fiction
     - writing
 review:
-  date_read: '2020-02-06'
+  date_read: 2020-02-06
   rating: 3
 ---

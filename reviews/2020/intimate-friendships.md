@@ -12,7 +12,7 @@ book:
     - non-fiction
     - relationships
 review:
-  date_read: '2020-02-20'
+  date_read: 2020-02-20
   format: paperback
   rating: 3
 ---

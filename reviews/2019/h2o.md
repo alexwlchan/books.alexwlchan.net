@@ -12,7 +12,7 @@ book:
     - chemistry
     - science
 review:
-  date_read: '2019-12-26'
+  date_read: 2019-12-26
   format: paperback
   rating: 3
 ---

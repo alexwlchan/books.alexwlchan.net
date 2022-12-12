@@ -12,6 +12,6 @@ book:
     - non-fiction
     - languages
 review:
-  date_read: '2018-10-23'
+  date_read: 2018-10-23
   rating: 3
 ---

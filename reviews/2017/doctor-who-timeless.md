@@ -13,7 +13,7 @@ book:
     - sci-fi
     - doctor-who
 review:
-  date_read: '2017-04-11'
+  date_read: 2017-04-11
   did_not_finish: true
   rating: 2
 ---

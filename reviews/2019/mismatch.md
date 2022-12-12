@@ -12,7 +12,7 @@ book:
     - fiction
     - inclusion
 review:
-  date_read: '2019-01-16'
+  date_read: 2019-01-16
   rating: 5
 ---
 

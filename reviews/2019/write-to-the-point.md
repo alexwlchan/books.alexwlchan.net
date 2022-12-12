@@ -12,6 +12,6 @@ book:
     - non-fiction
     - writing
 review:
-  date_read: '2019-08-17'
+  date_read: 2019-08-17
   rating: 3
 ---

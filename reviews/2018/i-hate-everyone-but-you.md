@@ -12,6 +12,6 @@ book:
   tags:
     - fiction
 review:
-  date_read: '2018-04-09'
+  date_read: 2018-04-09
   rating: 3
 ---

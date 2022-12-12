@@ -13,7 +13,7 @@ book:
     - humour
     - non-fiction
 review:
-  date_read: '2017-03-15'
+  date_read: 2017-03-15
   rating: 3
 ---
 

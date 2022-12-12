@@ -14,7 +14,7 @@ book:
     - queer-rep
     - gender
 review:
-  date_read: '2019-01-13'
+  date_read: 2019-01-13
   rating: 5
 ---
 

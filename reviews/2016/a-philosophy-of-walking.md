@@ -11,7 +11,7 @@ book:
   tags:
     - non-fiction
 review:
-  date_read: '2016-11-26'
+  date_read: 2016-11-26
   rating: 3
 ---
 

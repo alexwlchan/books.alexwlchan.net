@@ -13,7 +13,7 @@ book:
     - fantasy
     - fairy-tales
 review:
-  date_read: '2019-08-18'
+  date_read: 2019-08-18
   format: paperback
   rating: 4
 ---

@@ -13,7 +13,7 @@ book:
     - non-fiction
     - computing
 review:
-  date_read: '2017-11-29'
+  date_read: 2017-11-29
   rating: 4
 ---
 

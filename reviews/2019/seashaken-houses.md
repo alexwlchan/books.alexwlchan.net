@@ -12,6 +12,6 @@ book:
     - non-fiction
     - maritime
 review:
-  date_read: '2019-04-09'
+  date_read: 2019-04-09
   rating: 4
 ---

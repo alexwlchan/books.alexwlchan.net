@@ -12,7 +12,7 @@ book:
     - non-fiction
     - writing
 review:
-  date_read: '2019-09-09'
+  date_read: 2019-09-09
   format: paperback
   rating: 5
 ---

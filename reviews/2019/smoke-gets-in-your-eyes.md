@@ -12,7 +12,7 @@ book:
     - non-fiction
     - death
 review:
-  date_read: '2019-02-13'
+  date_read: 2019-02-13
   rating: 5
 ---
 

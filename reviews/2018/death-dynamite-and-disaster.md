@@ -13,7 +13,7 @@ book:
     - trains
     - disasters
 review:
-  date_read: '2018-02-05'
+  date_read: 2018-02-05
   rating: 4
 ---
 

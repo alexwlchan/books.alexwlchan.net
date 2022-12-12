@@ -14,7 +14,7 @@ book:
     - graphic-novel
     - computing
 review:
-  date_read: '2017-05-15'
+  date_read: 2017-05-15
   rating: 5
 ---
 

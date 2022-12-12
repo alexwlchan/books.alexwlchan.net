@@ -13,7 +13,7 @@ book:
     - space-exploration
     - lifestyle
 review:
-  date_read: '2018-09-19'
+  date_read: 2018-09-19
   rating: 5
 ---
 

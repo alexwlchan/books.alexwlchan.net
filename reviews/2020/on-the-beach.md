@@ -12,7 +12,7 @@ book:
     - dystopia
     - sci-fi
 review:
-  date_read: '2020-01-11'
+  date_read: 2020-01-11
   format: paperback
   rating: 5
 ---

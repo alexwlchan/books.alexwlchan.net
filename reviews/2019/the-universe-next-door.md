@@ -13,7 +13,7 @@ book:
     - science
     - physics
 review:
-  date_read: '2019-03-23'
+  date_read: 2019-03-23
   rating: 3
 ---
 

@@ -14,6 +14,6 @@ book:
     - history
     - maths
 review:
-  date_read: '2019-06-15'
+  date_read: 2019-06-15
   rating: 3
 ---

@@ -13,6 +13,6 @@ book:
     - trains
     - warfare
 review:
-  date_read: '2018-12-12'
+  date_read: 2018-12-12
   rating: 4
 ---

@@ -12,7 +12,7 @@ book:
     - asexuality
     - queer-rep
 review:
-  date_read: '2017-04-05'
+  date_read: 2017-04-05
   rating: 5
 ---
 

@@ -13,7 +13,7 @@ book:
     - queer-rep
     - history
 review:
-  date_read: '2019-10-28'
+  date_read: 2019-10-28
   format: hardback
   rating: 3
 ---

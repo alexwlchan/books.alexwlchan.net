@@ -12,7 +12,7 @@ book:
     - espionage
     - history
 review:
-  date_read: '2020-03-10'
+  date_read: 2020-03-10
   format: hardback
   rating: 5
 ---

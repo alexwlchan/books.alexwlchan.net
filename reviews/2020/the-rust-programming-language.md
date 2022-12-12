@@ -10,7 +10,7 @@ book:
     - non-fiction
     - programming
 review:
-  date_read: '2020-12-21'
+  date_read: 2020-12-21
   format: ebook
   rating: 4
 ---

@@ -12,7 +12,7 @@ book:
     - history
     - espionage
 review:
-  date_read: '2017-11-16'
+  date_read: 2017-11-16
   format: hardback
   rating: 3
 ---

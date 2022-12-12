@@ -11,7 +11,7 @@ book:
   tags:
     - biography
 review:
-  date_read: '2018-10-20'
+  date_read: 2018-10-20
   rating: 5
 ---
 

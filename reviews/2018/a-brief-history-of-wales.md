@@ -12,6 +12,6 @@ book:
     - non-fiction
     - history
 review:
-  date_read: '2018-12-21'
+  date_read: 2018-12-21
   rating: 3
 ---

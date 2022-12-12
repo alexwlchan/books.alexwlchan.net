@@ -13,7 +13,7 @@ book:
     - time-travel
     - queer-rep
 review:
-  date_read: '2018-02-16'
+  date_read: 2018-02-16
   rating: 4
 ---
 

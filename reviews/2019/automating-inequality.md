@@ -13,6 +13,6 @@ book:
     - dystopia
     - politics
 review:
-  date_read: '2019-01-27'
+  date_read: 2019-01-27
   rating: 3
 ---

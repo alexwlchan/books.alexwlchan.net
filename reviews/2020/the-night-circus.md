@@ -11,7 +11,7 @@ book:
     - fantasy
     - magic
 review:
-  date_read: '2020-05-22'
+  date_read: 2020-05-22
   format: ebook
   rating: 5
 ---

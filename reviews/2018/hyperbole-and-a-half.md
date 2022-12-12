@@ -12,6 +12,6 @@ book:
     - fiction
     - humour
 review:
-  date_read: '2018-04-07'
+  date_read: 2018-04-07
   rating: 4
 ---

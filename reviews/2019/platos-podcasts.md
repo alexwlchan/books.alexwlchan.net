@@ -11,7 +11,7 @@ book:
     - non-fiction
     - philosophy
 review:
-  date_read: '2019-12-23'
+  date_read: 2019-12-23
   did_not_finish: true
   format: paperback
   rating: 2

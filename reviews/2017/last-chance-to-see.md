@@ -13,7 +13,7 @@ book:
     - science
     - zoology
 review:
-  date_read: '2017-04-27'
+  date_read: 2017-04-27
   rating: 5
 ---
 

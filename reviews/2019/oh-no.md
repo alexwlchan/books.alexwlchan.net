@@ -11,7 +11,7 @@ book:
   tags:
     - graphic-novel
 review:
-  date_read: '2019-10-07'
+  date_read: 2019-10-07
   format: hardback
   rating: 3
 ---

@@ -13,6 +13,6 @@ book:
     - bletchley-park
     - history
 review:
-  date_read: '2019-11-04'
+  date_read: 2019-11-04
   rating: 3
 ---

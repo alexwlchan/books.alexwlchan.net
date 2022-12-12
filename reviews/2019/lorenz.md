@@ -14,7 +14,7 @@ book:
     - history
     - espionage
 review:
-  date_read: '2019-11-03'
+  date_read: 2019-11-03
   format: hardback
   rating: 4
 ---

@@ -13,7 +13,7 @@ book:
     - weather
     - geography
 review:
-  date_read: '2017-12-31'
+  date_read: 2017-12-31
   rating: 3
 ---
 

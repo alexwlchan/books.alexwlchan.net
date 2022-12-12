@@ -12,7 +12,7 @@ book:
     - non-fiction
     - disasters
 review:
-  date_read: '2019-12-01'
+  date_read: 2019-12-01
   format: paperback
   rating: 5
 ---

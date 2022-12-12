@@ -13,7 +13,7 @@ book:
     - biography
     - doctor-who
 review:
-  date_read: '2017-02-26'
+  date_read: 2017-02-26
 ---
 
 This is a detailed account of Terry Nation’s work – from his upbringing in Wales, through to his BBC breakout shows and flight to Hollywood.

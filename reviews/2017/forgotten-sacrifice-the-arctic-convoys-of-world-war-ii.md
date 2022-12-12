@@ -14,7 +14,7 @@ book:
     - maritime
     - warfare
 review:
-  date_read: '2017-02-13'
+  date_read: 2017-02-13
   rating: 4
 ---
 

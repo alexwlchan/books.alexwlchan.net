@@ -13,7 +13,7 @@ book:
     - science
     - humour
 review:
-  date_read: '2017-07-15'
+  date_read: 2017-07-15
   rating: 4
 ---
 

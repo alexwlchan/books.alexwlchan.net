@@ -10,7 +10,7 @@ book:
     - fiction
     - dystopia
 review:
-  date_read: '2020-02-02'
+  date_read: 2020-02-02
   format: ebook
   rating: 3
 ---

@@ -11,7 +11,7 @@ book:
   tags:
     - fiction
 review:
-  date_read: '2018-12-26'
+  date_read: 2018-12-26
   did_not_finish: true
 ---
 

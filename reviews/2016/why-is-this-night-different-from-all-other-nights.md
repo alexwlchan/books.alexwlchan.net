@@ -12,7 +12,7 @@ book:
   tags:
     - fiction
 review:
-  date_read: '2016-12-27'
+  date_read: 2016-12-27
   rating: 4
 ---
 

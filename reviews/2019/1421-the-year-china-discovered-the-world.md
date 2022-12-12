@@ -12,7 +12,7 @@ book:
     - non-fiction
     - history
 review:
-  date_read: '2019-03-24'
+  date_read: 2019-03-24
   did_not_finish: true
   rating: 3
 ---

@@ -13,6 +13,6 @@ book:
     - espionage
     - history
 review:
-  date_read: '2018-08-14'
+  date_read: 2018-08-14
   rating: 4
 ---

@@ -12,7 +12,7 @@ book:
     - non-fiction
     - lego
 review:
-  date_read: '2019-11-02'
+  date_read: 2019-11-02
   format: paperback
   rating: 4
 ---

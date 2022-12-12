@@ -11,7 +11,7 @@ book:
     - non-fiction
     - humour
 review:
-  date_read: '2020-01-12'
+  date_read: 2020-01-12
   format: hardback
   rating: 3
 ---

@@ -12,7 +12,7 @@ book:
     - non-fiction
     - maths
 review:
-  date_read: '2019-08-11'
+  date_read: 2019-08-11
   rating: 4
 ---
 

@@ -11,7 +11,7 @@ book:
   tags:
     - non-fiction
 review:
-  date_read: '2020-04-13'
+  date_read: 2020-04-13
   format: hardback
   rating: 5
 ---

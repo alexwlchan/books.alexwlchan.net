@@ -11,6 +11,6 @@ book:
     - fiction
     - mythology
 review:
-  date_read: '2019-06-02'
+  date_read: 2019-06-02
   rating: 4
 ---

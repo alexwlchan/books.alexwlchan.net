@@ -13,7 +13,7 @@ book:
     - graphic-novel
     - queer-rep
 review:
-  date_read: '2019-12-02'
+  date_read: 2019-12-02
   format: paperback
   rating: 3
 ---

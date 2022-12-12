@@ -12,7 +12,7 @@ book:
     - fiction
     - short-stories
 review:
-  date_read: '2018-11-23'
+  date_read: 2018-11-23
   rating: 5
 ---
 

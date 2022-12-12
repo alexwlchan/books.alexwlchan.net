@@ -13,7 +13,7 @@ book:
     - history
     - disasters
 review:
-  date_read: '2019-09-26'
+  date_read: 2019-09-26
   format: paperback
   rating: 5
 ---

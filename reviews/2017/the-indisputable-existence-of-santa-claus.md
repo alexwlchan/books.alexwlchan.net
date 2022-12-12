@@ -11,7 +11,7 @@ book:
     - maths
     - trivia
 review:
-  date_read: '2017-01-03'
+  date_read: 2017-01-03
   rating: 3
 ---
 

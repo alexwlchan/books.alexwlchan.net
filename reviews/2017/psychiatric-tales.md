@@ -13,7 +13,7 @@ book:
     - graphic-novel
     - mental-health
 review:
-  date_read: '2017-08-21'
+  date_read: 2017-08-21
   rating: 3
 ---
 

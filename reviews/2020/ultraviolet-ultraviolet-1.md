@@ -13,7 +13,7 @@ book:
     - sci-fi
     - ya
 review:
-  date_read: '2020-04-17'
+  date_read: 2020-04-17
   format: paperback
   rating: 4
 ---

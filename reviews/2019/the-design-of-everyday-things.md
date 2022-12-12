@@ -11,7 +11,7 @@ book:
   tags:
     - non-fiction
 review:
-  date_read: '2019-11-07'
+  date_read: 2019-11-07
   format: paperback
   rating: 3
 ---

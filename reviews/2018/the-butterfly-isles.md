@@ -12,7 +12,7 @@ book:
     - non-fiction
     - travel
 review:
-  date_read: '2018-04-07'
+  date_read: 2018-04-07
   rating: 4
 ---
 

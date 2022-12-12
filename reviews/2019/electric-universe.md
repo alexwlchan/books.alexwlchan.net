@@ -13,6 +13,6 @@ book:
     - science
     - physics
 review:
-  date_read: '2019-06-09'
+  date_read: 2019-06-09
   rating: 4
 ---

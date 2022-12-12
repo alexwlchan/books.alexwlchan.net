@@ -12,7 +12,7 @@ book:
     - fiction
     - sci-fi
 review:
-  date_read: '2019-10-12'
+  date_read: 2019-10-12
   format: paperback
   rating: 3
 ---

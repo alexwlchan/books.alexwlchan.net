@@ -13,6 +13,6 @@ book:
     - doctor-who
     - memoirs
 review:
-  date_read: '2016-11-27'
+  date_read: 2016-11-27
   rating: 5
 ---

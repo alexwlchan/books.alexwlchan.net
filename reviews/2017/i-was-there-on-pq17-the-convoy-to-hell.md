@@ -14,7 +14,7 @@ book:
     - history
     - warfare
 review:
-  date_read: '2017-01-11'
+  date_read: 2017-01-11
   rating: 4
 ---
 
