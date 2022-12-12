@@ -143,6 +143,24 @@ pub fn render_html(
     )
     .unwrap();
 
+    // Finds the last Git commit where the JS file was modified.
+    //
+    // This gets embedded in the URL to the JS file, so I can set a
+    // very long Cache-Control header but still have browsers fetch
+    // the file fresh whenever it changes.
+    let js_commit = String::from_utf8(
+        Command::new("git")
+            .arg("log")
+            .arg("--max-count=1")
+            .arg("--pretty=format:%H")
+            .arg("--")
+            .arg("static/filters.js")
+            .output()
+            .unwrap()
+            .stdout,
+    )
+    .unwrap();
+
     let this_year = chrono::offset::Utc::now().year();
 
     let mut context = tera::Context::new();
@@ -150,6 +168,7 @@ pub fn render_html(
     context.insert("tint_colour", "#191919");
     context.insert("this_year", &this_year.to_string());
     context.insert("css_commit", &css_commit.trim().to_string());
+    context.insert("js_commit", &js_commit.trim().to_string());
     let html = templates.render("list_reviews.html", &context)?;
     create_favicon("#191919");
 

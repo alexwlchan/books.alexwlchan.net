@@ -72,6 +72,10 @@ pub fn sync_files(src: &Path, dst: &Path) -> io::Result<()> {
             continue;
         }
 
+        if src_path.file_name() == Some(OsStr::new("tests")) {
+            continue;
+        }
+
         let dst_path = dst.join(src_path.file_name().unwrap());
 
         if src_path.is_newer_than(&dst_path)? {

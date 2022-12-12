@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.5.1 - 2022-12-12
+
+Lay some preliminary groundwork for filtering, in particular exposing the last commit to modify `static/filters.js` as a template variable.
+
 ## v1.5.0 - 2022-12-11
 
 Add support for keyword tagging. The `add_review` command will now ask for tags as part of saving a new book, and this will be saved as part of the metadata.
