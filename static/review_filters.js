@@ -21,6 +21,34 @@ function Counter(array) {
   return count;
 }
 
+/** Creates a label to describe the current publication year filter. e.g.
+  *
+  *     published between 2001 and 2002
+  *     published in 2004
+  *     published before 1990
+  *
+  */
+function createPublicationYearLabel(range) {
+  const { beforeYear, afterYear } = range;
+
+  const hasAfterYear = isNotUndefined(afterYear);
+  const hasBeforeYear = isNotUndefined(beforeYear);
+
+  const thisYear = new Date().getUTCFullYear().toString();
+
+  const label = hasAfterYear && hasBeforeYear && beforeYear === afterYear
+    ? `in ${afterYear}`
+    : hasAfterYear && hasBeforeYear
+    ? `between ${afterYear} and ${beforeYear}`
+    : hasAfterYear && afterYear == thisYear
+    ? `in ${thisYear}`
+    : hasAfterYear
+    ? `after ${afterYear}`
+    : `before ${beforeYear}`;
+
+  return `published ${label}`;
+}
+
 /** Apply the current set of filters to the page.
   *
   * This updates all the page state, including which reviews/headings are
@@ -67,9 +95,10 @@ function applyFilters(filters) {
       }
     );
 
-  const yearTally = Counter(selectedReviews
-    .filter(rp => rp.getAttribute("data-did-not-finish") !== "true")
-    .map(rp => rp.getAttribute("data-review-year"))
+  const yearTally = Counter(
+    selectedReviews
+      .filter(rp => rp.getAttribute("data-did-not-finish") !== "true")
+      .map(rp => rp.getAttribute("data-review-year"))
   );
   const selectedReviewIds = new Set(selectedReviews.map(rp => rp.getAttribute("id")));
 
@@ -130,38 +159,34 @@ function applyFilters(filters) {
   // Update the list of selected filters, which also allows the user to
   // remove filters.
   if (hasFilters) {
-    document.getElementById("filtersApplied").innerHTML = "selected filters: ";
+    var selectedFilters = [];
 
     for (let name of filters['authors']) {
-      document.getElementById("filtersApplied").innerHTML += `
-        <span class="appliedFilter">
-          <span class="appliedFilterValue">${name}</span>
-          <a href="#" onclick="script:removeAuthorFilter(filters, '${name}')" class="removeFilter">[x]</span>
-        </span>
-      `;
+      selectedFilters.push({
+        onclick: `removeAuthorFilter(filters, '${name}')`,
+        value: name,
+      });
     }
 
-    if (isNotUndefined(filters['publicationYear']['after']) && isNotUndefined(filters['publicationYear']['before'])) {
+    if (isNotUndefined(filters['publicationYear']['after']) || isNotUndefined(filters['publicationYear']['before'])) {
+      const afterYear = filters['publicationYear']['after'];
+      const beforeYear = filters['publicationYear']['before'];
+
+        selectedFilters.push({
+          onclick: 'removePublicationYearFilters(filters)',
+          value: createPublicationYearLabel({ afterYear, beforeYear }),
+        });
+    }
+
+    document.getElementById("filtersApplied").innerHTML = "selected filters: ";
+
+    for (let f of selectedFilters) {
       document.getElementById("filtersApplied").innerHTML += `
         <span class="appliedFilter">
-          <span class="appliedFilterValue">published between ${filters['publicationYear']['after']} and ${filters['publicationYear']['before']}</span>
-          <a href="#" onclick="script:removePublicationYearFilters(filters)" class="removeFilter">[x]</span>
+          <span class="appliedFilterValue">${f.value}</span>
+          <a href="#" onclick="script:${f.onclick}" class="removeFilter">[x]</span>
         </span>
-      `
-    } else if (isNotUndefined(filters['publicationYear']['after'])) {
-      document.getElementById("filtersApplied").innerHTML += `
-        <span class="appliedFilter">
-          <span class="appliedFilterValue">published after ${filters['publicationYear']['after']}</span>
-          <a href="#" onclick="script:removePublicationYearFilters(filters)" class="removeFilter">[x]</span>
-        </span>
-      `
-    } else if (isNotUndefined(filters['publicationYear']['before'])) {
-      document.getElementById("filtersApplied").innerHTML += `
-        <span class="appliedFilter">
-          <span class="appliedFilterValue">published before ${filters['publicationYear']['before']}</span>
-          <a href="#" onclick="script:removePublicationYearFilters(filters)" class="removeFilter">[x]</span>
-        </span>
-      `
+      `;
     }
 
     if (isNotUndefined(filters['starRating'])) {
@@ -347,15 +372,32 @@ function createPublicationYearTippy(filters) {
 }
 
 function createStarRatingTippy(filters) {
+  const ratings = [
+    { value: 5, label: '★★★★★' },
+    { value: 4, label: '★★★★☆ or higher' },
+    { value: 3, label: '★★★☆☆ or higher' },
+    { value: 2, label: '★★☆☆☆ or higher' },
+    { value: 1, label: '★☆☆☆☆ or higher' },
+  ]
+
   createTippy(
     '#ratingFilters',
     `
       <ul id="star_rating_filters" style="padding: 0; margin: 0; list-style: none; padding-right: 10px;">
-        <li><input onchange="applyStarRatingFilters(filters)" name="star_rating" type="radio" value="5" id="star_rating:5" ${filters['starRating'] === 5 ? 'checked' : ''}><label for="star_rating:5"> ★★★★★</label></li>
-        <li><input onchange="applyStarRatingFilters(filters)" name="star_rating" type="radio" value="4" id="star_rating:4" ${filters['starRating'] === 4 ? 'checked' : ''}><label for="star_rating:4"> ★★★★☆ or higher</label></li>
-        <li><input onchange="applyStarRatingFilters(filters)" name="star_rating" type="radio" value="3" id="star_rating:3" ${filters['starRating'] === 3 ? 'checked' : ''}><label for="star_rating:3"> ★★★☆☆ or higher</label></li>
-        <li><input onchange="applyStarRatingFilters(filters)" name="star_rating" type="radio" value="2" id="star_rating:2" ${filters['starRating'] === 2 ? 'checked' : ''}><label for="star_rating:2"> ★★☆☆☆ or higher</label></li>
-        <li><input onchange="applyStarRatingFilters(filters)" name="star_rating" type="radio" value="1" id="star_rating:1" ${filters['starRating'] === 1 ? 'checked' : ''}><label for="star_rating:1"> ★☆☆☆☆ or higher</label></li>
+        ${ratings.map(r =>
+          `
+          <li>
+            <input
+              onchange="applyStarRatingFilters(filters)"
+              name="star_rating"
+              type="radio" value="${r.value}"
+              id="star_rating:${r.value}"
+              ${filters['starRating'] === r.value ? 'checked' : ''}
+            >
+            <label for="star_rating:${r.value}"> ${r.label}</label>
+          </li>
+          `
+        )}
       </ul>
     `
   );

@@ -1,0 +1,79 @@
+<meta charset="utf-8">
+
+<script src="./review_filters.js"></script>
+
+<style>
+  .success { color: green; }
+  .failure { color: red; }
+
+  .success::before { content: '✔ '; }
+  .failure::before { content: '✘ '; }
+
+  #test_cases {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+</style>
+
+<ul id="test_cases"></ul>
+
+<script>
+  function it(description, fn) {
+    const result = document.createElement('li');
+
+    try {
+      fn();
+      result.className = 'success';
+      result.innerHTML = description;
+    } catch (error) {
+      result.className = 'failure';
+      result.innerHTML = `${description}<br/><pre>${error}</pre>`;
+    }
+
+    document.querySelector("#test_cases").appendChild(result);
+  }
+
+  function assertEqual(x, y) {
+    if (x === y) {
+      return;
+    } else {
+      throw new Error(`${x} != ${y}`);
+    }
+  }
+
+  it('createPublicationYearLabel: a range of years', () => {
+    assertEqual(
+      createPublicationYearLabel({ afterYear: '2001', beforeYear: '2002' }),
+      'published between 2001 and 2002'
+    );
+  })
+
+  it('createPublicationYearLabel: a single year', () => {
+    assertEqual(
+      createPublicationYearLabel({ afterYear: '2001', beforeYear: '2001' }),
+      'published in 2001'
+    );
+  })
+
+  it('createPublicationYearLabel: published after', () => {
+    assertEqual(
+      createPublicationYearLabel({ afterYear: '2001', beforeYear: undefined }),
+      'published after 2001'
+    );
+  })
+
+  it('createPublicationYearLabel: published before', () => {
+    assertEqual(
+      createPublicationYearLabel({ afterYear: undefined, beforeYear: '2002' }),
+      'published before 2002'
+    );
+  })
+
+  it('createPublicationYearLabel: current year', () => {
+    assertEqual(
+      createPublicationYearLabel({ afterYear: '2022', beforeYear: undefined }),
+      'published in 2022'
+    );
+  })
+</script>
