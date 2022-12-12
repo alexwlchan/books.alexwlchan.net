@@ -1,0 +1,94 @@
+<meta charset="utf-8">
+
+<script src="../filters.js"></script>
+
+<script src="./test_helpers.js"></script>
+<link rel="stylesheet" href="./test_helpers.css">
+
+<ul id="test_cases"></ul>
+
+<script>
+  it('createPublicationYearLabel: a range of years', () => {
+    assertEqual(
+      createPublicationYearLabel({ afterYear: '2001', beforeYear: '2002' }),
+      'published between 2001 and 2002'
+    );
+  })
+
+  it('createPublicationYearLabel: a single year', () => {
+    assertEqual(
+      createPublicationYearLabel({ afterYear: '2001', beforeYear: '2001' }),
+      'published in 2001'
+    );
+  })
+
+  it('createPublicationYearLabel: published after', () => {
+    assertEqual(
+      createPublicationYearLabel({ afterYear: '2001', beforeYear: undefined }),
+      'published after 2001'
+    );
+  })
+
+  it('createPublicationYearLabel: published before', () => {
+    assertEqual(
+      createPublicationYearLabel({ afterYear: undefined, beforeYear: '2002' }),
+      'published before 2002'
+    );
+  })
+
+  it('createPublicationYearLabel: current year', () => {
+    assertEqual(
+      createPublicationYearLabel({ afterYear: '2022', beforeYear: undefined }),
+      'published in 2022'
+    );
+  })
+
+  it('getAuthorNames: single author', () => {
+    assertEqual(
+      getAuthorNames('Laura Jane Williams'),
+      ['Laura Jane Williams']
+    );
+  })
+
+  it('getAuthorNames: single author with period', () => {
+    assertEqual(
+      getAuthorNames('J. K. Rowling'),
+      ['J. K. Rowling']
+    );
+  })
+
+  it('getAuthorNames: single author with ‘and’ as a substring', () => {
+    assertEqual(
+      getAuthorNames('B. Jack Copeland'),
+      ['B. Jack Copeland']
+    );
+  })
+
+  it('getAuthorNames: multiple authors with commas', () => {
+    assertEqual(
+      getAuthorNames('Ben Crystal, David Crystal'),
+      ['Ben Crystal', 'David Crystal']
+    );
+  })
+
+  it('getAuthorNames: multiple authors with ampersand', () => {
+    assertEqual(
+      getAuthorNames('Douglas Adams & Mark Carwadine'),
+      ['Douglas Adams', 'Mark Carwadine']
+    );
+  })
+
+  it('getAuthorNames: multiple authors with and', () => {
+    assertEqual(
+      getAuthorNames('F.H. Hinsley and Alan Tripp'),
+      ['F.H. Hinsley', 'Alan Tripp']
+    );
+  })
+
+  it('getAuthorNames: multiple authors with an Oxford comma', () => {
+    assertEqual(
+      getAuthorNames('Lisa McMullin, Tim Foley, and Timothy X. Atack'),
+      ['Lisa McMullin', 'Tim Foley', 'Timothy X. Atack']
+    );
+  })
+</script>
