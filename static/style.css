@@ -170,14 +170,14 @@ footer a:hover {
   vertical-align: middle;
 }
 
-.thumbnail_helper {
-  display: inline-block;
-  height: 100%;
+.book_thumbnail {
+  display: flex;
   vertical-align: middle;
+  text-align: center;
 }
 
-.book_thumbnail {
-  text-align: center;
+.book_thumbnail img {
+  margin: auto;
 }
 
 .book_metadata {
