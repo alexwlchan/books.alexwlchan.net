@@ -1,5 +1,9 @@
+function isUndefined(t) {
+  return typeof t === 'undefined';
+}
+
 function isNotUndefined(t) {
-  return typeof t !== 'undefined';
+  return !isUndefined(t);
 }
 
 /** Creates a label to describe the current publication year filter. e.g.
@@ -71,8 +75,39 @@ function matchesFilters(book, filters) {
   const authors = getAuthorNames(book.getAttribute('data-book-authors'));
 
   const matchesAuthorFilter =
-    filters['authors'].length === 0 ||
-    authors.some(a => filters['authors'].indexOf(a) !== -1);
+    filters.authors.length === 0 ||
+    authors.some(a => filters.authors.indexOf(a) !== -1);
 
-  return matchesAuthorFilter;
+  // The publication year has to fall within the defined range
+  const publicationYear = Number(book.getAttribute('data-book-publication-year'));
+
+  const matchesPublicationYearAfterFilter =
+    isUndefined(filters.publicationYear.after) ||
+    filters.publicationYear.after <= publicationYear;
+
+  const matchesPublicationYearBeforeFilter =
+    isUndefined(filters.publicationYear.before) ||
+    publicationYear <= filters.publicationYear.before;
+
+  // The star rating has to be equal to or higher than the filtered rating
+  const starRating = Number(book.getAttribute('data-review-rating'));
+
+  const matchesStarRatingFilter =
+    isUndefined(filters.starRating) ||
+    filters.starRating <= starRating;
+
+  // It has to match all the tags specified
+  const tags = new Set(book.getAttribute('data-review-tags').split(' '));
+
+  const matchesTagsFilter =
+    filters.tags.length === 0 ||
+    filters.tags.every(t => tags.has(t));
+
+  return (
+    matchesAuthorFilter &&
+    matchesPublicationYearAfterFilter &&
+    matchesPublicationYearBeforeFilter &&
+    matchesStarRatingFilter &&
+    matchesTagsFilter
+  );
 }
