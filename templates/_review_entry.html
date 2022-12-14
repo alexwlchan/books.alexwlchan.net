@@ -7,8 +7,14 @@
   {% include "_review_style.css" %}
 </style>
 
-<div class="review_preview {% if review.rating is defined and review.rating == 5 and not is_homepage %}review_fave{% endif %} {% if read_at_another_time %}read_at_another_time{% endif %}"
-id="review_preview_{{ slug }}">
+<div
+  id="review_preview_{{ slug }}"
+  class="review_preview {% if read_at_another_time %}read_at_another_time{% endif %}"
+  data-book-authors="{% if book.author %}{{ book.author }}{% endif %}"
+  data-book-publication-year="{{ book.publication_year }}"
+  data-review-rating="{% if review.rating %}{{ review.rating }}{% endif %}"
+  data-review-tags="{{ book.tags | join(sep=" ") }}"
+>
   {% if not read_at_another_time %}
   <a href="/reviews/{{ slug }}">
   {% endif %}

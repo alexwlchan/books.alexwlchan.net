@@ -1,5 +1,9 @@
+function isUndefined(t) {
+  return typeof t === 'undefined';
+}
+
 function isNotUndefined(t) {
-  return typeof t !== 'undefined';
+  return !isUndefined(t);
 }
 
 /** Creates a label to describe the current publication year filter. e.g.
@@ -49,4 +53,61 @@ function getAuthorNames(authors) {
     .split(/,|&| and /)
     .map(s => s.trim())
     .filter(s => s.length > 0);
+}
+
+/** Returns true if a given book matches the specified filters.
+  *
+  * Here the `filters` has the following structure:
+  *
+  *     {
+  *       authors: string[],
+  *       publicationYear: {
+  *         before: number | undefined,
+  *         after: number | undefined,
+  *       },
+  *       starRating: number | undefined,
+  *       tags: string[],
+  *     };
+  */
+function matchesFilters(book, filters) {
+
+  // It's sufficient to match a single author in the list.
+  const authors = getAuthorNames(book.getAttribute('data-book-authors'));
+
+  const matchesAuthorFilter =
+    filters.authors.length === 0 ||
+    authors.some(a => filters.authors.indexOf(a) !== -1);
+
+  // The publication year has to fall within the defined range
+  const publicationYear = Number(book.getAttribute('data-book-publication-year'));
+
+  const matchesPublicationYearAfterFilter =
+    isUndefined(filters.publicationYear.after) ||
+    filters.publicationYear.after <= publicationYear;
+
+  const matchesPublicationYearBeforeFilter =
+    isUndefined(filters.publicationYear.before) ||
+    publicationYear <= filters.publicationYear.before;
+
+  // The star rating has to be equal to or higher than the filtered rating
+  const starRating = Number(book.getAttribute('data-review-rating'));
+
+  const matchesStarRatingFilter =
+    isUndefined(filters.starRating) ||
+    filters.starRating <= starRating;
+
+  // It has to match all the tags specified
+  const tags = new Set(book.getAttribute('data-review-tags').split(' '));
+
+  const matchesTagsFilter =
+    filters.tags.length === 0 ||
+    filters.tags.every(t => tags.has(t));
+
+  return (
+    matchesAuthorFilter &&
+    matchesPublicationYearAfterFilter &&
+    matchesPublicationYearBeforeFilter &&
+    matchesStarRatingFilter &&
+    matchesTagsFilter
+  );
 }
