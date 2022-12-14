@@ -27,3 +27,11 @@ function assertEqual(x, y) {
     throw new Error(`${x} != ${y}`);
   }
 }
+
+function assertTrue(x) {
+  assertEqual(x, true);
+}
+
+function assertFalse(x) {
+  assertEqual(x, false);
+}

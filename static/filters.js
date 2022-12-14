@@ -50,3 +50,29 @@ function getAuthorNames(authors) {
     .map(s => s.trim())
     .filter(s => s.length > 0);
 }
+
+/** Returns true if a given book matches the specified filters.
+  *
+  * Here the `filters` has the following structure:
+  *
+  *     {
+  *       authors: string[],
+  *       publicationYear: {
+  *         before: number | undefined,
+  *         after: number | undefined,
+  *       },
+  *       starRating: number | undefined,
+  *       tags: string[],
+  *     };
+  */
+function matchesFilters(book, filters) {
+
+  // It's sufficient to match a single author in the list.
+  const authors = getAuthorNames(book.getAttribute('data-book-authors'));
+
+  const matchesAuthorFilter =
+    filters['authors'].length === 0 ||
+    authors.some(a => filters['authors'].indexOf(a) !== -1);
+
+  return matchesAuthorFilter;
+}

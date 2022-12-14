@@ -7,6 +7,30 @@
 
 <ul id="test_cases"></ul>
 
+<div
+  id="review_preview_1"
+  data-book-authors="John Jones"
+  data-book-publication-year="2001"
+  data-review-rating="3"
+  data-review-tags="fiction sci-fi"
+>
+
+<div
+  id="review_preview_2"
+  data-book-authors="John Jones and Sarah Smith"
+  data-book-publication-year="2021"
+  data-review-rating="4"
+  data-review-tags="non-fiction botany"
+>
+
+<div
+  id="review_preview_3"
+  data-book-authors="Sarah Smith"
+  data-book-publication-year="2021"
+  data-review-rating=""
+  data-review-tags="non-fiction botany"
+>
+
 <script>
   it('createPublicationYearLabel: a range of years', () => {
     assertEqual(
@@ -90,5 +114,47 @@
       getAuthorNames('Lisa McMullin, Tim Foley, and Timothy X. Atack'),
       ['Lisa McMullin', 'Tim Foley', 'Timothy X. Atack']
     );
+  })
+
+  const book1 = document.querySelector('#review_preview_1');
+  const book2 = document.querySelector('#review_preview_2');
+  const book3 = document.querySelector('#review_preview_3');
+
+  const emptyFilters = {
+    authors: [],
+    publicationYear: {
+      before: undefined,
+      after: undefined,
+    },
+    starRating: undefined,
+    tags: [],
+  };
+
+  it('matchesFilters: matches everything if there are no filters', () => {
+    assertTrue(matchesFilters(book1, emptyFilters));
+    assertTrue(matchesFilters(book2, emptyFilters));
+    assertTrue(matchesFilters(book3, emptyFilters));
+  })
+
+  it('matchesFilters: matching on a single author name', () => {
+    const filters = {
+      ...emptyFilters,
+      'authors': ['Sarah Smith'],
+    };
+
+    assertFalse(matchesFilters(book1, filters));
+    assertTrue(matchesFilters(book2, filters));
+    assertTrue(matchesFilters(book3, filters));
+  })
+
+  it('matchesFilters: matching on multiple author names', () => {
+    const filters = {
+      ...emptyFilters,
+      authors: ['Sarah Smith', 'Laura Lee'],
+    };
+
+    assertFalse(matchesFilters(book1, filters));
+    assertTrue(matchesFilters(book2, filters));
+    assertTrue(matchesFilters(book3, filters));
   })
 </script>
