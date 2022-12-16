@@ -14,18 +14,19 @@
 {% block content %}
   <h2>books i&rsquo;ve read</h2>
 
-  <p>jump to:
-  {% set linked_year = "" %}
-  {% for review_entry in reviews %}
-    {% if review_entry|year_read != linked_year %}
-      {% if review_entry|year_read == 'another time' %}
-        <a href="#another_time">another time</a>
-      {% else %}
-        <a href="#year_{{ review_entry|year_read }}">{{ review_entry|year_read }}</a> /
+  <p id="jumpTo">
+    jump to:
+    {% set linked_year = "" %}
+    {% for review_entry in reviews %}
+      {% if review_entry|year_read != linked_year %}
+        {% if review_entry|year_read == 'another time' %}
+          <a href="#another_time">another time</a>
+        {% else %}
+          <a href="#year_{{ review_entry|year_read }}">{{ review_entry|year_read }}</a> /
+        {% endif %}
       {% endif %}
-    {% endif %}
-    {% set_global linked_year = review_entry|year_read %}
-  {% endfor %}
+      {% set_global linked_year = review_entry|year_read %}
+    {% endfor %}
   </p>
 
   {% set heading_year = "" %}
