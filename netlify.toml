@@ -36,9 +36,6 @@
 
   [headers.values]
     # https://scotthelme.co.uk/hardening-your-http-response-headers/#content-security-policy
-    #
-    #   - youtube-nocookie.com is used for YouTube embeds
-    #
     content-security-policy = """\
       default-src ; \
       style-src 'self' 'unsafe-inline'; \
