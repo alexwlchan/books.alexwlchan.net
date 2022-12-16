@@ -5,6 +5,10 @@
 
 <link rel="shortcut icon" type="image/png" href="/favicons/191919.png">
 <link rel="shortcut icon" type="image/x-icon" href="/favicons/191919.ico">
+
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script src="/static/filters.js?commit={{ js_commit }}"></script>
 {% endblock %}
 
 {% block content %}
@@ -55,4 +59,8 @@
     {% include "_review_entry.html" %}
   {% endfor %}
   </details>
+
+  <script>
+    console.log(getAuthorNames());
+  </script>
 {% endblock %}
