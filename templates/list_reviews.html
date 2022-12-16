@@ -16,16 +16,18 @@
 
   <p id="jumpTo">
     jump to:
-    {% set linked_year = "" %}
-    {% for review_entry in reviews %}
-      {% if review_entry|year_read != linked_year %}
-        {% if review_entry|year_read == 'another time' %}
-          <a href="#another_time">another time</a>
-        {% else %}
-          <a href="#year_{{ review_entry|year_read }}">{{ review_entry|year_read }}</a> /
-        {% endif %}
+
+    {% set_global years = [] %}
+    {% for rev in reviews %}
+        {% set_global years = years | concat(with=rev|year_read) %}
+    {% endfor %}
+
+    {% for y in years | unique %}
+      {% if y == 'another time' %}
+        <a href="#another_time">another time</a>
+      {% else %}
+        <a href="#year_{{ y }}">{{ y }}</a> /
       {% endif %}
-      {% set_global linked_year = review_entry|year_read %}
     {% endfor %}
   </p>
 
