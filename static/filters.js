@@ -40,7 +40,7 @@ function createPublicationYearLabel(range) {
   *      ~> ['John Smith', 'Sarah Jones']
   *
   */
-function getAuthorNames(authors) {
+function parseAuthorNames(authors) {
   if (authors === 'Alan & Maureen Carter') {
     return ['Alan Carter', 'Maureen Carter'];
   }
@@ -53,6 +53,20 @@ function getAuthorNames(authors) {
     .split(/,|&| and /)
     .map(s => s.trim())
     .filter(s => s.length > 0);
+}
+
+/** Returns the names of all the authors on the "list reviews" page. */
+function getAuthorNames() {
+  const authorsSet = new Set(
+     [...document.querySelectorAll('.review_preview')]
+       .flatMap(rp => parseAuthorNames(rp.getAttribute('data-book-authors')))
+       .filter(s => s.length > 0)
+   );
+
+   const authors = Array.from(authorsSet);
+   authors.sort();
+
+   return authors;
 }
 
 /** Returns true if a given book matches the specified filters.

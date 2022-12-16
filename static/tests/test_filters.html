@@ -75,51 +75,51 @@
     );
   })
 
-  it('getAuthorNames: single author', () => {
+  it('parseAuthorNames: single author', () => {
     assertEqual(
-      getAuthorNames('Laura Jane Williams'),
+      parseAuthorNames('Laura Jane Williams'),
       ['Laura Jane Williams']
     );
   })
 
-  it('getAuthorNames: single author with period', () => {
+  it('parseAuthorNames: single author with period', () => {
     assertEqual(
-      getAuthorNames('J. K. Rowling'),
+      parseAuthorNames('J. K. Rowling'),
       ['J. K. Rowling']
     );
   })
 
-  it('getAuthorNames: single author with ‘and’ as a substring', () => {
+  it('parseAuthorNames: single author with ‘and’ as a substring', () => {
     assertEqual(
-      getAuthorNames('B. Jack Copeland'),
+      parseAuthorNames('B. Jack Copeland'),
       ['B. Jack Copeland']
     );
   })
 
-  it('getAuthorNames: multiple authors with commas', () => {
+  it('parseAuthorNames: multiple authors with commas', () => {
     assertEqual(
-      getAuthorNames('Ben Crystal, David Crystal'),
+      parseAuthorNames('Ben Crystal, David Crystal'),
       ['Ben Crystal', 'David Crystal']
     );
   })
 
-  it('getAuthorNames: multiple authors with ampersand', () => {
+  it('parseAuthorNames: multiple authors with ampersand', () => {
     assertEqual(
-      getAuthorNames('Douglas Adams & Mark Carwadine'),
+      parseAuthorNames('Douglas Adams & Mark Carwadine'),
       ['Douglas Adams', 'Mark Carwadine']
     );
   })
 
-  it('getAuthorNames: multiple authors with and', () => {
+  it('parseAuthorNames: multiple authors with and', () => {
     assertEqual(
-      getAuthorNames('F.H. Hinsley and Alan Tripp'),
+      parseAuthorNames('F.H. Hinsley and Alan Tripp'),
       ['F.H. Hinsley', 'Alan Tripp']
     );
   })
 
-  it('getAuthorNames: multiple authors with an Oxford comma', () => {
+  it('parseAuthorNames: multiple authors with an Oxford comma', () => {
     assertEqual(
-      getAuthorNames('Lisa McMullin, Tim Foley, and Timothy X. Atack'),
+      parseAuthorNames('Lisa McMullin, Tim Foley, and Timothy X. Atack'),
       ['Lisa McMullin', 'Tim Foley', 'Timothy X. Atack']
     );
   })
