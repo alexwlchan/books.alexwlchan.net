@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.5.2 - 2022-12-16
+
+Provide releases on more platforms; in particular a MUSL-linked Linux binary that might play nicer in Netlify's deploy environment.
+
 ## v1.5.1 - 2022-12-12
 
 Lay some preliminary groundwork for filtering, in particular exposing the last commit to modify `static/filters.js` as a template variable.

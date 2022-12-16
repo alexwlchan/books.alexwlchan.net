@@ -35,7 +35,7 @@ if __name__ == "__main__":
 
     try:
         linux_asset = next(
-            a for a in assets if a["name"] == "vfd-x86_64-unknown-linux-gnu.tar.gz"
+            a for a in assets if a["name"] == "vfd-x86_64-unknown-linux-musl.tar.gz"
         )
     except IndexError:
         print(
