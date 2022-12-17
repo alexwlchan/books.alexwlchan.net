@@ -14,15 +14,15 @@
 {% block content %}
   <h2>books i&rsquo;ve read</h2>
 
+  {% set_global years = [] %}
+  {% for rev in reviews %}
+    {% set_global years = years | concat(with=rev|year_read) | unique %}
+  {% endfor %}
+
   <p id="jumpTo">
     jump to:
 
-    {% set_global years = [] %}
-    {% for rev in reviews %}
-        {% set_global years = years | concat(with=rev|year_read) %}
-    {% endfor %}
-
-    {% for y in years | unique %}
+    {% for y in years %}
       {% if y == 'another time' %}
         <a id="jumpTo-{{ y }}" href="#another_time">another time</a>
       {% else %}
@@ -35,37 +35,76 @@
     {% endfor %}
   </p>
 
-  {% set heading_year = "" %}
+  {% for y in years %}
+    <div class="divider" data-year="{{ y }}"><img src="/static/book.svg"></div>
 
-  {% for review_entry in reviews %}
-    {% if review_entry|year_read != heading_year %}
+    {% set_global reviews_in_year = [] %}
+    {% set_global unfinished_reviews = 0 %}
 
-      <div class="divider"><img src="/static/book.svg"></div>
+    {% for rev in reviews %}
+      {% if rev|year_read == y %}
+        {% set_global reviews_in_year = reviews_in_year | concat(with=rev) %}
 
-      {% if review_entry|year_read == this_year %}
-        {% set count = reviews|books_in_year(year = review_entry|year_read) %}
-        <h3 id="year_{{ review_entry|year_read }}">the {{ count }} book{% if count > 1 %}s{% endif %} i&rsquo;ve read so far in {{ review_entry|year_read }}</h3>
-      {% elif review_entry|year_read == 'another time' %}
-        <h3 id="another_time">books i read at another time</h3>
-
-        <details>
-          <summary style="margin-bottom: 1em">
-            this is an (incomplete) list of the books I read before I started keeping proper records.
-            the list is ordered by publication date, not reading date, and lacks a lot of detail.
-          </summary>
-
-          {% set_global read_at_another_time = true %}
-
-      {% else %}
-        {% set count = reviews|books_in_year(year = review_entry|year_read) %}
-        <h3 id="year_{{ review_entry|year_read }}">the {{ count }} book{% if count > 1 %}s{% endif %} i read in {{ review_entry|year_read }}</h3>
+        {% if rev.review.did_not_finish %}
+          {% set_global unfinished_reviews = unfinished_reviews + 1 %}
+        {% endif %}
       {% endif %}
-      {% set_global heading_year = review_entry|year_read %}
+    {% endfor %}
+
+    {% set_global is_this_year = y == this_year %}
+    {% set_global total_reviews = reviews_in_year|length %}
+
+    {% if y != 'another time' %}
+      <h3
+        id="year_{{ y }}"
+        class="year_heading"
+        data-year="{{ y }}"
+        {% if is_this_year %}data-is-this-year{% endif %}
+      >
+        {{ y }}:
+        {% if unfinished_reviews == 0 %}
+          {% if is_this_year %}
+            I’ve read {{ total_reviews }} book{% if total_reviews > 1 %}s{% endif %} so far
+          {% else %}
+            I read {{ total_reviews }} book{% if total_reviews > 1 %}s{% endif %}
+          {% endif %}
+        {% else %}
+          {% if is_this_year %}
+            So far I’ve started
+          {% else %}
+            I started
+          {% endif %}
+          {{ total_reviews }} book{% if total_reviews > 1 %}s{% endif %},
+          finished {{ total_reviews - unfinished_reviews }}
+        {% endif %}
+      </h3>
+
+    {% else %}
+      <h3
+        id="year_another_time"
+        class="year_heading"
+        data-year="another time"
+      >
+        books I read at another time
+      </h3>
+
+      <details>
+        <summary style="margin-bottom: 1em">
+          this is an (incomplete) list of the books I read before I started keeping proper records.
+          the list is ordered by publication date, not reading date, and lacks a lot of detail.
+        </summary>
+
+        {% set_global read_at_another_time = true %}
     {% endif %}
 
-    {% include "_review_entry.html" %}
+    {% for review_entry in reviews_in_year %}
+      {% include "_review_entry.html" %}
+    {% endfor %}
+
+    {% if y == 'another time' %}
+      </details>
+    {% endif %}
   {% endfor %}
-  </details>
 
   <script>
     console.log(getAuthorNames());
