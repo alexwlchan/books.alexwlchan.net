@@ -292,6 +292,40 @@ footer a:hover {
 /* Filters require JavaScript, so they're hidden by default and made visible
  * by JavaScript on initial page load.
  * cf. corresponding JS in window.onload in list_reviews.html */
-#filters, #filtersApplied {
+#filterBar, #filtersApplied {
   display: none;
+}
+
+ul#author_filters {
+  padding: 0;
+  padding-right: 10px;
+  margin: 0;
+  list-style: none;
+}
+
+.tippy-box, .tippy-content {
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+.tippy-arrow {
+  color: white;
+
+    /* The arrow is rendered separately to the rest of the box; this makes
+     * it appear over the box shadow which greys out the rest of the page */
+  z-index: 1000;
+}
+
+.tippy-content {
+  background: white;
+  color: black;
+
+  line-height: 1.75em;
+
+  padding: 20px 22px;
+  max-height: 450px;
+  overflow: scroll;
+
+  /* This renders a perma-shadow that greys out the rest of the page. */
+  box-shadow: 0px 5px 10000px 10000px rgba(0, 0, 0, 0.5);
 }

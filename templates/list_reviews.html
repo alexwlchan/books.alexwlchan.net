@@ -35,8 +35,12 @@
     {% endfor %}
   </p>
 
-  <p id="filters">
+  <p id="filterBar">
     filter by:
+    <button id="authorFilters">author</button>
+    <button id="publicationFilters">publication year</button>
+    <button id="ratingFilters">rating</button>
+    <button id="tagFilters">tags</button>
   </p>
 
   <p id="filtersApplied"></p>
@@ -113,12 +117,26 @@
   {% endfor %}
 
   <script>
+    // Create the initial filter state.
+    // TODO: Do I want filters to have permalinks?  If so, this should
+    // be loaded from URL query state.
+    var filters = createEmptyFilters();
+
+    function logFilters() {
+      console.log(JSON.stringify(filters));
+    }
+
     window.addEventListener("load", (event) => {
 
       // Filters require JavaScript, so they're hidden by default and
       // made visible on initial page load.
       // cf. corresponding CSS in style.css
-      document.getElementById("filters").style.display = "block";
+      document.getElementById("filterBar").style.display = "block";
+
+      createAuthorFilter("authorFilters", filters);
+      createPublicationYearFilter("publicationYearFilters", filters);
+      createRatingFilter("ratingFilters", filters);
+      createTagFilter("tagFilters", filters);
     });
   </script>
 {% endblock %}

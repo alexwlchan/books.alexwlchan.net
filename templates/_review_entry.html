@@ -14,6 +14,7 @@
   data-book-publication-year="{{ book.publication_year }}"
   data-review-rating="{% if review.rating %}{{ review.rating }}{% endif %}"
   data-review-tags="{{ book.tags | join(sep=" ") }}"
+  {% if review.did_not_finish %}data-did-not-finish{% endif %}
 >
   {% if not read_at_another_time %}
   <a href="/reviews/{{ slug }}">
