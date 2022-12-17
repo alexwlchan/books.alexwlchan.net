@@ -35,6 +35,16 @@
     {% endfor %}
   </p>
 
+  <p id="filterBar">
+    filter by:
+    <button id="authorFilters">author</button>
+    <button id="publicationYearFilters">publication year</button>
+    <button id="ratingFilters">rating</button>
+    <button id="tagFilters">tags</button>
+  </p>
+
+  <p id="filtersApplied"></p>
+
   {% for y in years %}
     <div class="divider" data-year="{{ y }}"><img src="/static/book.svg"></div>
 
@@ -70,7 +80,7 @@
           {% endif %}
         {% else %}
           {% if is_this_year %}
-            So far I’ve started
+            so far I’ve started
           {% else %}
             I started
           {% endif %}
@@ -88,7 +98,7 @@
         books I read at another time
       </h3>
 
-      <details>
+      <details id="another_time_books">
         <summary style="margin-bottom: 1em">
           this is an (incomplete) list of the books I read before I started keeping proper records.
           the list is ordered by publication date, not reading date, and lacks a lot of detail.
@@ -107,6 +117,22 @@
   {% endfor %}
 
   <script>
-    console.log(getAuthorNames());
+    // Create the initial filter state.
+    // TODO: Do I want filters to have permalinks?  If so, this should
+    // be loaded from URL query state.
+    var filters = createEmptyFilters();
+
+    window.addEventListener("load", (event) => {
+
+      // Filters require JavaScript, so they're hidden by default and
+      // made visible on initial page load.
+      // cf. corresponding CSS in style.css
+      document.getElementById("filterBar").style.display = "block";
+
+      createAuthorFilter(filters);
+      createPublicationYearFilter(filters);
+      createRatingFilter(filters);
+      createTagFilter(filters);
+    });
   </script>
 {% endblock %}
