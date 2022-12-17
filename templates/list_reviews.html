@@ -37,13 +37,17 @@
 
   <p id="filterBar">
     filter by:
+    <button id="tagFilters">tags</button>
+    <button id="ratingFilters">rating</button>
     <button id="authorFilters">author</button>
     <button id="publicationYearFilters">publication year</button>
-    <button id="ratingFilters">rating</button>
-    <button id="tagFilters">tags</button>
   </p>
 
   <p id="filtersApplied"></p>
+
+  <p id="noResults">
+    There are no reviews that match those filters.
+  </p>
 
   {% for y in years %}
     <div class="divider" data-year="{{ y }}"><img src="/static/book.svg"></div>

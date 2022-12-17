@@ -391,6 +391,8 @@ function applyFilters(filters) {
 
   const selectedReviewIds = new Set(selectedReviews.map(rp => rp.getAttribute("id")));
 
+  document.getElementById("noResults").style.display = selectedReviews.length > 0 ? "none" : "block";
+
   // How many reviews did I write/finish in each year?  Note that these
   // are slightly different, e.g. if I filter for books by an author and
   // I didn't finish any of their books in a year

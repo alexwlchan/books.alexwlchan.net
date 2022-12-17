@@ -292,7 +292,7 @@ footer a:hover {
 /* Filters require JavaScript, so they're hidden by default and made visible
  * by JavaScript on initial page load.
  * cf. corresponding JS in window.onload in list_reviews.html */
-#filterBar, #filtersApplied {
+#filterBar, #filtersApplied, #noResults {
   display: none;
 }
 
