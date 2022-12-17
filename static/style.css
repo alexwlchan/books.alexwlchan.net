@@ -284,3 +284,14 @@ footer a:hover {
     box-shadow: 0px 5px 5px rgba(0,0,0,0.25);
   }
 }
+
+/************************************************/
+/* Styles for the filter bar and filter pickers */
+/************************************************/
+
+/* Filters require JavaScript, so they're hidden by default and made visible
+ * by JavaScript on initial page load.
+ * cf. corresponding JS in window.onload in list_reviews.html */
+#filters, #filtersApplied {
+  display: none;
+}

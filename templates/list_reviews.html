@@ -35,6 +35,12 @@
     {% endfor %}
   </p>
 
+  <p id="filters">
+    filter by:
+  </p>
+
+  <p id="filtersApplied"></p>
+
   {% for y in years %}
     <div class="divider" data-year="{{ y }}"><img src="/static/book.svg"></div>
 
@@ -107,6 +113,12 @@
   {% endfor %}
 
   <script>
-    console.log(getAuthorNames());
+    window.addEventListener("load", (event) => {
+
+      // Filters require JavaScript, so they're hidden by default and
+      // made visible on initial page load.
+      // cf. corresponding CSS in style.css
+      document.getElementById("filters").style.display = "block";
+    });
   </script>
 {% endblock %}
