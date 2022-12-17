@@ -38,7 +38,7 @@
   <p id="filterBar">
     filter by:
     <button id="authorFilters">author</button>
-    <button id="publicationFilters">publication year</button>
+    <button id="publicationYearFilters">publication year</button>
     <button id="ratingFilters">rating</button>
     <button id="tagFilters">tags</button>
   </p>
@@ -80,7 +80,7 @@
           {% endif %}
         {% else %}
           {% if is_this_year %}
-            So far I’ve started
+            so far I’ve started
           {% else %}
             I started
           {% endif %}
@@ -98,7 +98,7 @@
         books I read at another time
       </h3>
 
-      <details>
+      <details id="another_time_books">
         <summary style="margin-bottom: 1em">
           this is an (incomplete) list of the books I read before I started keeping proper records.
           the list is ordered by publication date, not reading date, and lacks a lot of detail.
@@ -122,10 +122,6 @@
     // be loaded from URL query state.
     var filters = createEmptyFilters();
 
-    function logFilters() {
-      console.log(JSON.stringify(filters));
-    }
-
     window.addEventListener("load", (event) => {
 
       // Filters require JavaScript, so they're hidden by default and
@@ -133,10 +129,10 @@
       // cf. corresponding CSS in style.css
       document.getElementById("filterBar").style.display = "block";
 
-      createAuthorFilter("authorFilters", filters);
-      createPublicationYearFilter("publicationYearFilters", filters);
-      createRatingFilter("ratingFilters", filters);
-      createTagFilter("tagFilters", filters);
+      createAuthorFilter(filters);
+      createPublicationYearFilter(filters);
+      createRatingFilter(filters);
+      createTagFilter(filters);
     });
   </script>
 {% endblock %}
