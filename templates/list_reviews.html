@@ -24,9 +24,9 @@
 
     {% for y in years | unique %}
       {% if y == 'another time' %}
-        <a data-jumpTo-year="{{ y }}" href="#another_time">another time</a>
+        <a id="jumpTo-{{ y }}" href="#another_time">another time</a>
       {% else %}
-        <a data-jumpTo-year="{{ y }}" href="#year_{{ y }}">{{ y }}</a>
+        <a id="jumpTo-{{ y }}" href="#year_{{ y }}">{{ y }}</a>
       {% endif %}
 
       {% if not loop.last %}
