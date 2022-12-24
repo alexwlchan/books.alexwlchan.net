@@ -250,4 +250,32 @@
     assertFalse(matchesFilters(book3, filters));
     assertFalse(matchesFilters(book4, filters));
   })
+  
+  it('createSummaryMessage: renders the right messages', () => {
+  	assertEqual(
+			createSummaryMessage({
+				finishedCount: 10, year: 2022, isThisYear: true
+			}),
+			'2022: I’ve read 10 books so far'
+  	);
+  	assertEqual(
+			createSummaryMessage({
+				finishedCount: 1, year: 2023, isThisYear: true
+			}),
+			'2023: I’ve read 1 book so far'
+  	);
+		
+  	assertEqual(
+			createSummaryMessage({
+				finishedCount: 10, year: 2019, isThisYear: false
+			}),
+			'2019: I read 10 books'
+  	);
+  	assertEqual(
+			createSummaryMessage({
+				finishedCount: 1, year: 2019, isThisYear: false
+			}),
+			'2019: I read 1 book'
+  	);
+  })
 </script>

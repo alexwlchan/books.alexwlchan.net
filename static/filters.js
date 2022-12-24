@@ -380,6 +380,16 @@ function pluralize(number, noun) {
   return `${number} ${noun}${number > 1 ? 's' : ''}`;
 }
 
+function createSummaryMessage(options) {
+	const { finishedCount, year, isThisYear } = options;
+	
+	if (isThisYear) {
+		return `${year}: I’ve read ${finishedCount} book${finishedCount > 1 ? 's' : ''} so far`;
+	} else {
+		return `${year}: I read ${finishedCount} book${finishedCount > 1 ? 's' : ''}`;
+	}
+}
+
 /** Apply the current set of filters to the page.
   *
   * This updates the page state, including which reviews/headings should

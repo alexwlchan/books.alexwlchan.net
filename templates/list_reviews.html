@@ -53,20 +53,19 @@
     <div class="divider" data-year="{{ y }}"><img src="/static/book.svg"></div>
 
     {% set_global reviews_in_year = [] %}
-    {% set_global unfinished_reviews = 0 %}
+    {% set_global finished_books = 0 %}
 
     {% for rev in reviews %}
       {% if rev|year_read == y %}
         {% set_global reviews_in_year = reviews_in_year | concat(with=rev) %}
 
-        {% if rev.review.did_not_finish %}
-          {% set_global unfinished_reviews = unfinished_reviews + 1 %}
+        {% if not rev.review.did_not_finish %}
+          {% set_global finished_books = finished_books + 1 %}
         {% endif %}
       {% endif %}
     {% endfor %}
 
     {% set_global is_this_year = y == this_year %}
-    {% set_global total_reviews = reviews_in_year|length %}
 
     {% if y != 'another time' %}
       <h3
@@ -76,20 +75,10 @@
         {% if is_this_year %}data-is-this-year{% endif %}
       >
         {{ y }}:
-        {% if unfinished_reviews == 0 %}
-          {% if is_this_year %}
-            I’ve read {{ total_reviews }} book{% if total_reviews > 1 %}s{% endif %} so far
-          {% else %}
-            I read {{ total_reviews }} book{% if total_reviews > 1 %}s{% endif %}
-          {% endif %}
+        {% if is_this_year %}
+		  I’ve read {{ finished_books }} book{% if finished_books > 1 %}s{% endif %} so far
         {% else %}
-          {% if is_this_year %}
-            so far I’ve started
-          {% else %}
-            I started
-          {% endif %}
-          {{ total_reviews }} book{% if total_reviews > 1 %}s{% endif %},
-          finished {{ total_reviews - unfinished_reviews }}
+          I read {{ finished_books }} book{% if finished_books > 1 %}s{% endif %}
         {% endif %}
       </h3>
 
