@@ -1,6 +1,6 @@
 ---
 book:
-  author: Terry Pratchett
+  author: Neil Gaiman & Terry Pratchett
   cover:
     name: good-omens.jpg
     tint_color: '#717170'
