@@ -15,3 +15,6 @@ review:
   rating: 3
 ---
 
+An interesting concept and an easy read -- a synchronised swimming team who escape the Soviet Union -- but I was never that engaged.
+This seems like a potentially rich topic, but I didn't get enough time with any of the women to get much of a sense of their stories.
+Nina's story of losing her language is the most interesting; I'd have liked to dig into that some more.
