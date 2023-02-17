@@ -37,10 +37,10 @@
 
   <p id="filterBar">
     filter by:
-    <button id="tagFilters">tags</button>
-    <button id="ratingFilters">rating</button>
-    <button id="authorFilters">author</button>
-    <button id="publicationYearFilters">publication year</button>
+    <button id="tagFilters" onclick="document.getElementById('dialog-tagFilters').showModal();">tags</button>
+    <button id="ratingFilters" onclick="document.getElementById('dialog-ratingFilters').showModal();">rating</button>
+    <button id="authorFilters" onclick="document.getElementById('dialog-authorFilters').showModal();">author</button>
+    <button id="publicationYearFilters" onclick="document.getElementById('dialog-publicationYearFilters').showModal();">publication year</button>
   </p>
 
   <p id="filtersApplied"></p>

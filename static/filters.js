@@ -160,17 +160,10 @@ function Counter(array) {
   * filter content changes outside the popover itself (i.e. in removeFilter)
   */
 function createTippy(id, content) {
-  tippy(id, {
-    content,
-    trigger: 'click',
-    placement: 'bottom',
-    allowHTML: true,
-    theme: 'light',
-    // The default width is 350px, but we want arbitrary width
-    maxWidth: '',
-    // https://atomiks.github.io/tippyjs/v6/all-props/#interactive
-    interactive: true,
-  });
+  const dialog = document.createElement("dialog");
+  dialog.innerHTML = content;
+  dialog.id = `dialog-${id.replace('#', '')}`;
+  document.body.appendChild(dialog);
 }
 
 function createAuthorFilter(filters) {
@@ -382,7 +375,7 @@ function pluralize(number, noun) {
 
 function createSummaryMessage(options) {
 	const { finishedCount, year, isThisYear } = options;
-	
+
 	if (isThisYear) {
 		return `${year}: I’ve read ${finishedCount} book${finishedCount > 1 ? 's' : ''} so far`;
 	} else {
