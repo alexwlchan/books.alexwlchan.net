@@ -367,3 +367,13 @@ ul#author_filters, ul#star_rating_filters {
 #jumpTo a[disabled]:hover {
   background: none;
 }
+
+dialog {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border-radius: 10px;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+}
