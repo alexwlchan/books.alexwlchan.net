@@ -21,3 +21,5 @@ Some fun imagined conversations in the corridors of power during Theresa May's p
 Michael Gove as an Eldritch horror.
 An army of ducks hired to ferry goods across the channel.
 Gavin Williamson's obsession with *Warhammer 40K*.
+
+It's told in the style of a far-future historian looking back, with appropriately misinformed commentary on what the twenty-first century was like.
