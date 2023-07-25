@@ -11,6 +11,7 @@ book:
     - mythology
     - asexuality
     - fairy-tales
+    - !ace-book-club
 review:
   date_read: 2022-11-22
   format: ebook
