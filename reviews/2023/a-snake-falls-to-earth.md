@@ -13,7 +13,7 @@ book:
 review:
   date_read: 2023-08-09
   format: hardback
-  rating: 5
+  rating: 4
 ---
 
 A fun and interesting fantasy from the same author as [*Elatsoe*](/reviews/elatsoe), which I read and enjoyed earlier in the year.
