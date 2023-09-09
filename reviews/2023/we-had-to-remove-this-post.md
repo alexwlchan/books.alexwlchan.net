@@ -1,6 +1,6 @@
 ---
 book:
-  author: Hannah Bervoets
+  author: Hanna Bervoets
   translated_by: Emma Rault
   cover:
     name: we-had-to-remove-this-post.jpg
