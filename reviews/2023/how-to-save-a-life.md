@@ -14,7 +14,7 @@ book:
 review:
   date_read: 2023-09-07
   format: paperback
-  rating: 3
+  rating: 2
 ---
 
 This book really didn't land with me.
