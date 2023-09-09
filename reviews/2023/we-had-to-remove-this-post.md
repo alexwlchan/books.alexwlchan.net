@@ -15,7 +15,7 @@ book:
 review:
   date_read: 2023-09-09
   format: hardback
-  rating: 5
+  rating: 4
 ---
 
 A powerful, gripping book about Kayleigh, a content moderator for an unnamed social media site.
