@@ -19,7 +19,11 @@
 >
   <a href="{{ review_entry.url }}">
     <div class="book_thumbnail">
-      <img src="/covers/{{ review | year_read }}/{{ book.cover.name }}" style="{{ cover_dimensions | get_dimensions }}" loading="lazy">
+      <img
+        src="/thumbs/{{ review | year_read }}/{{ book.cover.name }}"
+        style="{{ cover_dimensions | get_dimensions }}"
+        loading="lazy"
+      >
     </div>
 
     <div class="book_metadata">

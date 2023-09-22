@@ -12,6 +12,9 @@ permalink: "/:year/:title/"
 include:
   - "_redirects"
 
+keep_files:
+  - "thumbs"
+
 includes_dir: "_jekyll/includes"
 layouts_dir: "_jekyll/layouts"
 plugins_dir:
