@@ -4,11 +4,15 @@ require_relative 'css_helpers'
 
 module Jekyll
   module IndexHelpers
-    def grouped_reviews(pages)
+    def all_reviews(pages)
       pages
-        .filter { |p| p["url"] != "/reviews/" }
+        .filter { |p| p["url"] != "/reviews/" and p["url"] != "/" }
         .sort_by { |p| p["review"]["date_read"] }
         .reverse
+    end
+
+    def grouped_reviews(pages)
+      all_reviews(pages)
         .group_by { |p| p["review"]["date_read"][0..3] }
         .to_a
         .sort_by { |year, _| year }
