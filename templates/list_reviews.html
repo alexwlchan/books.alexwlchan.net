@@ -1,0 +1,118 @@
+{% block content %}
+  <h2>books i&rsquo;ve read</h2>
+
+  {% set_global years = [] %}
+  {% for rev in reviews %}
+    {% set_global years = years | concat(with=rev|year_read) | unique %}
+  {% endfor %}
+
+  <p id="jumpTo">
+    jump to:
+
+    {% for y in years %}
+      {% if y == 'another time' %}
+        <a id="jumpTo-{{ y }}" href="#another_time">another time</a>
+      {% else %}
+        <a id="jumpTo-{{ y }}" href="#year_{{ y }}">{{ y }}</a>
+      {% endif %}
+
+      {% if not loop.last %}
+        <span aria-hidden="true">/</span>
+      {% endif %}
+    {% endfor %}
+  </p>
+
+  <p id="filterBar">
+    filter by:
+    <button id="tagFilters">tags</button>
+    <button id="ratingFilters">rating</button>
+    <button id="authorFilters">author</button>
+    <button id="publicationYearFilters">publication year</button>
+  </p>
+
+  <p id="filtersApplied"></p>
+
+  <p id="noResults">
+    There are no reviews that match those filters.
+  </p>
+
+  {% for y in years %}
+    <div class="divider" data-year="{{ y }}"><img src="/static/book.svg"></div>
+
+    {% set_global reviews_in_year = [] %}
+    {% set_global finished_books = 0 %}
+
+    {% for rev in reviews %}
+      {% if rev|year_read == y %}
+        {% set_global reviews_in_year = reviews_in_year | concat(with=rev) %}
+
+        {% if not rev.review.did_not_finish %}
+          {% set_global finished_books = finished_books + 1 %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+    {% set_global is_this_year = y == this_year %}
+
+    {% if y != 'another time' %}
+      <h3
+        id="year_{{ y }}"
+        class="year_heading"
+        data-year="{{ y }}"
+        {% if is_this_year %}data-is-this-year{% endif %}
+      >
+        {{ y }}:
+        {% if is_this_year %}
+		  I’ve read {{ finished_books }} book{% if finished_books > 1 %}s{% endif %} so far
+        {% else %}
+          I read {{ finished_books }} book{% if finished_books > 1 %}s{% endif %}
+        {% endif %}
+      </h3>
+
+    {% else %}
+      <h3
+        id="year_another_time"
+        class="year_heading"
+        data-year="another time"
+      >
+        books I read at another time
+      </h3>
+
+      <details id="another_time_books">
+        <summary style="margin-bottom: 1em">
+          this is an (incomplete) list of the books I read before I started keeping proper records.
+          the list is ordered by publication date, not reading date, and lacks a lot of detail.
+        </summary>
+
+        {% set_global read_at_another_time = true %}
+    {% endif %}
+
+    {% for review_entry in reviews_in_year %}
+      {% include "_review_entry.html" %}
+    {% endfor %}
+
+    {% if y == 'another time' %}
+      </details>
+    {% endif %}
+  {% endfor %}
+
+  <script>
+    // Create the initial filter state.
+    // TODO: Do I want filters to have permalinks?  If so, this should
+    // be loaded from URL query state.
+    var filters = createEmptyFilters();
+
+    window.addEventListener("load", (event) => {
+
+      // Filters require JavaScript, so they're hidden by default and
+      // made visible on initial page load.
+      // cf. corresponding CSS in style.css
+      document.getElementById("filterBar").style.display = "block";
+
+      createAuthorFilter(filters);
+      createPublicationYearFilter(filters);
+      createRatingFilter(filters);
+      createTagFilter(filters);
+    });
+  </script>
+{% endblock %}

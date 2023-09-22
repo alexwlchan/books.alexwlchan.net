@@ -1,10 +1,10 @@
-{% set book = review_entry.book %}
-{% set review = review_entry.review %}
-{% set slug = review_entry.slug %}
-{% set cover_dimensions = review_entry.derived_cover_info %}
+{% assign book = review_entry.book %}
+{% assign review = review_entry.review %}
+{% assign slug = review_entry.slug %}
+{% assign cover_dimensions = review_entry.derived_cover_info %}
 
 <style>
-  {% include "_review_style.css" %}
+  {% include review_style.css %}
 </style>
 
 <div
@@ -13,19 +13,13 @@
   data-book-authors="{% if book.author %}{{ book.author }}{% endif %}"
   data-book-publication-year="{{ book.publication_year }}"
   data-review-rating="{% if review.rating %}{{ review.rating }}{% endif %}"
-  data-review-tags="{{ book.tags | join(sep=" ") }}"
+  data-review-tags="{{ book.tags | join: " " }}"
   data-review-year="{{ review_entry|year_read }}"
   {% if review.did_not_finish %}data-did-not-finish{% endif %}
 >
-  {% if not read_at_another_time %}
   <a href="/reviews/{{ slug }}">
-  {% endif %}
     <div class="book_thumbnail">
-      {% if cover_dimensions.width / 110.0 > cover_dimensions.height / 130.0 %}
-        <img src="/thumbnails/{{ book.cover.name }}" style="width: 110px; height: {{ cover_dimensions.height * 110 / cover_dimensions.width | round}}px;" loading="lazy">
-      {% else %}
-        <img src="/thumbnails/{{ book.cover.name }}" style="height: 130px; width: {{ cover_dimensions.width * 130 / cover_dimensions.height | round }}px;" loading="lazy">
-      {% endif %}
+      <img src="/thumbnails/{{ book.cover.name }}" style="{{ cover_dimensions | get_dimensions }}" loading="lazy">
     </div>
 
     <div class="book_metadata">
@@ -61,7 +55,7 @@
             <br/>
           {% endif %}
 
-          {% if review.rating and not review.did_not_finish %}
+          {% if review.rating and review.did_not_finish != true %}
             <span class="star_rating">
               {{ review.rating | star_rating }}
             </span>
@@ -73,7 +67,5 @@
         </small>
       </p>
     </div>
-  {% if not read_at_another_time %}
   </a>
-  {% endif %}
 </div>

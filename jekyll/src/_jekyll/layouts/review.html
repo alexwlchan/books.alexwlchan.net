@@ -16,6 +16,11 @@ layout: compress
 
     <style>
       {% include _review.css %}
+
+      aside #shelf_background {
+        background: url({{ tint_color | create_shelf_data_uri }});
+        background-size: auto 100%;
+      }
     </style>
 
     <meta name="twitter:card" content="summary">

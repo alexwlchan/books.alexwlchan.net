@@ -8,6 +8,13 @@ layout: compress
   <head>
     {% include_cached head.html %}
 
+    <style>
+      aside #shelf_background {
+        background: url({{ tint_color | create_shelf_data_uri }});
+        background-size: auto 100%;
+      }
+    </style>
+
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@alexwlchan"/>
     <meta name="twitter:title" content="alexwlchan's book reviews"/>
