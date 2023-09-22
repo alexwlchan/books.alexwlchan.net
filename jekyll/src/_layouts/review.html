@@ -1,5 +1,34 @@
 ---
-layout: default
+layout: compress
 ---
 
-This is where the page is!
+{% assign book = page.book %}
+{% assign review = page.review %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include_cached head.html %}
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@alexwlchan"/>
+    <meta name="twitter:title" content="alexwlchan's review of {{ book.title }}"/>
+    <meta name="twitter:image" content="{{ site.url }}/squares/{{ book.cover.name }}"/>
+
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ site.url }}/reviews/{{ slug }}">
+    <meta property="og:title" content="{{ book.title }}">
+    <meta property="og:image" content="{{ site.url }}/squares/{{ book.cover.name }}"/>
+    <meta property="og:description" content="{{ book | book_description }}. {{ review | review_description }}">
+
+    <meta name="theme-color" content="{{ book.cover.tint_color }}">
+  </head>
+
+  <body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+
+    <main id="main" tabindex="-1">
+      {{ content }}
+    </main>
+  </body>
+</html>
