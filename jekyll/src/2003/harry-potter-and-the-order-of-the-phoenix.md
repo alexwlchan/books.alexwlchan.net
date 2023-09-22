@@ -1,4 +1,5 @@
 ---
+layout: review
 book:
   author: J. K. Rowling
   cover:
@@ -13,4 +14,3 @@ review:
   date_read: 2003-06
   format: hardback
 ---
-
