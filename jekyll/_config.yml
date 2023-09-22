@@ -12,6 +12,9 @@ permalink: "/:year/:title/"
 include:
   - "_redirects"
 
+exclude:
+  - "covers"
+
 keep_files:
   - "social_icons"
   - "thumbs"
