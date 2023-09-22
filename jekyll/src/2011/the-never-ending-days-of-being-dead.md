@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: Marcus Chown
+  contributors:
+    - name: Marcus Chown
   cover:
     name: the-never-ending-days-of-being-dead.jpg
     tint_color: '#9d565e'

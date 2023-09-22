@@ -31,25 +31,10 @@
       </p>
       <p>
         <small>
-          {% if book.author %}
-            by {{ book.author }}
-            {%- if book.editor -%}
-            ,
-            {% endif %}
-          {% endif %}
+          {{ book | credit_line }}
 
-          {% if book.editor %}
-          edited by {{ book.editor }}
-          {% endif %}
+          <br/>
 
-          {% if book.retold_by %}
-          retold by {{ book.retold_by }}
-          {% endif %}
-
-          {%- if book.publication_year %}
-            ({{ book.publication_year}})
-          {%- endif -%}
-            <br/>
           {% if review.date_read %}
           read {{ review.date_read | date_read }}
             <br/>

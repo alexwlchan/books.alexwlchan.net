@@ -27,7 +27,21 @@ module Jekyll
 
       return { "width" => image.width, "height" => image.height }
     end
+
+    def credit_line(book)
+      create_credit_line(book)
+    end
   end
 end
 
-Liquid::Template.register_filter(Jekyll::IndexHelpers)
+def create_credit_line(book)
+  contributors = book["contributors"]
+  publication_year = book["publication_year"]
+
+  if contributors.length == 1 && contributors[0]["label"].nil?
+    author = contributors[0]["name"]
+    "by #{author} (#{publication_year})"
+  end
+end
+
+Liquid::Template.register_filter(Jekyll::IndexHelpers) if defined? Liquid

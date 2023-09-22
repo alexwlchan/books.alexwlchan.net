@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: Neil Johnson
+  contributors:
+    - name: Neil Johnson
   cover:
     name: twos-company-three-is-complexity.jpg
     tint_color: '#445c84'

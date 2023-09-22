@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: Leo Babauta
+  contributors:
+    - name: Leo Babauta
   cover:
     name: focus.png
     tint_color: '#6a696b'

@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: Maureen Johnson
+  contributors:
+    - name: Maureen Johnson
   cover:
     name: the-last-little-blue-envelope.jpg
     tint_color: '#d22c2d'

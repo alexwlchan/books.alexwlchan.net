@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: Harry Oliver
+  contributors:
+    - name: Harry Oliver
   cover:
     name: march-hares-and-monkeys-uncles.jpg
     tint_color: '#bb233d'

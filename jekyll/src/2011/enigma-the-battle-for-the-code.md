@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: Hugh Sebag-Montefiore
+  contributors:
+    - name: Hugh Sebag-Montefiore
   cover:
     name: enigma-the-battle-for-the-code.jpg
     tint_color: '#b92e3d'

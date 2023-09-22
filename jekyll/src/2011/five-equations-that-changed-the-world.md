@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: Michael Guillen
+  contributors:
+    - name: Michael Guillen
   cover:
     name: five-equations-that-changed-the-world.jpg
     tint_color: '#8f584e'

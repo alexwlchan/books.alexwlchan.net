@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: Tony Juniper
+  contributors:
+    - name: Tony Juniper
   cover:
     name: how-many-lightbulbs-does-it-take-to-change-a-planet.jpg
     tint_color: '#a03c37'

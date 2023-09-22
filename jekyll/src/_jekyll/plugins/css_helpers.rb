@@ -100,4 +100,4 @@ def create_random_colour_like(luminosities, hsl_color)
   ).to_rgb
 end
 
-Liquid::Template.register_filter(Jekyll::CssHelpers)
+Liquid::Template.register_filter(Jekyll::CssHelpers) if defined? Liquid
