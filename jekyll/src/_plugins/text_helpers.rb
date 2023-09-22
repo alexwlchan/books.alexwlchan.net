@@ -27,4 +27,3 @@ module Jekyll
 end
 
 Liquid::Template.register_filter(Jekyll::TextHelpers)
-# {{ book.title }}{% if book.author %}, by {{ book.author }}{% endif %}.{% if review.date_read and not review.did_not_finish %} Read {{ review.date_read | render_date }}.{% endif %}{% if review.rating and not review.did_not_finish %} {{ review.rating|star_rating }}{% endif %}
