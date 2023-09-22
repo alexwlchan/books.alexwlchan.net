@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: J. K. Rowling
+  contributors:
+    - name: J. K. Rowling
   cover:
     name: harry-potter-and-the-half-blood-prince.jpg
     tint_color: "#322824"
@@ -13,4 +15,3 @@ review:
   date_read: 2005-07
   format: hardback
 ---
-
