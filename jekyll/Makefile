@@ -63,4 +63,4 @@ plugin-tests:
 		--entrypoint ruby \
 		--volume $(ROOT):$(ROOT) \
 		--workdir $(ROOT) \
-		$(DOCKER_IMAGE) src/_tests/tests.rb
+		$(DOCKER_IMAGE) src/_jekyll/tests/tests.rb

@@ -1,6 +1,6 @@
 require 'test/unit'
 
-require_relative '../_plugins/text_helpers'
+require_relative '../plugins/text_helpers'
 
 class TestTextHelpers < Test::Unit::TestCase
   def test_render_date_read

@@ -79,7 +79,6 @@ end
 # I don't remember how I picked all these constants -- I might have
 # chosen them arbitrarily until I got something that looked good.
 def create_random_colour_like(luminosities, hsl_color)
-  puts hsl_color.lightness
   v = [hsl_color.lightness, 45].min
 
   min_lightness = [v * 3.0 / 4.0, 0].max
