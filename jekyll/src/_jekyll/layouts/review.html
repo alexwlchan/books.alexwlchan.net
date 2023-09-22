@@ -29,6 +29,8 @@ layout: compress
     <meta property="og:image" content="{{ site.url }}/squares/{{ book.cover.name }}"/>
     <meta property="og:description" content="{{ book | book_description }}. {{ review | review_description }}">
 
+    <title>{{ book.title }} – alexwlchan’s book tracker</title>
+
     <meta name="theme-color" content="{{ book.cover.tint_color }}">
 
     <link rel="shortcut icon" type="image/png" href="/favicons/{{ book.cover.tint_color | replace: "#", "" }}.png">

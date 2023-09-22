@@ -14,7 +14,8 @@ include:
 
 includes_dir: "_jekyll/includes"
 layouts_dir: "_jekyll/layouts"
-plugins_dir: "_jekyll/plugins"
+plugins_dir:
+  - "src/_jekyll/plugins"
 
 markdown: "kramdown"
 

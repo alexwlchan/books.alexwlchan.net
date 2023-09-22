@@ -4,11 +4,9 @@ require 'color'
 module Jekyll
   module CssHelpers
     def as_rgba(color, opacity)
-      red   = color[1..2].to_i(16)
-      green = color[3..4].to_i(16)
-      blue  = color[5..6].to_i(16)
+      rgb_color = Color::RGB.by_hex(color)
 
-      "rgba(#{red}, #{green}, #{blue}, #{opacity})"
+      "rgba(#{rgb_color.red}, #{rgb_color.green}, #{rgb_color.blue}, #{opacity})"
     end
 
     def cache
