@@ -5,7 +5,7 @@ layout: compress
 {% assign book = page.book %}
 {% assign review = page.review %}
 
-{% assign tint_color = page.book.tint_color %}
+{% assign tint_color = book.cover.tint_color %}
 
 {% assign year = page.review["date_read"] | slice: 0, 4 %}
 
@@ -38,7 +38,7 @@ layout: compress
   <body>
     <a class="skip-main" href="#main">Skip to main content</a>
 
-    {% include preamble.html %}
+    {% include header.html %}
 
     <main id="main" tabindex="-1">
       <div class="book-cover">
