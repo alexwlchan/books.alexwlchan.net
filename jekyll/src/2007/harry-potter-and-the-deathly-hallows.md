@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: J. K. Rowling
+  contributors:
+    - name: J. K. Rowling
   cover:
     name: harry-potter-and-the-deathly-hallows.jpg
     tint_color: "#06121a"
