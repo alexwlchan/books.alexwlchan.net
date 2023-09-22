@@ -26,12 +26,12 @@ layout: compress
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@alexwlchan"/>
     <meta name="twitter:title" content="alexwlchan's review of {{ book.title }}"/>
-    <meta name="twitter:image" content="{{ site.url }}/squares/{{ book.cover.name }}"/>
+    <meta name="twitter:image" content="{{ site.url }}/social_icons/{{ review | year_read }}/{{ book.cover.name }}"/>
 
     <meta property="og:type" content="article" />
     <meta property="og:url" content="{{ site.url }}/reviews/{{ slug }}">
     <meta property="og:title" content="{{ book.title }}">
-    <meta property="og:image" content="{{ site.url }}/squares/{{ book.cover.name }}"/>
+    <meta property="og:image" content="{{ site.url }}/social_icons/{{ review | year_read }}/{{ book.cover.name }}"/>
     <meta property="og:description" content="{{ book | book_description }}. {{ review | review_description }}">
 
     <title>{{ book.title }} – alexwlchan’s book tracker</title>
