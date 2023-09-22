@@ -1,3 +1,15 @@
+require 'date'
+
+def render_date_read(date_string)
+  if date_string.match(/^\d{4}$/)
+    date_string
+  elsif date_string.match(/^\d{4}-\d{2}$/)
+    DateTime.parse("#{date_string}-01").strftime("%B %Y")
+  else
+    DateTime.parse(date_string).strftime("%-d %B %Y")
+  end
+end
+
 module Jekyll
   module TextHelpers
     def book_description(book)
@@ -23,7 +35,11 @@ module Jekyll
         "Read #{review["date_read"]}"
       end
     end
+
+    def date_read(date_string)
+      render_date_read(date_string)
+    end
   end
 end
 
-Liquid::Template.register_filter(Jekyll::TextHelpers)
+Liquid::Template.register_filter(Jekyll::TextHelpers) if defined? Liquid

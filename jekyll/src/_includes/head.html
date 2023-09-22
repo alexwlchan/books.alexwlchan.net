@@ -1,3 +1,11 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+{% comment %}
+  In theory this should include some sort of commit ID or other value to
+  invalidate the cache, but I change this style sheet so rarely it's fine --
+  if I ever come back and change this, I can start adding extra parameters
+  for cache-busting purposes.
+{% endcomment %}
+<link rel="stylesheet" href="/static/style.css">
