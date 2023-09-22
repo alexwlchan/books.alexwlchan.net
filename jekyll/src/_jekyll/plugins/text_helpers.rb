@@ -41,11 +41,11 @@ module Jekyll
     end
 
     def get_dimensions(cover_dimensions)
-      if (cover_dimensions.width / 110.0) > (cover_dimensions.height / 130.0)
+      if (cover_dimensions["width"] / 110.0) > (cover_dimensions["height"] / 130.0)
         width = "110"
-        height = (cover_dimensions.height * 110 / cover_dimensions.width).round
+        height = (cover_dimensions["height"] * 110 / cover_dimensions["width"]).round
       else
-        width = (cover_dimensions.width * 130 / cover_dimensions.height).round
+        width = (cover_dimensions["width"] * 130 / cover_dimensions["height"]).round
         height = "130"
       end
 

@@ -63,9 +63,7 @@ layout: page
     {% endif %}
   </h3>
 
-  {{ reviews_in_year }}
-
-  {% for rev in reviews_in_year %}
+  {% for review_entry in reviews_in_year %}
     {% include review_entry.html %}
   {% endfor %}
 {% endfor %}

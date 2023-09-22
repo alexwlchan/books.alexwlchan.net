@@ -64,6 +64,17 @@ module Jekyll
 
       cache[hex_string]
     end
+
+    def boost(color, multiplier, amount)
+      rgb_color = Color::RGB.by_hex(color)
+
+      # See https://stackoverflow.com/a/11615135/1558022
+      red   = rgb_color.red * multiplier + amount * 255
+      green = rgb_color.green * multiplier + amount * 255
+      blue  = rgb_color.blue * multiplier + amount * 255
+
+      "rgb(#{red}, #{green}, #{blue})"
+    end
   end
 end
 

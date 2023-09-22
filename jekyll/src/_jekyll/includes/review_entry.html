@@ -1,7 +1,7 @@
 {% assign book = review_entry.book %}
 {% assign review = review_entry.review %}
-{% assign slug = review_entry.slug %}
-{% assign cover_dimensions = review_entry.derived_cover_info %}
+{% assign slug = review_entry.url | replace: "/", "_" %}
+{% assign cover_dimensions = review_entry | derived_cover_info %}
 
 <style>
   {% include review_style.css %}
@@ -14,19 +14,19 @@
   data-book-publication-year="{{ book.publication_year }}"
   data-review-rating="{% if review.rating %}{{ review.rating }}{% endif %}"
   data-review-tags="{{ book.tags | join: " " }}"
-  data-review-year="{{ review_entry|year_read }}"
+  data-review-year="{{ review | year_read }}"
   {% if review.did_not_finish %}data-did-not-finish{% endif %}
 >
-  <a href="/reviews/{{ slug }}">
+  <a href="{{ review_entry.url }}">
     <div class="book_thumbnail">
-      <img src="/thumbnails/{{ book.cover.name }}" style="{{ cover_dimensions | get_dimensions }}" loading="lazy">
+      <img src="/covers/{{ review | year_read }}/{{ book.cover.name }}" style="{{ cover_dimensions | get_dimensions }}" loading="lazy">
     </div>
 
     <div class="book_metadata">
       <p class="title">
-        {{ book.title | smartypants | safe }}
+        {{ book.title | smartify }}
         {% if book.series %}
-        <span class="book-series">({{ book.series | smartypants | safe }})</span>
+        <span class="book-series">({{ book.series | smartify }})</span>
         {% endif %}
       </p>
       <p>
@@ -51,7 +51,7 @@
           {%- endif -%}
             <br/>
           {% if review.date_read %}
-          read {{ review.date_read | render_date }}
+          read {{ review.date_read | date_read }}
             <br/>
           {% endif %}
 
