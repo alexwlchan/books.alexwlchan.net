@@ -368,9 +368,9 @@ ul#author_filters, ul#star_rating_filters {
   background: none;
 }
 
-// This is for the "Skip to main content" link at the top of the page
-//
-// See https://accessibility.oit.ncsu.edu/it-accessibility-at-nc-state/developers/accessibility-handbook/mouse-and-keyboard-events/skip-to-main-content/
+/* This is for the "Skip to main content" link at the top of the page
+ *
+ * See https://accessibility.oit.ncsu.edu/it-accessibility-at-nc-state/developers/accessibility-handbook/mouse-and-keyboard-events/skip-to-main-content/ */
 a.skip-main {
   position: absolute;
   left:     -999px;

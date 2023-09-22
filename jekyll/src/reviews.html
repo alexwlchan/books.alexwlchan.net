@@ -15,7 +15,7 @@ layout: page
     {% assign year = entry[0] %}
     {% assign reviews_in_year = entry[1] %}
 
-    <a id="jumpTo-{{ y }}" href="#year_{{ year }}">{{ year }}</a>
+    <a id="jumpTo-{{ year }}" href="#year_{{ year }}">{{ year }}</a>
 
     {% if forloop.last == false %}
       <span aria-hidden="true">/</span>
@@ -49,6 +49,8 @@ layout: page
     {% endif %}
   {% endfor %}
 
+  <div class="divider" data-year="{{ year }}"><img src="/static/book.svg"></div>
+
   <h3
     id="year_{{ year }}"
     class="year_heading"
@@ -69,16 +71,17 @@ layout: page
 {% endfor %}
 
 <script>
-  // Create the initial filter state.
-  // TODO: Do I want filters to have permalinks?  If so, this should
-  // be loaded from URL query state.
+  /* Create the initial filter state.
+   * TODO: Do I want filters to have permalinks?  If so, this should
+   * be loaded from URL query state. */
   var filters = createEmptyFilters();
 
   window.addEventListener("load", (event) => {
+    console.log("GO GO GO");
 
-    // Filters require JavaScript, so they're hidden by default and
-    // made visible on initial page load.
-    // cf. corresponding CSS in style.css
+    /* Filters require JavaScript, so they're hidden by default and
+     * made visible on initial page load.
+     * cf. corresponding CSS in style.css */
     document.getElementById("filterBar").style.display = "block";
 
     createAuthorFilter(filters);
