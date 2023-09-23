@@ -25,8 +25,8 @@ end
 module Favicons
   class GenerateFavicons < Jekyll::Generator
     def generate(site)
-      source = site.config['source']
-      destination = site.config['destination']
+      src = site.config['source']
+      dst = site.config['destination']
 
       colors =
         site.pages
@@ -34,18 +34,18 @@ module Favicons
             .filter { |c| !c.nil? }
             .to_set
 
-      FileUtils.mkdir_p "#{destination}/favicons"
+      FileUtils.mkdir_p "#{dst}/favicons"
 
       colors.each do |c|
         hex_string = c.gsub('#', '')
 
-        ico_path = "#{destination}/favicons/#{hex_string}.ico"
-        png_path = "#{destination}/favicons/#{hex_string}.png"
+        ico_path = "#{dst}/favicons/#{hex_string}.ico"
+        png_path = "#{dst}/favicons/#{hex_string}.png"
 
         next if (File.exist? ico_path) && (File.exist? png_path)
 
-        image16 = ChunkyPNG::Image.from_file("#{source}/static/favicon_16.png")
-        image32 = ChunkyPNG::Image.from_file("#{source}/static/favicon_32.png")
+        image16 = ChunkyPNG::Image.from_file("#{src}/static/favicon_16.png")
+        image32 = ChunkyPNG::Image.from_file("#{src}/static/favicon_32.png")
 
         Dir.mktmpdir do |tmp_dir|
           Dir.chdir(tmp_dir) do
@@ -64,7 +64,7 @@ module Favicons
 
           FileUtils.mv "#{tmp_dir}/favicon-32x32.png", png_path
           FileUtils.mv "#{tmp_dir}/favicon.ico", ico_path
-        end
+        executend
       end
     end
   end
