@@ -17,7 +17,7 @@ class RunLinting < Jekyll::Command
           options = configuration_from_options(options)
 
           src_dir = options['source']
-          html_dir = options['destination']
+          # html_dir = options['destination']
 
           # run_html_linting(html_dir)
 
