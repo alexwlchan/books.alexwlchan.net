@@ -38,4 +38,16 @@ class TestCreateCreditLine < Test::Unit::TestCase
 
     assert_equal(create_credit_line(book), 'retold by Vera Southgate (1966)')
   end
+
+  def test_author_with_single_other_credit
+    book = {
+      'contributors' => [
+        { 'name' => 'Laura Imai Messina' },
+        { 'name' => 'Lucy Rand', 'role' => 'translator' }
+      ],
+      'publication_year' => '2020'
+    }
+
+    assert_equal(create_credit_line(book), 'by Laura Imai Messina (2020)')
+  end
 end

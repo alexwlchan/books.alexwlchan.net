@@ -9,7 +9,7 @@ module Jekyll
     def all_reviews(pages)
       pages
         .filter { |p| p['url'] != '/reviews/' and p['url'] != '/' }
-        .sort_by { |p| "#{p['review']['date_read'].to_s}-#{p['review']['date_order']}" }
+        .sort_by { |p| "#{p['review']['date_read']}-#{p['review']['date_order']}" }
         .reverse
     end
 
@@ -70,12 +70,12 @@ def get_attribution_credit(contributors_by_role)
     "retold by #{retold_by_name}"
 
   # Otherwise find the author
-  elsif contributors_by_role.key? "author" && contributors_by_role['author'].length == 1
+  elsif contributors_by_role.key?('author') && (contributors_by_role['author'].length == 1)
     author_name = contributors_by_role['author'][0]
     "by #{author_name}"
 
   else
-    '[unknown]'
+    raise "Unknown attribution line: #{contributors_by_role}"
   end
 end
 
