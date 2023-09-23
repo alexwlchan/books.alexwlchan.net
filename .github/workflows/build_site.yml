@@ -44,6 +44,9 @@ jobs:
       - name: "Build the site"
         run: make html
 
+      - name: "Run linting"
+        run: make lint
+
       - name: "Deploy to Netlify"
         if: github.ref == 'refs/heads/main'
         run: make deploy-prod
