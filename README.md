@@ -1,6 +1,6 @@
 # books.alexwlchan.net
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/66a899f3-16ae-42af-b059-db28a1fbc731/deploy-status)](https://app.netlify.com/sites/books-alexwlchan/deploys)
+[![build_site](https://github.com/alexwlchan/books.alexwlchan.net/actions/workflows/build_site.yml/badge.svg)](https://github.com/alexwlchan/books.alexwlchan.net/actions/workflows/build_site.yml)
 
 This is the source code for <https://books.alexwlchan.net>, a site I use to track the books I've read.
 It creates bright, colourful cards for each book, with a tint colour based on the book's cover.
