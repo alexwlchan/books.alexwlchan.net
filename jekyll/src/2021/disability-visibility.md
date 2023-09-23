@@ -4,7 +4,9 @@ book:
   cover:
     name: disability-visibility.jpg
     tint_color: '#945b9a'
-  editor: Alice Wong
+  contributors:
+    - name: Alice Wong
+      role: editor
   publication_year: 2020
   title: Disability Visibility
   tags:

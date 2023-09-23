@@ -26,6 +26,10 @@ module Jekyll
       "★" * rating + "☆" * (5 - rating)
     end
 
+    def spread_star_rating(rating)
+      "★ " * rating + "☆ " * (5 - rating)
+    end
+
     def review_description(review)
       if review["did_not_finish"]
         return ""
@@ -52,6 +56,11 @@ module Jekyll
       end
 
       "width: #{width}px; height: #{height}px;"
+    end
+
+    def is_plural(contributor_name)
+      match = contributor_name =~ / and |, | & | with /
+      !match.nil?
     end
   end
 end

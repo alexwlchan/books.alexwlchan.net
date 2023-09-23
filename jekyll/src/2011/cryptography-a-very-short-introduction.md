@@ -2,7 +2,7 @@
 layout: review
 book:
   contributors:
-    - name:Fred C. Piper
+    - name: Fred C. Piper
   cover:
     name: cryptography-a-very-short-introduction.jpg
     tint_color: '#955943'

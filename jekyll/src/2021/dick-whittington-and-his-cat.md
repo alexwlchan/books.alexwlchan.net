@@ -2,8 +2,11 @@
 layout: review
 book:
   series: Ladybird Books
-  retold_by: Vera Southgate
-  illustrator: Eric Winter
+  contributors:
+    - name: "Vera Southgate"
+      role: "retold by"
+    - name: "Eric Winter"
+      role: "illustrator"
   cover:
     name: dick-whittington-and-his-cat.jpg
     tint_color: "#b49c3c"

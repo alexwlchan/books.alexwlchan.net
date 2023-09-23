@@ -24,4 +24,16 @@ class TestCreateCreditLine < Test::Unit::TestCase
 
     assert_equal(create_credit_line(book), "edited by Michael DiBernardo (2016)")
   end
+
+  def test_retold_by_credit_line
+    book = {
+      "contributors" => [
+        {"name" => "Vera Southgate", "role" => "retold by"},
+        {"name" => "Eric Winter", "role" => "illustrator"},
+      ],
+      "publication_year" => "1966",
+    }
+
+    assert_equal(create_credit_line(book), "retold by Vera Southgate (1966)")
+  end
 end

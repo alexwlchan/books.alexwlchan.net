@@ -47,17 +47,45 @@ module Jekyll
   end
 end
 
+def get_attribution_credit(contributors_by_role)
+  # Only one contributor, an author
+  #
+  # e.g. "by J.K. Rowling"
+  if contributors_by_role.keys == ["author"] && contributors_by_role["author"].length == 1
+    author_name = contributors_by_role["author"][0]
+    "by #{author_name}"
+
+  # Only one contributor, an editor
+  #
+  # e.g. "edited by Michael DiBernardo"
+  elsif contributors_by_role.keys == ["editor"] && contributors_by_role["editor"].length == 1
+    editor_name = contributors_by_role["editor"][0]
+    "edited by #{editor_name}"
+
+  # A retold by contributor and no other writing credits
+  elsif contributors_by_role.keys.sort == ["illustrator", "retold by"] && contributors_by_role["retold by"].length == 1
+    retold_by_name = contributors_by_role["retold by"][0]
+    "retold by #{retold_by_name}"
+
+  else
+    "<unknown>"
+  end
+end
+
 def create_credit_line(book)
-  contributors = book["contributors"]
   publication_year = book["publication_year"]
 
-  if contributors.length == 1 && contributors[0]["role"].nil?
-    author = contributors[0]["name"]
-    "by #{author} (#{publication_year})"
-  elsif contributors.length == 1 && contributors[0]["role"] == "editor"
-    editor = contributors[0]["name"]
-    "edited by #{editor} (#{publication_year})"
-  end
+  contributors_by_role = Hash.new([])
+
+  book["contributors"].each { |c|
+    role = c["role"].nil? ? "author" : c["role"]
+
+    contributors_by_role[role] += [c["name"]]
+  }
+
+  attribution_line = get_attribution_credit(contributors_by_role)
+
+  "#{attribution_line} (#{publication_year})"
 end
 
 Liquid::Template.register_filter(Jekyll::IndexHelpers) if defined? Liquid
