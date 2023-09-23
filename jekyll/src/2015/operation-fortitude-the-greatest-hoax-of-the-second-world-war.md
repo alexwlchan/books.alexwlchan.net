@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: Joshua Levine
+  contributors:
+    - name: Joshua Levine
   cover:
     name: operation-fortitude-the-greatest-hoax-of-the-second-world-war.jpg
     tint_color: '#d60812'

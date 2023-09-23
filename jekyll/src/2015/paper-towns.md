@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: John Green
+  contributors:
+  - name: John Green
   cover:
     name: paper-towns.jpg
     tint_color: '#b51025'

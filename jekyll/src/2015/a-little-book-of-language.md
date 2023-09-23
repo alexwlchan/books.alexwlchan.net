@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: David Crystal
+  contributors:
+    - name: David Crystal
   cover:
     name: a-little-book-of-language.jpg
     tint_color: '#77766e'

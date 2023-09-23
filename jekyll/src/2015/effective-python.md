@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: Brett Slatkin
+  contributors:
+  - name: Brett Slatkin
   cover:
     name: effective-python.jpg
     tint_color: '#222021'

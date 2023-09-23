@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: Simon Garfield
+  contributors:
+    - name: Simon Garfield
   cover:
     name: just-my-type.jpg
     tint_color: '#3e7b89'

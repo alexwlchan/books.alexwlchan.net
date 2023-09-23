@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: Douglas Adams
+  contributors:
+    - name: Douglas Adams
   cover:
     name: the-long-dark-tea-time-of-the-soul.jpg
     tint_color: '#89321c'

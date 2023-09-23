@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: Ben Crystal, David Crystal
+  contributors:
+    - name: Ben Crystal, David Crystal
   cover:
     name: you-say-potato.jpg
     tint_color: '#006eb3'

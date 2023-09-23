@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: J. Sheridan Le Fanu
+  contributors:
+    - name: J. Sheridan Le Fanu
   cover:
     name: carmilla.jpg
     tint_color: '#000000'

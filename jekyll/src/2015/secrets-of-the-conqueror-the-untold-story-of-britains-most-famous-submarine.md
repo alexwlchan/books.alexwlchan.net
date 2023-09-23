@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: Stuart Prebble
+  contributors:
+    - name: Stuart Prebble
   cover:
     name: secrets-of-the-conqueror-the-untold-story-of-britains-most-famous-submarine.jpg
     tint_color: '#b84146'

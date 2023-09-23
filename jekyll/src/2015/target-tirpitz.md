@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: Patrick Bishop
+  contributors:
+    - name: Patrick Bishop
   cover:
     name: target-tirpitz.jpg
     tint_color: '#e30f0e'

@@ -16,6 +16,7 @@ exclude:
   - "covers"
 
 keep_files:
+  - "individual_covers"
   - "social_icons"
   - "thumbs"
 
