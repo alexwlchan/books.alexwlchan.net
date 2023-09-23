@@ -56,6 +56,7 @@
             "type": "object",
             "properties": {
                 "date_read": {"type": "string"},
+                "date_order": {"type": "number"},
                 "format": {
                     "type": "string",
                     "enum": ["paperback", "hardback", "ebook", "audiobook", "pamphlet", "zine"]
