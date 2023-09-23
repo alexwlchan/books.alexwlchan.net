@@ -16,7 +16,7 @@ book:
   tags:
     - non-fiction
     - space-exploration
-    - !from-the-library
+    - "!from-the-library"
 
 review:
   date_read: 2023-09-22
