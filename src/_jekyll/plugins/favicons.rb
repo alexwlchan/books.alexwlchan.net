@@ -64,7 +64,7 @@ module Favicons
 
           FileUtils.mv "#{tmp_dir}/favicon-32x32.png", png_path
           FileUtils.mv "#{tmp_dir}/favicon.ico", ico_path
-        executend
+        end
       end
     end
   end
