@@ -1,13 +1,9 @@
 [build]
   base = ""
-  publish = "_html/"
-  command = "pip3 install httpx; .netlify/install_vfd_and_build.py"
-
-[context.live]
-  environment = { PYTHON_VERSION = "3.8" }
+  publish = "_site/"
 
 [[headers]]
-  for = "/covers/*"
+  for = "/individual_covers/*"
 
   [headers.values]
 		cache-control = "public, max-age=31536000"
@@ -19,7 +15,7 @@
 		cache-control = "public, max-age=31536000"
 
 [[headers]]
-  for = "/thumbnails/*"
+  for = "/thumbs/*"
 
   [headers.values]
 		cache-control = "public, max-age=31536000"
