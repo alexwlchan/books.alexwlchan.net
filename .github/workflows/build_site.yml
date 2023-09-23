@@ -1,0 +1,54 @@
+name: build_site
+
+on:
+  push:
+    branches:
+    - main
+
+  pull_request:
+    branches:
+    - main
+
+  # This daily rebuild is to avoid GitHub Actions purging the site cache,
+  # because regenerating all the image thumbnails would be a PITA:
+  #
+  #     GitHub will remove any cache entries that have not been
+  #     accessed in over 7 days.
+  #
+  # See https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows
+  schedule:
+    - cron: "30 7 * * *"
+
+jobs:
+  build:
+    name: Build the website
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Check out the repo"
+        uses: actions/checkout@v3
+
+      - name: "Cache site output"
+        uses: "actions/cache@v3"
+        with:
+          path: _site
+          key: "site-${{ github.sha }}"
+          restore-keys: "site-"
+
+      - name: "Cache the .jekyll-cache folder"
+        uses: "actions/cache@v3"
+        with:
+          path: src/.jekyll-cache
+          key: "jekyll-cache-${{ github.sha }}"
+          restore-keys: "jekyll-cache-"
+
+      - name: "Build the site"
+        run: make html
+
+      - name: "Run linting"
+        run: make lint
+
+      - name: "Deploy to Netlify"
+        if: github.ref == 'refs/heads/main'
+        run: make deploy-prod
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}

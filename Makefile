@@ -4,6 +4,9 @@ DOCKER_IMAGE = $(DOCKER_IMAGE_NAME):$(DOCKER_IMAGE_VERSION)
 
 ROOT = $(shell git rev-parse --show-toplevel)/jekyll
 
+JEKYLL_VERSION = 4.3.1
+JEKYLL_COMMAND_DIR = /usr/local/bundle/gems/jekyll-$(JEKYLL_VERSION)/lib/jekyll/commands
+
 SERVER_PORT = 5959
 
 publish-docker:
@@ -16,12 +19,12 @@ html:
 		--workdir $(ROOT) \
 		$(DOCKER_IMAGE) build --trace
 
-html-drafts:
+lint:
 	docker run --tty --rm \
-		--volume /var/run/docker.sock:/var/run/docker.sock \
 		--volume $(ROOT):$(ROOT) \
 		--workdir $(ROOT) \
-		$(DOCKER_IMAGE) build --trace --drafts
+		--volume $(ROOT)/src/_plugins/linter.rb:$(JEKYLL_COMMAND_DIR)/linter.rb \
+		$(DOCKER_IMAGE) lint
 
 serve:
 	docker run --tty --rm \
