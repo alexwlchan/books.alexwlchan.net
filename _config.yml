@@ -1,0 +1,43 @@
+url: "https://books.alexwlchan.net"
+
+source: "src"
+destination: "_site"
+
+date_format: "%-d %B %Y"
+
+permalink: "/:year/:title/"
+
+# This is the file used by Netlify to define redirects and the custom
+# 404 page.  If we don't include this, Jekyll skips it in the sitebuild.
+include:
+  - "_redirects"
+
+exclude:
+  - "covers"
+
+keep_files:
+  - "individual_covers"
+  - "social_icons"
+  - "thumbs"
+
+includes_dir: "_jekyll/includes"
+layouts_dir: "_jekyll/layouts"
+plugins_dir:
+  - "src/_jekyll/plugins"
+
+markdown: "kramdown"
+
+kramdown:
+  auto_ids: true
+  smart_quotes: "lsquo,rsquo,ldquo,rdquo"
+
+plugins:
+  - "jekyll-include-cache"
+
+liquid:
+  error_mode: "strict"
+  strict_filters: true
+
+sass:
+  sass_dir: "_scss"
+  style: "compressed"

@@ -1,0 +1,71 @@
+{
+    "type": "object",
+    "required": ["layout", "book"],
+    "properties": {
+        "layout": {
+            "description": "Which layout template to use.",
+            "type": "string",
+            "enum": ["review", "page"]
+        },
+        "book": {
+            "type": "object",
+            "properties": {
+                "title": {"type": "string"},
+                "publication_year": {"type": "number"},
+                "tags": {
+                    "type": "array",
+                    "items": {"type": "string"}
+                },
+                "isbn13": {"type": "string"},
+                "isbn10": {"type": "string"},
+                "cover": {
+                    "type": "object",
+                    "properties": {
+                        "name": {"type": "string"},
+                        "tint_color": {"type": "string"}
+                    },
+                    "additionalProperties": false
+                },
+                "series": {"type": "string"},
+                "contributors": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": ["name"],
+                        "properties": {
+                            "name": {"type": "string"},
+                            "role": {
+                                "type": "string",
+                                "enum": [
+                                    "author",
+                                    "editor",
+                                    "illustrator",
+                                    "narrator",
+                                    "translator",
+                                    "retold by"
+                                ]
+                            }
+                        },
+                        "additionalProperties": false
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "review": {
+            "type": "object",
+            "properties": {
+                "date_read": {"type": "string"},
+                "date_order": {"type": "number"},
+                "format": {
+                    "type": "string",
+                    "enum": ["paperback", "hardback", "ebook", "audiobook", "pamphlet", "zine"]
+                },
+                "rating": {"type": "number"},
+                "did_not_finish": {"type": "bool"}
+            },
+            "additionalProperties": false
+        }
+    },
+    "additionalProperties": false
+}

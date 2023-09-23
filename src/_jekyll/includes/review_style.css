@@ -1,0 +1,29 @@
+#review_preview_{{ slug }} {
+  border-color: {{ book.cover.tint_color }};
+
+  {% if review.rating == 5 %}
+    border-width: 3px;
+    margin-left:  -1px;
+    margin-right: -1px;
+    box-shadow: 0px 0px 5px {{ book.cover.tint_color | as_rgba: 0.3 }};
+    background: {{ book.cover.tint_color | boost: 0.3, 0.8 }};
+  {% else %}
+    background: {{ book.cover.tint_color | boost: 0.08, 0.92 }};
+  {% endif %}
+}
+
+#review_preview_{{ slug }} img {
+  border: 0.1px solid {{ book.cover.tint_color }};
+}
+
+#review_preview_{{ slug }}:hover {
+  {% if review.rating == 5 %}
+    background: {{ book.cover.tint_color | boost: 0.42, 0.58 }};
+  {% else %}
+    background: {{ book.cover.tint_color | boost: 0.26, 0.74 }};
+  {% endif %}
+}
+
+#review_preview_{{ slug }} a:hover {
+  background: none;
+}

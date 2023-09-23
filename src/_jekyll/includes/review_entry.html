@@ -1,0 +1,61 @@
+{% assign book = review_entry.book %}
+{% assign review = review_entry.review %}
+{% assign slug = review_entry.url | replace: "/", "_" %}
+{% assign cover_dimensions = review_entry | derived_cover_info %}
+
+<style>
+  {% include review_style.css %}
+</style>
+
+<div
+  id="review_preview_{{ slug }}"
+  class="review_preview {% if read_at_another_time %}read_at_another_time{% endif %}"
+  data-book-authors="{% if book.author %}{{ book.author }}{% endif %}"
+  data-book-publication-year="{{ book.publication_year }}"
+  data-review-rating="{% if review.rating %}{{ review.rating }}{% endif %}"
+  data-review-tags="{{ book.tags | join: " " }}"
+  data-review-year="{{ review | year_read }}"
+  {% if review.did_not_finish %}data-did-not-finish{% endif %}
+>
+  <a href="{{ review_entry.url }}">
+    <div class="book_thumbnail">
+      <img
+        src="/thumbs/{{ review | year_read }}/{{ book.cover.name }}"
+        style="{{ cover_dimensions | get_dimensions }}"
+        alt=""
+        loading="lazy"
+      >
+    </div>
+
+    <div class="book_metadata">
+      <p class="title">
+        {{ book.title | smartify }}
+        {% if book.series %}
+        <span class="book-series">({{ book.series | smartify }})</span>
+        {% endif %}
+      </p>
+      <p>
+        <small>
+          {{ book | credit_line }}
+
+          <br/>
+
+          {% if review.date_read %}
+          read {{ review.date_read | date_read }}
+            <br/>
+          {% endif %}
+
+          {% if review.rating and review.did_not_finish != true %}
+            <span class="star_rating">
+              {{ review.rating | star_rating }}
+            </span>
+          {% endif %}
+
+          {% if review.did_not_finish %}
+          (did not finish)
+          {% endif %}
+        </small>
+      </p>
+    </div>
+  </a>
+</div>
