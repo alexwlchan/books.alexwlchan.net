@@ -9,9 +9,6 @@ JEKYLL_COMMAND_DIR = /usr/local/bundle/gems/jekyll-$(JEKYLL_VERSION)/lib/jekyll/
 
 SERVER_PORT = 5959
 
-publish-docker:
-	ruby scripts/publish_docker_image.rb
-
 html:
 	docker run --tty --rm \
 		--volume /var/run/docker.sock:/var/run/docker.sock \
