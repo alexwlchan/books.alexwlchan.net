@@ -154,9 +154,7 @@ class RunLinting < Jekyll::Command
 
           local_image_path = "#{html_dir}#{image_path}"
 
-          unless File.exist? local_image_path
-            errors[html_doc[:display_path]] <<= "Card points to a missing image: #{local_image_path}"
-          end
+          errors[html_doc[:display_path]] <<= "Card points to a missing image: #{local_image_path}" unless File.exist? local_image_path
 
           # If it's a 'summary_large_image' card, check the aspect ratio is 2:1.
           #
@@ -249,9 +247,7 @@ class RunLinting < Jekyll::Command
                                         .select { |a| localhost_link?(a) }
                                         .map { |a| a.attribute('href').value }
 
-        unless localhost_links.empty?
-          errors[html_doc[:display_path]] <<= "There are links to localhost: #{localhost_links.join('; ')}"
-        end
+        errors[html_doc[:display_path]] <<= "There are links to localhost: #{localhost_links.join('; ')}" unless localhost_links.empty?
       end
 
       report_errors(errors)
@@ -275,9 +271,7 @@ class RunLinting < Jekyll::Command
         # needs removing.
         title = html_doc[:doc].xpath('//head/title').children
 
-        if title.children.length > 1
-          errors[html_doc[:display_path]] <<= "Title contains HTML: #{title}"
-        end
+        errors[html_doc[:display_path]] <<= "Title contains HTML: #{title}" if title.children.length > 1
       end
 
       report_errors(errors)
@@ -305,9 +299,7 @@ class RunLinting < Jekyll::Command
           path = path.strip!
           profile = profile.strip!
 
-          unless safe_colour_profiles.include? profile
-            errors[path] <<= "Image has an unrecognised colour profile: #{profile}"
-          end
+          errors[path] <<= "Image has an unrecognised colour profile: #{profile}" unless safe_colour_profiles.include? profile
         end
 
       report_errors(errors)

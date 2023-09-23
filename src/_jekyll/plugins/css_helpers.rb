@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'chunky_png'
 require 'color'
 
@@ -10,13 +12,13 @@ module Jekyll
     end
 
     def cache
-      @@cache ||= Jekyll::Cache.new("ShelfHeaders")
+      @@cache ||= Jekyll::Cache.new('ShelfHeaders')
     end
 
     def create_shelf_data_uri(color)
-      hex_string = color.gsub(/#/, "")
+      hex_string = color.gsub('#', '')
 
-      if not cache.key? hex_string
+      unless cache.key? hex_string
         rgb_color = Color::RGB.by_hex(color)
         hsl_color = rgb_color.to_hsl
 
@@ -35,7 +37,7 @@ module Jekyll
         #      get different patterns of light/dark.
         #
         shapes = Random.new(0)
-        luminosities = Random.new(rgb_color.red * 256 * 256 + rgb_color.green * 256 + rgb_color.blue * 256)
+        luminosities = Random.new((rgb_color.red * 256 * 256) + (rgb_color.green * 256) + (rgb_color.blue * 256))
 
         png = ChunkyPNG::Image.new(2000, 90, ChunkyPNG::Color::TRANSPARENT)
 
@@ -69,9 +71,9 @@ module Jekyll
       rgb_color = Color::RGB.by_hex(color)
 
       # See https://stackoverflow.com/a/11615135/1558022
-      red   = rgb_color.red * multiplier + amount * 255
-      green = rgb_color.green * multiplier + amount * 255
-      blue  = rgb_color.blue * multiplier + amount * 255
+      red   = (rgb_color.red * multiplier) + (amount * 255)
+      green = (rgb_color.green * multiplier) + (amount * 255)
+      blue  = (rgb_color.blue * multiplier) + (amount * 255)
 
       "rgb(#{red}, #{green}, #{blue})"
     end
@@ -93,7 +95,7 @@ def create_random_colour_like(luminosities, hsl_color)
   min_lightness = [v * 3.0 / 4.0, 0].max
   max_lightness = [v * 4.0 / 3.0, 100].min
 
-  Color::HSL::new(
+  Color::HSL.new(
     hsl_color.hue,
     hsl_color.saturation,
     luminosities.rand(min_lightness..max_lightness)

@@ -1,22 +1,20 @@
+# frozen_string_literal: true
+
 require 'fileutils'
 require 'rszr'
 
 module IndividualCovers
   class GenerateIndividualCovers < Jekyll::Generator
     def generate(site)
-      source = site.config["source"]
-      destination = site.config["destination"]
+      source = site.config['source']
+      destination = site.config['destination']
 
-      Dir["#{source}/covers/**/*"].each { |src_path|
-        if File.directory? src_path
-          next
-        end
+      Dir["#{source}/covers/**/*"].each do |src_path|
+        next if File.directory? src_path
 
         dst_path = src_path.gsub("#{source}/covers/", "#{destination}/individual_covers/")
 
-        if File.exist? dst_path
-          next
-        end
+        next if File.exist? dst_path
 
         FileUtils.mkdir_p File.dirname(dst_path)
 
@@ -24,7 +22,7 @@ module IndividualCovers
         im.resize!(180 * 2, 240 * 2, crop: false)
 
         im.save(dst_path)
-      }
+      end
     end
   end
 end
