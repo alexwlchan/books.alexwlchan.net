@@ -1,6 +1,6 @@
 # books.alexwlchan.net
 
-[![build_site](https://github.com/alexwlchan/books.alexwlchan.net/actions/workflows/build_site.yml/badge.svg)](https://github.com/alexwlchan/books.alexwlchan.net/actions/workflows/build_site.yml)
+[![build_site](https://github.com/alexwlchan/books.alexwlchan.net/actions/workflows/build_site.yml/badge.svg?branch=main)](https://github.com/alexwlchan/books.alexwlchan.net/actions/workflows/build_site.yml)
 
 This is the source code for <https://books.alexwlchan.net>, a site I use to track the books I've read.
 It creates bright, colourful cards for each book, with a tint colour based on the book's cover.
