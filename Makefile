@@ -2,7 +2,7 @@ export DOCKER_IMAGE_NAME = ghcr.io/alexwlchan/alexwlchan.net
 export DOCKER_IMAGE_VERSION = 42
 DOCKER_IMAGE = $(DOCKER_IMAGE_NAME):$(DOCKER_IMAGE_VERSION)
 
-ROOT = $(shell git rev-parse --show-toplevel)/jekyll
+ROOT = $(shell git rev-parse --show-toplevel)
 
 JEKYLL_VERSION = 4.3.1
 JEKYLL_COMMAND_DIR = /usr/local/bundle/gems/jekyll-$(JEKYLL_VERSION)/lib/jekyll/commands
@@ -23,7 +23,7 @@ lint:
 	docker run --tty --rm \
 		--volume $(ROOT):$(ROOT) \
 		--workdir $(ROOT) \
-		--volume $(ROOT)/src/_plugins/linter.rb:$(JEKYLL_COMMAND_DIR)/linter.rb \
+		--volume $(ROOT)/src/_jekyll/plugins/linter.rb:$(JEKYLL_COMMAND_DIR)/linter.rb \
 		$(DOCKER_IMAGE) lint
 
 serve:
