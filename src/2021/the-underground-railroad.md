@@ -3,10 +3,11 @@ layout: review
 book:
   contributors:
     - name: Colson Whitehead
+    - name: Bahni Turpin
+      role: narrator
   cover:
     name: the-underground-railroad.jpg
     tint_color: '#845657'
-  narrator: Bahni Turpin
   publication_year: 2016
   title: The Underground Railroad
   tags:

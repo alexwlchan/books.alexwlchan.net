@@ -3,7 +3,8 @@ layout: review
 book:
   contributors:
     - name: Alex White
-  narrator: Charlotte Blacklock
+    - name: Charlotte Blacklock
+      role: narrator
   cover:
     name: a-big-ship-at-the-edge-of-the-universe.jpeg
     tint_color: "#090a1d"

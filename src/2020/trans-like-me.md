@@ -6,12 +6,7 @@ book:
   cover:
     name: trans-like-me.jpg
     tint_color: '#d92839'
-  cover_desc: 'The words “trans like me” in lowercased, large letters, set on a slightly
-    off-white background. The words “trans” and “me” are in red; the word “like” is
-    in black.
-
-    '
-  isbn13: 9780349008608
+  isbn13: "9780349008608"
   publication_year: 2017
   title: Trans Like Me
   tags:

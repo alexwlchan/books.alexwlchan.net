@@ -3,7 +3,8 @@ layout: review
 book:
   contributors:
     - name: Bill Kilday
-  narrator: Robert Shapiro
+    - name: Robert Shapiro
+      role: narrator
   cover:
     name: never-lost-again.jpg
     tint_color: "#167dab"

@@ -3,10 +3,11 @@ layout: review
 book:
   contributors:
     - name: Maureen Johnson
+    - name: Kate Rudd
+      role: narrator
   cover:
     name: the-hand-on-the-wall.jpg
     tint_color: '#0ba867'
-  narrator: Kate Rudd
   publication_year: 2020
   series: 'Truly Devious #3'
   title: The Hand on the Wall

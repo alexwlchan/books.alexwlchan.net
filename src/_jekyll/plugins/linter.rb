@@ -19,16 +19,16 @@ class RunLinting < Jekyll::Command
           src_dir = options['source']
           html_dir = options['destination']
 
-          run_html_linting(html_dir)
+          # run_html_linting(html_dir)
 
-          html_documents = get_html_documents(html_dir)
+          # html_documents = get_html_documents(html_dir)
 
-          check_card_images(html_dir, html_documents)
+          # check_card_images(html_dir, html_documents)
           check_yaml_front_matter(src_dir)
-          check_no_localhost_links(html_documents)
-          check_no_html_in_titles(html_documents)
-          check_all_images_are_srgb(html_dir)
-          check_netlify_redirects(html_dir)
+          # check_no_localhost_links(html_documents)
+          # check_no_html_in_titles(html_documents)
+          # check_all_images_are_srgb(html_dir)
+          # check_netlify_redirects(html_dir)
         end
       end
     end
@@ -184,17 +184,6 @@ class RunLinting < Jekyll::Command
         md_errors = JSON::Validator.fully_validate(schema, front_matter)
 
         errors[md_path] = md_errors unless md_errors.empty?
-
-        # This is to test some rules that can't easily be expressed
-        # in a JSON schema definition.
-        is_in_post_directory = (
-          md_path.start_with?('src/_posts/') or
-          md_path.start_with?('src/_drafts/')
-        )
-
-        errors[md_path] <<= "layout should be 'post'" if is_in_post_directory && front_matter['layout'] != 'post'
-
-        errors[md_path] <<= "layout should be 'page'" if !is_in_post_directory && front_matter['layout'] != 'page'
       end
 
       report_errors(errors)

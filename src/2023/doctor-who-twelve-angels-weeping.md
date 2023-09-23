@@ -3,7 +3,8 @@ layout: review
 book:
   contributors:
     - name: Dave Rudden
-  illustrator: Alexis Snell
+    - name: Alexis Snell
+      role: illustrator
   cover:
     name: doctor-who-twelve-angels-weeping.jpg
     tint_color: "#0a0605"

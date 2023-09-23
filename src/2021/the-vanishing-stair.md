@@ -3,10 +3,11 @@ layout: review
 book:
   contributors:
     - name: Maureen Johnson
+    - name: Kate Rudd
+      role: narrator
   cover:
     name: the-vanishing-stair.jpg
     tint_color: '#b5483d'
-  narrator: Kate Rudd
   publication_year: 2019
   series: 'Truly Devious #2'
   title: The Vanishing Stair

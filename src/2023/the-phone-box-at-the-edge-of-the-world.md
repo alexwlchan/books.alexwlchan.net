@@ -3,18 +3,18 @@ layout: review
 book:
   contributors:
     - name: Laura Imai Messina
-  translated_by: Lucy Rand
+    - name: Lucy Rand
+      role: translator
   cover:
     name: the-phone-box-at-the-edge-of-the-world.jpg
-    size: 40668
     tint_color: "#3bb5bf"
   title: The Phone Box at the Edge of the World
   publication_year: 2020
-  isbn13: 9781786580429
+  isbn13: "9781786580429"
   tags:
     - fiction
     - grief
-    - !from-the-library
+    - "!from-the-library"
 review:
   date_read: 2023-09-14
   format: ebook

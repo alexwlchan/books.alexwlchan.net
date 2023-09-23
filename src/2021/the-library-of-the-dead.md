@@ -3,7 +3,8 @@ layout: review
 book:
   contributors:
     - name: T.L. Huchu
-  narrator: Tinashe Warikandwa
+    - name: Tinashe Warikandwa
+      role: narrator
   cover:
     name: the-library-of-the-dead.jpeg
     tint_color: "#206969"

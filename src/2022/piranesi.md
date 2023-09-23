@@ -3,7 +3,8 @@ layout: review
 book:
   contributors:
     - name: Susanna Clarke
-  narrator: Chiwetel Ejiofor
+    - name: Chiwetel Ejiofor
+      role: narrator
   cover:
     name: piranesi.jpg
     tint_color: "#916540"

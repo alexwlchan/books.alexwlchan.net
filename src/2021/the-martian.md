@@ -3,10 +3,11 @@ layout: review
 book:
   contributors:
     - name: Andy Weir
+    - name: Wil Wheaton
+      role: narrator
   cover:
     name: the-martian.jpg
     tint_color: '#fe5b29'
-  narrator: Wil Wheaton
   publication_year: 2011
   title: The Martian
   tags:

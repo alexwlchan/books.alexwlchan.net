@@ -3,10 +3,11 @@ layout: review
 book:
   contributors:
     - name: Nina Mingya Powles
+    - name: Nina Mingya Powles
+      role: narrator
   cover:
     name: small-bodies-of-water.jpg
     tint_color: '#0967b2'
-  narrator: Nina Mingya Powles
   publication_year: 2021
   title: Small Bodies of Water
   tags:

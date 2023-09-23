@@ -8,7 +8,7 @@ book:
     tint_color: "#0a090d"
   title: "No One is Too Small to Make a Difference"
   publication_year: 2019
-  isbn13: 9780141991740
+  isbn13: "9780141991740"
   tags:
     - non-fiction
     - science

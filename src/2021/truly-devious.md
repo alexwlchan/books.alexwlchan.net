@@ -3,10 +3,11 @@ layout: review
 book:
   contributors:
     - name: Maureen Johnson
+    - name: Kate Rudd
+      role: narrator
   cover:
     name: truly-devious.jpg
     tint_color: '#393977'
-  narrator: Kate Rudd
   publication_year: 2018
   series: 'Truly Devious #1'
   title: Truly Devious

@@ -3,7 +3,8 @@ layout: review
 book:
   contributors:
     - name: Toshikazu Kawaguchi
-  translated_by: Geoffrey Trousselot
+    - name: Geoffrey Trousselot
+      role: translator
   cover:
     name: before-the-coffee-gets-cold.jpg
     tint_color: "#62b3b5"

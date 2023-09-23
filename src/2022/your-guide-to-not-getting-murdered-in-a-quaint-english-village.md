@@ -3,7 +3,8 @@ layout: review
 book:
   contributors:
     - name: Maureen Johnson
-  illustrator: Jay Cooper
+    - name: Jay Cooper
+      role: illustrator
   cover:
     name: your-guide-to-not-getting-murdered-in-a-quaint-english-village.jpg
     tint_color: "#c60017"

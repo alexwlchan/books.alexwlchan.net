@@ -8,7 +8,7 @@ book:
     tint_color: "#74c9e5"
   title: "Looking for Emily"
   publication_year: 2022
-  isbn13: 9781839942754
+  isbn13: "9781839942754"
   tags:
     - fiction
     - mystery

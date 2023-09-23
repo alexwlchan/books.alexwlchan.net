@@ -3,7 +3,8 @@ layout: review
 book:
   contributors:
     - name: Jean-Claude Grumberg
-  translated_by: Frank Wynne
+    - name: Frank Wynne
+      role: translator
   cover:
     name: the-most-precious-of-cargoes.jpg
     tint_color: "#6d868b"

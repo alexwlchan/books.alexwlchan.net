@@ -3,18 +3,19 @@ layout: review
 book:
   contributors:
     - name: Kaouther Adimi
-  translated_by: Chris Andrews
+    - name: Chris Andrews
+      role: translator
   cover:
     name: a-bookshop-in-algiers.jpg
     tint_color: "#0b677f"
   title: A bookshop in Algiers
   publication_year: 2017
-  isbn13: 9781788164702
+  isbn13: "9781788164702"
   tags:
     - history
     - bookshops
     - non-fiction
-    - !from-the-library
+    - "!from-the-library"
 review:
   date_read: 2023-01-31
   format: paperback

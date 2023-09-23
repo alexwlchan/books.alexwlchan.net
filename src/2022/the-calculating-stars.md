@@ -3,7 +3,8 @@ layout: review
 book:
   contributors:
     - name: Mary Robinette Kowal
-  narrator: Mary Robinette Kowal
+    - name: Mary Robinette Kowal
+      role: narrator
   cover:
     name: the-calculating-stars.jpg
     tint_color: "#296a93"

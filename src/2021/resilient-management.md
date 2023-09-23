@@ -3,10 +3,11 @@ layout: review
 book:
   contributors:
     - name: Lara Hogan
+    - name: Lara Hogan
+      role: narrator
   cover:
     name: resilient-management.png
     tint_color: '#b25e67'
-  narrator: Lara Hogan
   publication_year: 2019
   title: Resilient Management
   tags:

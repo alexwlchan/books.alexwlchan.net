@@ -3,10 +3,11 @@ layout: review
 book:
   contributors:
     - name: Alice Oseman
+    - name: Elisabeth Hopper
+      role: narrator
   cover:
     name: loveless.jpg
     tint_color: '#914690'
-  narrator: Elisabeth Hopper
   publication_year: 2018
   title: Loveless
   tags:

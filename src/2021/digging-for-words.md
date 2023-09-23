@@ -3,10 +3,11 @@ layout: review
 book:
   contributors:
     - name: Angela Burke Kunkel
+    - name: Paola Escobar
+      role: illustrator
   cover:
     name: digging-for-words.jpg
     tint_color: '#617684'
-  illustrator: Paola Escobar
   isbn13: '9781984892638'
   publication_year: 2020
   title: Digging for Words

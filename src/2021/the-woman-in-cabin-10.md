@@ -3,10 +3,11 @@ layout: review
 book:
   contributors:
     - name: Ruth Ware
+    - name: Imogen Church
+      role: narrator
   cover:
     name: the-woman-in-cabin-10.jpg
     tint_color: '#12555a'
-  narrator: Imogen Church
   publication_year: 2016
   title: The Woman in Cabin 10
   tags:

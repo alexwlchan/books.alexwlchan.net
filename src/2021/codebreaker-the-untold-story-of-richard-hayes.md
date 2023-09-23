@@ -3,10 +3,11 @@ layout: review
 book:
   contributors:
     - name: Marc McMenamin
+    - name: Aidan Kelly
+      role: narrator
   cover:
     name: codebreaker-the-untold-story-of-richard-hayes.jpg
     tint_color: '#737270'
-  narrator: Aidan Kelly
   publication_year: 2020
   title: 'Codebreaker: The Untold Story of Richard Hayes'
   tags:

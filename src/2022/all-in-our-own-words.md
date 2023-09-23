@@ -3,7 +3,8 @@ layout: review
 book:
   contributors:
     - name: Friends of the Bure Valley Railway
-  editor: Gerry Balding
+    - name: Gerry Balding
+      role: editor
   cover:
     name: all-in-our-own-words.jpeg
     tint_color: "#1f498e"

@@ -3,10 +3,11 @@ layout: review
 book:
   contributors:
     - name: Terry Pratchett
+    - name: Stephen Briggs
+      role: narrator
   cover:
     name: going-postal-reviewed.jpg
     tint_color: '#5e62a7'
-  narrator: Stephen Briggs
   publication_year: 2014
   title: Going Postal
   tags:

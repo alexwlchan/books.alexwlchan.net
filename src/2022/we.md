@@ -3,7 +3,8 @@ layout: review
 book:
   contributors:
     - name: Yevgeny Zamyatin
-  translator: Natasha Randall
+    - name: Natasha Randall
+      role: translator
   cover:
     name: we.jpg
     tint_color: "#845541"

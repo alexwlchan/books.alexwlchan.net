@@ -3,7 +3,8 @@ layout: review
 book:
   contributors:
     - name: P. Djèlí Clark
-  narrator: Julian Thomas
+    - name: Julian Thomas
+      role: narrator
   cover:
     name: the-haunting-of-tram-car-015.jpg
     tint_color: "#975b29"

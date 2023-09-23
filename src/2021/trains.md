@@ -3,7 +3,8 @@ layout: review
 book:
   contributors:
     - name: David Carey
-  illustrator: Martin Aitchison, Gerald Witcomb, Robert Ayton and John Berry
+    - name: Martin Aitchison, Gerald Witcomb, Robert Ayton and John Berry
+      role: illustrator
   cover:
     name: trains.jpg
     tint_color: "#b82b1d"

@@ -3,14 +3,16 @@ layout: review
 book:
   contributors:
     - name: Paola Peretti
-  narrator: Rosie Akerman
-  translated_by: Denise Muir
+    - name: Denise Muir
+      role: translator
+    - name: Rosie Akerman
+      role: narrator
   cover:
     name: the-distance-between-me-and-the-cherry-tree.jpg
     tint_color: "#132c44"
   publication_year: 2018
   title: The Distance Between Me and the Cherry Tree
-  isbn13: 9781489483829
+  isbn13: "9781489483829"
   tags:
     - fiction
     - disability

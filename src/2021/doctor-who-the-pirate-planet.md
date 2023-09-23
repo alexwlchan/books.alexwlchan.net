@@ -3,10 +3,11 @@ layout: review
 book:
   contributors:
     - name: Douglas Adams, James Goss
+    - name: Jon Culshaw
+      role: narrator
   cover:
     name: doctor-who-the-pirate-planet.jpg
     tint_color: '#1f1927'
-  narrator: Jon Culshaw
   publication_year: 2017
   title: 'Doctor Who: The Pirate Planet'
   tags:

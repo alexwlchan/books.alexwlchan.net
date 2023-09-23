@@ -6,7 +6,7 @@ book:
   cover:
     name: the-lonely-city.jpg
     tint_color: '#876e99'
-  isbn13: 9781782111245
+  isbn13: "9781782111245"
   publication_year: 2016
   title: The Lonely City
   tags:

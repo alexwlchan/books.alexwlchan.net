@@ -3,12 +3,13 @@ layout: review
 book:
   contributors:
     - name: Courttia Newland
+    - name: Neil Reidman and Brenda Iyalla
+      role: narrator
   cover:
     name: cosmogramma.jpg
     tint_color: '#c75027'
   publication_year: 2021
   title: Cosmogramma
-  narrator: Neil Reidman and Brenda Iyalla
   tags:
     - fiction
     - sci-fi

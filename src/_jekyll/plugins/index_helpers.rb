@@ -69,8 +69,13 @@ def get_attribution_credit(contributors_by_role)
     retold_by_name = contributors_by_role['retold by'][0]
     "retold by #{retold_by_name}"
 
+  # Otherwise find the author
+  elsif contributors_by_role.key? "author" && contributors_by_role['author'].length == 1
+    author_name = contributors_by_role['author'][0]
+    "by #{author_name}"
+
   else
-    '<unknown>'
+    '[unknown]'
   end
 end
 

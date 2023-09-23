@@ -3,10 +3,11 @@ layout: review
 book:
   contributors:
     - name: Yoon Ha Lee, Becky Chambers, Rivers Solomon, S.L. Huang
+    - name: Robin Miles
+      role: narrator
   cover:
     name: the-vela-season-1.jpg
     tint_color: '#345f76'
-  narrator: Robin Miles
   publication_year: 2019
   title: The Vela (season 1)
   tags:

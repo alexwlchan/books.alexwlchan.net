@@ -3,7 +3,8 @@ layout: review
 book:
   contributors:
     - name: Hanna Bervoets
-  translated_by: Emma Rault
+    - name: Emma Rault
+      role: translator
   cover:
     name: we-had-to-remove-this-post.jpg
     tint_color: "#c94076"

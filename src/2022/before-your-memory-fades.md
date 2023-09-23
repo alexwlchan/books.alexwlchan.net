@@ -3,7 +3,8 @@ layout: review
 book:
   contributors:
     - name: Toshikazu Kawaguchi
-  translated_by: Geoffrey Trousselot
+    - name: Geoffrey Trousselot
+      role: translator
   cover:
     name: before-your-memory-fades.jpg
     tint_color: "#384cd3"

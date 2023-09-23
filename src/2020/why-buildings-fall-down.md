@@ -6,12 +6,6 @@ book:
   cover:
     name: why-buildings-fall-down.jpg
     tint_color: '#716a81'
-  cover_desc: 'White cover, with the words “Why Buildings Fall Down” in blue. Below
-    the title is a picture pof three buildings: (L-R) a multi-storey white building
-    with rectangular windows, the Leaning Tower of Pisa on a blue-ish background,
-    and a line of circular columns on a brown-ish background.
-
-    '
   publication_year: 1992
   title: Why Buildings Fall Down
   tags:
@@ -20,7 +14,7 @@ book:
     - disasters
 review:
   date_read: 2020-01-25
-  format: paperbook
+  format: paperback
   rating: 4
 ---
 

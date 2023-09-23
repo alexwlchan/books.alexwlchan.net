@@ -3,10 +3,11 @@ layout: review
 book:
   contributors:
     - name: David Olusoga
+    - name: Ben Onwukwe
+      role: narrator
   cover:
     name: black-and-british.jpg
     tint_color: '#166e7e'
-  narrator: Ben Onwukwe
   publication_year: 2016
   title: Black and British
   tags:

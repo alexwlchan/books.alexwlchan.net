@@ -3,10 +3,11 @@ layout: review
 book:
   contributors:
     - name: Alexandria Bellefleur
+    - name: Lauren Sweet
+      role: narrator
   cover:
     name: written-in-the-stars.jpg
     tint_color: '#0f5987'
-  narrator: Lauren Sweet
   publication_year: 2020
   title: Written in the Stars
   series: "Written in the Stars, #1"

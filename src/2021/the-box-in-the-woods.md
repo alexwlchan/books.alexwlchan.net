@@ -3,7 +3,8 @@ layout: review
 book:
   contributors:
     - name: Maureen Johnson
-  narrator: Kate Rudd
+    - name: Kate Rudd
+      role: narrator
   series: 'Truly Devious #4'
   cover:
     name: the-box-in-the-woods.jpg
