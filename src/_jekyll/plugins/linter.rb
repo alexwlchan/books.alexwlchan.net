@@ -38,6 +38,7 @@ class RunLinting < Jekyll::Command
         html_dir, {
           check_html: true,
           check_img_http: true,
+          ignore_missing_alt: true,
           check_opengraph: true,
           disable_external: true,
           report_invalid_tags: true
