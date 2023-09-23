@@ -69,12 +69,12 @@ layout: compress
         {% for c in book.contributors %}
           <tr>
             <th>
-              {% if c["label"] %}{{ c["label"] }}{% else %}author{% endif %}:
+              {% if c["role"] %}{{ c["role"] }}{% else %}author{% endif %}:
             </th>
             <td>
               {{ c["name"] }}
               {% unless year_has_been_printed %}
-                ({{ year }})
+                ({{ book.publication_year }})
                 {% assign year_has_been_printed = true %}
               {% endunless %}
             </td>

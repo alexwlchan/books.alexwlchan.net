@@ -51,9 +51,12 @@ def create_credit_line(book)
   contributors = book["contributors"]
   publication_year = book["publication_year"]
 
-  if contributors.length == 1 && contributors[0]["label"].nil?
+  if contributors.length == 1 && contributors[0]["role"].nil?
     author = contributors[0]["name"]
     "by #{author} (#{publication_year})"
+  elsif contributors.length == 1 && contributors[0]["role"] == "editor"
+    editor = contributors[0]["name"]
+    "edited by #{editor} (#{publication_year})"
   end
 end
 
