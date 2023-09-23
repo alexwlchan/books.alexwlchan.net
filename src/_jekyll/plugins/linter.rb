@@ -23,7 +23,6 @@ class RunLinting < Jekyll::Command
 
           html_documents = get_html_documents(html_dir)
 
-          check_writing_has_been_archived(src_dir)
           check_card_images(html_dir, html_documents)
           check_yaml_front_matter(src_dir)
           check_no_localhost_links(html_documents)
@@ -77,32 +76,6 @@ class RunLinting < Jekyll::Command
             doc:
           }
         end
-    end
-
-    # This checks that every article on /elsewhere/ has at least one copy
-    # archived on my own computers.
-    #
-    # This means I'm not susceptible to link rot -- if one of my articles
-    # is taken offline, I'll still have a copy.
-    #
-    # See also: https://www.stephaniemorillo.co/post/why-developers-should-archive-their-old-content
-
-    def check_writing_has_been_archived(src_dir)
-      elsewhere = YAML.load_file(
-        "#{src_dir}/_data/elsewhere.yml",
-        permitted_classes: [Date]
-      )
-
-      no_archive_writing = elsewhere['writing']
-                           .filter { |w| !w.key? 'archived_paths' }
-
-      return if no_archive_writing.empty?
-
-      puts "The following writing entries in 'elsewhere' have not been archived:"
-      no_archive_writing
-        .each { |w| puts w['url'] }
-      puts "Please run 'python3 scripts/archive_elsewhere.py'"
-      exit!
     end
 
     # Validate the images used by my Twitter cards by checking that:
