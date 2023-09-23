@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: Lemony Snicket
+  contributors:
+    - name: Lemony Snicket
   cover:
     name: when-did-you-see-her-last.jpg
     tint_color: '#8b6198'

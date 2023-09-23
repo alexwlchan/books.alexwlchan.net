@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: Margalit Fox
+  contributors:
+    - name: Margalit Fox
   cover:
     name: the-riddle-of-the-labyrinth.jpg
     tint_color: '#9d4b2b'

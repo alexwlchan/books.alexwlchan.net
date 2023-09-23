@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: Sherry Sontag
+  contributors:
+    - name: Sherry Sontag
   cover:
     name: blind-mans-bluff.jpg
     tint_color: '#5f7777'

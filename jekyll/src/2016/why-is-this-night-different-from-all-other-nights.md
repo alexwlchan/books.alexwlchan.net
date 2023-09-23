@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: Lemony Snicket
+  contributors:
+    - name: Lemony Snicket
   cover:
     name: why-is-this-night-different-from-all-other-nights.jpg
     tint_color: '#7f5ba0'

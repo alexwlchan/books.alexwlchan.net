@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: Neil Perryman
+  contributors:
+    - name: Neil Perryman
   cover:
     name: adventures-with-the-wife-in-space.jpg
     tint_color: '#5d5a71'

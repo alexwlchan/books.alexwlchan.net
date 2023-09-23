@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: C.S. Lewis
+  contributors:
+    - name: C.S. Lewis
   cover:
     name: the-chronicles-of-narnia-audio-collection.jpg
     tint_color: '#6d4f31'

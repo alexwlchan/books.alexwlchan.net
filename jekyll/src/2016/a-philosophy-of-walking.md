@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: Frédéric Gros
+  contributors:
+    - name: Frédéric Gros
   cover:
     name: a-philosophy-of-walking.jpg
     tint_color: '#6c7b4e'

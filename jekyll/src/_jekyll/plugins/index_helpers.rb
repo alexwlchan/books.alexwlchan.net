@@ -7,24 +7,33 @@ module Jekyll
     def all_reviews(pages)
       pages
         .filter { |p| p["url"] != "/reviews/" and p["url"] != "/" }
-        .sort_by { |p| p["review"]["date_read"] }
+        .sort_by { |p| p["review"]["date_read"].to_s }
         .reverse
     end
 
     def grouped_reviews(pages)
       all_reviews(pages)
-        .group_by { |p| p["review"]["date_read"][0..3] }
+        .group_by { |p| p["review"]["date_read"].to_s[0..3] }
         .to_a
         .sort_by { |year, _| year }
         .reverse
     end
 
     def year_read(review)
-      review["date_read"][0..3]
+      if review["date_read"].is_a? String
+        review["date_read"][0..3]
+      else
+        review["date_read"].year.to_s
+      end
     end
 
     def derived_cover_info(review_entry)
-      year = review_entry["review"]["date_read"][0..3]
+      year = if review_entry["review"]["date_read"].is_a? Date
+        review_entry["review"]["date_read"].year
+      else
+        review_entry["review"]["date_read"][0..3]
+      end
+
       filename = review_entry["book"]["cover"]["name"]
 
       image = Rszr::Image.load("src/covers/#{year}/#{filename}")

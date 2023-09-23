@@ -1,7 +1,9 @@
 require 'date'
 
 def render_date_read(date_string)
-  if date_string.match(/^\d{4}$/)
+  if date_string.instance_of? Date
+    date_string.strftime("%-d %B %Y")
+  elsif date_string.match(/^\d{4}$/)
     date_string
   elsif date_string.match(/^\d{4}-\d{2}$/)
     DateTime.parse("#{date_string}-01").strftime("%B %Y")

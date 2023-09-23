@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: David Allen
+  contributors:
+    - name: David Allen
   cover:
     name: getting-things-done.jpg
     tint_color: '#7b575c'

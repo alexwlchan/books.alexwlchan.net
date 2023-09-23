@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: Matthew Butterick
+  contributors:
+    - name: Matthew Butterick
   cover:
     name: typography-for-lawyers.jpg
     tint_color: '#6a6a6a'

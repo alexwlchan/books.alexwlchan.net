@@ -1,6 +1,8 @@
 ---
+layout: review
 book:
-  author: Lemony Snicket
+  contributors:
+    - name: Lemony Snicket
   cover:
     name: who-could-that-be-at-this-hour.jpg
     tint_color: '#bb4f1c'
