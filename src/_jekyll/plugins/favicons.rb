@@ -4,65 +4,58 @@ require 'fileutils'
 require 'chunky_png'
 require 'shell/executer'
 
+# Given a ChunkyPNG image with grayscale pixels and a tint colour, create
+# a colourised version of that image.
+def colorise_image(image, tint_colour)
+  0.upto(image.width - 1) do |x|
+    0.upto(image.height - 1) do |y|
+      image.set_pixel(
+        x, y,
+        ChunkyPNG::Color.rgba(
+          tint_colour.red.to_i,
+          tint_colour.green.to_i,
+          tint_colour.blue.to_i,
+          image.get_pixel(x, y)
+        )
+      )
+    end
+  end
+end
+
 module Favicons
   class GenerateFavicons < Jekyll::Generator
     def generate(site)
-      source = site.config["source"]
-      destination = site.config["destination"]
+      source = site.config['source']
+      destination = site.config['destination']
 
       colors =
         site.pages
-          .map { |p| p.data.dig("book", "cover", "tint_color") }
-          .filter { |c| not c.nil? }
-          .to_set
+            .map { |p| p.data.dig('book', 'cover', 'tint_color') }
+            .filter { |c| !c.nil? }
+            .to_set
 
       FileUtils.mkdir_p "#{destination}/favicons"
 
-      mask16 = ChunkyPNG::Image.from_file("#{source}/static/favicon_16.png")
-      mask32 = ChunkyPNG::Image.from_file("#{source}/static/favicon_32.png")
-
-      colors.each do |color|
-        hex_string = color.gsub(/#/, "")
-        rgb_color = Color::RGB.by_hex(color)
+      colors.each do |c|
+        hex_string = c.gsub('#', '')
 
         ico_path = "#{destination}/favicons/#{hex_string}.ico"
         png_path = "#{destination}/favicons/#{hex_string}.png"
 
-        if File.exist? ico_path
-          next
-        end
+        next if (File.exist? ico_path) && (File.exist? png_path)
+
+        image16 = ChunkyPNG::Image.from_file("#{source}/static/favicon_16.png")
+        image32 = ChunkyPNG::Image.from_file("#{source}/static/favicon_32.png")
 
         Dir.mktmpdir do |tmp_dir|
           Dir.chdir(tmp_dir) do
-            img16 = ChunkyPNG::Image.new(16, 16, ChunkyPNG::Color::TRANSPARENT)
+            fill_colour = Color::RGB.by_hex(c)
 
-            for x in 0..15 do
-              for y in 0..15 do
-                img16[x, y] = ChunkyPNG::Color.rgba(
-                  rgb_color.red.to_i,
-                  rgb_color.green.to_i,
-                  rgb_color.blue.to_i,
-                  mask16[x, y]
-                )
-              end
-            end
+            colorise_image(image16, fill_colour)
+            image16.save('favicon-16x16.png', :best_compression)
 
-            img16.save("favicon-16x16.png")
-
-            img32 = ChunkyPNG::Image.new(32, 32, ChunkyPNG::Color::TRANSPARENT)
-
-            for x in 0..31 do
-              for y in 0..31 do
-                img32[x, y] = ChunkyPNG::Color.rgba(
-                  rgb_color.red.to_i,
-                  rgb_color.green.to_i,
-                  rgb_color.blue.to_i,
-                  mask32[x, y]
-                )
-              end
-            end
-
-            img32.save("favicon-32x32.png")
+            colorise_image(image32, fill_colour)
+            image32.save('favicon-32x32.png', :best_compression)
 
             # Create an ICO favicon by packing the two PNG images.
             # See https://superuser.com/a/1012535/243137
