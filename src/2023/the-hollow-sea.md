@@ -11,7 +11,7 @@ book:
   isbn13: "978-1-405-94990-3"
   tags:
     - fiction
-    - !from-the-library
+    - "!from-the-library"
 review:
   date_read: 2023-10-17
   format: paperback
