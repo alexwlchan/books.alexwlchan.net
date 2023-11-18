@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Becky Chambers
   cover:
-    name: a-psalm-for-the-wild-built.jpg
     tint_color: "#917546"
   publication_year: 2021
   title: A Psalm for the Wild-Built

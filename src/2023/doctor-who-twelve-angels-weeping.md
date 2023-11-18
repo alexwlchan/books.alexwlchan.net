@@ -6,7 +6,6 @@ book:
     - name: Alexis Snell
       role: illustrator
   cover:
-    name: doctor-who-twelve-angels-weeping.jpg
     tint_color: "#0a0605"
   title: "Doctor Who: Twelve Angels Weeping"
   publication_year: 2018

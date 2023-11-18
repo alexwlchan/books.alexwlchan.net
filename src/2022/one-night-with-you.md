@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Laura Jane Williams
   cover:
-    name: one-night-with-you.jpg
     tint_color: "#3553a3"
   title: One Night With You
   publication_year: 2022

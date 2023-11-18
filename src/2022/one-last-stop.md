@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Casey McQuiston
   cover:
-    name: one-last-stop.jpg
     tint_color: "#a96894"
   title: One Last Stop
   publication_year: 2021

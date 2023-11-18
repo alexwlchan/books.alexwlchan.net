@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Robin J. Wilson
   cover:
-    name: lewis-carroll-in-numberland.jpg
     tint_color: '#14798c'
   isbn10: 0141016108
   isbn13: '9780141016108'

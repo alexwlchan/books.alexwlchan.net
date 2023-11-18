@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Charlotte Barnes
   cover:
-    name: the-break-up.jpg
     tint_color: "#06628e"
   title: The Break Up
   publication_year: 2022

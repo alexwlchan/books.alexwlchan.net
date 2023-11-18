@@ -5,7 +5,6 @@ book:
     - name: Michael DiBernardo
       role: editor
   cover:
-    name: 500-lines-or-less.jpg
     tint_color: "#5c606f"
   title: 500 Lines or Less
   publication_year: 2016

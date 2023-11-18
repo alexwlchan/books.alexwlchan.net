@@ -4,7 +4,6 @@ book:
   contributors:
     - name: "David Borgenicht & Trey Popp"
   cover:
-    name: the-worst-case-scenario-almanac-the-great-outdoors.JPG
     tint_color: "#5a7c01"
   title: "The Worst-Case Scenario Almanac: Great Outdoors"
   publication_year: 2007

@@ -6,7 +6,6 @@ book:
     - name: Imogen Church
       role: narrator
   cover:
-    name: the-woman-in-cabin-10.jpg
     tint_color: '#12555a'
   publication_year: 2016
   title: The Woman in Cabin 10

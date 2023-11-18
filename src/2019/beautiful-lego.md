@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Mike Doyle
   cover:
-    name: beautiful-lego.jpg
     tint_color: '#000000'
   isbn10: '1593275080'
   isbn13: '9781593275082'

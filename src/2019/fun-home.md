@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Alison Bechdel
   cover:
-    name: fun-home.jpg
     tint_color: '#457569'
   isbn10: 0224080512
   isbn13: '9780224080514'

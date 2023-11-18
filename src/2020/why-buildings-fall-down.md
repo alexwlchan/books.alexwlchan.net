@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Matthys Levy, Mario Salvadori
   cover:
-    name: why-buildings-fall-down.jpg
     tint_color: '#716a81'
   publication_year: 1992
   title: Why Buildings Fall Down

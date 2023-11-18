@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Mark Ovenden
   cover:
-    name: underground-cities.jpg
     tint_color: "#d44f3e"
   title: Underground Cities
   publication_year: 2020

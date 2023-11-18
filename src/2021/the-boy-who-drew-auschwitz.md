@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Thomas Geve
   cover:
-    name: the-boy-who-drew-auschwitz.jpg
     tint_color: '#706a62'
   publication_year: 2021
   title: The Boy Who Drew Auschwitz

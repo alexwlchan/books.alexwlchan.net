@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Chris Coyier
   cover:
-    name: practical-svg.png
     tint_color: "#4d7bdc"
   title: Practical SVG
   publication_year: 2016

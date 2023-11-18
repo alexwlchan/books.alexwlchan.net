@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Maia Kobabe
   cover:
-    name: gender-euphoria-maia.jpg
     tint_color: "#cd9c31"
   title: Gender Euphoria
   publication_year: 2019

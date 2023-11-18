@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Mark Jamra and Neil Patel
   cover:
-    name: kigelia-a-typeface-for-africa.jpg
     tint_color: "#b25405"
   title: "Kigelia: A Typeface for Africa"
   publication_year: 2018

@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Alison Evans
   cover:
-    name: we-go-forward.jpg
     tint_color: '#4d7790'
   isbn13: '9781620047255'
   publication_year: 2016

@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Julie Sondra Decker
   cover:
-    name: the-invisible-orientation.jpg
     tint_color: "#854686"
   title: The Invisible Orientation
   publication_year: 2014

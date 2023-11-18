@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Celeste Headlee
   cover:
-    name: we-need-to-talk.jpg
     tint_color: "#be7d0e"
   title: We Need to Talk
   publication_year: 2017

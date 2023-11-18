@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Clyde W. Ford
   cover:
-    name: think-black.jpg
     tint_color: '#353535'
   publication_year: 2019
   title: Think Black

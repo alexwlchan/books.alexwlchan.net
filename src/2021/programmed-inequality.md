@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Marie Hicks
   cover:
-    name: programmed-inequality.jpg
     tint_color: '#4f5c91'
   isbn10: '0262035545'
   isbn13: '9780262035545'

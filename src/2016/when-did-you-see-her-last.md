@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Lemony Snicket
   cover:
-    name: when-did-you-see-her-last.jpg
     tint_color: '#8b6198'
   isbn10: '0316123056'
   isbn13: '9780316123051'

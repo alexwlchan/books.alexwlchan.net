@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Emily Kearns
   cover:
-    name: mind-the-gap-a-london-underground-miscellany.jpg
     tint_color: '#e10518'
   isbn10: '1849533571'
   isbn13: '9781849533577'

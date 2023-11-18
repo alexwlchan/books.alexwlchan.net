@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Robert Llewellyn
   cover:
-    name: behind-the-scenes-at-scrapheap-challenge.jpg
     tint_color: '#424f83'
   isbn10: 0752219995
   isbn13: '9780752219998'

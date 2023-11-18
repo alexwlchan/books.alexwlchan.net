@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Clare Swatman
   cover:
-    name: how-to-save-a-life.jpg
     tint_color: "#53a4da"
   title: How To Save a Life
   publication_year: 2022

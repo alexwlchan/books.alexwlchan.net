@@ -4,7 +4,6 @@ book:
   contributors:
     - name: B. Jack Copeland
   cover:
-    name: turing-pioneer-of-the-information-age.jpg
     tint_color: '#883638'
   isbn10: 0199639795
   isbn13: '9780199639793'

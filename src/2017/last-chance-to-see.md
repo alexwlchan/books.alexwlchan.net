@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Douglas Adams & Mark Carwadine
   cover:
-    name: last-chance-to-see.jpg
     tint_color: '#ce1c1a'
   isbn10: 009953679X
   isbn13: '9780099536796'

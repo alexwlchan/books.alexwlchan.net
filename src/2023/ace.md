@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Angela Chen
   cover:
-    name: ace.jpg
     tint_color: "#926ea7"
   title: Ace
   publication_year: 2020

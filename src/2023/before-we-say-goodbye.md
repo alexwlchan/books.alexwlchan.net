@@ -6,7 +6,6 @@ book:
     - name: Geoffrey Trousselot
       role: translator
   cover:
-    name: before-we-say-goodbye.jpg
     tint_color: "#f19fb8"
   title: Before We Say Godbye
   publication_year: 2023

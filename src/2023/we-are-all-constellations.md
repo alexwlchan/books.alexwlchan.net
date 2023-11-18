@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Amy Beashel
   cover:
-    name: we-are-all-constellations.jpg
     tint_color: "#6a3693"
   title: We Are All Constellations
   publication_year: 2022

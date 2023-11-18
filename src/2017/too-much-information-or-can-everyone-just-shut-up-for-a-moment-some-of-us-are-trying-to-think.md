@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Dave Gorman
   cover:
-    name: too-much-information-or-can-everyone-just-shut-up-for-a-moment-some-of-us-are-trying-to-think.jpg
     tint_color: '#667849'
   isbn10: 0091928508
   isbn13: '9780091928506'

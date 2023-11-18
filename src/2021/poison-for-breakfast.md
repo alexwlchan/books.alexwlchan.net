@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Lemony Snicket
   cover:
-    name: poison-for-breakfast.png
     tint_color: '#bf3625'
   publication_year: 2021
   title: Poison for Breakfast

@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Thomas S. Mullaney
   cover:
-    name: the-chinese-typewriter-a-history.jpg
     tint_color: '#bd292f'
   publication_year: 2017
   title: 'The Chinese Typewriter: A History'

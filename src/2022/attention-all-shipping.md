@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Charlie Connelly
   cover:
-    name: attention-all-shipping.jpg
     tint_color: "#09296e"
   title: Attention All Shipping
   publication_year: 2004

@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Angie Thomas
   cover:
-    name: concrete-rose.jpg
     tint_color: "#172e36"
   title: Concrete Rose
   publication_year: 2021

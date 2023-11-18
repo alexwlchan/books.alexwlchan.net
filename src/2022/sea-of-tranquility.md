@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Emily St. John Mandel
   cover:
-    name: sea-of-tranquility.jpg
     tint_color: "#66a2a4"
   title: Sea of Tranquility
   publication_year: 2022

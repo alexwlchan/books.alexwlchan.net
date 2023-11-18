@@ -4,7 +4,6 @@ book:
   contributors:
     - name: William T. Vollmann
   cover:
-    name: uncentering-the-earth.jpg
     tint_color: "#060506"
   title: Uncentering the Earth
   publication_year: 2006

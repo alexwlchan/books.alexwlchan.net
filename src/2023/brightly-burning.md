@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Alexa Donne
   cover:
-    name: brightly-burning.jpg
     tint_color: "#53156f"
   title: Brightly Burning
   publication_year: 2018

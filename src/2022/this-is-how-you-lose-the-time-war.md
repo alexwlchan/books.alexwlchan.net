@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Amal El-Mohtar & Max Gladstone
   cover:
-    name: this-is-how-you-lose-the-time-war.jpg
     tint_color: "#164684"
   title: This Is How You Lose the Time War
   publication_year: 2019

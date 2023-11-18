@@ -8,7 +8,6 @@ book:
     - name: "Eric Winter"
       role: "illustrator"
   cover:
-    name: dick-whittington-and-his-cat.jpg
     tint_color: "#b49c3c"
   publication_year: 1966
   title: Dick Whittington and his cat

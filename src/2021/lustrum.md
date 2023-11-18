@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Robert Harris
   cover:
-    name: lustrum.jpg
     tint_color: '#231f20'
   isbn13: '9780091801007'
   publication_year: 2009

@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Martha Wells
   cover:
-    name: all-systems-red.jpg
     tint_color: '#752d1e'
   isbn13: '9780765397522'
   publication_year: 2017

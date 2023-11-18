@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Natasha Pulley
   cover:
-    name: the-lost-future-of-pepperharrow.jpg
     tint_color: "#5cb0b7"
   title: The Lost Future of Pepperharrow
   publication_year: 2020

@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Steve Klabnik and Carol Nichols
   cover:
-    name: the-rust-programming-language.jpg
     tint_color: '#b64725'
   publication_year: 2018
   title: The Rust Programming Language

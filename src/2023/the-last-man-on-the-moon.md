@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Eugene Cernan and Don Davis
   cover:
-    name: the-last-man-on-the-moon.jpg
     tint_color: "#533d41"
   title: The Last Man on the Moon
   publication_year: 1999

@@ -2,7 +2,6 @@
 layout: review
 book:
   cover:
-    name: your-computer-is-on-fire.jpg
     tint_color: '#988206'
   contributors:
     - name: Thomas S. Mullaney, Benjamin Peters, Mar Hicks, and Kavita Philip

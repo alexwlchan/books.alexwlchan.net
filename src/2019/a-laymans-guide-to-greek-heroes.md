@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Alan Carter
   cover:
-    name: a-laymans-guide-to-greek-heroes.jpg
     tint_color: '#9d534b'
   isbn10: 960226487X
   isbn13: '9789602264874'

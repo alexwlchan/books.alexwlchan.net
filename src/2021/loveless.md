@@ -6,7 +6,6 @@ book:
     - name: Elisabeth Hopper
       role: narrator
   cover:
-    name: loveless.jpg
     tint_color: '#914690'
   publication_year: 2018
   title: Loveless

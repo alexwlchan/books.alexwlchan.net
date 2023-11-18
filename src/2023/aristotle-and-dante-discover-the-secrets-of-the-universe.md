@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Benjamin Alire Sáenz
   cover:
-    name: aristotle-and-dante-discover-the-secrets-of-the-universe.jpg
     tint_color: "#120908"
   title: Aristotle and Dante Discover the Secrets of the Universe
   publication_year: 2012

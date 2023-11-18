@@ -4,7 +4,6 @@ book:
   contributors:
     - name: David Crystal
   cover:
-    name: a-little-book-of-language.jpg
     tint_color: '#77766e'
   isbn10: 0300170823
   isbn13: '9780300170825'

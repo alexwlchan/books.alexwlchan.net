@@ -6,7 +6,6 @@ book:
     - name: Gerry Balding
       role: editor
   cover:
-    name: all-in-our-own-words.jpeg
     tint_color: "#1f498e"
   title: All In Our Own Words
   publication_year: 2016

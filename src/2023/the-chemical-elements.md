@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Nechaev & Jenkins
   cover:
-    name: the-chemical-elements.jpg
     tint_color: "#382d27"
   title: The Chemical Elements
   publication_year: 2003

@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Karrie Fransman and Jonathan Plackett
   cover:
-    name: gender-swapped-fairy-tales.jpg
     tint_color: '#bb2f37'
   isbn13: 978-0-571-36018-5
   publication_year: 2020

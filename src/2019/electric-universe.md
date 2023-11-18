@@ -4,7 +4,6 @@ book:
   contributors:
     - name: David Bodanis
   cover:
-    name: electric-universe.jpg
     tint_color: '#c8191d'
   isbn10: 0349117667
   isbn13: '9780349117669'

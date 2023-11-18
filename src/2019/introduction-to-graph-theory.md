@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Robin J. Wilson
   cover:
-    name: introduction-to-graph-theory.jpg
     tint_color: '#332d5d'
   isbn10: 027372889X
   isbn13: '9780273728894'

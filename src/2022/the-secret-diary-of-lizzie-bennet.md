@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Bernie Su and Kate Rorick
   cover:
-    name: the-secret-diary-of-lizzie-bennet.JPG
     tint_color: "#cf1e25"
   publication_year: 2014
   title: The Secret Diary of Lizzie Bennet

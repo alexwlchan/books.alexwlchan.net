@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Brian Clegg
   cover:
-    name: a-brief-history-of-infinity.jpg
     tint_color: '#72695f'
   isbn10: '1841196509'
   isbn13: '9781841196503'

@@ -6,7 +6,6 @@ book:
     - name: Annie Kirby
   publication_year: 2022
   cover:
-    name: the-hollow-sea.jpg
     tint_color: "#2f7677"
   isbn13: "978-1-405-94990-3"
   tags:

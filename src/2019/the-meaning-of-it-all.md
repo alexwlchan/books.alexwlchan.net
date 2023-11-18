@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Richard P. Feynman
   cover:
-    name: the-meaning-of-it-all.jpg
     tint_color: '#b74946'
   isbn10: '0141031441'
   isbn13: '9780141031446'

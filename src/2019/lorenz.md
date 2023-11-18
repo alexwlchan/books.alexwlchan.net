@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Jerry Roberts
   cover:
-    name: lorenz.jpg
     tint_color: '#b05d34'
   isbn10: 0750978856
   isbn13: '9780750978859'

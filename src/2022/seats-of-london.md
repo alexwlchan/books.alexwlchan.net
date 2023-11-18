@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Andrew Martin
   cover:
-    name: seats-of-london.jpg
     tint_color: "#6d6d71"
   title: Seats of London
   publication_year: 2019

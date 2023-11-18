@@ -6,7 +6,6 @@ book:
     - name: Kate Rudd
       role: narrator
   cover:
-    name: truly-devious.jpg
     tint_color: '#393977'
   publication_year: 2018
   series: 'Truly Devious #1'

@@ -5,7 +5,6 @@ book:
     - name: Basma Ghalayini
       role: editor
   cover:
-    name: palestine-100.jpg
     tint_color: "#b05f40"
   publication_year: 2019
   title: "Palestine + 100"

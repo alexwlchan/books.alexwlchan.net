@@ -6,7 +6,6 @@ book:
     - name: Geoffrey Trousselot
       role: translator
   cover:
-    name: before-your-memory-fades.jpg
     tint_color: "#384cd3"
   title: Before Your Memory Fades
   publication_year: 2022

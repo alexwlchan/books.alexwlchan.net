@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Amy Rose Capetta and Cori McCarthy
   cover:
-    name: once-future.jpg
     tint_color: "#9a2765"
   title: Once & Future
   publication_year: 2019

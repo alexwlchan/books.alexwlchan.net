@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Becky Chambers
   cover:
-    name: a-closed-and-common-orbit.jpg
     tint_color: '#c31413'
   isbn10: '1473621445'
   isbn13: '9781473621442'

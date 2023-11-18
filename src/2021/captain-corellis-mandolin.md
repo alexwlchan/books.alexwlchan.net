@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Louis de Bernières
   cover:
-    name: captain-corellis-mandolin.jpg
     tint_color: '#270b60'
   isbn10: 0749397543
   isbn13: '9780749397548'

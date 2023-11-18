@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Ben Crystal, David Crystal
   cover:
-    name: you-say-potato.jpg
     tint_color: '#006eb3'
   isbn10: '1447249690'
   isbn13: '9781447249696'

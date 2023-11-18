@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Kazuo Ishiguro
   cover:
-    name: klara-and-the-sun.jpg
     tint_color: '#c14327'
   isbn13: '9780571364879'
   publication_year: 2021

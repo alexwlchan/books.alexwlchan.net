@@ -4,7 +4,6 @@ book:
   contributors:
     - name: China Miéville
   cover:
-    name: the-city-the-city.jpg
     tint_color: '#3c4387'
   isbn13: '9781509870585'
   publication_year: 2009

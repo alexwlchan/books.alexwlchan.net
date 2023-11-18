@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Lemony Snicket
   cover:
-    name: why-is-this-night-different-from-all-other-nights.jpg
     tint_color: '#7f5ba0'
   isbn10: 0316123048
   isbn13: '9780316123044'

@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Becky Chambers
   cover:
-    name: the-long-way-to-a-small-angry-planet.jpg
     tint_color: '#6c6f84'
   isbn10: '1473619807'
   isbn13: '9781473619807'

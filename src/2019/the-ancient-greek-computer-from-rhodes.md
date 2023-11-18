@@ -4,7 +4,6 @@ book:
   contributors:
     - name: V.J. Kean
   cover:
-    name: the-ancient-greek-computer-from-rhodes.jpg
     tint_color: '#6e6d5a'
   isbn10: '9602262273'
   isbn13: '9789602262276'

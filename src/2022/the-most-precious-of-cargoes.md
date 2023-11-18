@@ -6,7 +6,6 @@ book:
     - name: Frank Wynne
       role: translator
   cover:
-    name: the-most-precious-of-cargoes.jpg
     tint_color: "#6d868b"
   title: The Most Precious of Cargoes
   publication_year: 2019

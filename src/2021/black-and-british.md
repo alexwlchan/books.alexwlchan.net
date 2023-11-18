@@ -6,7 +6,6 @@ book:
     - name: Ben Onwukwe
       role: narrator
   cover:
-    name: black-and-british.jpg
     tint_color: '#166e7e'
   publication_year: 2016
   title: Black and British

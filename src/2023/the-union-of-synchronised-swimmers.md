@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Cristina Sandu
   cover:
-    name: the-union-of-synchronised-swimmers.jpg
     tint_color: "#42a586"
   title: The Union of Synchronised Swimmers
   publication_year: 2019

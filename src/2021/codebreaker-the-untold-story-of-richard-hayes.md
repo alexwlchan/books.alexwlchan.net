@@ -6,7 +6,6 @@ book:
     - name: Aidan Kelly
       role: narrator
   cover:
-    name: codebreaker-the-untold-story-of-richard-hayes.jpg
     tint_color: '#737270'
   publication_year: 2020
   title: 'Codebreaker: The Untold Story of Richard Hayes'

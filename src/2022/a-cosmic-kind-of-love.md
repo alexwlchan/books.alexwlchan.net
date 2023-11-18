@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Samantha Young
   cover:
-    name: a-cosmic-kind-of-love.jpg
     tint_color: "#2b4783"
   title: A Cosmic Kind of Love
   publication_year: 2022

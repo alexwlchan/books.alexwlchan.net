@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Andrew Royle
   cover:
-    name: yellow-trains.png
     tint_color: '#736c43'
   isbn13: '9781910809587'
   publication_year: 2019

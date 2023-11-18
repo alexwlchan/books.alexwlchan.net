@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Shaun Bythell
   cover:
-    name: the-diary-of-a-bookseller.jpg
     tint_color: "#275492"
   title: The Diary of a Bookseller
   publication_year: 2017

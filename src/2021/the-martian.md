@@ -6,7 +6,6 @@ book:
     - name: Wil Wheaton
       role: narrator
   cover:
-    name: the-martian.jpg
     tint_color: '#fe5b29'
   publication_year: 2011
   title: The Martian

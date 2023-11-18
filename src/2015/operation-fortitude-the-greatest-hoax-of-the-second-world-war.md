@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Joshua Levine
   cover:
-    name: operation-fortitude-the-greatest-hoax-of-the-second-world-war.jpg
     tint_color: '#d60812'
   isbn10: 0007395876
   isbn13: '9780007395873'

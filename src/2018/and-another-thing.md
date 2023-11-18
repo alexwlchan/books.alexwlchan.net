@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Eoin Colfer
   cover:
-    name: and-another-thing.jpg
     tint_color: '#a53829'
   isbn10: '1401323588'
   isbn13: '9781401323585'

@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Jennifer Saint
   cover:
-    name: ariadne.jpg
     tint_color: "#053d8a"
   title: Ariadne
   publication_year: 2021

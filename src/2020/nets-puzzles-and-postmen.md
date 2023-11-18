@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Peter M Higgins
   cover:
-    name: nets-puzzles-and-postmen.jpg
     tint_color: '#c05442'
   isbn13: 978-0-19-921842-4
   publication_year: 2007

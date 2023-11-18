@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Jodie Chapman
   cover:
-    name: another-life.jpg
     tint_color: "#464349"
   title: Another Life
   publication_year: 2021

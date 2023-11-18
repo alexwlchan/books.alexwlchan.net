@@ -7,7 +7,6 @@ book:
       role: narrator
   series: 'Truly Devious #4'
   cover:
-    name: the-box-in-the-woods.jpg
     tint_color: '#674288'
   publication_year: 2021
   title: The Box in the Woods

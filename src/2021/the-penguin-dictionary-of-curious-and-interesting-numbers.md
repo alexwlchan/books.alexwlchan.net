@@ -4,7 +4,6 @@ book:
   contributors:
     - name: David Wells
   cover:
-    name: the-penguin-dictionary-of-curious-and-interesting-numbers.jpg
     tint_color: '#7f6634'
   isbn10: 0140261494
   isbn13: '9780140261493'

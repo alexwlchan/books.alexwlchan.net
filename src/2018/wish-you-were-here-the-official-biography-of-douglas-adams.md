@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Nick Webb
   cover:
-    name: wish-you-were-here-the-official-biography-of-douglas-adams.jpg
     tint_color: '#826f55'
   isbn10: '0345476514'
   isbn13: '9780345476517'

@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Penelope Lively
   cover:
-    name: the-ghost-of-thomas-kempe.jpg
     tint_color: "#247257"
   title: The Ghost of Thomas Kempe
   publication_year: 1973

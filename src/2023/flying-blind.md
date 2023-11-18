@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Peter Robison
   cover:
-    name: flying-blind.jpg
     tint_color: "#fa382d"
   title: Flying Blind
   publication_year: 2021

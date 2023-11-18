@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Caitlin Doughty
   cover:
-    name: from-here-to-eternity.jpg
     tint_color: '#000000'
   isbn10: 0393356280
   isbn13: '9780393356281'

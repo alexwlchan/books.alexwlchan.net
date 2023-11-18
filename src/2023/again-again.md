@@ -4,7 +4,6 @@ book:
   contributors:
     - name: E. Lockhart
   cover:
-    name: again-again.jpg
     tint_color: "#3f7e70"
   title: "Again Again"
   publication_year: 2020

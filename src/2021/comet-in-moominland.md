@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Tove Jansson
   cover:
-    name: comet-in-moominland.jpg
     tint_color: '#2d5980'
   isbn13: '9781908745651'
   publication_year: 1946

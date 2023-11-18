@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Clifford A. Pickover
   cover:
-    name: the-math-book.jpg
     tint_color: "#220f13"
   title: The Math Book
   publication_year: 2009

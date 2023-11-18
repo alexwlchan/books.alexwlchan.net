@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Darryl Cunningham
   cover:
-    name: psychiatric-tales.jpg
     tint_color: '#686868'
   isbn10: '1906653089'
   isbn13: '9781906653088'

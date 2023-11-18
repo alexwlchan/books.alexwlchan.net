@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Anne Chambers
   cover:
-    name: granuaile-grace-omalley-irelands-pirate-queen.jpg
     tint_color: '#60616b'
   isbn10: 0717145824
   isbn13: '9780717145829'

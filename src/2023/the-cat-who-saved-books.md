@@ -6,7 +6,6 @@ book:
     - name: Louise Heal Kawai
       role: translator
   cover:
-    name: the-cat-who-saved-books.jpg
     tint_color: "#b87232"
   title: The Cat Who Saved Books
   publication_year: 2021

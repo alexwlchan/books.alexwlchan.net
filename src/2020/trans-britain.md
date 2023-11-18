@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Christine Burns
   cover:
-    name: trans-britain.jpg
     tint_color: '#955594'
   isbn13: 978-1-78352-470-9
   publication_year: 2018

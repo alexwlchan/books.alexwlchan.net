@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Patrick Barkham
   cover:
-    name: the-butterfly-isles.jpg
     tint_color: '#896229'
   isbn10: '1847083153'
   isbn13: '9781847083159'

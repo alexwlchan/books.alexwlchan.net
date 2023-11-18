@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Mia Violet
   cover:
-    name: yes-you-are-trans-enough.jpg
     tint_color: '#427590'
   isbn10: '1785923153'
   isbn13: '9781785923159'

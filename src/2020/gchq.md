@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Richard Aldrich
   cover:
-    name: gchq.jpg
     tint_color: '#646357'
   isbn13: '9780007278473'
   publication_year: 2010

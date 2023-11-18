@@ -6,7 +6,6 @@ book:
     - name: Natasha Randall
       role: translator
   cover:
-    name: we.jpg
     tint_color: "#845541"
   title: We
   publication_year: 1921

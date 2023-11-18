@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Tom Burns & Eva Burns-Lundgren
   cover:
-    name: psychotherapy-a-very-short-introduction.jpg
     tint_color: "#231962"
   title: "Psychotherapy: A Very Short Introduction"
   publication_year: 2015

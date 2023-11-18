@@ -6,7 +6,6 @@ book:
     - name: Neil Reidman and Brenda Iyalla
       role: narrator
   cover:
-    name: cosmogramma.jpg
     tint_color: '#c75027'
   publication_year: 2021
   title: Cosmogramma

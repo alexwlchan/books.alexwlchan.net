@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Maureen Johnson
   cover:
-    name: nine-liars.jpg
     tint_color: "#df4b23"
   title: Nine Liars
   publication_year: 2022

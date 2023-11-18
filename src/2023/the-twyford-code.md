@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Janice Hallett
   cover:
-    name: the-twyford-code.jpg
     tint_color: "#0e7ac1"
   title: The Twyford Code
   publication_year: 2022

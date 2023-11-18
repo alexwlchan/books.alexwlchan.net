@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Douglas Adams
   cover:
-    name: the-long-dark-tea-time-of-the-soul.jpg
     tint_color: '#89321c'
   isbn10: '1447221109'
   isbn13: '9781447221104'

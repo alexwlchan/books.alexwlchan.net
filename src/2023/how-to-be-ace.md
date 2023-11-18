@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Rebecca Burgess
   cover:
-    name: how-to-be-ace.jpg
     tint_color: "#523d8b"
   title: How to be Ace
   publication_year: 2021

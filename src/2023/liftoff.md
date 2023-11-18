@@ -10,7 +10,6 @@ book:
   isbn13: 978-0-00-844566-9
 
   cover:
-    name: liftoff.jpg
     tint_color: "#248bbf"
 
   tags:

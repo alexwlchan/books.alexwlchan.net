@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Becky Chambers
   cover:
-    name: a-prayer-for-the-crown-shy.jpg
     tint_color: "#457f55"
   title: A Prayer for the Crown-Shy
   publication_year: 2022

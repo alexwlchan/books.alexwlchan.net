@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Tanya Talaga
   cover:
-    name: seven-fallen-feathers.jpg
     tint_color: "#be292a"
   title: Seven Fallen Feathers
   publication_year: 2017

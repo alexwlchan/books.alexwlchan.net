@@ -6,7 +6,6 @@ book:
     - name: Nina Mingya Powles
       role: narrator
   cover:
-    name: small-bodies-of-water.jpg
     tint_color: '#0967b2'
   publication_year: 2021
   title: Small Bodies of Water

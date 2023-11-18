@@ -2,7 +2,6 @@
 layout: review
 book:
   cover:
-    name: disability-visibility.jpg
     tint_color: '#945b9a'
   contributors:
     - name: Alice Wong

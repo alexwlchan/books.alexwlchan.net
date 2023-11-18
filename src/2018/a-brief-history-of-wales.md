@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Gerald Morgan
   cover:
-    name: a-brief-history-of-wales.jpg
     tint_color: '#000000'
   isbn10: '1847710182'
   isbn13: '9781847710185'

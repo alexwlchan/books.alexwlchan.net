@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Tom Cox
   cover:
-    name: under-the-paw.jpg
     tint_color: "#84b496"
   title: Under the Paw
   publication_year: 2008

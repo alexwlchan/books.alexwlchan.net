@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Alison Evans
   cover:
-    name: ida.jpg
     tint_color: '#307e8b'
   isbn10: '1760404381'
   isbn13: '9781760404383'

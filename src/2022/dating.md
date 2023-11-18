@@ -4,7 +4,6 @@ book:
   contributors:
     - name: The School of Life
   cover:
-    name: dating.jpg
     tint_color: "#363738"
   title: Dating
   publication_year: 2019

@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Oliver Darkshire
   cover:
-    name: once-upon-a-tome.jpg
     tint_color: "#4b6869"
   title: Once Upon a Tome
   publication_year: 2022

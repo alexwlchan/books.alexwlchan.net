@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Lemony Snicket
   cover:
-    name: the-dark.jpg
     tint_color: '#000000'
   isbn10: 0316187488
   isbn13: '9780316187480'

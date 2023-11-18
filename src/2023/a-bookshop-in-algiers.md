@@ -6,7 +6,6 @@ book:
     - name: Chris Andrews
       role: translator
   cover:
-    name: a-bookshop-in-algiers.jpg
     tint_color: "#0b677f"
   title: A bookshop in Algiers
   publication_year: 2017

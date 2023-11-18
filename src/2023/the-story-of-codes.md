@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Steven Pincock & Mark Frary
   cover:
-    name: the-story-of-codes.jpg
     tint_color: "#777777"
   title: The Story of Codes
   publication_year: 2019

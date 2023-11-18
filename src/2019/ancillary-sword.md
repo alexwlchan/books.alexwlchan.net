@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Ann Leckie
   cover:
-    name: ancillary-sword.jpg
     tint_color: '#dd312b'
   isbn10: '0316246654'
   isbn13: '9780316246651'

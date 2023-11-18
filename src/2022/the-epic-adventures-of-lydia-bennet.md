@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Kate Rorick and Rachel Kiley
   cover:
-    name: the-epic-adventures-of-lydia-bennet.jpg
     tint_color: "#7b912a"
   title: The Epic Adventures of Lydia Bennet
   publication_year: 2015

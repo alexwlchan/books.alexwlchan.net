@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Stephen Cole
   cover:
-    name: doctor-who-timeless.jpg
     tint_color: '#1f5b95'
   isbn10: 0563486074
   isbn13: '9780563486077'

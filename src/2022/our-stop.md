@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Laura Jane Williams
   cover:
-    name: our-stop.jpg
     tint_color: "#df6369"
   title: Our Stop
   publication_year: 2019

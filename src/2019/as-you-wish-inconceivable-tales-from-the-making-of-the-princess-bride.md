@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Cary Elwes
   cover:
-    name: as-you-wish-inconceivable-tales-from-the-making-of-the-princess-bride.jpg
     tint_color: '#7d7267'
   isbn10: '1501161903'
   isbn13: '9781501161902'

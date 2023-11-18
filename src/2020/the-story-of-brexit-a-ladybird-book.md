@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Ladybird Books
   cover:
-    name: the-story-of-brexit-a-ladybird-book.jpg
     tint_color: '#795a44'
   isbn13: '9780241386569'
   publication_year: 2018

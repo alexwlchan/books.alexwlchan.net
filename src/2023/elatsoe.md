@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Darcie Little Badger
   cover:
-    name: elatsoe.jpg
     tint_color: "#74767e"
   title: Elatsoe
   publication_year: 2020

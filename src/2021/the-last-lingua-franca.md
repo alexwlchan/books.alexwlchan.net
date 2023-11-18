@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Nicholas Ostler
   cover:
-    name: the-last-lingua-franca.jpg
     tint_color: '#787266'
   isbn13: '9781846142154'
   publication_year: 2010

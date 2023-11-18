@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Harry Oliver
   cover:
-    name: march-hares-and-monkeys-uncles.jpg
     tint_color: '#bb233d'
   isbn10: '1843581523'
   isbn13: '9781843581529'

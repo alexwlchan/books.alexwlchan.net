@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Richard Wilhelm & Frederick H. Martens
   cover:
-    name: chinese-fairy-tales-and-legends.jpg
     tint_color: "#b97c4c"
   title: Chinese Fairy Tales and Legends
   publication_year: 2019

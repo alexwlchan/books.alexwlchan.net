@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Lemony Snicket
   cover:
-    name: shouldnt-you-be-in-school.jpg
     tint_color: '#2474b8'
   isbn10: '0316123064'
   isbn13: '9780316123068'

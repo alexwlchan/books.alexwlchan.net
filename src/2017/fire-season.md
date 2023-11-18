@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Philip Connors
   cover:
-    name: fire-season.jpg
     tint_color: '#854f26'
   isbn10: '1447208145'
   isbn13: '9781447208143'

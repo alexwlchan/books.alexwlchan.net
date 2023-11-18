@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Freya Sampson
   cover:
-    name: the-last-library.jpg
     tint_color: "#fd7c58"
   title: The Last Library
   publication_year: 2021

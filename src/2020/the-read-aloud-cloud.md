@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Forrest Brazeal
   cover:
-    name: the-read-aloud-cloud.png
     tint_color: '#5d686d'
   isbn13: '9781119677628'
   publication_year: 2020

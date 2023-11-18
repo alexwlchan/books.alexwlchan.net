@@ -4,7 +4,6 @@ book:
   contributors:
     - name: P.D. James
   cover:
-    name: an-unsuitable-job-for-a-woman.jpg
     tint_color: '#cc181f'
   isbn10: '0571253407'
   isbn13: '9780571253401'

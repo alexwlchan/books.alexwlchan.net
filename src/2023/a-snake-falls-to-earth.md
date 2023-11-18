@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Darcie Little Badger
   cover:
-    name: a-snake-falls-to-earth.jpg
     tint_color: "#536c70"
   title: A Snake Falls to Earth
   publication_year: 2021

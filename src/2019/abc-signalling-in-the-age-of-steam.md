@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Ian Allan
   cover:
-    name: abc-signalling-in-the-age-of-steam.jpg
     tint_color: '#fa4b39'
   isbn10: '0711023506'
   isbn13: '9780711023505'

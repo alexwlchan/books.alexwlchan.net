@@ -4,7 +4,6 @@ book:
   contributors:
     - name: English Heritage
   cover:
-    name: bletchley-park-home-of-the-codebreakers.jpg
     tint_color: '#96471f'
   isbn13: '9781841655451'
   publication_year: 2005

@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Chris Hadfield
   cover:
-    name: the-apollo-murders.jpg
     tint_color: '#1e1e1e'
   isbn13: '9781529417456'
   publication_year: 2021

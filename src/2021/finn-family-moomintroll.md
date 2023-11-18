@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Tove Jansson
   cover:
-    name: finn-family-moomintroll.jpg
     tint_color: '#017d93'
   isbn13: '9781908745644'
   publication_year: 1948

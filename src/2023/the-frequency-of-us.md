@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Keith Stuart
   cover:
-    name: the-frequency-of-us.jpg
     tint_color: "#0bd0c0"
   title: The Frequency of Us
   publication_year: 2021

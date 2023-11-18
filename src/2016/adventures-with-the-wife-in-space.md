@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Neil Perryman
   cover:
-    name: adventures-with-the-wife-in-space.jpg
     tint_color: '#5d5a71'
   isbn10: 0571298109
   isbn13: '9780571298105'
