@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Gwen Cooper
   cover:
-    name: homers-odyssey.jpg
     tint_color: "#0a0b0c"
   title: "Homer's Odyssey"
   publication_year: 2010

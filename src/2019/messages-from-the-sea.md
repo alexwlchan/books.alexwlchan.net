@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Paul Brown
   cover:
-    name: messages-from-the-sea.jpg
     tint_color: '#3c757a'
   isbn10: 0995541213
   isbn13: '9780995541214'

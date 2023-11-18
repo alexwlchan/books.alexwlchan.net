@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Mackenzi Lee
   cover:
-    name: the-ladys-guide-to-petticoats-and-piracy.jpg
     tint_color: "#7562a2"
   title: "The Lady's Guide to Petticoats and Piracy"
   publication_year: 2020

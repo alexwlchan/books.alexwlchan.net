@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Dani Atkins
   cover:
-    name: a-sky-full-of-stars.jpg
     tint_color: "#804187"
   title: A Sky Full of Stars
   publication_year: 2021

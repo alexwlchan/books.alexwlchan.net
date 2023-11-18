@@ -4,7 +4,6 @@ book:
   contributors:
     - name: "Joshua Piyen, David Borgenicht, Piers Marchant & Melissa Wagner"
   cover:
-    name: the-worst-case-scenario-almanac-history.jpg
     tint_color: "#f87710"
   title: "The Worst-Case Scenario Almanac: History"
   publication_year: 2006

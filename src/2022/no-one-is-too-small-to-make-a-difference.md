@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Greta Thunberg
   cover:
-    name: no-one-is-too-small-to-make-a-difference.jpg
     tint_color: "#0a090d"
   title: "No One is Too Small to Make a Difference"
   publication_year: 2019

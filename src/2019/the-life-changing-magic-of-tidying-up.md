@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Marie Kondō
   cover:
-    name: the-life-changing-magic-of-tidying-up.jpg
     tint_color: '#bd1c24'
   isbn10: '1607747308'
   isbn13: '9781607747307'

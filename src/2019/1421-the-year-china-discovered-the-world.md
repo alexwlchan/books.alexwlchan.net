@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Gavin Menzies
   cover:
-    name: 1421-the-year-china-discovered-the-world.jpg
     tint_color: '#ce1125'
   isbn10: 0553815229
   isbn13: '9780553815221'

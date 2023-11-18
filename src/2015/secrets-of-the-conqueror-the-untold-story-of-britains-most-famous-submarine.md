@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Stuart Prebble
   cover:
-    name: secrets-of-the-conqueror-the-untold-story-of-britains-most-famous-submarine.jpg
     tint_color: '#b84146'
   isbn10: 0571290337
   isbn13: '9780571290338'

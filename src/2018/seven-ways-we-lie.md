@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Riley Redgate
   cover:
-    name: seven-ways-we-lie.jpg
     tint_color: '#767078'
   isbn10: '1419723480'
   isbn13: '9781419723483'

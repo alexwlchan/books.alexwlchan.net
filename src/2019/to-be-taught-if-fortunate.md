@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Becky Chambers
   cover:
-    name: to-be-taught-if-fortunate.jpg
     tint_color: '#c8481a'
   isbn10: '1473697166'
   isbn13: '9781473697164'

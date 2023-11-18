@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Alan & Maureen Carter
   cover:
-    name: laymans-guide-to-the-greek-gods.jpg
     tint_color: '#915e5b'
   isbn10: '9602264888'
   isbn13: '9789602264881'

@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Parham Aarabi
   cover:
-    name: the-art-of-lecturing.jpg
     tint_color: '#011015'
   isbn10: '0521703522'
   isbn13: '9780521703529'

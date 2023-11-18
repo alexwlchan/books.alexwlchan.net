@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Fern Brady
   cover:
-    name: strong-female-character.jpg
     tint_color: "#e04633"
   title: Strong Female Character
   publication_year: 2023

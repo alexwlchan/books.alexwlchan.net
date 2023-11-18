@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Nevil Shute
   cover:
-    name: on-the-beach.jpg
     tint_color: '#991b1e'
   isbn13: 978-1-55199-862-6
   publication_year: 1957

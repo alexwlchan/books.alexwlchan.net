@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Rosa Matheson
   cover:
-    name: death-dynamite-and-disaster.jpg
     tint_color: '#8b421b'
   isbn10: 0752492667
   isbn13: '9780752492667'

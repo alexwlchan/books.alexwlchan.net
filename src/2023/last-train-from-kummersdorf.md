@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Leslie Wilson
   cover:
-    name: last-train-from-kummersdorf.jpg
     tint_color: "#b1a78d"
   title: Last Train from Kummersdorf
   publication_year: 2003

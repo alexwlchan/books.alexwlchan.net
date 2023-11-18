@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Gabrielle Walker
   cover:
-    name: snowball-earth.jpg
     tint_color: "#69a3d1"
   title: Snowball Earth
   publication_year: 2003

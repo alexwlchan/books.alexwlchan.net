@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Amy Rose Capetta and Cori McCarthy
   cover:
-    name: sword-in-the-stars.jpg
     tint_color: "#6564a9"
   title: Sword in the Stars
   publication_year: 2020

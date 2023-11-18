@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Andy Howard
   cover:
-    name: the-secret-life-of-the-otter.jpg
     tint_color: "#655e3f"
   title: The Secret Life of the Otter
   publication_year: 2021

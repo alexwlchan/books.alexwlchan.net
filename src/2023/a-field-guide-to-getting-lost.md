@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Rebecca Solnit
   cover:
-    name: a-field-guide-to-getting-lost.jpg
     tint_color: "#1184a2"
   title: A Field Guide to Getting Lost
   publication_year: 2006

@@ -4,7 +4,6 @@ book:
   contributors:
     - name: E. Nesbit
   cover:
-    name: the-phoenix-and-the-carpet.jpg
     tint_color: '#d14434'
   isbn10: 014036739X
   isbn13: '9780140367393'

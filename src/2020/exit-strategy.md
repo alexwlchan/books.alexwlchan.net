@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Martha Wells
   cover:
-    name: exit-strategy.jpg
     tint_color: '#797474'
   isbn13: '9781250185454'
   publication_year: 2018

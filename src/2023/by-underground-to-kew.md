@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Jonathan Riddell and William T. Stearn
   cover:
-    name: by-underground-to-kew.jpg
     tint_color: "#6a704a"
   title: By Underground to Kew
   publication_year: 1994

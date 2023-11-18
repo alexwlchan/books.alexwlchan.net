@@ -6,7 +6,6 @@ book:
     - name: Robin Miles
       role: narrator
   cover:
-    name: the-vela-season-1.jpg
     tint_color: '#345f76'
   publication_year: 2019
   title: The Vela (season 1)

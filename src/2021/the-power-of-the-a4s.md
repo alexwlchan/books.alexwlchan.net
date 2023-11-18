@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Brian Morrison
   cover:
-    name: the-power-of-the-a4s.jpg
     tint_color: "#2e3167"
   publication_year: 1978
   title: The Power of the A4s

@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Frank Close
   cover:
-    name: antimatter.jpg
     tint_color: '#ae202b'
   isbn10: 0199550166
   isbn13: '9780199550166'

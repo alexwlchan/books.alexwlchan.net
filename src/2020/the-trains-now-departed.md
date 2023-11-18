@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Michael Williams
   cover:
-    name: the-trains-now-departed.jpg
     tint_color: '#c03038'
   isbn13: '9780099590583'
   publication_year: 2015

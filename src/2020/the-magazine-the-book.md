@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Glenn Fleishman
   cover:
-    name: the-magazine-the-book.jpg
     tint_color: '#677b54'
   isbn10: 0991439902
   isbn13: '9780991439904'

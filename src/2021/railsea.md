@@ -4,7 +4,6 @@ book:
   contributors:
     - name: China Miéville
   cover:
-    name: railsea.jpg
     tint_color: '#8f560e'
   isbn13: '9781447213673'
   publication_year: 2012

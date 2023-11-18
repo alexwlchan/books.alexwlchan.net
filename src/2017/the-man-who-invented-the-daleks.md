@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Alwyn W. Turner
   cover:
-    name: the-man-who-invented-the-daleks.jpg
     tint_color: '#804034'
   isbn10: '1845136098'
   isbn13: '9781845136093'

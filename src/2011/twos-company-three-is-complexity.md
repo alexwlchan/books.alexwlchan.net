@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Neil Johnson
   cover:
-    name: twos-company-three-is-complexity.jpg
     tint_color: '#445c84'
   isbn10: '1851684883'
   isbn13: '9781851684885'

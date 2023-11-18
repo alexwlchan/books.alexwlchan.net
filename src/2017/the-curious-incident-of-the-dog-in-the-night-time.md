@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Mark Haddon
   cover:
-    name: the-curious-incident-of-the-dog-in-the-night-time.jpg
     tint_color: '#bb422f'
   isbn10: 0099450259
   isbn13: '9780099450252'

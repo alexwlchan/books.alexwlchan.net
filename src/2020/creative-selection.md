@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Ken Kocienda
   cover:
-    name: creative-selection.png
     tint_color: '#0772b8'
   publication_year: 2018
   title: Creative Selection

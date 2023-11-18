@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Penelope Fitzgerald
   cover:
-    name: the-gate-of-angels.jpg
     tint_color: '#81593a'
   isbn10: '0002235277'
   isbn13: '9780002235273'

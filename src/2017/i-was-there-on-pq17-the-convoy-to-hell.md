@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Paul Lund
   cover:
-    name: i-was-there-on-pq17-the-convoy-to-hell.jpg
     tint_color: '#841c42'
   isbn10: 057203542X
   isbn13: '9780572035426'

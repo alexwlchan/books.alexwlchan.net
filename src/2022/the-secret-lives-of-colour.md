@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Kassie St Clair
   cover:
-    name: the-secret-lives-of-colour.jpg
     tint_color: "#5a6c72"
   publication_year: 2016
   title: "The Secret Lives of Colour"

@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Laura Kate Dale
   cover:
-    name: gender-euphoria.jpg
     tint_color: "#44bcfe"
   title: Gender Euphoria
   publication_year: 2021

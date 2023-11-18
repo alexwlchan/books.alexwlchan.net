@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Stanislaw Lem
   cover:
-    name: the-cyberiad.jpg
     tint_color: '#805385'
   isbn13: '9780241467992'
   publication_year: 1965

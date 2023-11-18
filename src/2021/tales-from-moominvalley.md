@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Tove Jansson
   cover:
-    name: tales-from-moominvalley.jpg
     tint_color: '#404e46'
   isbn13: '9781908745682'
   publication_year: 1962

@@ -4,7 +4,6 @@ book:
   contributors:
     - name: O. S. Nock
   cover:
-    name: historic-railway-disasters.jpg
     tint_color: "#2b6183"
   publication_year: 1983
   title: Historic Railway Disasters

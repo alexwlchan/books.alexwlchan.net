@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Junaid Mubeen
   cover:
-    name: mathematical-intelligence.jpg
     tint_color: "#455359"
   title: Mathematical Intelligence
   publication_year: 2022

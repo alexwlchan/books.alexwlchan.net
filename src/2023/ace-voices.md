@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Eris Young
   cover:
-    name: ace-voices.jpg
     tint_color: "#e5037d"
   title: Ace Voices
   publication_year: 2022

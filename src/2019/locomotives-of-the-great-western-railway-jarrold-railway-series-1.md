@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Alan Bloom
   cover:
-    name: locomotives-of-the-great-western-railway-jarrold-railway-series-1.jpg
     tint_color: '#a75f5e'
   isbn10: 0853068372
   isbn13: '9780853068372'

@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Keith J. Devlin
   cover:
-    name: the-maths-gene.jpg
     tint_color: '#974450'
   isbn10: 0297645714
   isbn13: '9780297645719'

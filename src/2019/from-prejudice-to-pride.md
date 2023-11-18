@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Amy Lame
   cover:
-    name: from-prejudice-to-pride.jpg
     tint_color: '#b45743'
   isbn10: '1526301903'
   isbn13: '9781526301901'

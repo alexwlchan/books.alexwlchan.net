@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Randall Munroe
   cover:
-    name: what-if-serious-scientific-answers-to-absurd-hypothetical-questions.jpg
     tint_color: '#ad2f33'
   isbn10: 0544272994
   isbn13: '9780544272996'

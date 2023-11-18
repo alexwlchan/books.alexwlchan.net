@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Alex Norris
   cover:
-    name: oh-no.jpg
     tint_color: '#586f7c'
   isbn10: '1449492533'
   isbn13: '9781449492533'

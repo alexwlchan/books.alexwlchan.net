@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Elizabeth Hopkinson
   cover:
-    name: asexual-fairy-tales.jpg
     tint_color: "#2a3d67"
   title: Asexual Fairy Tales
   publication_year: 2019

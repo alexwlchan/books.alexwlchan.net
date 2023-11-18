@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Jay Hulme
   cover:
-    name: the-backwater-sermons.jpg
     tint_color: '#936f4a'
   isbn13: '9781786223937'
   publication_year: 2021

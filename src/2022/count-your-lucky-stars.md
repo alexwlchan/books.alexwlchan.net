@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Alexandria Bellefleur
   cover:
-    name: count-your-lucky-stars.jpg
     tint_color: "#285263"
   title: Count Your Lucky Stars
   publication_year: 2022

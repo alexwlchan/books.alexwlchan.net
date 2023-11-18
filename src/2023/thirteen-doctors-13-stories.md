@@ -6,7 +6,6 @@ book:
   contributors:
     - name: Various authors
   cover:
-    name: thirteen-doctors-13-stories.jpg
     tint_color: "#394580"
   tags:
     - "!from-the-library"

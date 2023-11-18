@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Andrew Martin
   cover:
-    name: night-trains.jpg
     tint_color: "#262f53"
   title: Night Trains
   publication_year: 2017

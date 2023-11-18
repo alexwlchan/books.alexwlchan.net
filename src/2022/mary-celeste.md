@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Paul Begg
   cover:
-    name: mary-celeste.jpg
     tint_color: "#8c6f5f"
   title: Mary Celeste
   publication_year: 2005

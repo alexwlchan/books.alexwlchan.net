@@ -6,7 +6,6 @@ book:
     - name: Martin Aitchison, Gerald Witcomb, Robert Ayton and John Berry
       role: illustrator
   cover:
-    name: trains.jpg
     tint_color: "#b82b1d"
   publication_year: 1974
   title: Trains

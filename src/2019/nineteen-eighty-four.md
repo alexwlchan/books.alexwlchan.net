@@ -4,7 +4,6 @@ book:
   contributors:
     - name: George Orwell
   cover:
-    name: nineteen-eighty-four.jpg
     tint_color: '#000000'
   isbn10: 0140009728
   isbn13: '9780140009729'

@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Geoff Body and Ian Body
   cover:
-    name: false-starts-near-misses-and-dangerous-goods.jpg
     tint_color: "#914335"
   title: "False Starts, Near Misses and Dangerous Goods"
   publication_year: 2017

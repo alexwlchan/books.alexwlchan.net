@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Linda Šejić
   cover:
-    name: punderworld.jpg
     tint_color: "#7a8240"
   title: Punderworld
   publication_year: 2021

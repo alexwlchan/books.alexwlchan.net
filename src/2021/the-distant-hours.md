@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Kate Morton
   cover:
-    name: the-distant-hours.jpg
     tint_color: '#62769d'
   isbn13: '9780330477581'
   publication_year: 2010

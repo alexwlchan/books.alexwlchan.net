@@ -4,7 +4,6 @@ book:
   contributors:
     - name: the RNLI
   cover:
-    name: surviving-the-storms.jpg
     tint_color: '#0c6e79'
   isbn13: '9780008390129'
   publication_year: 2020

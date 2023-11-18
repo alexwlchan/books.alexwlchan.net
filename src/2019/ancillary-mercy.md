@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Ann Leckie
   cover:
-    name: ancillary-mercy.jpg
     tint_color: '#981b1c'
   isbn10: '0356502422'
   isbn13: '9780356502427'

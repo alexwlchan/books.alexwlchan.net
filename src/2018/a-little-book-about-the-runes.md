@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Björn Jónasson
   cover:
-    name: a-little-book-about-the-runes.jpg
     tint_color: '#70492f'
   isbn10: '9979856386'
   isbn13: '9789979856382'

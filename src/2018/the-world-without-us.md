@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Alan Weisman
   cover:
-    name: the-world-without-us.jpg
     tint_color: '#486469'
   isbn10: 0753513579
   isbn13: '9780753513576'

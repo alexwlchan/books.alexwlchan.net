@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Becky Chambers
   cover:
-    name: record-of-a-spaceborn-few.jpg
     tint_color: '#2c5094'
   isbn10: '1473647606'
   isbn13: '9781473647602'

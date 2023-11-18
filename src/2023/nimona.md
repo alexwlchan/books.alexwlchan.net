@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Noelle Stevenson
   cover:
-    name: nimona.jpg
     tint_color: "#204548"
   title: Nimona
   publication_year: 2015

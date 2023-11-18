@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Jessie Burton
   cover:
-    name: medusa.jpg
     tint_color: "#40923d"
   title: Medusa
   publication_year: 2021

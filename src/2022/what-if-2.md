@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Randall Munroe
   cover:
-    name: what-if-2.jpg
     tint_color: "#fc2b30"
   title: What If? 2
   publication_year: 2022

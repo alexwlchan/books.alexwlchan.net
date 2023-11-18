@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Robin Diangelo
   cover:
-    name: white-fragility.jpg
     tint_color: "#201f31"
   title: White Fragility
   publication_year: 2018

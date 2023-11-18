@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Sophie Cousens
   cover:
-    name: just-havent-met-you-yet.jpg
     tint_color: "#333156"
   title: "Just Haven't Met You Yet"
   publication_year: 2021

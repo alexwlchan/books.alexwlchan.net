@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Allie Brosh
   cover:
-    name: solutions-and-other-problems.jpg
     tint_color: '#0dc59a'
   isbn13: '9780224101288'
   publication_year: 2020

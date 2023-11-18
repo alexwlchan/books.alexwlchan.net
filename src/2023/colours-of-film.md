@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Charles Bramesco
   cover:
-    name: colours-of-film.jpg
     tint_color: "#ad7882"
   title: Colours of Film
   publication_year: 2023

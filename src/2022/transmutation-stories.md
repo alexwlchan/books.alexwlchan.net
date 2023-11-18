@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Alex DiFrancesco
   cover:
-    name: transmutation-stories.jpg
     tint_color: "#462510"
   title: Transmutation Stories
   publication_year: 2021

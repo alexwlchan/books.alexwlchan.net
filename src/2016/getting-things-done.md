@@ -4,7 +4,6 @@ book:
   contributors:
     - name: David Allen
   cover:
-    name: getting-things-done.jpg
     tint_color: '#7b575c'
   isbn10: 0142000280
   isbn13: '9780142000281'

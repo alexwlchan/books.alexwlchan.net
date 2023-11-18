@@ -4,7 +4,6 @@ book:
   contributors:
     - name: John Man
   cover:
-    name: alpha-beta.jpg
     tint_color: "#a3967f"
   title: Alpha Beta
   publication_year: 2000

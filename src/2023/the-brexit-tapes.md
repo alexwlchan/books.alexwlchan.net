@@ -4,7 +4,6 @@ book:
   contributors:
     - name: John Bull
   cover:
-    name: the-brexit-tapes.jpg
     tint_color: "#3c3976"
   title: The Brexit Tapes
   publication_year: 2023

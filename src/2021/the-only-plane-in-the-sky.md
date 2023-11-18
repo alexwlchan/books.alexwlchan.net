@@ -6,7 +6,6 @@ book:
     - name: Holter Graham and a full cast
       role: narrator
   cover:
-    name: the-only-plane-in-the-sky.jpg
     tint_color: '#000000'
   publication_year: 2019
   title: The Only Plane in the Sky

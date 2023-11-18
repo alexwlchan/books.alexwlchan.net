@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Chris Hadfield
   cover:
-    name: an-astronauts-guide-to-life-on-earth.jpg
     tint_color: '#306089'
   isbn10: '1447257103'
   isbn13: '9781447257103'

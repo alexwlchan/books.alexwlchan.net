@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Timothy Zahn
   cover:
-    name: heir-to-the-empire.jpg
     tint_color: "#235567"
   title: Heir to the Empire
   publication_year: 1991

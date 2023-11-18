@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Anna Maranti
   cover:
-    name: olympia.jpg
     tint_color: "#4c5393"
   title: Olympia
   publication_year: 1999

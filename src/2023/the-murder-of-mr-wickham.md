@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Claudia Gray
   cover:
-    name: the-murder-of-mr-wickham.jpg
     tint_color: "#354463"
   title: The Murder of Mr Wickham
   publication_year: 2022

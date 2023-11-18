@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Michael Guillen
   cover:
-    name: five-equations-that-changed-the-world.jpg
     tint_color: '#8f584e'
   isbn10: '1567314058'
   isbn13: '9781567314052'

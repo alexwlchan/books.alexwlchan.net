@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Jane Austen
   cover:
-    name: pride-and-prejudice.jpg
     tint_color: '#947204'
   publication_year: 1813
   title: Pride and Prejudice

@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Ciara Smyth
   cover:
-    name: the-falling-in-love-montage.jpg
     tint_color: "#d58666"
   title: The Falling in Love Montage
   publication_year: 2020

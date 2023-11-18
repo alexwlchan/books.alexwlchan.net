@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Martha Wells
   cover:
-    name: rogue-protocol.jpg
     tint_color: '#686d72'
   isbn13: '9781250185433'
   publication_year: 2018

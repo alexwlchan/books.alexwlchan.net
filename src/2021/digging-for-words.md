@@ -6,7 +6,6 @@ book:
     - name: Paola Escobar
       role: illustrator
   cover:
-    name: digging-for-words.jpg
     tint_color: '#617684'
   isbn13: '9781984892638'
   publication_year: 2020

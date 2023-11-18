@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Sarah Baxter
   cover:
-    name: history-of-the-world-in-500-railway-journeys.jpg
     tint_color: '#6e4d31'
   isbn13: '9781781316788'
   publication_year: 2017

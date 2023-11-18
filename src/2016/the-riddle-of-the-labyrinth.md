@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Margalit Fox
   cover:
-    name: the-riddle-of-the-labyrinth.jpg
     tint_color: '#9d4b2b'
   isbn10: '1781251320'
   isbn13: '9781781251324'

@@ -6,7 +6,6 @@ book:
     - name: Bahni Turpin
       role: narrator
   cover:
-    name: the-underground-railroad.jpg
     tint_color: '#845657'
   publication_year: 2016
   title: The Underground Railroad

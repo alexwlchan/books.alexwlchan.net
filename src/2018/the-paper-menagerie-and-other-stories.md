@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Ken Liu
   cover:
-    name: the-paper-menagerie-and-other-stories.jpg
     tint_color: '#a45a3f'
   isbn10: 148142436X
   isbn13: '9781481424363'

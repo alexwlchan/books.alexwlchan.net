@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Tim Sole
   cover:
-    name: the-strange-and-infinite-world-of-numbers.jpg
     tint_color: "#1b5465"
   title: The Strange and Infinite World of Numbers
   publication_year: 2019

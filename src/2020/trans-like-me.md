@@ -4,7 +4,6 @@ book:
   contributors:
     - name: C. N. Lester
   cover:
-    name: trans-like-me.jpg
     tint_color: '#d92839'
   isbn13: "9780349008608"
   publication_year: 2017

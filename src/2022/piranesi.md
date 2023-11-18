@@ -6,7 +6,6 @@ book:
     - name: Chiwetel Ejiofor
       role: narrator
   cover:
-    name: piranesi.jpg
     tint_color: "#916540"
   publication_year: 2020
   title: Piranesi

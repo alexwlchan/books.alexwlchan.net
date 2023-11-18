@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Kat Holmes
   cover:
-    name: mismatch.jpg
     tint_color: '#6f6f6f'
   isbn10: 0262038889
   isbn13: '9780262038881'

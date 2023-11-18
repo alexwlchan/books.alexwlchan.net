@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Robert Dinsdale
   cover:
-    name: paris-by-starlight.jpg
     tint_color: "#0a496c"
   title: Paris by Starlight
   publication_year: 2020

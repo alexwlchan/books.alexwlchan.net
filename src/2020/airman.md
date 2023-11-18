@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Eoin Colfer
   cover:
-    name: airman.jpg
     tint_color: '#276560'
   isbn13: '9780141383354'
   publication_year: 2008

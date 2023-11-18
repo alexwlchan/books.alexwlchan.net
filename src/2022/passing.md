@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Nella Larsen
   cover:
-    name: passing.jpg
     tint_color: "#3d3d3d"
   title: Passing
   publication_year: 1929

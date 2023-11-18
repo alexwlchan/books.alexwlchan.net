@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Anonymous
   cover:
-    name: severance-the-lexington-letter.jpg
     tint_color: "#94b086"
   title: "Severance: The Lexington Letter"
   publication_year: 2022

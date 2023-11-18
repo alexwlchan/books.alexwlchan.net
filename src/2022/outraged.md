@@ -4,7 +4,6 @@ book:
   contributors:
     - name: "Ashley 'Dotty' Charles"
   cover:
-    name: outraged.jpg
     tint_color: "#ed1b24"
   title: Outraged
   publication_year: 2020

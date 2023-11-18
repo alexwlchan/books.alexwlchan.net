@@ -8,7 +8,6 @@ book:
     - name: Rosie Akerman
       role: narrator
   cover:
-    name: the-distance-between-me-and-the-cherry-tree.jpg
     tint_color: "#132c44"
   publication_year: 2018
   title: The Distance Between Me and the Cherry Tree

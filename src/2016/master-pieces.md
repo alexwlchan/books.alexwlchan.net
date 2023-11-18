@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Gareth Williams
   cover:
-    name: master-pieces.jpg
     tint_color: '#557664'
   isbn10: '1840921536'
   isbn13: '9781840921533'

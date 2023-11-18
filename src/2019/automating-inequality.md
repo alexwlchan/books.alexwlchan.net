@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Virginia Eubanks
   cover:
-    name: automating-inequality.jpg
     tint_color: '#6e655e'
   isbn10: '1250074312'
   isbn13: '9781250074317'

@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Edward Marston
   cover:
-    name: slaughter-in-the-sapperton-tunnel.jpg
     tint_color: "#714518"
   title: Slaughter in the Sapperton Tunnel
   publication_year: 2018

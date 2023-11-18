@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Lemony Snicket
   cover:
-    name: file-under-13-suspicious-incidents.jpeg
     tint_color: "#1d588e"
   publication_year: 2014
   title: "File Under: 13 Suspicious Incidents"

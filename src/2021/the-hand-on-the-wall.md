@@ -6,7 +6,6 @@ book:
     - name: Kate Rudd
       role: narrator
   cover:
-    name: the-hand-on-the-wall.jpg
     tint_color: '#0ba867'
   publication_year: 2020
   series: 'Truly Devious #3'

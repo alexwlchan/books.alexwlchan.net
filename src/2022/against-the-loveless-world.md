@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Susan Abulhawa
   cover:
-    name: against-the-loveless-world.jpg
     tint_color: "#ef4f25"
   title: Against the Loveless World
   publication_year: 2019

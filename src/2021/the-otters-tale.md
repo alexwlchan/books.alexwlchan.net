@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Simon Cooper
   cover:
-    name: the-otters-tale.jpg
     tint_color: "#164060"
   publication_year: 2017
   title: "The Otters' Tale"

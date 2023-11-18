@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Martha Wells
   cover:
-    name: artificial-condition-murderbot-2.jpg
     tint_color: '#966b45'
   isbn13: '9781250186935'
   publication_year: 2018

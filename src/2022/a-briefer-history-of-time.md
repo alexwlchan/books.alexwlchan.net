@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Steven Hawking with Leonard Mlodinow
   cover:
-    name: a-briefer-history-of-time.jpg
     tint_color: "#766f51"
   title: A Briefer History of Time
   publication_year: 2005

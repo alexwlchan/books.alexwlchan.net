@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Gerry Balding & Andrew Barnes
   cover:
-    name: bure-valley-railway-recollections.jpg
     tint_color: '#c21b1d'
   isbn13: '9781857945805'
   publication_year: 2018

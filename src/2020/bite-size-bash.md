@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Julia Evans
   cover:
-    name: bite-size-bash.jpg
     tint_color: '#856155'
   publication_year: 2020
   title: Bite Size Bash

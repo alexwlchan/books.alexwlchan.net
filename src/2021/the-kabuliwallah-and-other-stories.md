@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Rabindranath Tagore
   cover:
-    name: the-kabuliwallah-and-other-stories.jpg
     tint_color: '#c01b1b'
   publication_year: 2020
   title: The Kabuliwallah and Other Stories

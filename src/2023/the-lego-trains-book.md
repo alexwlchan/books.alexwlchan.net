@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Holger Matthes
   cover:
-    name: the-lego-trains-book.jpg
     tint_color: "#ddab2c"
   title: The Lego Trains Book
   publication_year: 2017

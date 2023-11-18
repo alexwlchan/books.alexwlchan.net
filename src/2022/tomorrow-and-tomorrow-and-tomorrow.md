@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Gabrielle Zevin
   cover:
-    name: tomorrow-and-tomorrow-and-tomorrow.jpg
     tint_color: "#30678f"
   title: "Tomorrow, and Tomorrow, and Tomorrow"
   publication_year: 2022

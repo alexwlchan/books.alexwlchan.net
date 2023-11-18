@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Ian Stewart
   cover:
-    name: letters-to-a-young-mathematician.jpg
     tint_color: "#bca855"
   title: Letters to a Young Mathematician
   publication_year: 2006

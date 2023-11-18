@@ -4,7 +4,6 @@ book:
   contributors:
     - name: John Castle and Arthur Hailey
   cover:
-    name: flight-into-danger.jpg
     tint_color: "#9f43a8"
   title: Flight into Danger
   publication_year: 1958

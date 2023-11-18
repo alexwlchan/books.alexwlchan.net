@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Eliot Higgins
   cover:
-    name: we-are-bellingcat.jpg
     tint_color: "#0d0804"
   title: We Are Bellingcat
   publication_year: 2021

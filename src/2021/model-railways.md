@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Cyril J. Freezer
   cover:
-    name: model-railways.jpg
     tint_color: '#bf3016'
   isbn13: 0000000021296
   publication_year: 1991

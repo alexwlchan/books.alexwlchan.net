@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Don Hale
   cover:
-    name: mallard-how-the-blue-streak-broke-the-world-speed-record.jpg
     tint_color: '#586c79'
   isbn10: '1854109391'
   isbn13: '9781854109392'

@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Cyril Jolly
   cover:
-    name: s-o-s-the-story-of-the-life-boat-service.jpg
     tint_color: "#2d2659"
   title: S.O.S. The Story of the Life-boat Service
   publication_year: 1961

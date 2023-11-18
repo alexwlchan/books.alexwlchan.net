@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Becky Chambers
   cover:
-    name: the-galaxy-and-the-ground-within.jpg
     tint_color: '#9d418d'
   isbn13: '9781529362947'
   publication_year: 2021

@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Lemony Snicket
   cover:
-    name: who-could-that-be-at-this-hour.jpg
     tint_color: '#bb4f1c'
   isbn10: 0316123080
   isbn13: '9780316123082'

@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Nick Barnard and Lucy Pope
   cover:
-    name: how-to-fly-a-plane.jpg
     tint_color: '#547290'
   isbn13: '9780500513743'
   publication_year: 2007

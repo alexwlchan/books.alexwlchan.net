@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Alexandria Bellefleur
   cover:
-    name: the-fiancee-farce.jpg
     tint_color: "#e2759c"
   title: The Fiancée Farce
   publication_year: 2023

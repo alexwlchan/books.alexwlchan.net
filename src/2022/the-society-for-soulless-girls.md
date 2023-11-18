@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Laura Steven
   cover:
-    name: the-society-for-soulless-girls.jpg
     tint_color: "#0c4b87"
   title: The Society for Soulless Girls
   publication_year: 2022

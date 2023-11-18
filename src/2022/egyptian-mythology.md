@@ -4,7 +4,6 @@ book:
   contributors:
     - name: W. Max Mũller
   cover:
-    name: egyptian-mythology.jpg
     tint_color: "#cc8d38"
   title: Egyptian Mythology
   publication_year: 2004

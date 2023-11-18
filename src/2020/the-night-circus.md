@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Erin Morgenstern
   cover:
-    name: the-night-circus.jpg
     tint_color: '#050004'
   publication_year: 2011
   title: The Night Circus

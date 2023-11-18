@@ -6,7 +6,6 @@ book:
     - name: Robert Shapiro
       role: narrator
   cover:
-    name: never-lost-again.jpg
     tint_color: "#167dab"
   title: Never Lost Again
   publication_year: 2018

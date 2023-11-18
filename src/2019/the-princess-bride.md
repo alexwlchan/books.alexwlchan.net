@@ -4,7 +4,6 @@ book:
   contributors:
     - name: William Goldman
   cover:
-    name: the-princess-bride.jpg
     tint_color: '#616363'
   isbn10: 0747545189
   isbn13: '9780747545187'

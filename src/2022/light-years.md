@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Brian Clegg
   cover:
-    name: light-years.jpg
     tint_color: "#10213f"
   title: Light Years
   publication_year: 2008

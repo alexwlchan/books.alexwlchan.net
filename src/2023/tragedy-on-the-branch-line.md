@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Edward Marston
   cover:
-    name: tragedy-on-the-branch-line.jpg
     tint_color: "#3f686e"
   title: Tragedy on the Branch Line
   publication_year: 2021

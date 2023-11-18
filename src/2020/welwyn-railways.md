@@ -4,7 +4,6 @@ book:
   contributors:
     - name: The Revd. Tim W. Gladwin, Peter W. Neville, Douglas E. White
   cover:
-    name: welwyn-railways.jpg
     tint_color: '#736954'
   isbn10: 0948555041
   isbn13: '9780948555046'

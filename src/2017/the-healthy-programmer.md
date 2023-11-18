@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Joe Kutner
   cover:
-    name: the-healthy-programmer.jpg
     tint_color: '#2773b0'
   isbn10: '1937785319'
   isbn13: '9781937785314'

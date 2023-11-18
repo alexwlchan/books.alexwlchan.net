@@ -6,7 +6,6 @@ book:
     - name: Julian Thomas
       role: narrator
   cover:
-    name: the-haunting-of-tram-car-015.jpg
     tint_color: "#975b29"
   publication_year: 2019
   title: The Haunting of Tram Car 015

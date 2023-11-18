@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Tash Oakes-Monger
   cover:
-    name: all-the-things-they-said-we-couldnt-have.jpg
     tint_color: "#2a9acc"
   title: "All the Things They Said We Couldn't Have"
   publication_year: 2023

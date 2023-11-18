@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Beth Lewis
   cover:
-    name: the-origins-of-iris.jpg
     tint_color: "#2e2b64"
   title: The Origins of Iris
   publication_year: 2021

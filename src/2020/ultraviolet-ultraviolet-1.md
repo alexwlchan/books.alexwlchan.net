@@ -4,7 +4,6 @@ book:
   contributors:
     - name: R.J. Anderson
   cover:
-    name: ultraviolet-ultraviolet-1.jpg
     tint_color: '#6b637e'
   isbn10: '1408312751'
   isbn13: '9781408312759'

@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Patrick Bishop
   cover:
-    name: target-tirpitz.jpg
     tint_color: '#e30f0e'
   isbn10: 000731924X
   isbn13: '9780007319244'

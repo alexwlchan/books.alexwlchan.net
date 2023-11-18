@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Amanda DeWitt
   cover:
-    name: aces-wild.jpg
     tint_color: "#241e1c"
   title: Aces Wild
   publication_year: 2022

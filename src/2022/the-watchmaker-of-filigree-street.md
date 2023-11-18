@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Natasha Pulley
   cover:
-    name: the-watchmaker-of-filigree-street.jpg
     tint_color: "#6a7859"
   title: The Watchmaker of Filigree Street
   publication_year: 2015

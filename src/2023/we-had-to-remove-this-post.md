@@ -6,7 +6,6 @@ book:
     - name: Emma Rault
       role: translator
   cover:
-    name: we-had-to-remove-this-post.jpg
     tint_color: "#c94076"
   title: We had to remove this post
   publication_year: 2022

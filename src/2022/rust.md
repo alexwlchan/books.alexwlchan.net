@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Jonathan Waldman
   cover:
-    name: rust.jpg
     tint_color: "#86361f"
   title: Rust
   publication_year: 2015

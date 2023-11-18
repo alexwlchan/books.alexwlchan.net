@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Tove Jansson
   cover:
-    name: moominpappa-at-sea.jpg
     tint_color: '#406a82'
   isbn13: '9781908745705'
   publication_year: 1948

@@ -4,7 +4,6 @@ book:
   contributors:
     - name: James Clear
   cover:
-    name: atomic-habits.jpg
     tint_color: '#a8663e'
   publication_year: 2018
   title: Atomic Habits

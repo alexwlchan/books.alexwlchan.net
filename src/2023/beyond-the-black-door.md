@@ -4,7 +4,6 @@ book:
   contributors:
     - name: A. M. Strickland
   cover:
-    name: beyond-the-black-door.jpg
     tint_color: "#255161"
   title: Beyond the Black Door
   publication_year: 2019

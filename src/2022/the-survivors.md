@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Jane Harper
   cover:
-    name: the-survivors.jpg
     tint_color: "#4c7987"
   title: The Survivors
   publication_year: 2020

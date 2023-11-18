@@ -6,7 +6,6 @@ book:
     - name: Tinashe Warikandwa
       role: narrator
   cover:
-    name: the-library-of-the-dead.jpeg
     tint_color: "#206969"
   publication_year: 2021
   title: The Library of the Dead

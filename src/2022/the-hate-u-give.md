@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Angie Thomas
   cover:
-    name: the-hate-u-give.jpg
     tint_color: "#058c85"
   title: The Hate U Give
   publication_year: 2017

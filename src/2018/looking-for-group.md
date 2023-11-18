@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Alexis Hall
   cover:
-    name: looking-for-group.jpg
     tint_color: '#776038'
   isbn10: '1626494460'
   isbn13: '9781626494466'

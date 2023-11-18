@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Andrew Lawlor
   cover:
-    name: paul-takes-the-form-of-a-mortal-girl.jpg
     tint_color: "#cc8ca0"
   title: Paul Takes the Form of a Mortal Girl
   publication_year: 2017

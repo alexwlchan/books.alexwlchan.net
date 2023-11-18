@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Dr. Yuki Hattori
   cover:
-    name: what-cats-want.jpg
     tint_color: "#707072"
   publication_year: 2020
   title: What Cats Want

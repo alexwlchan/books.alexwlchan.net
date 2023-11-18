@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Saskia Sarginson
   cover:
-    name: the-central-line.png
     tint_color: "#e4323c"
   title: The Central Line
   publication_year: 2022

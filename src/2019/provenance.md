@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Ann Leckie
   cover:
-    name: provenance.jpg
     tint_color: '#ab2b33'
   isbn10: 0356506983
   isbn13: '9780356506982'

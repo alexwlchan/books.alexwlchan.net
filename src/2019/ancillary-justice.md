@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Ann Leckie
   cover:
-    name: ancillary-justice.jpg
     tint_color: '#b7162d'
   isbn10: 031624662X
   isbn13: '9780316246620'

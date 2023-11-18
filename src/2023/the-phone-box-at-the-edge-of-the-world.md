@@ -6,7 +6,6 @@ book:
     - name: Lucy Rand
       role: translator
   cover:
-    name: the-phone-box-at-the-edge-of-the-world.jpg
     tint_color: "#3bb5bf"
   title: The Phone Box at the Edge of the World
   publication_year: 2020

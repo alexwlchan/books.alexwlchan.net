@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Gordon Corera
   cover:
-    name: the-art-of-betrayal.jpg
     tint_color: '#b12b35'
   isbn10: 0297860992
   isbn13: '9780297860990'

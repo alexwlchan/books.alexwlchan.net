@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Rose George
   cover:
-    name: deep-sea-and-foreign-going.jpg
     tint_color: "#545743"
   title: Deep Sea and Foreign Going
   publication_year: 2013

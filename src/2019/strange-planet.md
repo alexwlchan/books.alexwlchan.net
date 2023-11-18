@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Nathan Pyle
   cover:
-    name: strange-planet.jpg
     tint_color: '#82404e'
   isbn13: 978-1-4722-6904-1
   publication_year: 2019

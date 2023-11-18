@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Matthew Christopher
   cover:
-    name: abandoned-america-the-age-of-consequences.jpg
     tint_color: '#726c66'
   publication_year: 2014
   title: Abandoned America
