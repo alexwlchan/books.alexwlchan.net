@@ -23,6 +23,10 @@ Jekyll::Hooks.register :site, :post_read do |site|
     matching_images = Dir.glob("#{site.config['source']}/covers/#{slug}.*")
 
     if matching_images.length == 1
+      if page.data['book']['cover']['name'] == File.basename(matching_images[0])
+        # puts "Redundant info in #{page.path}"
+      end
+
       page.data['book']['cover']['name'] = File.basename(matching_images[0])
     else
       puts "Can't find a cover image for #{page.path}"

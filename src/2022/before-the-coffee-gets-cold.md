@@ -6,7 +6,6 @@ book:
     - name: Geoffrey Trousselot
       role: translator
   cover:
-    name: before-the-coffee-gets-cold.jpg
     tint_color: "#62b3b5"
   title: Before the Coffee Gets Cold
   publication_year: 2019

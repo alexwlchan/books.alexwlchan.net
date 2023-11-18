@@ -4,7 +4,6 @@ book:
   contributors:
     - name: Alan D. Taylor and Allison M. Pacelli
   cover:
-    name: mathematics-and-politics-strategy-voting-power-and-proof.jpg
     tint_color: '#42718d'
   isbn10: '1441926615'
   isbn13: '9781441926616'
