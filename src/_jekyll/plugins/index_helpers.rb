@@ -74,6 +74,11 @@ def get_attribution_credit(contributors_by_role)
     author_name = contributors_by_role['author'][0]
     "by #{author_name}"
 
+  elsif contributors_by_role.key?('author') && (contributors_by_role['author'].length == 2)
+    author0 = contributors_by_role['author'][0]
+    author1 = contributors_by_role['author'][1]
+    "by #{author0} and #{author1}"
+
   else
     raise "Unknown attribution line: #{contributors_by_role}"
   end
