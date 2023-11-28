@@ -5,7 +5,7 @@ book:
     - name: Hugh Howey
   cover:
     tint_color: "#0d5a9a"
-  title: Wool
+  title: Shift
   publication_year: 2013
   tags:
     - fiction
