@@ -12,10 +12,10 @@ book:
     - sci-fi
     - dystopia
 review:
-  date_read: 2023-11-28
+  date_read: 2023-11-30
   format: ebook
   rating: 4
 ---
 
-A prequel to [*Wool*](/2023/wool/).
+A sequel to [*Wool*](/2023/wool/).
 I read this while sick so I wasn't able to engage fully, but I did enjoy it, especially my creeping sense of dread as I realised how it all fits together.
