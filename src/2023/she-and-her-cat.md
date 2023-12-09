@@ -12,10 +12,10 @@ book:
   tags:
     - fiction
     - cats
+  isbn13: "978-0-8575-2822-3"
 review:
   date_read: 2023-12-07
   format: hardback
-  isbn13: "978-0-8575-2822-3"
   rating: 4
 ---
 
