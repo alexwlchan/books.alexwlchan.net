@@ -15,7 +15,7 @@ book:
 review:
   date_read: 2023-12-07
   format: hardback
-  isn13: "978-0-8575-2822-3"
+  isbn13: "978-0-8575-2822-3"
   rating: 4
 ---
 
