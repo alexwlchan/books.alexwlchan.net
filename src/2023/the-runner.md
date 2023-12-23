@@ -14,7 +14,7 @@ book:
 review:
   date_read: 2023-12-23
   format: ebook
-  rating: 3
+  rating: 4
 ---
 
 A great short story set in the world of the Silo trilogy, which manages to introduce a new character and set up a new conflict in just sixty-odd pages.
