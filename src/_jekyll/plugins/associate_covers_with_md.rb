@@ -14,20 +14,30 @@
 # but I don't actually have to do that.
 
 Jekyll::Hooks.register :site, :post_read do |site|
+  # Construct a hash that maps normalised name to original path,
+  # e.g. if there's an image called src/covers/2023/white-fragility.jpg,
+  # then we'd get a hash like
+  #
+  #     {"2023/white-fragility" => "src/covers/2023/white-fragility.jpg"}
+  #
+  cover_image_names =
+    Dir.glob("#{site.config['source']}/covers/**/*")
+       .select { |e| File.file? e }
+       .to_h do |f|
+         year = File.basename(File.dirname(f))
+         name = File.basename(f, '.*') # remove any extension
+         ["#{year}/#{name}", f]
+       end
+
   site.pages.each do |page|
     if page.data['layout'] != 'review'
       next
     end
 
     slug = page.path.gsub(/\.md$/, '')
-    matching_images = Dir.glob("#{site.config['source']}/covers/#{slug}.*")
 
-    if matching_images.length == 1
-      if page.data['book']['cover']['name'] == File.basename(matching_images[0])
-        # puts "Redundant info in #{page.path}"
-      end
-
-      page.data['book']['cover']['name'] = File.basename(matching_images[0])
+    if cover_image_names.include? slug
+      page.data['book']['cover']['name'] = File.basename(cover_image_names[slug])
     else
       puts "Can't find a cover image for #{page.path}"
     end
