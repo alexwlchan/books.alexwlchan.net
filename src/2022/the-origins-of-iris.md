@@ -30,3 +30,5 @@ The "what if" concept is one that's often explored, but I've never seen it quite
 It's an interesting take.
 
 I suspect it will hold up well on a second reading.
+
+Heavy content warnings for abuse, sexual assault, rape, and suicide.
