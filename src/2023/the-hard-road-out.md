@@ -2,8 +2,7 @@
 layout: review
 book:
   contributors:
-    - name: Jihyun Park
-    - name: Seh-Lynn Chai
+    - name: Jihyun Park and Seh-Lynn Chai
   cover:
     tint_color: "#e23e32"
   title: The Hard Road Out
