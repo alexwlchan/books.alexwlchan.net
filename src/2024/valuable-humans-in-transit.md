@@ -12,7 +12,7 @@ book:
     - sci-fi
 review:
   date_read: 2024-01-08
-  format: ebooks
+  format: ebook
   rating: 5
 ---
 A cool set of sci-fi stories! I'd read several of them before so it wasn't entirely new to me, but good to fill in the gaps.
