@@ -23,6 +23,7 @@ This is a thorough and damning indictment of the systemic failures that led to t
 The chapters alternate between a timeline of the fire on the night (12.54&nbsp;a.m., 1.20&nbsp;a.m., 1.30&nbsp;a.m., …) and describing the events lead up to the fire.
 It's a powerful if unsettling read.
 
-I don't enjoy the events it described, but the writing style is clear and detailed.
-I took lots of notes, because there's so much good stuff in here ("good" with an asterisk).
+I don't enjoy the events it described, but the writing is nice and clear.
+The author has done lots of research and spoken to a lot of Grenfell survivors, which creates a good mix of detail and human stories.
+There's so much good stuff in here ("good" with an asterisk).
 Highly recommend.
