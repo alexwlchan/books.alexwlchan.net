@@ -51,13 +51,6 @@ deploy-prod:
 		ghcr.io/williamjacksn/netlify-cli:17.10.1 \
 		deploy --prod --auth "$(NETLIFY_AUTH_TOKEN)"
 
-Gemfile.lock: Gemfile
-	docker run \
-		--volume $(ROOT):$(ROOT) \
-		--workdir $(ROOT) \
-		--tty --rm $(shell cat Dockerfile | grep FROM | awk '{print $$2}') \
-		bundle lock --update
-
 plugin-tests:
 	docker run --tty --rm \
 		--entrypoint ruby \
