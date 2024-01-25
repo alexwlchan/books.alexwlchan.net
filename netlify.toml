@@ -37,6 +37,7 @@
       style-src 'self' 'unsafe-inline'; \
       img-src 'self' data:; \
       script-src 'self' 'unsafe-inline' https://unpkg.com/; \
+      connect-src https://analytics.alexwlchan.net/; \
     """
 
     # https://scotthelme.co.uk/a-new-security-header-feature-policy/
