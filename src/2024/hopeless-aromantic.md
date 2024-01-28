@@ -12,7 +12,6 @@ book:
     - asexuality
     - aromanticism
     - "!ace-book-club"
-  isbn13: "978-0-86154-615-2"
 review:
   date_read: 2024-01-23
   format: ebook
