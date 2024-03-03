@@ -8,7 +8,8 @@ book:
   isbn10: '1849087180'
   isbn13: '9781849087186'
   publication_year: 2012
-  title: 'Forgotten Sacrifice: The Arctic Convoys of World War II'
+  title: 'Forgotten Sacrifice'
+  subtitle: 'The Arctic Convoys of World War II'
   tags:
     - non-fiction
     - history

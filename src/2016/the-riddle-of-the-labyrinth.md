@@ -9,6 +9,7 @@ book:
   isbn13: '9781781251324'
   publication_year: 2013
   title: The Riddle of the Labyrinth
+  subtitle: The Quest to Crack an Ancient Code
   tags:
     - non-fiction
     - languages

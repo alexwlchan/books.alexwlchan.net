@@ -8,7 +8,8 @@ book:
   isbn10: 0853068372
   isbn13: '9780853068372'
   publication_year: 1980
-  title: Locomotives of the Great Western Railway (Jarrold Railway Series 1)
+  title: Locomotives of the Great Western Railway
+  series: Jarrold Railway Series 1
   tags:
     - non-fiction
     - trains

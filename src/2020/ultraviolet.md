@@ -8,7 +8,8 @@ book:
   isbn10: '1408312751'
   isbn13: '9781408312759'
   publication_year: 2011
-  title: 'Ultraviolet (Ultraviolet, #1)'
+  title: 'Ultraviolet'
+  series: Ultraviolet, #1
   tags:
     - fiction
     - sci-fi

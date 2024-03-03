@@ -8,7 +8,7 @@ book:
   isbn10: '0304366625'
   isbn13: '9780304366620'
   publication_year: 2001
-  title: Enigma - The Battle for the Code
+  title: Enigma
   tags:
     - non-fiction
     - espionage

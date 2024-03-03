@@ -9,6 +9,7 @@ book:
   isbn13: '9781785783036'
   publication_year: 2018
   title: Places I Stopped on the Way Home
+  subtitle: A Memoir of Chaos and Grace
   tags:
     - biography
 review:

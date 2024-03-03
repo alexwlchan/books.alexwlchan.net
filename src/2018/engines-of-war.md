@@ -9,6 +9,7 @@ book:
   isbn13: '9781848871724'
   publication_year: 2010
   title: Engines Of War
+  subtitle: How Wars Were Won And Lost On The Railways
   tags:
     - non-fiction
     - trains

@@ -8,7 +8,8 @@ book:
   isbn10: 0393349322
   isbn13: '9780393349320'
   publication_year: 2014
-  title: 'The Examined Life: How We Lose and Find Ourselves'
+  title: 'The Examined Life'
+  subtitle: 'How We Lose and Find Ourselves'
   tags:
     - non-fiction
     - memoirs

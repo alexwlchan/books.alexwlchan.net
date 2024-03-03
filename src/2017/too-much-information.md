@@ -8,8 +8,8 @@ book:
   isbn10: 0091928508
   isbn13: '9780091928506'
   publication_year: 2015
-  title: 'Too Much Information: Or: Can Everyone Just Shut Up for a Moment, Some of
-    Us Are Trying to Think'
+  title: 'Too Much Information'
+  subtitle: 'Or: Can Everyone Just Shut Up for a Moment, Some of Us Are Trying to Think'
   tags:
     - humour
     - non-fiction

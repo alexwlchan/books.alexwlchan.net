@@ -8,7 +8,8 @@ book:
   isbn10: 0544272994
   isbn13: '9780544272996'
   publication_year: 2014
-  title: What If? Serious Scientific Answers to Absurd Hypothetical Questions
+  title: What If?
+  subtitle: Serious Scientific Answers to Absurd Hypothetical Questions
   tags:
     - non-fiction
     - science

@@ -8,7 +8,8 @@ book:
   isbn10: '1408316285'
   isbn13: '9781408316283'
   publication_year: 2013
-  title: 'Quicksilver (Ultraviolet, #2)'
+  title: 'Quicksilver'
+  series: 'Ultraviolet, #2'
   tags:
     - fiction
     - sci-fi

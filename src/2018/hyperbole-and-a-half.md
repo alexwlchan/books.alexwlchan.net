@@ -9,6 +9,7 @@ book:
   isbn13: '9780224095372'
   publication_year: 2013
   title: Hyperbole and a Half
+  subtitle: 'Unfortunate Situations, Flawed Coping Mechanisms, Mayhem, and Other Things That Happened'
   tags:
     - fiction
     - humour

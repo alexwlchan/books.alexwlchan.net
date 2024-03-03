@@ -7,12 +7,14 @@ book:
     tint_color: '#686d72'
   isbn13: '9781250185433'
   publication_year: 2018
-  title: 'Rogue Protocol (The Murderbot Diaries, #3)'
+  title: 'Rogue Protocol'
+  series: 'The Murderbot Diaries, #3'
   tags:
     - fiction
     - sci-fi
 review:
   date_read: 2020-05-08
+  date_order: 1
   format: ebook
   rating: 4
 ---
