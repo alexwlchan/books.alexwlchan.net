@@ -8,8 +8,8 @@ book:
   isbn10: 0691170819
   isbn13: '9780691170817'
   publication_year: 2016
-  title: 'The Box: How the Shipping Container Made the World Smaller and the World
-    Economy Bigger'
+  title: 'The Box'
+  subtitle: 'How the Shipping Container Made the World Smaller and the World Economy Bigger'
   tags:
     - non-fiction
     - logistics

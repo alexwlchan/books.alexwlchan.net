@@ -8,7 +8,8 @@ book:
   isbn10: 0717145824
   isbn13: '9780717145829'
   publication_year: 2009
-  title: 'Granuaile: Grace O''Malley - Ireland''s Pirate Queen'
+  title: 'Granuaile'
+  subtitle: 'Grace O’Malley - Ireland’s Pirate Queen'
   tags:
     - non-fiction
     - history

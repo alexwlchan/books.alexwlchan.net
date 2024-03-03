@@ -7,7 +7,8 @@ book:
     tint_color: '#966b45'
   isbn13: '9781250186935'
   publication_year: 2018
-  title: 'Artificial Condition (The Murderbot Diaries, #2)'
+  title: 'Artificial Condition'
+  series: 'The Murderbot Diaries, #2'
   tags:
     - fiction
     - sci-fi

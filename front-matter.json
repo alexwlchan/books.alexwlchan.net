@@ -11,6 +11,7 @@
             "type": "object",
             "properties": {
                 "title": {"type": "string"},
+                "subtitle": {"type": "string"},
                 "publication_year": {"type": "number"},
                 "tags": {
                     "type": "array",

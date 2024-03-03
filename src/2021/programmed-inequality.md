@@ -8,8 +8,8 @@ book:
   isbn10: '0262035545'
   isbn13: '9780262035545'
   publication_year: 2017
-  title: 'Programmed Inequality: How Britain Discarded Women Technologists and Lost
-    Its Edge in Computing'
+  title: 'Programmed Inequality'
+  subtitle: 'How Britain Discarded Women Technologists and Lost Its Edge in Computing'
   tags:
     - non-fiction
     - history

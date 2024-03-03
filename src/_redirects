@@ -494,3 +494,30 @@
 /reviews/your-guide-to-not-getting-murdered-in-a-quaint-english-village                                        /2022/your-guide-to-not-getting-murdered-in-a-quaint-english-village
 
 /reviews/2022/before-the-coffee-goes-cold/ /reviews/2020/before-the-coffee-gets-cold/
+
+# In spring 2024, I did some cleaning up of titles, moving information about
+# subtitles/series into dedicated fields.  This allowed me to create nicer URLs
+# for those books; this preserves old URLs.
+#
+# See https://github.com/alexwlchan/books.alexwlchan.net/pull/89
+/2020/ultraviolet-ultraviolet-1/                                                                               /2020/ultraviolet/
+/2020/quicksilver-ultraviolet-2/                                                                               /2020/quicksilver/
+/2019/locomotives-of-the-great-western-railway-jarrold-railway-series-1/                                       /2019/locomotives-of-the-great-western-railway/
+/2019/the-box-how-the-shipping-container-made-the-world-smaller-and-the-world-economy-bigger/                  /2019/the-box/
+/2018/hello-world-how-to-be-human-in-the-age-of-the-machine/                                                   /2018/hello-world/
+/2018/hidden-figures-the-untold-story-of-the-african-american-women-who-helped-win-the-space-race/             /2018/hidden-figures/
+/2018/mallard-how-the-blue-streak-broke-the-world-speed-record/                                                /2018/mallard/
+/2018/wish-you-were-here-the-official-biography-of-douglas-adams/                                              /2018/wish-you-were-here/
+/2018/the-greatest-traitor-the-secret-lives-of-agent-george-blake/                                             /2018/the-greatest-traitor/
+/2017/the-wrong-kind-of-snow-how-the-weather-made-britain/                                                     /2017/the-wrong-kind-of-snow/
+/2017/turing-pioneer-of-the-information-age/                                                                   /2017/turing/
+/2017/numbers-rule-the-vexing-mathematics-of-democracy-from-plato-to-the-present/                              /2017/numbers-rule/
+/2017/what-if-serious-scientific-answers-to-absurd-hypothetical-questions/                                     /2017/what-if/
+/2017/mind-the-gap-a-london-underground-miscellany/                                                            /2017/mind-the-gap/
+/2017/granuaile-grace-omalley-irelands-pirate-queen/                                                           /2017/granuaile/
+/2017/the-examined-life-how-we-lose-and-find-ourselves/                                                        /2017/the-examined-life/
+/2017/too-much-information-or-can-everyone-just-shut-up-for-a-moment-some-of-us-are-trying-to-think/           /2017/too-much-information/
+/2017/forgotten-sacrifice-the-arctic-convoys-of-world-war-ii/                                                  /2017/forgotten-sacrifice/
+/2015/secrets-of-the-conqueror-the-untold-story-of-britains-most-famous-submarine/                             /2015/secrets-of-the-conqueror/
+/2015/operation-fortitude-the-greatest-hoax-of-the-second-world-war/                                           /2015/operation-fortitude/
+/2011/enigma-the-battle-for-the-code/                                                                          /2011/enigma/

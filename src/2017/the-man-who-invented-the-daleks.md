@@ -8,7 +8,7 @@ book:
   isbn10: '1845136098'
   isbn13: '9781845136093'
   publication_year: 2011
-  title: The Man who Invented the Daleks
+  title: The Man Who Invented the Daleks
   tags:
     - non-fiction
     - biography

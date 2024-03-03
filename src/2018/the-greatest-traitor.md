@@ -8,7 +8,8 @@ book:
   isbn10: '1781310467'
   isbn13: '9781781310465'
   publication_year: 2013
-  title: 'The Greatest Traitor: The Secret Lives of Agent George Blake'
+  title: 'The Greatest Traitor'
+  subtitle: 'The Secret Lives of Agent George Blake'
   tags:
     - non-fiction
     - espionage

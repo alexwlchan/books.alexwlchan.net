@@ -8,7 +8,8 @@ book:
   isbn10: 0691139946
   isbn13: '9780691139944'
   publication_year: 2010
-  title: 'Numbers Rule: The Vexing Mathematics of Democracy, from Plato to the Present'
+  title: 'Numbers Rule'
+  subtitle: 'The Vexing Mathematics of Democracy, from Plato to the Present'
   tags:
     - non-fiction
     - politics

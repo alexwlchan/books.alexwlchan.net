@@ -8,7 +8,8 @@ book:
   isbn10: 0199639795
   isbn13: '9780199639793'
   publication_year: 2013
-  title: 'Turing: Pioneer of the Information Age'
+  title: 'Turing'
+  subtitle: 'Pioneer of the Information Age'
   tags:
     - history
     - non-fiction

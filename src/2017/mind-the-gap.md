@@ -8,7 +8,8 @@ book:
   isbn10: '1849533571'
   isbn13: '9781849533577'
   publication_year: 2013
-  title: 'Mind the Gap: A London Underground Miscellany'
+  title: 'Mind the Gap'
+  subtitle: 'A London Underground Miscellany'
   tags:
     - non-fiction
     - trains

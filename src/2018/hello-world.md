@@ -8,7 +8,8 @@ book:
   isbn10: 0857525247
   isbn13: '9780857525246'
   publication_year: 2018
-  title: 'Hello World: How to be Human in the Age of the Machine'
+  title: 'Hello World'
+  subtitle: 'How to be Human in the Age of the Machine'
   tags:
     - non-fiction
 review:
