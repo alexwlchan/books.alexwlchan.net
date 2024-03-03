@@ -9,6 +9,7 @@ book:
   isbn13: '9780571290338'
   publication_year: 2013
   title: 'Secrets of the Conqueror'
+  subtitle: The Untold Story of Britain’s Most Famous Submarine
   tags:
     - non-fiction
     - maritime
