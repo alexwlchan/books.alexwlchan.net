@@ -18,3 +18,4 @@ book:
 review:
   date_read: 2016-07
 ---
+Thrilling and exciting – they captured the feeling of what Cold War submarine warfare must have been like. A little slow in parts, but overall I enjoyed it and learnt a lot.
