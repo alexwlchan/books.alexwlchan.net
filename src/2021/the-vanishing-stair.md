@@ -6,7 +6,7 @@ book:
     - name: Kate Rudd
       role: narrator
   cover:
-    tint_color: '#b5483d'
+    tint_color: '#933026'
   publication_year: 2019
   series: 'Truly Devious #2'
   title: The Vanishing Stair
