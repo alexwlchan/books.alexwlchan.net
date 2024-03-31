@@ -14,7 +14,7 @@ book:
     - science
     - humour
 review:
-  date_read: 2017-07-15
+  date_read: 2024-03-31
   rating: 3
 ---
 I re-read this as a palate cleanser while visiting my parents; they had a copy on the shelf.
