@@ -4,7 +4,7 @@ book:
   contributors:
     - name: Randall Munroe
   cover:
-    tint_color: '#ad2f33'
+    tint_color: '#c3363c'
   isbn10: 0544272994
   isbn13: '9780544272996'
   publication_year: 2014
