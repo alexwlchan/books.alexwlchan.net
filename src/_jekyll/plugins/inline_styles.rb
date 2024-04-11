@@ -12,10 +12,12 @@
 #
 # == How it works ==
 #
-# In the body of posts, I can create <style> blocks.
+# In the body of posts, I can create <style> blocks.  I can also create
+# blocks with the attribute `type="x-text/scss"`.
 #
 # In the final template, these <style> blocks will be removed from the
-# <body>, and consolidated and inserted in the <head>.
+# <body>, and consolidated and inserted in the <head>.  Any SCSS blocks
+# will run through the site's Sass processor first.
 
 require 'nokogiri'
 
@@ -35,12 +37,7 @@ class InlineStylesFilters
 
       if style_type == 'x-text/scss'
         converter = site.find_converter_instance(Jekyll::Converters::Scss)
-        css = converter.convert(<<~SCSS
-          @import "mixins.scss";
-
-          #{style.text}
-        SCSS
-                               )
+        css = converter.convert(style.text)
         inline_styles[media] <<= css.strip
       else
         inline_styles[media] <<= style.text.strip
