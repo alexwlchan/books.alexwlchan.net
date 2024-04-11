@@ -2,6 +2,7 @@
 
 require 'fileutils'
 require 'chunky_png'
+require 'tmpdir'
 
 require_relative 'pillow/create_ico_image'
 
@@ -34,6 +35,8 @@ module Favicons
             .map { |p| p.data.dig('book', 'cover', 'tint_color') }
             .filter { |c| !c.nil? }
             .to_set
+
+      colors << '191919'
 
       FileUtils.mkdir_p "#{dst}/favicons"
 
