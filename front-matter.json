@@ -1,11 +1,11 @@
 {
     "type": "object",
-    "required": ["layout", "book"],
+    "required": ["layout"],
     "properties": {
         "layout": {
             "description": "Which layout template to use.",
             "type": "string",
-            "enum": ["review", "page"]
+            "enum": ["review", "homepage", "list_of_reviews"]
         },
         "book": {
             "type": "object",
