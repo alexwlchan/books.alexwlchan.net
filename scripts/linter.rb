@@ -8,15 +8,30 @@ require 'rainbow'
 require 'uri'
 require 'yaml'
 
+require_relative '../src/_jekyll/plugins/pillow/get_image_info'
+
 def run_html_linting(html_dir)
   HTMLProofer.check_directory(
     html_dir, {
+      checks: %w[
+        Images
+        Links
+        Scripts
+        Favicon
+        OpenGraph
+      ],
+      check_external_hash: false,
       check_html: true,
-      check_img_http: true,
-      ignore_missing_alt: true,
       check_opengraph: true,
       disable_external: true,
-      report_invalid_tags: true
+      report_invalid_tags: true,
+      #
+      # As of April 2024, I have 334 links which don't use HTTPS.
+      # It might be nice to fix them all and/or whitelist them, but
+      # they're all external links -- I don't care that much.
+      #
+      # For now, skip HTTPS checking.
+      enforce_https: false
     }
   ).run
 end
@@ -116,7 +131,9 @@ def check_no_localhost_links(html_documents)
                                     .select { |a| localhost_link?(a) }
                                     .map { |a| a.attribute('href').value }
 
-    errors[html_doc[:display_path]] <<= "There are links to localhost: #{localhost_links.join('; ')}" unless localhost_links.empty?
+    unless localhost_links.empty?
+      errors[html_doc[:display_path]] <<= "There are links to localhost: #{localhost_links.join('; ')}"
+    end
   end
 
   report_errors(errors)
@@ -140,7 +157,9 @@ def check_no_html_in_titles(html_documents)
     # needs removing.
     title = html_doc[:doc].xpath('//head/title').children
 
-    errors[html_doc[:display_path]] <<= "Title contains HTML: #{title}" if title.children.length > 1
+    if title.children.length > 1
+      errors[html_doc[:display_path]] <<= "Title contains HTML: #{title}"
+    end
   end
 
   report_errors(errors)
@@ -177,7 +196,7 @@ def check_netlify_redirects(dst_dir)
 
     # ignore URL fragments when linting, the important thing is that
     # pages don't 404
-    target = redirect[:target].split('#')[0]
+    target = redirect[:target].split('#')[0].split('?')[0]
 
     lineno = redirect[:lineno]
     line = redirect[:line]
@@ -199,6 +218,78 @@ def check_netlify_redirects(dst_dir)
     lineno, line = ln
     error("  * L#{lineno}:\t#{line}")
   end
+  exit!
+end
+
+# Check I have redirects set up for every sub-URL of a published URL
+# e.g. if I have an article /2013/my-post, there's something at /2013/
+# that redirects.  In the sense that "good URLs are hackable".
+#
+# Quoting the slightly formal language of Nielsen Norman [1]:
+#
+#     A usable site requires […] URLs that are "hackable" to allow users
+#     to move to higher levels of the information architecture by hacking
+#     off the end of the URL
+#
+# Let's make sure I'm doing that!
+def check_all_urls_are_hackable(dst_dir)
+  info('Checking all HTML pages are navigable...')
+
+  # Get a list of which paths will return an HTML page.
+  #
+  # This means either:
+  #
+  #     - There's a Netlify redirect that takes you to another page, or
+  #     - There's a folder with an index.html file that will be served
+  #
+  # The goal is to have two sets of URLs without trailing slashes,
+  # e.g. {'/writing', '/til'}
+  #
+  redirects = parse_netlify_redirects("#{dst_dir}/_redirects").to_set { |r| r[:source].chomp('/') }
+  folders_with_index_html = Dir.glob("#{dst_dir}/**/index.html").map { |p| File.dirname(p).gsub(dst_dir, '') }
+
+  # Go through and work out all the URLs that somebody could
+  # "hack" their way towards.
+  #
+  # e.g. if there's a file `/blog/2013/01/my-post/index.html` which will
+  # be served from `/blog/2013/01/my-post`, then somebody could hack
+  # their way to get to:
+  #
+  #     - /
+  #     - /blog/
+  #     - /blog/2013/
+  #     - /blog/2013/01/
+  #
+  hackable_urls = Dir.glob("#{dst_dir}/**/*.html")
+                     .filter { |p| !p.start_with?("#{dst_dir}/files/") }
+                     .flat_map do |p|
+    dirs = []
+
+    while (p = File.dirname(p))
+
+      if p == dst_dir
+        break
+      end
+
+      dirs << p.gsub(dst_dir, '')
+    end
+
+    dirs
+  end
+
+  hackable_urls = hackable_urls.to_set
+
+  # Now go through and work out which URLs are unreachable.
+  unreachable_urls = hackable_urls - (redirects + folders_with_index_html)
+
+  return if unreachable_urls.empty?
+
+  error('- Missing pages/redirects!')
+  error('  The following URLs can be "hacked" but won’t resolve:')
+  unreachable_urls.sort.each do |url|
+    error("  * #{url}/")
+  end
+  error('  Considering adding an entry in src/_redirects')
   exit!
 end
 
@@ -235,14 +326,15 @@ def get_display_path(html_path, doc)
   end
 end
 
-src_dir = 'src'
 html_dir = '_site'
+src_dir = 'src'
 
-# run_html_linting(html_dir)
+run_html_linting(html_dir)
 
 html_documents = get_html_documents(html_dir)
 
 check_yaml_front_matter(src_dir)
 check_no_localhost_links(html_documents)
 check_no_html_in_titles(html_documents)
-# check_netlify_redirects(html_dir)
+check_netlify_redirects(html_dir)
+check_all_urls_are_hackable(html_dir)
