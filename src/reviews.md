@@ -1,8 +1,8 @@
 ---
-layout: page
+layout: list_of_reviews
 ---
 
-<h2>books i’ve read</h2>
+## books i’ve read
 
 {% assign reviews = site.pages | grouped_reviews %}
 
