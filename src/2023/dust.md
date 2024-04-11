@@ -17,5 +17,5 @@ review:
   rating: 4
 ---
 
-A sequel to [*Wool*](/2023/wool/) and [*Shift*](/2023/Shift/).
+A sequel to [*Wool*](/2023/wool/) and [*Shift*](/2023/shift/).
 I enjoyed this as the final part of the trilogy, and I was fairly satisfied with how it all wrapped up.
