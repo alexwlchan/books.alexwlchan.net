@@ -23,7 +23,3 @@
     background: {{ book.cover.tint_color | boost: 0.26, 0.74 }};
   {% endif %}
 }
-
-#review_preview_{{ slug }} a:hover {
-  background: none;
-}
