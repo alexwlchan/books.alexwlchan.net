@@ -6,7 +6,7 @@
     --hover-bg: {{ book.cover.tint_color | boost: 0.42, 0.58 }};
     --shadow: {{ book.cover.tint_color | as_rgba: 0.3 }};
   {% else %}
-  --bg: {{ book.cover.tint_color | boost: 0.08, 0.92 }};
+    --bg: {{ book.cover.tint_color | boost: 0.08, 0.92 }};
     --hover-bg: {{ book.cover.tint_color | boost: 0.26, 0.74 }};
   {% endif %}
 }
