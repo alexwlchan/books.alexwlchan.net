@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This plugin is for adding extra styles to posts/pages.
 #
 # It tries to balance a couple of requirements:
