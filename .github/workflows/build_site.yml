@@ -65,12 +65,12 @@ jobs:
           key: "jekyll-cache-${{ github.sha }}"
           restore-keys: "jekyll-cache-"
 
-      - name: "Cache the .headers folder"
+      - name: "Cache the .shelves folder"
         uses: "actions/cache@v4"
         with:
-          path: src/.headers
-          key: "headers-${{ github.sha }}"
-          restore-keys: "headers-"
+          path: src/.shelves
+          key: "shelves-${{ github.sha }}"
+          restore-keys: "shelves-"
 
       - name: "Build the site"
         run: bundle exec jekyll build
