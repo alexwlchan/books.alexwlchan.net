@@ -1,3 +1,12 @@
+{% comment %}
+  Note: in general I lean towards long, descriptive names for
+  my CSS classes and variables, but this is a "hot" component
+  which is used a lot, especially on the articles page.
+  
+  I'm going for shorter names here to reducde the overall size
+  of the page.
+{% endcomment %}
+
 {% assign book = review_entry.book %}
 {% assign review = review_entry.review %}
 {% assign slug = review_entry.url | replace: "/", "_" %}
@@ -8,7 +17,7 @@
 </style>
 
 <div
-  id="review_preview_{{ slug }}"
+  id="rp_{{ slug }}"
   class="review_preview {% if read_at_another_time %}read_at_another_time{% endif %}"
   data-book-authors="{% if book.author %}{{ book.author }}{% endif %}"
   data-book-publication-year="{{ book.publication_year }}"

@@ -1,4 +1,4 @@
-#review_preview_{{ slug }} {
+#rp_{{ slug }} {
   border-color: {{ book.cover.tint_color }};
 
   {% if review.rating == 5 %}
@@ -9,11 +9,11 @@
   {% endif %}
 }
 
-#review_preview_{{ slug }} img {
+#rp_{{ slug }} img {
   border-color: {{ book.cover.tint_color }};
 }
 
-#review_preview_{{ slug }}:hover {
+#rp_{{ slug }}:hover {
   {% if review.rating == 5 %}
     background: {{ book.cover.tint_color | boost: 0.42, 0.58 }};
   {% else %}
