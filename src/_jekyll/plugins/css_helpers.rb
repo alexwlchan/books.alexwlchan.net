@@ -2,6 +2,7 @@
 
 require 'chunky_png'
 require 'color'
+require 'fileutils'
 
 module Jekyll
   module CssHelpers
@@ -15,51 +16,62 @@ module Jekyll
       @@cache ||= Jekyll::Cache.new('ShelfHeaders')
     end
 
+    def create_shelf_png(color, out_path)
+      rgb_color = Color::RGB.by_hex(color)
+      hsl_color = rgb_color.to_hsl
+
+      # These two RNGs serve two different purposes:
+      #
+      #    - The shape RNG creates the shape of the different shelves; we
+      #      seed with a constant to ensure a consistent output on all pages.
+      #
+      #      In particular, as somebody navigates around the site, they should
+      #      see the bookshelf changing colours, but it should never change
+      #      shape -- that would be too jarring.
+      #
+      #    - The luminosity RNG chooses the light/dark of individual books
+      #      on the shelves.  This is seeded based on the colour so it's
+      #      consistent across runs, but is different for each colour so we
+      #      get different patterns of light/dark.
+      #
+      shapes = Random.new(0)
+      luminosities = Random.new((rgb_color.red * 256 * 256) + (rgb_color.green * 256) + (rgb_color.blue * 256))
+
+      png = ChunkyPNG::Image.new(2000, 90, ChunkyPNG::Color::TRANSPARENT)
+
+      x = 0
+
+      while x < png.width
+        shelf_width = shapes.rand(4..28)
+
+        # Shelves go from 30px to 45px height, then 2x for retina displays.
+        shelf_height = shapes.rand(60..90)
+
+        shelf_color = create_random_colour_like(luminosities, hsl_color)
+
+        png.rect(
+          x, 0,
+          x + shelf_width, shelf_height,
+          ChunkyPNG::Color.rgba(0, 0, 0, 0),
+          ChunkyPNG::Color.rgb(shelf_color.red.to_i, shelf_color.green.to_i, shelf_color.blue.to_i)
+        )
+
+        x += shelf_width
+      end
+
+      png.save(out_path)
+    end
+
     def create_shelf_data_uri(color)
       hex_string = color.gsub('#', '')
 
-      unless cache.key? hex_string
-        rgb_color = Color::RGB.by_hex(color)
-        hsl_color = rgb_color.to_hsl
+      cache.getset(hex_string) do
+        FileUtils.mkdir_p '.shelves'
+        out_path = ".shelves/#{hex_string}.png"
 
-        # These two RNGs serve two different purposes:
-        #
-        #    - The shape RNG creates the shape of the different shelves; we
-        #      seed with a constant to ensure a consistent output on all pages.
-        #
-        #      In particular, as somebody navigates around the site, they should
-        #      see the bookshelf changing colours, but it should never change
-        #      shape -- that would be too jarring.
-        #
-        #    - The luminosity RNG chooses the light/dark of individual books
-        #      on the shelves.  This is seeded based on the colour so it's
-        #      consistent across runs, but is different for each colour so we
-        #      get different patterns of light/dark.
-        #
-        shapes = Random.new(0)
-        luminosities = Random.new((rgb_color.red * 256 * 256) + (rgb_color.green * 256) + (rgb_color.blue * 256))
+        create_shelf_png(color, out_path) unless File.exist? out_path
 
-        png = ChunkyPNG::Image.new(2000, 90, ChunkyPNG::Color::TRANSPARENT)
-
-        x = 0
-
-        while x < png.width
-          shelf_width = shapes.rand(4..28)
-
-          # Shelves go from 30px to 45px height, then 2x for retina displays.
-          shelf_height = shapes.rand(60..90)
-
-          shelf_color = create_random_colour_like(luminosities, hsl_color)
-
-          png.rect(
-            x, 0,
-            x + shelf_width, shelf_height,
-            ChunkyPNG::Color.rgba(0, 0, 0, 0),
-            ChunkyPNG::Color.rgb(shelf_color.red.to_i, shelf_color.green.to_i, shelf_color.blue.to_i)
-          )
-
-          x += shelf_width
-        end
+        png = ChunkyPNG::Image.from_file(out_path)
 
         cache[hex_string] = png.to_data_url
       end

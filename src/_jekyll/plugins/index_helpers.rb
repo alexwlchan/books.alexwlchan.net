@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
-require 'rszr'
-
 require_relative 'css_helpers'
+require_relative 'pillow/get_image_info'
 
 module Jekyll
   module IndexHelpers
@@ -38,9 +37,9 @@ module Jekyll
 
       filename = review_entry['book']['cover']['name']
 
-      image = Rszr::Image.load("src/covers/#{year}/#{filename}")
+      image = get_single_image_info("src/covers/#{year}/#{filename}")
 
-      { 'width' => image.width, 'height' => image.height }
+      { 'width' => image['width'], 'height' => image['height'] }
     end
 
     def credit_line(book)

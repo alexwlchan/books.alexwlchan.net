@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 require 'fileutils'
-require 'rszr'
+
+require_relative 'pillow/create_cover'
 
 module IndividualCovers
   class GenerateIndividualCovers < Jekyll::Generator
@@ -9,19 +10,15 @@ module IndividualCovers
       source = site.config['source']
       destination = site.config['destination']
 
-      Dir["#{source}/covers/**/*"].each do |src_path|
-        next if File.directory? src_path
+      Dir["#{source}/covers/**/*"].each do |in_path|
+        next if File.directory? in_path
 
-        dst_path = src_path.gsub("#{source}/covers/", "#{destination}/individual_covers/")
-
-        next if File.exist? dst_path
-
-        FileUtils.mkdir_p File.dirname(dst_path)
-
-        im = Rszr::Image.load(src_path)
-        im.resize!(180 * 2, 240 * 2, crop: false)
-
-        im.save(dst_path)
+        create_cover({
+                       'in_path' => in_path,
+                       'out_path' => in_path.gsub("#{source}/covers/", "#{destination}/individual_covers/"),
+                       'max_width' => 180 * 2,
+                       'max_height' => 240 * 2
+                     })
       end
     end
   end

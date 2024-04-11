@@ -23,32 +23,71 @@ jobs:
   build:
     name: Build the website
     runs-on: ubuntu-latest
+    env:
+      BUNDLE_WITH: build:lint
     steps:
       - name: "Check out the repo"
         uses: actions/checkout@v4
 
+      - name: "Set up Ruby"
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+          cache-version: 1
+
+        # Not all the gems get installed properly for some reason, and
+        # I get errors like:
+        #
+        #     `require': cannot load such file -- json-schema (LoadError)
+        #
+        # Try installing them manually instead.
+      - run: gem install html-proofer json-schema nokogiri
+
+      - name: "Set up Python"
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+      - run: pip install -r requirements.txt
+
       - name: "Cache site output"
-        uses: "actions/cache@v3"
+        uses: "actions/cache@v4"
         with:
           path: _site
           key: "site-${{ github.sha }}"
           restore-keys: "site-"
 
       - name: "Cache the .jekyll-cache folder"
-        uses: "actions/cache@v3"
+        uses: "actions/cache@v4"
         with:
           path: src/.jekyll-cache
           key: "jekyll-cache-${{ github.sha }}"
           restore-keys: "jekyll-cache-"
 
+      - name: "Cache the .shelves folder"
+        uses: "actions/cache@v4"
+        with:
+          path: src/.shelves
+          key: "shelves-${{ github.sha }}"
+          restore-keys: "shelves-"
+
       - name: "Build the site"
-        run: make html
+        run: bundle exec jekyll build
 
       - name: "Run linting"
-        run: make lint
+        run: bundle exec ruby scripts/linter.rb
 
-      - name: "Deploy to Netlify"
-        if: github.ref == 'refs/heads/main'
-        run: make deploy-prod
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: "_site"
+          production-branch: main
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions"
+          enable-pull-request-comment: false
+          overwrites-pull-request-comment: true
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: "66a899f3-16ae-42af-b059-db28a1fbc731"
+        timeout-minutes: 1
