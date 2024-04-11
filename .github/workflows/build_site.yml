@@ -85,6 +85,7 @@ jobs:
           production-branch: main
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy from GitHub Actions"
+          enable-commit-comment: false
           enable-pull-request-comment: false
           overwrites-pull-request-comment: true
         env:
