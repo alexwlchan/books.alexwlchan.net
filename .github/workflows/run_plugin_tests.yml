@@ -17,7 +17,7 @@ on:
     paths:
       - 'src/_plugins/**'
       - 'Gemfile'
-      - 'Gemfile.lock'``
+      - 'Gemfile.lock'
 
 jobs:
   build:
