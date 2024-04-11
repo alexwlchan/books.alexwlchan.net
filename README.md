@@ -6,7 +6,7 @@ This is the source code for <https://books.alexwlchan.net>, a site I use to trac
 It creates bright, colourful cards for each book, with a tint colour based on the book's cover.
 Each card links to a longer, more detailed review.
 
-![A screenshot of the homepage, which has a brief introductory paragraph and a list of three recent books.](books_screenshot.png)
+![A screenshot of the homepage, which has a brief introductory paragraph and a list of three recent books.](screenshot.png)
 
 This repo contains my reviews, the cover images, and the Rust tool that creates the site.
 
@@ -14,7 +14,7 @@ This repo contains my reviews, the cover images, and the Rust tool that creates 
 
 ## How I store my reviews
 
-Individual reviews are stored as plaintext files in the `reviews` directory, one per book I've read.
+Individual reviews are stored as plaintext files in the `src` directory, one per book I've read.
 Here's an example:
 
 ```
@@ -36,16 +36,9 @@ review:
 This is a weird but delightful book.
 ```
 
-Each book also has a cover image in the `covers` directory, which is linked in the `book.cover.name` metadata field.
+Each book also has a cover image in the `covers` directory.
 
-I have a CLI tool that helps me create these two files.
-It asks me a series of questions about the book, then creates the review file, downloads the cover image, and extracts the tint colour.
-
-The same CLI tool will generate the site.
-It reads the Markdown files, renders them as HTML, and resizes the cover images so they're the right size to use on the site.
-These files then get deployed to [Netlify].
-
-[Netlify]: https://www.netlify.com/
+These files get fed into a static site generator that creates HTML files.
 
 
 
@@ -54,12 +47,10 @@ These files then get deployed to [Netlify].
 The site uses:
 
 *   [Jekyll][jekyll], which generates the HTML pages
-*   [Docker][docker], which wraps the local build process
 *   [GitHub Actions][github_actions], which builds and deploys the site
 *   [Netlify], which hosts the site
 
 [jekyll]: https://jekyllrb.com/
-[docker]: https://www.docker.com/
 [github_actions]: https://github.com/features/actions
 [Netlify]: https://www.netlify.com
 
