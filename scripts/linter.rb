@@ -264,7 +264,7 @@ def check_all_urls_are_hackable(dst_dir)
   #     - /blog/2013/01/
   #
   hackable_urls = Dir.glob("#{dst_dir}/**/*.html")
-                     .filter { |p| !p.start_with?("#{dst_dir}/files/") }
+                     .filter { |p| !p.start_with?("#{dst_dir}/static/tests/") }
                      .flat_map do |p|
     dirs = []
 
