@@ -1,5 +1,5 @@
 #rp_{{ slug }} {
-  border-color: {{ book.cover.tint_color }};
+  --border-color: {{ book.cover.tint_color }};
 
   {% if review.rating == 5 %}
     box-shadow: 0px 0px 5px {{ book.cover.tint_color | as_rgba: 0.3 }};
@@ -7,10 +7,6 @@
   {% else %}
     background: {{ book.cover.tint_color | boost: 0.08, 0.92 }};
   {% endif %}
-}
-
-#rp_{{ slug }} img {
-  border-color: {{ book.cover.tint_color }};
 }
 
 #rp_{{ slug }}:hover {
