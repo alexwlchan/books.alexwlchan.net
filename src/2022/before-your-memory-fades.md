@@ -21,7 +21,7 @@ review:
   rating: 5
 ---
 
-This is the sequel to [*Before the Coffee Gets Cold*](/reviews/before-the-coffee-goes-cold/) and [*Tales from the Café*](/reviews/before-the-coffee-gets-cold-tales-from-the-cafe/).
+This is the sequel to [*Before the Coffee Gets Cold*](/2022/before-the-coffee-gets-cold/) and [*Tales from the Café*](/2022/before-the-coffee-gets-cold-tales-from-the-cafe/).
 It's another beautiful collection of stories, that continue to push the boundaries of the mechanic, and I cried buckets at each of them.
 
 * an orphan who wants to go back and rebuke her parents, for the difficult life she had after they died when she was young

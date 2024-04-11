@@ -24,8 +24,8 @@ It's a powerful collection which doesn't pull its punches.
 
 Topics include:
 
-*   The institutional sexism of the British computing industry (see also: [*Programmed Inequality*](/reviews/programmed-inequality/))
-*   The linguistic biases of the QWERTY keyboard (see also: [*The Chinese Typewriter*](/reviews/the-chinese-typewriter-a-history/))
+*   The institutional sexism of the British computing industry (see also: [*Programmed Inequality*](/2021/programmed-inequality/))
+*   The linguistic biases of the QWERTY keyboard (see also: [*The Chinese Typewriter*](/2020/the-chinese-typewriter-a-history/))
 *   The rapid development (and deposition) of software-based platforms and infrastructure
 
 Each essay is thoroughly researched, with extensive references and details.

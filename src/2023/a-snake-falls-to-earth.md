@@ -17,5 +17,5 @@ review:
   rating: 4
 ---
 
-A fun and interesting fantasy from the same author as [*Elatsoe*](/reviews/elatsoe), which I read and enjoyed earlier in the year.
+A fun and interesting fantasy from the same author as [*Elatsoe*](/2023/elatsoe), which I read and enjoyed earlier in the year.
 

@@ -16,7 +16,7 @@ review:
   rating: 4
 ---
 
-This is the prequel to [*The Hate U Give*](/reviews/the-hate-u-give/); it takes us back to Garden Heights seventeen years earlier to meet a young Maverick.
+This is the prequel to [*The Hate U Give*](/2022/the-hate-u-give/); it takes us back to Garden Heights seventeen years earlier to meet a young Maverick.
 We see how he was ensnared by gangs, the birth of his two children, getting his start at Mr Wyatt's store, his relationship with his father, and becoming the person we see in the original book.
 
 It retains a lot of the good bits of the original book: the style, the tone, the authenticity.

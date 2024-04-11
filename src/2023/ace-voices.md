@@ -26,5 +26,5 @@ I want to hear their stories as they tell them, not have them sprinkled as stand
 
 I found myself skimming what the author had written to get to the quotes, but I gave up about a third of the way in -- I'd rather read from these people directly, not their repackaged words.
 
-I wanted this to be the ace version of [*Gender Euphoria*](/reviews/gender-euphoria/), but it falls far short of that.
+I wanted this to be the ace version of [*Gender Euphoria*](/2022/gender-euphoria/), but it falls far short of that.
 I wanted to hear about asexuality fits into people's wider lives, how it affects being a parent or a partner or whatever, but I didn't get that.

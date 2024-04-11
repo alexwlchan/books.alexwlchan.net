@@ -21,7 +21,7 @@ review:
 
 Another solid if mostly unremarkable entry in the series.
 
-I’d forgotten everything about the previous books, but I was able to follow this one just fine. Like [*The Box in the Woods*](/reviews/the-box-in-the-woods/), this book is a self-contained mystery, which I prefer. There are some continuing threads, but they’re around the characters rather than the murder.
+I’d forgotten everything about the previous books, but I was able to follow this one just fine. Like [*The Box in the Woods*](/2021/the-box-in-the-woods/), this book is a self-contained mystery, which I prefer. There are some continuing threads, but they’re around the characters rather than the murder.
 
 This time it’s an English murder mystery, featuring a set of Cambridge students in a manor house in Gloucestershire. Good fun, and all the British experiences rang true to me. I didn’t see the end coming, but it was a well-constructed conclusion and it felt satisfying.
 

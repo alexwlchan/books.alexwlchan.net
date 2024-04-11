@@ -18,7 +18,7 @@ review:
   rating: 4
 ---
 
-This is the sequel to [*Once & Future*](/reviews/once-future/).
+This is the sequel to [*Once & Future*](/2023/once-future/).
 It continues the retelling of the Arthurian legend, this time set in the original story, thanks to a time jump at the end of the first book.
 It focuses heavily on Merlin, and his attempts to break the cycle of Arthur being reincarnated in various forms.
 

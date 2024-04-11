@@ -17,7 +17,7 @@ review:
   rating: 5
 ---
 
-This is the sequel to [*Written in the Stars*](/reviews/written-in-the-stars/), which was one of my favourite books of 2021 -- so it's no surprise that I loved this.
+This is the sequel to [*Written in the Stars*](/2021/written-in-the-stars/), which was one of my favourite books of 2021 -- so it's no surprise that I loved this.
 
 It's another romance novel, this time between Darcy's brother Brendon and her best friend Annie.
 She's visiting Seattle for a brief trip to break the news that she's moving to London, and Brendon is trying to persuade her to stay -- and also that romance isn't dead.

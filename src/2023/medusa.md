@@ -25,5 +25,5 @@ Two especially nice touches are creating names and personalities for her snakes,
 
 It's only short; I read it quickly and it's lovely writing.
 
-See also: [*Here, the World Entire*](/reviews/here-the-world-entire/).
+See also: [*Here, the World Entire*](/2019/here-the-world-entire/).
 

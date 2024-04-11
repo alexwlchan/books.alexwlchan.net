@@ -17,7 +17,7 @@ review:
   rating: 4
 ---
 
-This is the sequel to [*A Psalm for the Wild-Built*](/reviews/a-psalm-for-the-wild-built/).
+This is the sequel to [*A Psalm for the Wild-Built*](/2022/a-psalm-for-the-wild-built/).
 
 Dex and Mosscap go wandering through various settlements on Panga -- and experience a variety of reactions to a robot, from distrust to excitement to curiosity.
 Mosscap's interest is a deft way to show us how this world works; we see the mechanics through his ever-curious eyes, not an exposition dump.

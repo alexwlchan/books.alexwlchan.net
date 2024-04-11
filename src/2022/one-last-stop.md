@@ -36,7 +36,7 @@ It's a fun, easy read that made me cry at several points at the end.
 I'm also vaguely reassured that I enjoyed this despite it being a somewhat "messy" queer book.
 Jane was alive in the '70s, and we get gay rights activists, the AIDs crisis, furious sex, drag bars, and more.
 It's been a while since I read a book with those themes; without the more toned-down, family-friendly version of queerness.
-I was a bit worried the "messiness" is why I bounced off [*Paul Takes the Form of a Mortal Girl*](/reviews/paul-takes-the-form-of-a-mortal-girl/), but this puts those concerns to rest.
+I was a bit worried the "messiness" is why I bounced off [*Paul Takes the Form of a Mortal Girl*](/2022/paul-takes-the-form-of-a-mortal-girl/), but this puts those concerns to rest.
 
 It was a recommendation from Charlotte K, and I devoured it in less than a day.
 
