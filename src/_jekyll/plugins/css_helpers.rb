@@ -9,7 +9,7 @@ module Jekyll
     def as_rgba(color, opacity)
       rgb_color = Color::RGB.by_hex(color)
 
-      "rgba(#{rgb_color.red}, #{rgb_color.green}, #{rgb_color.blue}, #{opacity})"
+      "rgba(#{rgb_color.red.to_i}, #{rgb_color.green.to_i}, #{rgb_color.blue.to_i}, #{opacity})"
     end
 
     def cache
@@ -83,9 +83,9 @@ module Jekyll
       rgb_color = Color::RGB.by_hex(color)
 
       # See https://stackoverflow.com/a/11615135/1558022
-      red   = (rgb_color.red * multiplier) + (amount * 255)
-      green = (rgb_color.green * multiplier) + (amount * 255)
-      blue  = (rgb_color.blue * multiplier) + (amount * 255)
+      red   = ((rgb_color.red * multiplier) + (amount * 255)).to_i
+      green = ((rgb_color.green * multiplier) + (amount * 255)).to_i
+      blue  = ((rgb_color.blue * multiplier) + (amount * 255)).to_i
 
       "rgb(#{red}, #{green}, #{blue})"
     end
