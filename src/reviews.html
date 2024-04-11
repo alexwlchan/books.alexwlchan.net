@@ -78,8 +78,7 @@ layout: page
    * be loaded from URL query state. */
   var filters = createEmptyFilters();
 
-  window.addEventListener("load", (event) => {
-    console.log("GO GO GO");
+  window.addEventListener("DOMContentLoaded", (event) => {
 
     /* Filters require JavaScript, so they're hidden by default and
      * made visible on initial page load.
