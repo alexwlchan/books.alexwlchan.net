@@ -1,0 +1,45 @@
+---
+layout: compress
+---
+{% assign tint_color = "#191919" %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include_cached head.html %}
+
+    <style>
+      aside #shelf_background {
+        background: url({{ tint_color | create_shelf_data_uri }});
+        background-size: auto 100%;
+      }
+    </style>
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@alexwlchan"/>
+    <meta name="twitter:title" content="alexwlchan's book reviews"/>
+
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ site.url }}">
+    <meta property="og:title" content="alexwlchan's book reviews">
+
+    <meta name="theme-color" content="#191919">
+
+    <link rel="shortcut icon" type="image/png" href="/favicons/191919.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/191919.ico">
+
+    <title>alexwlchan’s book tracker</title>
+  </head>
+
+  <body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+
+    {% include header.html %}
+
+    <main id="main" tabindex="-1">
+      {{ content }}
+    </main>
+
+    {% include_cached footer.html %}
+  </body>
+</html>
