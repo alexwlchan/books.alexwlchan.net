@@ -28,4 +28,4 @@ It's well-written and easy to read, if uncomfortable -- I read it over a couple 
 Highly recommended as an accessible introduction to power structures and racism in Britain.
 I reckon I'd absorbed at least half the key ideas through osmosis from social media, but the history and British take on it were new.
 
-See also: [*Trans Like Me*](/reviews/trans-like-me/), which feels in a similar vein (but about gender, not race).
+See also: [*Trans Like Me*](/2020/trans-like-me/), which feels in a similar vein (but about gender, not race).

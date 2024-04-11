@@ -20,7 +20,7 @@ review:
 
 <!--series: "The Railway Detective #18" -->
 
-This is the second book I've read in the Railway Detective series, after [*Tragedy on the Branch Line*](/reviews/tragedy-on-the-branch-line/).
+This is the second book I've read in the Railway Detective series, after [*Tragedy on the Branch Line*](/2023/tragedy-on-the-branch-line/).
 It was pleasant if unremarkable, and I could see several of the same character tropes and archetypes from the first book I read.
 It worked as a light read, but it doesn't leave me rushing to read the rest of the series.
 

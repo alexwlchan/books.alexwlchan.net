@@ -19,7 +19,7 @@ review:
   rating: 4
 ---
 
-This is the sequel to [*Written in the Stars*](/reviews/written-in-the-stars/) and [*Hang the Moon*](/reviews/hang-the-moon/), in a way that presumably ties off the trilogy -- all the main characters are now paired off and have their happily ever after.
+This is the sequel to [*Written in the Stars*](/2021/written-in-the-stars/) and [*Hang the Moon*](/2022/hang-the-moon/), in a way that presumably ties off the trilogy -- all the main characters are now paired off and have their happily ever after.
 This romance novel follows Margot connecting with her first love Olivia -- and estranged friend of eleven years -- when a series of coincidences brings them back together.
 
 It's still sweet and charming, but I didn't enjoy it as much as the first two books.

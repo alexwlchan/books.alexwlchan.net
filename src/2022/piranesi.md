@@ -36,7 +36,7 @@ The ending isn't quite as clean as I'd like; it all wraps up a bit quickly, and 
 
 Chiwetel Ejiofor is a superb narrator, and this was a great book to listen to.
 
-It feels similar to [*The Starless Sea*](/reviews/the-starless-sea/), which I also enjoyed.
+It feels similar to [*The Starless Sea*](/2020/the-starless-sea/), which I also enjoyed.
 It also reminded me of C.S. Lewis, which I enjoyed less.
 
 I bought this after Jason mentioned it in [The Incomparable's 2021 review episode](https://www.theincomparable.com/theincomparable/595/), and then several people mentioned it in The Incomparable Slack.

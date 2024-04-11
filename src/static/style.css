@@ -208,14 +208,14 @@ footer a:hover {
   margin: 0;
 }
 
-.divider {
-  text-align: center;
-  margin-top:    1.5em;
-  margin-bottom: 1em;
-}
+hr {
+  height: 50px;
+  width:  50px;
+  border: 0;
 
-.divider img {
-  width: 50px;
+  background-image: url("/static/book.svg");
+  background-size:   contain;
+  background-repeat: repeat-x;
 }
 
 .star_rating {

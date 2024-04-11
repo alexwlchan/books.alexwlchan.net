@@ -28,5 +28,5 @@ For example, he's more aware and pointed about how neglected his wife Barbara fe
 Something struck me is how much it was luck; being in the right place at the right time.
 There was no "grand plan" for the crew assignments, and it was a series of fortuitous moments that led to his Apollo 17 command slot.
 
-It reminded me of [*Carrying the Fire*](/reviews/carrying-the-fire/), which is one of my favourite books – I don't think this is quite as good, and most of the reflection and soul-searching comes towards the end, but I still enjoyed it.
+It reminded me of [*Carrying the Fire*](/2019/carrying-the-fire/), which is one of my favourite books – I don't think this is quite as good, and most of the reflection and soul-searching comes towards the end, but I still enjoyed it.
 

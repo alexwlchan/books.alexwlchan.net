@@ -23,7 +23,7 @@ I particularly liked Mr Bennet, who's quite a funny character -- but the book gi
 Both Lydia and Jane's storylines hit a lot harder now than I remember.
 (Although some of that may also be how I've changed in the last decade.)
 
-I read this [after the Lydia book](/reviews/the-epic-adventures-of-lydia-bennet/), and I think that was the wrong order -- this retells the events of LBD, whereas Lydia's book continues after it ends.
+I read this [after the Lydia book](/2022/the-epic-adventures-of-lydia-bennet/), and I think that was the wrong order -- this retells the events of LBD, whereas Lydia's book continues after it ends.
 It would have more sense to read this book first and remind myself of LBD, then continue Lydia's story.
 
 It was an easy, gentle read that I wanted to finish quickly.

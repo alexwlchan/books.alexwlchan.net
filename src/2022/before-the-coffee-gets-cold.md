@@ -21,7 +21,7 @@ review:
   rating: 5
 ---
 
-This is the prequel to [*Tales from the Café*](/reviews/before-the-coffee-gets-cold-tales-from-the-cafe/), with four different stories from the café where you can travel in time:
+This is the prequel to [*Tales from the Café*](/2022/before-the-coffee-gets-cold-tales-from-the-cafe/), with four different stories from the café where you can travel in time:
 
 *   a woman who goes back in time to meet her boyfriend before he moves to America
 *   a wife who goes back to meet her husband before his Alzheimer's caused him to forget her

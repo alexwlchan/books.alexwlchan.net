@@ -18,7 +18,7 @@ review:
   rating: 4
 ---
 
-A fun fantasy story, with echoes of [*The Night Circus*](/reviews/the-night-circus/) or [*The Starless Sea*](/reviews/the-starless-sea/).
+A fun fantasy story, with echoes of [*The Night Circus*](/2020/the-night-circus/) or [*The Starless Sea*](/2020/the-starless-sea/).
 I didn't enjoy it quite as much as either of those books – it was quite slow and took me a while to get going, but I was enjoying it more towards the end.
 
 The worldbuilding is lovely and I enjoyed the story -- and I like that a lot of it is left deliberately unexplained.

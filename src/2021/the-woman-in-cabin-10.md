@@ -19,7 +19,7 @@ review:
 ---
 
 I picked this up on a whim from the iBooks Store, after being intrigued by the description and a reviewer saying it had an unpredictable ending.
-I was looking for something light after [listening to 9/11 testimonials](/reviews/the-only-plane-in-the-sky/).
+I was looking for something light after [listening to 9/11 testimonials](/2021/the-only-plane-in-the-sky/).
 This is… not light.
 
 It's a first-person novelist about a travel journalist, Lo Blacklock, who thinks she sees somebody get thrown overboard on a cruise ship.

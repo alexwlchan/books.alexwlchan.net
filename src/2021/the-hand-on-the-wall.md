@@ -19,7 +19,7 @@ review:
   rating: 4
 ---
 
-The sequel to [*Truly Devious*](/reviews/truly-devious/) and [*The Vanishing Stair*](/reviews/the-vanishing-stair/).
+The sequel to [*Truly Devious*](/2021/truly-devious/) and [*The Vanishing Stair*](/2021/the-vanishing-stair/).
 Continuing the murder mystery at Ellingham Academy.
 
 The writing and narration style are very similar to the previous books -- switching between the present day and the 1930s, when the initial crimes took place.

@@ -19,7 +19,7 @@ review:
   rating: 4
 ---
 
-The sequel to [*Truly Devious*](/reviews/truly-devious/).
+The sequel to [*Truly Devious*](/2021/truly-devious/).
 Very similar vibes to the first book – I enjoyed it, good narration, I was intrigued by the plot and I got through it quickly.
 
 The overall story advances quite a bit – we get answers to several threads left from the first book, and a few new threads are dangled.

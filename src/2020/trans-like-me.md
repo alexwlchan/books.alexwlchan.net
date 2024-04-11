@@ -33,4 +33,4 @@ Friends who've read/reviewed it:
 -   <https://www.facebook.com/ekabrett/posts/10219162994287519>
 -   <https://notebook.drmaciver.com/posts/2018-11-12-06:24.html>
 
-See also: [*Why I'm No Longer Talking to White People About Race*](/reviews/why-im-no-longer-talking-to-white-people-about-race/), which feels in a similar vein (but about race, not gender).
+See also: [*Why I'm No Longer Talking to White People About Race*](/2020/why-im-no-longer-talking-to-white-people-about-race/), which feels in a similar vein (but about race, not gender).

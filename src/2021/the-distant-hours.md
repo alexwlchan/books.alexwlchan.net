@@ -27,7 +27,7 @@ I found this book in a bag on a bench in a local village, with a note:
 I doubt I'd have picked it up otherwise, but I rather enjoyed it.
 
 The book centres around Mildehurst Castle, the home of the three Blythe secrets, and a variety of family secrets.
-It starts with a long-delayed letter from Juniper Blythe (strong [*Going Postal*](/reviews/going-postal/) vibes) to Meredith Burchill, who was evacuated to Mildehurst during WWII.
+It starts with a long-delayed letter from Juniper Blythe (strong [*Going Postal*](/2021/going-postal/) vibes) to Meredith Burchill, who was evacuated to Mildehurst during WWII.
 This prompts her daughter Edie to start investigating the history of the castle and the Blythe family.
 
 The entire mystery eventually unfolds over the course of the book.

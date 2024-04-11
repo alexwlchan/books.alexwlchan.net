@@ -24,5 +24,5 @@ The trains that run on these tracks are more like giant ships than the trains we
 
 The story follow Sham Yes ap Soorap, on board a moletrain (like a whaler, but for moles), as he chases stories of a world beyond the railsea.
 
-I loved [*The City & the City*](/reviews/the-city-and-the-city/), so it's no surprise that I enjoyed this too.
+I loved [*The City & the City*](/2020/the-city-the-city/), so it's no surprise that I enjoyed this too.
 Possibly not quite as much as the other, but trains are always a big plus.
