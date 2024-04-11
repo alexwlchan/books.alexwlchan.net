@@ -25,6 +25,9 @@ def run_html_linting(html_dir)
       check_opengraph: true,
       disable_external: true,
       report_invalid_tags: true,
+      ignore_files: [
+        '_site/static/tests/test_filters.html'
+      ],
       #
       # As of April 2024, I have 334 links which don't use HTTPS.
       # It might be nice to fix them all and/or whitelist them, but
