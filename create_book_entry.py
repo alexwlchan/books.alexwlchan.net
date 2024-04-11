@@ -38,4 +38,4 @@ review:
 """
         )
 
-    subprocess.check_call(['open', str(out_path)])
+    subprocess.check_call(["open", str(out_path)])

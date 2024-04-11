@@ -5,7 +5,6 @@ require 'json'
 require 'json-schema'
 require 'nokogiri'
 require 'rainbow'
-require 'rszr'
 require 'uri'
 require 'yaml'
 
