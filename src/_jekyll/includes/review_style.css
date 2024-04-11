@@ -2,17 +2,11 @@
   --border-color: {{ book.cover.tint_color }};
 
   {% if review.rating == 5 %}
-    box-shadow: 0px 0px 5px {{ book.cover.tint_color | as_rgba: 0.3 }};
-    background: {{ book.cover.tint_color | boost: 0.3, 0.8 }};
+    --bg: {{ book.cover.tint_color | boost: 0.3, 0.8 }};
+    --hover-bg: {{ book.cover.tint_color | boost: 0.42, 0.58 }};
+    --shadow-color: {{ book.cover.tint_color | as_rgba: 0.3 }};
   {% else %}
-    background: {{ book.cover.tint_color | boost: 0.08, 0.92 }};
-  {% endif %}
-}
-
-#rp_{{ slug }}:hover {
-  {% if review.rating == 5 %}
-    background: {{ book.cover.tint_color | boost: 0.42, 0.58 }};
-  {% else %}
-    background: {{ book.cover.tint_color | boost: 0.26, 0.74 }};
+  --bg: {{ book.cover.tint_color | boost: 0.08, 0.92 }};
+    --hover-bg: {{ book.cover.tint_color | boost: 0.26, 0.74 }};
   {% endif %}
 }
