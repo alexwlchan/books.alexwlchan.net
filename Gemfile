@@ -6,7 +6,6 @@ group :build, optional: true do
   gem 'html-proofer', '~> 5'
   gem 'jekyll', '~> 4'
   gem 'jekyll-include-cache', '~> 0.2'
-  gem 'json-schema', '~> 4'
   gem 'nokogiri', '~> 1.16'
 
   # These two gems are here because of warings that they were loaded
@@ -16,6 +15,7 @@ group :build, optional: true do
 end
 
 group :lint, optional: true do
+  gem 'json-schema', '~> 4'
   gem 'rubocop', '~> 1.63'
 end
 
