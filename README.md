@@ -6,7 +6,7 @@ This is the source code for <https://books.alexwlchan.net>, a site I use to trac
 It creates bright, colourful cards for each book, with a tint colour based on the book's cover.
 Each card links to a longer, more detailed review.
 
-![A screenshot of the homepage, which has a brief introductory paragraph and a list of three recent books.](books_screenshot.png)
+![A screenshot of the homepage, which has a brief introductory paragraph and a list of three recent books.](screenshot.png)
 
 This repo contains my reviews, the cover images, and the Rust tool that creates the site.
 
