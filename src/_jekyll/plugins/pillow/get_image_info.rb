@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Use Python to get some basic info about an image, including the
 # dimensions and format.
 

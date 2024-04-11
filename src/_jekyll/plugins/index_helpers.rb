@@ -39,7 +39,7 @@ module Jekyll
 
       image = get_single_image_info("src/covers/#{year}/#{filename}")
 
-      { 'width' => image["width"], 'height' => image["height"] }
+      { 'width' => image['width'], 'height' => image['height'] }
     end
 
     def credit_line(book)

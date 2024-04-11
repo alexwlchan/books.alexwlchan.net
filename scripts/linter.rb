@@ -235,8 +235,8 @@ def get_display_path(html_path, doc)
   end
 end
 
-src_dir = "src"
-html_dir = "_site"
+src_dir = 'src'
+html_dir = '_site'
 
 # run_html_linting(html_dir)
 

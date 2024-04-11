@@ -14,11 +14,11 @@ module Thumbnails
         next if File.directory? cover_path
 
         create_cover({
-          'in_path' => cover_path,
-          'out_path' => cover_path.gsub("#{source}/covers/", "#{destination}/thumbs/"),
-          'max_width' => 110 * 2,
-          'max_height' => 130 * 2
-        })
+                       'in_path' => cover_path,
+                       'out_path' => cover_path.gsub("#{source}/covers/", "#{destination}/thumbs/"),
+                       'max_width' => 110 * 2,
+                       'max_height' => 130 * 2
+                     })
       end
     end
   end

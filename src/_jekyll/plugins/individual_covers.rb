@@ -14,11 +14,11 @@ module IndividualCovers
         next if File.directory? in_path
 
         create_cover({
-          'in_path' => in_path,
-          'out_path' => in_path.gsub("#{source}/covers/", "#{destination}/individual_covers/"),
-          'max_width' => 180 * 2,
-          'max_height' => 240 * 2
-        })
+                       'in_path' => in_path,
+                       'out_path' => in_path.gsub("#{source}/covers/", "#{destination}/individual_covers/"),
+                       'max_width' => 180 * 2,
+                       'max_height' => 240 * 2
+                     })
       end
     end
   end
