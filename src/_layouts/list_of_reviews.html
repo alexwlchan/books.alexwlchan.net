@@ -5,6 +5,8 @@ layout: compress
 
 <!DOCTYPE html>
 <html lang="en">
+  {% assign parsed_content = content | get_inline_styles %}
+
   <head>
     {% include_cached head.html %}
 
@@ -13,6 +15,9 @@ layout: compress
         background: url({{ tint_color | create_shelf_data_uri }});
         background-size: auto 100%;
       }
+
+
+      {{ parsed_content.inline_styles }}
     </style>
 
     <meta name="twitter:card" content="summary">
@@ -41,7 +46,7 @@ layout: compress
     {% include header.html %}
 
     <main id="main" tabindex="-1">
-      {{ content }}
+      {{ parsed_content.html }}
     </main>
 
     {% include_cached footer.html %}
