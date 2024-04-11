@@ -10,7 +10,7 @@
 }
 
 #review_preview_{{ slug }} img {
-  border: 0.1px solid {{ book.cover.tint_color }};
+  border-color: {{ book.cover.tint_color }};
 }
 
 #review_preview_{{ slug }}:hover {
