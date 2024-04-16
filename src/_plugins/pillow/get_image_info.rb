@@ -28,7 +28,7 @@ def get_single_image_info(path)
   unless cache.key?('-1')
     puts 'Image info cache is empty, rebuilding...'
 
-    stdout, status = Open3.capture2('python3', 'src/_jekyll/plugins/pillow/get_all_image_info.py')
+    stdout, status = Open3.capture2('python3', 'src/_plugins/pillow/get_all_image_info.py')
 
     if status.success?
       JSON.parse(stdout).each do |path, info|
@@ -42,7 +42,7 @@ def get_single_image_info(path)
   mtime = File.mtime(path).to_i
 
   cache.getset("#{path}--#{mtime}") do
-    stdout, status = Open3.capture2('python3', 'src/_jekyll/plugins/pillow/get_image_info.py', path)
+    stdout, status = Open3.capture2('python3', 'src/_plugins/pillow/get_image_info.py', path)
     raise "Unable to get info for image #{path}" unless status.success?
 
     JSON.parse(stdout)

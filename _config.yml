@@ -73,10 +73,6 @@ keep_files:
   - "social_icons"
   - "thumbs"
 
-includes_dir: "_jekyll/includes"
-plugins_dir:
-  - "src/_jekyll/plugins"
-
 markdown: "kramdown"
 
 kramdown:
