@@ -12,11 +12,7 @@ module Jekyll
       "rgba(#{rgb_color.red.to_i}, #{rgb_color.green.to_i}, #{rgb_color.blue.to_i}, #{opacity})"
     end
 
-    def cache
-      @@cache ||= Jekyll::Cache.new('ShelfHeaders')
-    end
-
-    def create_shelf_png(color, out_path)
+    def create_shelf_png_data_url(color, out_path)
       rgb_color = Color::RGB.by_hex(color)
       hsl_color = rgb_color.to_hsl
 
@@ -59,24 +55,26 @@ module Jekyll
         x += shelf_width
       end
 
-      png.save(out_path)
+      data_url = png.to_data_url
+
+      File.write(out_path, data_url)
+
+      data_url
     end
 
     def create_shelf_data_uri(color)
       hex_string = color.gsub('#', '')
 
-      cache.getset(hex_string) do
+      Jekyll::Cache.new('ShelfHeaders').getset(hex_string) do
         FileUtils.mkdir_p '.shelves'
-        out_path = ".shelves/#{hex_string}.png"
+        out_path = ".shelves/#{hex_string}.png_data_url.txt"
 
-        create_shelf_png(color, out_path) unless File.exist? out_path
-
-        png = ChunkyPNG::Image.from_file(out_path)
-
-        cache[hex_string] = png.to_data_url
+        if File.exist? out_path
+          File.read(out_path)
+        else
+          create_shelf_png_data_url(color, out_path)
+        end
       end
-
-      cache[hex_string]
     end
 
     def boost(color, multiplier, amount)
