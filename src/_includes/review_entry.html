@@ -2,7 +2,7 @@
   Note: in general I lean towards long, descriptive names for
   my CSS classes and variables, but this is a "hot" component
   which is used a lot, especially on the articles page.
-  
+
   I'm going for shorter names here to reducde the overall size
   of the page.
 {% endcomment %}
@@ -13,7 +13,18 @@
 {% assign cover_dimensions = review_entry | derived_cover_info %}
 
 <style type="x-text/scss">
-  {% include review_style.css %}
+  #rp_{{ slug }} {
+    --border: {{ book.cover.tint_color }};
+
+    {% if review.rating == 5 %}
+      --bg: {{ book.cover.tint_color | boost: 0.3, 0.8 }};
+      --hover-bg: {{ book.cover.tint_color | boost: 0.42, 0.58 }};
+      --shadow: {{ book.cover.tint_color | as_rgba: 0.3 }};
+    {% else %}
+      --bg: {{ book.cover.tint_color | boost: 0.08, 0.92 }};
+      --hover-bg: {{ book.cover.tint_color | boost: 0.26, 0.74 }};
+    {% endif %}
+  }
 </style>
 
 <div
