@@ -32,7 +32,7 @@ jobs:
     name: Build the website
     runs-on: ubuntu-latest
     env:
-      BUNDLE_WITH: build:lint
+      BUNDLE_WITH: lint
     steps:
       - name: "Check out the repo"
         uses: actions/checkout@v4
