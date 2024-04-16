@@ -7,7 +7,7 @@
 
 module Jekyll
   module Filters
-    alias_method :old_smartify, :smartify
+    alias old_smartify smartify
 
     def smartify(input)
       cache = Jekyll::Cache.new('Smartify')
