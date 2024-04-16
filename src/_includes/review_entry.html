@@ -41,7 +41,7 @@
     <div class="book_thumbnail">
       <img
         src="/thumbs/{{ review | year_read }}/{{ book.cover.name }}"
-        style="{{ cover_dimensions | get_dimensions }}"
+        style="aspect-ratio: {{ cover_dimensions['width'] }} / {{ cover_dimensions['height'] }}; max-width: 110px; max-height: 130px;"
         alt=""
         loading="lazy"
       >
