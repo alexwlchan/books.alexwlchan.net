@@ -2,7 +2,7 @@
 
 require 'test/unit'
 
-require_relative '../plugins/index_helpers'
+require_relative '../_plugins/index_helpers'
 
 class TestCreateCreditLine < Test::Unit::TestCase
   def test_single_author_credit_line

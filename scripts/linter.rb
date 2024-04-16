@@ -8,7 +8,7 @@ require 'rainbow'
 require 'uri'
 require 'yaml'
 
-require_relative '../src/_jekyll/plugins/pillow/get_image_info'
+require_relative '../src/_plugins/pillow/get_image_info'
 
 def run_html_linting(html_dir)
   HTMLProofer.check_directory(
@@ -88,7 +88,7 @@ def check_yaml_front_matter(src_dir)
     # Skip some Markdown files in the source directory that aren't
     # posts on the site and so don't need validating.
     next if md_path.end_with?('theme/_favicons/README.md')
-    next if md_path.end_with?('src/_jekyll/plugins/pillow/README.md')
+    next if md_path.end_with?('src/_plugins/pillow/README.md')
 
     # This page is a special case for crawlers and doesn't count for
     # the purposes of linting and the like.
@@ -193,10 +193,6 @@ def check_netlify_redirects(dst_dir)
   bad_lines = []
 
   parse_netlify_redirects("#{dst_dir}/_redirects").each do |redirect|
-    # A couple of special cases that I don't worry about.
-    next if redirect[:source] == '/ideas-for-inclusive-events/*'
-    next if redirect[:target].start_with? 'https://social.alexwlchan.net/'
-
     # ignore URL fragments when linting, the important thing is that
     # pages don't 404
     target = redirect[:target].split('#')[0].split('?')[0]

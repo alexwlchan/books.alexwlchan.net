@@ -15,7 +15,21 @@ layout: compress
     {% include_cached head.html %}
 
     <style>
-      {% include _review.css %}
+      :root {
+        --tint-color: {{ book.cover.tint_color }};
+      }
+
+      .review a {
+        color: var(--tint-color);
+      }
+
+      .review a:hover {
+        background: {{ book.cover.tint_color | as_rgba: 0.3 }};
+      }
+
+      .book-cover img {
+        box-shadow: 0px 5px 5px {{ book.cover.tint_color | as_rgba: 0.25 }};
+      }
 
       aside #shelf_background {
         background: url({{ tint_color | create_shelf_data_uri }});

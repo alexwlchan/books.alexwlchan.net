@@ -59,15 +59,6 @@ liquid:
 # See https://jekyllrb.com/docs/permalinks/#global
 permalink: "/:year/:title/"
 
-# ==================
-# Template variables
-# ==================
-#
-# These variables aren't part of any third-party Jekyll plugin; they're
-# placeholders used in my templates.
-
-date_format: "%-d %B %Y"
-
 # ================
 # Remaining config
 
@@ -81,10 +72,6 @@ keep_files:
   - "individual_covers"
   - "social_icons"
   - "thumbs"
-
-includes_dir: "_jekyll/includes"
-plugins_dir:
-  - "src/_jekyll/plugins"
 
 markdown: "kramdown"
 

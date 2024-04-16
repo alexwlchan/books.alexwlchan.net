@@ -147,6 +147,10 @@ footer a:hover {
   background: rgba(128, 128, 128, 0.3);
 }
 
+footer span.heart {
+  color: var(--tint-color);
+}
+
 .review_preview {
   border: 2px solid;
   border-radius: 20px;
