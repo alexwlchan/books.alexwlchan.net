@@ -10,4 +10,6 @@
 {% endcomment %}
 <link rel="stylesheet" href="/static/style.css">
 
-{% include analytics.html %}
+{% if jekyll.environment == "production" %}
+  {% include_cached analytics.html %}
+{% endif %}
