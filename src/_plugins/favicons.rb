@@ -31,7 +31,7 @@ module Favicons
       dst = site.config['destination']
 
       colors =
-        site.pages
+        site.posts
             .map { |p| p.data.dig('book', 'cover', 'tint_color') }
             .filter { |c| !c.nil? }
             .to_set
