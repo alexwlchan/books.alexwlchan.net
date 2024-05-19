@@ -13,6 +13,8 @@
 # It's as if I'd specified the cover name in the YAML front matter,
 # but I don't actually have to do that.
 
+require_relative 'pillow/get_image_info'
+
 Jekyll::Hooks.register :site, :post_read do |site|
   # Construct a hash that maps normalised name to original path,
   # e.g. if there's an image called src/covers/2023/white-fragility.jpg,
@@ -35,7 +37,12 @@ Jekyll::Hooks.register :site, :post_read do |site|
     slug = "#{year}/#{name}"
 
     if cover_image_names.include? slug
-      post.data['book']['cover']['name'] = File.basename(cover_image_names[slug])
+      this_cover = File.basename(cover_image_names[slug])
+      post.data['book']['cover']['name'] = this_cover
+
+      info = get_single_image_info("#{site.config['source']}/covers/#{year}/#{this_cover}")
+      post.data['book']['cover']['width'] = info['width']
+      post.data['book']['cover']['height'] = info['height']
     else
       puts "Can't find a cover image for #{post.path} (#{slug})"
     end
