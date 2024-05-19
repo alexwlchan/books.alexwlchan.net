@@ -10,7 +10,7 @@ book:
   tags:
     - fiction
     - romance
-    - queer-representation
+    - queer-rep
   isbn13: "978-0-349-43256-4"
 review:
   date_read: 2024-02-09

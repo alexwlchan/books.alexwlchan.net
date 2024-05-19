@@ -12,7 +12,7 @@ book:
     - fiction
     - fairy-tales
     - fantasy
-    - queer-representation
+    - queer-rep
     - "!from-the-library"
   isbn13: "9781803363233"
 review:

@@ -11,7 +11,7 @@ book:
     - fiction
     - sci-fi
     - doctor-who
-    - graphic-novels
+    - graphic-novel
 review:
   date_read: 2023-12-09
   format: ebook

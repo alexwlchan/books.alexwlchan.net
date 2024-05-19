@@ -11,7 +11,7 @@ book:
     - fiction
     - sci-fi
     - dystopia
-    - queer-representation
+    - queer-rep
 review:
   date_read: 2023-12-23
   date_order: 1
