@@ -382,7 +382,7 @@ function pluralize(number, noun) {
 
 function createSummaryMessage(options) {
 	const { finishedCount, year, isThisYear } = options;
-	
+
 	if (isThisYear) {
 		return `${year}: I’ve read ${finishedCount} book${finishedCount > 1 ? 's' : ''} so far`;
 	} else {

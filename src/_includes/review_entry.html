@@ -26,10 +26,12 @@
   }
 </style>
 
+{% assign authors = book.contributors | where: "role", "author" %}
+
 <div
   id="rp_{{ slug }}"
   class="review_preview {% if read_at_another_time %}read_at_another_time{% endif %}"
-  data-book-authors="{% if book.author %}{{ book.author }}{% endif %}"
+  data-book-authors="{% for a in authors -%}{{ a.name }}{% unless forloop.last %},{% endunless %}{%- endfor %}"
   data-book-publication-year="{{ book.publication_year }}"
   data-review-rating="{% if review.rating %}{{ review.rating }}{% endif %}"
   data-review-tags="{{ book.tags | join: " " }}"
