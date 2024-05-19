@@ -2,7 +2,7 @@
 layout: review
 book:
   contributors:
-    - name: Paweł "Sariel" Kmieć
+    - name: Paweł “Sariel” Kmieć
   cover:
     tint_color: '#2772b7'
   isbn10: '1593274343'

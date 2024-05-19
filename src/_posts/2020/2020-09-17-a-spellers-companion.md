@@ -2,7 +2,7 @@
 layout: review
 book:
   contributors:
-    - name: Brown and Brown
+    - name: Hugh Brown and Margaret Brown
   cover:
     tint_color: '#42342f'
   isbn13: '9781904874041'
