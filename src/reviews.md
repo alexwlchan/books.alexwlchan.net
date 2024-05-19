@@ -4,7 +4,7 @@ layout: list_of_reviews
 
 ## books i’ve read
 
-{% assign reviews = site.pages | grouped_reviews %}
+{% assign reviews = site.posts | grouped_reviews %}
 
 {% assign this_year = site.time | date: '%Y' %}
 

@@ -7,7 +7,6 @@ module Jekyll
   module IndexHelpers
     def all_reviews(pages)
       pages
-        .filter { |p| p['url'] != '/reviews/' and p['url'] != '/' }
         .sort_by { |p| "#{p['review']['date_read']}-#{p['review']['date_order']}" }
         .reverse
     end
