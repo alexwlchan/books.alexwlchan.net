@@ -29,17 +29,15 @@ Jekyll::Hooks.register :site, :post_read do |site|
          ["#{year}/#{name}", f]
        end
 
-  site.pages.each do |page|
-    if page.data['layout'] != 'review'
-      next
-    end
-
-    slug = page.path.gsub(/\.md$/, '')
+  site.posts.docs.each do |post|
+    year = File.basename(File.dirname(post.path))
+    name = File.basename(post.path).gsub(/^\d{4}-\d{2}-\d{2}-/, '').gsub(/\.md$/, '')
+    slug = "#{year}/#{name}"
 
     if cover_image_names.include? slug
-      page.data['book']['cover']['name'] = File.basename(cover_image_names[slug])
+      post.data['book']['cover']['name'] = File.basename(cover_image_names[slug])
     else
-      puts "Can't find a cover image for #{page.path}"
+      puts "Can't find a cover image for #{post.path} (#{slug})"
     end
   end
 end

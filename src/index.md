@@ -2,7 +2,7 @@
 layout: homepage
 ---
 
-{% assign recent_reviews = site.pages | all_reviews | slice: 0, 5 %}
+{% assign recent_reviews = site.posts | all_reviews | slice: 0, 5 %}
 
 # Welcome to my book tracker!
 
