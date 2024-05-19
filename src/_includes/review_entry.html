@@ -10,7 +10,6 @@
 {% assign book = review_entry.book %}
 {% assign review = review_entry.review %}
 {% assign slug = review_entry.url | replace: "/", "_" %}
-{% assign cover_dimensions = review_entry | derived_cover_info %}
 
 <style type="x-text/scss">
   #rp_{{ slug }} {
@@ -41,7 +40,7 @@
     <div class="book_thumbnail">
       <img
         src="/thumbs/{{ review | year_read }}/{{ book.cover.name }}"
-        style="aspect-ratio: {{ cover_dimensions['width'] }} / {{ cover_dimensions['height'] }}; max-width: 110px; max-height: 130px;"
+        style="aspect-ratio: {{ book.cover.width }} / {{ book.cover.height }}; max-width: 110px; max-height: 130px;"
         alt=""
         loading="lazy"
       >

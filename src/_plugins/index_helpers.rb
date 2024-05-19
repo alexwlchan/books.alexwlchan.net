@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require_relative 'css_helpers'
-require_relative 'pillow/get_image_info'
 
 module Jekyll
   module IndexHelpers
@@ -25,20 +24,6 @@ module Jekyll
       else
         review['date_read'].year.to_s
       end
-    end
-
-    def derived_cover_info(review_entry)
-      year = if review_entry['review']['date_read'].is_a? Date
-               review_entry['review']['date_read'].year
-             else
-               review_entry['review']['date_read'][0..3]
-             end
-
-      filename = review_entry['book']['cover']['name']
-
-      image = get_single_image_info("src/covers/#{year}/#{filename}")
-
-      { 'width' => image['width'], 'height' => image['height'] }
     end
 
     def credit_line(book)
