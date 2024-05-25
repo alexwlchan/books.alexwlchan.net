@@ -17,7 +17,7 @@ publication_year = gets.chomp
 today = Date.today
 year = today.year.to_s
 
-out_path = Pathname.new('src') + year + "#{slug}.md"
+out_path = Pathname.new('src/_posts') + year + "#{slug}.md"
 
 out_path.dirname.mkpath # Create the directory if it doesn't exist
 
