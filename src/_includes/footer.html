@@ -1,6 +1,14 @@
 <footer>
   <div id="footer_inner">
-    made with <span class="heart">&#x2764;</span> by <a href="https://alexwlchan.net">alexwlchan</a>, who&rsquo;d love to hear what you&rsquo;re reading
+    {% comment %}
+      &#xFE0E is the "text presentation selector", which tries to
+      force browsers to render the heart as a coloured text char,
+      not an emoji heart
+      
+      I've only seen the emoji rendering on a friend's Android phone,
+      so I can't test this myself.
+    {% endcomment %}
+    made with <span class="heart">&#x2764;&#xFE0E;</span> by <a href="https://alexwlchan.net">alexwlchan</a>, who&rsquo;d love to hear what you&rsquo;re reading
     ·
     <a href="https://alexwlchan.net/privacy/">privacy policy</a>
   </div>
