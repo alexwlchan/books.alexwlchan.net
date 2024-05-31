@@ -1,3 +1,7 @@
+:root {
+  --border-radius: 20px;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -153,7 +157,7 @@ footer span.heart {
 
 .review_preview {
   border: 2px solid;
-  border-radius: 20px;
+  border-radius: var(--border-radius);
   margin-bottom: 1em;
 }
 
@@ -370,6 +374,49 @@ ul#author_filters, ul#star_rating_filters {
 
 #jumpTo a[disabled]:hover {
   background: none;
+}
+
+#roundups {
+  list-style-type: none;
+  margin:  0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 20px;
+}
+
+@media screen and (max-width: 420px) {
+  #roundups {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 20px;
+  }
+}
+
+#roundups div.roundup_item {
+  aspect-ratio: 2 / 1;
+  position: relative;
+  font-size: 3em;
+}
+
+#roundups div.roundup_item img {
+  border: 2px solid black;
+  border-radius: var(--border-radius);
+  width: 100%;
+  filter: brightness(30%);
+}
+
+#roundups div.roundup_item:hover img {
+  filter: brightness(20%);
+}
+
+#roundups div.roundup_item p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  margin: 0;
 }
 
 /* This is for the "Skip to main content" link at the top of the page

@@ -18,3 +18,34 @@ Here are a few books I've read recently:
   {% endfor %}
   <a href="/reviews/">read more reviews &rarr;</a>
 </div>
+
+---
+
+On my main website, I also write an annual roundup of my favourite books from each year:
+
+<ul id="roundups">
+  <li>
+    <a href="https://alexwlchan.net/2023/2023-in-reading/">
+      <div class="roundup_item">
+        <img src="/static/roundups/2023-in-reading.jpg">
+        <p>2023</p>
+      </div>
+    </a>
+  </li>
+  <li>
+    <a href="https://alexwlchan.net/2022/2022-in-reading/">
+      <div class="roundup_item">
+        <img src="/static/roundups/2022-in-reading.jpg">
+        <p>2022</p>
+      </div>
+    </a>
+  </li>
+  <li>
+    <a href="https://alexwlchan.net/2021/2021-in-reading/">
+      <div class="roundup_item">
+        <img src="/static/roundups/2021-in-reading.jpg">
+        <p>2021</p>
+      </div>
+    </a>
+  </li>  
+</ul>
