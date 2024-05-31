@@ -27,7 +27,7 @@ On my main website, I also write an annual roundup of my favourite books from ea
   <li>
     <a href="https://alexwlchan.net/2023/2023-in-reading/">
       <div class="roundup_item">
-        <img src="/static/roundups/2023-in-reading.jpg">
+        <img src="/static/roundups/2023-in-reading.jpg" alt="">
         <p>2023</p>
       </div>
     </a>
@@ -35,7 +35,7 @@ On my main website, I also write an annual roundup of my favourite books from ea
   <li>
     <a href="https://alexwlchan.net/2022/2022-in-reading/">
       <div class="roundup_item">
-        <img src="/static/roundups/2022-in-reading.jpg">
+        <img src="/static/roundups/2022-in-reading.jpg" alt="">
         <p>2022</p>
       </div>
     </a>
@@ -43,7 +43,7 @@ On my main website, I also write an annual roundup of my favourite books from ea
   <li>
     <a href="https://alexwlchan.net/2021/2021-in-reading/">
       <div class="roundup_item">
-        <img src="/static/roundups/2021-in-reading.jpg">
+        <img src="/static/roundups/2021-in-reading.jpg" alt="">
         <p>2021</p>
       </div>
     </a>
