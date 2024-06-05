@@ -5,7 +5,7 @@ book:
     - name: Zara Stonely
   cover:
     tint_color: "#0c5b79"
-  title: "Meet Me On Platform Three"
+  title: "Meet Me On Platform 3"
   publication_year: 2022
   tags:
     - fiction
