@@ -4,7 +4,7 @@ book:
   contributors:
     - name: Kate Atkinson
   cover:
-    tint_color: "??"
+    tint_color: "#3a707c"
   title: "Transcription"
   publication_year: 2018
   tags:
