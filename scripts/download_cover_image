@@ -24,7 +24,18 @@ fi
 
 echo "$LATEST_REVIEW"
 
-filename=$(basename -- "$LATEST_REVIEW" .md)
+# In Jekyll, post filenames are prefixed with a date in YYYY-MM-DD format,
+# e.g. `src/_posts/2024/2024-06-17-a-great-book.md`.
+#
+# We want to remove the date prefix from the cover images, e.g. `a-great-book`,
+# hence the `cut` command.
+#
+# In this example:
+#
+#   filename = a-great-book
+#   year     = 2024
+#
+filename=$(basename -- "$LATEST_REVIEW" .md | cut -c 12-)
 year=$(basename -- $(dirname -- "$LATEST_REVIEW"))
 
 url=$(osascript -e 'tell application "Safari" to get URL of document 1')
