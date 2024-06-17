@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
 # Copy an image from my open browser tab into my book tracker.
+#
+# == Usage ==
+#
+#   1. Create a Markdown file for a new review, for example
+#      `src/_posts/2024/2024-06-17-a-great-book.md`
+#   2. Find a cover image for the book in Safari
+#   3. Run this script
+#
+# The script will work out the required name of the cover image
+# (`src/covers/2024/a-great-book.jpg`) and download it.
 
 set -o errexit
 set -o nounset
