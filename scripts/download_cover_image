@@ -40,7 +40,7 @@ year=$(basename -- $(dirname -- "$LATEST_REVIEW"))
 
 url=$(osascript -e 'tell application "Safari" to get URL of document 1')
 
-image_filename=$(basename -- "$url")
+image_filename=$(basename -- "$url" | tr '?' ' ' | awk '{print $1}')
 image_extension="${image_filename##*.}"
 
 image_path=src/covers/$year/$filename.$image_extension
