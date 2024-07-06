@@ -14,7 +14,7 @@ book:
 review:
   date_read: 2024-07-05
   format: ebook
-  rating: 3
+  rating: 4
 ---
 A pleasant enough prequel to the Hunger Games trilogy.
 I wasn't much of a fan of the Coriolanus/Lucy Gray romance -- but I enjoyed the explorations of the true purpose of the games and the nature of evil, which reminded me of *Andor*.
