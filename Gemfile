@@ -16,7 +16,7 @@ gem 'csv', '~> 3'
 
 group :lint, optional: true do
   gem 'json-schema', '~> 4'
-  gem 'rubocop', '~> 1.64'
+  gem 'rubocop', '~> 1.65'
 end
 
 group :test, optional: true do
