@@ -6,7 +6,7 @@ book:
   cover:
     tint_color: "#754928"
   title: "Silo 49: Deep Dark"
-  publication_year: 2016
+  publication_year: 2013
   tags:
     - fiction
     - sci-fi

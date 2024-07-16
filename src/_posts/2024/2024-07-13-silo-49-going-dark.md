@@ -6,7 +6,7 @@ book:
   cover:
     tint_color: "#19348c"
   title: "Silo 49: Going Dark"
-  publication_year: 2014
+  publication_year: 2013
   tags:
     - fiction
     - sci-fi
