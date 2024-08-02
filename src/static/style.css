@@ -1,15 +1,27 @@
 :root {
   --border-radius: 20px;
+
+  --max-width: 34rem;
+  --padding:   1em;
 }
 
 body {
-  margin: 0;
+  margin:  0;
   padding: 0;
+
+  min-height:     100vh;
+  display:        flex;
+  flex-direction: column;
+
   font: 12pt monospace;
   line-height: 1.55em;
 
   /* Background from https://www.toptal.com/designers/subtlepatterns/light-paper-fibers/ */
   background: url('/static/lightpaperfibers.jpg');
+}
+
+main {
+  flex: 1;
 }
 
 h1 {
@@ -37,8 +49,8 @@ h1 .book-title, h1 .book-series {
 }
 
 aside #aside_inner, main, footer {
-  padding-left:  calc(1em + env(safe-area-inset-left));
-  padding-right: calc(1em + env(safe-area-inset-right));
+  padding-left:  calc(var(--padding) + env(safe-area-inset-left));
+  padding-right: calc(var(--padding) + env(safe-area-inset-right));
 }
 
 aside {
