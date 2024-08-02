@@ -16,7 +16,8 @@ layout: compress
 
     <style>
       :root {
-        --tint-color: {{ book.cover.tint_color }};
+        --tint-color:       {{ book.cover.tint_color }};
+        --shelf-background: url({{ tint_color | create_shelf_data_uri }});
       }
 
       .review a {
@@ -29,11 +30,6 @@ layout: compress
 
       .book-cover img {
         box-shadow: 0px 5px 5px {{ book.cover.tint_color | as_rgba: 0.25 }};
-      }
-
-      aside #shelf_background {
-        background: url({{ tint_color | create_shelf_data_uri }});
-        background-size: auto 100%;
       }
     </style>
 
@@ -72,7 +68,7 @@ layout: compress
         <span class="book-series">({{ book.series | smartify }})</span>
         {% endif %}
       </h1>
-      
+
       {% include full_book_metadata.html %}
 
       <div class="review">
