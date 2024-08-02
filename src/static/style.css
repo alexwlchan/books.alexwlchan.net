@@ -420,6 +420,30 @@ ul#author_filters, ul#star_rating_filters {
   margin: 0;
 }
 
+/* This is for the full book metadata shown on individual review pages.
+ *
+ * See the `full_book_metadata.html` component.
+ */
+.full_book_metadata {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-column-gap: 1em;
+  grid-row-gap: 3px;
+}
+
+.full_book_metadata dt::after {
+  content: ":";
+}
+
+.full_book_metadata dd {
+  margin: 0;
+  font-weight: bold;
+}
+
+.full_book_metadata .did_not_finish {
+  font-weight: normal;
+}
+
 /* This is for the "Skip to main content" link at the top of the page
  *
  * See https://accessibility.oit.ncsu.edu/it-accessibility-at-nc-state/developers/accessibility-handbook/mouse-and-keyboard-events/skip-to-main-content/ */

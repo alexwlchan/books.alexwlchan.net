@@ -72,50 +72,8 @@ layout: compress
         <span class="book-series">({{ book.series | smartify }})</span>
         {% endif %}
       </h1>
-
-      {% comment %}
-        This means the publication year will be printed in parens next to
-        the first/principal contributor, but only the first contributor.
-      {% endcomment %}
-      {% assign year_has_been_printed = false %}
-
-      <table class="book_metadata">
-        {% for c in book.contributors %}
-          <tr>
-            <th>
-
-              {% assign is_plural = c["name"] | is_plural %}
-              {% if c["role"] %}{{ c["role"] }}{% else %}author{% endif %}{% if is_plural %}s{% endif %}:
-            </th>
-            <td>
-              {{ c["name"] }}
-              {% unless year_has_been_printed %}
-                ({{ book.publication_year }})
-                {% assign year_has_been_printed = true %}
-              {% endunless %}
-            </td>
-          </tr>
-        {% endfor %}
-
-        {% if review.date_read %}
-        <tr>
-          <th>date read:</th>
-          <td>{{ review.date_read | date_read }}
-            {% if review.did_not_finish %}
-              <span class="did_not_finish">
-                (did not finish)
-              </span>
-            {% endif %}
-          </td>
-        </tr>
-        {% endif %}
-        {% if review.rating and review.did_not_finish != "true" %}
-        <tr>
-          <th>rating:</th>
-          <td>{{ review.rating | spread_star_rating }}</td>
-        </tr>
-        {% endif %}
-      </table>
+      
+      {% include full_book_metadata.html %}
 
       <div class="review">
         {{ content }}
