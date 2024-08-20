@@ -15,7 +15,7 @@ gem 'base64', '~> 0.2'
 gem 'csv', '~> 3'
 
 group :lint, optional: true do
-  gem 'json-schema', '~> 4'
+  gem 'json-schema', '~> 5'
   gem 'rubocop', '~> 1.65'
 end
 
