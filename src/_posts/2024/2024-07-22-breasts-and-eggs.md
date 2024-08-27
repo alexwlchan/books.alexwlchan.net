@@ -3,9 +3,7 @@ layout: review
 book:
   contributors:
     - name: Mieko Kawakami
-    - name: Sam Bett
-      role: translator
-    - name: David Boyd
+    - name: Sam Bett and David Boyd
       role: translator
   cover:
     tint_color: "#59432e"

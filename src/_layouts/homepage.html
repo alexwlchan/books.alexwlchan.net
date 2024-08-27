@@ -11,9 +11,8 @@ layout: compress
     {% include_cached head.html %}
 
     <style>
-      aside #shelf_background {
-        background: url({{ tint_color | create_shelf_data_uri }});
-        background-size: auto 100%;
+      :root {
+        --shelf-background: url({{ tint_color | create_shelf_data_uri }});
       }
 
       .review_preview {
