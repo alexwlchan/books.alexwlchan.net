@@ -21,3 +21,6 @@ review:
 A feel-good YA romance that was exactly the sort of light-hearted, fun read I needed to break my cold spell.
 It hits all of my favourite tropes: enemies-to-lovers, oblivious lesbians, girls standing up for each other, showing somebody the place where you live.
 
+Bonus points for a title which is a pun, and the main character has ADHD.
+(I've been trying to remember if I've read another book with an explicitly ADHD character, or if this is my first.)
+
