@@ -33,7 +33,7 @@ module Favicons
       colors =
         site.posts.docs
             .map { |p| p.data.dig('book', 'cover', 'tint_color') }
-            .filter { |c| !c.nil? }
+            .compact
             .to_set
 
       colors << '191919'
