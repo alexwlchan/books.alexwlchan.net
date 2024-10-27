@@ -111,16 +111,30 @@ footer span.heart {
  * This component is used on the homepage and list of reviews as a preview
  * of each review, showing the title of the book, some basic metadata,
  * and my star rating.
+ *
+ * Each instance of this component has three variables: --c-red, --c-green,
+ * and --c-blue, which represent the r/g/b components of the tint color.
  */
 .review_preview {
-  border: 2px solid var(--border);
+  --tint-color: rgb(var(--c-red), var(--c-green), var(--c-blue));
+
+  border: 2px solid var(--tint-color);
   border-radius: var(--border-radius);
   margin-bottom: 1em;
-  background: var(--bg);
+
+  --bg-boost-amount:     0.92;
+  --bg-boost-multiplier: 0.08;
+
+  background: rgb(
+    calc(var(--bg-boost-amount) * 255 + var(--bg-boost-multiplier) * var(--c-red)),
+    calc(var(--bg-boost-amount) * 255 + var(--bg-boost-multiplier) * var(--c-green)),
+    calc(var(--bg-boost-amount) * 255 + var(--bg-boost-multiplier) * var(--c-blue))
+  );
 }
 
 .review_preview:hover {
-  background: var(--hover-bg);
+  --bg-boost-amount:     0.74;
+  --bg-boost-multiplier: 0.26;
 }
 
 .review_preview a, .read_at_another_time {
@@ -138,14 +152,22 @@ footer span.heart {
   max-width: 110px;
   max-height: 130px;
   vertical-align: middle;
-  border: 0.1px solid var(--border);
+  border: 0.1px solid var(--tint-color);
 }
 
 .review_preview[data-review-rating="5"] {
   border-width: 3px;
   margin-left:  -1px;
   margin-right: -1px;
-  box-shadow: 0px 0px 5px var(--shadow);
+  box-shadow: 0px 0px 5px rgba(var(--c-red), var(--c-green), var(--c-red), 0.3);
+
+  --bg-boost-amount:     0.8;
+  --bg-boost-multiplier: 0.3;
+}
+
+.review_preview[data-review-rating="5"]:hover {
+  --bg-boost-amount:     0.58;
+  --bg-boost-multiplier: 0.42;
 }
 
 .book_thumbnail {

@@ -77,15 +77,19 @@ module Jekyll
       end
     end
 
-    def boost(color, multiplier, amount)
-      rgb_color = Color::RGB.by_hex(color)
+    # Get the red/green/blue components of a hex string, as an integer between
+    # 0 and 255.
 
-      # See https://stackoverflow.com/a/11615135/1558022
-      red   = ((rgb_color.red * multiplier) + (amount * 255)).to_i
-      green = ((rgb_color.green * multiplier) + (amount * 255)).to_i
-      blue  = ((rgb_color.blue * multiplier) + (amount * 255)).to_i
+    def red(color)
+      Color::RGB.by_hex(color).red.to_i
+    end
 
-      "rgb(#{red}, #{green}, #{blue})"
+    def green(color)
+      Color::RGB.by_hex(color).green.to_i
+    end
+
+    def blue(color)
+      Color::RGB.by_hex(color).blue.to_i
     end
   end
 end
