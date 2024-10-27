@@ -14,9 +14,12 @@
 {% assign authors = book.contributors | where: "role", "author" %}
 
 <div
-  id="rp_{{ slug }}"
   class="review_preview {% if read_at_another_time %}read_at_another_time{% endif %}"
-  style="--c-red: {{ book.cover.tint_color|red }}; --c-green: {{ book.cover.tint_color|green }}; --c-blue: {{ book.cover.tint_color|blue }}"
+  style="--r: {{ book.cover.tint_color|red }};
+         --g: {{ book.cover.tint_color|green }};
+         --b: {{ book.cover.tint_color|blue }};
+         --w: {{ book.cover.width }};
+         --h: {{ book.cover.height }};"
   data-book-authors="{% for a in authors -%}{{ a.name }}{% unless forloop.last %},{% endunless %}{%- endfor %}"
   data-book-publication-year="{{ book.publication_year }}"
   data-review-rating="{% if review.rating %}{{ review.rating }}{% endif %}"
@@ -28,7 +31,6 @@
     <div class="book_thumbnail">
       <img
         src="/thumbs/{{ review | year_read }}/{{ book.cover.name }}"
-        style="aspect-ratio: {{ book.cover.width }} / {{ book.cover.height }}; max-width: 110px; max-height: 130px;"
         alt=""
         loading="lazy"
       >
@@ -42,26 +44,24 @@
         {% endif %}
       </p>
       <p>
-        <small>
-          {{ book | credit_line }}
+        {{ book | credit_line }}
 
+        <br/>
+
+        {% if review.date_read %}
+        read {{ review.date_read | date_read }}
           <br/>
+        {% endif %}
 
-          {% if review.date_read %}
-          read {{ review.date_read | date_read }}
-            <br/>
-          {% endif %}
+        {% if review.rating and review.did_not_finish != true %}
+          <span class="star_rating">
+            {{ review.rating | star_rating }}
+          </span>
+        {% endif %}
 
-          {% if review.rating and review.did_not_finish != true %}
-            <span class="star_rating">
-              {{ review.rating | star_rating }}
-            </span>
-          {% endif %}
-
-          {% if review.did_not_finish %}
-          (did not finish)
-          {% endif %}
-        </small>
+        {% if review.did_not_finish %}
+        (did not finish)
+        {% endif %}
       </p>
     </div>
   </a>

@@ -112,11 +112,15 @@ footer span.heart {
  * of each review, showing the title of the book, some basic metadata,
  * and my star rating.
  *
- * Each instance of this component has three variables: --c-red, --c-green,
- * and --c-blue, which represent the r/g/b components of the tint color.
+ * Each instance of this component has five variables:
+ *
+ *     --r, --g, --b, which represent the r/g/b components of
+ *          the tint color.
+ *     --w, --h, which are the width/height of the cover image
+ *
  */
 .review_preview {
-  --tint-color: rgb(var(--c-red), var(--c-green), var(--c-blue));
+  --tint-color: rgb(var(--r), var(--g), var(--b));
 
   border: 2px solid var(--tint-color);
   border-radius: var(--border-radius);
@@ -126,9 +130,9 @@ footer span.heart {
   --bg-boost-multiplier: 0.08;
 
   background: rgb(
-    calc(var(--bg-boost-amount) * 255 + var(--bg-boost-multiplier) * var(--c-red)),
-    calc(var(--bg-boost-amount) * 255 + var(--bg-boost-multiplier) * var(--c-green)),
-    calc(var(--bg-boost-amount) * 255 + var(--bg-boost-multiplier) * var(--c-blue))
+    calc(var(--bg-boost-amount) * 255 + var(--bg-boost-multiplier) * var(--r)),
+    calc(var(--bg-boost-amount) * 255 + var(--bg-boost-multiplier) * var(--g)),
+    calc(var(--bg-boost-amount) * 255 + var(--bg-boost-multiplier) * var(--b))
   );
 }
 
@@ -159,7 +163,7 @@ footer span.heart {
   border-width: 3px;
   margin-left:  -1px;
   margin-right: -1px;
-  box-shadow: 0px 0px 5px rgba(var(--c-red), var(--c-green), var(--c-red), 0.3);
+  box-shadow: 0px 0px 5px rgba(var(--r), var(--g), var(--r), 0.3);
 
   --bg-boost-amount:     0.8;
   --bg-boost-multiplier: 0.3;
@@ -170,6 +174,10 @@ footer span.heart {
   --bg-boost-multiplier: 0.42;
 }
 
+.review_preview .title + p {
+  font-size: smaller;
+}
+
 .book_thumbnail {
   display: flex;
   vertical-align: middle;
@@ -178,6 +186,9 @@ footer span.heart {
 
 .book_thumbnail img {
   margin: auto;
+  max-width:  110px;
+  max-height: 130px;
+  aspect-ratio: var(--w) / var(--h);
 }
 
 .book_metadata {
