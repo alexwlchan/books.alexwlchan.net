@@ -6,12 +6,6 @@ require 'fileutils'
 
 module Jekyll
   module CssHelpers
-    def as_rgba(color, opacity)
-      rgb_color = Color::RGB.by_hex(color)
-
-      "rgba(#{rgb_color.red.to_i}, #{rgb_color.green.to_i}, #{rgb_color.blue.to_i}, #{opacity})"
-    end
-
     def create_shelf_png_data_url(color, out_path)
       rgb_color = Color::RGB.by_hex(color)
       hsl_color = rgb_color.to_hsl

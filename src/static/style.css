@@ -44,6 +44,10 @@ h1 .book-title, h1 .book-series {
   font-style: italic;
 }
 
+.review a {
+  color: rgb(var(--r), var(--g), var(--b));
+}
+
 .book-cover img {
   float: right;
   max-width:  180px;
@@ -51,7 +55,7 @@ h1 .book-title, h1 .book-series {
   margin-top: 10px;
   margin-left: 20px;
   margin-bottom: 20px;
-  box-shadow: 0px 5px 5px rgba(0,0,0,0.25);
+  box-shadow: 0px 5px 5px rgba(var(--r), var(--g), var(--b), 0.25);
 }
 
 @media screen and (max-width: 500px) {
@@ -120,9 +124,9 @@ footer span.heart {
  *
  */
 .review_preview {
-  --tint-color: rgb(var(--r), var(--g), var(--b));
+  --border-color: rgb(var(--r), var(--g), var(--b));
 
-  border: 2px solid var(--tint-color);
+  border: 2px solid var(--border-color);
   border-radius: var(--border-radius);
   margin-bottom: 1em;
 
@@ -156,7 +160,7 @@ footer span.heart {
   max-width: 110px;
   max-height: 130px;
   vertical-align: middle;
-  border: 0.1px solid var(--tint-color);
+  border: 0.1px solid var(--border-color);
 }
 
 .review_preview[data-review-rating="5"] {
