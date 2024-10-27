@@ -65,7 +65,9 @@ a {
 }
 
 a:hover {
-  background: rgba(0, 0, 0, 0.3);
+  text-decoration: underline;
+  text-decoration-thickness: 4px;
+  text-decoration-skip-ink: none;
 }
 
 td, th {
@@ -97,10 +99,6 @@ footer {
 
 footer a {
   color: gray;
-}
-
-footer a:hover {
-  background: rgba(128, 128, 128, 0.3);
 }
 
 footer span.heart {
@@ -419,10 +417,6 @@ header #header_text {
 header a {
   text-decoration: none;
   color: white;
-}
-
-header a:hover {
-  background: rgba(255, 255, 255, 0.3);
 }
 
 header img {
