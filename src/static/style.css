@@ -145,14 +145,16 @@ footer span.heart {
   --bg-boost-multiplier: 0.26;
 }
 
-.review_preview a, .read_at_another_time {
+.review_preview a,
+.read_at_another_time {
   grid-template-columns: 135px auto;
   display: grid;
   grid-gap: 8px;
   height: 100%;
-  width: 100%;
+  width:  100%;
   color: black;
   text-decoration: none;
+  align-items: center;
   min-height: 157px;
 }
 
@@ -183,9 +185,17 @@ footer span.heart {
 }
 
 .book_thumbnail {
-  display: flex;
-  vertical-align: middle;
-  text-align: center;
+  margin: auto;
+  aspect-ratio: var(--w) / var(--h);
+  background: rgb(var(--r), var(--g), var(--b));
+}
+
+.book_thumbnail.portrait {
+  height: 130px;
+}
+
+.book_thumbnail.landscape {
+  width: 110px;
 }
 
 .book_thumbnail img {

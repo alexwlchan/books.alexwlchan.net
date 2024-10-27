@@ -28,7 +28,13 @@
   {% if review.did_not_finish %}data-did-not-finish{% endif %}
 >
   <a href="{{ review_entry.url }}">
-    <div class="book_thumbnail">
+    <div class="book_thumbnail
+                {% if book.cover.width > book.cover.height %}
+                  landscape
+                {% else %}
+                  portrait
+                {% endif %}
+              ">
       <img
         src="/thumbs/{{ review | year_read }}/{{ book.cover.name }}"
         alt=""
