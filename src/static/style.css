@@ -105,6 +105,13 @@ footer span.heart {
   color: var(--tint-color);
 }
 
+/*
+ * Styles for the "review preview" component.
+ *
+ * This component is used on the homepage and list of reviews as a preview
+ * of each review, showing the title of the book, some basic metadata,
+ * and my star rating.
+ */
 .review_preview {
   border: 2px solid var(--border);
   border-radius: var(--border-radius);
