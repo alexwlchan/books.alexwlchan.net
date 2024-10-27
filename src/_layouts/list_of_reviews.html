@@ -5,8 +5,6 @@ layout: compress
 
 <!DOCTYPE html>
 <html lang="en">
-  {% assign parsed_content = content | get_inline_styles %}
-
   <head>
     {% include_cached head.html %}
 
@@ -31,36 +29,6 @@ layout: compress
       :root {
         --shelf-background: url({{ tint_color | create_shelf_data_uri }});
       }
-
-      .review_preview {
-        background: var(--bg);
-      }
-
-      .review_preview:hover {
-        background: var(--hover-bg);
-      }
-
-      .review_preview a:hover {
-        background: none;
-      }
-
-      .review_preview[data-review-rating="5"] {
-        border-width: 3px;
-        margin-left:  -1px;
-        margin-right: -1px;
-        box-shadow: 0px 0px 5px var(--shadow);
-      }
-
-      .review_preview, .review_preview img {
-        border-color: var(--border);
-      }
-
-      .review_preview img {
-        border-width: 0.1px;
-        border-style: solid;
-      }
-
-      {{ parsed_content.inline_styles }}
     </style>
 
     <title>alexwlchan’s book tracker</title>
@@ -72,7 +40,7 @@ layout: compress
     {% include header.html %}
 
     <main id="main" tabindex="-1">
-      {{ parsed_content.html }}
+      {{ content }}
     </main>
 
     {% include_cached footer.html %}

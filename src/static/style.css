@@ -44,18 +44,22 @@ h1 .book-title, h1 .book-series {
   font-style: italic;
 }
 
-.book-cover img {
+.review a {
+  color: rgb(var(--r), var(--g), var(--b));
+}
+
+.book_cover img {
   float: right;
   max-width:  180px;
   max-height: 240px;
   margin-top: 10px;
   margin-left: 20px;
   margin-bottom: 20px;
-  box-shadow: 0px 5px 5px rgba(0,0,0,0.25);
+  box-shadow: 0px 5px 5px rgba(var(--r), var(--g), var(--b), 0.25);
 }
 
 @media screen and (max-width: 500px) {
-  .book-cover img {
+  .book_cover img {
     max-width: 90px;
   }
 }
@@ -65,7 +69,9 @@ a {
 }
 
 a:hover {
-  background: rgba(0, 0, 0, 0.3);
+  text-decoration: underline;
+  text-decoration-thickness: 4px;
+  text-decoration-skip-ink: none;
 }
 
 td, th {
@@ -99,28 +105,56 @@ footer a {
   color: gray;
 }
 
-footer a:hover {
-  background: rgba(128, 128, 128, 0.3);
-}
-
 footer span.heart {
   color: var(--tint-color);
 }
 
+/*
+ * Styles for the "review preview" component.
+ *
+ * This component is used on the homepage and list of reviews as a preview
+ * of each review, showing the title of the book, some basic metadata,
+ * and my star rating.
+ *
+ * Each instance of this component has five variables:
+ *
+ *     --r, --g, --b, which represent the r/g/b components of
+ *          the tint color.
+ *     --w, --h, which are the width/height of the cover image
+ *
+ */
 .review_preview {
-  border: 2px solid;
+  --border-color: rgb(var(--r), var(--g), var(--b));
+
+  border: 2px solid var(--border-color);
   border-radius: var(--border-radius);
   margin-bottom: 1em;
+
+  --bg-boost-amount:     0.92;
+  --bg-boost-multiplier: 0.08;
+
+  background: rgb(
+    calc(var(--bg-boost-amount) * 255 + var(--bg-boost-multiplier) * var(--r)),
+    calc(var(--bg-boost-amount) * 255 + var(--bg-boost-multiplier) * var(--g)),
+    calc(var(--bg-boost-amount) * 255 + var(--bg-boost-multiplier) * var(--b))
+  );
 }
 
-.review_preview a, .read_at_another_time {
+.review_preview:hover {
+  --bg-boost-amount:     0.74;
+  --bg-boost-multiplier: 0.26;
+}
+
+.review_preview a,
+.read_at_another_time {
   grid-template-columns: 135px auto;
   display: grid;
   grid-gap: 8px;
   height: 100%;
-  width: 100%;
+  width:  100%;
   color: black;
   text-decoration: none;
+  align-items: center;
   min-height: 157px;
 }
 
@@ -128,16 +162,47 @@ footer span.heart {
   max-width: 110px;
   max-height: 130px;
   vertical-align: middle;
+  border: 0.1px solid var(--border-color);
+}
+
+.review_preview[data-review-rating="5"] {
+  border-width: 3px;
+  margin-left:  -1px;
+  margin-right: -1px;
+  box-shadow: 0px 0px 5px rgba(var(--r), var(--g), var(--r), 0.3);
+
+  --bg-boost-amount:     0.8;
+  --bg-boost-multiplier: 0.3;
+}
+
+.review_preview[data-review-rating="5"]:hover {
+  --bg-boost-amount:     0.58;
+  --bg-boost-multiplier: 0.42;
+}
+
+.review_preview .title + p {
+  font-size: smaller;
 }
 
 .book_thumbnail {
-  display: flex;
-  vertical-align: middle;
-  text-align: center;
+  margin: auto;
+  aspect-ratio: var(--w) / var(--h);
+  background: rgb(var(--r), var(--g), var(--b));
+}
+
+.book_thumbnail.portrait {
+  height: 130px;
+}
+
+.book_thumbnail.landscape {
+  width: 110px;
 }
 
 .book_thumbnail img {
   margin: auto;
+  max-width:  110px;
+  max-height: 130px;
+  aspect-ratio: var(--w) / var(--h);
 }
 
 .book_metadata {
@@ -229,11 +294,11 @@ hr {
     display: none;
   }
 
-  .book-cover {
+  .book_cover {
     text-align: center;
   }
 
-  .book-cover img {
+  .book_cover img {
     float: none;
     max-width:  120px;
     max-height: 240px;
@@ -411,10 +476,6 @@ header #header_text {
 header a {
   text-decoration: none;
   color: white;
-}
-
-header a:hover {
-  background: rgba(255, 255, 255, 0.3);
 }
 
 header img {

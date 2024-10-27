@@ -14,7 +14,7 @@ Here are a few books I've read recently:
 
 <div class="books_by_year">
   {% for review_entry in recent_reviews %}
-    {% include review_entry.html %}
+    {% include review_preview.html %}
   {% endfor %}
   <a href="/reviews/">read more reviews &rarr;</a>
 </div>
