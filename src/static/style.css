@@ -48,7 +48,7 @@ h1 .book-title, h1 .book-series {
   color: rgb(var(--r), var(--g), var(--b));
 }
 
-.book-cover img {
+.book_cover img {
   float: right;
   max-width:  180px;
   max-height: 240px;
@@ -59,7 +59,7 @@ h1 .book-title, h1 .book-series {
 }
 
 @media screen and (max-width: 500px) {
-  .book-cover img {
+  .book_cover img {
     max-width: 90px;
   }
 }
@@ -294,11 +294,11 @@ hr {
     display: none;
   }
 
-  .book-cover {
+  .book_cover {
     text-align: center;
   }
 
-  .book-cover img {
+  .book_cover img {
     float: none;
     max-width:  120px;
     max-height: 240px;
