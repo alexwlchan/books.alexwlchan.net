@@ -109,6 +109,11 @@ footer span.heart {
   border: 2px solid var(--border);
   border-radius: var(--border-radius);
   margin-bottom: 1em;
+  background: var(--bg);
+}
+
+.review_preview:hover {
+  background: var(--hover-bg);
 }
 
 .review_preview a, .read_at_another_time {
