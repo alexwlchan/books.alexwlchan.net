@@ -1,6 +1,9 @@
 books.alexwlchan.net {
 	import redirects.Caddyfile
 
+	# Enable compression for responses
+	encode zstd gzip
+
 	# Add long-lived caching headers for specific paths
 	@cached {
 		path /favicons/* /individual_covers/* /static/* /thumbs/*
