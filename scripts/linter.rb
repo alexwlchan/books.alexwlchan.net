@@ -168,34 +168,33 @@ def check_no_html_in_titles(html_documents)
   report_errors(errors)
 end
 
-def parse_netlify_redirects(path)
-  File.readlines(path).each_with_index
-      .filter { |line, _i| !line.start_with? '#' }
-      .filter { |line, _i| !line.strip.empty? }
-      .map do |line, i|
+def parse_caddy_redirects(path)
+  File.readlines(path).each.with_index(1)
+      .filter { |line, _| !line.start_with? '#' }
+      .filter { |line, _| !line.strip.empty? }
+      .filter { |line, _| line.start_with? 'redir' }
+      .map do |line, lineno|
         {
           line:,
-          lineno: i + 1,
-          source: line.strip.split[0],
-          target: line.strip.split[1]
+          lineno:,
+          source: line.strip.split[1],
+          target: line.strip.split[2]
         }
       end
 end
 
-# Check my Netlify redirects point to real pages.
+# Check my redirects point to real pages.
 #
 # This ensures that any redirects I create are working.  It doesn't mean
 # I can't forget to create a redirect, but it does mean I won't create
 # a redirect that points to another broken page.
-def check_netlify_redirects(dst_dir)
-  info('Checking Netlify redirect rules...')
+def check_redirects(dst_dir)
+  info('Checking redirects...')
 
   bad_lines = []
 
-  parse_netlify_redirects("#{dst_dir}/_redirects").each do |redirect|
-    # ignore URL fragments when linting, the important thing is that
-    # pages don't 404
-    target = redirect[:target].split('#')[0].split('?')[0]
+  parse_caddy_redirects('redirects.Caddyfile').each do |redirect|
+    target = redirect[:target].split('#')[0]
 
     lineno = redirect[:lineno]
     line = redirect[:line]
@@ -211,7 +210,7 @@ def check_netlify_redirects(dst_dir)
 
   return if bad_lines.empty?
 
-  error('- src/_redirects')
+  error('- redirects.Caddyfile')
   error('  The following lines are redirecting to broken resources:')
   bad_lines.each do |ln|
     lineno, line = ln
@@ -238,13 +237,13 @@ def check_all_urls_are_hackable(dst_dir)
   #
   # This means either:
   #
-  #     - There's a Netlify redirect that takes you to another page, or
+  #     - There's a redirect that takes you to another page, or
   #     - There's a folder with an index.html file that will be served
   #
   # The goal is to have two sets of URLs without trailing slashes,
   # e.g. {'/writing', '/til'}
   #
-  redirects = parse_netlify_redirects("#{dst_dir}/_redirects").to_set { |r| r[:source].chomp('/') }
+  redirects = parse_caddy_redirects('redirects.Caddyfile').to_set { |r| r[:source].chomp('/') }
   folders_with_index_html = Dir.glob("#{dst_dir}/**/index.html").map { |p| File.dirname(p).gsub(dst_dir, '') }
 
   # Go through and work out all the URLs that somebody could
@@ -335,5 +334,5 @@ html_documents = get_html_documents(html_dir)
 check_yaml_front_matter(src_dir)
 check_no_localhost_links(html_documents)
 check_no_html_in_titles(html_documents)
-check_netlify_redirects(html_dir)
+check_redirects(html_dir)
 check_all_urls_are_hackable(html_dir)

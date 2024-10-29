@@ -48,11 +48,11 @@ The site uses:
 
 *   [Jekyll][jekyll], which generates the HTML pages
 *   [GitHub Actions][github_actions], which builds and deploys the site
-*   [Netlify], which hosts the site
+*   [Caddy], which is the web server
 
 [jekyll]: https://jekyllrb.com/
 [github_actions]: https://github.com/features/actions
-[Netlify]: https://www.netlify.com
+[Caddy]: https://caddyserver.com/
 
 
 
