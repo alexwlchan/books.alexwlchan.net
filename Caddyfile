@@ -41,7 +41,6 @@ books.alexwlchan.net {
 
 	root * /home/alexwlchan/repos/books.alexwlchan.net/_site
 	file_server
-	try_files {path} {path}/
 
 	log {
 		output file /var/log/caddy/books.log
