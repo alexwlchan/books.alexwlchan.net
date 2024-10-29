@@ -237,7 +237,7 @@ def check_all_urls_are_hackable(dst_dir)
   #
   # This means either:
   #
-  #     - There's a Netlify redirect that takes you to another page, or
+  #     - There's a redirect that takes you to another page, or
   #     - There's a folder with an index.html file that will be served
   #
   # The goal is to have two sets of URLs without trailing slashes,
