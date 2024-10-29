@@ -13,6 +13,7 @@ gem 'nokogiri', '~> 1.16'
 # from the standard library, but won't be included in Ruby 3.4.0.
 gem 'base64', '~> 0.2'
 gem 'csv', '~> 3'
+gem 'logger', '~> 1'
 
 group :lint, optional: true do
   gem 'json-schema', '~> 5'
