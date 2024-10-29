@@ -102,3 +102,13 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: "66a899f3-16ae-42af-b059-db28a1fbc731"
         timeout-minutes: 1
+
+      - name: Deploy to Linode
+        uses: burnett01/rsync-deployments@7.0.1
+        with:
+          switches: -avzr --delete --exclude="" --include="" --filter=""
+          path: _site/
+          remote_path: repos/books.alexwlchan.net/_site
+          remote_host: "178.79.134.59"
+          remote_user: alexwlchan
+          remote_key: ${{ secrets.SSH_DEPLOY_KEY }}
