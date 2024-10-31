@@ -99,4 +99,4 @@ jobs:
             --recursive \
             --progress \
             --delete \
-            "_site/" "alexwlchan@178.79.134.59:repos/books.alexwlchan.net/_site"
+            "_site/" "alexwlchan@alexwlchan.net:repos/books.alexwlchan.net/_site"
