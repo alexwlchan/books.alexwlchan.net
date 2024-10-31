@@ -68,7 +68,7 @@ jobs:
       - name: "Cache the .shelves folder"
         uses: "actions/cache@v4"
         with:
-          path: src/.shelves
+          path: .shelves
           key: "shelves-${{ github.sha }}"
           restore-keys: "shelves-"
 
