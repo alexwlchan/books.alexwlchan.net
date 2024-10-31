@@ -108,7 +108,7 @@ jobs:
             --delete \
             --exclude="" --include="" --filter="" \
             "_site/" \
-            "alexwlchan@alexwlchan.net:repos/books.alexwlchan.net/_site2/"
+            "alexwlchan@alexwlchan.net:repos/books.alexwlchan.net/_site/"
             
           # Clean up the SSH key
           rm id_rsa
