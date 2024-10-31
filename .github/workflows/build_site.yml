@@ -89,6 +89,8 @@ jobs:
 
       - name: Deploy to Linode
         if: github.ref == 'refs/heads/main'
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
         run: |
           # Get the SSH host keys for my web server
           mkdir -p ~/.ssh
@@ -113,5 +115,3 @@ jobs:
             
           # Clean up the SSH key
           rm id_rsa
-        env:
-          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
