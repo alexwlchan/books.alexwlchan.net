@@ -88,12 +88,15 @@ jobs:
         run: bundle exec ruby scripts/linter.rb
 
       - name: Deploy to Linode
-        uses: burnett01/rsync-deployments@7.0.1
         if: github.ref == 'refs/heads/main'
-        with:
-          switches: -avzr --delete --exclude="" --include="" --filter=""
-          path: _site/
-          remote_path: repos/books.alexwlchan.net/_site
-          remote_host: "178.79.134.59"
-          remote_user: alexwlchan
-          remote_key: ${{ secrets.SSH_DEPLOY_KEY }}
+        run: |
+          echo "${{ secrets.SSH_DEPLOY_KEY }}" > id_rsa
+          rsync \
+            --rsh="ssh -i id_rsa -o StrictHostKeychecking=no" \
+            --archive \
+            --compress \
+            --verbose \
+            --recursive \
+            --progress \
+            --delete \
+            "_site/" "alexwlchan@178.79.134.59:repos/books.alexwlchan.net/_site"
