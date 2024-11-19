@@ -22,7 +22,6 @@ body {
 
 main {
   flex: 1;
-  width: var(--max-width);
   padding-top:    var(--padding);
   padding-bottom: var(--padding);
 }
