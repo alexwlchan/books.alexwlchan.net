@@ -268,11 +268,11 @@ hr {
   .review_preview img {
     max-width: 250px;
     max-height: 150px;
-    margin-top: 15px;
-    margin-bottom: 10px;
   }
 
   .book_thumbnail {
+    margin-top: 15px;
+    margin-bottom: 10px;
     grid-column: 1/1;
     grid-row: 1/2;
   }
