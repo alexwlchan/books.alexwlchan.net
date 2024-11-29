@@ -17,7 +17,7 @@ gem 'logger', '~> 1'
 
 group :lint, optional: true do
   gem 'json-schema', '~> 5'
-  gem 'rubocop', '~> 1.68'
+  gem 'rubocop', '~> 1.69'
 end
 
 group :test, optional: true do
