@@ -194,6 +194,11 @@ footer span.heart {
   height: 130px;
 }
 
+.book_thumbnail.square {
+  width:  110px;
+  height: 110px;
+}
+
 .book_thumbnail.landscape {
   width: 110px;
 }

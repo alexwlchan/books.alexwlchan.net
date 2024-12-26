@@ -31,6 +31,8 @@
     <div class="book_thumbnail
                 {% if book.cover.width > book.cover.height %}
                   landscape
+                {% elsif book.cover.width == book.cover.height %}
+                  square
                 {% else %}
                   portrait
                 {% endif %}
