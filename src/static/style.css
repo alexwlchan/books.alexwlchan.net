@@ -122,8 +122,9 @@ footer span.heart {
  *          the tint color.
  *     --ar, which is the aspect ratio of the image
  *
+ * rv_p = "review preview"
  */
-.review_preview {
+.rv_p {
   --border-color: rgb(var(--r), var(--g), var(--b));
 
   border: 2px solid var(--border-color);
@@ -140,12 +141,12 @@ footer span.heart {
   );
 }
 
-.review_preview:hover {
+.rv_p:hover {
   --bg-boost-amount:     0.74;
   --bg-boost-multiplier: 0.26;
 }
 
-.review_preview a,
+.rv_p a,
 .read_at_another_time {
   grid-template-columns: 135px auto;
   display: grid;
@@ -158,14 +159,14 @@ footer span.heart {
   min-height: 157px;
 }
 
-.review_preview img {
+.rv_p img {
   max-width: 110px;
   max-height: 130px;
   vertical-align: middle;
   border: 0.1px solid var(--border-color);
 }
 
-.review_preview[data-review-rating="5"] {
+.rv_p[data-review-rating="5"] {
   border-width: 3px;
   margin-left:  -1px;
   margin-right: -1px;
@@ -175,12 +176,12 @@ footer span.heart {
   --bg-boost-multiplier: 0.3;
 }
 
-.review_preview[data-review-rating="5"]:hover {
+.rv_p[data-review-rating="5"]:hover {
   --bg-boost-amount:     0.58;
   --bg-boost-multiplier: 0.42;
 }
 
-.review_preview .title + p {
+.rv_p .title + p {
   font-size: smaller;
 }
 
@@ -261,12 +262,12 @@ hr {
 }
 
 @media screen and (max-width: 500px) {
-  .review_preview a {
+  .rv_p a {
     grid-template-columns: auto;
     grid-row-gap: 1.75em;
   }
 
-  .review_preview img {
+  .rv_p img {
     max-width: 250px;
     max-height: 150px;
   }

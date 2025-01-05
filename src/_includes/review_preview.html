@@ -18,7 +18,7 @@
 
 <div
   id="{{ review_entry.url }}"
-  class="review_preview{% if read_at_another_time %} read_at_another_time{% endif %}"
+  class="rv_p{% if read_at_another_time %} read_at_another_time{% endif %}"
   style="--r: {{ book.cover.tint_color|red }};
          --g: {{ book.cover.tint_color|green }};
          --b: {{ book.cover.tint_color|blue }};

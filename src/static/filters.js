@@ -58,7 +58,7 @@ function parseAuthorNames(authors) {
 /** Returns the names of all the authors on the "list reviews" page. */
 function getAuthorNames() {
   const authorsSet = new Set(
-     [...document.querySelectorAll('.review_preview')]
+     [...document.querySelectorAll('.rv_p')]
        .flatMap(rp => parseAuthorNames(rp.getAttribute('data-book-authors')))
        .filter(s => s.length > 0)
    );
@@ -322,7 +322,7 @@ function removeRatingFilter(filters) {
 
 function createTagFilter(filters) {
   const tagsSet = new Set(
-    [...document.querySelectorAll('.review_preview')]
+    [...document.querySelectorAll('.rv_p')]
       .flatMap(rp => rp.getAttribute('data-review-tags').split(' '))
       .filter(s => s.length > 0)
   );
@@ -396,7 +396,7 @@ function createSummaryMessage(options) {
   * be visible.  Call this whenever the filter state changes.
   */
 function applyFilters(filters) {
-  const selectedReviews = Array.from(document.querySelectorAll('.review_preview'))
+  const selectedReviews = Array.from(document.querySelectorAll('.rv_p'))
     .filter(rev => matchesFilters(rev, filters));
 
   const selectedReviewIds = new Set(selectedReviews.map(rp => rp.getAttribute("id")));
@@ -418,7 +418,7 @@ function applyFilters(filters) {
   );
 
   // Show/hide the individual reviews
-  document.querySelectorAll('.review_preview').forEach(rev => {
+  document.querySelectorAll('.rv_p').forEach(rev => {
     if (rev.getAttribute('data-review-year') === 'another time') {
       rev.style.display = selectedReviewIds.has(rev.getAttribute('id')) ? 'grid' : 'none';
     } else {
