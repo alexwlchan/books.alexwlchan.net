@@ -58,7 +58,7 @@ function parseAuthorNames(authors) {
 /** Returns the names of all the authors on the "list reviews" page. */
 function getAuthorNames() {
    const authors = Array.from(
-     Object.keys(authorNames).flatMap(parseAuthorNames)
+     new Set(Object.keys(authorNames).flatMap(parseAuthorNames))
    );
    authors.sort();
 
@@ -101,8 +101,7 @@ function createEmptyFilters() {
 function matchesFilters(book, filters) {
   // First we need to unpack the author IDs abck to full author names,
   // then we can look to see if at least one of the book's authors is a match.
-  const authors = book.getAttribute('data-bk-a')
-    .split()
+  const authors = book.getAttribute('data-bk-a').split('-')
     .map(s => Number(s.trim()))
     .map(id => authorIds[id])
     .flatMap(author => parseAuthorNames(author));
@@ -131,7 +130,7 @@ function matchesFilters(book, filters) {
 
   // It has to match all the tags specified.
   const tags = new Set(
-    book.getAttribute('data-rv-t').split(' ').map(t => tagIds[t])
+    book.getAttribute('data-rv-t').split('-').map(t => tagIds[t])
   );
 
   const matchesTagsFilter =
