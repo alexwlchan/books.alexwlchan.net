@@ -28,12 +28,20 @@
   data-review-year="{{ review | year_read }}"
   {% if review.did_not_finish %}data-did-not-finish{% endif %}
 >
+
+  {% comment %}
+    Thumbnails can be up to 110px wide or 130px tall, which is
+    an aspect ratio of 0.85.  We need to know which it is, so we can
+    set the max bounds properly.
+  {% endcomment %}
+  {% assign aspect_ratio =
+    book.cover.width | times: 1.0 | divided_by: book.cover.height %}
   <a href="{{ review_entry.url }}">
     <div class="book_thumbnail
-                {% if book.cover.width > book.cover.height %}
-                  landscape
-                {% elsif book.cover.width == book.cover.height %}
+                {% if aspect_ratio == 1 %}
                   square
+                {% elsif aspect_ratio > 0.85 %}
+                  landscape
                 {% else %}
                   portrait
                 {% endif %}
