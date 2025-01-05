@@ -94,6 +94,10 @@ function createEmptyFilters() {
   *       starRating: number | undefined,
   *       tags: string[],
   *     };
+  *
+  * This inspects the data attributes on each review preview, including:
+  *
+  *     - data-rv-t, which is the tag prefixes for each tag on this book
   */
 function matchesFilters(book, filters) {
 
@@ -122,12 +126,12 @@ function matchesFilters(book, filters) {
     isUndefined(filters.starRating) ||
     filters.starRating <= starRating;
 
-  // It has to match all the tags specified
-  const tags = new Set(book.getAttribute('data-review-tags').split(' '));
+  // It has to match all the tags specified.
+  const tags = new Set(book.getAttribute('data-rv-t').split(' '));
 
   const matchesTagsFilter =
     filters.tags.length === 0 ||
-    filters.tags.every(t => tags.has(t));
+    filters.tags.every(t => tags.has(tagPrefixes[t]));
 
   return (
     matchesAuthorFilter &&
@@ -321,12 +325,7 @@ function removeRatingFilter(filters) {
 }
 
 function createTagFilter(filters) {
-  const tagsSet = new Set(
-    [...document.querySelectorAll('.rv_p')]
-      .flatMap(rp => rp.getAttribute('data-review-tags').split(' '))
-      .filter(s => s.length > 0)
-  );
-  const tags = Array.from(tagsSet);
+  const tags = Array.from(Object.keys(tagPrefixes));
   tags.sort();
 
   createTippy(

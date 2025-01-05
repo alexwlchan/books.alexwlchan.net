@@ -31,6 +31,10 @@ layout: list_of_reviews
   <button id="publicationYearFilters">publication year</button>
 </p>
 
+<script>
+  const tagPrefixes = {{ site.data['tag_prefixes'] | jsonify }};
+</script>
+
 <p id="filtersApplied"></p>
 
 <p id="noResults">

@@ -1,4 +1,9 @@
 {% comment %}
+  This component displays a preview card for a single review, which
+  is shown on my homepage and the global list of reviews.
+{% endcomment %}
+
+{% comment %}
   Note: in general I lean towards long, descriptive names for
   my CSS classes and variables, but this is a "hot" component
   which is used a lot, especially on the articles page.
@@ -35,7 +40,11 @@
   data-book-authors="{% for a in authors -%}{{ a.name }}{% unless forloop.last %},{% endunless %}{%- endfor %}"
   data-book-publication-year="{{ book.publication_year }}"
   data-review-rating="{% if review.rating %}{{ review.rating }}{% endif %}"
-  data-review-tags="{{ book.tags | join: " " }}"
+  data-rv-t="
+    {%- for t in book.tags %}
+      {{ site.data['tag_prefixes'][t] }}
+    {%- endfor -%}
+  "
   data-review-year="{{ review | year_read }}"
   {% if review.did_not_finish %}data-did-not-finish{% endif %}
 >
