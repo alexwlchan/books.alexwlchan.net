@@ -60,7 +60,7 @@ keep_files:
   - "favicons"
   - "individual_covers"
   - "social_icons"
-  - "thumbs"
+  - "t"
 
 markdown: "kramdown"
 

@@ -6,7 +6,7 @@ books.alexwlchan.net {
 
 	# Add long-lived caching headers for specific paths
 	@cached {
-		path /favicons/* /individual_covers/* /static/* /thumbs/*
+		path /favicons/* /individual_covers/* /static/* /t/*
 	}
 
 	header @cached {
