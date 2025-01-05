@@ -434,6 +434,9 @@ function applyFilters(filters) {
 
     yh.style.display = yearReviewTally[year] > 0 ? 'block' : 'none';
 
+    document.querySelector(`hr[data-year="${year}"]`).style.display =
+      yh.style.display;
+
     const reviewCount = yearReviewTally[year];
     const finishedCount = yearFinishedTally[year];
 
