@@ -89,7 +89,6 @@
 
         {%- if review.date_read -%}
         read {{ review.date_read | date_read -}}
-          <br/>
         {%- endif -%}
 
         {%- if review.rating and review.did_not_finish != true -%}
@@ -99,6 +98,7 @@
         {%- endif -%}
 
         {%- if review.did_not_finish -%}
+        <br/>
         (did not finish)
         {%- endif -%}
       </p>

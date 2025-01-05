@@ -248,6 +248,7 @@ hr {
 .sr {
   font-size: 100%;
   letter-spacing: 4px;
+  display: block;
 }
 
 /* bk_s = book series */
