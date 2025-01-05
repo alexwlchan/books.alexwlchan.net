@@ -10,7 +10,7 @@ Jekyll::Hooks.register :site, :post_read do |site|
       end
     end
   end
-  
+
   # This hook runs before the site is built, and adds the following fields
   # to the `site` object:
   #

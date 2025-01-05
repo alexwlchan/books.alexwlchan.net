@@ -20,8 +20,8 @@ require_relative 'pillow/get_image_info'
 
 Jekyll::Hooks.register :site, :post_read do |site|
   source = site.config['source']
-  destination = site.config["destination"]
-  
+  destination = site.config['destination']
+
   # Construct a hash that maps normalised name to original path,
   # e.g. if there's an image called src/covers/2023/white-fragility.jpg,
   # then we'd get a hash like
@@ -36,7 +36,7 @@ Jekyll::Hooks.register :site, :post_read do |site|
          name = File.basename(f, '.*') # remove any extension
          ["#{year}/#{name}", f]
        end
-  
+
   # Work out a unique prefix for each cover image, so we can generate
   # short filenames, e.g.
   #
@@ -46,8 +46,7 @@ Jekyll::Hooks.register :site, :post_read do |site|
     Abbrev.abbrev(cover_image_names.keys)
           .group_by { |_, v| v }
           .transform_values { |v| v.flatten.min_by(&:length) }
-          .map { |k, v| [k, v.gsub(/^20/, '')] }
-          .to_h
+          .transform_values { |v| v.gsub(/^20/, '') }
 
   # Now go through and attach the cover image path to each review, e.g.
   # the White Fragility post gets
@@ -66,7 +65,7 @@ Jekyll::Hooks.register :site, :post_read do |site|
 
     if cover_image_names.include? slug
       this_cover_path = cover_image_names[slug]
-      
+
       post.data['book']['cover']['path'] = this_cover_path
       post.data['book']['cover']['name'] = File.basename(this_cover_path)
       post.data['book']['cover']['prefix'] = cover_image_prefixes[slug]
@@ -77,34 +76,30 @@ Jekyll::Hooks.register :site, :post_read do |site|
     else
       puts "Can't find a cover image for #{post.path} (#{slug})"
     end
-  end
-  
-  # Now go ahead and create a thumbnail for each post.
-  #
-  # This will be stored at /t/{prefix}, so it's a short path.
-  site.posts.docs.each do |post|
+
+    # Now go ahead and create a thumbnail for each post.
+    #
+    # This will be stored at /t/{prefix}, so it's a short path.
     cover = post.data['book']['cover']
-    
+
     thumbnail_path = "/t/#{cover['prefix']}#{File.extname(cover['path'])}"
-    
+
     create_cover({
-      'in_path' => cover['path'],
-      'out_path' => "#{destination}#{thumbnail_path}",
-      'max_width' => 110 * 2,
-      'max_height' => 130 * 2
-    })
-    
+                   'in_path' => cover['path'],
+                   'out_path' => "#{destination}#{thumbnail_path}",
+                   'max_width' => 110 * 2,
+                   'max_height' => 130 * 2
+                 })
+
     cover['thumbnail_path'] = thumbnail_path
-  end
-  
-  # Now go ahead and create a cover image for each post.
-  #
-  # This will be stored at /individual_covers/#{name}, because it's
-  # only used on a single page and expressiveness is more useful
-  # than brevity here.
-  site.posts.docs.each do |post|
+
+    # Now go ahead and create a cover image for each post.
+    #
+    # This will be stored at /individual_covers/#{name}, because it's
+    # only used on a single page and expressiveness is more useful
+    # than brevity here.
     cover = post.data['book']['cover']
-  
+
     create_cover({
                    'in_path' => cover['path'],
                    'out_path' => cover['path'].gsub("#{source}/covers/", "#{destination}/individual_covers/"),

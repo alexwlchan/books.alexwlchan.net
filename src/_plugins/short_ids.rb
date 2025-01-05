@@ -12,7 +12,7 @@ def create_slug(post)
   name = File.basename(post.path)
              .gsub(/^\d{4}-\d{2}-\d{2}-/, '')
              .gsub(/\.md$/, '')
-  slug = "#{year}-#{name}"
+  "#{year}-#{name}"
 end
 
 Jekyll::Hooks.register :site, :post_read do |site|
