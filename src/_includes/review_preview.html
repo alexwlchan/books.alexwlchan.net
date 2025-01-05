@@ -77,30 +77,30 @@
 
     <div class="bk_m">
       <p class="title">
-        {{ book.title | smartify }}
-        {% if book.series %}
+        {{- book.title | smartify }}
+        {%- if book.series %}
         <span class="bk_s">({{ book.series | smartify }})</span>
-        {% endif %}
+        {%- endif -%}
       </p>
       <p>
-        {{ book | credit_line }}
+        {{- book | credit_line -}}
 
         <br/>
 
-        {% if review.date_read %}
-        read {{ review.date_read | date_read }}
+        {%- if review.date_read -%}
+        read {{ review.date_read | date_read -}}
           <br/>
-        {% endif %}
+        {%- endif -%}
 
-        {% if review.rating and review.did_not_finish != true %}
+        {%- if review.rating and review.did_not_finish != true -%}
           <span class="sr">
-            {{ review.rating | star_rating }}
+            {{- review.rating | star_rating -}}
           </span>
-        {% endif %}
+        {%- endif -%}
 
-        {% if review.did_not_finish %}
+        {%- if review.did_not_finish -%}
         (did not finish)
-        {% endif %}
+        {%- endif -%}
       </p>
     </div>
   </a>
