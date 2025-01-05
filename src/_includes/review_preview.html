@@ -14,6 +14,7 @@
 {% assign authors = book.contributors | where: "role", "author" %}
 
 <div
+  id="{{ review_entry.url }}"
   class="review_preview {% if read_at_another_time %}read_at_another_time{% endif %}"
   style="--r: {{ book.cover.tint_color|red }};
          --g: {{ book.cover.tint_color|green }};
