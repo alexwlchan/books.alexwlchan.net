@@ -244,12 +244,14 @@ hr {
   background-repeat: repeat-x;
 }
 
-.star_rating {
+/* sr = star rating */
+.sr {
   font-size: 100%;
   letter-spacing: 4px;
 }
 
-.book-series {
+/* bk_s = book series */
+.book-series, .bk_s {
   color: #999;
   font-weight: normal;
 }

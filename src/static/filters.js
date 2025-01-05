@@ -417,7 +417,7 @@ function applyFilters(filters) {
 
   const yearFinishedTally = Counter(
     selectedReviews
-      .filter(rev => !rev.hasAttribute('data-did-not-finish'))
+      .filter(rev => !rev.hasAttribute('data-dnf'))
       .map(rev => rev.getAttribute('data-rv-yr'))
   );
 

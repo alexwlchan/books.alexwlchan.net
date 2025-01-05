@@ -50,7 +50,7 @@
     {%- endfor -%}
   "
   data-rv-yr="{{ review | year_read }}"
-  {% if review.did_not_finish %}data-did-not-finish{% endif %}
+  {% if review.did_not_finish %}data-dnf{% endif %}
 >
 
   {% comment %}
@@ -79,7 +79,7 @@
       <p class="title">
         {{ book.title | smartify }}
         {% if book.series %}
-        <span class="book-series">({{ book.series | smartify }})</span>
+        <span class="bk_s">({{ book.series | smartify }})</span>
         {% endif %}
       </p>
       <p>
@@ -93,7 +93,7 @@
         {% endif %}
 
         {% if review.rating and review.did_not_finish != true %}
-          <span class="star_rating">
+          <span class="sr">
             {{ review.rating | star_rating }}
           </span>
         {% endif %}
