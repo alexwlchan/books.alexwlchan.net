@@ -16,13 +16,22 @@
 {% assign aspect_ratio =
   book.cover.width | times: 1.0 | divided_by: book.cover.height | round: 2 %}
 
+{% comment %}
+  Assign the CSS variables required for this review preview.
+
+  See the comment in `style.css` to see what these variables are doing.
+{% endcomment %}
+{% capture css_variables %}
+  --r:  {{ book.cover.tint_color|red }};
+  --g:  {{ book.cover.tint_color|green }};
+  --b:  {{ book.cover.tint_color|blue }};
+  --ar: {{ aspect_ratio }}
+{% endcapture %}
+
 <div
   id="{{ review_entry.url }}"
   class="rv_p{% if read_at_another_time %} read_at_another_time{% endif %}"
-  style="--r: {{ book.cover.tint_color|red }};
-         --g: {{ book.cover.tint_color|green }};
-         --b: {{ book.cover.tint_color|blue }};
-         --ar: {{ aspect_ratio }};"
+  style="{{ css_variables | replace: " ", "" | strip | replace: "; ", "" }}"
   data-book-authors="{% for a in authors -%}{{ a.name }}{% unless forloop.last %},{% endunless %}{%- endfor %}"
   data-book-publication-year="{{ book.publication_year }}"
   data-review-rating="{% if review.rating %}{{ review.rating }}{% endif %}"
