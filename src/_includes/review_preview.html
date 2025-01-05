@@ -45,7 +45,7 @@
       {{ site.data['tag_prefixes'][t] }}
     {%- endfor -%}
   "
-  data-review-year="{{ review | year_read }}"
+  data-rv-yr="{{ review | year_read }}"
   {% if review.did_not_finish %}data-did-not-finish{% endif %}
 >
 

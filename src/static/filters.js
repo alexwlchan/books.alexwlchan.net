@@ -408,18 +408,18 @@ function applyFilters(filters) {
   // I didn't finish any of their books in a year
   const yearReviewTally = Counter(
     selectedReviews
-      .map(rev => rev.getAttribute('data-review-year'))
+      .map(rev => rev.getAttribute('data-rv-yr'))
   );
 
   const yearFinishedTally = Counter(
     selectedReviews
       .filter(rev => !rev.hasAttribute('data-did-not-finish'))
-      .map(rev => rev.getAttribute('data-review-year'))
+      .map(rev => rev.getAttribute('data-rv-yr'))
   );
 
   // Show/hide the individual reviews
   document.querySelectorAll('.rv_p').forEach(rev => {
-    if (rev.getAttribute('data-review-year') === 'another time') {
+    if (rev.getAttribute('data-rv-yr') === 'another time') {
       rev.style.display = selectedReviewIds.has(rev.getAttribute('id')) ? 'grid' : 'none';
     } else {
       rev.style.display = selectedReviewIds.has(rev.getAttribute('id')) ? 'block' : 'none';
