@@ -97,6 +97,7 @@ function createEmptyFilters() {
   *
   * This inspects the data attributes on each review preview, including:
   *
+  *     - data-bk-p-yr, which is the publication year of the book
   *     - data-rv-t, which is the tag prefixes for each tag on this book
   */
 function matchesFilters(book, filters) {
@@ -109,7 +110,7 @@ function matchesFilters(book, filters) {
     authors.some(a => filters.authors.indexOf(a) !== -1);
 
   // The publication year has to fall within the defined range
-  const publicationYear = Number(book.getAttribute('data-book-publication-year'));
+  const publicationYear = Number(book.getAttribute('data-bk-p-yr'));
 
   const matchesPublicationYearAfterFilter =
     isUndefined(filters.publicationYear.after) ||

@@ -10,7 +10,7 @@
 <div
   id="review_preview_1"
   data-book-authors="Judith Jones"
-  data-book-publication-year="2001"
+  data-bk-p-yr="2001"
   data-review-rating="3"
   data-review-tags="fiction sci-fi"
 >
@@ -18,7 +18,7 @@
 <div
   id="review_preview_2"
   data-book-authors="Judith Jones and Siobhan Smith"
-  data-book-publication-year="2021"
+  data-bk-p-yr="2021"
   data-review-rating="4"
   data-review-tags="non-fiction botany"
 >
@@ -26,7 +26,7 @@
 <div
   id="review_preview_3"
   data-book-authors="Siobhan Smith"
-  data-book-publication-year="2031"
+  data-bk-p-yr="2031"
   data-review-rating=""
   data-review-tags="non-fiction botany"
 >
@@ -34,7 +34,7 @@
 <div
   id="review_preview_4"
   data-book-authors="Laura Lee"
-  data-book-publication-year="2026"
+  data-bk-p-yr="2026"
   data-review-rating="5"
   data-review-tags="fiction physics"
 >
@@ -250,7 +250,7 @@
     assertFalse(matchesFilters(book3, filters));
     assertFalse(matchesFilters(book4, filters));
   })
-  
+
   it('createSummaryMessage: renders the right messages', () => {
   	assertEqual(
 			createSummaryMessage({
@@ -264,7 +264,7 @@
 			}),
 			'2023: I’ve read 1 book so far'
   	);
-		
+
   	assertEqual(
 			createSummaryMessage({
 				finishedCount: 10, year: 2019, isThisYear: false

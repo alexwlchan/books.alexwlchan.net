@@ -38,7 +38,7 @@
   class="rv_p{% if read_at_another_time %} read_at_another_time{% endif %}"
   style="{{ css_variables | replace: " ", "" | strip | replace: "; ", "" }}"
   data-book-authors="{% for a in authors -%}{{ a.name }}{% unless forloop.last %},{% endunless %}{%- endfor %}"
-  data-book-publication-year="{{ book.publication_year }}"
+  data-bk-p-yr="{{ book.publication_year }}"
   data-review-rating="{% if review.rating %}{{ review.rating }}{% endif %}"
   data-rv-t="
     {%- for t in book.tags %}
