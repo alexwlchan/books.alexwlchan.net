@@ -13,14 +13,16 @@
 
 {% assign authors = book.contributors | where: "role", "author" %}
 
+{% assign aspect_ratio =
+  book.cover.width | times: 1.0 | divided_by: book.cover.height | round: 2 %}
+
 <div
   id="{{ review_entry.url }}"
-  class="review_preview {% if read_at_another_time %}read_at_another_time{% endif %}"
+  class="review_preview{% if read_at_another_time %} read_at_another_time{% endif %}"
   style="--r: {{ book.cover.tint_color|red }};
          --g: {{ book.cover.tint_color|green }};
          --b: {{ book.cover.tint_color|blue }};
-         --w: {{ book.cover.width }};
-         --h: {{ book.cover.height }};"
+         --ar: {{ aspect_ratio }};"
   data-book-authors="{% for a in authors -%}{{ a.name }}{% unless forloop.last %},{% endunless %}{%- endfor %}"
   data-book-publication-year="{{ book.publication_year }}"
   data-review-rating="{% if review.rating %}{{ review.rating }}{% endif %}"
@@ -34,16 +36,14 @@
     an aspect ratio of 0.85.  We need to know which it is, so we can
     set the max bounds properly.
   {% endcomment %}
-  {% assign aspect_ratio =
-    book.cover.width | times: 1.0 | divided_by: book.cover.height %}
   <a href="{{ review_entry.url }}">
-    <div class="book_thumbnail
+    <div class="bk_t
                 {% if aspect_ratio == 1 %}
-                  square
+                  ar_s
                 {% elsif aspect_ratio > 0.85 %}
-                  landscape
+                  ar_l
                 {% else %}
-                  portrait
+                  ar_p
                 {% endif %}
               ">
       <img

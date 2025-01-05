@@ -116,11 +116,11 @@ footer span.heart {
  * of each review, showing the title of the book, some basic metadata,
  * and my star rating.
  *
- * Each instance of this component has five variables:
+ * Each instance of this component has four variables:
  *
  *     --r, --g, --b, which represent the r/g/b components of
  *          the tint color.
- *     --w, --h, which are the width/height of the cover image
+ *     --ar, which is the aspect ratio of the image
  *
  */
 .review_preview {
@@ -184,30 +184,24 @@ footer span.heart {
   font-size: smaller;
 }
 
-.book_thumbnail {
+/* bk_t = book thumbnail */
+.bk_t {
   margin: auto;
-  aspect-ratio: var(--w) / var(--h);
+  aspect-ratio: var(--ar);
   background: rgb(var(--r), var(--g), var(--b));
 }
 
-.book_thumbnail.portrait {
-  height: 130px;
-}
+/* ar = aspect ratio,
+ * ar_p = portrait, ar_s = square, ar_l = landscape */
+.bk_t.ar_p {               height: 130px; }
+.bk_t.ar_s { width: 110px; height: 110px; }
+.bk_t.ar_l { width: 110px;                }
 
-.book_thumbnail.square {
-  width:  110px;
-  height: 110px;
-}
-
-.book_thumbnail.landscape {
-  width: 110px;
-}
-
-.book_thumbnail img {
+.bk_t img {
   margin: auto;
   max-width:  110px;
   max-height: 130px;
-  aspect-ratio: var(--w) / var(--h);
+  aspect-ratio: var(--ar);
 }
 
 .book_metadata {
@@ -276,7 +270,7 @@ hr {
     max-height: 150px;
   }
 
-  .book_thumbnail {
+  .bk_t {
     margin-top: 15px;
     margin-bottom: 10px;
     grid-column: 1/1;
