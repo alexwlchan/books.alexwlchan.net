@@ -31,10 +31,6 @@ layout: list_of_reviews
   <button id="publicationYearFilters">publication year</button>
 </p>
 
-<script>
-  const tagPrefixes = {{ site.data['tag_prefixes'] | jsonify }};
-</script>
-
 <p id="filtersApplied"></p>
 
 <p id="noResults">
@@ -75,6 +71,14 @@ layout: list_of_reviews
 {% endfor %}
 
 <script>
+  /* Here authorIds is a map (name) -> (id), and lookup is (id) -> (name) */
+  const authorNames = {{ site.data['author_ids'] | jsonify }};
+  const authorIds = Object.fromEntries(
+    Object.entries(authorNames).map(a => [a[1], a[0]])
+  );
+
+  const tagPrefixes = {{ site.data['tag_prefixes'] | jsonify }};
+
   /* Create the initial filter state.
    * TODO: Do I want filters to have permalinks?  If so, this should
    * be loaded from URL query state. */

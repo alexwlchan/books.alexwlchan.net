@@ -57,13 +57,9 @@ function parseAuthorNames(authors) {
 
 /** Returns the names of all the authors on the "list reviews" page. */
 function getAuthorNames() {
-  const authorsSet = new Set(
-     [...document.querySelectorAll('.rv_p')]
-       .flatMap(rp => parseAuthorNames(rp.getAttribute('data-book-authors')))
-       .filter(s => s.length > 0)
+   const authors = Array.from(
+     Object.keys(authorNames).flatMap(parseAuthorNames)
    );
-
-   const authors = Array.from(authorsSet);
    authors.sort();
 
    return authors;
@@ -97,13 +93,18 @@ function createEmptyFilters() {
   *
   * This inspects the data attributes on each review preview, including:
   *
+  *     - data-bk-a, which is the author IDs for the book
   *     - data-bk-p-yr, which is the publication year of the book
   *     - data-rv-t, which is the tag prefixes for each tag on this book
   */
 function matchesFilters(book, filters) {
-
-  // It's sufficient to match a single author in the list.
-  const authors = parseAuthorNames(book.getAttribute('data-book-authors'));
+  // First we need to unpack the author IDs abck to full author names,
+  // then we can look to see if at least one of the book's authors is a match.
+  const authors = book.getAttribute('data-bk-a')
+    .split()
+    .map(s => Number(s.trim()))
+    .map(id => authorIds[id])
+    .flatMap(author => parseAuthorNames(author));
 
   const matchesAuthorFilter =
     filters.authors.length === 0 ||
