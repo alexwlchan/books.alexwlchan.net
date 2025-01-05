@@ -34,7 +34,7 @@
 {% endcapture %}
 
 <div
-  id="{{ review_entry.url }}"
+  id="{{ review_entry.short_id }}"
   class="rv_p{% if read_at_another_time %} read_at_another_time{% endif %}"
   style="{{ css_variables | replace: " ", "" | strip | replace: "; ", "" }}"
   data-bk-a="

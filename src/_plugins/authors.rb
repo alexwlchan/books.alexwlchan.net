@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'abbrev'
-
 Jekyll::Hooks.register :site, :post_read do |site|
   # Adds a default role of "author" to any contributor that doesn't have
   # an explicit role set.
