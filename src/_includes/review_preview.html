@@ -1,4 +1,9 @@
 {% comment %}
+  This component displays a preview card for a single review, which
+  is shown on my homepage and the global list of reviews.
+{% endcomment %}
+
+{% comment %}
   Note: in general I lean towards long, descriptive names for
   my CSS classes and variables, but this is a "hot" component
   which is used a lot, especially on the articles page.
@@ -13,63 +18,89 @@
 
 {% assign authors = book.contributors | where: "role", "author" %}
 
+{% assign aspect_ratio =
+  book.cover.width | times: 1.0 | divided_by: book.cover.height | round: 2 %}
+
+{% comment %}
+  Assign the CSS variables required for this review preview.
+
+  See the comment in `style.css` to see what these variables are doing.
+{% endcomment %}
+{% capture css_variables %}
+  --r:  {{ book.cover.tint_color|red }};
+  --g:  {{ book.cover.tint_color|green }};
+  --b:  {{ book.cover.tint_color|blue }};
+  --ar: {{ aspect_ratio }}
+{% endcapture %}
+
 <div
-  class="review_preview {% if read_at_another_time %}read_at_another_time{% endif %}"
-  style="--r: {{ book.cover.tint_color|red }};
-         --g: {{ book.cover.tint_color|green }};
-         --b: {{ book.cover.tint_color|blue }};
-         --w: {{ book.cover.width }};
-         --h: {{ book.cover.height }};"
-  data-book-authors="{% for a in authors -%}{{ a.name }}{% unless forloop.last %},{% endunless %}{%- endfor %}"
-  data-book-publication-year="{{ book.publication_year }}"
-  data-review-rating="{% if review.rating %}{{ review.rating }}{% endif %}"
-  data-review-tags="{{ book.tags | join: " " }}"
-  data-review-year="{{ review | year_read }}"
-  {% if review.did_not_finish %}data-did-not-finish{% endif %}
+  id="{{ review_entry.short_id }}"
+  class="rv_p{% if read_at_another_time %} read_at_another_time{% endif %}"
+  style="{{ css_variables | replace: " ", "" | strip | replace: "; ", "" }}"
+  data-bk-a="
+    {%- for a in authors -%}
+      {{ site.data['author_ids'][a.name] }}{% unless forloop.last %}-{% endunless %}
+    {%- endfor -%}
+  "
+  data-bk-p-yr="{{ book.publication_year }}"
+  data-rv-s="{% if review.rating %}{{ review.rating }}{% endif %}"
+  data-rv-t="
+    {%- for t in book.tags -%}
+      {{ site.data['tag_prefixes'][t] }}{% unless forloop.last %}-{% endunless %}
+    {%- endfor -%}
+  "
+  data-rv-yr="{{ review | year_read }}"
+  {% if review.did_not_finish %}data-dnf{% endif %}
 >
+
+  {% comment %}
+    Thumbnails can be up to 110px wide or 130px tall, which is
+    an aspect ratio of 0.85.  We need to know which it is, so we can
+    set the max bounds properly.
+  {% endcomment %}
   <a href="{{ review_entry.url }}">
-    <div class="book_thumbnail
-                {% if book.cover.width > book.cover.height %}
-                  landscape
-                {% elsif book.cover.width == book.cover.height %}
-                  square
-                {% else %}
-                  portrait
-                {% endif %}
+    <div class="bk_t
+                {% if aspect_ratio == 1 -%}
+                  ar_s
+                {%- elsif aspect_ratio > 0.85 -%}
+                  ar_l
+                {%- else -%}
+                  ar_p
+                {%- endif -%}
               ">
       <img
-        src="/thumbs/{{ review | year_read }}/{{ book.cover.name }}"
+        src="{{ book.cover.thumbnail_path }}"
         alt=""
         loading="lazy"
       >
     </div>
 
-    <div class="book_metadata">
+    <div class="bk_m">
       <p class="title">
-        {{ book.title | smartify }}
-        {% if book.series %}
-        <span class="book-series">({{ book.series | smartify }})</span>
-        {% endif %}
+        {{- book.title | smartify }}
+        {%- if book.series %}
+        <span class="bk_s">({{ book.series | smartify }})</span>
+        {%- endif -%}
       </p>
       <p>
-        {{ book | credit_line }}
+        {{- book | credit_line -}}
 
         <br/>
 
-        {% if review.date_read %}
-        read {{ review.date_read | date_read }}
-          <br/>
-        {% endif %}
+        {%- if review.date_read -%}
+        read {{ review.date_read | date_read -}}
+        {%- endif -%}
 
-        {% if review.rating and review.did_not_finish != true %}
-          <span class="star_rating">
-            {{ review.rating | star_rating }}
+        {%- if review.rating and review.did_not_finish != true -%}
+          <span class="sr">
+            {{- review.rating | star_rating -}}
           </span>
-        {% endif %}
+        {%- endif -%}
 
-        {% if review.did_not_finish %}
+        {%- if review.did_not_finish -%}
+        <br/>
         (did not finish)
-        {% endif %}
+        {%- endif -%}
       </p>
     </div>
   </a>

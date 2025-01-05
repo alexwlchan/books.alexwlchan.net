@@ -11,6 +11,7 @@ gem 'nokogiri', '~> 1.18'
 
 # These two gems are here because of warnings that they were loaded
 # from the standard library, but won't be included in Ruby 3.4.0.
+gem 'abbrev', '~> 0.1.2'
 gem 'base64', '~> 0.2'
 gem 'csv', '~> 3'
 gem 'logger', '~> 1'

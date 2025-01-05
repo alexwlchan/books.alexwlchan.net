@@ -12,7 +12,7 @@ book:
   tags:
     - fiction
     - "!from-the-library"
-    - ace-book-club
+    - "!ace-book-club"
 review:
   date_read: 2024-07-22
   format: ebook

@@ -116,14 +116,15 @@ footer span.heart {
  * of each review, showing the title of the book, some basic metadata,
  * and my star rating.
  *
- * Each instance of this component has five variables:
+ * Each instance of this component has four variables:
  *
  *     --r, --g, --b, which represent the r/g/b components of
  *          the tint color.
- *     --w, --h, which are the width/height of the cover image
+ *     --ar, which is the aspect ratio of the image
  *
+ * rv_p = "review preview"
  */
-.review_preview {
+.rv_p {
   --border-color: rgb(var(--r), var(--g), var(--b));
 
   border: 2px solid var(--border-color);
@@ -140,12 +141,12 @@ footer span.heart {
   );
 }
 
-.review_preview:hover {
+.rv_p:hover {
   --bg-boost-amount:     0.74;
   --bg-boost-multiplier: 0.26;
 }
 
-.review_preview a,
+.rv_p a,
 .read_at_another_time {
   grid-template-columns: 135px auto;
   display: grid;
@@ -158,14 +159,14 @@ footer span.heart {
   min-height: 157px;
 }
 
-.review_preview img {
+.rv_p img {
   max-width: 110px;
   max-height: 130px;
   vertical-align: middle;
   border: 0.1px solid var(--border-color);
 }
 
-.review_preview[data-review-rating="5"] {
+.rv_p[data-rv-s="5"] {
   border-width: 3px;
   margin-left:  -1px;
   margin-right: -1px;
@@ -175,42 +176,37 @@ footer span.heart {
   --bg-boost-multiplier: 0.3;
 }
 
-.review_preview[data-review-rating="5"]:hover {
+.rv_p[data-rv-s="5"]:hover {
   --bg-boost-amount:     0.58;
   --bg-boost-multiplier: 0.42;
 }
 
-.review_preview .title + p {
+.rv_p .title + p {
   font-size: smaller;
 }
 
-.book_thumbnail {
+/* bk_t = book thumbnail */
+.bk_t {
   margin: auto;
-  aspect-ratio: var(--w) / var(--h);
+  aspect-ratio: var(--ar);
   background: rgb(var(--r), var(--g), var(--b));
 }
 
-.book_thumbnail.portrait {
-  height: 130px;
-}
+/* ar = aspect ratio,
+ * ar_p = portrait, ar_s = square, ar_l = landscape */
+.bk_t.ar_p {               height: 130px; }
+.bk_t.ar_s { width: 110px; height: 110px; }
+.bk_t.ar_l { width: 110px;                }
 
-.book_thumbnail.square {
-  width:  110px;
-  height: 110px;
-}
-
-.book_thumbnail.landscape {
-  width: 110px;
-}
-
-.book_thumbnail img {
+.bk_t img {
   margin: auto;
   max-width:  110px;
   max-height: 130px;
-  aspect-ratio: var(--w) / var(--h);
+  aspect-ratio: var(--ar);
 }
 
-.book_metadata {
+/* bk_m = book metadata */
+.bk_m {
   grid-row: 1/1;
   grid-column: 2/2;
   display: inline-block;
@@ -223,18 +219,18 @@ footer span.heart {
   padding-bottom: 10px;
 }
 
-.book_metadata p.title {
+.bk_m p.title {
   font-style: italic;
   font-size: 1.15em;
   margin-bottom: 0.5em;
   line-height: 1.3em;
 }
 
-.book_metadata .did_not_finish {
+.bk_m .did_not_finish {
   font-weight: normal;
 }
 
-.book_metadata p {
+.bk_m p {
   margin: 0;
 }
 
@@ -248,52 +244,50 @@ hr {
   background-repeat: repeat-x;
 }
 
-.star_rating {
+/* sr = star rating */
+.sr {
   font-size: 100%;
   letter-spacing: 4px;
+  display: block;
 }
 
-.book-series {
+/* bk_s = book series */
+.book-series, .bk_s {
   color: #999;
   font-weight: normal;
 }
 
 @media screen and (min-width: 500px) {
   /* For books with long attribution info, e.g. "Your Computer is on Fire" */
-  main > .book_metadata {
+  main > .bk_m {
     max-width: calc(100% - 210px);
   }
 }
 
 @media screen and (max-width: 500px) {
-  .review_preview a {
+  .rv_p a {
     grid-template-columns: auto;
     grid-row-gap: 1.75em;
   }
 
-  .review_preview img {
+  .rv_p img {
     max-width: 250px;
     max-height: 150px;
   }
 
-  .book_thumbnail {
+  .bk_t {
     margin-top: 15px;
     margin-bottom: 10px;
     grid-column: 1/1;
     grid-row: 1/2;
   }
 
-  .book_metadata {
+  .bk_m {
     grid-column: 1/1;
     grid-row: 2/2;
     padding: 15px;
-    padding-left: 0px;
     padding-top: 0;
     max-width: 100%;
-  }
-
-  .review_preview .book_metadata {
-    padding-left: 15px;
   }
 
   .thumbnail_helper {

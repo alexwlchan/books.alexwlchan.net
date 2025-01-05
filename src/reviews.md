@@ -71,6 +71,18 @@ layout: list_of_reviews
 {% endfor %}
 
 <script>
+  /* Here authorNames is a map (name) -> (id), and ids is (id) -> (name) */
+  const authorNames = {{ site.data['author_ids'] | jsonify }};
+  const authorIds = Object.fromEntries(
+    Object.entries(authorNames).map(a => [a[1], a[0]])
+  );
+
+  /* Here tagNames is a map (tag) -> (id0), and ids is a map (id) -> (tag) */
+  const tagNames = {{ site.data['tag_prefixes'] | jsonify }};
+  const tagIds = Object.fromEntries(
+    Object.entries(tagNames).map(a => [a[1], a[0]])
+  );
+
   /* Create the initial filter state.
    * TODO: Do I want filters to have permalinks?  If so, this should
    * be loaded from URL query state. */

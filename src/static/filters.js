@@ -57,13 +57,9 @@ function parseAuthorNames(authors) {
 
 /** Returns the names of all the authors on the "list reviews" page. */
 function getAuthorNames() {
-  const authorsSet = new Set(
-     [...document.querySelectorAll('.review_preview')]
-       .flatMap(rp => parseAuthorNames(rp.getAttribute('data-book-authors')))
-       .filter(s => s.length > 0)
+   const authors = Array.from(
+     new Set(Object.keys(authorNames).flatMap(parseAuthorNames))
    );
-
-   const authors = Array.from(authorsSet);
    authors.sort();
 
    return authors;
@@ -94,18 +90,28 @@ function createEmptyFilters() {
   *       starRating: number | undefined,
   *       tags: string[],
   *     };
+  *
+  * This inspects the data attributes on each review preview, including:
+  *
+  *     - data-bk-a, which is the author IDs for the book
+  *     - data-bk-p-yr, which is the publication year of the book
+  *     - data-rv-s, which is the star rating for this book
+  *     - data-rv-t, which is the tag prefixes for each tag on this book
   */
 function matchesFilters(book, filters) {
-
-  // It's sufficient to match a single author in the list.
-  const authors = parseAuthorNames(book.getAttribute('data-book-authors'));
+  // First we need to unpack the author IDs abck to full author names,
+  // then we can look to see if at least one of the book's authors is a match.
+  const authors = book.getAttribute('data-bk-a').split('-')
+    .map(s => Number(s.trim()))
+    .map(id => authorIds[id])
+    .flatMap(author => parseAuthorNames(author));
 
   const matchesAuthorFilter =
     filters.authors.length === 0 ||
     authors.some(a => filters.authors.indexOf(a) !== -1);
 
   // The publication year has to fall within the defined range
-  const publicationYear = Number(book.getAttribute('data-book-publication-year'));
+  const publicationYear = Number(book.getAttribute('data-bk-p-yr'));
 
   const matchesPublicationYearAfterFilter =
     isUndefined(filters.publicationYear.after) ||
@@ -116,14 +122,16 @@ function matchesFilters(book, filters) {
     publicationYear <= filters.publicationYear.before;
 
   // The star rating has to be equal to or higher than the filtered rating
-  const starRating = Number(book.getAttribute('data-review-rating'));
+  const starRating = Number(book.getAttribute('data-rv-s'));
 
   const matchesStarRatingFilter =
     isUndefined(filters.starRating) ||
     filters.starRating <= starRating;
 
-  // It has to match all the tags specified
-  const tags = new Set(book.getAttribute('data-review-tags').split(' '));
+  // It has to match all the tags specified.
+  const tags = new Set(
+    book.getAttribute('data-rv-t').split('-').map(t => tagIds[t])
+  );
 
   const matchesTagsFilter =
     filters.tags.length === 0 ||
@@ -321,12 +329,7 @@ function removeRatingFilter(filters) {
 }
 
 function createTagFilter(filters) {
-  const tagsSet = new Set(
-    [...document.querySelectorAll('.review_preview')]
-      .flatMap(rp => rp.getAttribute('data-review-tags').split(' '))
-      .filter(s => s.length > 0)
-  );
-  const tags = Array.from(tagsSet);
+  const tags = Array.from(Object.keys(tagNames));
   tags.sort();
 
   createTippy(
@@ -396,7 +399,7 @@ function createSummaryMessage(options) {
   * be visible.  Call this whenever the filter state changes.
   */
 function applyFilters(filters) {
-  const selectedReviews = Array.from(document.querySelectorAll('.review_preview'))
+  const selectedReviews = Array.from(document.querySelectorAll('.rv_p'))
     .filter(rev => matchesFilters(rev, filters));
 
   const selectedReviewIds = new Set(selectedReviews.map(rp => rp.getAttribute("id")));
@@ -408,18 +411,18 @@ function applyFilters(filters) {
   // I didn't finish any of their books in a year
   const yearReviewTally = Counter(
     selectedReviews
-      .map(rev => rev.getAttribute('data-review-year'))
+      .map(rev => rev.getAttribute('data-rv-yr'))
   );
 
   const yearFinishedTally = Counter(
     selectedReviews
-      .filter(rev => !rev.hasAttribute('data-did-not-finish'))
-      .map(rev => rev.getAttribute('data-review-year'))
+      .filter(rev => !rev.hasAttribute('data-dnf'))
+      .map(rev => rev.getAttribute('data-rv-yr'))
   );
 
   // Show/hide the individual reviews
-  document.querySelectorAll('.review_preview').forEach(rev => {
-    if (rev.getAttribute('data-review-year') === 'another time') {
+  document.querySelectorAll('.rv_p').forEach(rev => {
+    if (rev.getAttribute('data-rv-yr') === 'another time') {
       rev.style.display = selectedReviewIds.has(rev.getAttribute('id')) ? 'grid' : 'none';
     } else {
       rev.style.display = selectedReviewIds.has(rev.getAttribute('id')) ? 'block' : 'none';
@@ -433,6 +436,9 @@ function applyFilters(filters) {
     const isThisYear = yh.hasAttribute('data-is-this-year');
 
     yh.style.display = yearReviewTally[year] > 0 ? 'block' : 'none';
+
+    document.querySelector(`hr[data-year="${year}"]`).style.display =
+      yh.style.display;
 
     const reviewCount = yearReviewTally[year];
     const finishedCount = yearFinishedTally[year];
@@ -478,7 +484,7 @@ function applyFilters(filters) {
 
   // The "read at another time" books are stored in a <details> element,
   // we show/hide the parent collapsible element.
-  document.querySelector("#another_time_books").style.display = yearReviewTally["another time"] > 0 ? "block" : "none";
+  // document.querySelector("#another_time_books").style.display = yearReviewTally["another time"] > 0 ? "block" : "none";
 
   if (yearReviewTally["another time"] > 0 && Object.keys(yearReviewTally).filter(k => yearReviewTally[k] > 0).length === 1) {
     document.querySelector("#another_time_books").open = true;
