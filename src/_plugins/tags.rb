@@ -3,8 +3,6 @@
 # This plugin creates an index of all the tags I'm using, and works
 # out a unique prefix for each.
 
-require 'abbrev'
-
 Jekyll::Hooks.register :site, :post_read do |site|
   # This hook runs before the site is built, and adds the following fields
   # to the `site` object:
@@ -20,7 +18,5 @@ Jekyll::Hooks.register :site, :post_read do |site|
         .uniq
 
   site.data['tag_prefixes'] =
-    Abbrev.abbrev(site.data['tag_names'])
-          .group_by { |_, v| v }
-          .transform_values { |v| v.flatten.min_by(&:length) }
+    site.data['tag_names'].map.with_index.to_h
 end

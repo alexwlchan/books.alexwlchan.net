@@ -130,11 +130,13 @@ function matchesFilters(book, filters) {
     filters.starRating <= starRating;
 
   // It has to match all the tags specified.
-  const tags = new Set(book.getAttribute('data-rv-t').split(' '));
+  const tags = new Set(
+    book.getAttribute('data-rv-t').split(' ').map(t => tagIds[t])
+  );
 
   const matchesTagsFilter =
     filters.tags.length === 0 ||
-    filters.tags.every(t => tags.has(tagPrefixes[t]));
+    filters.tags.every(t => tags.has(t));
 
   return (
     matchesAuthorFilter &&
@@ -328,7 +330,7 @@ function removeRatingFilter(filters) {
 }
 
 function createTagFilter(filters) {
-  const tags = Array.from(Object.keys(tagPrefixes));
+  const tags = Array.from(Object.keys(tagNames));
   tags.sort();
 
   createTippy(
