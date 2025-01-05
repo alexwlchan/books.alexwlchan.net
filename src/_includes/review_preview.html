@@ -43,7 +43,7 @@
     {%- endfor -%}
   "
   data-bk-p-yr="{{ book.publication_year }}"
-  data-review-rating="{% if review.rating %}{{ review.rating }}{% endif %}"
+  data-rv-s="{% if review.rating %}{{ review.rating }}{% endif %}"
   data-rv-t="
     {%- for t in book.tags %}
       {{ site.data['tag_prefixes'][t] }}

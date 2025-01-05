@@ -95,6 +95,7 @@ function createEmptyFilters() {
   *
   *     - data-bk-a, which is the author IDs for the book
   *     - data-bk-p-yr, which is the publication year of the book
+  *     - data-rv-s, which is the star rating for this book
   *     - data-rv-t, which is the tag prefixes for each tag on this book
   */
 function matchesFilters(book, filters) {
@@ -122,7 +123,7 @@ function matchesFilters(book, filters) {
     publicationYear <= filters.publicationYear.before;
 
   // The star rating has to be equal to or higher than the filtered rating
-  const starRating = Number(book.getAttribute('data-review-rating'));
+  const starRating = Number(book.getAttribute('data-rv-s'));
 
   const matchesStarRatingFilter =
     isUndefined(filters.starRating) ||

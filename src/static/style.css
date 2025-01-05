@@ -166,7 +166,7 @@ footer span.heart {
   border: 0.1px solid var(--border-color);
 }
 
-.rv_p[data-review-rating="5"] {
+.rv_p[data-rv-s="5"] {
   border-width: 3px;
   margin-left:  -1px;
   margin-right: -1px;
@@ -176,7 +176,7 @@ footer span.heart {
   --bg-boost-multiplier: 0.3;
 }
 
-.rv_p[data-review-rating="5"]:hover {
+.rv_p[data-rv-s="5"]:hover {
   --bg-boost-amount:     0.58;
   --bg-boost-multiplier: 0.42;
 }
