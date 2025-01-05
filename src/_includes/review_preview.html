@@ -60,13 +60,13 @@
   {% endcomment %}
   <a href="{{ review_entry.url }}">
     <div class="bk_t
-                {% if aspect_ratio == 1 %}
+                {% if aspect_ratio == 1 -%}
                   ar_s
-                {% elsif aspect_ratio > 0.85 %}
+                {%- elsif aspect_ratio > 0.85 -%}
                   ar_l
-                {% else %}
+                {%- else -%}
                   ar_p
-                {% endif %}
+                {%- endif -%}
               ">
       <img
         src="{{ book.cover.thumbnail_path }}"
