@@ -204,7 +204,8 @@ footer span.heart {
   aspect-ratio: var(--ar);
 }
 
-.book_metadata {
+/* bk_m = book metadata */
+.bk_m {
   grid-row: 1/1;
   grid-column: 2/2;
   display: inline-block;
@@ -217,18 +218,18 @@ footer span.heart {
   padding-bottom: 10px;
 }
 
-.book_metadata p.title {
+.bk_m p.title {
   font-style: italic;
   font-size: 1.15em;
   margin-bottom: 0.5em;
   line-height: 1.3em;
 }
 
-.book_metadata .did_not_finish {
+.bk_m .did_not_finish {
   font-weight: normal;
 }
 
-.book_metadata p {
+.bk_m p {
   margin: 0;
 }
 
@@ -254,7 +255,7 @@ hr {
 
 @media screen and (min-width: 500px) {
   /* For books with long attribution info, e.g. "Your Computer is on Fire" */
-  main > .book_metadata {
+  main > .bk_m {
     max-width: calc(100% - 210px);
   }
 }
@@ -277,17 +278,12 @@ hr {
     grid-row: 1/2;
   }
 
-  .book_metadata {
+  .bk_m {
     grid-column: 1/1;
     grid-row: 2/2;
     padding: 15px;
-    padding-left: 0px;
     padding-top: 0;
     max-width: 100%;
-  }
-
-  .review_preview .book_metadata {
-    padding-left: 15px;
   }
 
   .thumbnail_helper {
