@@ -38,15 +38,15 @@
   class="rv_p{% if read_at_another_time %} read_at_another_time{% endif %}"
   style="{{ css_variables | replace: " ", "" | strip | replace: "; ", "" }}"
   data-bk-a="
-    {%- for a in authors %}
-      {{ site.data['author_ids'][a.name] }}
+    {%- for a in authors -%}
+      {{ site.data['author_ids'][a.name] }}{% unless loop.last %} {% endunless %}
     {%- endfor -%}
   "
   data-bk-p-yr="{{ book.publication_year }}"
   data-rv-s="{% if review.rating %}{{ review.rating }}{% endif %}"
   data-rv-t="
-    {%- for t in book.tags %}
-      {{ site.data['tag_prefixes'][t] }}
+    {%- for t in book.tags -%}
+      {{ site.data['tag_prefixes'][t] }}{% unless loop.last %} {% endunless %}
     {%- endfor -%}
   "
   data-rv-yr="{{ review | year_read }}"
