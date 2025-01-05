@@ -478,7 +478,7 @@ function applyFilters(filters) {
 
   // The "read at another time" books are stored in a <details> element,
   // we show/hide the parent collapsible element.
-  document.querySelector("#another_time_books").style.display = yearReviewTally["another time"] > 0 ? "block" : "none";
+  // document.querySelector("#another_time_books").style.display = yearReviewTally["another time"] > 0 ? "block" : "none";
 
   if (yearReviewTally["another time"] > 0 && Object.keys(yearReviewTally).filter(k => yearReviewTally[k] > 0).length === 1) {
     document.querySelector("#another_time_books").open = true;
