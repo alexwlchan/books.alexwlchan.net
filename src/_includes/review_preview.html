@@ -33,9 +33,9 @@
   --ar: {{ aspect_ratio }}
 {% endcapture %}
 
-<div
+<li
   id="{{ review_entry.short_id }}"
-  class="rv_p{% if read_at_another_time %} read_at_another_time{% endif %}"
+  {% if read_at_another_time %}class="read_at_another_time"{% endif %}
   style="{{ css_variables | replace: " ", "" | strip | replace: "; ", "" }}"
   data-bk-a="
     {%- for a in authors -%}
@@ -104,4 +104,4 @@
       </p>
     </div>
   </a>
-</div>
+</li>

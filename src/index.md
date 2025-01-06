@@ -12,12 +12,13 @@ This is a small app I created to track <a href="/reviews/">the books I've read</
 
 Here are a few books I've read recently:
 
-<div class="books_by_year">
+<ul class="review_previews">
   {% for review_entry in recent_reviews %}
     {% include review_preview.html %}
   {% endfor %}
-  <a href="/reviews/">read more reviews &rarr;</a>
-</div>
+</ul>
+
+<a href="/reviews/">read more reviews &rarr;</a>
 
 ---
 
@@ -47,5 +48,5 @@ On my main website, I also write an annual roundup of my favourite books from ea
         <p>2021</p>
       </div>
     </a>
-  </li>  
+  </li>
 </ul>

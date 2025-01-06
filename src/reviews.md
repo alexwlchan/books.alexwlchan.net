@@ -65,9 +65,11 @@ layout: list_of_reviews
     {% endif %}
   </h3>
 
+  <ul class="review_previews">
   {% for review_entry in reviews_in_year %}
     {% include review_preview.html %}
   {% endfor %}
+  </ul>
 {% endfor %}
 
 <script>

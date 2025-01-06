@@ -116,15 +116,22 @@ footer span.heart {
  * of each review, showing the title of the book, some basic metadata,
  * and my star rating.
  *
+ * All the review previews are `li` child elements of a `ul.review_previews`.
+ *
  * Each instance of this component has four variables:
  *
  *     --r, --g, --b, which represent the r/g/b components of
  *          the tint color.
  *     --ar, which is the aspect ratio of the image
  *
- * rv_p = "review preview"
  */
-.rv_p {
+ul.review_previews {
+  list-style-type: none;
+  margin:  0;
+  padding: 0;
+}
+
+ul.review_previews > li {
   --border-color: rgb(var(--r), var(--g), var(--b));
 
   border: 2px solid var(--border-color);
@@ -141,12 +148,12 @@ footer span.heart {
   );
 }
 
-.rv_p:hover {
+ul.review_previews > li:hover {
   --bg-boost-amount:     0.74;
   --bg-boost-multiplier: 0.26;
 }
 
-.rv_p a,
+ul.review_previews > li a,
 .read_at_another_time {
   grid-template-columns: 135px auto;
   display: grid;
@@ -159,14 +166,14 @@ footer span.heart {
   min-height: 157px;
 }
 
-.rv_p img {
+ul.review_previews > li img {
   max-width: 110px;
   max-height: 130px;
   vertical-align: middle;
   border: 0.1px solid var(--border-color);
 }
 
-.rv_p[data-rv-s="5"] {
+ul.review_previews > li[data-rv-s="5"] {
   border-width: 3px;
   margin-left:  -1px;
   margin-right: -1px;
@@ -176,12 +183,12 @@ footer span.heart {
   --bg-boost-multiplier: 0.3;
 }
 
-.rv_p[data-rv-s="5"]:hover {
+ul.review_previews > li[data-rv-s="5"]:hover {
   --bg-boost-amount:     0.58;
   --bg-boost-multiplier: 0.42;
 }
 
-.rv_p .title + p {
+ul.review_previews > li .title + p {
   font-size: smaller;
 }
 
@@ -265,12 +272,12 @@ hr {
 }
 
 @media screen and (max-width: 500px) {
-  .rv_p a {
+  ul.review_previews > li a {
     grid-template-columns: auto;
     grid-row-gap: 1.75em;
   }
 
-  .rv_p img {
+  ul.review_previews > li img {
     max-width: 250px;
     max-height: 150px;
   }
