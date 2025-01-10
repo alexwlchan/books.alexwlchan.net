@@ -70,7 +70,7 @@ end
 def create_credit_line(book)
   publication_year = book['publication_year']
 
-  contributors_by_role = Hash.new([])
+  contributors_by_role = Hash.new { [] }
 
   book['contributors'].each do |c|
     role = c['role'].nil? ? 'author' : c['role']
