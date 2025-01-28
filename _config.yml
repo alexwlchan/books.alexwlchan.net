@@ -24,6 +24,7 @@ strict_front_matter: true
 
 port: 5959
 livereload: true
+livereload_port: 35959
 
 # ==============
 # Liquid options
