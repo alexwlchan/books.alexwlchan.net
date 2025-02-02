@@ -12,6 +12,7 @@ book:
     - "queer-rep"
     - "fiction"
     - horror
+    - "!from-the-library"
 review:
   date_read: 2025-01-28
   format: ebook
