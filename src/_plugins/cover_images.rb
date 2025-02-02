@@ -75,6 +75,7 @@ Jekyll::Hooks.register :site, :post_read do |site|
       post.data['book']['cover']['height'] = info['height']
     else
       puts "Can't find a cover image for #{post.path} (#{slug})"
+      next
     end
 
     # Now go ahead and create a thumbnail for each post.
