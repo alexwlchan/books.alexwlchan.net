@@ -274,7 +274,7 @@ hr {
 @media screen and (max-width: 500px) {
   ul.review_previews > li a {
     grid-template-columns: auto;
-    grid-row-gap: 1.75em;
+    grid-row-gap: 0.75em;
   }
 
   ul.review_previews > li img {
@@ -287,6 +287,10 @@ hr {
     margin-bottom: 10px;
     grid-column: 1/1;
     grid-row: 1/2;
+  }
+  
+  .bk_t.ar_p {
+    height: 150px;
   }
 
   .bk_m {
