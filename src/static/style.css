@@ -278,8 +278,8 @@ hr {
   }
 
   ul.review_previews > li img {
-    max-width: 250px;
-    max-height: 150px;
+    max-width:  100%;
+    max-height: 100%;
   }
 
   .bk_t {
@@ -290,6 +290,11 @@ hr {
   }
   
   .bk_t.ar_p {
+    height: 150px;
+  }
+
+  .bk_t.ar_s {
+    width:  150px;
     height: 150px;
   }
 
