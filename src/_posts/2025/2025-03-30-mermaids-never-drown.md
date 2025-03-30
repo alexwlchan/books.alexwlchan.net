@@ -2,9 +2,7 @@
 layout: review
 book:
   contributors:
-    - name: Zoraida Córdova
-      role: editor
-    - name: Natalie C. Parker
+    - name: Zoraida Córdova and Natalie C. Parker
       role: editor
   cover:
     tint_color: "#4c418a"
