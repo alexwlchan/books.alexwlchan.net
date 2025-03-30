@@ -46,7 +46,7 @@ def get_attribution_credit(contributors_by_role)
   elsif contributors_by_role.keys == ['editor'] && contributors_by_role['editor'].length == 1
     editor_name = contributors_by_role['editor'][0]
     "edited by #{editor_name}"
-  
+
   elsif contributors_by_role.keys == ['editor'] && contributors_by_role['editor'].length == 2
     editor_name0 = contributors_by_role['editor'][0]
     editor_name1 = contributors_by_role['editor'][1]
