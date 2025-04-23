@@ -399,7 +399,7 @@ function createSummaryMessage(options) {
   * be visible.  Call this whenever the filter state changes.
   */
 function applyFilters(filters) {
-  const selectedReviews = Array.from(document.querySelectorAll('.rv_p'))
+  const selectedReviews = Array.from(document.querySelectorAll('.review_previews > li'))
     .filter(rev => matchesFilters(rev, filters));
 
   const selectedReviewIds = new Set(selectedReviews.map(rp => rp.getAttribute("id")));
@@ -421,7 +421,7 @@ function applyFilters(filters) {
   );
 
   // Show/hide the individual reviews
-  document.querySelectorAll('.rv_p').forEach(rev => {
+  document.querySelectorAll('.review_previews > li').forEach(rev => {
     if (rev.getAttribute('data-rv-yr') === 'another time') {
       rev.style.display = selectedReviewIds.has(rev.getAttribute('id')) ? 'grid' : 'none';
     } else {
