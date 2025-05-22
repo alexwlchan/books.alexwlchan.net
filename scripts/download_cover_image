@@ -22,7 +22,7 @@ then
   exit 1
 fi
 
-echo "$LATEST_REVIEW"
+print_info "-> Latest review is $LATEST_REVIEW"
 
 # In Jekyll, post filenames are prefixed with a date in YYYY-MM-DD format,
 # e.g. `src/_posts/2024/2024-06-17-a-great-book.md`.
@@ -39,6 +39,7 @@ filename=$(basename -- "$LATEST_REVIEW" .md | cut -c 12-)
 year=$(basename -- $(dirname -- "$LATEST_REVIEW"))
 
 url=$(osascript -e 'tell application "Safari" to get URL of document 1')
+print_info "-> Frontmost Safari URL is $url"
 
 image_filename=$(basename -- "$url" | tr '?' ' ' | awk '{print $1}')
 image_extension="${image_filename##*.}"
@@ -47,6 +48,6 @@ image_path=src/covers/$year/$filename.$image_extension
 
 mkdir -p "$(dirname "$image_path")"
 
-echo "$image_path"
+print_info "-> curl \"$url\" > \"$image_path\""
 curl "$url" > "$image_path"
 dominant_colours "$image_path"
