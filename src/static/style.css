@@ -3,6 +3,8 @@
 
   --max-width: 42rem;
   --padding:   1em;
+
+  --tint-color: rgb(var(--r), var(--g), var(--b));
 }
 
 body {
@@ -107,6 +109,13 @@ footer a {
 
 footer span.heart {
   color: var(--tint-color);
+}
+
+blockquote {
+  border-left: 3px solid var(--tint-color);
+  margin-left: 0;
+  padding-left: 1em;
+  font-style: italic;
 }
 
 /*
@@ -288,7 +297,7 @@ hr {
     grid-column: 1/1;
     grid-row: 1/2;
   }
-  
+
   .bk_t.ar_p {
     height: 150px;
   }
