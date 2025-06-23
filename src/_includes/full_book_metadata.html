@@ -1,7 +1,7 @@
 {% comment %}
   This variable is used to track whether the publication year has been
   printed.
-  
+
   The year gets printed in parens next to the first/principal contributor,
   but only the first contributor -- not every contributor.
 {% endcomment %}
@@ -10,7 +10,7 @@
 <dl class="full_book_metadata">
   {% for c in book.contributors %}
   <dt>
-    {% assign is_plural = c["name"] | is_plural %}
+    {% assign is_plural = c["name"] | plural? %}
     {% if c["role"] %}{{ c["role"] }}{% else %}author{% endif %}{% if is_plural %}s{% endif -%}
   </dt>
   <dd>
@@ -21,7 +21,7 @@
     {% endunless %}
   </dd>
   {% endfor %}
-  
+
   {% if review.date_read %}
   <dt>date read</dt>
   <dd>{{ review.date_read | date_read }}
@@ -32,7 +32,7 @@
     {% endif %}
   </dd>
   {% endif %}
-  
+
   {% if review.rating and review.did_not_finish != "true" %}
   <dt>rating</dt>
   <dd>{{ review.rating | spread_star_rating }}</dd>
