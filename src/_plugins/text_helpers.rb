@@ -46,7 +46,7 @@ module Jekyll
       render_date_read(date_string)
     end
 
-    def is_plural(contributor_name)
+    def plural?(contributor_name)
       match = contributor_name =~ / and |, | & | with /
       !match.nil?
     end

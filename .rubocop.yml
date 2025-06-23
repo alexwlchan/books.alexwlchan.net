@@ -26,9 +26,6 @@ Metrics/MethodLength:
 Metrics/PerceivedComplexity:
   Enabled: false
 
-Naming/PredicateName:
-  Enabled: false
-
 Style/ClassVars:
   Enabled: false
 
