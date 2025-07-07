@@ -38,8 +38,6 @@ module Jekyll
         shelf_height = shapes.rand(60..90)
 
         shelf_color = create_random_colour_like(luminosities, hsl_color)
-        
-        puts shelf_color
 
         png.rect(
           x, 0,
@@ -54,8 +52,6 @@ module Jekyll
       data_url = png.to_data_url
 
       File.write(out_path, data_url)
-      
-      puts out_path
 
       data_url
     end
