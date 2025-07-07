@@ -38,6 +38,8 @@ module Jekyll
         shelf_height = shapes.rand(60..90)
 
         shelf_color = create_random_colour_like(luminosities, hsl_color)
+        
+        puts shelf_color
 
         png.rect(
           x, 0,
@@ -52,6 +54,8 @@ module Jekyll
       data_url = png.to_data_url
 
       File.write(out_path, data_url)
+      
+      puts out_path
 
       data_url
     end
@@ -103,7 +107,7 @@ def create_random_colour_like(luminosities, hsl_color)
   min_lightness = [v * 3.0 / 4.0, 0].max
   max_lightness = [v * 4.0 / 3.0, 100].min
 
-  Color::HSL.new(
+  Color::HSL.from_values(
     hsl_color.hue,
     hsl_color.saturation,
     luminosities.rand(min_lightness..max_lightness)
