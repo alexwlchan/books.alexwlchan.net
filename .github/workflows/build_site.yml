@@ -40,7 +40,7 @@ jobs:
       - name: "Set up Ruby"
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.3"
+          ruby-version: "3.4"
           bundler-cache: true
           cache-version: 1
 
@@ -112,6 +112,6 @@ jobs:
             --exclude="" --include="" --filter="" \
             "_site/" \
             "alexwlchan@alexwlchan.net:repos/books.alexwlchan.net/_site/"
-            
+
           # Clean up the SSH key
           rm id_rsa
