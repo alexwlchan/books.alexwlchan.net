@@ -13,7 +13,7 @@ gem 'nokogiri', '~> 1.18'
 
 group :lint, optional: true do
   gem 'json-schema', '~> 5'
-  gem 'rubocop', '~> 1.77'
+  gem 'rubocop', '~> 1.78'
 end
 
 group :test, optional: true do
