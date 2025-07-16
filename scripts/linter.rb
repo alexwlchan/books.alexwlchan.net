@@ -8,8 +8,6 @@ require 'rainbow'
 require 'uri'
 require 'yaml'
 
-require_relative '../src/_plugins/pillow/get_image_info'
-
 def run_html_linting(html_dir)
   HTMLProofer.check_directory(
     html_dir, {
