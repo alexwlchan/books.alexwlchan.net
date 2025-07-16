@@ -71,9 +71,6 @@ jobs:
           path: .shelves
           key: "shelves-${{ github.sha }}"
           restore-keys: "shelves-"
-      
-      - name: Clear old favicons
-        run: rm -rf _site/favicons
 
       - name: "Set the JEKYLL_ENV variable"
         run: |
