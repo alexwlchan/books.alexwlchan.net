@@ -15,9 +15,6 @@
 
 require 'abbrev'
 
-require_relative 'pillow/create_cover'
-require_relative 'pillow/get_image_info'
-
 Jekyll::Hooks.register :site, :post_read do |site|
   source = site.config['source']
   destination = site.config['destination']
@@ -108,4 +105,78 @@ Jekyll::Hooks.register :site, :post_read do |site|
                    'max_height' => 240 * 2
                  })
   end
+end
+
+# Get basic information about a single image
+def get_single_image_info(path)
+  cache = Jekyll::Cache.new('ImageInfo')
+
+  mtime = File.mtime(path).to_i
+
+  cache.getset("#{path}--#{mtime}") do
+    require 'vips'
+
+    im = Vips::Image.new_from_file path
+
+    verify_icc_color_profile(path, im)
+
+    {
+      'width' => im.width,
+      'height' => im.height
+    }
+  end
+end
+
+# Verify the ICC colour profile.
+#
+# We want to stick to standard sRGB or grayscale colour profiles
+# that will render uniformly in all browsers; "interesting" profiles
+# like Display P3 may look washed out or incorrect on non-Apple displays.
+def verify_icc_color_profile(path, image)
+  require 'icc_parser'
+
+  if image.get_typeof('icc-profile-data').zero?
+    return
+  end
+
+  icc_profile = ICCParser.parse(image.get('icc-profile-data'))
+  icc_profile_name = icc_profile[:tags][:desc]
+
+  if icc_profile_name == ''
+    return
+  end
+
+  allowed_profile_names = Set[
+    'Adobe RGB (1998)',
+    'sRGB',
+    'sRGB built-in',
+    'sRGB IEC61966-2.1',
+    'Generic Gray Gamma 2.2 Profile'
+  ]
+
+  if allowed_profile_names.include? icc_profile_name
+    return
+  end
+
+  raise "Got image with non-sRGB profile: #{path} (#{icc_profile_name})"
+end
+
+def create_cover(request)
+  if File.exist? request['out_path']
+    return
+  end
+
+  require 'vips'
+
+  im = Vips::Image.new_from_file request['in_path']
+
+  # Resize the image to fit within the bounding box
+  scale = [request['max_width'].to_f / im.width, request['max_height'].to_f / im.height].min
+  resized_im = im.resize(scale)
+
+  # Create the parent directory, if it doesn't exist already
+  FileUtils.mkdir_p File.dirname(request['out_path'])
+
+  # Actually resize the image
+  resized_im.write_to_file request['out_path']
 end

@@ -7,10 +7,12 @@ gem 'bit-struct', '~> 0.17'
 gem 'chunky_png', '~> 1.4'
 gem 'color', '~> 2.0'
 gem 'html-proofer', '~> 5'
+gem 'icc_parser', '~> 0.1'
 gem 'jekyll', '~> 4'
 gem 'jekyll-include-cache', '~> 0.2'
 gem 'logger', '~> 1'
 gem 'nokogiri', '~> 1.18'
+gem 'ruby-vips', '~> 2.2'
 
 group :lint, optional: true do
   gem 'json-schema', '~> 5'

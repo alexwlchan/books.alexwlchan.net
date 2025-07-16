@@ -43,3 +43,6 @@ Style/Documentation:
 
 Style/IfUnlessModifier:
   Enabled: false
+
+Style/MutableConstant:
+  Enabled: false
