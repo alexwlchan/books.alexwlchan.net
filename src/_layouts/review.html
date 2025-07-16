@@ -39,7 +39,8 @@ layout: compress
 
     <meta name="theme-color" content="{{ book.cover.tint_color }}">
 
-    <link rel="shortcut icon" type="image/png" href="/favicons/{{ book.cover.tint_color | replace: "#", "" }}.png">
+    <link rel="shortcut icon" type="image/png" sizes="32x32" href="/favicons/{{ book.cover.tint_color | replace: "#", "" }}-32x32.png">
+    <link rel="shortcut icon" type="image/png" sizes="16x16" href="/favicons/{{ book.cover.tint_color | replace: "#", "" }}-16x16.png">
     <link rel="shortcut icon" type="image/x-icon" href="/favicons/{{ book.cover.tint_color | replace: "#", "" }}.ico">
   </head>
 

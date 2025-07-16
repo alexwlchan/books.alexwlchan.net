@@ -85,14 +85,7 @@ def check_yaml_front_matter(src_dir)
   schema = JSON.parse(File.read('front-matter.json'))
 
   Dir["#{src_dir}/**/*.md"].each do |md_path|
-    # Skip some Markdown files in the source directory that aren't
-    # posts on the site and so don't need validating.
-    next if md_path.end_with?('theme/_favicons/README.md')
-    next if md_path.end_with?('src/_plugins/pillow/README.md')
-
-    # This page is a special case for crawlers and doesn't count for
-    # the purposes of linting and the like.
-    next if md_path == "#{src_dir}/400.md"
+    next if md_path.start_with?('src/_plugins/')
 
     # The YAML loader will try to be "smart" (e.g. reading dates as
     # proper Ruby date types), which is unhelpful for json-schema checking.
