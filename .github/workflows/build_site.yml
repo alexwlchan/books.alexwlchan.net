@@ -17,63 +17,31 @@ on:
       - '.github/workflows/rubocop.yml'
       - '.github/workflows/run_plugin_tests.yml'
 
-  # This daily rebuild is to avoid GitHub Actions purging the site cache,
-  # because regenerating all the image thumbnails would be a PITA:
-  #
-  #     GitHub will remove any cache entries that have not been
-  #     accessed in over 7 days.
-  #
-  # See https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows
   schedule:
     - cron: "30 7 * * *"
 
 jobs:
   build:
     name: Build the website
-    runs-on: macos-latest
+    runs-on: self-hosted
+    
     env:
-      BUNDLE_WITH: lint
+      # This tells `bundle install` to install gems in a user-owned directory,
+      # so it doesn't need sudo permissions.
+      GEM_HOME: /home/alexwlchan/.gems
+    
     steps:
       - name: "Check out the repo"
         uses: actions/checkout@v4
-
-      - name: "Set up Ruby"
-        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.4"
-          bundler-cache: true
-          cache-version: 1
+          # Don't run `git clean/reset` when checking out the repo.
+          #
+          # This means the existing copy of the `_site` folder is preserved,
+          # so the site doesn't have to be rebuilt from scratch every time.
+          clean: false
 
-      - name: "Cache vips"
-        uses: "actions/cache@v4"
-        with:
-          path: ~/Library/Caches/Homebrew
-          key: "brew-${{ github.sha }}"
-          restore-keys: brew-
-    
-      - name: "Install vips"
-        run: env HOMEBREW_NO_AUTO_UPDATE=1 brew install vips
-
-      - name: "Cache site output"
-        uses: "actions/cache@v4"
-        with:
-          path: _site
-          key: "site-${{ github.sha }}"
-          restore-keys: "site-"
-
-      - name: "Cache the .jekyll-cache folder"
-        uses: "actions/cache@v4"
-        with:
-          path: src/.jekyll-cache
-          key: "jekyll-cache-${{ github.sha }}"
-          restore-keys: "jekyll-cache-"
-
-      - name: "Cache the .shelves folder"
-        uses: "actions/cache@v4"
-        with:
-          path: .shelves
-          key: "shelves-${{ github.sha }}"
-          restore-keys: "shelves-"
+      - name: "Install Ruby dependencies"
+        run: bundle install
 
       - name: "Set the JEKYLL_ENV variable"
         run: |
@@ -90,31 +58,17 @@ jobs:
       - name: "Run linting"
         run: bundle exec ruby scripts/linter.rb
 
-      - name: Deploy to Linode
+      - name: Copy to the public directory
         if: github.ref == 'refs/heads/main'
-        env:
-          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
         run: |
-          # Get the SSH host keys for my web server
-          mkdir -p ~/.ssh
-          ssh-keyscan -H "alexwlchan.net" >> ~/.ssh/known_hosts
-
-          # Save the deploy key to a file, so it can be used by
-          # the SSH process
-          echo "$DEPLOY_KEY" > id_rsa
-          chmod 600 id_rsa
-
-          # Run the rsync command to upload the _site folder to
-          # my web server
           rsync \
-            --rsh="ssh -i id_rsa -o IdentityAgent=none -o HostKeyAlgorithms=ssh-ed25519" \
             --compress \
-            --archive \
             --recursive \
             --delete \
-            --exclude="" --include="" --filter="" \
-            "_site/" \
-            "alexwlchan@alexwlchan.net:repos/books.alexwlchan.net/_site/"
-
-          # Clean up the SSH key
-          rm id_rsa
+            --verbose \
+            --checksum \
+            --exclude="" \
+            --include="" \
+            --filter="" \
+            _site/ \
+            ~/repos/books.alexwlchan.net/_site/
