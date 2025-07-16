@@ -10,12 +10,12 @@ gem 'html-proofer', '~> 5'
 gem 'icc_parser', '~> 0.1'
 gem 'jekyll', '~> 4'
 gem 'jekyll-include-cache', '~> 0.2'
+gem 'json-schema', '~> 5'
 gem 'logger', '~> 1'
 gem 'nokogiri', '~> 1.18'
 gem 'ruby-vips', '~> 2.2'
 
 group :lint, optional: true do
-  gem 'json-schema', '~> 5'
   gem 'rubocop', '~> 1.78'
 end
 
