@@ -16,11 +16,11 @@ layout: compress
 
     <style>
       :root {
-        --r: {{ book.cover.tint_color|red   }};
-        --g: {{ book.cover.tint_color|green }};
-        --b: {{ book.cover.tint_color|blue  }};
+        --r: {{ tint_color|red   }};
+        --g: {{ tint_color|green }};
+        --b: {{ tint_color|blue  }};
 
-        --shelf-background: url({{ book.cover.tint_color | create_shelf_data_uri }});
+        --shelf-background: url({{ tint_color | create_shelf_data_uri }});
       }
     </style>
 
