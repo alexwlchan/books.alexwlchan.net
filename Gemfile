@@ -12,6 +12,7 @@ gem 'jekyll', '~> 4'
 gem 'jekyll-include-cache', '~> 0.2'
 gem 'json-schema', '~> 5'
 gem 'logger', '~> 1'
+gem 'minify_html', '~> 0.16'
 gem 'nokogiri', '~> 1.18'
 gem 'ruby-vips', '~> 2.2'
 
