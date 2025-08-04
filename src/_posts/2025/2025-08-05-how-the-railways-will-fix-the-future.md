@@ -12,7 +12,7 @@ book:
     - railways
   isbn13: "978-1-915672-48-3"
 review:
-  date_read: 2025-08-05
+  date_read: 2025-08-04
   format: paperback
   rating: 4
 ---
