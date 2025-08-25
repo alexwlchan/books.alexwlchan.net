@@ -17,7 +17,7 @@ gem 'nokogiri', '~> 1.18'
 gem 'ruby-vips', '~> 2.2'
 
 group :lint, optional: true do
-  gem 'rubocop', '~> 1.79'
+  gem 'rubocop', '~> 1.80'
 end
 
 group :test, optional: true do
