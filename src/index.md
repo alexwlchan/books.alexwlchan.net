@@ -26,6 +26,14 @@ On my main website, I also write an annual roundup of my favourite books from ea
 
 <ul id="roundups">
   <li>
+    <a href="https://alexwlchan.net/2024/2024-in-reading/">
+      <div class="roundup_item">
+        <img src="/static/roundups/2024-in-reading.jpg" alt="">
+        <p>2024</p>
+      </div>
+    </a>
+  </li>
+  <li>
     <a href="https://alexwlchan.net/2023/2023-in-reading/">
       <div class="roundup_item">
         <img src="/static/roundups/2023-in-reading.jpg" alt="">
