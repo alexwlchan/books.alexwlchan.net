@@ -17,7 +17,7 @@ review:
   format: ebook
   rating: 5
 ---
-A sapphic retelling of the Trojan War, in which Cassandra's curse is cast by a petty Apollo who wants sex, and an enemies-to-romance romance between Cassandra and Helen.
+A sapphic retelling of the Trojan War, in which Cassandra's curse is cast by a petty Apollo who wants sex, and an enemies-to-lovers romance between Cassandra and Helen.
 
 I really enjoyed this.
 It's a well-written story and I enjoyed the first-person perspective of the two protagonists.
