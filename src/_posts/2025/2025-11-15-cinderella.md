@@ -3,6 +3,7 @@ layout: review
 book:
   contributors:
     - name: Brittany Mazique
+      role: retold by
     - name: Maxine Vee
       role: illustrator
   cover:

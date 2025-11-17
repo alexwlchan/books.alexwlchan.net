@@ -35,7 +35,7 @@ end
 def get_attribution_credit(contributors_by_role)
   # Only one contributor, an author
   #
-  # e.g. "by J.K. Rowling"
+  # e.g. "by Brittany Mazique"
   if contributors_by_role.keys == ['author'] && contributors_by_role['author'].length == 1
     author_name = contributors_by_role['author'][0]
     "by #{author_name}"
@@ -66,7 +66,7 @@ def get_attribution_credit(contributors_by_role)
     author0 = contributors_by_role['author'][0]
     author1 = contributors_by_role['author'][1]
     "by #{author0} and #{author1}"
-
+  
   else
     raise "Unknown attribution line: #{contributors_by_role}"
   end
