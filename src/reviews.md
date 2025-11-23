@@ -75,6 +75,7 @@ layout: list_of_reviews
 <script>
   /* Here authorNames is a map (name) -> (id), and ids is (id) -> (name) */
   const authorNames = {{ site.data['author_ids'] | jsonify }};
+  console.log(authorNames);
   const authorIds = Object.fromEntries(
     Object.entries(authorNames).map(a => [a[1], a[0]])
   );
