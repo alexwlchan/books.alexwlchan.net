@@ -14,7 +14,7 @@ gem 'json-schema', '~> 6'
 gem 'logger', '~> 1'
 gem 'minify_html', '~> 0.18'
 gem 'nokogiri', '~> 1.18'
-gem 'ruby-vips', '~> 2.2'
+gem 'ruby-vips', '~> 2.3'
 
 group :lint, optional: true do
   gem 'rubocop', '~> 1.81'
