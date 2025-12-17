@@ -5,7 +5,7 @@ book:
     - name: Ashley Herring Blake
   cover:
     tint_color: "#18ae9f"
-  title: Astrid Parker Doesn’t Fall
+  title: Astrid Parker Doesn’t Fail
   publication_year: 2022
   tags:
     - fiction
