@@ -17,7 +17,7 @@ review:
   format: paperback
   rating: 4
 ---
-A fun prequel to [*Astrid Parker Doesn’t Fall*](/2024/astrid-parker-doesnt-fall/).
+A fun prequel to [*Astrid Parker Doesn’t Fall*](/2024/astrid-parker-doesnt-fail/).
 Although I knew where Astrid was going because I read the series in the wrong order, it didn't bother me at all.
 
 Fairly standard romance fare.
