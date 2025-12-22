@@ -87,7 +87,7 @@ GEM
       sass-embedded (~> 1.75)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
-    json (2.16.0)
+    json (2.18.0)
     json-schema (6.0.0)
       addressable (~> 2.8)
       bigdecimal (~> 3.1)
@@ -123,7 +123,7 @@ GEM
       ruby-rc4
       ttfunk
     power_assert (3.0.1)
-    prism (1.6.0)
+    prism (1.7.0)
     public_suffix (6.0.2)
     racc (1.8.1)
     rainbow (3.1.1)
@@ -134,7 +134,7 @@ GEM
     regexp_parser (2.11.3)
     rexml (3.4.2)
     rouge (4.5.1)
-    rubocop (1.81.7)
+    rubocop (1.82.0)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -142,7 +142,7 @@ GEM
       parser (>= 3.3.0.2)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 2.9.3, < 3.0)
-      rubocop-ast (>= 1.47.1, < 2.0)
+      rubocop-ast (>= 1.48.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 4.0)
     rubocop-ast (1.48.0)
@@ -191,7 +191,7 @@ DEPENDENCIES
   logger (~> 1)
   minify_html (~> 0.18)
   nokogiri (~> 1.18)
-  rubocop (~> 1.81)
+  rubocop (~> 1.82)
   ruby-vips (~> 2.3)
   test-unit
 
