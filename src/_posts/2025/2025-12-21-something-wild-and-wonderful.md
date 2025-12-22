@@ -15,6 +15,7 @@ book:
   isbn13: "978-1-472-8606-2"
 review:
   date_read: 2025-12-21
+  date_order: 1
   format: paperback
   did_not_finish: true
 ---

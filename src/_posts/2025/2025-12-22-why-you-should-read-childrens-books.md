@@ -12,6 +12,7 @@ book:
   isbn13: "978-1-5266-1007-2"
 review:
   date_read: 2025-12-21
+  date_order: 2
   format: hardback
   rating: 3
 ---
