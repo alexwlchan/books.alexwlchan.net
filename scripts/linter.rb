@@ -252,18 +252,18 @@ def check_all_urls_are_hackable(dst_dir)
   hackable_urls = Dir.glob("#{dst_dir}/**/*.html")
                      .filter { |p| !p.start_with?("#{dst_dir}/static/tests/") }
                      .flat_map do |p|
-    dirs = []
+                       dirs = []
 
-    while (p = File.dirname(p))
+                       while (p = File.dirname(p))
 
-      if p == dst_dir
-        break
-      end
+                         if p == dst_dir
+                           break
+                         end
 
-      dirs << p.gsub(dst_dir, '')
-    end
+                         dirs << p.gsub(dst_dir, '')
+                       end
 
-    dirs
+                       dirs
   end
 
   hackable_urls = hackable_urls.to_set
