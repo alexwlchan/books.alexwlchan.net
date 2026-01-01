@@ -527,6 +527,7 @@ redir /2011/enigma-the-battle-for-the-code/ /2011/enigma/
 # i.e. that you can delete bits off the end of the URL and still get
 # somewhere useful.
 
+redir /2026/ /reviews/
 redir /2025/ /reviews/
 redir /2024/ /reviews/
 redir /2023/ /reviews/
