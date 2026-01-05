@@ -9,8 +9,8 @@ book:
   publication_year: 2021
   isbn13: "9781534320727"
   tags:
-    - mythology
-    - non-fiction
+    - mythological fiction
+    - fiction
     - graphic-novel
 review:
   date_read: 2023-02-11

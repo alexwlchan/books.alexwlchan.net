@@ -10,7 +10,7 @@ book:
   title: Here, The World Entire
   tags:
     - fiction
-    - mythology
+    - mythological fiction
 review:
   date_read: 2019-06-02
   rating: 4

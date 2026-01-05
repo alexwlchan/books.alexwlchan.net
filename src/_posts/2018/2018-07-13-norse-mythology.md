@@ -11,7 +11,7 @@ book:
   title: Norse Mythology
   tags:
     - fiction
-    - mythology
+    - mythological fiction
 review:
   date_read: 2018-07-13
   rating: 5

@@ -9,7 +9,7 @@ book:
   publication_year: 2019
   tags:
     - fiction
-    - mythology
+    - mythological fiction
     - asexuality
     - fairy-tales
     - "!ace-book-club"

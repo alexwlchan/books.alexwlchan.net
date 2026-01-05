@@ -82,6 +82,7 @@ layout: list_of_reviews
 
   /* Here tagNames is a map (tag) -> (id0), and ids is a map (id) -> (tag) */
   const tagNames = {{ site.data['tag_prefixes'] | jsonify }};
+  console.log(tagNames);
   const tagIds = Object.fromEntries(
     Object.entries(tagNames).map(a => [a[1], a[0]])
   );

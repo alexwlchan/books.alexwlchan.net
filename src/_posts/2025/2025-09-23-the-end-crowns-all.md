@@ -9,7 +9,7 @@ book:
   publication_year: 2024
   tags:
     - fiction
-    - mythology
+    - mythological fiction
     - "!ace book club"
     - queer rep
 review:
