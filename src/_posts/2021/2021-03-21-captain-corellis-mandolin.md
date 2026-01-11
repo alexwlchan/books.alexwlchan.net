@@ -31,3 +31,12 @@ It took me a few chapters to get into it, but by the end I was really invested i
 It's a story about love and grief and heartbreak, and I was very moved by the ending.
 
 I don't know if I would've picked up this book without the film, but I'm glad I did, and I'm glad I'm finally finished it.
+
+## Favourite quotes
+
+Dedication:
+
+> *To my mother and father*, who in different places and in different ways fought against <br>
+> the Fascists and the Nazis, <br>
+> lost many of their closest friends,
+> and were never thanked.
